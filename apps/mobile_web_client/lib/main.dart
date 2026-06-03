@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 import 'config.dart';
@@ -44,8 +46,10 @@ class _CBSEPortalAppState extends State<CBSEPortalApp> {
   @override
   void initState() {
     super.initState();
-    // Initialize corresponding service based on configuration
-    if (AppConfig.useMockAuth) {
+    // Use MockAuthService if configured, or if running inside a widget test environment
+    final bool useMock = AppConfig.useMockAuth || (!kIsWeb && Platform.environment.containsKey('FLUTTER_TEST'));
+    
+    if (useMock) {
       _authService = MockAuthService();
     } else {
       _authService = SupabaseAuthService();
