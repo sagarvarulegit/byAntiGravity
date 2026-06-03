@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Class 10 Learning Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="brand-info">
+                    <h2>CBSE Core</h2>
+                    <span>Class 10th Portal</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-target="lessons">
+                    <i class="fa-solid fa-play-circle"></i>
+                    <span>Video Lessons</span>
+                </a>
+                <a href="#" class="nav-item" data-target="quiz">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>Practice Quizzes</span>
+                </a>
+                <a href="#" class="nav-item" data-target="progress">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Mastery Metrics</span>
+                </a>
+                <a href="#" class="nav-item" data-target="billing">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Premium Subscription</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-summary">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100&h=100" alt="Student avatar" class="avatar">
+                    <div class="user-details">
+                        <h4>Sagar Sharma</h4>
+                        <span class="user-status-badge free">Free Tier</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main-content">
+            <!-- TOP BAR -->
+            <header class="topbar">
+                <div class="page-title">
+                    <h1 id="header-title">Welcome back, Sagar!</h1>
+                    <p id="header-subtitle">Stay consistent. Academic success is a daily habit.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <!-- Streak Widget -->
+                    <div class="streak-widget" id="streak-widget" title="Study Streak">
+                        <i class="fa-solid fa-fire streak-icon"></i>
+                        <span class="streak-count">5 Days</span>
+                        <div class="streak-tooltip">Study daily to maintain your streak! Reward: 1.5x Mastery Points.</div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- Offline Status Badge -->
+                    <div class="offline-badge offline-hidden" id="network-offline-badge">
+                        <i class="fa-solid fa-wifi-slash"></i> Offline Mode
+                    </div>
+
+                    <!-- Upgrade CTA (Visible only in Free Tier) -->
+                    <button class="upgrade-btn" id="header-upgrade-btn">
+                        <i class="fa-solid fa-crown"></i> Go Premium
+                    </button>
+                </div>
+            </header>
+
+            <!-- VIEW CONTAINER -->
+            <div class="content-body">
+                
+                <!-- 1. DASHBOARD VIEW -->
+                <section id="view-dashboard" class="content-view active">
+                    <div class="dashboard-grid">
+                        
+                        <!-- Streak Reward & Status Banner -->
+                        <div class="banner-card">
+                            <div class="banner-content">
+                                <span class="badge-premium">STUDY STREAK ACTIVE</span>
+                                <h2>🔥 5-Day Daily Streak!</h2>
+                                <p>You're in the top 10% of class 10 learners this week. Complete today's lesson to keep the flame alive.</p>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 71%;"></div>
+                                </div>
+                                <span class="streak-subtext">Last study: Yesterday. Complete a lesson today to reach 6 days!</span>
+                            </div>
+                            <div class="banner-graphics">
+                                <i class="fa-solid fa-trophy trophy-graphics animate-bounce"></i>
+                            </div>
+                        </div>
+
+                        <!-- Mini Stats Grid -->
+                        <div class="stats-row">
+                            <div class="stat-card">
+                                <div class="stat-icon purple"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="stat-val">68%</div>
+                                <div class="stat-lbl">Syllabus Covered</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                                <div class="stat-val">84%</div>
+                                <div class="stat-lbl">Avg Quiz Score</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon orange"><i class="fa-solid fa-clock"></i></div>
+                                <div class="stat-val">12.5 hrs</div>
+                                <div class="stat-lbl">Study Time (Week)</div>
+                            </div>
+                        </div>
+
+                        <!-- Subjects Selector & Cards -->
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h3>CBSE Class 10 Syllabus Tracker</h3>
+                                <span>Click a subject to start learning</span>
+                            </div>
+                            <div class="subject-grid">
+                                <!-- Mathematics -->
+                                <div class="subject-card" data-subject="maths">
+                                    <div class="subject-header">
+                                        <span class="subject-icon math"><i class="fa-solid fa-calculator"></i></span>
+                                        <span class="subject-chapters">15 Chapters</span>
+                                    </div>
+                                    <h4>Mathematics</h4>
+                                    <p>Algebra, Quadratic Equations, Trigonometry & Geometry.</p>
+                                    <div class="subject-progress">
+                                        <div class="progress-text">
+                                            <span>Mastery: 72%</span>
+                                            <span>High Priority</span>
+                                        </div>
+                                        <div class="subject-progress-bg">
+                                            <div class="subject-progress-fill" style="width: 72%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Science -->
+                                <div class="subject-card" data-subject="science">
+                                    <div class="subject-header">
+                                        <span class="subject-icon science"><i class="fa-solid fa-flask-ripple"></i></span>
+                                        <span class="subject-chapters">16 Chapters</span>
+                                    </div>
+                                    <h4>Science</h4>
+                                    <p>Chemical Reactions, Electricity, Light & Life Processes.</p>
+                                    <div class="subject-progress">
+                                        <div class="progress-text">
+                                            <span>Mastery: 58%</span>
+                                            <span>Moderate Priority</span>
+                                        </div>
+                                        <div class="subject-progress-bg">
+                                            <div class="subject-progress-fill" style="width: 58%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Social Science -->
+                                <div class="subject-card" data-subject="social">
+                                    <div class="subject-header">
+                                        <span class="subject-icon social"><i class="fa-solid fa-earth-americas"></i></span>
+                                        <span class="subject-chapters">21 Chapters</span>
+                                    </div>
+                                    <h4>Social Science</h4>
+                                    <p>History, Democratic Politics, Geography & Economics.</p>
+                                    <div class="subject-progress">
+                                        <div class="progress-text">
+                                            <span>Mastery: 81%</span>
+                                            <span>On Track</span>
+                                        </div>
+                                        <div class="subject-progress-bg">
+                                            <div class="subject-progress-fill" style="width: 81%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 2. VIDEO LESSONS VIEW -->
+                <section id="view-lessons" class="content-view">
+                    <div class="lessons-layout">
+                        <!-- Left Panel: Navigation & Lessons -->
+                        <div class="lessons-sidebar-panel">
+                            <div class="subject-tabs">
+                                <button class="sub-tab active" data-subject="maths">Maths</button>
+                                <button class="sub-tab" data-subject="science">Science</button>
+                                <button class="sub-tab" data-subject="social">Social</button>
+                            </div>
+                            
+                            <div class="lessons-list-container" id="lessons-list">
+                                <!-- Dynamic items loaded via JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Player & Notes -->
+                        <div class="lessons-main-panel">
+                            <div class="video-container">
+                                <!-- Stylized Video Player Simulator -->
+                                <div class="custom-video-player" id="video-player-wrapper">
+                                    <div class="video-playback-area">
+                                        <canvas id="video-canvas-anim"></canvas>
+                                        <!-- Centered Play Icon Overlay -->
+                                        <div class="video-play-overlay" id="video-play-overlay">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        
+                                        <!-- Overlay warning for Premium content -->
+                                        <div class="premium-lock-overlay hidden" id="video-lock-overlay">
+                                            <i class="fa-solid fa-lock lock-icon animate-pulse"></i>
+                                            <h3>Premium Syllabus Content</h3>
+                                            <p>Unlock structured animated lectures, sample papers, and notes for CBSE 10th Boards.</p>
+                                            <button class="upgrade-btn-large" id="lock-overlay-upgrade-btn">
+                                                <i class="fa-solid fa-crown"></i> Activate One Year Access
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Video Custom Controls Bar -->
+                                    <div class="video-controls-bar">
+                                        <div class="controls-left">
+                                            <button id="video-play-btn" class="control-btn" aria-label="Play/Pause">
+                                                <i class="fa-solid fa-play"></i>
+                                            </button>
+                                            <span class="time-display" id="video-time-display">0:00 / 0:00</span>
+                                        </div>
+
+                                        <div class="video-progress-slider-container">
+                                            <input type="range" min="0" max="100" value="0" class="video-progress-slider" id="video-progress-slider">
+                                        </div>
+
+                                        <div class="controls-right">
+                                            <!-- Video Quality Selector -->
+                                            <div class="dropdown">
+                                                <button class="control-btn dropbtn" id="quality-btn">
+                                                    <i class="fa-solid fa-gear"></i> <span id="quality-lbl">720p</span>
+                                                </button>
+                                                <div class="dropdown-content" id="quality-dropdown">
+                                                    <a href="#" data-val="1080p">1080p (Full HD)</a>
+                                                    <a href="#" data-val="720p" class="active">720p (HD)</a>
+                                                    <a href="#" data-val="480p">480p (Medium)</a>
+                                                    <a href="#" data-val="360p">360p (Low Data)</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Download Offline Action -->
+                                            <button id="video-download-btn" class="control-btn" title="Download for Offline Study">
+                                                <i class="fa-solid fa-circle-down"></i> <span class="btn-text">Download</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Info & Meta -->
+                            <div class="lesson-meta-info">
+                                <div class="meta-title-row">
+                                    <h2 id="lesson-title">Select a Lesson</h2>
+                                    <span class="badge-free" id="lesson-free-badge">FREE</span>
+                                </div>
+                                <p id="lesson-desc">Choose a lesson from the sidebar to begin streaming or download it for offline revision.</p>
+                            </div>
+
+                            <!-- Interactive Notes Section -->
+                            <div class="lesson-notes-card">
+                                <div class="notes-header">
+                                    <div class="notes-title-group">
+                                        <i class="fa-solid fa-file-lines notes-icon"></i>
+                                        <h3>Text Revision Notes</h3>
+                                    </div>
+                                    <button class="notes-action-btn" id="notes-download-btn">
+                                        <i class="fa-solid fa-file-pdf"></i> Download PDF Notes
+                                    </button>
+                                </div>
+                                <div class="notes-content markdown-body" id="notes-content-area">
+                                    <!-- Rendered notes markdown/HTML -->
+                                    <p class="placeholder-text">Select a video lesson to see text notes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. PRACTICE QUIZ VIEW -->
+                <section id="view-quiz" class="content-view">
+                    <div class="quiz-container-card">
+                        <!-- Dynamic Quiz Selector / Starter -->
+                        <div id="quiz-intro-section" class="quiz-state-active">
+                            <div class="quiz-intro-header">
+                                <i class="fa-solid fa-brain quiz-splash-icon"></i>
+                                <h2>CBSE Class 10 Smart Quizzes</h2>
+                                <p>Test your knowledge on the chapters you've studied. Achieve >60% to gain Mastery Points and secure your daily study streak!</p>
+                            </div>
+                            
+                            <div class="quiz-selection-list">
+                                <h3>Select a Practice Quiz:</h3>
+                                <div class="quiz-card-row" id="quiz-list-container">
+                                    <!-- Quizzes populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Quiz In Progress -->
+                        <div id="quiz-running-section" class="quiz-state-hidden">
+                            <div class="quiz-header-bar">
+                                <div class="quiz-title-section">
+                                    <h3 id="quiz-running-title">Active Quiz</h3>
+                                    <span class="quiz-tag" id="quiz-running-tag">Maths</span>
+                                </div>
+                                <div class="quiz-progress-metrics">
+                                    <span id="quiz-progress-text">Question 1 of 5</span>
+                                    <div class="mini-progress-bar">
+                                        <div class="mini-progress-fill" id="quiz-progress-bar-fill" style="width: 20%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question-box">
+                                <h2 id="quiz-question-text">Sample Question?</h2>
+                                <div class="quiz-options-list" id="quiz-options-container">
+                                    <!-- Options populated by JS -->
+                                </div>
+                            </div>
+
+                            <div class="quiz-footer-actions">
+                                <button class="quiz-nav-btn secondary-btn" id="quiz-exit-btn">Exit Quiz</button>
+                                <button class="quiz-nav-btn primary-btn" id="quiz-next-btn" disabled>Next Question <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Result/Summary Dashboard -->
+                        <div id="quiz-result-section" class="quiz-state-hidden">
+                            <div class="result-splash">
+                                <div class="result-icon-ring" id="result-icon-ring">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <h1 id="result-title">Quiz Completed!</h1>
+                                <p id="result-subtitle">You did an amazing job.</p>
+                                
+                                <div class="result-stats-board">
+                                    <div class="res-stat">
+                                        <span class="res-val" id="res-score">4/5</span>
+                                        <span class="res-lbl">Score</span>
+                                    </div>
+                                    <div class="res-stat">
+                                        <span class="res-val" id="res-percentage">80%</span>
+                                        <span class="res-lbl">Accuracy</span>
+                                    </div>
+                                    <div class="res-stat">
+                                        <span class="res-val" id="res-status">PASSED</span>
+                                        <span class="res-lbl">Status</span>
+                                    </div>
+                                </div>
+
+                                <div class="streak-notification-alert" id="quiz-streak-alert">
+                                    <i class="fa-solid fa-fire text-orange"></i> Daily study streak secured! Streak updated to <strong>5 Days</strong>.
+                                </div>
+
+                                <div class="result-actions">
+                                    <button class="primary-btn" id="quiz-retry-btn">Try Again</button>
+                                    <button class="secondary-btn" id="quiz-dashboard-btn">Go to Dashboard</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 4. MASTERY METRICS & PROGRESS VIEW -->
+                <section id="view-progress" class="content-view">
+                    <div class="analytics-grid">
+                        
+                        <!-- Mastery Metrics Header Cards -->
+                        <div class="mastery-summary-card">
+                            <div class="summary-details">
+                                <h3>Syllabus Mastery Distribution</h3>
+                                <p>Overall metrics computed from dynamic quizzes and video study hours.</p>
+                                <div class="mastery-large-stat">
+                                    <span class="stat-number">70%</span>
+                                    <span class="stat-desc">Weighted Board Readiness Index</span>
+                                </div>
+                            </div>
+                            <div class="chart-container-radial">
+                                <!-- Circular Progress Indicator -->
+                                <svg class="radial-svg" viewBox="0 0 120 120">
+                                    <circle class="radial-bg" cx="60" cy="60" r="50"></circle>
+                                    <circle class="radial-progress" cx="60" cy="60" r="50" style="stroke-dashoffset: 94.2;"></circle>
+                                </svg>
+                                <div class="radial-center-text">70%</div>
+                            </div>
+                        </div>
+
+                        <!-- Mastery Breakdown by Topic -->
+                        <div class="card-container topics-mastery-list">
+                            <h3>Topic Wise Mastery Analysis</h3>
+                            <div class="topics-progress-row">
+                                <div class="topic-progress-item">
+                                    <div class="topic-meta">
+                                        <span>Quadratic Equations (Maths)</span>
+                                        <strong>90% Mastery</strong>
+                                    </div>
+                                    <div class="topic-bar-bg"><div class="topic-bar-fill maths-fill" style="width: 90%;"></div></div>
+                                </div>
+                                <div class="topic-progress-item">
+                                    <div class="topic-meta">
+                                        <span>Chemical Reactions (Science)</span>
+                                        <strong>45% Mastery</strong>
+                                    </div>
+                                    <div class="topic-bar-bg"><div class="topic-bar-fill science-fill" style="width: 45%;"></div></div>
+                                </div>
+                                <div class="topic-progress-item">
+                                    <div class="topic-meta">
+                                        <span>Nationalism in India (Social)</span>
+                                        <strong>80% Mastery</strong>
+                                    </div>
+                                    <div class="topic-bar-bg"><div class="topic-bar-fill social-fill" style="width: 80%;"></div></div>
+                                </div>
+                                <div class="topic-progress-item">
+                                    <div class="topic-meta">
+                                        <span>Light & Optics (Science)</span>
+                                        <strong>60% Mastery</strong>
+                                    </div>
+                                    <div class="topic-bar-bg"><div class="topic-bar-fill science-fill" style="width: 60%;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Study Time Line Chart (SVG Dynamic mockup) -->
+                        <div class="card-container chart-card">
+                            <div class="chart-header-row">
+                                <h3>Weekly Study Streak Consistency (Minutes)</h3>
+                                <span class="streak-badge-chart"><i class="fa-solid fa-bolt"></i> +200 Streak XP Active</span>
+                            </div>
+                            <div class="line-chart-wrapper">
+                                <svg class="line-chart-svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+                                    <!-- Grid Lines -->
+                                    <line x1="0" y1="150" x2="500" y2="150" class="chart-grid-line"></line>
+                                    <line x1="0" y1="100" x2="500" y2="100" class="chart-grid-line"></line>
+                                    <line x1="0" y1="50" x2="500" y2="50" class="chart-grid-line"></line>
+                                    
+                                    <!-- Fill Gradient area -->
+                                    <path d="M 10 180 L 80 140 L 160 160 L 240 90 L 320 60 L 400 110 L 480 30 L 480 180 Z" class="chart-gradient-path"></path>
+                                    
+                                    <!-- Chart line -->
+                                    <path d="M 10 180 L 80 140 L 160 160 L 240 90 L 320 60 L 400 110 L 480 30" class="chart-line-path"></path>
+                                    
+                                    <!-- Chart Data Points -->
+                                    <circle cx="10" cy="180" r="5" class="chart-point"></circle>
+                                    <circle cx="80" cy="140" r="5" class="chart-point"></circle>
+                                    <circle cx="160" cy="160" r="5" class="chart-point"></circle>
+                                    <circle cx="240" cy="90" r="5" class="chart-point"></circle>
+                                    <circle cx="320" cy="60" r="5" class="chart-point"></circle>
+                                    <circle cx="400" cy="110" r="5" class="chart-point"></circle>
+                                    <circle cx="480" cy="30" r="5" class="chart-point"></circle>
+                                </svg>
+                                <div class="chart-labels-row">
+                                    <span>Mon (20m)</span>
+                                    <span>Tue (45m)</span>
+                                    <span>Wed (30m)</span>
+                                    <span>Thu (90m)</span>
+                                    <span>Fri (120m)</span>
+                                    <span>Sat (70m)</span>
+                                    <span>Sun (150m)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 5. SUBSCRIPTION & BILLING VIEW -->
+                <section id="view-billing" class="content-view">
+                    <div class="billing-container">
+                        <!-- Plan Header -->
+                        <div class="billing-intro">
+                            <h2>CBSE Core Premium Access Plan</h2>
+                            <p>Get full unrestricted 1-Year access to animations, premium revision notes, solved CBSE sample papers, and interactive quizzes.</p>
+                        </div>
+
+                        <!-- Current status Card -->
+                        <div class="current-status-card" id="subscription-summary-box">
+                            <div class="status-meta">
+                                <h3>Current Account Tier</h3>
+                                <div class="status-indicator-tag status-free" id="billing-status-tag">Free Starter Plan</div>
+                            </div>
+                            <p id="billing-status-desc">You are currently browsing the free sections. Unlock chapters, full HD streaming, and unlimited quizzes with our yearly subscription.</p>
+                        </div>
+
+                        <!-- Pricing Table -->
+                        <div class="pricing-card" id="pricing-offer-card">
+                            <div class="pricing-badge">BEST VALUE</div>
+                            <span class="plan-name">CBSE Board Prep - 1 Year Pass</span>
+                            <div class="plan-price">
+                                <span class="currency">₹</span>
+                                <span class="price-val">2,999</span>
+                                <span class="period">/ Year</span>
+                            </div>
+                            <p class="plan-discount-subtext">Less than ₹250/month. No recurring renewals, explicit approval only.</p>
+                            
+                            <ul class="plan-benefits">
+                                <li><i class="fa-solid fa-circle-check text-green"></i> Direct access to all 50+ Chapters (Maths, Science, Social)</li>
+                                <li><i class="fa-solid fa-circle-check text-green"></i> Scalable Offline Manifest Download (No Internet Required)</li>
+                                <li><i class="fa-solid fa-circle-check text-green"></i> 100+ Chapter-wise Animated Explainer Videos</li>
+                                <li><i class="fa-solid fa-circle-check text-green"></i> Premium Downloadable PDF Text Notes & Diagrams</li>
+                                <li><i class="fa-solid fa-circle-check text-green"></i> Full Streak Multiplier (Boost your Leaderboard Rank)</li>
+                            </ul>
+
+                            <button class="checkout-btn" id="start-checkout-btn">
+                                <i class="fa-solid fa-shield-halved"></i> Secure Checkout - Pay ₹2,999
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- PAYMENT MODAL OVERLAY -->
+    <div class="modal-overlay hidden" id="payment-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Secure Gateway Checkout</h3>
+                <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="payment-summary">
+                <span>CBSE Core Prep annual billing</span>
+                <strong>₹2,999.00</strong>
+            </div>
+
+            <!-- Tabs for Payment Methods -->
+            <div class="payment-tabs">
+                <button class="pay-tab active" data-method="upi"><i class="fa-solid fa-mobile-screen-button"></i> UPI</button>
+                <button class="pay-tab" data-method="card"><i class="fa-solid fa-credit-card"></i> Card</button>
+            </div>
+
+            <div class="payment-form-container">
+                <!-- UPI Panel -->
+                <div class="payment-panel active" id="panel-upi">
+                    <label for="upi-id">Enter UPI ID (VPA)</label>
+                    <input type="text" id="upi-id" placeholder="username@upi" required>
+                    <p class="input-helper">We support GPay, PhonePe, Paytm, and BHIM UPI.</p>
+                </div>
+
+                <!-- Card Panel -->
+                <div class="payment-panel" id="panel-card">
+                    <div class="form-group">
+                        <label for="card-num">Card Number</label>
+                        <input type="text" id="card-num" placeholder="4111 2222 3333 4444" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-expiry">Expiry Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input type="password" id="card-cvv" placeholder="•••" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State (Inside form) -->
+                <div class="payment-loading hidden" id="payment-spinner">
+                    <div class="spinner"></div>
+                    <p>Securing checkout. Verifying transaction with gateway...</p>
+                </div>
+
+                <!-- Error message box -->
+                <div class="payment-error-box hidden" id="payment-error-box">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="payment-error-message">Payment failed. Please try again.</span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p class="secure-badge"><i class="fa-solid fa-lock text-green"></i> 256-bit AES Encrypted checkout. Razorpay Secure.</p>
+                <button class="pay-submit-btn" id="pay-confirm-btn">Pay Securely ₹2,999</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD NOTIFICATION BUBBLE -->
+    <div class="download-bubble" id="download-progress-bubble">
+        <div class="download-spinner"></div>
+        <div class="download-text-group">
+            <h4 id="download-bubble-title">Downloading Video...</h4>
+            <span id="download-bubble-pct">25% (HLS Manifest cached)</span>
+        </div>
+    </div>
+    
+    <!-- Client Side App Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
