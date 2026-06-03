@@ -136,10 +136,14 @@ class _MainShellState extends State<MainShell> {
   @override
   void initState() {
     super.initState();
+    final bool isMock = widget.authUser.id.startsWith('mock-');
     _userState = UserState(
       name: widget.authUser.fullName,
       isPremium: widget.authUser.isPremium,
-      streak: 5,
+      streak: isMock ? 5 : 0,
+      subjectMastery: isMock
+          ? {'maths': 72.0, 'science': 58.0, 'social': 81.0}
+          : {'maths': 0.0, 'science': 0.0, 'social': 0.0},
     );
   }
 

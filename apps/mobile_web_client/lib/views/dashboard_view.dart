@@ -16,6 +16,20 @@ class DashboardView extends StatelessWidget {
     required this.onUpgradeClicked,
   });
 
+  double get _averageMastery {
+    if (userState.subjectMastery.isEmpty) return 0.0;
+    double sum = 0.0;
+    userState.subjectMastery.forEach((key, val) => sum += val);
+    return sum / userState.subjectMastery.length;
+  }
+
+  double get _averageQuizScore {
+    if (userState.quizHighScores.isEmpty) return 0.0;
+    double sum = 0.0;
+    userState.quizHighScores.forEach((key, val) => sum += val);
+    return sum / userState.quizHighScores.length;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -76,7 +90,9 @@ class DashboardView extends StatelessWidget {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        "🔥 ${userState.streak}-Day Daily Streak!",
+                        userState.streak == 0
+                            ? "🔥 Start Your Study Streak Today!"
+                            : "🔥 ${userState.streak}-Day Daily Streak!",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 26,
@@ -85,9 +101,11 @@ class DashboardView extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 6),
-                      const Text(
-                        "You're in the top 10% of class 10 learners this week. Complete today's lesson to keep the flame alive.",
-                        style: TextStyle(
+                      Text(
+                        userState.streak == 0
+                            ? "Unlock chapter animations and finish your first textbook quiz today to ignite your learning streak."
+                            : "You're in the top 10% of class 10 learners this week. Complete today's lesson to keep the flame alive.",
+                        style: const TextStyle(
                           color: Colors.white70,
                           fontSize: 13,
                           height: 1.4,
@@ -97,17 +115,19 @@ class DashboardView extends StatelessWidget {
                       // Progress Bar
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: const LinearProgressIndicator(
-                          value: 0.71,
+                        child: LinearProgressIndicator(
+                          value: _averageMastery / 100.0,
                           backgroundColor: Colors.white24,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                           minHeight: 8,
                         ),
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        "Last study: Yesterday. Complete a lesson today to reach next milestone!",
-                        style: TextStyle(color: Colors.white60, fontSize: 11),
+                      Text(
+                        userState.streak == 0
+                            ? "Welcome! Complete a lesson today to reach your first milestone!"
+                            : "Last study: Yesterday. Complete a lesson today to keep your streak alive!",
+                        style: const TextStyle(color: Colors.white60, fontSize: 11),
                       ),
                     ],
                   ),
@@ -133,7 +153,7 @@ class DashboardView extends StatelessWidget {
                   icon: Icons.school_rounded,
                   color: AppColors.purple,
                   lightColor: AppColors.purpleLight,
-                  value: "68%",
+                  value: "${_averageMastery.toStringAsFixed(0)}%",
                   label: "Syllabus Covered",
                 ),
               ),
@@ -144,7 +164,7 @@ class DashboardView extends StatelessWidget {
                   icon: Icons.check_circle_rounded,
                   color: AppColors.green,
                   lightColor: AppColors.greenLight,
-                  value: "84%",
+                  value: _averageQuizScore == 0.0 ? "--" : "${_averageQuizScore.toStringAsFixed(0)}%",
                   label: "Avg Quiz Score",
                 ),
               ),
@@ -155,7 +175,7 @@ class DashboardView extends StatelessWidget {
                   icon: Icons.alarm_rounded,
                   color: AppColors.orange,
                   lightColor: AppColors.orangeLight,
-                  value: "12.5h",
+                  value: "${(_averageMastery * 0.2).toStringAsFixed(1)}h",
                   label: "Study Time (Week)",
                 ),
               ),
