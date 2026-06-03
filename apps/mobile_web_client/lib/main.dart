@@ -5,6 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 import 'config.dart';
 import 'models.dart';
 import 'services/auth_service.dart';
+import 'services/database_service.dart';
 import 'theme.dart';
 import 'views/auth_view.dart';
 import 'views/dashboard_view.dart';
@@ -130,13 +131,24 @@ class MainShell extends StatefulWidget {
 
 class _MainShellState extends State<MainShell> {
   int _activeNavIndex = 0; // 0: Dashboard, 1: Lessons, 2: Quiz, 3: Progress, 4: Billing
-  String _activeSubjectId = "maths";
+  String _activeSubjectId = "";
   late final UserState _userState;
+  late final DatabaseService _dbService;
+  List<Subject> _subjects = [];
+  bool _isLoadingSyllabus = true;
 
   @override
   void initState() {
     super.initState();
     final bool isMock = widget.authUser.id.startsWith('mock-');
+    
+    // Choose appropriate DatabaseService
+    if (isMock) {
+      _dbService = MockDatabaseService();
+    } else {
+      _dbService = SupabaseDatabaseService();
+    }
+
     _userState = UserState(
       name: widget.authUser.fullName,
       isPremium: widget.authUser.isPremium,
@@ -145,73 +157,27 @@ class _MainShellState extends State<MainShell> {
           ? {'maths': 72.0, 'science': 58.0, 'social': 81.0}
           : {'maths': 0.0, 'science': 0.0, 'social': 0.0},
     );
+
+    _loadSyllabus();
   }
 
-  final List<Subject> _subjects = [
-    Subject(
-      id: "maths",
-      name: "Mathematics",
-      description: "Algebra, Quadratic Equations, Trigonometry & Geometry.",
-      chaptersCount: 15,
-      initialMastery: 72.0,
-      chapters: [
-        Chapter(
-          title: "Chapter 1: Real Numbers",
-          lessons: [
-            Lesson(id: "m-1-1", title: "1.1 Euclid's Division Lemma", type: LessonType.video, isFree: true, duration: "12:45", videoType: VideoType.mathGraph),
-            Lesson(id: "m-1-2", title: "1.2 Fundamental Theorem of Arithmetic", type: LessonType.video, isFree: true, duration: "18:20", videoType: VideoType.mathGraph),
-            Lesson(id: "m-1-3", title: "Revision Notes: Real Numbers", type: LessonType.note, isFree: true),
-          ],
-        ),
-        Chapter(
-          title: "Chapter 2: Polynomials & Equations",
-          lessons: [
-            Lesson(id: "m-2-1", title: "2.1 Geometrical Meaning of Zeroes", type: LessonType.video, isFree: false, duration: "22:15", videoType: VideoType.mathGraph),
-            Lesson(id: "m-2-2", title: "2.2 Relationship of Coefficients", type: LessonType.video, isFree: false, duration: "15:40", videoType: VideoType.mathGraph),
-          ],
-        ),
-      ],
-    ),
-    Subject(
-      id: "science",
-      name: "Science",
-      description: "Chemical Reactions, Electricity, Light & Life Processes.",
-      chaptersCount: 16,
-      initialMastery: 58.0,
-      chapters: [
-        Chapter(
-          title: "Chapter 1: Chemical Reactions",
-          lessons: [
-            Lesson(id: "s-1-1", title: "1.1 Writing Chemical Equations", type: LessonType.video, isFree: true, duration: "14:10", videoType: VideoType.scienceAtom),
-            Lesson(id: "s-1-2", title: "1.2 Types of Chemical Reactions", type: LessonType.video, isFree: false, duration: "24:30", videoType: VideoType.scienceAtom),
-          ],
-        ),
-        Chapter(
-          title: "Chapter 12: Electricity",
-          lessons: [
-            Lesson(id: "s-12-1", title: "12.1 Electric Current & Potential", type: LessonType.video, isFree: true, duration: "16:50", videoType: VideoType.scienceCircuit),
-            Lesson(id: "s-12-2", title: "12.2 Ohm's Law & Circuit Elements", type: LessonType.video, isFree: false, duration: "28:15", videoType: VideoType.scienceCircuit),
-          ],
-        ),
-      ],
-    ),
-    Subject(
-      id: "social",
-      name: "Social Science",
-      description: "History, Democratic Politics, Geography & Economics.",
-      chaptersCount: 21,
-      initialMastery: 81.0,
-      chapters: [
-        Chapter(
-          title: "Chapter 1: Nationalism in India",
-          lessons: [
-            Lesson(id: "ss-1-1", title: "1.1 First World War & Satyagraha", type: LessonType.video, isFree: true, duration: "18:40", videoType: VideoType.socialMap),
-            Lesson(id: "ss-1-2", title: "1.2 Differing Strands within Movement", type: LessonType.video, isFree: false, duration: "22:50", videoType: VideoType.socialMap),
-          ],
-        ),
-      ],
-    ),
-  ];
+  Future<void> _loadSyllabus() async {
+    try {
+      final syllabusData = await _dbService.fetchSyllabus();
+      setState(() {
+        _subjects = syllabusData;
+        if (_subjects.isNotEmpty) {
+          _activeSubjectId = _subjects.first.id;
+        }
+        _isLoadingSyllabus = false;
+      });
+    } catch (e) {
+      debugPrint("Failed to load syllabus: $e");
+      setState(() {
+        _isLoadingSyllabus = false;
+      });
+    }
+  }
 
   void _routeToSubject(String subjectId) {
     setState(() {
@@ -282,6 +248,16 @@ class _MainShellState extends State<MainShell> {
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoadingSyllabus) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.purple),
+          ),
+        ),
+      );
+    }
+
     final bool isWide = MediaQuery.of(context).size.width > 800;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
