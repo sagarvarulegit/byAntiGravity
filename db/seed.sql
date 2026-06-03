@@ -35,13 +35,13 @@ INSERT INTO chapters (id, subject_id, title, sequence_number, description) VALUE
 -- 3. INSERT LESSONS (Videos and Notes)
 INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number) VALUES
 -- Maths Chapter 1 Lessons
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.1 Euclid''s Division Lemma', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 765, NULL, TRUE, 1),
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.2 Fundamental Theorem of Arithmetic', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1100, NULL, TRUE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.1 Euclid''s Division Lemma', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 765, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.2 Fundamental Theorem of Arithmetic', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1100, NULL, TRUE, 2),
 
 -- Science Chapter 1 Lessons
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Writing Chemical Equations', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 850, NULL, TRUE, 1),
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2 Types of Chemical Reactions', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1470, NULL, FALSE, 2),
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Revision Notes: Chemical Reactions', 'note', NULL, NULL, 
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Writing Chemical Equations', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 850, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2 Types of Chemical Reactions', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1470, NULL, FALSE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Revision Notes: Chemical Reactions', 'note', NULL, NULL, 
 '# Chapter 1: Chemical Reactions and Equations
 
 ## Core Concepts
@@ -67,32 +67,32 @@ A chemical reaction is a process in which one or more substances, the reactants,
 ', TRUE, 3),
 
 -- Science Chapter 12 Lessons
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.1 Electric Current & Potential', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1010, NULL, TRUE, 1),
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380007', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.2 Ohm''s Law & Circuit Elements', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1695, NULL, FALSE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.1 Electric Current & Potential', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1010, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380007', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.2 Ohm''s Law & Circuit Elements', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1695, NULL, FALSE, 2),
 
 -- Social Science Lessons
-('l0eebc99-9c0b-4ef8-bb6d-6bb9bd380008', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380331', '1.1 First World War & Satyagraha', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1120, NULL, TRUE, 1);
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380008', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380331', '1.1 First World War & Satyagraha', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1120, NULL, TRUE, 1);
 
 
 -- 4. INSERT QUIZZES
 INSERT INTO quizzes (id, chapter_id, title, passing_percentage) VALUES
-('q0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Science Chapter 1 Assessment', 60);
+('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Science Chapter 1 Assessment', 60);
 
 
 -- 5. INSERT QUIZ QUESTIONS
 INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_option_index, correct_answer_text, marks) VALUES
 -- MCQ 1
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381111', 'q0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'What is the color of the powder formed when magnesium ribbon burns in oxygen?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381111', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'What is the color of the powder formed when magnesium ribbon burns in oxygen?', 'multiple_choice', 
 '["A. Black", "B. White", "C. Grey", "D. Yellow"]', 1, NULL, 1),
 
 -- MCQ 2
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd382222', 'q0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'Which of the following is a displacement reaction?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd382222', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'Which of the following is a displacement reaction?', 'multiple_choice', 
 '["A. CaCO3 --> CaO + CO2", "B. 2H2 + O2 --> 2H2O", "C. Fe + CuSO4 --> FeSO4 + Cu", "D. NaOH + HCl --> NaCl + H2O"]', 2, NULL, 1),
 
 -- MCQ 3
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd383333', 'q0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'During respiration, which gas is released as a product of glucose breakdown?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd383333', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'During respiration, which gas is released as a product of glucose breakdown?', 'multiple_choice', 
 '["A. Oxygen", "B. Carbon Dioxide", "C. Nitrogen", "D. Hydrogen"]', 1, NULL, 1),
 
 -- MCQ 4
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd384444', 'q0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'The reaction in which heat is released along with the formation of products is called:', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd384444', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'The reaction in which heat is released along with the formation of products is called:', 'multiple_choice', 
 '["A. Endothermic reaction", "B. Exothermic reaction", "C. Combination reaction", "D. Redox reaction"]', 1, NULL, 1);
