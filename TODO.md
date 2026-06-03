@@ -6,9 +6,8 @@ This document tracks all milestones and technical tasks required to launch the C
 
 ## 🗄️ 1. Database & Content Seeding (Supabase)
 Before launch, we need to load real NCERT textbook content into the database.
-- [ ] **Syllabus Content Seeding**:
-  - [ ] Write a Node.js seed script to load subjects (Mathematics, Science, Social Science).
-  - [ ] Load Chapters and Lesson structures (video links, HLS manifest URLs, and markdown notes).
+- [x] **Syllabus Content Seeding**:
+  - [x] Write a SQL seed script to load subjects, chapters, and lesson structures (including Chemistry revision notes).
 - [ ] **Quiz Bank Seeding**:
   - [ ] Load practice quiz questions, MCQ option indices, and explanations for each chapter.
 
@@ -16,8 +15,8 @@ Before launch, we need to load real NCERT textbook content into the database.
 
 ## 📱 2. Core Client Features (Flutter Web & Mobile)
 Sync the remaining frontend components to read/write from Supabase instead of mock arrays.
-- [ ] **Dynamic Curriculum Loader**:
-  - [ ] Fetch subjects, chapters, and notes from Supabase at runtime.
+- [/] **Dynamic Curriculum Loader**:
+  - [x] Fetch subjects, chapters, and notes from Supabase at runtime.
   - [ ] Implement local database caching (e.g., Hive or SQLite) so students can read lessons offline.
 - [ ] **Interactive Progress & Streaks**:
   - [ ] Record watched video durations and completed notes to the `user_progress` table.
