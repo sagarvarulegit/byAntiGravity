@@ -9,7 +9,7 @@ CREATE TABLE users (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255), -- Nullable because Supabase manages authentication/hashes internally
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -135,3 +135,22 @@ CREATE INDEX idx_lessons_chapter ON lessons(chapter_id);
 CREATE INDEX idx_quiz_attempts_user ON quiz_attempts(user_id);
 CREATE INDEX idx_daily_activity_user_date ON daily_activity_logs(user_id, activity_date);
 CREATE INDEX idx_subscriptions_user_status ON subscriptions(user_id, status);
+
+-- SUPABASE AUTH USER TRIGGER SYNC
+-- Automatically create a user profile in public.users when a new user signs up in auth.users
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.users (id, full_name, email)
+  VALUES (
+    new.id,
+    COALESCE(new.raw_user_meta_data->>'full_name', 'Student'),
+    new.email
+  );
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();

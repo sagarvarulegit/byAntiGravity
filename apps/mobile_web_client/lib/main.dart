@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' as sb;
+import 'config.dart';
 import 'models.dart';
+import 'services/auth_service.dart';
 import 'theme.dart';
+import 'views/auth_view.dart';
 import 'views/dashboard_view.dart';
 import 'views/lessons_view.dart';
 import 'views/quiz_view.dart';
 import 'views/progress_view.dart';
 import 'views/billing_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  if (!AppConfig.useMockAuth) {
+    try {
+      await sb.Supabase.initialize(
+        url: AppConfig.supabaseUrl,
+        anonKey: AppConfig.supabaseAnonKey,
+      );
+    } catch (e) {
+      debugPrint("Failed to initialize Supabase: $e. Falling back to offline Mock Auth.");
+    }
+  }
+
   runApp(const CBSEPortalApp());
 }
 
@@ -20,6 +37,28 @@ class CBSEPortalApp extends StatefulWidget {
 
 class _CBSEPortalAppState extends State<CBSEPortalApp> {
   ThemeMode _themeMode = ThemeMode.light;
+  late final AuthService _authService;
+  AuthUser? _currentUser;
+  bool _isInitializingAuth = true;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize corresponding service based on configuration
+    if (AppConfig.useMockAuth) {
+      _authService = MockAuthService();
+    } else {
+      _authService = SupabaseAuthService();
+    }
+
+    // Subscribe to authentication state updates
+    _authService.authStateChanges.listen((user) {
+      setState(() {
+        _currentUser = user;
+        _isInitializingAuth = false;
+      });
+    });
+  }
 
   void toggleTheme() {
     setState(() {
@@ -34,10 +73,32 @@ class _CBSEPortalAppState extends State<CBSEPortalApp> {
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
       themeMode: _themeMode,
-      home: MainShell(
-        themeMode: _themeMode,
-        onThemeToggled: toggleTheme,
-      ),
+      home: _isInitializingAuth
+          ? const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.purple),
+                ),
+              ),
+            )
+          : _currentUser == null
+              ? AuthView(
+                  authService: _authService,
+                  onAuthSuccess: (user) {
+                    setState(() {
+                      _currentUser = user;
+                    });
+                  },
+                )
+              : MainShell(
+                  themeMode: _themeMode,
+                  onThemeToggled: toggleTheme,
+                  authUser: _currentUser!,
+                  authService: _authService,
+                  onLogout: () {
+                    _authService.signOut();
+                  },
+                ),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -46,11 +107,17 @@ class _CBSEPortalAppState extends State<CBSEPortalApp> {
 class MainShell extends StatefulWidget {
   final ThemeMode themeMode;
   final VoidCallback onThemeToggled;
+  final AuthUser authUser;
+  final AuthService authService;
+  final VoidCallback onLogout;
 
   const MainShell({
     super.key,
     required this.themeMode,
     required this.onThemeToggled,
+    required this.authUser,
+    required this.authService,
+    required this.onLogout,
   });
 
   @override
@@ -60,12 +127,17 @@ class MainShell extends StatefulWidget {
 class _MainShellState extends State<MainShell> {
   int _activeNavIndex = 0; // 0: Dashboard, 1: Lessons, 2: Quiz, 3: Progress, 4: Billing
   String _activeSubjectId = "maths";
+  late final UserState _userState;
 
-  final UserState _userState = UserState(
-    name: "Sagar Sharma",
-    isPremium: false,
-    streak: 5,
-  );
+  @override
+  void initState() {
+    super.initState();
+    _userState = UserState(
+      name: widget.authUser.fullName,
+      isPremium: widget.authUser.isPremium,
+      streak: 5,
+    );
+  }
 
   final List<Subject> _subjects = [
     Subject(
@@ -319,6 +391,18 @@ class _MainShellState extends State<MainShell> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
                   ),
+                  if (!isWide) ...[
+                    const SizedBox(width: 12),
+                    IconButton(
+                      onPressed: widget.onLogout,
+                      icon: const Icon(Icons.logout_rounded),
+                      style: IconButton.styleFrom(
+                        backgroundColor: isDark ? Colors.white10 : AppColors.bgLight,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      ),
+                      tooltip: "Logout",
+                    ),
+                  ],
                   if (!_userState.isPremium) ...[
                     const SizedBox(width: 12),
                     ElevatedButton.icon(
@@ -429,7 +513,12 @@ class _MainShellState extends State<MainShell> {
                             ),
                           ],
                         ),
-                      )
+                      ),
+                      IconButton(
+                        onPressed: widget.onLogout,
+                        icon: const Icon(Icons.logout_rounded, color: Colors.white70, size: 18),
+                        tooltip: 'Logout',
+                      ),
                     ],
                   ),
                 ],

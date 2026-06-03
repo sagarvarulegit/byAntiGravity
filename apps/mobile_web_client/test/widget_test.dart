@@ -1,20 +1,28 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+// CBSE Class 10 Learning Portal Widget Tests
+// CBSE Class 10 Learning Portal Widget Tests
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:mobile_web_client/main.dart';
+import 'package:mobile_web_client/views/auth_view.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Authentication View loads and toggles to Sign Up', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const CBSEPortalApp());
+    await tester.pump(const Duration(milliseconds: 200));
 
-    // Verify that our app welcomes the user.
-    expect(find.textContaining('Welcome back'), findsOneWidget);
+    // Verify that the login page branding loads
+    expect(find.text('CBSE Core Class 10'), findsOneWidget);
+    expect(find.text('Sign In to Your Account'), findsOneWidget);
+
+    // Find and tap the link to switch to registration
+    final signUpLink = find.text('Create an account');
+    expect(signUpLink, findsOneWidget);
+    await tester.ensureVisible(signUpLink);
+    await tester.tap(signUpLink);
+    await tester.pump(const Duration(milliseconds: 500)); // Wait for tab switch animation to settle
+
+    // Verify that the UI switches to registration mode
+    expect(find.text('Create Your Student Profile'), findsOneWidget);
   });
 }
