@@ -619,8 +619,9 @@ class _LessonsViewState extends State<LessonsView> {
                       ),
                       TextButton.icon(
                         onPressed: () {
-                          if (noteLesson.noteContent.isNotEmpty) {
-                            downloadFile(noteLesson.noteContent, "${noteLesson.title.replaceAll(' ', '_')}.txt");
+                          final note = _currentNoteLesson;
+                          if (note != null && note.noteContent.isNotEmpty) {
+                            downloadFile(note.noteContent, "${note.title.replaceAll(' ', '_')}.txt");
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text("PDF revision notes downloaded successfully.")),
                             );
@@ -649,28 +650,30 @@ class _LessonsViewState extends State<LessonsView> {
     );
   }
 
-  Widget _buildTextNotesContent() {
-    if (_selectedLesson == null) return Container();
-    
-    // If selected lesson is a video, try to find the note lesson in the same chapter to show below the player
+  Lesson? get _currentNoteLesson {
+    if (_selectedLesson == null) return null;
     Lesson noteLesson = _selectedLesson!;
     if (_selectedLesson!.type == LessonType.video) {
       try {
-        // Find the active chapter in the subjects/chapters model hierarchy
         final currentSubject = widget.subjects.firstWhere(
           (s) => s.chapters.any((c) => c.lessons.any((l) => l.id == _selectedLesson!.id))
         );
         final currentChapter = currentSubject.chapters.firstWhere(
           (c) => c.lessons.any((l) => l.id == _selectedLesson!.id)
         );
-        // Find the note lesson in this chapter
         noteLesson = currentChapter.lessons.firstWhere(
           (l) => l.type == LessonType.note
         );
       } catch (_) {
-        // Fallback to selected lesson if search fails
+        // Fallback to selected lesson
       }
     }
+    return noteLesson;
+  }
+
+  Widget _buildTextNotesContent() {
+    final noteLesson = _currentNoteLesson;
+    if (noteLesson == null) return Container();
 
     // 1. If note content is populated dynamically, parse and render it (excluding s-1-3 mockup)
     if (noteLesson.noteContent.isNotEmpty && noteLesson.id != "s-1-3") {
