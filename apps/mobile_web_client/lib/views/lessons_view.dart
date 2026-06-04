@@ -651,24 +651,7 @@ class _LessonsViewState extends State<LessonsView> {
   }
 
   Lesson? get _currentNoteLesson {
-    if (_selectedLesson == null) return null;
-    Lesson noteLesson = _selectedLesson!;
-    if (_selectedLesson!.type == LessonType.video) {
-      try {
-        final currentSubject = widget.subjects.firstWhere(
-          (s) => s.chapters.any((c) => c.lessons.any((l) => l.id == _selectedLesson!.id))
-        );
-        final currentChapter = currentSubject.chapters.firstWhere(
-          (c) => c.lessons.any((l) => l.id == _selectedLesson!.id)
-        );
-        noteLesson = currentChapter.lessons.firstWhere(
-          (l) => l.type == LessonType.note
-        );
-      } catch (_) {
-        // Fallback to selected lesson
-      }
-    }
-    return noteLesson;
+    return _selectedLesson;
   }
 
   Widget _buildTextNotesContent() {
@@ -950,12 +933,23 @@ class _LessonsViewState extends State<LessonsView> {
         ],
       );
     } else {
+      String fallbackDescription = "Use these notes as revision guides to quickly recap terms, formulas, and diagrams tested in board formats.";
+      if (_selectedLesson!.title.contains("1.1 The Fundamental Theorem")) {
+        fallbackDescription = "This lesson covers the Fundamental Theorem of Arithmetic. Every composite number can be uniquely expressed as a product of primes.";
+      } else if (_selectedLesson!.title.contains("1.2 Revisiting Irrational")) {
+        fallbackDescription = "Proving numbers like √2, √3, √5 are irrational using the method of contradiction.";
+      }
+
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Syllabus Objective: ${_selectedLesson!.title}", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
           const SizedBox(height: 6),
-          const Text("Use these notes as revision guides to quickly recap terms, formulas, and diagrams tested in board formats.", style: TextStyle(fontSize: 13)),
+          Text(fallbackDescription, style: const TextStyle(fontSize: 13)),
+          if (_selectedLesson!.title.contains("1.1 The Fundamental Theorem")) ...[
+            const SizedBox(height: 10),
+            Container(padding: const EdgeInsets.all(10), color: Colors.blue.withOpacity(0.05), child: const Text("Formula: HCF(a,b) × LCM(a,b) = a × b", style: TextStyle(fontFamily: 'monospace', color: Colors.blue))),
+          ]
         ],
       );
     }
