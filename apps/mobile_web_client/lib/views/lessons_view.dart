@@ -3,10 +3,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../models.dart';
 import '../theme.dart';
+import '../services/database_service.dart';
 import '../widgets/interactive_whiteboard_canvas.dart';
 import '../utils/download.dart';
 
 class LessonsView extends StatefulWidget {
+  final DatabaseService dbService;
   final UserState userState;
   final List<Subject> subjects;
   final String activeSubjectId;
@@ -17,6 +19,7 @@ class LessonsView extends StatefulWidget {
 
   const LessonsView({
     super.key,
+    required this.dbService,
     required this.userState,
     required this.subjects,
     required this.activeSubjectId,
@@ -41,6 +44,9 @@ class _LessonsViewState extends State<LessonsView> {
   bool _isDownloading = false;
   double _downloadPct = 0.0;
   String _downloadStatusText = "";
+
+  String _currentNoteContent = "";
+  bool _isLoadingNote = false;
 
   @override
   void initState() {
@@ -76,7 +82,33 @@ class _LessonsViewState extends State<LessonsView> {
       _videoProgress = 0.0;
       _currentTime = 0;
       _videoTimer?.cancel();
+      _currentNoteContent = "";
     });
+
+    if (lesson.type == LessonType.note) {
+      _fetchNoteContent(lesson.id);
+    }
+  }
+
+  Future<void> _fetchNoteContent(String lessonId) async {
+    setState(() {
+      _isLoadingNote = true;
+    });
+    try {
+      final content = await widget.dbService.fetchLessonNoteContent(lessonId);
+      if (mounted && _selectedLesson?.id == lessonId) {
+        setState(() {
+          _currentNoteContent = content;
+          _isLoadingNote = false;
+        });
+      }
+    } catch (e) {
+      if (mounted && _selectedLesson?.id == lessonId) {
+        setState(() {
+          _isLoadingNote = false;
+        });
+      }
+    }
   }
 
   void _togglePlayback() {
@@ -620,8 +652,8 @@ class _LessonsViewState extends State<LessonsView> {
                       TextButton.icon(
                         onPressed: () {
                           final note = _currentNoteLesson;
-                          if (note != null && note.noteContent.isNotEmpty) {
-                            downloadFile(note.noteContent, "${note.title.replaceAll(' ', '_')}.txt");
+                          if (note != null && _currentNoteContent.isNotEmpty) {
+                            downloadFile(_currentNoteContent, "${note.title.replaceAll(' ', '_')}.txt");
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text("PDF revision notes downloaded successfully.")),
                             );
@@ -655,11 +687,20 @@ class _LessonsViewState extends State<LessonsView> {
   }
 
   Widget _buildTextNotesContent() {
+    if (_isLoadingNote) {
+      return const Padding(
+        padding: EdgeInsets.all(40.0),
+        child: Center(
+          child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(AppColors.purple)),
+        ),
+      );
+    }
+
     final noteLesson = _currentNoteLesson;
     if (noteLesson == null) return Container();
 
-    if (noteLesson.noteContent.isNotEmpty) {
-      return _parseMarkdownNotes(noteLesson.noteContent);
+    if (_currentNoteContent.isNotEmpty) {
+      return _parseMarkdownNotes(_currentNoteContent);
     }
 
     String fallbackDescription = "Use these notes as revision guides to quickly recap terms, formulas, and diagrams tested in board formats.";

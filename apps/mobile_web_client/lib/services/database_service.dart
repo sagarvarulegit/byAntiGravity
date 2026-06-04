@@ -4,6 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 /// Interface for loading course catalog details (subjects, chapters, lessons).
 abstract class DatabaseService {
   Future<List<Subject>> fetchSyllabus();
+  Future<String> fetchLessonNoteContent(String lessonId);
 }
 
 /// Supabase production database loader.
@@ -15,9 +16,23 @@ class SupabaseDatabaseService implements DatabaseService {
     // Relational select: fetch subjects, nested chapters, and nested lessons in one query.
     final List<dynamic> response = await _client
         .from('subjects')
-        .select('id, name, code, description, thumbnail_url, chapters(id, title, sequence_number, description, lessons(id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number))');
+        .select('id, name, code, description, thumbnail_url, chapters(id, title, sequence_number, description, lessons(id, title, type, video_hls_url, video_duration_seconds, is_free, sequence_number))');
 
     return fromJsonList(response);
+  }
+
+  @override
+  Future<String> fetchLessonNoteContent(String lessonId) async {
+    try {
+      final response = await _client
+          .from('lessons')
+          .select('note_content')
+          .eq('id', lessonId)
+          .single();
+      return response['note_content'] as String? ?? '';
+    } catch (e) {
+      return '';
+    }
   }
 
   /// Maps Supabase PostgREST JSON response to Flutter strongly typed Models.

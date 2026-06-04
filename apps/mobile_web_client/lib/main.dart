@@ -252,6 +252,7 @@ class _MainShellState extends State<MainShell> {
         onUpgradeClicked: () => setState(() => _activeNavIndex = 4),
       ),
       LessonsView(
+        dbService: _dbService,
         userState: _userState,
         subjects: _subjects,
         activeSubjectId: _activeSubjectId,
