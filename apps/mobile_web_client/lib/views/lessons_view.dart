@@ -668,20 +668,24 @@ class _LessonsViewState extends State<LessonsView> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("1. Fundamental Theorem of Arithmetic", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-          const SizedBox(height: 6),
-          const Text("Every composite number can be uniquely expressed (factorized) as a product of prime numbers, apart from their order.", style: TextStyle(fontSize: 13)),
-          const SizedBox(height: 6),
-          const Text("HCF(a, b) × LCM(a, b) = a × b.", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
-          
-          _buildDoYouKnowBox(
-            "The word Algorithm comes from the name of the 9th century Persian mathematician al-Khwarizmi. In fact, even the word 'algebra' is derived from his famous book Kitab al-jabr wa’l-muqabala."
-          ),
-
-          const Text("2. Rational & Irrational Numbers", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-          const SizedBox(height: 6),
-          _buildBulletItem("Rational numbers have terminating or non-terminating repeating decimal expansions."),
-          _buildBulletItem("Irrational numbers (like √2, √3, π) have non-terminating non-repeating decimal expansions."),
+          if (noteLesson.id == "m-1-1") ...[
+            const Text("1. Fundamental Theorem of Arithmetic", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 6),
+            const Text("Every composite number can be uniquely expressed (factorized) as a product of prime numbers, apart from their order.", style: TextStyle(fontSize: 13)),
+            const SizedBox(height: 6),
+            const Text("HCF(a, b) × LCM(a, b) = a × b.", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+            _buildDoYouKnowBox("The word Algorithm comes from the name of the 9th century Persian mathematician al-Khwarizmi."),
+          ] else if (noteLesson.id == "m-1-2") ...[
+            const Text("2. Rational & Irrational Numbers", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 6),
+            _buildBulletItem("Rational numbers have terminating or non-terminating repeating decimal expansions."),
+            _buildBulletItem("Irrational numbers (like √2, √3, π) have non-terminating non-repeating decimal expansions."),
+          ] else ...[
+            if (noteLesson.noteContent.isNotEmpty)
+               _parseMarkdownNotes(noteLesson.noteContent)
+            else
+               const Text("Mock Revision Notes."),
+          ]
         ],
       );
     } else if (noteLesson.id.startsWith("s-1")) {
