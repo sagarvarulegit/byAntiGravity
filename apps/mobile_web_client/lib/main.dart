@@ -17,15 +17,13 @@ import 'views/billing_view.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (!AppConfig.useMockAuth) {
-    try {
-      await sb.Supabase.initialize(
-        url: AppConfig.supabaseUrl,
-        anonKey: AppConfig.supabaseAnonKey,
-      );
-    } catch (e) {
-      debugPrint("Failed to initialize Supabase: $e. Falling back to offline Mock Auth.");
-    }
+  try {
+    await sb.Supabase.initialize(
+      url: AppConfig.supabaseUrl,
+      anonKey: AppConfig.supabaseAnonKey,
+    );
+  } catch (e) {
+    debugPrint("Failed to initialize Supabase: $e");
   }
 
   runApp(const CBSEPortalApp());
@@ -47,14 +45,7 @@ class _CBSEPortalAppState extends State<CBSEPortalApp> {
   @override
   void initState() {
     super.initState();
-    // Use MockAuthService if configured, or if running inside a widget test environment
-    final bool useMock = AppConfig.useMockAuth || (!kIsWeb && Platform.environment.containsKey('FLUTTER_TEST'));
-    
-    if (useMock) {
-      _authService = MockAuthService();
-    } else {
-      _authService = SupabaseAuthService();
-    }
+    _authService = SupabaseAuthService();
 
     // Subscribe to authentication state updates
     _authService.authStateChanges.listen((user) {
@@ -140,22 +131,13 @@ class _MainShellState extends State<MainShell> {
   @override
   void initState() {
     super.initState();
-    final bool isMock = widget.authUser.id.startsWith('mock-');
-    
-    // Choose appropriate DatabaseService
-    if (isMock) {
-      _dbService = MockDatabaseService();
-    } else {
-      _dbService = SupabaseDatabaseService();
-    }
+    _dbService = SupabaseDatabaseService();
 
     _userState = UserState(
       name: widget.authUser.fullName,
       isPremium: widget.authUser.isPremium,
-      streak: isMock ? 5 : 0,
-      subjectMastery: isMock
-          ? {'maths': 72.0, 'science': 58.0, 'social': 81.0}
-          : {'maths': 0.0, 'science': 0.0, 'social': 0.0},
+      streak: 0,
+      subjectMastery: {'maths': 0.0, 'science': 0.0, 'social': 0.0},
     );
 
     _loadSyllabus();

@@ -207,7 +207,6 @@ class _AuthViewState extends State<AuthView> with SingleTickerProviderStateMixin
                         const SizedBox(height: 24),
 
                         // Info Banners
-                        if (AppConfig.useMockAuth) _buildMockBanner(isDark),
                         if (_errorMessage != null) _buildAlertBanner(_errorMessage!, isError: true),
                         if (_successMessage != null) _buildAlertBanner(_successMessage!, isError: false),
 
@@ -435,49 +434,7 @@ class _AuthViewState extends State<AuthView> with SingleTickerProviderStateMixin
     );
   }
 
-  Widget _buildMockBanner(bool isDark) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        color: AppColors.orangeLight,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.orange, width: 0.5),
-      ),
-      child: const Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.info_outline, color: AppColors.orange, size: 18),
-          SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Demo Mode Active",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.orangeDark,
-                  ),
-                ),
-                SizedBox(height: 2),
-                Text(
-                  "No database credentials loaded. Enter any email and password to log in instantly.",
-                  style: TextStyle(
-                    fontFamily: 'Georgia',
-                    fontSize: 11,
-                    color: AppColors.orangeDark,
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
+
 
   Widget _buildAlertBanner(String message, {required bool isError}) {
     final Color bgColor = isError ? AppColors.purpleLight : AppColors.greenLight;
