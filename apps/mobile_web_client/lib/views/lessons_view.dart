@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../widgets/interactive_whiteboard_canvas.dart';
+import '../utils/download.dart';
 
 class LessonsView extends StatefulWidget {
   final UserState userState;
@@ -618,9 +619,16 @@ class _LessonsViewState extends State<LessonsView> {
                       ),
                       TextButton.icon(
                         onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("PDF revision notes downloaded successfully.")),
-                          );
+                          if (noteLesson.noteContent.isNotEmpty) {
+                            downloadFile(noteLesson.noteContent, "${noteLesson.title.replaceAll(' ', '_')}.txt");
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text("PDF revision notes downloaded successfully.")),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text("No notes available to download.")),
+                            );
+                          }
                         },
                         icon: const Icon(Icons.download_rounded, size: 14, color: AppColors.purple),
                         label: const Text("PDF Notes", style: TextStyle(color: AppColors.purple, fontSize: 12)),
