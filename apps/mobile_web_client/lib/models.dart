@@ -11,6 +11,7 @@ class Lesson {
   final bool isFree;
   final String duration;
   final VideoType videoType;
+  final String noteContent;
 
   Lesson({
     required this.id,
@@ -19,6 +20,7 @@ class Lesson {
     required this.isFree,
     this.duration = "",
     this.videoType = VideoType.mathGraph,
+    this.noteContent = "",
   });
 }
 

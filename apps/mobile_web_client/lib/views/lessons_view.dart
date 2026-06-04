@@ -644,8 +644,33 @@ class _LessonsViewState extends State<LessonsView> {
   Widget _buildTextNotesContent() {
     if (_selectedLesson == null) return Container();
     
+    // If selected lesson is a video, try to find the note lesson in the same chapter to show below the player
+    Lesson noteLesson = _selectedLesson!;
+    if (_selectedLesson!.type == LessonType.video) {
+      try {
+        // Find the active chapter in the subjects/chapters model hierarchy
+        final currentSubject = widget.subjects.firstWhere(
+          (s) => s.chapters.any((c) => c.lessons.any((l) => l.id == _selectedLesson!.id))
+        );
+        final currentChapter = currentSubject.chapters.firstWhere(
+          (c) => c.lessons.any((l) => l.id == _selectedLesson!.id)
+        );
+        // Find the note lesson in this chapter
+        noteLesson = currentChapter.lessons.firstWhere(
+          (l) => l.type == LessonType.note
+        );
+      } catch (_) {
+        // Fallback to selected lesson if search fails
+      }
+    }
+
+    // 1. If note content is populated dynamically, parse and render it (excluding s-1-3 mockup)
+    if (noteLesson.noteContent.isNotEmpty && noteLesson.id != "s-1-3") {
+      return _parseMarkdownNotes(noteLesson.noteContent);
+    }
+    
     // Clean mock rendering corresponding to selected lesson
-    if (_selectedLesson!.id.startsWith("m-1")) {
+    if (noteLesson.id.startsWith("m-1")) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -665,7 +690,7 @@ class _LessonsViewState extends State<LessonsView> {
           _buildBulletItem("Irrational numbers (like √2, √3, π) have non-terminating non-repeating decimal expansions."),
         ],
       );
-    } else if (_selectedLesson!.id.startsWith("s-1")) {
+    } else if (noteLesson.id.startsWith("s-1")) {
       final isDark = Theme.of(context).brightness == Brightness.dark;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -923,6 +948,330 @@ class _LessonsViewState extends State<LessonsView> {
         ],
       );
     }
+  }
+
+  Widget buildRichTextLine(String text, TextStyle baseStyle) {
+    final parts = text.split('**');
+    if (parts.length == 1) {
+      return Text(text, style: baseStyle);
+    }
+    
+    final List<TextSpan> spans = [];
+    for (int i = 0; i < parts.length; i++) {
+      final isBold = i % 2 == 1;
+      spans.add(
+        TextSpan(
+          text: parts[i],
+          style: baseStyle.copyWith(
+            fontWeight: isBold ? FontWeight.bold : baseStyle.fontWeight,
+          ),
+        ),
+      );
+    }
+    
+    return Text.rich(TextSpan(children: spans), style: baseStyle);
+  }
+
+  String cleanMathText(String text) {
+    return text
+        .replaceAll(r'$$\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$$', 'HCF(a, b) × LCM(a, b) = a × b')
+        .replaceAll(r'$$\text{HCF}(p, q, r) \times \text{LCM}(p, q, r) \neq p \times q \times r$$', 'HCF(p, q, r) × LCM(p, q, r) ≠ p × q × r')
+        .replaceAll(r'$\sqrt{2}$', '√2')
+        .replaceAll(r'$\sqrt{3}$', '√3')
+        .replaceAll(r'$\sqrt{5}$', '√5')
+        .replaceAll(r'$x = p_1^{a_1} \cdot p_2^{a_2} \cdots p_n^{a_n}$', 'x = p₁ᵃ¹ · p₂ᵃ² ··· pₙᵃⁿ')
+        .replaceAll(r'$p_1 < p_2 < \dots < p_n$', 'p₁ < p₂ < ... < pₙ')
+        .replaceAll(r'$32760 = 2^3 \cdot 3^2 \cdot 5 \cdot 7 \cdot 13$', '32760 = 2³ · 3² · 5 · 7 · 13')
+        .replaceAll(r'$\frac{p}{q}$', 'p/q')
+        .replaceAll(r'$s$', 's')
+        .replaceAll(r'$p$', 'p')
+        .replaceAll(r'$a$', 'a')
+        .replaceAll(r'$b$', 'b')
+        .replaceAll(r'$c$', 'c')
+        .replaceAll(r'$n$', 'n')
+        .replaceAll(r'$q \neq 0$', 'q ≠ 0')
+        .replaceAll(r'$b \neq 0$', 'b ≠ 0')
+        .replaceAll(r'$a^2$', 'a²')
+        .replaceAll(r'$b^2$', 'b²')
+        .replaceAll(r'$2c^2$', '2c²')
+        .replaceAll(r'$4c^2$', '4c²')
+        .replaceAll(r'$2b^2 = a^2$', '2b² = a²')
+        .replaceAll(r'$2b^2 = 4c^2 \implies b^2 = 2c^2$', '2b² = 4c² ⟹ b² = 2c²')
+        .replaceAll(r'$5 - \sqrt{3}$', '5 - √3')
+        .replaceAll(r'$3\sqrt{2}$', '3√2');
+  }
+
+  Widget _buildDoYouKnowBoxWithTitle({
+    required String title,
+    required String text,
+    required String type,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    Color boxColor;
+    Color borderColor;
+    Color titleColor;
+    
+    if (type == "warning") {
+      boxColor = isDark ? Colors.red.withOpacity(0.1) : const Color(0xFFFEF2F2);
+      borderColor = Colors.red;
+      titleColor = Colors.red;
+    } else if (type == "caution") {
+      boxColor = isDark ? Colors.amber.withOpacity(0.1) : const Color(0xFFFFFBEB);
+      borderColor = Colors.amber;
+      titleColor = Colors.amber[800]!;
+    } else { // note
+      boxColor = isDark ? AppColors.orangeDark.withOpacity(0.15) : AppColors.orangeLight;
+      borderColor = AppColors.orange;
+      titleColor = AppColors.orange;
+    }
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 16),
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: boxColor,
+        border: Border(
+          top: BorderSide(color: borderColor, width: 4),
+          left: BorderSide(color: borderColor.withOpacity(0.3)),
+          right: BorderSide(color: borderColor.withOpacity(0.3)),
+          bottom: BorderSide(color: borderColor.withOpacity(0.3)),
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: titleColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+              fontFamily: 'Outfit',
+            ),
+          ),
+          const SizedBox(height: 8),
+          buildRichTextLine(
+            text,
+            const TextStyle(fontSize: 12.5, height: 1.4),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _parseMarkdownNotes(String content) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final lines = content.split('\n');
+    final List<Widget> children = [];
+    
+    String currentAlert = "";
+    List<String> currentAlertLines = [];
+    
+    bool inCodeBlock = false;
+    List<String> codeBlockLines = [];
+
+    void flushAlert() {
+      if (currentAlertLines.isNotEmpty) {
+        final alertText = currentAlertLines.join('\n');
+        children.add(_buildDoYouKnowBoxWithTitle(
+          title: currentAlert.toUpperCase(),
+          text: alertText,
+          type: currentAlert,
+        ));
+        currentAlert = "";
+        currentAlertLines.clear();
+      }
+    }
+
+    void flushCodeBlock() {
+      if (codeBlockLines.isNotEmpty) {
+        final codeText = codeBlockLines.join('\n');
+        children.add(
+          Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.black38 : Colors.grey[200],
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: isDark ? Colors.white10 : Colors.grey[300]!),
+            ),
+            child: Text(
+              codeText,
+              style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
+            ),
+          ),
+        );
+        inCodeBlock = false;
+        codeBlockLines.clear();
+      }
+    }
+
+    for (var rawLine in lines) {
+      var line = rawLine.trim();
+
+      if (line.startsWith('```')) {
+        if (inCodeBlock) {
+          flushCodeBlock();
+        } else {
+          flushAlert();
+          inCodeBlock = true;
+        }
+        continue;
+      }
+
+      if (inCodeBlock) {
+        codeBlockLines.add(rawLine);
+        continue;
+      }
+
+      if (line.startsWith('>')) {
+        final alertHeaderMatch = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION)\]').firstMatch(line);
+        if (alertHeaderMatch != null) {
+          flushAlert();
+          currentAlert = alertHeaderMatch.group(1)!.toLowerCase();
+          continue;
+        }
+        
+        if (currentAlert.isNotEmpty) {
+          var alertLine = line.replaceFirst(RegExp(r'^>\s*'), '');
+          currentAlertLines.add(cleanMathText(alertLine));
+          continue;
+        }
+      } else if (currentAlert.isNotEmpty) {
+        flushAlert();
+      }
+
+      if (line.startsWith('# ')) {
+        final text = cleanMathText(line.substring(2));
+        children.add(Padding(
+          padding: const EdgeInsets.only(top: 24, bottom: 8),
+          child: Text(
+            text,
+            style: const TextStyle(
+              fontSize: 22, 
+              fontWeight: FontWeight.bold, 
+              fontFamily: 'Outfit',
+              color: AppColors.blue,
+            ),
+          ),
+        ));
+      } else if (line.startsWith('## ')) {
+        final text = cleanMathText(line.substring(3));
+        children.add(Padding(
+          padding: const EdgeInsets.only(top: 18, bottom: 6),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.bold, 
+                  fontFamily: 'Outfit',
+                  color: AppColors.purple,
+                ),
+              ),
+              Container(
+                height: 2,
+                margin: const EdgeInsets.only(top: 4, bottom: 8),
+                color: isDark ? AppColors.purple.withOpacity(0.4) : AppColors.purple.withOpacity(0.2),
+              ),
+            ],
+          ),
+        ));
+      } else if (line.startsWith('### ')) {
+        final text = cleanMathText(line.substring(4));
+        children.add(Padding(
+          padding: const EdgeInsets.only(top: 14, bottom: 6),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 14, 
+              fontWeight: FontWeight.bold, 
+              fontFamily: 'Outfit',
+              color: isDark ? Colors.white70 : Colors.black87,
+            ),
+          ),
+        ));
+      } else if (line == '---') {
+        children.add(Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: Divider(color: isDark ? AppColors.borderDark : AppColors.borderLight, height: 1),
+        ));
+      } else if (line.startsWith('- ') || line.startsWith('* ')) {
+        final text = cleanMathText(line.substring(2));
+        children.add(Padding(
+          padding: const EdgeInsets.only(left: 12.0, bottom: 6),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 5,
+                height: 5,
+                margin: const EdgeInsets.only(right: 8, top: 7),
+                decoration: const BoxDecoration(
+                  color: AppColors.purple,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Expanded(
+                child: buildRichTextLine(
+                  text, 
+                  TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
+                ),
+              ),
+            ],
+          ),
+        ));
+      } else if (RegExp(r'^\d+\.\s').hasMatch(line)) {
+        final dotIndex = line.indexOf('.');
+        final number = line.substring(0, dotIndex + 1);
+        final text = cleanMathText(line.substring(dotIndex + 2));
+        children.add(Padding(
+          padding: const EdgeInsets.only(left: 8.0, bottom: 6),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "$number ",
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppColors.purple),
+              ),
+              const SizedBox(width: 4),
+              Expanded(
+                child: buildRichTextLine(
+                  text, 
+                  TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
+                ),
+              ),
+            ],
+          ),
+        ));
+      } else if (line.isNotEmpty) {
+        final text = cleanMathText(rawLine);
+        children.add(Padding(
+          padding: const EdgeInsets.only(bottom: 12.0),
+          child: buildRichTextLine(
+            text, 
+            TextStyle(
+              fontSize: 13, 
+              height: 1.4, 
+              color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+            ),
+          ),
+        ));
+      }
+    }
+
+    flushAlert();
+    flushCodeBlock();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    );
   }
 
   Widget _buildActivityBox(String title, String cautionText, List<String> items) {
