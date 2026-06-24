@@ -1609,18 +1609,37 @@ class _LessonsViewState extends State<LessonsView> {
           final infoText = cleanMathText(infoTipMatch.group(2)!.trim());
           children.add(_buildInfoTipBox(infoText));
         } else {
-          final text = cleanMathText(rawLine);
-          children.add(Padding(
-            padding: const EdgeInsets.only(bottom: 12.0),
-            child: _buildMathText(
-              text, 
-              TextStyle(
-                fontSize: 13, 
-                height: 1.4, 
-                color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+          var cleanLine = rawLine;
+          bool hasFigure = false;
+          if (cleanLine.contains('[FIGURE: magnesium_burner]') || cleanLine.contains('[FIGURE]')) {
+            hasFigure = true;
+            cleanLine = cleanLine.replaceAll('[FIGURE: magnesium_burner]', '').replaceAll('[FIGURE]', '');
+          }
+          if (cleanLine.contains('Magnesium burns with a bright white flame')) {
+            hasFigure = true;
+          }
+
+          final text = cleanMathText(cleanLine);
+          if (text.trim().isNotEmpty) {
+            children.add(Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: _buildMathText(
+                text, 
+                TextStyle(
+                  fontSize: 13, 
+                  height: 1.4, 
+                  color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                ),
               ),
-            ),
-          ));
+            ));
+          }
+
+          if (hasFigure) {
+            children.add(Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: _buildFigureBox(isDark),
+            ));
+          }
         }
       }
 
