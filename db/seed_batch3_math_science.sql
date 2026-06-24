@@ -1198,6 +1198,8 @@ You touch a hot pan. Before you even think "Ouch, this is hot!", your hand has a
 ## 3. 📖 Concept 1: The Nervous System & Reflex Arc
 The nervous system uses electrical impulses. A neuron is the structural unit. Electrical signals travel from dendrites, through cell body and axon, to nerve endings. At the nerve ending, the signal crosses a **[JARGON: Synapse | The microscopic gap between two neurons where electrical signals are converted into chemical signals to cross | The junction where neurotransmitters carry a message from axon to dendrite.]** using chemicals called neurotransmitters.
 
+[FIGURE: neuron]
+
 For emergency responses, a **[JARGON: Reflex Arc | The neural pathway that controls a reflex action, allowing rapid response by involving the spinal cord directly | Pulling your hand back instantly from a hot plate before feeling the pain.]** is used. The signal bypasses the conscious brain. It goes from receptors to a **[JARGON: Sensory Neuron | A nerve cell that carries information from sensory receptors to the central nervous system | The neuron that carries the heat signal from skin receptors to the spinal cord.]**, to the spinal cord, and then directly to motor neurons to move the muscle.
 
 ## 4. 📖 Concept 2: The Human Brain
@@ -1631,6 +1633,8 @@ A prism bends light. The angle between the incident ray and the emergent ray is 
 
 When white light passes through a prism, it splits into seven colors (VIBGYOR). This is called **[JARGON: Dispersion | The splitting of white light into its component colors when passing through a prism | A prism splitting sunlight into a seven-color band]** (splitting of light). Isaac Newton recombined these colors into white light using a second inverted prism. Rainbows are formed by refraction, dispersion, and internal reflection in water droplets.
 
+[FIGURE: prism_dispersion]
+
 ### Light Scattering:
 The **[JARGON: Tyndall Effect | The scattering of light by small suspended particles in its path, making the beam visible | A beam of sunlight visible in a smoky room]** (path-revealing light scattering) makes a light beam visible.
 - **Blue Sky**: Fine air molecules scatter short wavelengths (blue light) more than long ones (red light).
@@ -1708,6 +1712,8 @@ A **[JARGON: Magnetic Field | The region around a magnet or current-carrying wir
 - Inside the magnet, they travel from South to North, forming closed loops.
 - They are crowded where the field is strong (near the poles).
 - They never intersect. If they did, a compass needle would point in two directions, which is impossible.
+
+[FIGURE: bar_magnet_field]
 
 ## 4. 📖 Concept 2: Magnetic Field due to Current-Carrying Conductors
 Electric current in a wire produces a magnetic field.
@@ -1819,6 +1825,8 @@ Each step in the chain is a **[JARGON: Trophic Level | A step or feeding level i
 - **Unidirectional**: Energy flows in one direction (Sun $\rightarrow$ Producers $\rightarrow$ Consumers). It cannot flow backwards.
 - **1% Rule**: Plants capture only 1% of solar energy falling on their leaves and turn it into food.
 - **[JARGON: Ten Percent Law | The rule that only 10% of energy is transferred to the next trophic level, while 90% is lost as heat or used for life processes | A deer gets 100 Joules of energy from eating grass containing 1000 Joules]** (the energy transfer limit): Only 10% of food energy reaches the next consumer level. The other 90% is lost as heat or used for digestion, growth, and movement. Because of this high energy loss, food chains rarely exceed 4 steps.
+
+[FIGURE: trophic_levels]
 
 ### Biological Magnification:
 Pesticides and heavy metals are non-biodegradable. When they enter a food chain, they accumulate. This is **[JARGON: Biological Magnification | The progressive accumulation of non-biodegradable chemicals at higher trophic levels in a food chain | Pesticides reaching their highest concentration in top predators like eagles or humans]** (toxic chemical buildup). The concentration of these chemicals is highest in top consumers (like humans).

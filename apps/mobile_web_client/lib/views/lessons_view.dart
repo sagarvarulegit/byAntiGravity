@@ -2224,6 +2224,26 @@ class _LessonsViewState extends State<LessonsView> {
       figNum = "Figure 5.1 ";
       figCaption = "Schematic representation of double circulation in human beings, showing separation of oxygenated (red) and deoxygenated (blue) blood routes.";
       figHeight = 280;
+    } else if (figType == 'neuron') {
+      painterWidget = NeuronPainter(isDark: isDark);
+      figNum = "Figure 6.1 ";
+      figCaption = "Structure of a typical motor neuron showing dendrites, cell body with nucleus, axon, myelin sheath, and nerve endings.";
+      figHeight = 220;
+    } else if (figType == 'prism_dispersion') {
+      painterWidget = PrismDispersionPainter(isDark: isDark);
+      figNum = "Figure 10.1 ";
+      figCaption = "Dispersion of white light through a triangular glass prism, splitting it into a spectrum of seven colors (VIBGYOR).";
+      figHeight = 200;
+    } else if (figType == 'bar_magnet_field') {
+      painterWidget = BarMagnetFieldPainter(isDark: isDark);
+      figNum = "Figure 12.1 ";
+      figCaption = "Magnetic field lines around a bar magnet, demonstrating closed loops emerging from the North Pole (N) and entering the South Pole (S).";
+      figHeight = 200;
+    } else if (figType == 'trophic_levels') {
+      painterWidget = TrophicLevelsPainter(isDark: isDark);
+      figNum = "Figure 13.1 ";
+      figCaption = "Trophic level pyramid representing the unidirectional flow of energy and the 10% law of energy transfer in an ecosystem.";
+      figHeight = 220;
     } else {
       painterWidget = MagnesiumBurnerPainter(isDark: isDark);
       figNum = "Figure 1.1 ";
@@ -2792,6 +2812,455 @@ class DoubleCirculationPainter extends CustomPainter {
     textPainter.layout();
     final double dx = isLeftAlign ? position.dx : position.dx - textPainter.width;
     textPainter.paint(canvas, Offset(dx, position.dy - textPainter.height / 2));
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class NeuronPainter extends CustomPainter {
+  final bool isDark;
+  NeuronPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color borderColor = isDark ? Colors.white30 : Colors.black26;
+    final Color labelColor = isDark ? Colors.white60 : Colors.black87;
+    final Color accentColor = const Color(0xFF0284C7);
+    final Color myelinColor = const Color(0xFFEAB308);
+
+    final borderPaint = Paint()
+      ..color = borderColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.0;
+
+    // Cell Body
+    final Path soma = Path();
+    final Offset center = const Offset(60, 110);
+    const double rOuter = 24.0;
+    const double rInner = 12.0;
+    const int points = 7;
+    for (int i = 0; i < points * 2; i++) {
+      final double angle = i * math.pi / points - math.pi / 2;
+      final double r = i.isEven ? rOuter : rInner;
+      final double px = center.dx + r * math.cos(angle);
+      final double py = center.dy + r * math.sin(angle);
+      if (i == 0) {
+        soma.moveTo(px, py);
+      } else {
+        soma.lineTo(px, py);
+      }
+    }
+    soma.close();
+    
+    canvas.drawPath(soma, Paint()..color = accentColor.withOpacity(0.12));
+    canvas.drawPath(soma, Paint()..color = accentColor..style = PaintingStyle.stroke..strokeWidth = 1.8);
+
+    canvas.drawCircle(center, 6.0, Paint()..color = accentColor);
+
+    // Axon
+    final Paint axonPaint = Paint()
+      ..color = isDark ? Colors.white30 : Colors.black38
+      ..strokeWidth = 3.0;
+    canvas.drawLine(const Offset(84, 110), const Offset(230, 110), axonPaint);
+
+    // Myelin Sheaths
+    final Paint myelinPaint = Paint()..color = myelinColor.withOpacity(0.15);
+    final Paint myelinStroke = Paint()
+      ..color = myelinColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.2;
+
+    final List<double> sheathStarts = [95, 140, 185];
+    for (final double start in sheathStarts) {
+      final RRect rect = RRect.fromRectAndRadius(
+        Rect.fromLTWH(start, 102, 35, 16),
+        const Radius.circular(4),
+      );
+      canvas.drawRRect(rect, myelinPaint);
+      canvas.drawRRect(rect, myelinStroke);
+    }
+
+    // Nerve Endings
+    final Paint terminalPaint = Paint()
+      ..color = isDark ? Colors.white30 : Colors.black38
+      ..strokeWidth = 1.5
+      ..strokeCap = StrokeCap.round;
+    
+    final Path terminals = Path()
+      ..moveTo(230, 110)
+      ..lineTo(245, 110)
+      ..moveTo(245, 110)
+      ..lineTo(255, 95)
+      ..moveTo(255, 95)
+      ..lineTo(260, 92)
+      ..moveTo(245, 110)
+      ..lineTo(255, 125)
+      ..moveTo(255, 125)
+      ..lineTo(262, 128);
+    canvas.drawPath(terminals, terminalPaint);
+
+    canvas.drawCircle(const Offset(260, 92), 2.5, Paint()..color = isDark ? Colors.white60 : Colors.black54);
+    canvas.drawCircle(const Offset(262, 128), 2.5, Paint()..color = isDark ? Colors.white60 : Colors.black54);
+
+    // Labels
+    _drawPointer(canvas, const Offset(30, 65), const Offset(45, 92), borderPaint);
+    _drawText(canvas, "Dendrite", const Offset(12, 57), labelColor);
+
+    _drawPointer(canvas, const Offset(35, 150), const Offset(58, 115), borderPaint);
+    _drawText(canvas, "Nucleus", const Offset(16, 152), labelColor);
+
+    _drawPointer(canvas, const Offset(70, 55), const Offset(65, 86), borderPaint);
+    _drawText(canvas, "Cell Body (Soma)", const Offset(68, 45), labelColor);
+
+    _drawPointer(canvas, const Offset(130, 155), const Offset(130, 112), borderPaint);
+    _drawText(canvas, "Axon", const Offset(120, 158), labelColor);
+
+    _drawPointer(canvas, const Offset(180, 75), const Offset(160, 102), borderPaint);
+    _drawText(canvas, "Myelin Sheath", const Offset(175, 65), labelColor);
+
+    _drawPointer(canvas, const Offset(230, 155), const Offset(250, 118), borderPaint);
+    _drawText(canvas, "Nerve Ending", const Offset(220, 158), labelColor);
+  }
+
+  void _drawPointer(Canvas canvas, Offset p1, Offset p2, Paint paint) {
+    final double dx = p2.dx - p1.dx;
+    final double dy = p2.dy - p1.dy;
+    final double dist = math.sqrt(dx * dx + dy * dy);
+    const double dashLen = 2.0;
+    const double spaceLen = 2.0;
+    final double steps = dist / (dashLen + spaceLen);
+    
+    for (int i = 0; i < steps; i++) {
+      final double t1 = i / steps;
+      final double t2 = (i + dashLen / (dashLen + spaceLen)) / steps;
+      canvas.drawLine(
+        Offset(p1.dx + dx * t1, p1.dy + dy * t1),
+        Offset(p1.dx + dx * t2, p1.dy + dy * t2),
+        paint,
+      );
+    }
+    canvas.drawCircle(p1, 1.2, Paint()..color = paint.color);
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, position);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class PrismDispersionPainter extends CustomPainter {
+  final bool isDark;
+  PrismDispersionPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color labelColor = isDark ? Colors.white60 : Colors.black87;
+
+    // Glass Prism
+    final Path prism = Path()
+      ..moveTo(size.width * 0.5, size.height * 0.2)
+      ..lineTo(size.width * 0.35, size.height * 0.75)
+      ..lineTo(size.width * 0.65, size.height * 0.75)
+      ..close();
+
+    final Color prismBg = isDark ? Colors.blue.withOpacity(0.08) : Colors.blue.withOpacity(0.03);
+    canvas.drawPath(prism, Paint()..color = prismBg);
+    canvas.drawPath(prism, Paint()..color = isDark ? Colors.white30 : Colors.black26..style = PaintingStyle.stroke..strokeWidth = 2.0);
+    
+    _drawText(canvas, "Glass Prism", Offset(size.width * 0.5, size.height * 0.62), labelColor, fontSize: 8.5, isBold: true);
+
+    // Incident White Light Ray
+    final Offset incidentStart = Offset(size.width * 0.1, size.height * 0.55);
+    final Offset incidentEnd = Offset(size.width * 0.41, size.height * 0.53);
+
+    final Paint whiteRayPaint = Paint()
+      ..color = isDark ? Colors.white : Colors.black54
+      ..strokeWidth = 2.0;
+    canvas.drawLine(incidentStart, incidentEnd, whiteRayPaint);
+    _drawText(canvas, "White Light", Offset(size.width * 0.18, size.height * 0.50), labelColor, fontSize: 8.5);
+
+    // Spectrum Colors
+    final List<Color> spectrumColors = [
+      const Color(0xFFEF4444), // Red
+      const Color(0xFFF97316), // Orange
+      const Color(0xFFFBBF24), // Yellow
+      const Color(0xFF10B981), // Green
+      const Color(0xFF3B82F6), // Blue
+      const Color(0xFF6366F1), // Indigo
+      const Color(0xFF8B5CF6), // Violet
+    ];
+    final List<String> vibgyorLabels = ["R", "O", "Y", "G", "B", "I", "V"];
+
+    for (int i = 0; i < 7; i++) {
+      final double interiorEnd = size.height * (0.53 + 0.02 * i);
+      final Offset innerStart = incidentEnd;
+      final Offset innerEnd = Offset(size.width * 0.58, interiorEnd);
+      
+      final Paint innerRay = Paint()
+        ..color = spectrumColors[i].withOpacity(0.7)
+        ..strokeWidth = 1.0;
+      canvas.drawLine(innerStart, innerEnd, innerRay);
+
+      final Offset outerEnd = Offset(size.width * 0.85, size.height * (0.42 + 0.05 * i));
+      final Paint outerRay = Paint()
+        ..color = spectrumColors[i]
+        ..strokeWidth = 1.8;
+      canvas.drawLine(innerEnd, outerEnd, outerRay);
+
+      _drawText(canvas, vibgyorLabels[i], Offset(outerEnd.dx + 8, outerEnd.dy), spectrumColors[i], fontSize: 8, isBold: true);
+    }
+
+    _drawText(canvas, "Spectrum", Offset(size.width * 0.85, size.height * 0.35), labelColor, fontSize: 8.5, isBold: true);
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(position.dx - textPainter.width / 2, position.dy - textPainter.height / 2));
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class BarMagnetFieldPainter extends CustomPainter {
+  final bool isDark;
+  BarMagnetFieldPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color borderColor = isDark ? Colors.white30 : Colors.black26;
+    final Color labelColor = isDark ? Colors.white60 : Colors.black87;
+    final Color blueColor = const Color(0xFF0284C7);
+    final Color redColor = const Color(0xFFE11D48);
+
+    final borderPaint = Paint()
+      ..color = borderColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.0;
+
+    // Bar Magnet
+    final RRect magnetRect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(size.width * 0.35, size.height * 0.42, size.width * 0.3, size.height * 0.16),
+      const Radius.circular(4),
+    );
+    canvas.drawRRect(magnetRect, Paint()..color = isDark ? Colors.white10 : Colors.black.withOpacity(0.04));
+
+    final double midX = size.width * 0.5;
+    final Paint leftHalfPaint = Paint()..color = redColor.withOpacity(0.12);
+    final Paint rightHalfPaint = Paint()..color = blueColor.withOpacity(0.12);
+
+    canvas.drawRect(Rect.fromLTRB(size.width * 0.35, size.height * 0.42, midX, size.height * 0.58), leftHalfPaint);
+    canvas.drawRect(Rect.fromLTRB(midX, size.height * 0.42, size.width * 0.65, size.height * 0.58), rightHalfPaint);
+
+    canvas.drawRRect(magnetRect, Paint()..color = borderColor..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    canvas.drawLine(Offset(midX, size.height * 0.42), Offset(midX, size.height * 0.58), borderPaint);
+
+    _drawText(canvas, "N", Offset(size.width * 0.425, size.height * 0.5), redColor, fontSize: 13, isBold: true);
+    _drawText(canvas, "S", Offset(size.width * 0.575, size.height * 0.5), blueColor, fontSize: 13, isBold: true);
+
+    // Magnetic Field Lines
+    final Paint linePaint = Paint()
+      ..color = isDark ? Colors.white24 : Colors.black26
+      ..strokeWidth = 1.2
+      ..style = PaintingStyle.stroke;
+
+    final double northPoleX = size.width * 0.4;
+    final double southPoleX = size.width * 0.6;
+    final double magnetY = size.height * 0.5;
+
+    for (int i = 1; i <= 3; i++) {
+      final double loopH = 35.0 * i;
+      final Path loop = Path()
+        ..moveTo(northPoleX, magnetY - 8)
+        ..cubicTo(
+          northPoleX - 25 * i, magnetY - 8 - loopH,
+          southPoleX + 25 * i, magnetY - 8 - loopH,
+          southPoleX, magnetY - 8,
+        );
+      canvas.drawPath(loop, linePaint);
+      _drawArrowhead(canvas, Offset(midX, magnetY - 8 - loopH * 0.67), 1.57, isDark ? Colors.white60 : Colors.black38);
+    }
+
+    for (int i = 1; i <= 3; i++) {
+      final double loopH = 35.0 * i;
+      final Path loop = Path()
+        ..moveTo(northPoleX, magnetY + 8)
+        ..cubicTo(
+          northPoleX - 25 * i, magnetY + 8 + loopH,
+          southPoleX + 25 * i, magnetY + 8 + loopH,
+          southPoleX, magnetY + 8,
+        );
+      canvas.drawPath(loop, linePaint);
+      _drawArrowhead(canvas, Offset(midX, magnetY + 8 + loopH * 0.67), -1.57, isDark ? Colors.white60 : Colors.black38);
+    }
+
+    final Path outLeft = Path()
+      ..moveTo(size.width * 0.35, magnetY)
+      ..quadraticBezierTo(size.width * 0.2, magnetY - 40, size.width * 0.15, magnetY - 50)
+      ..moveTo(size.width * 0.35, magnetY)
+      ..quadraticBezierTo(size.width * 0.2, magnetY + 40, size.width * 0.15, magnetY + 50);
+    canvas.drawPath(outLeft, linePaint);
+    
+    final Path outRight = Path()
+      ..moveTo(size.width * 0.65, magnetY)
+      ..quadraticBezierTo(size.width * 0.8, magnetY - 40, size.width * 0.85, magnetY - 50)
+      ..moveTo(size.width * 0.65, magnetY)
+      ..quadraticBezierTo(size.width * 0.8, magnetY + 40, size.width * 0.85, magnetY + 50);
+    canvas.drawPath(outRight, linePaint);
+
+    _drawText(canvas, "Magnetic Field Lines (N ➔ S)", Offset(size.width * 0.5, size.height * 0.08), labelColor, fontSize: 8.5, isBold: true);
+  }
+
+  void _drawArrowhead(Canvas canvas, Offset point, double angle, Color color) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    canvas.save();
+    canvas.translate(point.dx, point.dy);
+    canvas.rotate(angle);
+
+    final path = Path()
+      ..moveTo(0, -3.5)
+      ..lineTo(-2.5, 2.5)
+      ..lineTo(2.5, 2.5)
+      ..close();
+
+    canvas.drawPath(path, paint);
+    canvas.restore();
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(position.dx - textPainter.width / 2, position.dy - textPainter.height / 2));
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class TrophicLevelsPainter extends CustomPainter {
+  final bool isDark;
+  TrophicLevelsPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color labelColor = isDark ? Colors.white60 : Colors.black87;
+
+    final List<Color> levelColors = [
+      const Color(0xFFEF4444),
+      const Color(0xFFF97316),
+      const Color(0xFFFBBF24),
+      const Color(0xFF10B981),
+    ];
+
+    final List<String> levelLabels = [
+      "Tertiary Consumers (Eagle) - 10 J",
+      "Secondary Consumers (Snake) - 100 J",
+      "Primary Consumers (Grasshopper) - 1,000 J",
+      "Producers (Green Plants) - 10,000 J",
+    ];
+
+    final double midX = size.width * 0.45;
+    
+    for (int i = 0; i < 4; i++) {
+      final double yTop = size.height * (0.15 + 0.17 * i);
+      final double yBot = size.height * (0.15 + 0.17 * (i + 1));
+      
+      final double wTop = 30.0 + 30.0 * i;
+      final double wBot = 30.0 + 30.0 * (i + 1);
+
+      final Path path = Path()
+        ..moveTo(midX - wTop, yTop)
+        ..lineTo(midX + wTop, yTop)
+        ..lineTo(midX + wBot, yBot)
+        ..lineTo(midX - wBot, yBot)
+        ..close();
+
+      canvas.drawPath(path, Paint()..color = levelColors[i].withOpacity(0.12));
+      canvas.drawPath(path, Paint()..color = levelColors[i]..style = PaintingStyle.stroke..strokeWidth = 1.2);
+
+      _drawText(canvas, levelLabels[i], Offset(midX, (yTop + yBot) / 2), labelColor, fontSize: 8, isBold: true);
+    }
+
+    final double arrowX = size.width * 0.85;
+    final Paint arrowPaint = Paint()
+      ..color = const Color(0xFFEF4444)
+      ..strokeWidth = 2.0
+      ..style = PaintingStyle.stroke;
+    
+    canvas.drawLine(Offset(arrowX, size.height * 0.8), Offset(arrowX, size.height * 0.2), arrowPaint);
+    
+    final Path arrowHead = Path()
+      ..moveTo(arrowX, size.height * 0.18)
+      ..lineTo(arrowX - 4, size.height * 0.22)
+      ..lineTo(arrowX + 4, size.height * 0.22)
+      ..close();
+    canvas.drawPath(arrowHead, Paint()..color = const Color(0xFFEF4444));
+
+    canvas.save();
+    canvas.translate(arrowX + 10, size.height * 0.5);
+    canvas.rotate(math.pi / 2);
+    _drawText(canvas, "Energy Flow", const Offset(0, 0), isDark ? Colors.white60 : Colors.black54, fontSize: 8);
+    canvas.restore();
+
+    _drawText(canvas, "10% Energy Transfer Law", Offset(size.width * 0.45, size.height * 0.08), labelColor, fontSize: 9, isBold: true);
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(position.dx - textPainter.width / 2, position.dy - textPainter.height / 2));
   }
 
   @override
