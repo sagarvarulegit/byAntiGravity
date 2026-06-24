@@ -1270,6 +1270,126 @@ class _LessonsViewState extends State<LessonsView> {
     );
   }
 
+  Widget _buildChapterOpenerHeader(String fullTitle, bool isDark) {
+    final regex = RegExp(r'^(Chapter\s+\d+):\s*(.+)$', caseSensitive: false);
+    final match = regex.firstMatch(fullTitle);
+    
+    String chapterLabel = "Chapter";
+    String titleText = fullTitle;
+    
+    if (match != null) {
+      chapterLabel = match.group(1)!;
+      titleText = match.group(2)!;
+    }
+
+    final accentColor = AppColors.blue; // NCERT Sky Blue
+    
+    return Container(
+      margin: const EdgeInsets.only(top: 12, bottom: 28),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.cardDark : Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: isDark ? AppColors.borderDark : AppColors.borderLight,
+          width: 1.5,
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Left: Flask icon & Chapter Number block
+          Column(
+            children: [
+              // Flask icon
+              Container(
+                width: 48,
+                height: 48,
+                child: CustomPaint(
+                  painter: FlaskPainter(color: accentColor),
+                ),
+              ),
+              const SizedBox(height: 10),
+              // Chapter Number badge
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.purple, // NCERT Magenta
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  chapterLabel.toUpperCase(),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10,
+                    fontFamily: 'Outfit',
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(width: 16),
+          // Middle: Title
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 8),
+                Text(
+                  titleText,
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Outfit',
+                    color: accentColor,
+                    height: 1.25,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Container(
+                  width: 40,
+                  height: 3,
+                  color: AppColors.purple,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 16),
+          // Right: QR Code mimicking textbook
+          Column(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade400, width: 1),
+                  color: Colors.white,
+                ),
+                padding: const EdgeInsets.all(2),
+                child: CustomPaint(
+                  painter: QRCodePainter(),
+                ),
+              ),
+              const SizedBox(height: 4),
+              const Text(
+                "NCERT",
+                style: TextStyle(
+                  fontSize: 7.5,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Outfit',
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   String cleanMathText(String text) {
     final cleaned = text
         .replaceAll(r'$$\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$$', 'HCF(a, b) × LCM(a, b) = a × b')
@@ -1413,6 +1533,21 @@ class _LessonsViewState extends State<LessonsView> {
       }
     }
 
+    bool inActivity = false;
+    String activityTitle = "";
+    String activityCaution = "";
+    List<String> activitySteps = [];
+
+    void flushActivity() {
+      if (inActivity) {
+        children.add(_buildActivityBox(activityTitle, activityCaution, activitySteps));
+        inActivity = false;
+        activityTitle = "";
+        activityCaution = "";
+        activitySteps.clear();
+      }
+    }
+
     final jargonRegex = RegExp(r'[\{\[]?\s*\[JARGON:\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\]\s*[\}\]]?');
 
     for (var rawLine in lines) {
@@ -1430,6 +1565,42 @@ class _LessonsViewState extends State<LessonsView> {
         line = rawLine.trim();
       }
 
+      if (line.startsWith('### Activity')) {
+        if (inRevision && revisionLines != null) {
+          children.add(_buildRevisionWidget(revisionLines, isDark));
+          revisionLines = null;
+          inRevision = false;
+        }
+        if (inComic && comicLines != null) {
+          children.add(_buildComicRecapWidget(comicLines, isDark));
+          comicLines = null;
+          inComic = false;
+        }
+        flushActivity();
+        inActivity = true;
+        activityTitle = line.substring(4).trim();
+        continue;
+      }
+
+      if (inActivity) {
+        if (line.startsWith('*Caution:') || line.startsWith('Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
+          var caution = line.replaceAll('*', '').trim();
+          if (caution.toLowerCase().startsWith('caution:')) {
+            caution = caution.substring(8).trim();
+          }
+          activityCaution = caution;
+          continue;
+        } else if (RegExp(r'^\d+\.\s').hasMatch(line)) {
+          final dotIndex = line.indexOf('.');
+          activitySteps.add(cleanMathText(line.substring(dotIndex + 1).trim()));
+          continue;
+        } else if (line.isEmpty) {
+          continue;
+        } else {
+          flushActivity();
+        }
+      }
+
       if (!inCodeBlock) {
         if (line.startsWith('## ') || line.startsWith('# ')) {
           if (inRevision && revisionLines != null) {
@@ -1442,6 +1613,7 @@ class _LessonsViewState extends State<LessonsView> {
             comicLines = null;
             inComic = false;
           }
+          flushActivity();
 
           if (line.contains('One-Minute Revision')) {
             inRevision = true;
@@ -1499,18 +1671,7 @@ class _LessonsViewState extends State<LessonsView> {
 
       if (line.startsWith('# ')) {
         final text = cleanMathText(line.substring(2));
-        children.add(Padding(
-          padding: const EdgeInsets.only(top: 24, bottom: 8),
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontSize: 22, 
-              fontWeight: FontWeight.bold, 
-              fontFamily: 'Outfit',
-              color: AppColors.blue,
-            ),
-          ),
-        ));
+        children.add(_buildChapterOpenerHeader(text, isDark));
       } else if (line.startsWith('## ')) {
         final text = cleanMathText(line.substring(3));
         children.add(Padding(
@@ -1654,6 +1815,7 @@ class _LessonsViewState extends State<LessonsView> {
     if (inComic && comicLines != null) {
       children.add(_buildComicRecapWidget(comicLines, isDark));
     }
+    flushActivity();
 
     flushAlert();
     flushCodeBlock();
@@ -1972,26 +2134,7 @@ class _LessonsViewState extends State<LessonsView> {
             ),
             const SizedBox(height: 12),
           ],
-          ...items.map((item) => Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 6,
-                      height: 6,
-                      margin: const EdgeInsets.only(right: 10, top: 6),
-                      color: AppColors.purple,
-                    ),
-                    Expanded(
-                      child: Text(
-                        item,
-                        style: const TextStyle(fontSize: 12.5),
-                      ),
-                    ),
-                  ],
-                ),
-              )),
+          ...items.map((item) => _buildBulletItem(item)).toList(),
         ],
       ),
     );
