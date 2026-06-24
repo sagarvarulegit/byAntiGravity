@@ -1772,12 +1772,19 @@ class _LessonsViewState extends State<LessonsView> {
         } else {
           var cleanLine = rawLine;
           bool hasFigure = false;
-          if (cleanLine.contains('[FIGURE: magnesium_burner]') || cleanLine.contains('[FIGURE]')) {
+          String? figType;
+
+          final figRegex = RegExp(r'\[FIGURE(?::\s*([a-zA-Z0-9_-]+))?\]');
+          final figMatch = figRegex.firstMatch(cleanLine);
+          if (figMatch != null) {
             hasFigure = true;
-            cleanLine = cleanLine.replaceAll('[FIGURE: magnesium_burner]', '').replaceAll('[FIGURE]', '');
+            figType = figMatch.group(1) ?? 'magnesium_burner';
+            cleanLine = cleanLine.replaceAll(figRegex, '');
           }
+
           if (cleanLine.contains('Magnesium burns with a bright white flame')) {
             hasFigure = true;
+            figType ??= 'magnesium_burner';
           }
 
           final text = cleanMathText(cleanLine);
@@ -1795,10 +1802,10 @@ class _LessonsViewState extends State<LessonsView> {
             ));
           }
 
-          if (hasFigure) {
+          if (hasFigure && figType != null) {
             children.add(Padding(
               padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: _buildFigureBox(isDark),
+              child: _buildFigureBox(figType, isDark),
             ));
           }
         }
@@ -2206,7 +2213,24 @@ class _LessonsViewState extends State<LessonsView> {
     return "$m:${s < 10 ? '0' : ''}$s";
   }
 
-  Widget _buildFigureBox(bool isDark) {
+  Widget _buildFigureBox(String figType, bool isDark) {
+    CustomPainter painterWidget;
+    String figNum;
+    String figCaption;
+    double figHeight = 180;
+
+    if (figType == 'double_circulation') {
+      painterWidget = DoubleCirculationPainter(isDark: isDark);
+      figNum = "Figure 5.1 ";
+      figCaption = "Schematic representation of double circulation in human beings, showing separation of oxygenated (red) and deoxygenated (blue) blood routes.";
+      figHeight = 280;
+    } else {
+      painterWidget = MagnesiumBurnerPainter(isDark: isDark);
+      figNum = "Figure 1.1 ";
+      figCaption = "Burning of a magnesium ribbon in air and collection of magnesium oxide in a watch-glass";
+      figHeight = 180;
+    }
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -2220,21 +2244,21 @@ class _LessonsViewState extends State<LessonsView> {
         children: [
           Container(
             width: double.infinity,
-            height: 180,
+            height: figHeight,
             child: CustomPaint(
-              painter: MagnesiumBurnerPainter(isDark: isDark),
+              painter: painterWidget,
             ),
           ),
           const SizedBox(height: 8),
           Text.rich(
             TextSpan(
               children: [
-                const TextSpan(
-                  text: "Figure 1.1 ",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11, fontFamily: 'Georgia'),
+                TextSpan(
+                  text: figNum,
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, fontFamily: 'Georgia'),
                 ),
                 TextSpan(
-                  text: "Burning of a magnesium ribbon in air and collection of magnesium oxide in a watch-glass",
+                  text: figCaption,
                   style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: 10.5,
@@ -2536,6 +2560,238 @@ class MagnesiumBurnerPainter extends CustomPainter {
     );
     textPainter.layout();
     textPainter.paint(canvas, position);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class DoubleCirculationPainter extends CustomPainter {
+  final bool isDark;
+  DoubleCirculationPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color borderColor = isDark ? Colors.white30 : Colors.black26;
+    final Color labelColor = isDark ? Colors.white70 : Colors.black87;
+    final Color blueColor = const Color(0xFF0284C7);
+    final Color redColor = const Color(0xFFE11D48);
+
+    final Color lungsBg = isDark ? Colors.teal.withOpacity(0.15) : const Color(0xFFF0FDFA);
+    final Color lungsBorder = isDark ? Colors.teal.withOpacity(0.5) : const Color(0xFF99F6E4);
+
+    final Color bodyBg = isDark ? Colors.orange.withOpacity(0.15) : const Color(0xFFFFF7ED);
+    final Color bodyBorder = isDark ? Colors.orange.withOpacity(0.5) : const Color(0xFFFED7AA);
+
+    final Color heartBg = isDark ? Colors.white.withOpacity(0.05) : const Color(0xFFF8FAFC);
+
+    _drawLegend(canvas, const Offset(10, 10), "Deoxygenated (CO₂ Rich)", blueColor);
+    _drawLegend(canvas, Offset(size.width - 150, 10), "Oxygenated (O₂ Rich)", redColor);
+
+    // Lungs Box
+    final RRect lungsRect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(size.width * 0.275, size.height * 0.06, size.width * 0.45, size.height * 0.12),
+      const Radius.circular(8),
+    );
+    canvas.drawRRect(lungsRect, Paint()..color = lungsBg);
+    canvas.drawRRect(lungsRect, Paint()..color = lungsBorder..style = PaintingStyle.stroke..strokeWidth = 1.2);
+    _drawText(canvas, "LUNGS", Offset(size.width * 0.5, size.height * 0.095), labelColor, fontSize: 10, isBold: true);
+    _drawText(canvas, "Gaseous Exchange (Capillaries)", Offset(size.width * 0.5, size.height * 0.135), labelColor.withOpacity(0.8), fontSize: 8);
+
+    // Body Organs Box
+    final RRect bodyRect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(size.width * 0.275, size.height * 0.82, size.width * 0.45, size.height * 0.12),
+      const Radius.circular(8),
+    );
+    canvas.drawRRect(bodyRect, Paint()..color = bodyBg);
+    canvas.drawRRect(bodyRect, Paint()..color = bodyBorder..style = PaintingStyle.stroke..strokeWidth = 1.2);
+    _drawText(canvas, "BODY ORGANS", Offset(size.width * 0.5, size.height * 0.855), labelColor, fontSize: 10, isBold: true);
+    _drawText(canvas, "Systemic Circulation", Offset(size.width * 0.5, size.height * 0.895), labelColor.withOpacity(0.8), fontSize: 8);
+
+    // Heart Box
+    final RRect heartRect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(size.width * 0.25, size.height * 0.35, size.width * 0.5, size.height * 0.32),
+      const Radius.circular(12),
+    );
+    canvas.drawRRect(heartRect, Paint()..color = heartBg);
+    canvas.drawRRect(heartRect, Paint()..color = borderColor..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    
+    _drawText(canvas, "HEART", Offset(size.width * 0.5, size.height * 0.38), labelColor, fontSize: 8.5, isBold: true);
+
+    // Septum
+    final Paint septumPaint = Paint()
+      ..color = borderColor
+      ..strokeWidth = 4.0;
+    canvas.drawLine(
+      Offset(size.width * 0.5, size.height * 0.35),
+      Offset(size.width * 0.5, size.height * 0.67),
+      septumPaint,
+    );
+
+    // Valves
+    final Paint valvePaint = Paint()
+      ..color = borderColor
+      ..strokeWidth = 1.0;
+    canvas.drawLine(
+      Offset(size.width * 0.25, size.height * 0.5),
+      Offset(size.width * 0.43, size.height * 0.5),
+      valvePaint,
+    );
+    canvas.drawLine(
+      Offset(size.width * 0.57, size.height * 0.5),
+      Offset(size.width * 0.75, size.height * 0.5),
+      valvePaint,
+    );
+
+    // RA
+    _drawText(canvas, "RA", Offset(size.width * 0.375, size.height * 0.44), blueColor, fontSize: 11, isBold: true);
+    _drawText(canvas, "Right Atrium", Offset(size.width * 0.375, size.height * 0.475), labelColor, fontSize: 7.5);
+
+    // RV
+    _drawText(canvas, "RV", Offset(size.width * 0.375, size.height * 0.57), blueColor, fontSize: 11, isBold: true);
+    _drawText(canvas, "Right Ventricle", Offset(size.width * 0.375, size.height * 0.605), labelColor, fontSize: 7.5);
+
+    // LA
+    _drawText(canvas, "LA", Offset(size.width * 0.625, size.height * 0.44), redColor, fontSize: 11, isBold: true);
+    _drawText(canvas, "Left Atrium", Offset(size.width * 0.625, size.height * 0.475), labelColor, fontSize: 7.5);
+
+    // LV
+    _drawText(canvas, "LV", Offset(size.width * 0.625, size.height * 0.57), redColor, fontSize: 11, isBold: true);
+    _drawText(canvas, "Left Ventricle", Offset(size.width * 0.625, size.height * 0.605), labelColor, fontSize: 7.5);
+
+    // Vessels / Curves
+    final Paint bluePathPaint = Paint()
+      ..color = blueColor
+      ..strokeWidth = 2.5
+      ..style = PaintingStyle.stroke;
+
+    final Paint redPathPaint = Paint()
+      ..color = redColor
+      ..strokeWidth = 2.5
+      ..style = PaintingStyle.stroke;
+
+    // Vena Cava
+    final Path venaCava = Path()
+      ..moveTo(size.width * 0.35, size.height * 0.82)
+      ..cubicTo(
+        size.width * 0.08, size.height * 0.78,
+        size.width * 0.08, size.height * 0.48,
+        size.width * 0.25, size.height * 0.44,
+      );
+    canvas.drawPath(venaCava, bluePathPaint);
+    _drawArrowhead(canvas, Offset(size.width * 0.115, size.height * 0.60), -0.05, blueColor);
+    _drawPathLabel(canvas, "Vena Cava", Offset(size.width * 0.17, size.height * 0.73), labelColor, isLeftAlign: false);
+
+    // Pulmonary Artery
+    final Path pulmArtery = Path()
+      ..moveTo(size.width * 0.375, size.height * 0.67)
+      ..cubicTo(
+        size.width * 0.17, size.height * 0.71,
+        size.width * 0.17, size.height * 0.28,
+        size.width * 0.35, size.height * 0.18,
+      );
+    canvas.drawPath(pulmArtery, bluePathPaint);
+    _drawArrowhead(canvas, Offset(size.width * 0.198, size.height * 0.41), 0.15, blueColor);
+    _drawPathLabel(canvas, "Pulmonary Artery", Offset(size.width * 0.23, size.height * 0.26), labelColor, isLeftAlign: false);
+
+    // Pulmonary Vein
+    final Path pulmVein = Path()
+      ..moveTo(size.width * 0.65, size.height * 0.18)
+      ..cubicTo(
+        size.width * 0.83, size.height * 0.28,
+        size.width * 0.83, size.height * 0.41,
+        size.width * 0.75, size.height * 0.44,
+      );
+    canvas.drawPath(pulmVein, redPathPaint);
+    _drawArrowhead(canvas, Offset(size.width * 0.802, size.height * 0.33), math.pi * 0.85, redColor);
+    _drawPathLabel(canvas, "Pulmonary Vein", Offset(size.width * 0.77, size.height * 0.26), labelColor, isLeftAlign: true);
+
+    // Aorta
+    final Path aorta = Path()
+      ..moveTo(size.width * 0.625, size.height * 0.67)
+      ..cubicTo(
+        size.width * 0.92, size.height * 0.69,
+        size.width * 0.92, size.height * 0.78,
+        size.width * 0.65, size.height * 0.82,
+      );
+    canvas.drawPath(aorta, redPathPaint);
+    _drawArrowhead(canvas, Offset(size.width * 0.885, size.height * 0.74), math.pi * 1.05, redColor);
+    _drawPathLabel(canvas, "Aorta", Offset(size.width * 0.83, size.height * 0.73), labelColor, isLeftAlign: true);
+  }
+
+  void _drawLegend(Canvas canvas, Offset offset, String text, Color color) {
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(Rect.fromLTWH(offset.dx, offset.dy, 8, 8), const Radius.circular(2)),
+      Paint()..color = color,
+    );
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 7.5,
+          fontWeight: FontWeight.bold,
+          color: isDark ? Colors.white60 : Colors.black87,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(offset.dx + 12, offset.dy - 1));
+  }
+
+  void _drawArrowhead(Canvas canvas, Offset point, double angle, Color color) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    canvas.save();
+    canvas.translate(point.dx, point.dy);
+    canvas.rotate(angle);
+
+    final path = Path()
+      ..moveTo(0, -4.5)
+      ..lineTo(-3.5, 3.5)
+      ..lineTo(3.5, 3.5)
+      ..close();
+
+    canvas.drawPath(path, paint);
+    canvas.restore();
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(position.dx - textPainter.width / 2, position.dy - textPainter.height / 2));
+  }
+
+  void _drawPathLabel(Canvas canvas, String text, Offset position, Color color, {required bool isLeftAlign}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Georgia',
+          fontSize: 8.0,
+          color: color.withOpacity(0.6),
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    final double dx = isLeftAlign ? position.dx : position.dx - textPainter.width;
+    textPainter.paint(canvas, Offset(dx, position.dy - textPainter.height / 2));
   }
 
   @override

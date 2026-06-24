@@ -1126,6 +1126,8 @@ Gaseous exchange in humans occurs in the lungs across **[JARGON: Alveoli | Tiny 
 ## 5. 📖 Concept 3: Transportation and Excretion
 Humans have a four-chambered heart to perform **[JARGON: Double Circulation | A circulatory system where blood passes through the heart twice during one complete cycle through the body | Human blood flowing from body to heart, then to lungs, then back to heart, and out to the body.]**, separating oxygenated and deoxygenated blood. Lymph is another transport fluid.
 
+[FIGURE: double_circulation]
+
 Plants transport water/minerals via xylem (unidirectional, driven by transpiration) and food via phloem (bidirectional, called **[JARGON: Translocation | The transport of soluble products of photosynthesis (food) through the phloem tissue in plants | Leaves sending sucrose to the roots and growing buds of a plant.]**, utilizing ATP energy).
 
 Excretion filters nitrogenous wastes. In humans, kidneys contain millions of filtration units called **[JARGON: Nephron | The microscopic functional and structural unit of the kidney that filters blood and forms urine | Millions of tubules in the kidneys performing filtration and reabsorption.]**.
