@@ -2244,6 +2244,11 @@ class _LessonsViewState extends State<LessonsView> {
       figNum = "Figure 13.1 ";
       figCaption = "Trophic level pyramid representing the unidirectional flow of energy and the 10% law of energy transfer in an ecosystem.";
       figHeight = 220;
+    } else if (figType == 'ohms_law_circuit') {
+      painterWidget = OhmsLawCircuitPainter(isDark: isDark);
+      figNum = "Figure 12.1 ";
+      figCaption = "Circuit diagram for verification of Ohm's Law showing the voltmeter connected in parallel across the resistor, and ammeter, key, rheostat, and battery in series.";
+      figHeight = 220;
     } else {
       painterWidget = MagnesiumBurnerPainter(isDark: isDark);
       figNum = "Figure 1.1 ";
@@ -3244,6 +3249,183 @@ class TrophicLevelsPainter extends CustomPainter {
     canvas.restore();
 
     _drawText(canvas, "10% Energy Transfer Law", Offset(size.width * 0.45, size.height * 0.08), labelColor, fontSize: 9, isBold: true);
+  }
+
+  void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {
+    final textPainter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+          color: color,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(position.dx - textPainter.width / 2, position.dy - textPainter.height / 2));
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class OhmsLawCircuitPainter extends CustomPainter {
+  final bool isDark;
+  OhmsLawCircuitPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Color labelColor = isDark ? Colors.white60 : Colors.black87;
+    final Color wireColor = isDark ? Colors.white70 : Colors.black87;
+    final Color componentColor = const Color(0xFF0284C7);
+    final Color highlightColor = const Color(0xFFEF4444);
+
+    final wirePaint = Paint()
+      ..color = wireColor
+      ..strokeWidth = 2.0
+      ..style = PaintingStyle.stroke;
+
+    final componentPaint = Paint()
+      ..color = componentColor
+      ..strokeWidth = 1.8
+      ..style = PaintingStyle.stroke;
+
+    final double left = 60.0;
+    final double right = size.width - 60.0;
+    final double top = 70.0;
+    final double bottom = 170.0;
+
+    final double midX = (left + right) / 2;
+    canvas.drawLine(Offset(left, top), Offset(midX - 25, top), wirePaint);
+    canvas.drawLine(Offset(midX + 25, top), Offset(right, top), wirePaint);
+
+    final double midY = (top + bottom) / 2;
+    canvas.drawLine(Offset(right, top), Offset(right, midY - 15), wirePaint);
+    canvas.drawLine(Offset(right, midY + 15), Offset(right, bottom), wirePaint);
+
+    canvas.drawLine(Offset(right, bottom), Offset(midX + 40, bottom), wirePaint);
+    canvas.drawLine(Offset(midX - 10, bottom), Offset(midX - 30, bottom), wirePaint);
+    canvas.drawLine(Offset(midX - 45, bottom), Offset(left, bottom), wirePaint);
+
+    canvas.drawLine(Offset(left, bottom), Offset(left, midY + 20), wirePaint);
+    canvas.drawLine(Offset(left, midY - 20), Offset(left, top), wirePaint);
+
+    // Resistor
+    final Path resistorPath = Path()
+      ..moveTo(midX - 25, top)
+      ..lineTo(midX - 20, top - 6)
+      ..lineTo(midX - 12, top + 6)
+      ..lineTo(midX - 4, top - 6)
+      ..lineTo(midX + 4, top + 6)
+      ..lineTo(midX + 12, top - 6)
+      ..lineTo(midX + 20, top + 6)
+      ..lineTo(midX + 25, top);
+    canvas.drawPath(resistorPath, wirePaint);
+    _drawText(canvas, "Resistor (R)", Offset(midX, top - 18), labelColor, fontSize: 8.5, isBold: true);
+
+    // Voltmeter
+    final double vTop = top - 35;
+    final Paint vWirePaint = Paint()
+      ..color = isDark ? Colors.white30 : Colors.black26
+      ..strokeWidth = 1.0
+      ..style = PaintingStyle.stroke;
+    
+    canvas.drawLine(Offset(midX - 35, top), Offset(midX - 35, vTop), vWirePaint);
+    canvas.drawLine(Offset(midX + 35, top), Offset(midX + 35, vTop), vWirePaint);
+    canvas.drawLine(Offset(midX - 35, vTop), Offset(midX - 15, vTop), vWirePaint);
+    canvas.drawLine(Offset(midX + 35, vTop), Offset(midX + 15, vTop), vWirePaint);
+
+    canvas.drawCircle(Offset(midX, vTop), 15.0, Paint()..color = isDark ? Colors.black : Colors.white);
+    canvas.drawCircle(Offset(midX, vTop), 15.0, componentPaint);
+    _drawText(canvas, "V", Offset(midX, vTop), labelColor, fontSize: 10, isBold: true);
+    _drawText(canvas, "Voltmeter", Offset(midX, vTop - 22), labelColor, fontSize: 8);
+
+    // Ammeter
+    canvas.drawCircle(Offset(right, midY), 15.0, Paint()..color = isDark ? Colors.black : Colors.white);
+    canvas.drawCircle(Offset(right, midY), 15.0, componentPaint);
+    _drawText(canvas, "A", Offset(right, midY), labelColor, fontSize: 10, isBold: true);
+    _drawText(canvas, "Ammeter", Offset(right + 30, midY), labelColor, fontSize: 8);
+
+    // Battery
+    canvas.drawLine(Offset(midX - 45, bottom - 10), Offset(midX - 45, bottom + 10), wirePaint);
+    canvas.drawLine(Offset(midX - 40, bottom - 6), Offset(midX - 40, bottom + 6), Paint()..color = wireColor..strokeWidth = 3.5);
+    canvas.drawLine(Offset(midX - 40, bottom), Offset(midX - 35, bottom), wirePaint);
+    canvas.drawLine(Offset(midX - 35, bottom - 10), Offset(midX - 35, bottom + 10), wirePaint);
+    canvas.drawLine(Offset(midX - 30, bottom - 6), Offset(midX - 30, bottom + 6), Paint()..color = wireColor..strokeWidth = 3.5);
+    canvas.drawLine(Offset(midX - 30, bottom), Offset(midX - 25, bottom), wirePaint);
+    canvas.drawLine(Offset(midX - 25, bottom - 10), Offset(midX - 25, bottom + 10), wirePaint);
+    canvas.drawLine(Offset(midX - 20, bottom - 6), Offset(midX - 20, bottom + 6), Paint()..color = wireColor..strokeWidth = 3.5);
+    canvas.drawLine(Offset(midX - 20, bottom), Offset(midX - 15, bottom), wirePaint);
+    canvas.drawLine(Offset(midX - 15, bottom - 10), Offset(midX - 15, bottom + 10), wirePaint);
+    canvas.drawLine(Offset(midX - 10, bottom - 6), Offset(midX - 10, bottom + 6), Paint()..color = wireColor..strokeWidth = 3.5);
+
+    _drawText(canvas, "Battery", Offset(midX - 27, bottom + 18), labelColor, fontSize: 8);
+    _drawText(canvas, "+", Offset(midX - 52, bottom - 12), highlightColor, fontSize: 9, isBold: true);
+    _drawText(canvas, "-", Offset(midX - 5, bottom - 12), highlightColor, fontSize: 9, isBold: true);
+
+    // Key
+    final double keyX = midX + 25;
+    canvas.drawArc(Rect.fromLTWH(keyX - 10, bottom - 6, 8, 12), math.pi / 2, math.pi, false, wirePaint);
+    canvas.drawArc(Rect.fromLTWH(keyX + 2, bottom - 6, 8, 12), -math.pi / 2, math.pi, false, wirePaint);
+    canvas.drawCircle(Offset(keyX, bottom), 2.0, Paint()..color = wireColor);
+    _drawText(canvas, "Key (K)", Offset(keyX, bottom + 16), labelColor, fontSize: 8);
+
+    // Rheostat
+    final Path rheostatPath = Path()
+      ..moveTo(left, midY - 20)
+      ..lineTo(left - 5, midY - 15)
+      ..lineTo(left + 5, midY - 9)
+      ..lineTo(left - 5, midY - 3)
+      ..lineTo(left + 5, midY + 3)
+      ..lineTo(left - 5, midY + 9)
+      ..lineTo(left + 5, midY + 15)
+      ..lineTo(left, midY + 20);
+    canvas.drawPath(rheostatPath, wirePaint);
+
+    final Paint arrowPaint = Paint()
+      ..color = highlightColor
+      ..strokeWidth = 1.2
+      ..style = PaintingStyle.stroke;
+    canvas.drawLine(Offset(left + 15, midY + 25), Offset(left - 8, midY - 25), arrowPaint);
+    
+    final Path arrowHead = Path()
+      ..moveTo(left - 8, midY - 25)
+      ..lineTo(left - 4, midY - 22)
+      ..lineTo(left - 10, midY - 20)
+      ..close();
+    canvas.drawPath(arrowHead, Paint()..color = highlightColor);
+
+    _drawText(canvas, "Rheostat (Rh)", Offset(left - 30, midY), labelColor, fontSize: 8);
+
+    // Direction arrows
+    _drawArrowhead(canvas, Offset(left, midY - 25), 0, highlightColor);
+    _drawArrowhead(canvas, Offset(midX - 50, top), math.pi / 2, highlightColor);
+    _drawArrowhead(canvas, Offset(right, midY - 25), math.pi, highlightColor);
+
+    _drawText(canvas, "I", Offset(left + 8, midY - 25), highlightColor, fontSize: 8, isBold: true);
+    _drawText(canvas, "I", Offset(midX - 50, top - 8), highlightColor, fontSize: 8, isBold: true);
+  }
+
+  void _drawArrowhead(Canvas canvas, Offset point, double angle, Color color) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    canvas.save();
+    canvas.translate(point.dx, point.dy);
+    canvas.rotate(angle);
+
+    final path = Path()
+      ..moveTo(0, -3.5)
+      ..lineTo(-2.5, 2.5)
+      ..lineTo(2.5, 2.5)
+      ..close();
+
+    canvas.drawPath(path, paint);
+    canvas.restore();
   }
 
   void _drawText(Canvas canvas, String text, Offset position, Color color, {double fontSize = 8.5, bool isBold = false}) {

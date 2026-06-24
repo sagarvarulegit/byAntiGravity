@@ -341,6 +341,8 @@ Ohm''s Law states that voltage is proportional to current at a constant temperat
 Formula:
 $$V = IR$$
 
+[FIGURE: ohms_law_circuit]
+
 Here, $R$ is **[JARGON: Resistance | The property of a conductor to oppose the flow of electric current | A thin wire has higher resistance than a thick wire]** (the fight against current). Its unit is **[JARGON: Ohm | The SI unit of electrical resistance | A copper wire has a resistance of 0.1 Ohm]** (the unit of resistance).
 
 Resistance depends on:
