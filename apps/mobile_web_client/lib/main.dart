@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
@@ -16,6 +15,83 @@ import 'views/billing_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: const Color(0xFFFAF9F6), // Scaffold Paper
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Card(
+              color: Colors.white,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: const BorderSide(color: Color(0xFFE2E8F0)), // Border Light
+              ),
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 500),
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.warning_amber_rounded,
+                      color: Color(0xFFEA580C), // NCERT Orange
+                      size: 64,
+                    ),
+                    const SizedBox(height: 24),
+                    const Text(
+                      "We hit a glitch!",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        color: Color(0xFF0F172A), // Text Primary
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      "An unexpected error occurred in the application rendering code. Our developers have been notified.",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                        height: 1.4,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF1F5F9),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        details.exceptionAsString(),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontFamily: 'monospace',
+                          color: Color(0xFFBE185D), // NCERT Magenta
+                        ),
+                        maxLines: 4,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  };
 
   try {
     await sb.Supabase.initialize(
@@ -127,6 +203,7 @@ class _MainShellState extends State<MainShell> {
   late final DatabaseService _dbService;
   List<Subject> _subjects = [];
   bool _isLoadingSyllabus = true;
+  String? _preSelectedLessonId;
 
   @override
   void initState() {
@@ -146,15 +223,39 @@ class _MainShellState extends State<MainShell> {
   Future<void> _loadSyllabus() async {
     try {
       final syllabusData = await _dbService.fetchSyllabus();
+      final streak = await _dbService.fetchUserStreak();
+      final completedLessonIds = await _dbService.fetchCompletedLessonIds();
+      final isPremium = await _dbService.checkUserPremiumStatus();
+
       setState(() {
         _subjects = syllabusData;
         if (_subjects.isNotEmpty) {
           _activeSubjectId = _subjects.first.id;
         }
+        _userState.streak = streak;
+        _userState.isPremium = isPremium;
+
+        // Compute subject mastery based on completed lessons
+        for (final subject in _subjects) {
+          int totalLessons = 0;
+          int completedLessons = 0;
+          for (final chapter in subject.chapters) {
+            for (final lesson in chapter.lessons) {
+              totalLessons++;
+              if (completedLessonIds.contains(lesson.id)) {
+                completedLessons++;
+              }
+            }
+          }
+          final double masteryVal = totalLessons > 0
+              ? (completedLessons / totalLessons) * 100.0
+              : 0.0;
+          _userState.subjectMastery[subject.id] = masteryVal;
+        }
         _isLoadingSyllabus = false;
       });
     } catch (e) {
-      debugPrint("Failed to load syllabus: $e");
+      debugPrint("Failed to load syllabus or user progress: $e");
       setState(() {
         _isLoadingSyllabus = false;
       });
@@ -168,18 +269,86 @@ class _MainShellState extends State<MainShell> {
     });
   }
 
-  void _onUpgradeSuccessful() {
+  void _routeToLesson(String subjectId, String lessonId) {
     setState(() {
-      _userState.isPremium = true;
+      _activeSubjectId = subjectId;
+      _activeNavIndex = 1; // Direct to Lessons View
+      _preSelectedLessonId = lessonId;
     });
   }
 
-  void _onLessonCompleted(String lessonId) {
-    // Increment streak on activity
-    setState(() {
-      _userState.streak++;
-    });
-    _showActivityNotification("Activity Completed!", "Your daily streak has increased to ${_userState.streak} Days!");
+  Future<void> _onUpgradeSuccessful() async {
+    try {
+      await _dbService.createUserMockSubscription();
+      setState(() {
+        _userState.isPremium = true;
+      });
+    } catch (e) {
+      debugPrint("Failed to update user upgrade status: $e");
+    }
+  }
+
+  Future<void> _onLessonCompleted(String lessonId, int watchTimeSeconds, {bool completed = true}) async {
+    try {
+      // Find the lesson to determine its type for logging
+      Lesson? lessonObj;
+      for (final subject in _subjects) {
+        for (final chapter in subject.chapters) {
+          for (final lesson in chapter.lessons) {
+            if (lesson.id == lessonId) {
+              lessonObj = lesson;
+              break;
+            }
+          }
+        }
+      }
+
+      final activityType = lessonObj?.type == LessonType.note ? 'read_note' : 'watch_video';
+
+      // 1. Record lesson completion/progress in DB
+      await _dbService.recordLessonCompletion(
+        lessonId: lessonId,
+        watchTimeSeconds: watchTimeSeconds,
+        completed: completed,
+      );
+
+      if (completed) {
+        // 2. Increment streak / activity log in DB
+        final newStreak = await _dbService.recordActivityAndIncrementStreak(
+          activityType: activityType,
+          referenceId: lessonId,
+        );
+
+        // 3. Reload progress
+        final completedLessonIds = await _dbService.fetchCompletedLessonIds();
+
+        setState(() {
+          _userState.streak = newStreak;
+
+          // Re-compute subject mastery
+          for (final subject in _subjects) {
+            int totalLessons = 0;
+            int completedLessons = 0;
+            for (final chapter in subject.chapters) {
+              for (final lesson in chapter.lessons) {
+                totalLessons++;
+                if (completedLessonIds.contains(lesson.id)) {
+                  completedLessons++;
+                }
+              }
+            }
+            final double masteryVal = totalLessons > 0
+                ? (completedLessons / totalLessons) * 100.0
+                : 0.0;
+            _userState.subjectMastery[subject.id] = masteryVal;
+          }
+        });
+
+        _showActivityNotification("Activity Completed!", "Your daily streak has increased to $newStreak Days!");
+      }
+    } catch (e) {
+      debugPrint("Failed to record completion: $e");
+    }
   }
 
   void _onStreakUpdated(int newStreak) {
@@ -246,10 +415,12 @@ class _MainShellState extends State<MainShell> {
     // View components
     final List<Widget> viewsList = [
       DashboardView(
+        dbService: _dbService,
         userState: _userState,
         subjects: _subjects,
         onSubjectSelected: _routeToSubject,
         onUpgradeClicked: () => setState(() => _activeNavIndex = 4),
+        onContinueLesson: _routeToLesson,
       ),
       LessonsView(
         dbService: _dbService,
@@ -260,9 +431,15 @@ class _MainShellState extends State<MainShell> {
         onLessonCompleted: _onLessonCompleted,
         onDownloadToggled: _onDownloadToggled,
         onUpgradeClicked: () => setState(() => _activeNavIndex = 4),
+        initialLessonId: _preSelectedLessonId,
+        onInitialLessonLoaded: () {
+          _preSelectedLessonId = null;
+        },
       ),
       QuizView(
+        dbService: _dbService,
         userState: _userState,
+        subjects: _subjects,
         onStreakUpdated: _onStreakUpdated,
         onMasteryUpdated: _onMasteryUpdated,
       ),

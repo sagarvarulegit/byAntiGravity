@@ -15,7 +15,9 @@ TRUNCATE TABLE subjects CASCADE;
 INSERT INTO subjects (id, name, code, description, thumbnail_url) VALUES
 ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'Mathematics', 'MATH10', 'Algebra, Quadratic Equations, Trigonometry & Geometry.', 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60'),
 ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Science', 'SCI10', 'Chemical Reactions, Electricity, Light & Life Processes.', 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60'),
-('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'Social Science', 'SOC10', 'History, Democratic Politics, Geography & Economics.', 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?w=500&auto=format&fit=crop&q=60');
+('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'Social Science', 'SOC10', 'History, Democratic Politics, Geography & Economics.', 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?w=500&auto=format&fit=crop&q=60'),
+('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a44', 'English Language & Literature', 'ENG10', 'Reading Comprehension, Grammar, Creative Writing & Literature — Code 184', 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60'),
+('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55', 'Hindi Course B', 'HIN10', 'अपठित बोध, व्यावहारिक व्याकरण, पाठ्यपुस्तक एवं रचनात्मक लेखन — Code 085', 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&auto=format&fit=crop&q=60');
 
 
 -- 2. INSERT CHAPTERS

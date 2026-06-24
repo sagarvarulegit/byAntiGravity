@@ -1,15 +1,21 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../models.dart';
 import '../theme.dart';
+import '../services/database_service.dart';
 
 class QuizView extends StatefulWidget {
+  final DatabaseService dbService;
   final UserState userState;
+  final List<Subject> subjects;
   final Function(int) onStreakUpdated;
   final Function(String, double) onMasteryUpdated;
 
   const QuizView({
     super.key,
+    required this.dbService,
     required this.userState,
+    required this.subjects,
     required this.onStreakUpdated,
     required this.onMasteryUpdated,
   });
@@ -19,75 +25,29 @@ class QuizView extends StatefulWidget {
 }
 
 class _QuizViewState extends State<QuizView> {
-  final List<Quiz> _quizzes = [
-    Quiz(
-      id: "quiz-math-1",
-      subjectId: "maths",
-      title: "Algebra & Real Numbers Practice Test",
-      duration: "5 mins",
-      questions: [
-        QuizQuestion(
-          questionText: "If HCF(306, 657) = 9, what is their LCM?",
-          options: ["22,338", "18,220", "24,558", "12,680"],
-          correctAnswerIndex: 0,
-        ),
-        QuizQuestion(
-          questionText: "Euclid's Division Lemma states that for positive integers a and b, there exist unique integers q and r satisfying a = bq + r. What is the range of r?",
-          options: ["0 < r < b", "0 ≤ r < b", "0 < r ≤ b", "0 ≤ r ≤ b"],
-          correctAnswerIndex: 1,
-        ),
-        QuizQuestion(
-          questionText: "Which of the following is an irrational number?",
-          options: ["3.1415", "22/7", "3.141414...", "√5"],
-          correctAnswerIndex: 3,
-        ),
-        QuizQuestion(
-          questionText: "If α and β are zeroes of the quadratic polynomial ax² + bx + c, then α + β equals:",
-          options: ["c/a", "-b/a", "b/a", "-c/a"],
-          correctAnswerIndex: 1,
-        ),
-        QuizQuestion(
-          questionText: "The decimal expansion of 13/3125 terminates after how many decimal places?",
-          options: ["3 places", "4 places", "5 places", "6 places"],
-          correctAnswerIndex: 2,
-        ),
-      ],
-    ),
-    Quiz(
-      id: "quiz-science-1",
-      subjectId: "science",
-      title: "Electricity & Circuit Theory Test",
-      duration: "5 mins",
-      questions: [
-        QuizQuestion(
-          questionText: "What is the SI unit of electric potential difference?",
-          options: ["Ampere", "Ohm", "Volt", "Joule"],
-          correctAnswerIndex: 2,
-        ),
-        QuizQuestion(
-          questionText: "How does the resistance of a wire change if its length is doubled and cross-sectional area is halved?",
-          options: ["Remains the same", "Doubles", "Halves", "Quadruples (4x)"],
-          correctAnswerIndex: 3,
-        ),
-        QuizQuestion(
-          questionText: "Three resistors of 2Ω, 3Ω, and 6Ω are connected in parallel. What is their equivalent resistance?",
-          options: ["1 Ω", "11 Ω", "5 Ω", "0.5 Ω"],
-          correctAnswerIndex: 0,
-        ),
-        QuizQuestion(
-          questionText: "Ohm's law states that the current flowing through a conductor is directly proportional to the potential difference, provided which factor remains constant?",
-          options: ["Length", "Area of cross-section", "Temperature", "Resistance"],
-          correctAnswerIndex: 2,
-        ),
-      ],
-    ),
-  ];
+  Future<List<dynamic>>? _quizzesFuture;
 
   Quiz? _activeQuiz;
   int _questionIndex = 0;
   int? _selectedAnswerIndex;
   List<int> _userAnswers = [];
   bool _quizFinished = false;
+  String _selectedSubjectFilter = "all";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadQuizzes();
+  }
+
+  void _loadQuizzes() {
+    setState(() {
+      _quizzesFuture = Future.wait([
+        widget.dbService.fetchQuizzes(),
+        widget.dbService.fetchQuizAttemptHistory(),
+      ]);
+    });
+  }
 
   void _startQuiz(Quiz quiz) {
     setState(() {
@@ -114,17 +74,28 @@ class _QuizViewState extends State<QuizView> {
     });
   }
 
-  void _evaluateQuizResults() {
+  Future<void> _evaluateQuizResults() async {
     int correctCount = 0;
     for (int i = 0; i < _activeQuiz!.questions.length; i++) {
       if (_userAnswers[i] == _activeQuiz!.questions[i].correctAnswerIndex) {
         correctCount++;
       }
     }
-    final pct = (correctCount / _activeQuiz!.questions.length) * 100;
+    final int pct = ((correctCount / _activeQuiz!.questions.length) * 100).round();
+    final bool passed = pct >= 60;
+
+    try {
+      await widget.dbService.submitQuizAttempt(
+        quizId: _activeQuiz!.id,
+        scorePercentage: pct,
+        passed: passed,
+      );
+    } catch (e) {
+      debugPrint("Failed to submit quiz attempt: $e");
+    }
     
     // If passed, update streaks & mastery
-    if (pct >= 60) {
+    if (passed) {
       widget.onStreakUpdated(widget.userState.streak + 1);
       final double currentMastery = widget.userState.subjectMastery[_activeQuiz!.subjectId] ?? 50.0;
       final double newMastery = (currentMastery + 6.0).clamp(0.0, 100.0);
@@ -148,66 +119,202 @@ class _QuizViewState extends State<QuizView> {
   }
 
   Widget _buildQuizListScreen(bool isDark) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(24.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(height: 20),
-          const Icon(Icons.psychology_rounded, size: 56, color: AppColors.purple),
-          const SizedBox(height: 16),
-          Text(
-            "CBSE Class 10 Smart Quizzes",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            "Test your knowledge on the chapters you've studied. Achieve >60% to gain Mastery Points and secure your daily study streak!",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.grey, fontSize: 13, height: 1.4),
-          ),
-          const SizedBox(height: 40),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Select a Practice Quiz:",
-              style: Theme.of(context).textTheme.titleMedium,
+    return FutureBuilder<List<dynamic>>(
+      future: _quizzesFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(AppColors.purple),
             ),
-          ),
-          const SizedBox(height: 16),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: _quizzes.length,
-            itemBuilder: (context, index) {
-              final quiz = _quizzes[index];
-              return Card(
+          );
+        }
+
+        if (snapshot.hasError) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Card(
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(16),
                   side: BorderSide(color: isDark ? AppColors.borderDark : AppColors.borderLight),
                 ),
-                margin: const EdgeInsets.only(bottom: 12),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                  title: Text(quiz.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                  subtitle: Text("${quiz.questions.length} Questions • ${quiz.duration} • Subject: ${quiz.subjectId.toUpperCase()}"),
-                  trailing: ElevatedButton(
-                    onPressed: () => _startQuiz(quiz),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.purpleLight,
-                      foregroundColor: AppColors.purple,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                    ),
-                    child: const Text("Attempt"),
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.error_outline_rounded, color: AppColors.orange, size: 48),
+                      const SizedBox(height: 16),
+                      Text(
+                        "Failed to load quizzes: ${snapshot.error}",
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: _loadQuizzes,
+                        style: ElevatedButton.styleFrom(backgroundColor: AppColors.purple),
+                        child: const Text("Retry", style: TextStyle(color: Colors.white)),
+                      ),
+                    ],
                   ),
                 ),
-              );
-            },
+              ),
+            ),
+          );
+        }
+
+        final data = snapshot.data;
+        if (data == null || data.length < 2) {
+          return const Center(child: Text("No quiz data loaded."));
+        }
+
+        final List<Quiz> quizzes = data[0] as List<Quiz>;
+        final Map<String, QuizAttempt> history = data[1] as Map<String, QuizAttempt>;
+
+        final List<Quiz> filteredQuizzes = _selectedSubjectFilter == "all"
+            ? quizzes
+            : quizzes.where((q) => q.subjectId == _selectedSubjectFilter).toList();
+
+        return RefreshIndicator(
+          onRefresh: () async {
+            _loadQuizzes();
+            await _quizzesFuture;
+          },
+          color: AppColors.purple,
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              const Icon(Icons.psychology_rounded, size: 56, color: AppColors.purple),
+              const SizedBox(height: 16),
+              Text(
+                "CBSE Class 10 Smart Quizzes",
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                "Test your knowledge on the chapters you've studied. Achieve >60% to gain Mastery Points and secure your daily study streak!",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey, fontSize: 13, height: 1.4),
+              ),
+              const SizedBox(height: 20),
+              // Subject Filter Chips
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildFilterChip(
+                      context,
+                      label: "All Subjects",
+                      isSelected: _selectedSubjectFilter == "all",
+                      onSelected: (selected) {
+                        setState(() {
+                          _selectedSubjectFilter = "all";
+                        });
+                      },
+                    ),
+                    ...widget.subjects.map((subject) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: _buildFilterChip(
+                          context,
+                          label: subject.name,
+                          isSelected: _selectedSubjectFilter == subject.id,
+                          onSelected: (selected) {
+                            setState(() {
+                              _selectedSubjectFilter = selected ? subject.id : "all";
+                            });
+                          },
+                        ),
+                      );
+                    }),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Select a Practice Quiz:",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+              const SizedBox(height: 16),
+              filteredQuizzes.isEmpty
+                  ? const Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(24.0),
+                        child: Text("No quizzes available for this filter. Keep studying notes!"),
+                      ),
+                    )
+                  : ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: filteredQuizzes.length,
+                      itemBuilder: (context, index) {
+                        final quiz = filteredQuizzes[index];
+                        final lastAttempt = history[quiz.id];
+
+                        return Card(
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: BorderSide(color: isDark ? AppColors.borderDark : AppColors.borderLight),
+                          ),
+                          margin: const EdgeInsets.only(bottom: 12),
+                          child: ListTile(
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                            title: Wrap(
+                              spacing: 8,
+                              runSpacing: 4,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Text(quiz.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+                                if (lastAttempt != null)
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                    decoration: BoxDecoration(
+                                      color: lastAttempt.passed ? AppColors.greenLight : AppColors.orangeLight,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: Text(
+                                      "Last attempt: ${lastAttempt.scorePercentage}%",
+                                      style: TextStyle(
+                                        color: lastAttempt.passed ? AppColors.green : AppColors.orange,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                            subtitle: Text("${quiz.questions.length} Questions • ${quiz.duration} • Subject: ${quiz.subjectId.substring(0, math.min(8, quiz.subjectId.length)).toUpperCase()}"),
+                            trailing: ElevatedButton(
+                              onPressed: () => _startQuiz(quiz),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.purpleLight,
+                                foregroundColor: AppColors.purple,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              ),
+                              child: const Text("Attempt"),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+            ],
           ),
-        ],
-      ),
+        ),);
+      },
     );
   }
 
@@ -472,6 +579,7 @@ class _QuizViewState extends State<QuizView> {
                     onPressed: () {
                       setState(() {
                         _activeQuiz = null;
+                        _loadQuizzes();
                       });
                     },
                     style: ElevatedButton.styleFrom(
@@ -509,6 +617,54 @@ class _QuizViewState extends State<QuizView> {
           style: const TextStyle(color: Colors.grey, fontSize: 10, fontWeight: FontWeight.bold),
         ),
       ],
+    );
+  }
+
+  Widget _buildFilterChip(
+    BuildContext context, {
+    required String label,
+    required bool isSelected,
+    required Function(bool) onSelected,
+    Color? selectedColor,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // Determine subject color if not specified
+    Color activeColor = selectedColor ?? AppColors.purple;
+    if (label.toLowerCase().contains('science')) {
+      activeColor = AppColors.blue;
+    } else if (label.toLowerCase().contains('social')) {
+      activeColor = AppColors.orange;
+    }
+
+    return FilterChip(
+      label: Text(
+        label,
+        style: TextStyle(
+          color: isSelected 
+              ? Colors.white 
+              : (isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
+          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+          fontSize: 13,
+          fontFamily: 'Outfit',
+        ),
+      ),
+      selected: isSelected,
+      onSelected: onSelected,
+      backgroundColor: isDark ? AppColors.cardDark : Colors.white,
+      selectedColor: activeColor,
+      checkmarkColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(
+          color: isSelected 
+              ? activeColor 
+              : (isDark ? AppColors.borderDark : AppColors.borderLight),
+          width: 1,
+        ),
+      ),
+      elevation: 0,
+      pressElevation: 0,
     );
   }
 }

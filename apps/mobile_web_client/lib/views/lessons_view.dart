@@ -1,11 +1,17 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/database_service.dart';
 import '../widgets/interactive_whiteboard_canvas.dart';
+import '../widgets/confetti_overlay.dart';
+import '../widgets/comic_recap.dart';
 import '../utils/download.dart';
+
 
 class LessonsView extends StatefulWidget {
   final DatabaseService dbService;
@@ -13,9 +19,11 @@ class LessonsView extends StatefulWidget {
   final List<Subject> subjects;
   final String activeSubjectId;
   final Function(String) onSubjectChanged;
-  final Function(String) onLessonCompleted;
+  final Function(String lessonId, int watchTimeSeconds, {bool completed}) onLessonCompleted;
   final Function(String) onDownloadToggled;
   final VoidCallback onUpgradeClicked;
+  final String? initialLessonId;
+  final VoidCallback? onInitialLessonLoaded;
 
   const LessonsView({
     super.key,
@@ -27,6 +35,8 @@ class LessonsView extends StatefulWidget {
     required this.onLessonCompleted,
     required this.onDownloadToggled,
     required this.onUpgradeClicked,
+    this.initialLessonId,
+    this.onInitialLessonLoaded,
   });
 
   @override
@@ -47,17 +57,20 @@ class _LessonsViewState extends State<LessonsView> {
 
   String _currentNoteContent = "";
   bool _isLoadingNote = false;
+  bool _isMastered = false;
 
   @override
   void initState() {
     super.initState();
-    _loadFirstLesson();
+    _loadInitialLesson();
   }
 
   @override
   void didUpdateWidget(covariant LessonsView oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.activeSubjectId != widget.activeSubjectId) {
+    if (widget.initialLessonId != null && widget.initialLessonId != oldWidget.initialLessonId) {
+      _loadInitialLesson();
+    } else if (oldWidget.activeSubjectId != widget.activeSubjectId) {
       _loadFirstLesson();
     }
   }
@@ -65,6 +78,9 @@ class _LessonsViewState extends State<LessonsView> {
   @override
   void dispose() {
     _videoTimer?.cancel();
+    if (_selectedLesson != null && _selectedLesson!.type == LessonType.video && _currentTime > 0) {
+      widget.onLessonCompleted(_selectedLesson!.id, _currentTime, completed: false);
+    }
     super.dispose();
   }
 
@@ -75,7 +91,39 @@ class _LessonsViewState extends State<LessonsView> {
     }
   }
 
+  void _loadInitialLesson() {
+    if (widget.initialLessonId != null) {
+      Lesson? lesson;
+      for (final subject in widget.subjects) {
+        for (final chapter in subject.chapters) {
+          for (final l in chapter.lessons) {
+            if (l.id == widget.initialLessonId) {
+              lesson = l;
+              break;
+            }
+          }
+          if (lesson != null) break;
+        }
+        if (lesson != null) break;
+      }
+      if (lesson != null) {
+        _selectLesson(lesson);
+        if (widget.onInitialLessonLoaded != null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            widget.onInitialLessonLoaded?.call();
+          });
+        }
+        return;
+      }
+    }
+    _loadFirstLesson();
+  }
+
   void _selectLesson(Lesson lesson) {
+    if (_selectedLesson != null && _selectedLesson!.id != lesson.id && _selectedLesson!.type == LessonType.video && _currentTime > 0) {
+      widget.onLessonCompleted(_selectedLesson!.id, _currentTime, completed: false);
+    }
+
     setState(() {
       _selectedLesson = lesson;
       _isPlaying = false;
@@ -83,6 +131,7 @@ class _LessonsViewState extends State<LessonsView> {
       _currentTime = 0;
       _videoTimer?.cancel();
       _currentNoteContent = "";
+      _isMastered = false;
     });
 
     if (lesson.type == LessonType.note) {
@@ -132,12 +181,13 @@ class _LessonsViewState extends State<LessonsView> {
           } else {
             _isPlaying = false;
             _videoTimer?.cancel();
-            widget.onLessonCompleted(_selectedLesson!.id);
+            widget.onLessonCompleted(_selectedLesson!.id, _currentTime, completed: true);
           }
         });
       });
     } else {
       _videoTimer?.cancel();
+      widget.onLessonCompleted(_selectedLesson!.id, _currentTime, completed: false);
     }
   }
 
@@ -676,7 +726,69 @@ class _LessonsViewState extends State<LessonsView> {
                 ),
               ],
             ),
-          )
+          ),
+
+          // Mark as Mastered button
+          const SizedBox(height: 28),
+          Center(
+            child: SizedBox(
+              width: 260,
+              height: 52,
+              child: ElevatedButton.icon(
+                onPressed: _isMastered
+                    ? null
+                    : () {
+                        // Record completion
+                        widget.onLessonCompleted(
+                          _selectedLesson!.id,
+                          0,
+                          completed: true,
+                        );
+                        setState(() {
+                          _isMastered = true;
+                        });
+                        // Show confetti overlay dialog
+                        showDialog(
+                          context: context,
+                          barrierColor: Colors.transparent,
+                          barrierDismissible: false,
+                          builder: (ctx) {
+                            return ConfettiOverlay(
+                              onComplete: () {
+                                Navigator.of(ctx).pop();
+                              },
+                            );
+                          },
+                        );
+                      },
+                icon: Icon(
+                  _isMastered ? Icons.check_circle_rounded : Icons.emoji_events_rounded,
+                  size: 22,
+                ),
+                label: Text(
+                  _isMastered ? '✓ Mastered' : 'Mark as Mastered',
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: _isMastered
+                      ? AppColors.green
+                      : const Color(0xFFBE185D),
+                  foregroundColor: Colors.white,
+                  disabledBackgroundColor: AppColors.green,
+                  disabledForegroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: _isMastered ? 0 : 2,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 32),
         ],
       ),
     );
@@ -688,10 +800,61 @@ class _LessonsViewState extends State<LessonsView> {
 
   Widget _buildTextNotesContent() {
     if (_isLoadingNote) {
-      return const Padding(
-        padding: EdgeInsets.all(40.0),
-        child: Center(
-          child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(AppColors.purple)),
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+      return Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Shimmer.fromColors(
+          baseColor: isDark ? Colors.grey[800]! : Colors.grey[300]!,
+          highlightColor: isDark ? Colors.grey[700]! : Colors.grey[100]!,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 180,
+                height: 16,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                width: double.infinity,
+                height: 12,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Container(
+                width: double.infinity,
+                height: 12,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Container(
+                width: 280,
+                height: 12,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              const SizedBox(height: 24),
+              Container(
+                width: double.infinity,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -746,8 +909,369 @@ class _LessonsViewState extends State<LessonsView> {
     return Text.rich(TextSpan(children: spans), style: baseStyle);
   }
 
+  Widget _buildMathText(String text, [TextStyle? style]) {
+    final displayParts = text.split('3607864');
+    if (displayParts.length == 1) {
+      return _buildInlineMathText(displayParts[0], style);
+    }
+
+    final List<Widget> children = [];
+    for (int i = 0; i < displayParts.length; i++) {
+      final part = displayParts[i];
+      if (i % 2 == 1) {
+        // Display math → render inside a Formula Card
+        children.add(_buildFormulaCard(part, style));
+      } else {
+        if (part.isNotEmpty) {
+          children.add(_buildInlineMathText(part, style));
+        }
+      }
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: children,
+    );
+  }
+
+  /// Formula Card: blue gradient container with copy button for display math.
+  Widget _buildFormulaCard(String latex, [TextStyle? style]) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFFEFF6FF), Color(0xFFDBEAFE)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(12),
+        border: const Border(
+          left: BorderSide(color: Color(0xFF3B82F6), width: 3),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Row(
+                children: [
+                  Text('📐', style: TextStyle(fontSize: 14)),
+                  SizedBox(width: 6),
+                  Text(
+                    'Formula',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF3B82F6),
+                      fontFamily: 'Outfit',
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 28,
+                height: 28,
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  iconSize: 16,
+                  icon: const Icon(Icons.copy, color: Color(0xFF3B82F6)),
+                  tooltip: 'Copy formula',
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: latex));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Formula copied to clipboard'),
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Center(
+            child: Math.tex(
+              latex,
+              mathStyle: MathStyle.display,
+              textStyle: style,
+              onErrorFallback: (err) => Text(latex, style: style),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Info / Tip Box: amber callout for [INFO:...] or [TIP:...] markers.
+  Widget _buildInfoTipBox(String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.all(16),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFBEB),
+        borderRadius: BorderRadius.circular(12),
+        border: const Border(
+          left: BorderSide(color: Color(0xFFF59E0B), width: 3),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
+            children: [
+              Text('💡', style: TextStyle(fontSize: 14)),
+              SizedBox(width: 6),
+              Text(
+                'Did You Know?',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFB45309),
+                  fontFamily: 'Outfit',
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          _buildMathText(
+            text,
+            const TextStyle(fontSize: 12.5, height: 1.4, color: Color(0xFF78350F)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInlineMathText(String text, [TextStyle? style]) {
+    final inlineParts = text.split('\$');
+    if (inlineParts.length == 1) {
+      return _buildNormalTextWithBold(inlineParts[0], style);
+    }
+
+    final List<InlineSpan> spans = [];
+    for (int i = 0; i < inlineParts.length; i++) {
+      final part = inlineParts[i];
+      if (i % 2 == 1) {
+        spans.add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: Math.tex(
+              part,
+              mathStyle: MathStyle.text,
+              textStyle: style,
+              onErrorFallback: (err) => Text(part, style: style),
+            ),
+          ),
+        );
+      } else {
+        if (part.isNotEmpty) {
+          final boldParts = part.split('**');
+          for (int j = 0; j < boldParts.length; j++) {
+            final boldPart = boldParts[j];
+            final isBold = j % 2 == 1;
+            spans.add(
+              TextSpan(
+                text: boldPart,
+                style: (style ?? const TextStyle()).copyWith(
+                  fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
+                ),
+              ),
+            );
+          }
+        }
+      }
+    }
+
+    return Text.rich(TextSpan(children: spans), style: style);
+  }
+
+  Widget _buildNormalTextWithBold(String text, [TextStyle? style]) {
+    final boldParts = text.split('**');
+    if (boldParts.length == 1) {
+      return Text(text, style: style);
+    }
+
+    final List<TextSpan> spans = [];
+    for (int i = 0; i < boldParts.length; i++) {
+      final isBold = i % 2 == 1;
+      spans.add(
+        TextSpan(
+          text: boldParts[i],
+          style: (style ?? const TextStyle()).copyWith(
+            fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
+          ),
+        ),
+      );
+    }
+    return Text.rich(TextSpan(children: spans), style: style);
+  }
+
+  String _formatSubscripts(String text) {
+    final Map<String, String> subscriptMap = {
+      '0': '₀',
+      '1': '₁',
+      '2': '₂',
+      '3': '₃',
+      '4': '₄',
+      '5': '₅',
+      '6': '₆',
+      '7': '₇',
+      '8': '₈',
+      '9': '₉',
+      'n': 'ₙ',
+      'i': 'ᵢ',
+      'j': 'ⱼ',
+      'x': 'ₓ',
+      'y': 'ᵧ',
+    };
+
+    final parts = text.split('\$');
+    for (int i = 0; i < parts.length; i++) {
+      if (i % 2 == 0) {
+        var part = parts[i];
+        // 1. Chemical formulas: Element symbol followed by optional underscore and digit(s)
+        part = part.replaceAllMapped(RegExp(r'([A-Z][a-z]?)_?(\d+)'), (match) {
+          final element = match.group(1)!;
+          final digits = match.group(2)!;
+          final subscriptDigits = digits.split('').map((d) => subscriptMap[d] ?? d).join('');
+          return '$element$subscriptDigits';
+        });
+
+        // 2. Math/general subscripts: Variable name followed by underscore and a single subscript character
+        part = part.replaceAllMapped(RegExp(r'([a-zA-Z])_([0-9nixy])'), (match) {
+          final variable = match.group(1)!;
+          final sub = match.group(2)!;
+          return '$variable${subscriptMap[sub] ?? sub}';
+        });
+
+        parts[i] = part;
+      }
+    }
+    return parts.join('\$');
+  }
+
+  Widget _buildJargonCalloutCard(String term, String definition, String example, bool isDark) {
+    final bgColor = isDark 
+        ? const Color(0xFF0F2E3D) 
+        : const Color(0xFFE6F4FA);
+    final borderColor = isDark 
+        ? const Color(0xFF0284C7).withOpacity(0.4) 
+        : const Color(0xFFB3E5FC);
+    final termColor = isDark 
+        ? const Color(0xFF38BDF8) 
+        : const Color(0xFF0284C7);
+    final textColor = isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary;
+    final subTextColor = isDark ? AppColors.textDarkSecondary : AppColors.textLightSecondary;
+    final fontStyle = const TextStyle(
+      fontFamily: 'Georgia',
+      fontSize: 13.5,
+      height: 1.45,
+    );
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.all(16),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: borderColor, width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: isDark ? Colors.black26 : Colors.black.withOpacity(0.02),
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.menu_book_rounded,
+                color: termColor,
+                size: 20,
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      term,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: termColor,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    _buildMathText(
+                      definition,
+                      fontStyle.copyWith(color: textColor),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          if (example.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.black12 : Colors.white70,
+                borderRadius: BorderRadius.circular(8),
+                border: Border(
+                  left: BorderSide(
+                    color: termColor.withOpacity(0.6),
+                    width: 3,
+                  ),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Example",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 11.5,
+                      color: termColor,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  _buildMathText(
+                    example,
+                    fontStyle.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: subTextColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
   String cleanMathText(String text) {
-    return text
+    final cleaned = text
         .replaceAll(r'$$\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$$', 'HCF(a, b) × LCM(a, b) = a × b')
         .replaceAll(r'$$\text{HCF}(p, q, r) \times \text{LCM}(p, q, r) \neq p \times q \times r$$', 'HCF(p, q, r) × LCM(p, q, r) ≠ p × q × r')
         .replaceAll(r'$\sqrt{2}$', '√2')
@@ -773,6 +1297,7 @@ class _LessonsViewState extends State<LessonsView> {
         .replaceAll(r'$2b^2 = 4c^2 \implies b^2 = 2c^2$', '2b² = 4c² ⟹ b² = 2c²')
         .replaceAll(r'$5 - \sqrt{3}$', '5 - √3')
         .replaceAll(r'$3\sqrt{2}$', '3√2');
+    return _formatSubscripts(cleaned);
   }
 
   Widget _buildDoYouKnowBoxWithTitle({
@@ -826,7 +1351,7 @@ class _LessonsViewState extends State<LessonsView> {
             ),
           ),
           const SizedBox(height: 8),
-          buildRichTextLine(
+          _buildMathText(
             text,
             const TextStyle(fontSize: 12.5, height: 1.4),
           ),
@@ -845,6 +1370,11 @@ class _LessonsViewState extends State<LessonsView> {
     
     bool inCodeBlock = false;
     List<String> codeBlockLines = [];
+
+    bool inRevision = false;
+    bool inComic = false;
+    List<String>? revisionLines;
+    List<String>? comicLines;
 
     void flushAlert() {
       if (currentAlertLines.isNotEmpty) {
@@ -883,8 +1413,57 @@ class _LessonsViewState extends State<LessonsView> {
       }
     }
 
+    final jargonRegex = RegExp(r'[\{\[]?\s*\[JARGON:\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\]\s*[\}\]]?');
+
     for (var rawLine in lines) {
       var line = rawLine.trim();
+
+      final List<Widget> jargonCards = [];
+      if (!inCodeBlock && !inRevision && !inComic && rawLine.contains('[JARGON:')) {
+        for (final Match match in jargonRegex.allMatches(rawLine)) {
+          final term = match.group(1)!.trim();
+          final definition = match.group(2)!.trim();
+          final example = match.group(3)!.trim();
+          jargonCards.add(_buildJargonCalloutCard(term, definition, example, isDark));
+        }
+        rawLine = rawLine.replaceAllMapped(jargonRegex, (match) => match.group(1)!.trim());
+        line = rawLine.trim();
+      }
+
+      if (!inCodeBlock) {
+        if (line.startsWith('## ') || line.startsWith('# ')) {
+          if (inRevision && revisionLines != null) {
+            children.add(_buildRevisionWidget(revisionLines, isDark));
+            revisionLines = null;
+            inRevision = false;
+          }
+          if (inComic && comicLines != null) {
+            children.add(_buildComicRecapWidget(comicLines, isDark));
+            comicLines = null;
+            inComic = false;
+          }
+
+          if (line.contains('One-Minute Revision')) {
+            inRevision = true;
+            revisionLines = [];
+            continue;
+          } else if (line.contains('Comic Recap')) {
+            inComic = true;
+            comicLines = [];
+            continue;
+          }
+        }
+      }
+
+      if (inRevision) {
+        revisionLines!.add(rawLine);
+        continue;
+      }
+
+      if (inComic) {
+        comicLines!.add(rawLine);
+        continue;
+      }
 
       if (line.startsWith('```')) {
         if (inCodeBlock) {
@@ -992,7 +1571,7 @@ class _LessonsViewState extends State<LessonsView> {
                 ),
               ),
               Expanded(
-                child: buildRichTextLine(
+                child: _buildMathText(
                   text, 
                   TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
                 ),
@@ -1015,7 +1594,7 @@ class _LessonsViewState extends State<LessonsView> {
               ),
               const SizedBox(width: 4),
               Expanded(
-                child: buildRichTextLine(
+                child: _buildMathText(
                   text, 
                   TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
                 ),
@@ -1024,10 +1603,85 @@ class _LessonsViewState extends State<LessonsView> {
           ),
         ));
       } else if (line.isNotEmpty) {
+        // Check for [INFO:...] or [TIP:...] markers
+        final infoTipMatch = RegExp(r'^\[(INFO|TIP):(.+)\]$').firstMatch(line);
+        if (infoTipMatch != null) {
+          final infoText = cleanMathText(infoTipMatch.group(2)!.trim());
+          children.add(_buildInfoTipBox(infoText));
+        } else {
+          final text = cleanMathText(rawLine);
+          children.add(Padding(
+            padding: const EdgeInsets.only(bottom: 12.0),
+            child: _buildMathText(
+              text, 
+              TextStyle(
+                fontSize: 13, 
+                height: 1.4, 
+                color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+              ),
+            ),
+          ));
+        }
+      }
+
+      if (jargonCards.isNotEmpty) {
+        children.addAll(jargonCards);
+      }
+    }
+
+    if (inRevision && revisionLines != null) {
+      children.add(_buildRevisionWidget(revisionLines, isDark));
+    }
+    if (inComic && comicLines != null) {
+      children.add(_buildComicRecapWidget(comicLines, isDark));
+    }
+
+    flushAlert();
+    flushCodeBlock();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    );
+  }
+
+  Widget _buildRevisionWidget(List<String> lines, bool isDark) {
+    final List<Widget> items = [];
+    
+    for (var rawLine in lines) {
+      var line = rawLine.trim();
+      if (line.isEmpty) continue;
+      
+      if (line.startsWith('- ') || line.startsWith('* ')) {
+        final text = cleanMathText(line.substring(2));
+        items.add(Padding(
+          padding: const EdgeInsets.only(left: 4.0, bottom: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 5,
+                height: 5,
+                margin: const EdgeInsets.only(right: 8, top: 7),
+                decoration: const BoxDecoration(
+                  color: AppColors.green,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Expanded(
+                child: _buildMathText(
+                  text, 
+                  TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary),
+                ),
+              ),
+            ],
+          ),
+        ));
+      } else {
         final text = cleanMathText(rawLine);
-        children.add(Padding(
-          padding: const EdgeInsets.only(bottom: 12.0),
-          child: buildRichTextLine(
+        items.add(Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: _buildMathText(
             text, 
             TextStyle(
               fontSize: 13, 
@@ -1038,10 +1692,208 @@ class _LessonsViewState extends State<LessonsView> {
         ));
       }
     }
+    
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF0F291B) : const Color(0xFFF0FDF4),
+        borderRadius: BorderRadius.circular(12),
+        border: const Border(
+          left: BorderSide(color: Color(0xFF22C55E), width: 3),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Text('🔄', style: TextStyle(fontSize: 14)),
+              const SizedBox(width: 8),
+              Text(
+                'Quick Revision',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: isDark ? const Color(0xFF4ADE80) : const Color(0xFF15803D),
+                  fontFamily: 'Outfit',
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: items,
+          ),
+        ],
+      ),
+    );
+  }
 
-    flushAlert();
-    flushCodeBlock();
+  Widget _buildComicRecapWidget(List<String> lines, bool isDark) {
+    final List<ComicPanel> panels = [];
+    String rememberThisText = "";
+    bool inRememberThis = false;
+    
+    String currentSpeaker = "";
+    String currentText = "";
 
+    void flushCurrentDialogue() {
+      if (currentSpeaker.isNotEmpty && currentText.isNotEmpty) {
+        var cleanedText = currentText.trim();
+        final speakerPrefix = "$currentSpeaker:";
+        if (cleanedText.startsWith(speakerPrefix)) {
+          cleanedText = cleanedText.substring(speakerPrefix.length).trim();
+        }
+        
+        if (cleanedText.startsWith('"') && cleanedText.endsWith('"')) {
+          cleanedText = cleanedText.substring(1, cleanedText.length - 1).trim();
+        } else if (cleanedText.startsWith("'") && cleanedText.endsWith("'")) {
+          cleanedText = cleanedText.substring(1, cleanedText.length - 1).trim();
+        }
+        
+        if (cleanedText.startsWith('"') && cleanedText.endsWith('"')) {
+          cleanedText = cleanedText.substring(1, cleanedText.length - 1).trim();
+        }
+        
+        panels.add(ComicPanel(speaker: currentSpeaker, text: cleanedText));
+        currentSpeaker = "";
+        currentText = "";
+      }
+    }
+
+    for (var rawLine in lines) {
+      var line = rawLine.trim();
+      if (line.startsWith('```') || line.isEmpty) continue;
+      
+      var cleanedLine = rawLine
+          .replaceAll(RegExp(r'[│┌└├┤┐┘─┬┴┼────────────]'), '')
+          .trim();
+      
+      if (cleanedLine.isEmpty) continue;
+      
+      if (cleanedLine.contains('📌 REMEMBER THIS!')) {
+        flushCurrentDialogue();
+        inRememberThis = true;
+        continue;
+      }
+      
+      if (inRememberThis) {
+        if (rememberThisText.isNotEmpty) {
+          rememberThisText += "\n";
+        }
+        rememberThisText += cleanedLine;
+        continue;
+      }
+      
+      if (cleanedLine.startsWith('Priya:') || cleanedLine.startsWith('Rahul:')) {
+        flushCurrentDialogue();
+        final colonIndex = cleanedLine.indexOf(':');
+        currentSpeaker = cleanedLine.substring(0, colonIndex).trim();
+        currentText = cleanedLine.substring(colonIndex + 1).trim();
+      } else if (cleanedLine.startsWith('PANEL')) {
+        continue;
+      } else {
+        if (currentSpeaker.isNotEmpty) {
+          if (currentText.isNotEmpty && !currentText.endsWith(' ')) {
+            currentText += " ";
+          }
+          currentText += cleanedLine;
+        }
+      }
+    }
+    flushCurrentDialogue();
+
+    final rememberThisWidget = _buildRememberThisWidget(rememberThisText, isDark);
+
+    return ComicRecap(
+      panels: panels,
+      rememberThis: rememberThisWidget,
+    );
+  }
+
+  Widget _buildRememberThisWidget(String text, bool isDark) {
+    final lines = text.split('\n');
+    final List<Widget> children = [];
+    
+    for (var line in lines) {
+      var trimmed = line.trim();
+      if (trimmed.isEmpty) continue;
+      
+      bool hasMath = trimmed.contains('*') || 
+                     trimmed.contains('×') || 
+                     trimmed.contains('/') || 
+                     trimmed.contains('=') || 
+                     trimmed.contains('√') || 
+                     trimmed.contains(r'\times') || 
+                     trimmed.contains(r'\frac');
+                     
+      if (hasMath) {
+        String latex = trimmed;
+        latex = latex.replaceAll('*', r'\times');
+        latex = latex.replaceAll('×', r'\times');
+        
+        latex = latex.replaceAllMapped(RegExp(r'(-?)([a-zA-Z0-9]+)/([a-zA-Z0-9]+)'), (match) {
+          final sign = match.group(1) ?? '';
+          final num = match.group(2)!;
+          final den = match.group(3)!;
+          return '$sign\\frac{$num}{$den}';
+        });
+        
+        latex = latex.replaceAll('Sum', r'\text{Sum}');
+        latex = latex.replaceAll('Product', r'\text{Product}');
+        latex = latex.replaceAll('HCF', r'\text{HCF}');
+        latex = latex.replaceAll('LCM', r'\text{LCM}');
+        
+        if (latex.endsWith('.')) {
+          latex = latex.substring(0, latex.length - 1);
+        }
+
+        children.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Math.tex(
+              latex,
+              mathStyle: MathStyle.text,
+              textStyle: TextStyle(
+                fontSize: 14.5,
+                color: isDark ? AppColors.orange : AppColors.orangeDark,
+                fontWeight: FontWeight.bold,
+              ),
+              onErrorFallback: (err) => Text(
+                trimmed,
+                style: TextStyle(
+                  fontFamily: 'Georgia',
+                  fontSize: 14.0,
+                  height: 1.4,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                ),
+              ),
+            ),
+          ),
+        );
+      } else {
+        children.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 2.0),
+            child: Text(
+              trimmed,
+              style: TextStyle(
+                fontFamily: 'Georgia',
+                fontSize: 14.0,
+                height: 1.4,
+                fontWeight: FontWeight.w500,
+                color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+              ),
+            ),
+          ),
+        );
+      }
+    }
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: children,

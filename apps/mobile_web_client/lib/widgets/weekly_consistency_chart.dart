@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class WeeklyConsistencyChart extends StatelessWidget {
+class WeeklyConsistencyChart extends StatefulWidget {
   final List<double> weeklyMinutes;
 
   const WeeklyConsistencyChart({
@@ -10,15 +10,52 @@ class WeeklyConsistencyChart extends StatelessWidget {
   });
 
   @override
+  State<WeeklyConsistencyChart> createState() => _WeeklyConsistencyChartState();
+}
+
+class _WeeklyConsistencyChartState extends State<WeeklyConsistencyChart> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1800),
+    );
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic);
+    _controller.forward();
+  }
+
+  @override
+  void didUpdateWidget(covariant WeeklyConsistencyChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _controller.forward(from: 0.0);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: ChartPainter(
-        data: weeklyMinutes,
-        brightness: Theme.of(context).brightness,
-      ),
-      child: Container(
-        height: 180,
-      ),
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return CustomPaint(
+          painter: ChartPainter(
+            data: widget.weeklyMinutes,
+            brightness: Theme.of(context).brightness,
+            animationProgress: _animation.value,
+          ),
+          child: Container(
+            height: 180,
+          ),
+        );
+      },
     );
   }
 }
@@ -26,10 +63,12 @@ class WeeklyConsistencyChart extends StatelessWidget {
 class ChartPainter extends CustomPainter {
   final List<double> data;
   final Brightness brightness;
+  final double animationProgress;
 
   ChartPainter({
     required this.data,
     required this.brightness,
+    required this.animationProgress,
   });
 
   @override
@@ -53,14 +92,15 @@ class ChartPainter extends CustomPainter {
       canvas.drawLine(Offset(0, gridY), Offset(width, gridY), gridPaint);
     }
 
-    // Prepare path points
+    // Prepare path points (scaled by animationProgress)
     final List<Offset> points = [];
     final double segmentWidth = width / (data.length - 1);
 
     for (int i = 0; i < data.length; i++) {
       final double x = i * segmentWidth;
-      // Invert Y axis for screen space
-      final double y = height - (data[i] / maxAxisY) * (height - 30) - 10;
+      // Invert Y axis for screen space, scale the height by animationProgress
+      final double targetY = height - (data[i] / maxAxisY) * (height - 30) - 10;
+      final double y = height - (height - targetY) * animationProgress;
       points.add(Offset(x, y));
     }
 
@@ -78,7 +118,7 @@ class ChartPainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          AppColors.purple.withOpacity(0.2),
+          AppColors.purple.withOpacity(0.2 * animationProgress),
           AppColors.purple.withOpacity(0.0),
         ],
       ).createShader(Rect.fromLTRB(0, 0, width, height));
@@ -105,7 +145,7 @@ class ChartPainter extends CustomPainter {
 
     canvas.drawPath(linePath, linePaint);
 
-    // Draw Data Point Nodes
+    // Draw Data Point Nodes (only when animation is complete or scaling size)
     final nodePaintInner = Paint()
       ..color = brightness == Brightness.dark ? AppColors.cardDark : AppColors.cardLight
       ..style = PaintingStyle.fill;
@@ -116,8 +156,8 @@ class ChartPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     for (var pt in points) {
-      canvas.drawCircle(pt, 5.0, nodePaintInner);
-      canvas.drawCircle(pt, 5.0, nodePaintOuter);
+      canvas.drawCircle(pt, 5.0 * animationProgress, nodePaintInner);
+      canvas.drawCircle(pt, 5.0 * animationProgress, nodePaintOuter);
     }
   }
 

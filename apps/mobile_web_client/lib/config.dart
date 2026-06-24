@@ -4,7 +4,7 @@ class AppConfig {
   /// `--dart-define=SUPABASE_URL=https://your-project.supabase.co`
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: 'https://ervvgjioggfxygtjlpts.supabase.co',
+    defaultValue: 'https://composite-subscription-commodity-nobody.trycloudflare.com',
   );
 
   /// The Supabase Anon Key.
@@ -12,7 +12,7 @@ class AppConfig {
   /// `--dart-define=SUPABASE_ANON_KEY=your-anon-key`
   static const String supabaseAnonKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
-    defaultValue: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVydnZnamlvZ2dmeHlndGpscHRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NzE5OTgsImV4cCI6MjA5NjA0Nzk5OH0.EzYtQrAoBJ_kGd36mPOsmfcsGSV8hLnOs1dc5sCSr4I',
+    defaultValue: 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH',
   );
 
 }

@@ -2,7 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class MasteryRadialGauge extends StatelessWidget {
+class MasteryRadialGauge extends StatefulWidget {
   final double percentage;
   final double size;
 
@@ -13,30 +13,73 @@ class MasteryRadialGauge extends StatelessWidget {
   });
 
   @override
+  State<MasteryRadialGauge> createState() => _MasteryRadialGaugeState();
+}
+
+class _MasteryRadialGaugeState extends State<MasteryRadialGauge> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    );
+    _animation = Tween<double>(begin: 0.0, end: widget.percentage).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
+    );
+    _controller.forward();
+  }
+
+  @override
+  void didUpdateWidget(covariant MasteryRadialGauge oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.percentage != widget.percentage) {
+      _animation = Tween<double>(begin: _animation.value, end: widget.percentage).animate(
+        CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
+      );
+      _controller.forward(from: 0.0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size,
-      height: size,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          CustomPaint(
-            painter: RadialGaugePainter(
-              percentage: percentage,
-              brightness: Theme.of(context).brightness,
-            ),
-            child: Container(),
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return SizedBox(
+          width: widget.size,
+          height: widget.size,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomPaint(
+                painter: RadialGaugePainter(
+                  percentage: _animation.value,
+                  brightness: Theme.of(context).brightness,
+                ),
+                child: Container(),
+              ),
+              Text(
+                "${_animation.value.toInt()}%",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: widget.size * 0.2,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
-          Text(
-            "${percentage.toInt()}%",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: size * 0.2,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
