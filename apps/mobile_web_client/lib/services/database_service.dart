@@ -424,7 +424,14 @@ class SupabaseDatabaseService implements DatabaseService {
         // Map lessons
         final List<Lesson> lessons = lessonsJson.map((lessonJson) {
           final typeStr = lessonJson['type'] as String? ?? 'video';
-          final type = typeStr == 'note' ? LessonType.note : LessonType.video;
+          LessonType type;
+          if (typeStr == 'note') {
+            type = LessonType.note;
+          } else if (typeStr == 'study_guide') {
+            type = LessonType.studyGuide;
+          } else {
+            type = LessonType.video;
+          }
           
           final durationSecs = lessonJson['video_duration_seconds'] as int?;
           final String durationText = durationSecs != null 

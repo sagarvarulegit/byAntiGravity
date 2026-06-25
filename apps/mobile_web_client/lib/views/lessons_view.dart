@@ -11,7 +11,7 @@ import '../widgets/interactive_whiteboard_canvas.dart';
 import '../widgets/confetti_overlay.dart';
 import '../widgets/comic_recap.dart';
 import '../utils/download.dart';
-
+import '../widgets/jargon_modal.dart';
 
 class LessonsView extends StatefulWidget {
   final DatabaseService dbService;
@@ -134,7 +134,7 @@ class _LessonsViewState extends State<LessonsView> {
       _isMastered = false;
     });
 
-    if (lesson.type == LessonType.note) {
+    if (lesson.type == LessonType.note || lesson.type == LessonType.studyGuide) {
       _fetchNoteContent(lesson.id);
     }
   }
@@ -404,7 +404,7 @@ class _LessonsViewState extends State<LessonsView> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            isSelected ? Icons.play_arrow_rounded : statusIcon,
+                            isSelected ? (lesson.type == LessonType.video ? Icons.play_arrow_rounded : (lesson.type == LessonType.studyGuide ? Icons.menu_book_rounded : Icons.article_rounded)) : statusIcon,
                             color: isSelected ? Colors.white : iconColor,
                             size: 16,
                           ),
@@ -423,7 +423,7 @@ class _LessonsViewState extends State<LessonsView> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    lesson.type == LessonType.video ? "🎥 Video • ${lesson.duration}" : "📄 Notes",
+                                    lesson.type == LessonType.video ? "🎥 Video • ${lesson.duration}" : (lesson.type == LessonType.studyGuide ? "📚 Study Guide" : "📄 Notes"),
                                     style: const TextStyle(color: Colors.grey, fontSize: 10),
                                   ),
                                   if (isDownloaded)
@@ -910,7 +910,7 @@ class _LessonsViewState extends State<LessonsView> {
   }
 
   Widget _buildMathText(String text, [TextStyle? style]) {
-    final displayParts = text.split('3607864');
+    final displayParts = text.split(r'$$');
     if (displayParts.length == 1) {
       return _buildInlineMathText(displayParts[0], style);
     }
@@ -927,7 +927,7 @@ class _LessonsViewState extends State<LessonsView> {
         }
       }
     }
-
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -995,11 +995,14 @@ class _LessonsViewState extends State<LessonsView> {
           ),
           const SizedBox(height: 10),
           Center(
-            child: Math.tex(
-              latex,
-              mathStyle: MathStyle.display,
-              textStyle: style,
-              onErrorFallback: (err) => Text(latex, style: style),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Math.tex(
+                latex,
+                mathStyle: MathStyle.display,
+                textStyle: style,
+                onErrorFallback: (err) => Text(latex, style: style),
+              ),
             ),
           ),
         ],
@@ -1075,14 +1078,10 @@ class _LessonsViewState extends State<LessonsView> {
           for (int j = 0; j < boldParts.length; j++) {
             final boldPart = boldParts[j];
             final isBold = j % 2 == 1;
-            spans.add(
-              TextSpan(
-                text: boldPart,
-                style: (style ?? const TextStyle()).copyWith(
-                  fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
-                ),
-              ),
+            final boldStyle = (style ?? const TextStyle()).copyWith(
+              fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
             );
+            spans.addAll(parseJargonMarkers(boldPart, context, boldStyle));
           }
         }
       }
@@ -1094,20 +1093,16 @@ class _LessonsViewState extends State<LessonsView> {
   Widget _buildNormalTextWithBold(String text, [TextStyle? style]) {
     final boldParts = text.split('**');
     if (boldParts.length == 1) {
-      return Text(text, style: style);
+      return Text.rich(TextSpan(children: parseJargonMarkers(text, context, style)), style: style);
     }
 
-    final List<TextSpan> spans = [];
+    final List<InlineSpan> spans = [];
     for (int i = 0; i < boldParts.length; i++) {
       final isBold = i % 2 == 1;
-      spans.add(
-        TextSpan(
-          text: boldParts[i],
-          style: (style ?? const TextStyle()).copyWith(
-            fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
-          ),
-        ),
+      final boldStyle = (style ?? const TextStyle()).copyWith(
+        fontWeight: isBold ? FontWeight.bold : style?.fontWeight,
       );
+      spans.addAll(parseJargonMarkers(boldParts[i], context, boldStyle));
     }
     return Text.rich(TextSpan(children: spans), style: style);
   }
@@ -1548,21 +1543,42 @@ class _LessonsViewState extends State<LessonsView> {
       }
     }
 
-    final jargonRegex = RegExp(r'[\{\[]?\s*\[JARGON:\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\]\s*[\}\]]?');
-
     for (var rawLine in lines) {
       var line = rawLine.trim();
-
-      final List<Widget> jargonCards = [];
-      if (!inCodeBlock && !inRevision && !inComic && rawLine.contains('[JARGON:')) {
-        for (final Match match in jargonRegex.allMatches(rawLine)) {
-          final term = match.group(1)!.trim();
-          final definition = match.group(2)!.trim();
-          final example = match.group(3)!.trim();
-          jargonCards.add(_buildJargonCalloutCard(term, definition, example, isDark));
+      if (line.startsWith('*Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
+        var cautionText = line.replaceAll('*', '').trim();
+        if (cautionText.toLowerCase().startsWith('caution:')) {
+          cautionText = cautionText.substring(8).trim();
         }
-        rawLine = rawLine.replaceAllMapped(jargonRegex, (match) => match.group(1)!.trim());
-        line = rawLine.trim();
+        children.add(
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 12),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.orange.withValues(alpha: 0.1) : Colors.orange.shade50,
+              border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 24),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('COMMON PITFALL', style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold, fontSize: 12)),
+                      const SizedBox(height: 4),
+                      Text(cautionText, style: TextStyle(color: isDark ? Colors.white70 : Colors.black87, height: 1.5, fontSize: 14)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+        );
+        continue;
       }
 
       if (line.startsWith('### Activity')) {
@@ -1811,9 +1827,6 @@ class _LessonsViewState extends State<LessonsView> {
         }
       }
 
-      if (jargonCards.isNotEmpty) {
-        children.addAll(jargonCards);
-      }
     }
 
     if (inRevision && revisionLines != null) {
@@ -2249,6 +2262,11 @@ class _LessonsViewState extends State<LessonsView> {
       figNum = "Figure 12.1 ";
       figCaption = "Circuit diagram for verification of Ohm's Law showing the voltmeter connected in parallel across the resistor, and ammeter, key, rheostat, and battery in series.";
       figHeight = 220;
+    } else if (figType == 'circuit_symbols') {
+      painterWidget = CircuitSymbolsPainter(isDark: isDark);
+      figNum = "Figure 11.1 ";
+      figCaption = "Standard symbols used in electric circuit diagrams.";
+      figHeight = 250;
     } else {
       painterWidget = MagnesiumBurnerPainter(isDark: isDark);
       figNum = "Figure 1.1 ";
@@ -3447,4 +3465,164 @@ class OhmsLawCircuitPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+class CircuitSymbolsPainter extends CustomPainter {
+  final bool isDark;
+  CircuitSymbolsPainter({required this.isDark});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = isDark ? Colors.white : Colors.black
+      ..strokeWidth = 1.5
+      ..style = PaintingStyle.stroke;
+    final fillPaint = Paint()
+      ..color = isDark ? Colors.white : Colors.black
+      ..style = PaintingStyle.fill;
+    
+    final textPainter = TextPainter(
+      textAlign: TextAlign.left,
+      textDirection: TextDirection.ltr,
+    );
+
+    void drawText(String text, Offset offset) {
+      textPainter.text = TextSpan(
+        text: text,
+        style: TextStyle(
+          color: isDark ? Colors.white : Colors.black,
+          fontSize: 12,
+          fontFamily: 'Outfit'
+        ),
+      );
+      textPainter.layout();
+      textPainter.paint(canvas, offset);
+    }
+
+    double col1 = 5;
+    double col2 = 120;
+    double col3 = size.width / 2 + 5;
+    double col4 = size.width / 2 + 120;
+    
+    double y = 10;
+    
+    // Electric cell
+    drawText("Electric Cell", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+15, y+10), paint);
+    canvas.drawLine(Offset(col2+15, y+0), Offset(col2+15, y+20), paint);
+    canvas.drawLine(Offset(col2+22, y+5), Offset(col2+22, y+15), paint..strokeWidth = 3);
+    canvas.drawLine(Offset(col2+22, y+10), Offset(col2+40, y+10), paint..strokeWidth = 1.5);
+    drawText("+", Offset(col2+5, y-8));
+    drawText("-", Offset(col2+25, y-8));
+    
+    // Battery
+    drawText("Battery", Offset(col3, y));
+    double bx = col4;
+    for(int i=0; i<3; i++) {
+        canvas.drawLine(Offset(bx, y+10), Offset(bx+5, y+10), paint);
+        canvas.drawLine(Offset(bx+5, y+0), Offset(bx+5, y+20), paint);
+        canvas.drawLine(Offset(bx+12, y+5), Offset(bx+12, y+15), paint..strokeWidth = 3);
+        canvas.drawLine(Offset(bx+12, y+10), Offset(bx+17, y+10), paint..strokeWidth=1.5);
+        bx += 17;
+    }
+    drawText("+", Offset(col4+0, y-8));
+    drawText("-", Offset(bx-10, y-8));
+    
+    y += 40;
+    
+    // Plug key (open)
+    drawText("Plug Key (Open)", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+10, y+10), paint);
+    canvas.drawArc(Rect.fromCircle(center: Offset(col2+15, y+10), radius: 5), 1.57, 3.14, false, paint);
+    canvas.drawArc(Rect.fromCircle(center: Offset(col2+25, y+10), radius: 5), -1.57, 3.14, false, paint);
+    canvas.drawLine(Offset(col2+30, y+10), Offset(col2+40, y+10), paint);
+    
+    // Plug key (closed)
+    drawText("Plug Key (Closed)", Offset(col3, y));
+    canvas.drawLine(Offset(col4, y+10), Offset(col4+10, y+10), paint);
+    canvas.drawArc(Rect.fromCircle(center: Offset(col4+15, y+10), radius: 5), 1.57, 3.14, false, paint);
+    canvas.drawArc(Rect.fromCircle(center: Offset(col4+25, y+10), radius: 5), -1.57, 3.14, false, paint);
+    canvas.drawLine(Offset(col4+30, y+10), Offset(col4+40, y+10), paint);
+    canvas.drawCircle(Offset(col4+20, y+10), 2, fillPaint);
+    
+    y += 40;
+    
+    // Wire joint
+    drawText("Wire Joint", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+40, y+10), paint);
+    canvas.drawLine(Offset(col2+20, y+10), Offset(col2+20, y-5), paint);
+    canvas.drawCircle(Offset(col2+20, y+10), 2.5, fillPaint);
+
+    // Wires crossing without joining
+    drawText("Crossing Wires", Offset(col3, y));
+    canvas.drawLine(Offset(col4, y+10), Offset(col4+40, y+10), paint);
+    canvas.drawLine(Offset(col4+20, y+25), Offset(col4+20, y+15), paint);
+    canvas.drawArc(Rect.fromCircle(center: Offset(col4+20, y+10), radius: 5), 3.14, 3.14, false, paint);
+    canvas.drawLine(Offset(col4+20, y+5), Offset(col4+20, y-5), paint);
+
+    y += 40;
+    
+    // Electric Bulb
+    drawText("Electric Bulb", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+12, y+10), paint);
+    canvas.drawLine(Offset(col2+28, y+10), Offset(col2+40, y+10), paint);
+    Path bulbPath = Path()
+      ..moveTo(col2+12, y+10)
+      ..quadraticBezierTo(col2+15, y-5, col2+20, y-5)
+      ..quadraticBezierTo(col2+25, y-5, col2+28, y+10);
+    canvas.drawPath(bulbPath, paint);
+    canvas.drawCircle(Offset(col2+20, y+5), 12, paint);
+
+    // Resistor
+    drawText("Resistor", Offset(col3, y));
+    canvas.drawLine(Offset(col4, y+10), Offset(col4+5, y+10), paint);
+    double rx = col4+5;
+    for(int i=0; i<3; i++) {
+        canvas.drawLine(Offset(rx, y+10), Offset(rx+2.5, y+0), paint);
+        canvas.drawLine(Offset(rx+2.5, y+0), Offset(rx+7.5, y+20), paint);
+        canvas.drawLine(Offset(rx+7.5, y+20), Offset(rx+10, y+10), paint);
+        rx += 10;
+    }
+    canvas.drawLine(Offset(rx, y+10), Offset(rx+5, y+10), paint);
+
+    y += 40;
+
+    // Rheostat
+    drawText("Rheostat", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+5, y+10), paint);
+    rx = col2+5;
+    for(int i=0; i<3; i++) {
+        canvas.drawLine(Offset(rx, y+10), Offset(rx+2.5, y+0), paint);
+        canvas.drawLine(Offset(rx+2.5, y+0), Offset(rx+7.5, y+20), paint);
+        canvas.drawLine(Offset(rx+7.5, y+20), Offset(rx+10, y+10), paint);
+        rx += 10;
+    }
+    canvas.drawLine(Offset(rx, y+10), Offset(rx+5, y+10), paint);
+    canvas.drawLine(Offset(col2+10, y+20), Offset(col2+20, y-2), paint);
+    canvas.drawLine(Offset(col2+20, y-2), Offset(col2+17, y+2), paint);
+    canvas.drawLine(Offset(col2+20, y-2), Offset(col2+23, y+2), paint);
+
+    // Ammeter
+    drawText("Ammeter", Offset(col3, y));
+    canvas.drawLine(Offset(col4, y+10), Offset(col4+10, y+10), paint);
+    canvas.drawCircle(Offset(col4+20, y+10), 10, paint);
+    drawText("A", Offset(col4+16, y+2));
+    canvas.drawLine(Offset(col4+30, y+10), Offset(col4+40, y+10), paint);
+    drawText("+", Offset(col4+2, y-8));
+    drawText("-", Offset(col4+32, y-8));
+
+    y += 40;
+
+    // Voltmeter
+    drawText("Voltmeter", Offset(col1, y));
+    canvas.drawLine(Offset(col2, y+10), Offset(col2+10, y+10), paint);
+    canvas.drawCircle(Offset(col2+20, y+10), 10, paint);
+    drawText("V", Offset(col2+16, y+2));
+    canvas.drawLine(Offset(col2+30, y+10), Offset(col2+40, y+10), paint);
+    drawText("+", Offset(col2+2, y-8));
+    drawText("-", Offset(col2+32, y-8));
+
+  }
+  
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }

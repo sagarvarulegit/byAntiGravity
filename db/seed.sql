@@ -28,7 +28,7 @@ INSERT INTO chapters (id, subject_id, title, sequence_number, description) VALUE
 
 -- Science Chapters
 ('c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 1: Chemical Reactions & Equations', 1, 'Learn about chemical changes, writing balanced chemical equations, and types of chemical reactions.'),
-('c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 12: Electricity', 12, 'Electric potential, currents, Ohm''s law, resistance factors, and heating effects of currents.'),
+('c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 11: Electricity', 11, 'Electric potential, currents, Ohm''s law, resistance factors, and heating effects of currents.'),
 
 -- Social Science Chapters
 ('c0eebc99-9c0b-4ef8-bb6d-6bb9bd380331', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'Chapter 1: Nationalism in India', 1, 'Explore the impact of the First World War, Satyagraha, Non-Cooperation, and Civil Disobedience movements.');

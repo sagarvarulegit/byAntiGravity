@@ -46,25 +46,25 @@ class JargonParser {
 /// Helper method to detect [JARGON: term | definition | example] markers in text
 /// and return a list of TextSpan and tappable WidgetSpan for jargon terms.
 /// Tappable spans trigger the modal.
-List<InlineSpan> parseJargonMarkers(String text, BuildContext context) {
-  return parseJargonMarkersWithContext(text, context);
+List<InlineSpan> parseJargonMarkers(String text, BuildContext context, [TextStyle? style]) {
+  return parseJargonMarkersWithContext(text, context, style);
 }
 
 /// Core regex-based parsing implementation.
-List<InlineSpan> parseJargonMarkersWithContext(String text, BuildContext context) {
+List<InlineSpan> parseJargonMarkersWithContext(String text, BuildContext context, [TextStyle? style]) {
   final List<InlineSpan> spans = [];
-  final regex = RegExp(r'\[JARGON:\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\|\s*([^|\]]+)\s*\]');
+  final regex = RegExp(r'\[JARGON:\s*([^|\]]+)\s*\|\s*([^|\]]+)(?:\s*\|\s*([^|\]]+))?\s*\]');
   
   int lastMatchEnd = 0;
   for (final Match match in regex.allMatches(text)) {
     // Add any normal text preceding the jargon marker
     if (match.start > lastMatchEnd) {
-      spans.add(TextSpan(text: text.substring(lastMatchEnd, match.start)));
+      spans.add(TextSpan(text: text.substring(lastMatchEnd, match.start), style: style));
     }
     
     final term = match.group(1)!.trim();
     final definition = match.group(2)!.trim();
-    final example = match.group(3)!.trim();
+    final example = match.groupCount >= 3 && match.group(3) != null ? match.group(3)!.trim() : "";
     
     // Add the tappable widget span for the jargon term
     spans.add(
@@ -76,7 +76,7 @@ List<InlineSpan> parseJargonMarkersWithContext(String text, BuildContext context
             cursor: SystemMouseCursors.click,
             child: Text(
               term,
-              style: const TextStyle(
+              style: (style ?? const TextStyle()).copyWith(
                 fontFamily: 'Outfit',
                 fontWeight: FontWeight.bold,
                 color: AppColors.purple, // NCERT Magenta (#BE185D)
@@ -95,7 +95,7 @@ List<InlineSpan> parseJargonMarkersWithContext(String text, BuildContext context
   
   // Add any remaining normal text
   if (lastMatchEnd < text.length) {
-    spans.add(TextSpan(text: text.substring(lastMatchEnd)));
+    spans.add(TextSpan(text: text.substring(lastMatchEnd), style: style));
   }
   
   return spans;

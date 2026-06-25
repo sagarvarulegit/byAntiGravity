@@ -4,7 +4,7 @@
 
 INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number) VALUES
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380122', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Revision Notes: Electricity', 'note', NULL, NULL,
-'# Chapter 12: Electricity
+'# Chapter 11: Electricity
 
 ## Chapter Goal
 The goal of this chapter is to understand how electric current flows in a circuit, how potential difference drives this flow, what factors control or resist it (Ohm''s Law and Resistivity), how resistors work in different combinations (series and parallel), and how electric current is used to generate heat and power in everyday appliances.

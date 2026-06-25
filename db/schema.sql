@@ -51,7 +51,7 @@ CREATE TABLE chapters (
 );
 
 -- COURSE CATALOG: LESSONS (Videos and Notes)
-CREATE TYPE lesson_type AS ENUM ('video', 'note');
+CREATE TYPE lesson_type AS ENUM ('video', 'note', 'study_guide');
 CREATE TABLE lessons (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     chapter_id UUID NOT NULL REFERENCES chapters(id) ON DELETE CASCADE,
