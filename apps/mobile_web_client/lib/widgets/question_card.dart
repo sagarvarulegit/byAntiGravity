@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
-import 'board_badge.dart';
 
 class QuestionCard extends StatelessWidget {
   final Widget questionWidget;
   final Widget answerWidget;
-  final bool showBadge;
 
   const QuestionCard({
     super.key,
     required this.questionWidget,
     required this.answerWidget,
-    this.showBadge = false,
   });
 
   @override
@@ -36,13 +33,6 @@ class QuestionCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (showBadge) ...[
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: BoardBadge(text: "CBSE 2023"),
-                  ),
-                  const SizedBox(height: 8),
-                ],
                 questionWidget,
               ],
             ),

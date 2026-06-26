@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
-import 'board_badge.dart';
 
 class InteractiveExample extends StatefulWidget {
   final String title;
   final Widget questionWidget;
   final Widget solutionWidget;
-  final bool showBadge;
 
   const InteractiveExample({
     super.key,
     required this.title,
     required this.questionWidget,
     required this.solutionWidget,
-    this.showBadge = false,
   });
 
   @override
@@ -72,10 +69,6 @@ class _InteractiveExampleState extends State<InteractiveExample> {
                         ),
                       ),
                     ),
-                    if (widget.showBadge) ...[
-                      const Spacer(),
-                      const BoardBadge(text: "Frequent Board Question"),
-                    ]
                   ],
                 ),
                 const SizedBox(height: 16),
