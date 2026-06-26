@@ -12,6 +12,8 @@ import '../widgets/confetti_overlay.dart';
 import '../widgets/comic_recap.dart';
 import '../utils/download.dart';
 import '../widgets/jargon_modal.dart';
+import '../widgets/interactive_example.dart';
+import '../widgets/question_card.dart';
 
 class LessonsView extends StatefulWidget {
   final DatabaseService dbService;
@@ -1491,6 +1493,17 @@ class _LessonsViewState extends State<LessonsView> {
     List<String>? revisionLines;
     List<String>? comicLines;
 
+    bool inExample = false;
+    bool inSolution = false;
+    String exampleTitle = "";
+    List<String> exampleQuestionLines = [];
+    List<String> exampleSolutionLines = [];
+    int exampleCount = 0;
+
+    bool inQuestionsSection = false;
+    List<String> questionBlockLines = [];
+    int questionCount = 0;
+
     void flushAlert() {
       if (currentAlertLines.isNotEmpty) {
         final alertText = currentAlertLines.join('\n');
@@ -1543,8 +1556,119 @@ class _LessonsViewState extends State<LessonsView> {
       }
     }
 
+    void flushExample() {
+      if (inExample) {
+        final qText = exampleQuestionLines.join('\n');
+        final sText = exampleSolutionLines.join('\n');
+        children.add(InteractiveExample(
+          title: exampleTitle,
+          questionWidget: _buildMathText(qText, TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
+          solutionWidget: _buildMathText(sText, TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
+          showBadge: exampleCount % 2 != 0,
+        ));
+        inExample = false;
+        inSolution = false;
+        exampleTitle = "";
+        exampleQuestionLines.clear();
+        exampleSolutionLines.clear();
+      }
+    }
+
+    void flushQuestions() {
+      if (questionBlockLines.isNotEmpty) {
+        List<String> currentQ = [];
+        List<String> currentA = [];
+        bool inAnswer = false;
+        
+        void flushSingleQ() {
+          if (currentQ.isNotEmpty) {
+            children.add(QuestionCard(
+              questionWidget: _buildMathText(currentQ.join('\n'), TextStyle(fontWeight: FontWeight.bold, fontSize: 13.5, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
+              answerWidget: _buildMathText(currentA.join('\n'), TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkSecondary : AppColors.textLightSecondary, height: 1.4)),
+              showBadge: questionCount % 2 == 0,
+            ));
+            questionCount++;
+            currentQ.clear();
+            currentA.clear();
+          }
+        }
+
+        for (var line in questionBlockLines) {
+          if (RegExp(r'^\*\*\d+\.').hasMatch(line)) {
+            flushSingleQ();
+            inAnswer = false;
+            currentQ.add(line);
+          } else if (line.trim().startsWith('*Answer:*')) {
+            inAnswer = true;
+            currentA.add(line.replaceFirst('*Answer:*', '').trim());
+          } else if (inAnswer) {
+            currentA.add(line);
+          } else {
+            currentQ.add(line);
+          }
+        }
+        flushSingleQ();
+        questionBlockLines.clear();
+        inQuestionsSection = false;
+      }
+    }
+
     for (var rawLine in lines) {
       var line = rawLine.trim();
+
+      if (line.startsWith('**Example ')) {
+        flushActivity();
+        flushExample();
+        flushQuestions();
+        inExample = true;
+        inSolution = false;
+        exampleCount++;
+        exampleTitle = line.replaceAll('**', '').trim();
+        continue;
+      }
+
+      if (inExample) {
+        if (line.startsWith('**Solution:**')) {
+          inSolution = true;
+          continue;
+        }
+        if (line.isEmpty) {
+          if (inSolution && exampleSolutionLines.isNotEmpty) {
+             flushExample();
+          }
+          continue;
+        }
+        if (line.startsWith('## ') || line.startsWith('---') || line == '**❓ QUESTIONS**') {
+          flushExample();
+        } else {
+          if (inSolution) {
+            exampleSolutionLines.add(cleanMathText(rawLine));
+          } else {
+            exampleQuestionLines.add(cleanMathText(rawLine));
+          }
+          continue;
+        }
+      }
+
+      if (line == '**❓ QUESTIONS**') {
+        flushActivity();
+        flushExample();
+        flushQuestions();
+        inQuestionsSection = true;
+        continue;
+      }
+
+      if (inQuestionsSection) {
+        if (line.startsWith('---') || line.startsWith('## ')) {
+          flushQuestions();
+        } else {
+          if (line.isNotEmpty) {
+            questionBlockLines.add(cleanMathText(rawLine));
+          }
+          continue;
+        }
+      }
+
       if (line.startsWith('*Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
         var cautionText = line.replaceAll('*', '').trim();
         if (cautionText.toLowerCase().startsWith('caution:')) {
@@ -1582,6 +1706,8 @@ class _LessonsViewState extends State<LessonsView> {
       }
 
       if (line.startsWith('### Activity')) {
+        flushExample();
+        flushQuestions();
         if (inRevision && revisionLines != null) {
           children.add(_buildRevisionWidget(revisionLines, isDark));
           revisionLines = null;
@@ -1619,6 +1745,8 @@ class _LessonsViewState extends State<LessonsView> {
 
       if (!inCodeBlock) {
         if (line.startsWith('## ') || line.startsWith('# ')) {
+          flushExample();
+          flushQuestions();
           if (inRevision && revisionLines != null) {
             children.add(_buildRevisionWidget(revisionLines, isDark));
             revisionLines = null;
@@ -1836,6 +1964,8 @@ class _LessonsViewState extends State<LessonsView> {
       children.add(_buildComicRecapWidget(comicLines, isDark));
     }
     flushActivity();
+    flushExample();
+    flushQuestions();
 
     flushAlert();
     flushCodeBlock();
@@ -1989,7 +2119,14 @@ class _LessonsViewState extends State<LessonsView> {
         continue;
       }
       
-      if (cleanedLine.startsWith('Priya:') || cleanedLine.startsWith('Rahul:')) {
+      final speakerMatch = RegExp(r'^(.*?)\*\*(.*?):\*\*\s*(.*)$').firstMatch(cleanedLine);
+      if (speakerMatch != null) {
+        flushCurrentDialogue();
+        final emoji = speakerMatch.group(1)?.trim() ?? '';
+        final name = speakerMatch.group(2)?.trim() ?? '';
+        currentSpeaker = emoji.isNotEmpty ? "$emoji $name" : name;
+        currentText = speakerMatch.group(3)?.trim() ?? '';
+      } else if (cleanedLine.startsWith('Priya:') || cleanedLine.startsWith('Rahul:')) {
         flushCurrentDialogue();
         final colonIndex = cleanedLine.indexOf(':');
         currentSpeaker = cleanedLine.substring(0, colonIndex).trim();
