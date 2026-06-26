@@ -1564,7 +1564,6 @@ class _LessonsViewState extends State<LessonsView> {
           title: exampleTitle,
           questionWidget: _buildMathText(qText, TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
           solutionWidget: _buildMathText(sText, TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
-          showBadge: exampleCount % 2 != 0,
         ));
         inExample = false;
         inSolution = false;
@@ -1585,7 +1584,6 @@ class _LessonsViewState extends State<LessonsView> {
             children.add(QuestionCard(
               questionWidget: _buildMathText(currentQ.join('\n'), TextStyle(fontWeight: FontWeight.bold, fontSize: 13.5, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
               answerWidget: _buildMathText(currentA.join('\n'), TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkSecondary : AppColors.textLightSecondary, height: 1.4)),
-              showBadge: questionCount % 2 == 0,
             ));
             questionCount++;
             currentQ.clear();
