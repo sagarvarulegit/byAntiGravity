@@ -2439,7 +2439,7 @@ class _LessonsViewState extends State<LessonsView> {
       figHeight = 220;
     } else if (figType == 'ohms_law_circuit') {
       painterWidget = OhmsLawCircuitPainter(isDark: isDark);
-      figNum = "Figure 12.1 ";
+      figNum = "Figure 11.3 ";
       figCaption = "Circuit diagram for verification of Ohm's Law showing the voltmeter connected in parallel across the resistor, and ammeter, key, rheostat, and battery in series.";
       figHeight = 220;
     } else if (figType == 'circuit_symbols') {
