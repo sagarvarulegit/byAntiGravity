@@ -15,7 +15,7 @@
 | **Phases** | 5 (Foundation → Core → Content → Polish → Payment) |
 | **Current State** | Auth ✅, Schema ✅, Seed (partial) ✅, CI/CD ✅, UI shell ✅ |
 | **Critical Path** | RLS → Env Vars → Wire Views → Quiz Expansion → Content Seeding → Android Build → Domain → **Ship Free MVP** → Payment |
-| **Hard Blockers** | Supabase RLS must be on before any student touches production. Env vars must be out of source before public repo/APK. |
+| **Hard Blockers** | Supabase RLS must be on before any student touches production. Env vars must be out of source before public repo/APK. **PRODUCTION DATA TRAP: `supabase db push` ignores seed files; curriculum must be manually pushed to prod or converted to a migration.** |
 
 ### What "Done" Means for MVP
 Students can: sign up → browse all CBSE subjects/chapters → read revision notes with LaTeX → take MCQ quizzes → see streaks & progress → use the Android app — **all for free**. Premium content is locked behind `is_free=false` on the client, but no real payment flow exists yet. Payment is added in Phase 5 only after we have real students.
@@ -322,6 +322,13 @@ Students can: sign up → browse all CBSE subjects/chapters → read revision no
 - [ ] **P2 | 3h** | Offline caching: integrate Hive or SQLite for local DB cache of syllabus, completed lessons, streaks
   - **Deps**: `hive_flutter` or `sqflite` package
   - **Deliverable**: App works without network for previously loaded content
+
+### 4.6 Production Data Deployment (CRITICAL)
+
+- [ ] **P0 | 1h** | Execute `supabase/seed.sql` against the remote Production Supabase instance.
+  - **Why**: `supabase db push` only pushes the schema structure, ignoring seed files. Our curriculum data is currently stored in seed files.
+  - **Deps**: Phase 3 (Content Completion)
+  - **Deliverable**: Production database populated with all subjects, chapters, lessons, and quizzes via manual `psql` execution or by converting the final seed into a proper Supabase migration file.
 
 ---
 
