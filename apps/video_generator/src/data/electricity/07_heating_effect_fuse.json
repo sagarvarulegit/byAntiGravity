@@ -1,0 +1,701 @@
+{
+  "id": "electricity-07",
+  "title": "Heating Effect & Fuse Action",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "content": {
+        "text": "Heating Effect of Electric Current",
+        "subtitle": "Joule's Law of Heating & Safety Fuses"
+      },
+      "durationInFrames": 161,
+      "alignments": [
+        {
+          "word": "Heating",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "word": "Effect",
+          "start": 0.383,
+          "end": 0.697
+        },
+        {
+          "word": "of",
+          "start": 0.743,
+          "end": 0.801
+        },
+        {
+          "word": "Electric",
+          "start": 0.859,
+          "end": 1.184
+        },
+        {
+          "word": "Current.",
+          "start": 1.231,
+          "end": 1.718
+        },
+        {
+          "word": "Joule's",
+          "start": 2.229,
+          "end": 2.554
+        },
+        {
+          "word": "Law",
+          "start": 2.624,
+          "end": 2.902
+        },
+        {
+          "word": "of",
+          "start": 3.053,
+          "end": 3.181
+        },
+        {
+          "word": "Heating",
+          "start": 3.262,
+          "end": 3.541
+        },
+        {
+          "word": "&",
+          "start": 3.599,
+          "end": 3.646
+        },
+        {
+          "word": "Safety",
+          "start": 3.727,
+          "end": 4.052
+        },
+        {
+          "word": "Fuses",
+          "start": 4.11,
+          "end": 4.83
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "content": {
+        "text": "When electric current flows through a high-resistance wire, electrical energy is converted into heat energy."
+      },
+      "durationInFrames": 186,
+      "alignments": [
+        {
+          "word": "When",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "electric",
+          "start": 0.232,
+          "end": 0.592
+        },
+        {
+          "word": "current",
+          "start": 0.65,
+          "end": 0.952
+        },
+        {
+          "word": "flows",
+          "start": 1.01,
+          "end": 1.254
+        },
+        {
+          "word": "through",
+          "start": 1.277,
+          "end": 1.451
+        },
+        {
+          "word": "a",
+          "start": 1.486,
+          "end": 1.509
+        },
+        {
+          "word": "high-resistance",
+          "start": 1.567,
+          "end": 2.218
+        },
+        {
+          "word": "wire,",
+          "start": 2.252,
+          "end": 2.682
+        },
+        {
+          "word": "electrical",
+          "start": 2.891,
+          "end": 3.379
+        },
+        {
+          "word": "energy",
+          "start": 3.448,
+          "end": 3.727
+        },
+        {
+          "word": "is",
+          "start": 3.773,
+          "end": 3.843
+        },
+        {
+          "word": "converted",
+          "start": 3.889,
+          "end": 4.261
+        },
+        {
+          "word": "into",
+          "start": 4.307,
+          "end": 4.458
+        },
+        {
+          "word": "heat",
+          "start": 4.551,
+          "end": 4.807
+        },
+        {
+          "word": "energy.",
+          "start": 4.899,
+          "end": 5.666
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "diagram",
+      "content": {
+        "title": "Joule's Law of Heating",
+        "subtitle": "H = I^2 * R * t"
+      },
+      "durationInFrames": 234,
+      "alignments": [
+        {
+          "word": "Joule's",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "Law",
+          "start": 0.43,
+          "end": 0.65
+        },
+        {
+          "word": "of",
+          "start": 0.731,
+          "end": 0.813
+        },
+        {
+          "word": "Heating.",
+          "start": 0.882,
+          "end": 1.335
+        },
+        {
+          "word": "H",
+          "start": 1.718,
+          "end": 2.043
+        },
+        {
+          "word": "=",
+          "start": 2.252,
+          "end": 3.367
+        },
+        {
+          "word": "I^2",
+          "start": 3.46,
+          "end": 4.029
+        },
+        {
+          "word": "*",
+          "start": 4.238,
+          "end": 4.748
+        },
+        {
+          "word": "R",
+          "start": 5.074,
+          "end": 5.317
+        },
+        {
+          "word": "*",
+          "start": 5.492,
+          "end": 6.002
+        },
+        {
+          "word": "t",
+          "start": 6.444,
+          "end": 7.245
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "text",
+      "content": {
+        "heading": "Applications of Heating Effect",
+        "bullets": [
+          "Electric irons, toasters, and heaters use alloys like Nichrome.",
+          "Electric bulbs use a Tungsten filament that gets so hot it emits light."
+        ]
+      },
+      "durationInFrames": 345,
+      "alignments": [
+        {
+          "word": "Applications",
+          "start": 0,
+          "end": 0.662
+        },
+        {
+          "word": "of",
+          "start": 0.697,
+          "end": 0.743
+        },
+        {
+          "word": "Heating",
+          "start": 0.813,
+          "end": 1.068
+        },
+        {
+          "word": "Effect.",
+          "start": 1.115,
+          "end": 1.602
+        },
+        {
+          "word": "Electric",
+          "start": 2.206,
+          "end": 2.624
+        },
+        {
+          "word": "irons,",
+          "start": 2.682,
+          "end": 3.181
+        },
+        {
+          "word": "toasters,",
+          "start": 3.297,
+          "end": 4.005
+        },
+        {
+          "word": "and",
+          "start": 4.122,
+          "end": 4.261
+        },
+        {
+          "word": "heaters",
+          "start": 4.331,
+          "end": 4.667
+        },
+        {
+          "word": "use",
+          "start": 4.737,
+          "end": 4.888
+        },
+        {
+          "word": "alloys",
+          "start": 4.934,
+          "end": 5.294
+        },
+        {
+          "word": "like",
+          "start": 5.329,
+          "end": 5.492
+        },
+        {
+          "word": "Nichrome..",
+          "start": 5.55,
+          "end": 6.188
+        },
+        {
+          "word": "Electric",
+          "start": 7.14,
+          "end": 7.535
+        },
+        {
+          "word": "bulbs",
+          "start": 7.581,
+          "end": 7.872
+        },
+        {
+          "word": "use",
+          "start": 7.93,
+          "end": 8.057
+        },
+        {
+          "word": "a",
+          "start": 8.081,
+          "end": 8.104
+        },
+        {
+          "word": "Tungsten",
+          "start": 8.15,
+          "end": 8.545
+        },
+        {
+          "word": "filament",
+          "start": 8.615,
+          "end": 8.998
+        },
+        {
+          "word": "that",
+          "start": 9.033,
+          "end": 9.149
+        },
+        {
+          "word": "gets",
+          "start": 9.195,
+          "end": 9.369
+        },
+        {
+          "word": "so",
+          "start": 9.404,
+          "end": 9.567
+        },
+        {
+          "word": "hot",
+          "start": 9.648,
+          "end": 9.857
+        },
+        {
+          "word": "it",
+          "start": 9.915,
+          "end": 9.985
+        },
+        {
+          "word": "emits",
+          "start": 10.043,
+          "end": 10.286
+        },
+        {
+          "word": "light.",
+          "start": 10.344,
+          "end": 10.96
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "kinetic_typography",
+      "content": {
+        "text": "A crucial application of this heating effect is the Electric Fuse."
+      },
+      "durationInFrames": 123,
+      "alignments": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "word": "crucial",
+          "start": 0.174,
+          "end": 0.522
+        },
+        {
+          "word": "application",
+          "start": 0.58,
+          "end": 1.115
+        },
+        {
+          "word": "of",
+          "start": 1.149,
+          "end": 1.196
+        },
+        {
+          "word": "this",
+          "start": 1.231,
+          "end": 1.335
+        },
+        {
+          "word": "heating",
+          "start": 1.382,
+          "end": 1.614
+        },
+        {
+          "word": "effect",
+          "start": 1.66,
+          "end": 1.974
+        },
+        {
+          "word": "is",
+          "start": 2.043,
+          "end": 2.171
+        },
+        {
+          "word": "the",
+          "start": 2.218,
+          "end": 2.287
+        },
+        {
+          "word": "Electric",
+          "start": 2.368,
+          "end": 2.763
+        },
+        {
+          "word": "Fuse.",
+          "start": 2.821,
+          "end": 3.529
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-05.mp3"
+    },
+    {
+      "id": "scene-06",
+      "type": "text",
+      "content": {
+        "heading": "The Electric Fuse",
+        "bullets": [
+          "A safety device placed in series with the circuit.",
+          "Made of a wire with an appropriate melting point.",
+          "If current exceeds the safe limit, the fuse wire heats up, melts, and breaks the circuit.",
+          "This protects appliances from damage due to short circuits or overloading."
+        ]
+      },
+      "durationInFrames": 595,
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "Electric",
+          "start": 0.232,
+          "end": 0.662
+        },
+        {
+          "word": "Fuse.",
+          "start": 0.72,
+          "end": 1.254
+        },
+        {
+          "word": "A",
+          "start": 1.95,
+          "end": 2.032
+        },
+        {
+          "word": "safety",
+          "start": 2.125,
+          "end": 2.438
+        },
+        {
+          "word": "device",
+          "start": 2.485,
+          "end": 2.81
+        },
+        {
+          "word": "placed",
+          "start": 2.856,
+          "end": 3.17
+        },
+        {
+          "word": "in",
+          "start": 3.216,
+          "end": 3.286
+        },
+        {
+          "word": "series",
+          "start": 3.379,
+          "end": 3.75
+        },
+        {
+          "word": "with",
+          "start": 3.773,
+          "end": 3.901
+        },
+        {
+          "word": "the",
+          "start": 3.936,
+          "end": 4.005
+        },
+        {
+          "word": "circuit..",
+          "start": 4.04,
+          "end": 4.574
+        },
+        {
+          "word": "Made",
+          "start": 5.178,
+          "end": 5.387
+        },
+        {
+          "word": "of",
+          "start": 5.422,
+          "end": 5.468
+        },
+        {
+          "word": "a",
+          "start": 5.515,
+          "end": 5.538
+        },
+        {
+          "word": "wire",
+          "start": 5.608,
+          "end": 5.956
+        },
+        {
+          "word": "with",
+          "start": 6.002,
+          "end": 6.177
+        },
+        {
+          "word": "an",
+          "start": 6.211,
+          "end": 6.258
+        },
+        {
+          "word": "appropriate",
+          "start": 6.281,
+          "end": 6.838
+        },
+        {
+          "word": "melting",
+          "start": 6.873,
+          "end": 7.187
+        },
+        {
+          "word": "point..",
+          "start": 7.245,
+          "end": 7.767
+        },
+        {
+          "word": "If",
+          "start": 8.371,
+          "end": 8.51
+        },
+        {
+          "word": "current",
+          "start": 8.591,
+          "end": 8.951
+        },
+        {
+          "word": "exceeds",
+          "start": 9.009,
+          "end": 9.474
+        },
+        {
+          "word": "the",
+          "start": 9.509,
+          "end": 9.578
+        },
+        {
+          "word": "safe",
+          "start": 9.625,
+          "end": 9.88
+        },
+        {
+          "word": "limit,",
+          "start": 9.938,
+          "end": 10.379
+        },
+        {
+          "word": "the",
+          "start": 10.553,
+          "end": 10.67
+        },
+        {
+          "word": "fuse",
+          "start": 10.739,
+          "end": 11.029
+        },
+        {
+          "word": "wire",
+          "start": 11.064,
+          "end": 11.355
+        },
+        {
+          "word": "heats",
+          "start": 11.424,
+          "end": 11.714
+        },
+        {
+          "word": "up,",
+          "start": 11.784,
+          "end": 12.156
+        },
+        {
+          "word": "melts,",
+          "start": 12.365,
+          "end": 12.945
+        },
+        {
+          "word": "and",
+          "start": 13.061,
+          "end": 13.224
+        },
+        {
+          "word": "breaks",
+          "start": 13.293,
+          "end": 13.572
+        },
+        {
+          "word": "the",
+          "start": 13.607,
+          "end": 13.677
+        },
+        {
+          "word": "circuit..",
+          "start": 13.723,
+          "end": 14.362
+        },
+        {
+          "word": "This",
+          "start": 15.058,
+          "end": 15.279
+        },
+        {
+          "word": "protects",
+          "start": 15.337,
+          "end": 15.732
+        },
+        {
+          "word": "appliances",
+          "start": 15.766,
+          "end": 16.324
+        },
+        {
+          "word": "from",
+          "start": 16.37,
+          "end": 16.509
+        },
+        {
+          "word": "damage",
+          "start": 16.567,
+          "end": 16.939
+        },
+        {
+          "word": "due",
+          "start": 16.985,
+          "end": 17.171
+        },
+        {
+          "word": "to",
+          "start": 17.194,
+          "end": 17.264
+        },
+        {
+          "word": "short",
+          "start": 17.345,
+          "end": 17.577
+        },
+        {
+          "word": "circuits",
+          "start": 17.624,
+          "end": 17.984
+        },
+        {
+          "word": "or",
+          "start": 18.042,
+          "end": 18.216
+        },
+        {
+          "word": "overloading.",
+          "start": 18.309,
+          "end": 19.273
+        }
+      ],
+      "audio": "/audio/electricity/electricity-07_scene-06.mp3"
+    }
+  ],
+  "durationInFrames": 1644
+}

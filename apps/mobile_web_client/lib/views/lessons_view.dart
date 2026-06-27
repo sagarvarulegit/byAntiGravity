@@ -54,8 +54,35 @@ class _LessonsViewState extends State<LessonsView> {
     if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006') {
       return 'videos/01_introduction.mp4?v=2'; // cache-buster for Todd's voice
     }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380010') {
+      return 'videos/02_potential_difference.mp4?v=2';
+    }
     if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380007') {
       return 'videos/03_ohms_law.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380011') {
+      return 'videos/04_conventional_vs_electron_flow.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380012') {
+      return 'videos/05_ammeter_voltmeter.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380013') {
+      return 'videos/08_ohms_law_verification.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380014') {
+      return 'videos/06_resistance_factors.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380015') {
+      return 'videos/09_series_parallel_simplification.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380016') {
+      return 'videos/10_parallel_resistance_trap.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380017') {
+      return 'videos/07_heating_effect_fuse.mp4?v=2';
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380018') {
+      return 'videos/11_commercial_energy_billing.mp4?v=2';
     }
     return lesson.videoHlsUrl ?? '';
   }

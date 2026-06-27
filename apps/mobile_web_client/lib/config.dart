@@ -4,7 +4,7 @@ class AppConfig {
   /// `--dart-define=SUPABASE_URL=https://your-project.supabase.co`
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: 'https://based-meters-dui-readings.trycloudflare.com',
+    defaultValue: 'https://canal-physiology-rhode-guru.trycloudflare.com',
   );
 
   /// The Supabase Anon Key.

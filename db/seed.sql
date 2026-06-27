@@ -37,8 +37,8 @@ INSERT INTO chapters (id, subject_id, title, sequence_number, description) VALUE
 -- 3. INSERT LESSONS (Videos and Notes)
 INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number) VALUES
 -- Maths Chapter 1 Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.1 The Fundamental Theorem of Arithmetic', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 960, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.2 Revisiting Irrational Numbers', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1180, NULL, TRUE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.1 The Fundamental Theorem of Arithmetic', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 960, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', '1.2 Revisiting Irrational Numbers', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1180, NULL, TRUE, 2),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380009', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380111', 'Revision Notes: Real Numbers', 'note', NULL, NULL, 
 '# Chapter 1: Real Numbers
 
@@ -106,8 +106,8 @@ A number $s$ is called **irrational** if it cannot be written in the form $\frac
 2. The product and quotient of a non-zero rational and irrational number is **irrational**. (e.g., $3\sqrt{2}$)', TRUE, 3),
 
 -- Science Chapter 1 Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Writing Chemical Equations', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 850, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2 Types of Chemical Reactions', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1470, NULL, FALSE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Writing Chemical Equations', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 850, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2 Types of Chemical Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1470, NULL, FALSE, 2),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Revision Notes: Chemical Reactions', 'note', NULL, NULL, 
 '# Chapter 1: Chemical Reactions and Equations
 
@@ -134,15 +134,24 @@ A chemical reaction is a process in which one or more substances, the reactants,
 ', TRUE, 3),
 
 -- Science Chapter 12 Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.1 Electric Current & Potential', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1010, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380007', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.2 Ohm''s Law & Circuit Elements', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1695, NULL, FALSE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.1 Electric Current & Circuit', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1010, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380010', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.2 Electric Potential & Potential Difference', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1200, NULL, TRUE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380007', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '12.3 Ohm''s Law & Circuit Elements', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1695, NULL, FALSE, 3),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380011', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Conventional Current vs. Electron Flow', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 900, NULL, TRUE, 4),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380012', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Ammeter vs. Voltmeter', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 900, NULL, TRUE, 5),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380013', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Ohm''s Law Verification (Activity 11.1)', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1200, NULL, FALSE, 6),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380014', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Factors Affecting Resistance', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1100, NULL, FALSE, 7),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380015', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Mixed Resistance Simplification', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1400, NULL, FALSE, 8),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380016', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'The Parallel Resistance Trap', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 800, NULL, FALSE, 9),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380017', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Heating Effect & Fuse Action', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1200, NULL, FALSE, 10),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380018', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Commercial Energy Billing', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1500, NULL, FALSE, 11),
 
 -- Social Science Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380008', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380331', '1.1 First World War & Satyagraha', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1120, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380008', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380331', '1.1 First World War & Satyagraha', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1120, NULL, TRUE, 1),
 
 -- Maths Chapter 2 Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380021', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380112', '2.1 Geometrical Meaning of Zeroes', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 1335, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380112', '2.2 Relationship of Coefficients', 'video', 'https://d23dyxeqlo5ps.cloudfront.net/big_buck_bunny.m3u8', 940, NULL, TRUE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380021', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380112', '2.1 Geometrical Meaning of Zeroes', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1335, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380112', '2.2 Relationship of Coefficients', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 940, NULL, TRUE, 2),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380023', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380112', 'Revision Notes: Polynomials', 'note', NULL, NULL, 
 '# Chapter 2: Polynomials
 
@@ -248,14 +257,14 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
 '["A. Endothermic reaction", "B. Exothermic reaction", "C. Combination reaction", "D. Redox reaction"]', 1, NULL, 1),
 
 -- Mathematics Chapter 2 Quiz Questions
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'If the graph of a polynomial y = p(x) intersects the x-axis at exactly three distinct points, what is the number of zeroes of p(x)?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'If the graph of a polynomial y = p(x) intersects the x-axis at exactly three distinct points, what is the number of zeroes of p(x)?', 'multiple_choice', 
 '["A. 0", "B. 1", "C. 2", "D. 3"]', 3, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Find the zeroes of the quadratic polynomial x² - 2x - 8.', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'Find the zeroes of the quadratic polynomial x² - 2x - 8.', 'multiple_choice', 
 '["A. 4 and -2", "B. -4 and 2", "C. 4 and 2", "D. -4 and -2"]', 0, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380223', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'Find a quadratic polynomial each with the given numbers as the sum and product of its zeroes respectively: 1/4, -1.', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380223', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'Find a quadratic polynomial each with the given numbers as the sum and product of its zeroes respectively: 1/4, -1.', 'multiple_choice', 
 '["A. 4x² - x - 4", "B. 4x² + x - 4", "C. x² - 4x - 4", "D. 4x² - x + 4"]', 0, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380224', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', 'If α, β, and γ are the zeroes of the cubic polynomial ax³ + bx² + cx + d, then what is the value of αβ + βγ + γα?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380224', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380022', 'If α, β, and γ are the zeroes of the cubic polynomial ax³ + bx² + cx + d, then what is the value of αβ + βγ + γα?', 'multiple_choice', 
 '["A. -b/a", "B. c/a", "C. -d/a", "D. d/a"]', 1, NULL, 1);

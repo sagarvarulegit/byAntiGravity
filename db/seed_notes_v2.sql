@@ -339,6 +339,9 @@ We measure voltage using a **[JARGON: Voltmeter | A device with high resistance 
 
 ## 5. 📖 Concept 3: Circuit Diagram Symbols
 To study electricity, we draw circuit diagrams using standard symbols:
+
+[FIGURE: circuit_symbols]
+
 - **Electric Cell:** A long line (positive) and a shorter, thicker line (negative).
 - **Battery:** A combination of cells connected in series.
 - **Plug Key or Switch (Open / Closed):** Represents whether the circuit is broken or complete.

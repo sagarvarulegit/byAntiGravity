@@ -1,0 +1,656 @@
+{
+  "id": "electricity-08",
+  "title": "Ohm's Law Verification (Activity 11.1)",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "content": {
+        "text": "Verifying Ohm's Law",
+        "subtitle": "Activity 11.1 Walkthrough"
+      },
+      "durationInFrames": 136,
+      "alignments": [
+        {
+          "word": "Verifying",
+          "start": 0,
+          "end": 0.592
+        },
+        {
+          "word": "Ohm's",
+          "start": 0.673,
+          "end": 0.882
+        },
+        {
+          "word": "Law.",
+          "start": 0.94,
+          "end": 1.347
+        },
+        {
+          "word": "Activity",
+          "start": 1.672,
+          "end": 2.241
+        },
+        {
+          "word": "11.1",
+          "start": 2.322,
+          "end": 3.123
+        },
+        {
+          "word": "Walkthrough",
+          "start": 3.239,
+          "end": 3.994
+        }
+      ],
+      "audio": "/audio/electricity/electricity-08_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "content": {
+        "text": "How do we prove that potential difference is directly proportional to current?"
+      },
+      "durationInFrames": 131,
+      "alignments": [
+        {
+          "word": "How",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "do",
+          "start": 0.221,
+          "end": 0.29
+        },
+        {
+          "word": "we",
+          "start": 0.337,
+          "end": 0.406
+        },
+        {
+          "word": "prove",
+          "start": 0.476,
+          "end": 0.789
+        },
+        {
+          "word": "that",
+          "start": 0.824,
+          "end": 0.929
+        },
+        {
+          "word": "potential",
+          "start": 0.964,
+          "end": 1.382
+        },
+        {
+          "word": "difference",
+          "start": 1.44,
+          "end": 1.776
+        },
+        {
+          "word": "is",
+          "start": 1.8,
+          "end": 1.869
+        },
+        {
+          "word": "directly",
+          "start": 1.927,
+          "end": 2.345
+        },
+        {
+          "word": "proportional",
+          "start": 2.392,
+          "end": 2.902
+        },
+        {
+          "word": "to",
+          "start": 2.949,
+          "end": 3.007
+        },
+        {
+          "word": "current?",
+          "start": 3.065,
+          "end": 3.808
+        }
+      ],
+      "audio": "/audio/electricity/electricity-08_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "content": {
+        "heading": "The Setup",
+        "bullets": [
+          "Connect a Nichrome wire, an ammeter in series, and a voltmeter in parallel.",
+          "Start with 1 cell (e.g., 1.5V) in the circuit.",
+          "Record the current (I) from the ammeter and potential difference (V) from the voltmeter."
+        ]
+      },
+      "durationInFrames": 668,
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "Setup.",
+          "start": 0.197,
+          "end": 0.685
+        },
+        {
+          "word": "Connect",
+          "start": 1.985,
+          "end": 2.299
+        },
+        {
+          "word": "a",
+          "start": 2.334,
+          "end": 2.357
+        },
+        {
+          "word": "Nichrome",
+          "start": 2.403,
+          "end": 2.786
+        },
+        {
+          "word": "wire,",
+          "start": 2.81,
+          "end": 3.379
+        },
+        {
+          "word": "an",
+          "start": 4.075,
+          "end": 4.203
+        },
+        {
+          "word": "ammeter",
+          "start": 4.272,
+          "end": 4.609
+        },
+        {
+          "word": "in",
+          "start": 4.667,
+          "end": 4.725
+        },
+        {
+          "word": "series,",
+          "start": 4.783,
+          "end": 5.422
+        },
+        {
+          "word": "and",
+          "start": 6.118,
+          "end": 6.269
+        },
+        {
+          "word": "a",
+          "start": 6.316,
+          "end": 6.339
+        },
+        {
+          "word": "voltmeter",
+          "start": 6.385,
+          "end": 6.827
+        },
+        {
+          "word": "in",
+          "start": 6.873,
+          "end": 6.92
+        },
+        {
+          "word": "parallel..",
+          "start": 6.978,
+          "end": 7.697
+        },
+        {
+          "word": "Start",
+          "start": 8.998,
+          "end": 9.253
+        },
+        {
+          "word": "with",
+          "start": 9.288,
+          "end": 9.416
+        },
+        {
+          "word": "1",
+          "start": 9.462,
+          "end": 9.636
+        },
+        {
+          "word": "cell",
+          "start": 9.752,
+          "end": 10.031
+        },
+        {
+          "word": "(e.g.,",
+          "start": 10.275,
+          "end": 11.192
+        },
+        {
+          "word": "1.5V)",
+          "start": 11.343,
+          "end": 12.562
+        },
+        {
+          "word": "in",
+          "start": 12.887,
+          "end": 12.992
+        },
+        {
+          "word": "the",
+          "start": 13.026,
+          "end": 13.096
+        },
+        {
+          "word": "circuit..",
+          "start": 13.131,
+          "end": 13.711
+        },
+        {
+          "word": "Record",
+          "start": 15.012,
+          "end": 15.325
+        },
+        {
+          "word": "the",
+          "start": 15.36,
+          "end": 15.43
+        },
+        {
+          "word": "current",
+          "start": 15.464,
+          "end": 15.813
+        },
+        {
+          "word": "(I)",
+          "start": 15.987,
+          "end": 16.66
+        },
+        {
+          "word": "from",
+          "start": 16.904,
+          "end": 17.067
+        },
+        {
+          "word": "the",
+          "start": 17.113,
+          "end": 17.183
+        },
+        {
+          "word": "ammeter",
+          "start": 17.241,
+          "end": 17.659
+        },
+        {
+          "word": "and",
+          "start": 18.471,
+          "end": 18.669
+        },
+        {
+          "word": "potential",
+          "start": 18.738,
+          "end": 19.133
+        },
+        {
+          "word": "difference",
+          "start": 19.18,
+          "end": 19.691
+        },
+        {
+          "word": "(V)",
+          "start": 19.737,
+          "end": 20.352
+        },
+        {
+          "word": "from",
+          "start": 20.526,
+          "end": 20.689
+        },
+        {
+          "word": "the",
+          "start": 20.735,
+          "end": 20.805
+        },
+        {
+          "word": "voltmeter.",
+          "start": 20.84,
+          "end": 21.687
+        }
+      ],
+      "audio": "/audio/electricity/electricity-08_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "text",
+      "content": {
+        "heading": "The Experiment",
+        "bullets": [
+          "Connect 2 cells, record V and I. Calculate V/I.",
+          "Connect 3 cells, record V and I. Calculate V/I.",
+          "Connect 4 cells, record V and I. Calculate V/I.",
+          "You will notice that the ratio V/I remains approximately constant."
+        ]
+      },
+      "durationInFrames": 716,
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "Experiment.",
+          "start": 0.221,
+          "end": 0.964
+        },
+        {
+          "word": "Connect",
+          "start": 1.776,
+          "end": 2.136
+        },
+        {
+          "word": "2",
+          "start": 2.287,
+          "end": 2.496
+        },
+        {
+          "word": "cells,",
+          "start": 2.566,
+          "end": 3.135
+        },
+        {
+          "word": "record",
+          "start": 3.344,
+          "end": 3.727
+        },
+        {
+          "word": "V",
+          "start": 3.785,
+          "end": 3.866
+        },
+        {
+          "word": "and",
+          "start": 4.11,
+          "end": 4.261
+        },
+        {
+          "word": "I.",
+          "start": 4.354,
+          "end": 4.737
+        },
+        {
+          "word": "Calculate",
+          "start": 5.341,
+          "end": 5.875
+        },
+        {
+          "word": "V/I..",
+          "start": 5.909,
+          "end": 6.548
+        },
+        {
+          "word": "Connect",
+          "start": 7.361,
+          "end": 7.709
+        },
+        {
+          "word": "3",
+          "start": 7.883,
+          "end": 8.127
+        },
+        {
+          "word": "cells,",
+          "start": 8.208,
+          "end": 8.8
+        },
+        {
+          "word": "record",
+          "start": 9.183,
+          "end": 9.567
+        },
+        {
+          "word": "V",
+          "start": 9.625,
+          "end": 9.706
+        },
+        {
+          "word": "and",
+          "start": 9.985,
+          "end": 10.194
+        },
+        {
+          "word": "I.",
+          "start": 10.31,
+          "end": 10.728
+        },
+        {
+          "word": "Calculate",
+          "start": 11.54,
+          "end": 12.074
+        },
+        {
+          "word": "V/I..",
+          "start": 12.109,
+          "end": 12.725
+        },
+        {
+          "word": "Connect",
+          "start": 13.537,
+          "end": 13.874
+        },
+        {
+          "word": "4",
+          "start": 13.967,
+          "end": 14.211
+        },
+        {
+          "word": "cells,",
+          "start": 14.292,
+          "end": 14.861
+        },
+        {
+          "word": "record",
+          "start": 15.302,
+          "end": 15.685
+        },
+        {
+          "word": "V",
+          "start": 15.743,
+          "end": 15.824
+        },
+        {
+          "word": "and",
+          "start": 16.033,
+          "end": 16.173
+        },
+        {
+          "word": "I.",
+          "start": 16.289,
+          "end": 16.707
+        },
+        {
+          "word": "Calculate",
+          "start": 17.519,
+          "end": 18.065
+        },
+        {
+          "word": "V/I..",
+          "start": 18.1,
+          "end": 18.704
+        },
+        {
+          "word": "You",
+          "start": 19.516,
+          "end": 19.667
+        },
+        {
+          "word": "will",
+          "start": 19.725,
+          "end": 19.876
+        },
+        {
+          "word": "notice",
+          "start": 19.923,
+          "end": 20.167
+        },
+        {
+          "word": "that",
+          "start": 20.19,
+          "end": 20.294
+        },
+        {
+          "word": "the",
+          "start": 20.329,
+          "end": 20.399
+        },
+        {
+          "word": "ratio",
+          "start": 20.457,
+          "end": 20.852
+        },
+        {
+          "word": "V/I",
+          "start": 20.933,
+          "end": 21.235
+        },
+        {
+          "word": "remains",
+          "start": 21.328,
+          "end": 21.676
+        },
+        {
+          "word": "approximately",
+          "start": 21.722,
+          "end": 22.396
+        },
+        {
+          "word": "constant.",
+          "start": 22.442,
+          "end": 23.313
+        }
+      ],
+      "audio": "/audio/electricity/electricity-08_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "diagram",
+      "content": {
+        "title": "V-I Graph",
+        "subtitle": "Plotting V vs I gives a straight line passing through the origin. This constant ratio is the Resistance (R)."
+      },
+      "durationInFrames": 274,
+      "alignments": [
+        {
+          "word": "V-I",
+          "start": 0,
+          "end": 0.418
+        },
+        {
+          "word": "Graph.",
+          "start": 0.534,
+          "end": 1.033
+        },
+        {
+          "word": "Plotting",
+          "start": 1.358,
+          "end": 1.73
+        },
+        {
+          "word": "V",
+          "start": 1.8,
+          "end": 1.858
+        },
+        {
+          "word": "vs",
+          "start": 2.067,
+          "end": 2.334
+        },
+        {
+          "word": "I",
+          "start": 2.45,
+          "end": 2.577
+        },
+        {
+          "word": "gives",
+          "start": 2.694,
+          "end": 2.868
+        },
+        {
+          "word": "a",
+          "start": 2.902,
+          "end": 2.937
+        },
+        {
+          "word": "straight",
+          "start": 2.972,
+          "end": 3.228
+        },
+        {
+          "word": "line",
+          "start": 3.274,
+          "end": 3.495
+        },
+        {
+          "word": "passing",
+          "start": 3.529,
+          "end": 3.855
+        },
+        {
+          "word": "through",
+          "start": 3.889,
+          "end": 4.087
+        },
+        {
+          "word": "the",
+          "start": 4.11,
+          "end": 4.18
+        },
+        {
+          "word": "origin.",
+          "start": 4.226,
+          "end": 4.748
+        },
+        {
+          "word": "This",
+          "start": 5.259,
+          "end": 5.48
+        },
+        {
+          "word": "constant",
+          "start": 5.561,
+          "end": 6.014
+        },
+        {
+          "word": "ratio",
+          "start": 6.06,
+          "end": 6.444
+        },
+        {
+          "word": "is",
+          "start": 6.525,
+          "end": 6.606
+        },
+        {
+          "word": "the",
+          "start": 6.653,
+          "end": 6.722
+        },
+        {
+          "word": "Resistance",
+          "start": 6.792,
+          "end": 7.512
+        },
+        {
+          "word": "(R).",
+          "start": 7.546,
+          "end": 8.591
+        }
+      ],
+      "audio": "/audio/electricity/electricity-08_scene-05.mp3"
+    }
+  ],
+  "durationInFrames": 1925
+}

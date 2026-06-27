@@ -1,0 +1,645 @@
+{
+  "id": "electricity-09",
+  "title": "Mixed Resistance Simplification",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "content": {
+        "text": "Simplifying Mixed Circuits",
+        "subtitle": "Solving Series and Parallel Combinations"
+      },
+      "durationInFrames": 175,
+      "alignments": [
+        {
+          "word": "Simplifying",
+          "start": 0,
+          "end": 0.662
+        },
+        {
+          "word": "Mixed",
+          "start": 0.731,
+          "end": 0.952
+        },
+        {
+          "word": "Circuits.",
+          "start": 1.022,
+          "end": 1.649
+        },
+        {
+          "word": "Solving",
+          "start": 2.601,
+          "end": 3.03
+        },
+        {
+          "word": "Series",
+          "start": 3.123,
+          "end": 3.564
+        },
+        {
+          "word": "and",
+          "start": 3.622,
+          "end": 3.738
+        },
+        {
+          "word": "Parallel",
+          "start": 3.808,
+          "end": 4.214
+        },
+        {
+          "word": "Combinations",
+          "start": 4.284,
+          "end": 5.294
+        }
+      ],
+      "audio": "/audio/electricity/electricity-09_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "content": {
+        "text": "Complex circuits often have resistors in both series and parallel. The trick is to simplify them step by step."
+      },
+      "durationInFrames": 211,
+      "alignments": [
+        {
+          "word": "Complex",
+          "start": 0,
+          "end": 0.476
+        },
+        {
+          "word": "circuits",
+          "start": 0.522,
+          "end": 0.859
+        },
+        {
+          "word": "often",
+          "start": 0.917,
+          "end": 1.184
+        },
+        {
+          "word": "have",
+          "start": 1.231,
+          "end": 1.358
+        },
+        {
+          "word": "resistors",
+          "start": 1.393,
+          "end": 1.823
+        },
+        {
+          "word": "in",
+          "start": 1.858,
+          "end": 1.916
+        },
+        {
+          "word": "both",
+          "start": 1.974,
+          "end": 2.171
+        },
+        {
+          "word": "series",
+          "start": 2.241,
+          "end": 2.601
+        },
+        {
+          "word": "and",
+          "start": 2.659,
+          "end": 2.786
+        },
+        {
+          "word": "parallel.",
+          "start": 2.868,
+          "end": 3.506
+        },
+        {
+          "word": "The",
+          "start": 3.947,
+          "end": 4.087
+        },
+        {
+          "word": "trick",
+          "start": 4.156,
+          "end": 4.423
+        },
+        {
+          "word": "is",
+          "start": 4.505,
+          "end": 4.609
+        },
+        {
+          "word": "to",
+          "start": 4.656,
+          "end": 4.702
+        },
+        {
+          "word": "simplify",
+          "start": 4.76,
+          "end": 5.213
+        },
+        {
+          "word": "them",
+          "start": 5.271,
+          "end": 5.399
+        },
+        {
+          "word": "step",
+          "start": 5.457,
+          "end": 5.642
+        },
+        {
+          "word": "by",
+          "start": 5.7,
+          "end": 5.782
+        },
+        {
+          "word": "step.",
+          "start": 5.84,
+          "end": 6.455
+        }
+      ],
+      "audio": "/audio/electricity/electricity-09_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "content": {
+        "heading": "Step 1: Identify Parallel Blocks",
+        "bullets": [
+          "Find resistors connected across the same two nodes.",
+          "Calculate their equivalent resistance: 1/Rp = 1/R1 + 1/R2.",
+          "Redraw the circuit by replacing the parallel block with a single resistor Rp."
+        ]
+      },
+      "durationInFrames": 646,
+      "alignments": [
+        {
+          "word": "Step",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "1:",
+          "start": 0.406,
+          "end": 0.801
+        },
+        {
+          "word": "Identify",
+          "start": 1.242,
+          "end": 1.788
+        },
+        {
+          "word": "Parallel",
+          "start": 1.869,
+          "end": 2.252
+        },
+        {
+          "word": "Blocks.",
+          "start": 2.287,
+          "end": 2.879
+        },
+        {
+          "word": "Find",
+          "start": 3.692,
+          "end": 3.959
+        },
+        {
+          "word": "resistors",
+          "start": 4.017,
+          "end": 4.447
+        },
+        {
+          "word": "connected",
+          "start": 4.493,
+          "end": 4.876
+        },
+        {
+          "word": "across",
+          "start": 4.923,
+          "end": 5.248
+        },
+        {
+          "word": "the",
+          "start": 5.294,
+          "end": 5.364
+        },
+        {
+          "word": "same",
+          "start": 5.41,
+          "end": 5.642
+        },
+        {
+          "word": "two",
+          "start": 5.677,
+          "end": 5.84
+        },
+        {
+          "word": "nodes..",
+          "start": 5.909,
+          "end": 6.432
+        },
+        {
+          "word": "Calculate",
+          "start": 7.036,
+          "end": 7.558
+        },
+        {
+          "word": "their",
+          "start": 7.581,
+          "end": 7.709
+        },
+        {
+          "word": "equivalent",
+          "start": 7.755,
+          "end": 8.185
+        },
+        {
+          "word": "resistance:",
+          "start": 8.22,
+          "end": 8.951
+        },
+        {
+          "word": "1/Rp",
+          "start": 9.555,
+          "end": 10.693
+        },
+        {
+          "word": "=",
+          "start": 10.844,
+          "end": 12.353
+        },
+        {
+          "word": "1/R1",
+          "start": 12.469,
+          "end": 13.142
+        },
+        {
+          "word": "+",
+          "start": 14.257,
+          "end": 14.466
+        },
+        {
+          "word": "1/R2..",
+          "start": 14.745,
+          "end": 15.882
+        },
+        {
+          "word": "Redraw",
+          "start": 16.486,
+          "end": 16.881
+        },
+        {
+          "word": "the",
+          "start": 16.939,
+          "end": 17.009
+        },
+        {
+          "word": "circuit",
+          "start": 17.067,
+          "end": 17.38
+        },
+        {
+          "word": "by",
+          "start": 17.427,
+          "end": 17.531
+        },
+        {
+          "word": "replacing",
+          "start": 17.589,
+          "end": 18.019
+        },
+        {
+          "word": "the",
+          "start": 18.065,
+          "end": 18.135
+        },
+        {
+          "word": "parallel",
+          "start": 18.181,
+          "end": 18.576
+        },
+        {
+          "word": "block",
+          "start": 18.622,
+          "end": 18.866
+        },
+        {
+          "word": "with",
+          "start": 18.913,
+          "end": 19.029
+        },
+        {
+          "word": "a",
+          "start": 19.064,
+          "end": 19.098
+        },
+        {
+          "word": "single",
+          "start": 19.145,
+          "end": 19.447
+        },
+        {
+          "word": "resistor",
+          "start": 19.482,
+          "end": 19.9
+        },
+        {
+          "word": "Rp.",
+          "start": 20.016,
+          "end": 20.991
+        }
+      ],
+      "audio": "/audio/electricity/electricity-09_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "text",
+      "content": {
+        "heading": "Step 2: Identify Series Blocks",
+        "bullets": [
+          "Now look at resistors connected end-to-end, carrying the exact same current.",
+          "Add their values directly: Rs = R1 + R2 + Rp.",
+          "Redraw the circuit again until only one equivalent resistance remains."
+        ]
+      },
+      "durationInFrames": 645,
+      "alignments": [
+        {
+          "word": "Step",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "2:",
+          "start": 0.395,
+          "end": 0.778
+        },
+        {
+          "word": "Identify",
+          "start": 1.289,
+          "end": 1.834
+        },
+        {
+          "word": "Series",
+          "start": 1.927,
+          "end": 2.276
+        },
+        {
+          "word": "Blocks.",
+          "start": 2.31,
+          "end": 2.868
+        },
+        {
+          "word": "Now",
+          "start": 3.82,
+          "end": 4.005
+        },
+        {
+          "word": "look",
+          "start": 4.063,
+          "end": 4.214
+        },
+        {
+          "word": "at",
+          "start": 4.249,
+          "end": 4.296
+        },
+        {
+          "word": "resistors",
+          "start": 4.342,
+          "end": 4.783
+        },
+        {
+          "word": "connected",
+          "start": 4.83,
+          "end": 5.271
+        },
+        {
+          "word": "end-to-end,",
+          "start": 5.364,
+          "end": 6.246
+        },
+        {
+          "word": "carrying",
+          "start": 6.455,
+          "end": 6.885
+        },
+        {
+          "word": "the",
+          "start": 6.931,
+          "end": 7.001
+        },
+        {
+          "word": "exact",
+          "start": 7.07,
+          "end": 7.488
+        },
+        {
+          "word": "same",
+          "start": 7.558,
+          "end": 7.779
+        },
+        {
+          "word": "current..",
+          "start": 7.837,
+          "end": 8.406
+        },
+        {
+          "word": "Add",
+          "start": 8.847,
+          "end": 9.067
+        },
+        {
+          "word": "their",
+          "start": 9.102,
+          "end": 9.23
+        },
+        {
+          "word": "values",
+          "start": 9.276,
+          "end": 9.578
+        },
+        {
+          "word": "directly:",
+          "start": 9.613,
+          "end": 10.298
+        },
+        {
+          "word": "Rs",
+          "start": 10.809,
+          "end": 11.192
+        },
+        {
+          "word": "=",
+          "start": 11.436,
+          "end": 12.55
+        },
+        {
+          "word": "R1",
+          "start": 12.725,
+          "end": 13.05
+        },
+        {
+          "word": "+",
+          "start": 13.491,
+          "end": 13.665
+        },
+        {
+          "word": "R2",
+          "start": 14.106,
+          "end": 14.582
+        },
+        {
+          "word": "+",
+          "start": 15.023,
+          "end": 15.267
+        },
+        {
+          "word": "Rp..",
+          "start": 16.219,
+          "end": 16.73
+        },
+        {
+          "word": "Redraw",
+          "start": 17.113,
+          "end": 17.508
+        },
+        {
+          "word": "the",
+          "start": 17.554,
+          "end": 17.624
+        },
+        {
+          "word": "circuit",
+          "start": 17.682,
+          "end": 17.984
+        },
+        {
+          "word": "again",
+          "start": 18.007,
+          "end": 18.239
+        },
+        {
+          "word": "until",
+          "start": 18.309,
+          "end": 18.564
+        },
+        {
+          "word": "only",
+          "start": 18.646,
+          "end": 18.878
+        },
+        {
+          "word": "one",
+          "start": 18.971,
+          "end": 19.156
+        },
+        {
+          "word": "equivalent",
+          "start": 19.191,
+          "end": 19.656
+        },
+        {
+          "word": "resistance",
+          "start": 19.691,
+          "end": 20.155
+        },
+        {
+          "word": "remains.",
+          "start": 20.19,
+          "end": 20.944
+        }
+      ],
+      "audio": "/audio/electricity/electricity-09_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "diagram",
+      "content": {
+        "title": "Golden Rule",
+        "subtitle": "Always work from the innermost or most obvious block outwards towards the battery."
+      },
+      "durationInFrames": 170,
+      "alignments": [
+        {
+          "word": "Golden",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "Rule.",
+          "start": 0.418,
+          "end": 0.766
+        },
+        {
+          "word": "Always",
+          "start": 0.975,
+          "end": 1.289
+        },
+        {
+          "word": "work",
+          "start": 1.324,
+          "end": 1.474
+        },
+        {
+          "word": "from",
+          "start": 1.509,
+          "end": 1.614
+        },
+        {
+          "word": "the",
+          "start": 1.649,
+          "end": 1.718
+        },
+        {
+          "word": "innermost",
+          "start": 1.776,
+          "end": 2.183
+        },
+        {
+          "word": "or",
+          "start": 2.241,
+          "end": 2.334
+        },
+        {
+          "word": "most",
+          "start": 2.403,
+          "end": 2.566
+        },
+        {
+          "word": "obvious",
+          "start": 2.635,
+          "end": 3.007
+        },
+        {
+          "word": "block",
+          "start": 3.053,
+          "end": 3.355
+        },
+        {
+          "word": "outwards",
+          "start": 3.448,
+          "end": 3.913
+        },
+        {
+          "word": "towards",
+          "start": 3.959,
+          "end": 4.226
+        },
+        {
+          "word": "the",
+          "start": 4.261,
+          "end": 4.331
+        },
+        {
+          "word": "battery.",
+          "start": 4.365,
+          "end": 5.108
+        }
+      ],
+      "audio": "/audio/electricity/electricity-09_scene-05.mp3"
+    }
+  ],
+  "durationInFrames": 1847
+}

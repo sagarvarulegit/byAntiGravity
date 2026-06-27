@@ -12,25 +12,25 @@ ON CONFLICT (id) DO NOTHING;
 INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_option_index, correct_answer_text, marks) VALUES
 
 -- =========================================================================
--- Science Chapter 1 (Chemical Reactions & Equations) - Quiz ID: d0eebc99-9c0b-4ef8-bb6d-6bb9bd38099
+-- Science Chapter 1 (Chemical Reactions & Equations) - Quiz ID: d0eebc99-9c0b-4ef8-bb6d-6bb9bd380099
 -- ADDING 6 more questions (currently has 4)
 -- =========================================================================
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381115', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'When green ferrous sulphate crystals are heated in a dry test tube, they lose water and the colour of the crystals changes. Upon further heating, it decomposes into ferric oxide, sulphur dioxide, and sulphur trioxide. What is the correct observation and chemical formula of the solid residue left behind?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381115', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'When green ferrous sulphate crystals are heated in a dry test tube, they lose water and the colour of the crystals changes. Upon further heating, it decomposes into ferric oxide, sulphur dioxide, and sulphur trioxide. What is the correct observation and chemical formula of the solid residue left behind?', 'multiple_choice', 
 '["A. The green crystals turn white and then a dark brown/red solid of ferric oxide (Fe2O3) is formed.", "B. The green crystals turn blue and then a black solid of ferrous oxide (FeO) is formed.", "C. The crystals melt into a yellow liquid of iron sulphate (FeSO4).", "D. The green crystals turn grey and then a shiny silver solid of iron metal (Fe) is formed."]', 0, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381116', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'In the electrolysis of water, two gases are collected in separate test tubes. Which of the following statements is correct regarding the volume and identity of these gases?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381116', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'In the electrolysis of water, two gases are collected in separate test tubes. Which of the following statements is correct regarding the volume and identity of these gases?', 'multiple_choice', 
 '["A. The volume of oxygen collected at the anode is double the volume of hydrogen collected at the cathode.", "B. The volume of hydrogen collected at the cathode is double the volume of oxygen collected at the anode.", "C. Equal volumes of hydrogen and oxygen are collected at the cathode and anode respectively.", "D. Nitrogen gas is collected at the anode and hydrogen at the cathode."]', 1, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381117', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'When solutions of sodium sulphate (Na2SO4) and barium chloride (BaCl2) are mixed in a test tube, a double displacement reaction takes place. What is the correct description of the precipitate formed in this reaction?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381117', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'When solutions of sodium sulphate (Na2SO4) and barium chloride (BaCl2) are mixed in a test tube, a double displacement reaction takes place. What is the correct description of the precipitate formed in this reaction?', 'multiple_choice', 
 '["A. A yellow precipitate of barium sulphate (BaSO4) is formed.", "B. A white precipitate of barium sulphate (BaSO4) is formed.", "C. A blue precipitate of sodium chloride (NaCl) is formed.", "D. A green precipitate of barium sulphate (BaSO4) is formed."]', 1, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381118', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'When metals are exposed to moisture, air, acids, etc. for some time, they undergo corrosion. What are the characteristic colours of the coatings formed on silver and copper articles respectively due to corrosion?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381118', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'When metals are exposed to moisture, air, acids, etc. for some time, they undergo corrosion. What are the characteristic colours of the coatings formed on silver and copper articles respectively due to corrosion?', 'multiple_choice', 
 '["A. Silver: black coating; Copper: green coating", "B. Silver: green coating; Copper: black coating", "C. Silver: brown coating; Copper: blue coating", "D. Silver: grey coating; Copper: red coating"]', 0, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381119', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'Consider the following chemical equation representing a redox reaction: CuO(s) + H2(g) --(heat)--> Cu(s) + H2O(l). Which substance undergoes reduction in this reaction?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381119', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'Consider the following chemical equation representing a redox reaction: CuO(s) + H2(g) --(heat)--> Cu(s) + H2O(l). Which substance undergoes reduction in this reaction?', 'multiple_choice', 
 '["A. CuO", "B. H2", "C. Cu", "D. H2O"]', 0, NULL, 1),
 
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381120', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd38099', 'To prevent potato chips from getting oxidised and turning rancid, packet manufacturers flush the bags with which of the following gases?', 'multiple_choice', 
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd381120', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'To prevent potato chips from getting oxidised and turning rancid, packet manufacturers flush the bags with which of the following gases?', 'multiple_choice', 
 '["A. Oxygen", "B. Hydrogen", "C. Nitrogen", "D. Carbon dioxide"]', 2, NULL, 1),
 
 -- =========================================================================
