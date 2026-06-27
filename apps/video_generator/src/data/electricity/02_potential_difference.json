@@ -1,0 +1,363 @@
+{
+  "id": "electricity-02",
+  "title": "Electric Potential Difference",
+  "durationInFrames": 977,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 175,
+      "content": {
+        "text": "Potential Difference",
+        "subtitle": "Chapter 12 - Class 10 Science"
+      },
+      "audio": "/audio/electricity/electricity-02_scene-01.mp3",
+      "alignments": [
+        {
+          "word": "Potential",
+          "start": 0,
+          "end": 0.557
+        },
+        {
+          "word": "Difference.",
+          "start": 0.627,
+          "end": 1.242
+        },
+        {
+          "word": "Chapter",
+          "start": 1.567,
+          "end": 1.892
+        },
+        {
+          "word": "12",
+          "start": 1.939,
+          "end": 2.264
+        },
+        {
+          "word": "-",
+          "start": 2.438,
+          "end": 2.473
+        },
+        {
+          "word": "Class",
+          "start": 2.798,
+          "end": 3.135
+        },
+        {
+          "word": "10",
+          "start": 3.181,
+          "end": 3.471
+        },
+        {
+          "word": "Science",
+          "start": 4.423,
+          "end": 5.294
+        }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "durationInFrames": 188,
+      "content": {
+        "text": "Charges do not flow on their own. They need electric pressure difference, called Potential Difference."
+      },
+      "audio": "/audio/electricity/electricity-02_scene-02.mp3",
+      "alignments": [
+        {
+          "word": "Charges",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "word": "do",
+          "start": 0.453,
+          "end": 0.534
+        },
+        {
+          "word": "not",
+          "start": 0.615,
+          "end": 0.766
+        },
+        {
+          "word": "flow",
+          "start": 0.813,
+          "end": 0.998
+        },
+        {
+          "word": "on",
+          "start": 1.068,
+          "end": 1.138
+        },
+        {
+          "word": "their",
+          "start": 1.173,
+          "end": 1.324
+        },
+        {
+          "word": "own.",
+          "start": 1.382,
+          "end": 1.741
+        },
+        {
+          "word": "They",
+          "start": 2.02,
+          "end": 2.218
+        },
+        {
+          "word": "need",
+          "start": 2.287,
+          "end": 2.461
+        },
+        {
+          "word": "electric",
+          "start": 2.531,
+          "end": 2.995
+        },
+        {
+          "word": "pressure",
+          "start": 3.053,
+          "end": 3.379
+        },
+        {
+          "word": "difference,",
+          "start": 3.413,
+          "end": 3.82
+        },
+        {
+          "word": "called",
+          "start": 3.889,
+          "end": 4.191
+        },
+        {
+          "word": "Potential",
+          "start": 4.307,
+          "end": 4.888
+        },
+        {
+          "word": "Difference.",
+          "start": 4.946,
+          "end": 5.712
+        }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "durationInFrames": 614,
+      "content": {
+        "heading": "Potential Difference (V)",
+        "bullets": [
+          "Work done to move a unit charge from one point to another.",
+          "Formula: V = W / Q",
+          "SI unit is Volt (V), named after Alessandro Volta.",
+          "Measured using a Voltmeter, connected in parallel across the points."
+        ]
+      },
+      "audio": "/audio/electricity/electricity-02_scene-03.mp3",
+      "alignments": [
+        {
+          "word": "Potential",
+          "start": 0,
+          "end": 0.476
+        },
+        {
+          "word": "Difference",
+          "start": 0.522,
+          "end": 0.882
+        },
+        {
+          "word": "(V).",
+          "start": 1.057,
+          "end": 1.741
+        },
+        {
+          "word": "Work",
+          "start": 3.042,
+          "end": 3.297
+        },
+        {
+          "word": "done",
+          "start": 3.39,
+          "end": 3.622
+        },
+        {
+          "word": "to",
+          "start": 3.657,
+          "end": 3.727
+        },
+        {
+          "word": "move",
+          "start": 3.808,
+          "end": 3.994
+        },
+        {
+          "word": "a",
+          "start": 4.029,
+          "end": 4.063
+        },
+        {
+          "word": "unit",
+          "start": 4.156,
+          "end": 4.377
+        },
+        {
+          "word": "charge",
+          "start": 4.412,
+          "end": 4.679
+        },
+        {
+          "word": "from",
+          "start": 4.702,
+          "end": 4.841
+        },
+        {
+          "word": "one",
+          "start": 4.923,
+          "end": 5.097
+        },
+        {
+          "word": "point",
+          "start": 5.143,
+          "end": 5.364
+        },
+        {
+          "word": "to",
+          "start": 5.41,
+          "end": 5.468
+        },
+        {
+          "word": "another..",
+          "start": 5.538,
+          "end": 6.095
+        },
+        {
+          "word": "Formula:",
+          "start": 7.396,
+          "end": 8.115
+        },
+        {
+          "word": "V",
+          "start": 8.626,
+          "end": 8.8
+        },
+        {
+          "word": "=",
+          "start": 9.079,
+          "end": 9.776
+        },
+        {
+          "word": "W",
+          "start": 9.834,
+          "end": 10.217
+        },
+        {
+          "word": "/",
+          "start": 10.391,
+          "end": 10.507
+        },
+        {
+          "word": "Q.",
+          "start": 10.681,
+          "end": 11.215
+        },
+        {
+          "word": "SI",
+          "start": 11.819,
+          "end": 12.086
+        },
+        {
+          "word": "unit",
+          "start": 12.214,
+          "end": 12.458
+        },
+        {
+          "word": "is",
+          "start": 12.504,
+          "end": 12.597
+        },
+        {
+          "word": "Volt",
+          "start": 12.655,
+          "end": 12.98
+        },
+        {
+          "word": "(V),",
+          "start": 13.189,
+          "end": 13.851
+        },
+        {
+          "word": "named",
+          "start": 14.025,
+          "end": 14.303
+        },
+        {
+          "word": "after",
+          "start": 14.35,
+          "end": 14.582
+        },
+        {
+          "word": "Alessandro",
+          "start": 14.652,
+          "end": 15.209
+        },
+        {
+          "word": "Volta..",
+          "start": 15.267,
+          "end": 15.836
+        },
+        {
+          "word": "Measured",
+          "start": 16.219,
+          "end": 16.533
+        },
+        {
+          "word": "using",
+          "start": 16.579,
+          "end": 16.8
+        },
+        {
+          "word": "a",
+          "start": 16.846,
+          "end": 16.869
+        },
+        {
+          "word": "Voltmeter,",
+          "start": 16.916,
+          "end": 17.612
+        },
+        {
+          "word": "connected",
+          "start": 17.821,
+          "end": 18.204
+        },
+        {
+          "word": "in",
+          "start": 18.251,
+          "end": 18.309
+        },
+        {
+          "word": "parallel",
+          "start": 18.355,
+          "end": 18.727
+        },
+        {
+          "word": "across",
+          "start": 18.773,
+          "end": 19.064
+        },
+        {
+          "word": "the",
+          "start": 19.098,
+          "end": 19.168
+        },
+        {
+          "word": "points.",
+          "start": 19.203,
+          "end": 19.923
+        }
+      ]
+    }
+  ]
+}

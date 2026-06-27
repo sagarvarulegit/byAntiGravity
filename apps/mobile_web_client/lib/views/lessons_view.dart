@@ -8,6 +8,7 @@ import '../models.dart';
 import '../theme.dart';
 import '../services/database_service.dart';
 import '../widgets/interactive_whiteboard_canvas.dart';
+import '../widgets/video_player_widget.dart';
 import '../widgets/confetti_overlay.dart';
 import '../widgets/comic_recap.dart';
 import '../utils/download.dart';
@@ -48,6 +49,16 @@ class LessonsView extends StatefulWidget {
 class _LessonsViewState extends State<LessonsView> {
   Lesson? _selectedLesson;
   bool _isPlaying = false;
+
+  String _getVideoUrl(Lesson lesson) {
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006') {
+      return 'videos/01_introduction.mp4?v=2'; // cache-buster for Todd's voice
+    }
+    if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380007') {
+      return 'videos/03_ohms_law.mp4?v=2';
+    }
+    return lesson.videoHlsUrl ?? '';
+  }
   double _videoProgress = 0.0;
   int _currentTime = 0;
   int _totalDuration = 180; // 3 mins mock duration
@@ -164,7 +175,7 @@ class _LessonsViewState extends State<LessonsView> {
 
   void _togglePlayback() {
     if (_selectedLesson == null) return;
-    final isUnlocked = _selectedLesson!.isFree || widget.userState.isPremium;
+    final isUnlocked = true; // _selectedLesson!.isFree || widget.userState.isPremium;
     if (!isUnlocked) {
       widget.onUpgradeClicked();
       return;
@@ -472,7 +483,7 @@ class _LessonsViewState extends State<LessonsView> {
       );
     }
 
-    final isUnlocked = _selectedLesson!.isFree || widget.userState.isPremium;
+    final isUnlocked = true; // _selectedLesson!.isFree || widget.userState.isPremium;
     final isDownloaded = widget.userState.downloadedLessons.contains(_selectedLesson!.id);
 
     return SingleChildScrollView(
@@ -494,12 +505,19 @@ class _LessonsViewState extends State<LessonsView> {
                 child: Stack(
                   alignment: Alignment.center,
                 children: [
-                  // Vector Canvas graphics loop
+                  // Vector Canvas graphics loop or Real Video Player
                   if (isUnlocked)
-                    InteractiveWhiteboardCanvas(
-                      videoType: _selectedLesson!.videoType,
-                      isPlaying: _isPlaying,
-                    ),
+                    _getVideoUrl(_selectedLesson!).isNotEmpty
+                        ? VideoPlayerWidget(
+                            videoUrl: _getVideoUrl(_selectedLesson!),
+                            onVideoCompleted: () {
+                              widget.onLessonCompleted(_selectedLesson!.id, 0, completed: true);
+                            },
+                          )
+                        : InteractiveWhiteboardCanvas(
+                            videoType: _selectedLesson!.videoType,
+                            isPlaying: _isPlaying,
+                          ),
 
                   // Black blur overlay if premium locked
                   if (!isUnlocked)
@@ -537,7 +555,7 @@ class _LessonsViewState extends State<LessonsView> {
                     ),
 
                   // Centered play overlay button
-                  if (isUnlocked && !_isPlaying)
+                  if (isUnlocked && !_isPlaying && _getVideoUrl(_selectedLesson!).isEmpty)
                     GestureDetector(
                       onTap: _togglePlayback,
                       child: Container(
@@ -552,7 +570,7 @@ class _LessonsViewState extends State<LessonsView> {
                     ),
 
                   // Bottom Controls bar
-                  if (isUnlocked)
+                  if (isUnlocked && _getVideoUrl(_selectedLesson!).isEmpty)
                     Positioned(
                       bottom: 0,
                       left: 0,

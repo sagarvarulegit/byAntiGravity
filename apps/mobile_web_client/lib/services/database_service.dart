@@ -446,6 +446,7 @@ class SupabaseDatabaseService implements DatabaseService {
             duration: durationText,
             videoType: _mapVideoType(lessonJson['title'] as String? ?? ''),
             noteContent: lessonJson['note_content'] as String? ?? '',
+            videoHlsUrl: lessonJson['video_hls_url'] as String?,
           );
         }).toList();
 

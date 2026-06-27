@@ -12,6 +12,7 @@ class Lesson {
   final String duration;
   final VideoType videoType;
   final String noteContent;
+  final String? videoHlsUrl;
 
   Lesson({
     required this.id,
@@ -21,6 +22,7 @@ class Lesson {
     this.duration = "",
     this.videoType = VideoType.mathGraph,
     this.noteContent = "",
+    this.videoHlsUrl,
   });
 }
 

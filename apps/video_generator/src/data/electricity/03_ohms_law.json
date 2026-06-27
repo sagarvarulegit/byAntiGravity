@@ -1,0 +1,460 @@
+{
+  "id": "electricity-03",
+  "title": "Ohm's Law",
+  "durationInFrames": 1176,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 152,
+      "content": {
+        "text": "Ohm's Law",
+        "subtitle": "Chapter 12 - Class 10 Science"
+      },
+      "audio": "/audio/electricity/electricity-03_scene-01.mp3",
+      "alignments": [
+        {
+          "word": "Ohm's",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "Law.",
+          "start": 0.383,
+          "end": 0.848
+        },
+        {
+          "word": "Chapter",
+          "start": 1.173,
+          "end": 1.486
+        },
+        {
+          "word": "12",
+          "start": 1.533,
+          "end": 1.892
+        },
+        {
+          "word": "-",
+          "start": 2.067,
+          "end": 2.113
+        },
+        {
+          "word": "Class",
+          "start": 2.264,
+          "end": 2.566
+        },
+        {
+          "word": "10",
+          "start": 2.601,
+          "end": 2.856
+        },
+        {
+          "word": "Science",
+          "start": 3.669,
+          "end": 4.505
+        }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "durationInFrames": 186,
+      "content": {
+        "text": "The current flowing through a conductor is directly proportional to the potential difference across its ends."
+      },
+      "audio": "/audio/electricity/electricity-03_scene-02.mp3",
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "current",
+          "start": 0.221,
+          "end": 0.534
+        },
+        {
+          "word": "flowing",
+          "start": 0.604,
+          "end": 0.929
+        },
+        {
+          "word": "through",
+          "start": 0.964,
+          "end": 1.196
+        },
+        {
+          "word": "a",
+          "start": 1.231,
+          "end": 1.254
+        },
+        {
+          "word": "conductor",
+          "start": 1.312,
+          "end": 1.776
+        },
+        {
+          "word": "is",
+          "start": 1.858,
+          "end": 1.95
+        },
+        {
+          "word": "directly",
+          "start": 2.009,
+          "end": 2.473
+        },
+        {
+          "word": "proportional",
+          "start": 2.519,
+          "end": 3.193
+        },
+        {
+          "word": "to",
+          "start": 3.274,
+          "end": 3.355
+        },
+        {
+          "word": "the",
+          "start": 3.413,
+          "end": 3.483
+        },
+        {
+          "word": "potential",
+          "start": 3.529,
+          "end": 3.982
+        },
+        {
+          "word": "difference",
+          "start": 4.04,
+          "end": 4.4
+        },
+        {
+          "word": "across",
+          "start": 4.435,
+          "end": 4.76
+        },
+        {
+          "word": "its",
+          "start": 4.795,
+          "end": 4.911
+        },
+        {
+          "word": "ends.",
+          "start": 4.957,
+          "end": 5.619
+        }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "durationInFrames": 519,
+      "content": {
+        "heading": "Resistance and Ohm's Law",
+        "bullets": [
+          "Formula: V = I * R",
+          "R is the Resistance of the conductor.",
+          "Resistance is the property to oppose the flow of charges.",
+          "SI unit of Resistance is Ohm (Ω)."
+        ]
+      },
+      "audio": "/audio/electricity/electricity-03_scene-03.mp3",
+      "alignments": [
+        {
+          "word": "Resistance",
+          "start": 0,
+          "end": 0.859
+        },
+        {
+          "word": "and",
+          "start": 1.184,
+          "end": 1.37
+        },
+        {
+          "word": "Ohm's",
+          "start": 1.486,
+          "end": 1.788
+        },
+        {
+          "word": "Law.",
+          "start": 1.834,
+          "end": 2.264
+        },
+        {
+          "word": "Formula:",
+          "start": 3.564,
+          "end": 4.226
+        },
+        {
+          "word": "V",
+          "start": 4.435,
+          "end": 4.609
+        },
+        {
+          "word": "=",
+          "start": 4.783,
+          "end": 5.224
+        },
+        {
+          "word": "I",
+          "start": 5.735,
+          "end": 5.944
+        },
+        {
+          "word": "*",
+          "start": 6.153,
+          "end": 6.188
+        },
+        {
+          "word": "R.",
+          "start": 6.304,
+          "end": 6.803
+        },
+        {
+          "word": "R",
+          "start": 7.5,
+          "end": 7.825
+        },
+        {
+          "word": "is",
+          "start": 8.266,
+          "end": 8.464
+        },
+        {
+          "word": "the",
+          "start": 8.51,
+          "end": 8.58
+        },
+        {
+          "word": "Resistance",
+          "start": 8.638,
+          "end": 9.16
+        },
+        {
+          "word": "of",
+          "start": 9.183,
+          "end": 9.242
+        },
+        {
+          "word": "the",
+          "start": 9.276,
+          "end": 9.346
+        },
+        {
+          "word": "conductor..",
+          "start": 9.392,
+          "end": 10.019
+        },
+        {
+          "word": "Resistance",
+          "start": 10.53,
+          "end": 11.088
+        },
+        {
+          "word": "is",
+          "start": 11.122,
+          "end": 11.204
+        },
+        {
+          "word": "the",
+          "start": 11.25,
+          "end": 11.32
+        },
+        {
+          "word": "property",
+          "start": 11.355,
+          "end": 11.749
+        },
+        {
+          "word": "to",
+          "start": 11.807,
+          "end": 11.877
+        },
+        {
+          "word": "oppose",
+          "start": 11.958,
+          "end": 12.33
+        },
+        {
+          "word": "the",
+          "start": 12.365,
+          "end": 12.434
+        },
+        {
+          "word": "flow",
+          "start": 12.469,
+          "end": 12.655
+        },
+        {
+          "word": "of",
+          "start": 12.713,
+          "end": 12.771
+        },
+        {
+          "word": "charges..",
+          "start": 12.817,
+          "end": 13.479
+        },
+        {
+          "word": "SI",
+          "start": 14.083,
+          "end": 14.315
+        },
+        {
+          "word": "unit",
+          "start": 14.431,
+          "end": 14.64
+        },
+        {
+          "word": "of",
+          "start": 14.687,
+          "end": 14.733
+        },
+        {
+          "word": "Resistance",
+          "start": 14.791,
+          "end": 15.279
+        },
+        {
+          "word": "is",
+          "start": 15.314,
+          "end": 15.418
+        },
+        {
+          "word": "Ohm",
+          "start": 15.534,
+          "end": 15.836
+        },
+        {
+          "word": "(Ω).",
+          "start": 16.01,
+          "end": 16.765
+        }
+      ]
+    },
+    {
+      "id": "scene-04",
+      "type": "diagram",
+      "durationInFrames": 319,
+      "content": {
+        "title": "Ohm's Law Circuit",
+        "subtitle": "Connecting cells in series changes the potential difference. The ratio of V to I remains constant, confirming Ohm's Law."
+      },
+      "audio": "/audio/electricity/electricity-03_scene-04.mp3",
+      "alignments": [
+        {
+          "word": "Ohm's",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "word": "Law",
+          "start": 0.372,
+          "end": 0.569
+        },
+        {
+          "word": "Circuit.",
+          "start": 0.639,
+          "end": 1.149
+        },
+        {
+          "word": "Connecting",
+          "start": 1.753,
+          "end": 2.206
+        },
+        {
+          "word": "cells",
+          "start": 2.264,
+          "end": 2.577
+        },
+        {
+          "word": "in",
+          "start": 2.624,
+          "end": 2.682
+        },
+        {
+          "word": "series",
+          "start": 2.775,
+          "end": 3.239
+        },
+        {
+          "word": "changes",
+          "start": 3.332,
+          "end": 3.738
+        },
+        {
+          "word": "the",
+          "start": 3.785,
+          "end": 3.855
+        },
+        {
+          "word": "potential",
+          "start": 3.913,
+          "end": 4.4
+        },
+        {
+          "word": "difference.",
+          "start": 4.458,
+          "end": 5.132
+        },
+        {
+          "word": "The",
+          "start": 5.828,
+          "end": 5.944
+        },
+        {
+          "word": "ratio",
+          "start": 6.014,
+          "end": 6.397
+        },
+        {
+          "word": "of",
+          "start": 6.478,
+          "end": 6.548
+        },
+        {
+          "word": "V",
+          "start": 6.629,
+          "end": 6.699
+        },
+        {
+          "word": "to",
+          "start": 6.85,
+          "end": 6.92
+        },
+        {
+          "word": "I",
+          "start": 7.036,
+          "end": 7.152
+        },
+        {
+          "word": "remains",
+          "start": 7.268,
+          "end": 7.593
+        },
+        {
+          "word": "constant,",
+          "start": 7.663,
+          "end": 8.301
+        },
+        {
+          "word": "confirming",
+          "start": 8.417,
+          "end": 8.975
+        },
+        {
+          "word": "Ohm's",
+          "start": 9.091,
+          "end": 9.392
+        },
+        {
+          "word": "Law.",
+          "start": 9.462,
+          "end": 10.077
+        }
+      ]
+    }
+  ]
+}

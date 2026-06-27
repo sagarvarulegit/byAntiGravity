@@ -233,7 +233,7 @@ class _MainShellState extends State<MainShell> {
           _activeSubjectId = _subjects.first.id;
         }
         _userState.streak = streak;
-        _userState.isPremium = isPremium;
+        _userState.isPremium = true; // MVP: Premium conditions removed for now
 
         // Compute subject mastery based on completed lessons
         for (final subject in _subjects) {
@@ -281,7 +281,7 @@ class _MainShellState extends State<MainShell> {
     try {
       await _dbService.createUserMockSubscription();
       setState(() {
-        _userState.isPremium = true;
+        _userState.isPremium = true; // MVP: Premium conditions removed for now
       });
     } catch (e) {
       debugPrint("Failed to update user upgrade status: $e");
@@ -621,7 +621,7 @@ class _MainShellState extends State<MainShell> {
                         _buildSidebarItem(1, Icons.play_circle_rounded, "Video Lessons"),
                         _buildSidebarItem(2, Icons.psychology_rounded, "Quizzes"),
                         _buildSidebarItem(3, Icons.analytics_rounded, "Mastery Metrics"),
-                        _buildSidebarItem(4, Icons.credit_card_rounded, "Premium Plan"),
+                        // Premium Plan removed for MVP
                       ],
                     ),
                   ),
