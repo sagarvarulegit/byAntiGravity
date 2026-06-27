@@ -1,73 +1,94 @@
-# GEMINI.md — CBSE Class 10 Learning Portal
+# CBSE Class 10 Learning Portal — AI Memory
 
 Auto-loaded by agy on startup. Keep this file updated as conventions evolve.
 
-## Project Identity
-- CBSE Class 10 Online Learning Portal (Flutter/Dart monorepo)
-- Firebase Hosting + Supabase backend + Flutter multi-platform client
-- Primary source at: `apps/mobile_web_client/`
+## Project
+CBSE Class 10 Online Learning Portal — Flutter/Dart monorepo with Firebase Hosting,
+Supabase backend, and a Remotion video generator sub-project.
 
-## Directory Standards
+## Directory Map
 ```
-apps/mobile_web_client/lib/
-  ├── main.dart          # App entry, auth gate, MainShell
-  ├── config.dart        # Supabase env vars (injectable)
-  ├── models.dart        # All data models
-  ├── theme.dart         # AppColors + AppThemes
-  ├── services/          # Abstract interfaces + Supabase implementations
-  ├── views/             # One file per screen (auth, dashboard, lessons, quiz, progress, billing)
-  ├── widgets/           # Reusable components (whiteboard, gauges, charts)
-  └── utils/             # Download stubs
-db/
-  ├── schema.sql         # PostgreSQL DDL (source of truth)
-  ├── seed.sql           # NCERT content seed
-  └── seed_*.sql         # Additional seed batches
-docs/
-  ├── ARCHITECTURE.md    # Full system architecture
-  └── implementation-plans/ # Per-task implementation plans
+apps/
+  mobile_web_client/      ← Flutter multi-platform app (main deliverable)
+    lib/
+      main.dart           Entry point, auth gate, MainShell shell
+      config.dart         Supabase env vars (--dart-define)
+      models.dart         All data models (Subject, Chapter, Lesson, Quiz, …)
+      theme.dart          AppColors + AppThemes (NCERT tokens)
+      services/
+        auth_service.dart      Abstract interface + SupabaseAuthService
+        database_service.dart  Abstract interface + SupabaseDatabaseService
+      views/              One file per screen
+      widgets/            Reusable components (whiteboard, gauges, charts)
+      utils/              Download stubs
+    test/
+      widget_test.dart    Flutter widget test
+    web/                  Web entry point
+    android/ios/macos/linux/windows/  Platform shells
+  video_generator/        Remotion 4.0 (React/TS) — programmatic video compositions
+    src/
+      Root.tsx            Composition registry
+      Composition.tsx     Main composition
+      components/         Reusable Remotion components
+      theme.ts            Video theme tokens
+    package.json          npm run dev → Remotion Studio
+db/                       PostgreSQL schemas + seed data
+  schema.sql              DDL source of truth
+  seed.sql                NCERT content seed
+  rls_policies.sql        Row-level security policies
+supabase/                 Supabase CLI project config
+  config.toml             Project settings
+  migrations/             3 migrations (schema, RLS, grants)
+prototype/                Interactive HTML/CSS/JS dashboard mockup
+docs/                     Architecture doc + implementation plans
+tests/                    Playwright web tests (node_modules/)
 ```
 
-## Code Conventions
-- Services use abstract interface → Supabase implementation pattern (swap-ready)
-- All DB queries go through DatabaseService — never inline Supabase calls in views
-- Use FutureBuilder pattern for async data in views (loading/error/success states)
-- NCERT theme tokens from theme.dart only — no hardcoded colors in views
-- Responsive: sidebar > 800px, bottom nav ≤ 800px (LayoutBuilder in MainShell)
+## Commands
+| Context | Command |
+|---|---|
+| Flutter analyze | `cd apps/mobile_web_client && flutter analyze` |
+| Flutter test | `cd apps/mobile_web_client && flutter test` |
+| Flutter build web | `cd apps/mobile_web_client && flutter build web` |
+| Flutter run (web) | `cd apps/mobile_web_client && flutter run -d chrome` |
+| Firebase deploy | `firebase deploy --only hosting` |
+| Remotion Studio | `cd apps/video_generator && npm run dev` |
+| Remotion bundle | `cd apps/video_generator && npm run build` |
+| Supabase migrate | `supabase db push` (from root) |
+| Refresh local DB | `./refresh_db.sh` (concat seeds + db reset) |
 
-## NCERT Design Tokens
-| Token | Hex | Usage |
-|---|---|---|
-| Scaffold Paper | #FAF9F6 | Light mode background |
-| Text Primary | #0F172A | Headings, body |
-| NCERT Magenta | #BE185D | Chapter numbers, warnings, bullets |
-| NCERT Sky Blue | #0284C7 | Chapter titles, drop caps |
-| NCERT Orange | #EA580C | "Do You Know?" callouts |
-| Georgia (serif) | — | Reading text, notes, captions |
-| Outfit (sans-serif) | — | UI chrome, headings, buttons |
+No CI workflows present yet.
 
-## Verification
-- After ANY code change: `cd apps/mobile_web_client && flutter analyze`
-- No test suite yet — analyze is the only automated check
-- Manual validation: run `flutter build web` before merging
+## Architecture
+- **Flutter app** — stateful shell (`CBSEPortalApp`) with dark/light theme toggle;
+  auth-gated via `AuthService` abstract interface → `SupabaseAuthService`.
+  All DB queries through `DatabaseService` abstract interface →
+  `SupabaseDatabaseService`; views never call Supabase directly.
+  Async data loading uses `FutureBuilder` pattern (loading/error/success).
+  Responsive layout: sidebar ≥ 800px, bottom nav < 800px.
+- **Supabase** — BaaS providing Auth (GoTrue/JWT), PostgREST auto-API, RLS.
+  Config at `supabase/config.toml`; migrations at `supabase/migrations/`.
+- **PostgreSQL** — subjects, chapters, lessons, quizzes, quiz_questions (public RLS),
+  plus user_progress, user_streaks, quiz_attempts, subscriptions (user-private RLS).
+- **Remotion video generator** — separate Node/React project for programmatic
+  animated video exports; no runtime dependency from the Flutter app.
+- **Firebase Hosting** — serves the web build at `apps/mobile_web_client/build/web`.
 
-## Tools
-- Primary: `agy` CLI (antigravity.google)
-- Background: `hermes` (via profile system)
-- DB: Supabase SQL Editor for schema/migration application
+## Conventions
+- Services use **abstract interface → Supabase implementation** pattern (swap-ready).
+- No inline Supabase calls in views — always use `DatabaseService`.
+- `FutureBuilder` for async data (loading / error / success).
+- **NCERT colour tokens** from `theme.dart` only — no hardcoded colours in views.
+- Fonts: **Georgia** (serif) for reading text/notes/captions; **Outfit** (sans-serif)
+  for UI chrome/headings/buttons.
+- Debug prints use `debugPrint` from `package:flutter/foundation.dart` — never
+  `sb.debugPrint`.
+- Programmatic vector whiteboarding via `AnimationController` + `CustomPainter`
+  instead of pre-recorded video (zero-bandwidth, infinite-res, dark-mode aware).
+- Responsive layout: sidebar drawer > 800px, bottom nav ≤ 800px.
+- Implementation plans saved as `docs/implementation-plans/*.md`.
+- Payment integration is Phase 5 (last) — ship free MVP first.
+- Content tables (subjects, chapters, lessons, quizzes, quiz_questions) must allow
+  SELECT for anon + authenticated roles. User-private tables restrict to own rows.
 
-## Agent Pipeline Rules
-1. Implementation plans MUST be saved as project files (docs/implementation-plans/*.md), NOT as agy brain artifacts
-2. After code changes: always verify with `flutter analyze`
-3. Import debugPrint from `package:flutter/foundation.dart` — never use `sb.debugPrint`
-4. Plans are written by Opus, executed by Gemini Flash — do not skip the plan phase
-5. Each task must have an implementation plan before execution starts
-
-## Payment Rule
-- Payment integration is PHASE 5 (LAST). Ship free MVP first.
-- Mock subscription (createUserMockSubscription) remains until real Razorpay is integrated
-- No payment code ships before free MVP is stable and on custom domain
-
-## RLS Policy Rule
-- Content tables (subjects, chapters, lessons, quizzes, quiz_questions) must allow SELECT for ALL roles (anon + authenticated)
-- Only user-private tables (user_progress, user_streaks, quiz_attempts, subscriptions) restrict to own rows
-- If the app shows blank data, test with curl to Supabase API: the RLS policy might be blocking anon users
+## Notes

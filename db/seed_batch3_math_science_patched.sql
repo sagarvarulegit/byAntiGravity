@@ -1493,7 +1493,7 @@ ON CONFLICT (id) DO NOTHING;
 INSERT INTO chapters (id, subject_id, title, sequence_number, description) VALUES
 ('c0eebc99-9c0b-4ef8-bb6d-6bb9bd383009', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 9: Light — Reflection and Refraction', 9, 'Study the reflection of light by spherical mirrors, refraction of light, and their applications including lens and mirror formulas.'),
 ('c0eebc99-9c0b-4ef8-bb6d-6bb9bd383010', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 10: The Human Eye and the Colourful World', 10, 'Understand the anatomy of the human eye, defects of vision and their correction, refraction through a prism, dispersion, and scattering of light.'),
-('c0eebc99-9c0b-4ef8-bb6d-6bb9bd383012', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 12: Magnetic Effects of Electric Current', 11, 'Explore magnetic fields, field lines, field due to current-carrying conductors, electromagnetism, force on conductors, and domestic safety circuits.'),
+('c0eebc99-9c0b-4ef8-bb6d-6bb9bd383012', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 12: Magnetic Effects of Electric Current', 12, 'Explore magnetic fields, field lines, field due to current-carrying conductors, electromagnetism, force on conductors, and domestic safety circuits.'),
 ('c0eebc99-9c0b-4ef8-bb6d-6bb9bd383013', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Chapter 13: Our Environment', 13, 'Learn about ecosystems, trophic levels, energy flow, food chains and webs, ozone depletion, and waste management.')
 ON CONFLICT (id) DO NOTHING;
 
