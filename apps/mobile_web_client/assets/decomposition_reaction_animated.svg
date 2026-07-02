@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="100%" height="100%">
+  <defs>
+    <!-- Bunsen Burner Flame -->
+    <radialGradient id="flameGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#FACC15" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#F97316" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Timeline: 6s Loop */
+
+    /* Burner Flame Flickering */
+    .flicker-flame {
+      animation: flicker 0.2s infinite alternate ease-in-out;
+    }
+    @keyframes flicker {
+      0% { transform: scaleX(0.95) scaleY(0.95); }
+      100% { transform: scaleX(1.05) scaleY(1.05); }
+    }
+
+    /* Limestone decomposes (2.0s to 5.0s) */
+    .solid-chemical {
+      animation: decompose 6s infinite ease-in-out;
+    }
+    @keyframes decompose {
+      0%, 25% { fill: #D1D5DB; }
+      50%, 75% { fill: #F8FAFC; }
+      88%, 100% { fill: #D1D5DB; }
+    }
+
+    /* Gas bubbles escaping from the mouth of the tube */
+    .gas-bubble {
+      animation: floatGas 6s infinite ease-in-out;
+      opacity: 0;
+    }
+    .b-1 { animation-delay: 1.8s; }
+    .b-2 { animation-delay: 2.2s; }
+    .b-3 { animation-delay: 2.6s; }
+    .b-4 { animation-delay: 3.0s; }
+    .b-5 { animation-delay: 3.4s; }
+
+    @keyframes floatGas {
+      0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+      10% { opacity: 0.7; }
+      50% { transform: translate(60px, -45px) scale(1.2); opacity: 0; }
+      100% { transform: translate(60px, -45px) scale(1.2); opacity: 0; }
+    }
+  </style>
+
+  <!-- Ground Line / Bench -->
+  <line x1="20" y1="210" x2="400" y2="210" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- LEFT COLUMN: Instruction / Legend -->
+  <g transform="translate(20, 45)">
+    <rect x="0" y="0" width="135" height="150" rx="8" fill="#F8FAFC" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="12" y="20" fill="#94A3B8" font-family="sans-serif" font-size="9.5" font-weight="bold">DECOMPOSITION</text>
+    
+    <circle cx="18" cy="45" r="3" fill="#EF4444" />
+    <text x="28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="8.5">1. CaCO₃ heated in tube</text>
+
+    <circle cx="18" cy="75" r="3" fill="#EF4444" />
+    <text x="28" y="78" fill="#94A3B8" font-family="sans-serif" font-size="8.5">2. CO₂ gas evolves</text>
+    <text x="28" y="90" fill="#64748B" font-family="sans-serif" font-size="7.5">(Escapes out of rim)</text>
+
+    <circle cx="18" cy="115" r="3" fill="#EF4444" />
+    <text x="28" y="118" fill="#94A3B8" font-family="sans-serif" font-size="8.5">3. White CaO residue</text>
+    <text x="28" y="130" fill="#E2E8F0" font-family="sans-serif" font-size="7.5" font-weight="bold">(Limestone decomposed)</text>
+  </g>
+
+  <!-- RIGHT COLUMN: Experimental setup -->
+  <g transform="translate(180, 0)">
+    <!-- Bunsen Burner -->
+    <g transform="translate(20, 0)">
+      <path d="M 60 210 L 100 210 L 90 200 L 70 200 Z" fill="#334155" />
+      <rect x="76" y="145" width="8" height="55" fill="#475569" />
+      <rect x="74" y="140" width="12" height="5" fill="#64748B" />
+      <!-- Flame -->
+      <path class="flicker-flame" d="M 80 140 C 68 120, 72 95, 80 85 C 88 95, 92 120, 80 140 Z" fill="url(#flameGrad)" style="transform-origin: 80px 140px;" />
+    </g>
+
+    <!-- Stand & Clamp -->
+    <rect x="150" y="200" width="70" height="10" fill="#334155" rx="2" />
+    <rect x="180" y="50" width="6" height="150" fill="#475569" />
+    <rect x="174" y="90" width="12" height="10" fill="#1E293B" rx="1" />
+    <rect x="120" y="93" width="55" height="4" fill="#475569" />
+    <path d="M 115 80 L 120 95 L 115 110" fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Boiling Tube (Rotated) -->
+    <g transform="translate(80, 100) rotate(-25)">
+      <!-- Chemical inside -->
+      <path class="solid-chemical" d="M -12 25 L 12 25 L 12 55 C 12 62, -12 62, -12 55 Z" fill="#D1D5DB" />
+      
+      <!-- Tube Outline -->
+      <path d="M -12 -55 L -12 55 C -12 65, 12 65, 12 55 L 12 -55" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+      <!-- Rim -->
+      <ellipse cx="0" cy="-55" rx="14" ry="3" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+      <!-- Gas Bubbles Evolving (Relative to Rim origin) -->
+      <!-- Rim is at x=0, y=-55 -->
+      <ellipse class="gas-bubble b-1" cx="0" cy="-60" rx="3.5" ry="3.5" fill="none" stroke="#E2E8F0" stroke-width="1" />
+      <ellipse class="gas-bubble b-2" cx="-5" cy="-62" rx="4" ry="4" fill="none" stroke="#CBD5E1" stroke-width="1" />
+      <ellipse class="gas-bubble b-3" cx="5" cy="-60" rx="4.5" ry="4.5" fill="none" stroke="#CBD5E1" stroke-width="1" />
+      <ellipse class="gas-bubble b-4" cx="-2" cy="-65" rx="3.8" ry="3.8" fill="none" stroke="#E2E8F0" stroke-width="1.2" />
+      <ellipse class="gas-bubble b-5" cx="3" cy="-67" rx="4.2" ry="4.2" fill="none" stroke="#E2E8F0" stroke-width="1.2" />
+    </g>
+
+    <!-- Labels -->
+    <text x="80" y="32" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">CO₂ Gas Escaping</text>
+    <path d="M 80 37 Q 80 43, 76 52" fill="none" stroke="#64748B" stroke-width="1" />
+    
+    <text x="80" y="172" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">Boiling Tube</text>
+    <path d="M 80 163 L 80 148" stroke="#64748B" stroke-width="1" />
+  </g>
+</svg>

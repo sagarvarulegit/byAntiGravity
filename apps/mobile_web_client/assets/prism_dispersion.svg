@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <!-- Definition for linear gradients of the spectrum -->
+  <defs>
+    <!-- We can also draw normal color lines -->
+  </defs>
+
+  <!-- Glass Prism -->
+  <polygon points="200,40 140,150 260,150" fill="#E0F2FE" fill-opacity="0.25" stroke="#0284C7" stroke-width="2" stroke-linejoin="round" />
+  <text x="200" y="125" fill="#94A3B8" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Glass Prism</text>
+
+  <!-- Incident White Light Ray -->
+  <line x1="40" y1="110" x2="164" y2="106" stroke="#94A3B8" stroke-width="2" />
+  <text x="75" y="96" fill="#94A3B8" font-family="sans-serif" font-size="9">White Light</text>
+
+  <!-- Spectrum Paths inside the Prism & outside -->
+  <!-- Red -->
+  <line x1="164" y1="106" x2="232" y2="106" stroke="#EF4444" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="106" x2="340" y2="84" stroke="#EF4444" stroke-width="2" />
+  <text x="352" y="87" fill="#EF4444" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">R</text>
+
+  <!-- Orange -->
+  <line x1="164" y1="106" x2="232" y2="110" stroke="#F97316" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="110" x2="340" y2="95" stroke="#F97316" stroke-width="2" />
+  <text x="352" y="98" fill="#F97316" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">O</text>
+
+  <!-- Yellow -->
+  <line x1="164" y1="106" x2="232" y2="114" stroke="#FBBF24" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="114" x2="340" y2="106" stroke="#FBBF24" stroke-width="2" />
+  <text x="352" y="109" fill="#FBBF24" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">Y</text>
+
+  <!-- Green -->
+  <line x1="164" y1="106" x2="232" y2="118" stroke="#10B981" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="118" x2="340" y2="117" stroke="#10B981" stroke-width="2" />
+  <text x="352" y="120" fill="#10B981" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">G</text>
+
+  <!-- Blue -->
+  <line x1="164" y1="106" x2="232" y2="122" stroke="#3B82F6" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="122" x2="340" y2="128" stroke="#3B82F6" stroke-width="2" />
+  <text x="352" y="131" fill="#3B82F6" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">B</text>
+
+  <!-- Indigo -->
+  <line x1="164" y1="106" x2="232" y2="126" stroke="#6366F1" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="126" x2="340" y2="139" stroke="#6366F1" stroke-width="2" />
+  <text x="352" y="142" fill="#6366F1" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">I</text>
+
+  <!-- Violet -->
+  <line x1="164" y1="106" x2="232" y2="130" stroke="#8B5CF6" stroke-width="1.2" opacity="0.8" />
+  <line x1="232" y1="130" x2="340" y2="150" stroke="#8B5CF6" stroke-width="2" />
+  <text x="352" y="153" fill="#8B5CF6" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">V</text>
+
+  <!-- Spectrum label -->
+  <text x="340" y="68" fill="#94A3B8" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Spectrum</text>
+</svg>

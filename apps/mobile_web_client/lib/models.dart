@@ -2,7 +2,7 @@
 
 enum LessonType { video, note, studyGuide }
 
-enum VideoType { mathGraph, scienceAtom, scienceCircuit, socialMap }
+enum VideoType { mathGraph, scienceAtom, scienceCircuit, socialMap, scienceCombination, scienceDecomposition, scienceDisplacement }
 
 class Lesson {
   final String id;

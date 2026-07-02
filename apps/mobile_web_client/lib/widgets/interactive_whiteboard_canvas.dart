@@ -298,7 +298,7 @@ class WhiteboardPainter extends CustomPainter {
       textPainter.layout();
       textPainter.paint(canvas, const Offset(30, 20));
 
-    } else {
+    } else if (videoType == VideoType.socialMap) {
       // Social Map Outline & Pins
       final paintContour = Paint()
         ..color = brightness == Brightness.dark ? Colors.white10 : Colors.black12
@@ -343,6 +343,289 @@ class WhiteboardPainter extends CustomPainter {
         textPainter.layout();
         textPainter.paint(canvas, Offset(pinX + 10, pinY - 5));
       }
+    } else if (videoType == VideoType.scienceCombination) {
+      final bool isDark = brightness == Brightness.dark;
+      final cx = width / 2;
+      final cy = height / 2;
+
+      // Beaker outline
+      final beakerPaint = Paint()
+        ..color = isDark ? Colors.white24 : Colors.black12
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2;
+      final beakerW = 90.0;
+      final beakerH = 100.0;
+      final beakerLeft = cx - beakerW / 2;
+      final beakerTop = cy - beakerH / 2 + 10;
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(beakerLeft, beakerTop, beakerW, beakerH),
+          const Radius.circular(6),
+        ),
+        beakerPaint,
+      );
+
+      // CaO solid pile at bottom of beaker
+      final caoPaint = Paint()
+        ..color = isDark ? const Color(0xFFCBD5E1) : const Color(0xFF94A3B8)
+        ..style = PaintingStyle.fill;
+      final pilePath = Path()
+        ..moveTo(beakerLeft + 8, beakerTop + beakerH - 6)
+        ..lineTo(beakerLeft + 20, beakerTop + beakerH - 30)
+        ..lineTo(beakerLeft + 40, beakerTop + beakerH - 25)
+        ..lineTo(beakerLeft + 60, beakerTop + beakerH - 32)
+        ..lineTo(beakerLeft + 82, beakerTop + beakerH - 6)
+        ..close();
+      canvas.drawPath(pilePath, caoPaint);
+
+      // Slaked lime (Ca(OH)₂) forming — a lighter layer on top
+      final slakedPaint = Paint()
+        ..color = isDark ? Colors.white12 : Colors.black.withOpacity(0.06)
+        ..style = PaintingStyle.fill;
+      final liquidLevel = beakerTop + beakerH - 36;
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(beakerLeft + 4, liquidLevel, beakerW - 8, 10),
+          const Radius.circular(2),
+        ),
+        slakedPaint,
+      );
+
+      // Water droplets falling from above (animated)
+      final waterDropPaint = Paint()
+        ..color = const Color(0xFF3B82F6)
+        ..style = PaintingStyle.fill;
+      final double fall1 = (progress * 1.5) % 1.0;
+      final double fall2 = ((progress + 0.35) * 1.5) % 1.0;
+      final double fall3 = ((progress + 0.7) * 1.5) % 1.0;
+      
+      canvas.drawCircle(Offset(cx - 15, beakerTop - 25 + fall1 * 40), 3, waterDropPaint);
+      canvas.drawCircle(Offset(cx, beakerTop - 25 + fall2 * 45), 2.5, waterDropPaint);
+      canvas.drawCircle(Offset(cx + 12, beakerTop - 25 + fall3 * 35), 2, waterDropPaint);
+
+      // Steam/vapor rising (curved paths animated)
+      final steamPaint = Paint()
+        ..color = isDark ? Colors.white38 : Colors.grey.withOpacity(0.4)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5
+        ..strokeCap = StrokeCap.round;
+      final double wave = 3.0 * math.sin(angle * 2);
+      final steamPath1 = Path()
+        ..moveTo(cx - 20, beakerTop + 5)
+        ..quadraticBezierTo(cx - 30 + wave, beakerTop - 15, cx - 15 + wave, beakerTop - 35);
+      canvas.drawPath(steamPath1, steamPaint);
+      final steamPath2 = Path()
+        ..moveTo(cx, beakerTop + 5)
+        ..quadraticBezierTo(cx - 5 + wave, beakerTop - 20, cx + 5 + wave, beakerTop - 45);
+      canvas.drawPath(steamPath2, steamPaint);
+      final steamPath3 = Path()
+        ..moveTo(cx + 20, beakerTop + 5)
+        ..quadraticBezierTo(cx + 30 + wave, beakerTop - 15, cx + 15 + wave, beakerTop - 35);
+      canvas.drawPath(steamPath3, steamPaint);
+
+      // "CaO" label
+      final textStyle = TextStyle(
+        color: isDark ? Colors.white60 : Colors.black54,
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+      );
+      final textPainter = TextPainter(
+        text: TextSpan(text: "CaO", style: textStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      textPainter.paint(canvas, Offset(beakerLeft + 35, beakerTop + beakerH - 48));
+
+      // "+ H₂O" label
+      final h2oTextPainter = TextPainter(
+        text: TextSpan(text: "+ H₂O", style: textStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      h2oTextPainter.paint(canvas, Offset(cx + 20, beakerTop - 38));
+
+      // Heat waves to indicate exothermic (pulsing)
+      final double pulse = 2.0 * math.sin(angle * 4);
+      final heatPaint = Paint()..color = Colors.orange.withOpacity(0.7);
+      canvas.drawCircle(Offset(cx + 50, beakerTop - 35), 8 + pulse, heatPaint);
+      for (int i = 0; i < 4; i++) {
+        final double rayAngle = i * math.pi / 2 + angle * 0.2;
+        canvas.drawLine(
+          Offset(cx + 50 + (12 + pulse) * math.cos(rayAngle), beakerTop - 35 + (12 + pulse) * math.sin(rayAngle)),
+          Offset(cx + 50 + (16 + pulse) * math.cos(rayAngle), beakerTop - 35 + (16 + pulse) * math.sin(rayAngle)),
+          heatPaint..strokeWidth = 1.5,
+        );
+      }
+      
+      final titlePainter = TextPainter(
+        text: TextSpan(
+          text: "Combination Reaction (Exothermic)",
+          style: TextStyle(
+            color: isDark ? Colors.white70 : Colors.black87,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      titlePainter.paint(canvas, const Offset(20, 20));
+
+    } else if (videoType == VideoType.scienceDecomposition) {
+      final bool isDark = brightness == Brightness.dark;
+      final cx = width / 2;
+      final cy = height / 2;
+
+      final tubePaint = Paint()
+        ..color = isDark ? Colors.white24 : Colors.black12
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2;
+      canvas.save();
+      canvas.translate(cx + 15, cy - 20);
+      canvas.rotate(0.5); 
+      canvas.drawRRect(RRect.fromRectAndRadius(const Rect.fromLTWH(-15, -50, 30, 100), const Radius.circular(15)), tubePaint);
+      canvas.restore();
+
+      final burnerPaint = Paint()..color = const Color(0xFF64748B);
+      final burnerBasePaint = Paint()..color = const Color(0xFF475569);
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromLTWH(cx - 12, cy + 45, 24, 6), const Radius.circular(1.5)), burnerBasePaint);
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromLTWH(cx - 7, cy + 10, 14, 35), const Radius.circular(2)), burnerPaint);
+      
+      // Animated flickering flame
+      final flamePaint = Paint()..color = Colors.orange;
+      final double flameW = 8.0 + 2.0 * math.sin(angle * 8);
+      final double flameH = 26.0 + 4.0 * math.cos(angle * 6);
+      final flamePath = Path()
+        ..moveTo(cx, cy + 10)
+        ..quadraticBezierTo(cx - flameW, cy - 6, cx, cy - flameH)
+        ..quadraticBezierTo(cx + flameW, cy - 6, cx, cy + 10)
+        ..close();
+      canvas.drawPath(flamePath, flamePaint);
+
+      // Draw gas bubbles/gas evolving from the boiling tube (animated)
+      final gasPaint = Paint()
+        ..color = isDark ? Colors.white30 : Colors.black26
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.0;
+      final double bubbleProgress = (progress * 2) % 1.0;
+      canvas.drawCircle(Offset(cx + 35 + bubbleProgress * 20, cy - 40 - bubbleProgress * 20), 3, gasPaint);
+      canvas.drawCircle(Offset(cx + 25 + bubbleProgress * 30, cy - 30 - bubbleProgress * 15), 2, gasPaint);
+      canvas.drawCircle(Offset(cx + 42 + bubbleProgress * 15, cy - 50 - bubbleProgress * 25), 2.5, gasPaint);
+
+      final labelStyle = TextStyle(
+        color: isDark ? Colors.white60 : Colors.black54,
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+      );
+      final tubeLabel = TextPainter(
+        text: TextSpan(text: "CaCO₃", style: labelStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tubeLabel.paint(canvas, Offset(cx + 5, cy - 10));
+
+      final heatLabel = TextPainter(
+        text: TextSpan(text: "HEAT", style: TextStyle(color: Colors.orange, fontSize: 10, fontWeight: FontWeight.bold)),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      heatLabel.paint(canvas, Offset(cx - 40, cy + 15));
+
+      final gasLabel = TextPainter(
+        text: TextSpan(text: "CO₂ ↑", style: labelStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      gasLabel.paint(canvas, Offset(cx + 60, cy - 60));
+
+      final titlePainter = TextPainter(
+        text: TextSpan(
+          text: "Thermal Decomposition Reaction",
+          style: TextStyle(
+            color: isDark ? Colors.white70 : Colors.black87,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      titlePainter.paint(canvas, const Offset(20, 20));
+
+    } else if (videoType == VideoType.scienceDisplacement) {
+      final bool isDark = brightness == Brightness.dark;
+      final cx = width / 2;
+      final cy = height / 2;
+
+      // Beaker outline
+      final beakerPaint = Paint()
+        ..color = isDark ? Colors.white24 : Colors.black12
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2;
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromLTWH(cx - 35, cy - 30, 70, 90), const Radius.circular(8)), beakerPaint);
+
+      // Animate blue to green solution (lerp color based on math.sin(angle))
+      final double colorStage = (math.sin(angle * 0.5) + 1.0) / 2.0; // oscillates slowly
+      final liquidColor = Color.lerp(Colors.blue.withOpacity(0.45), Colors.green.withOpacity(0.35), colorStage);
+      final liquidPaint = Paint()
+        ..color = liquidColor!
+        ..style = PaintingStyle.fill;
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromLTWH(cx - 33, cy + 5, 66, 52), const Radius.circular(6)), liquidPaint);
+
+      // Iron nail swinging/dishing slowly (animated)
+      final double swing = 3.0 * math.sin(angle * 1.5);
+      final nailPaint = Paint()
+        ..color = Color.lerp(const Color(0xFF78716C), Colors.brown.shade600, colorStage)!
+        ..style = PaintingStyle.fill;
+      
+      canvas.save();
+      canvas.translate(cx + swing, cy);
+      canvas.drawRect(const Rect.fromLTWH(-5, -15, 10, 50), nailPaint);
+      canvas.restore();
+
+      final threadPaint = Paint()
+        ..color = isDark ? Colors.white54 : Colors.black54
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1;
+      canvas.drawLine(Offset(cx, cy - 60), Offset(cx + swing, cy - 15), threadPaint);
+
+      // Labels based on chemical states
+      final labelStyle = TextStyle(
+        color: isDark ? Colors.white60 : Colors.black54,
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+      );
+      
+      final nailLabel = TextPainter(
+        text: TextSpan(text: colorStage < 0.5 ? "Iron Nail (Grey)" : "Coated Nail (Brown)", style: labelStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      nailLabel.paint(canvas, Offset(cx + swing + 15, cy - 10));
+
+      final solutionText = colorStage < 0.5 ? "CuSO₄ (Blue)" : "FeSO₄ (Green)";
+      final solLabel = TextPainter(
+        text: TextSpan(
+          text: solutionText, 
+          style: TextStyle(
+            color: Color.lerp(Colors.blue, Colors.green.shade700, colorStage), 
+            fontSize: 10, 
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      solLabel.paint(canvas, Offset(cx - 60, cy + 35));
+
+      final titlePainter = TextPainter(
+        text: TextSpan(
+          text: "Displacement Reaction",
+          style: TextStyle(
+            color: isDark ? Colors.white70 : Colors.black87,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      titlePainter.paint(canvas, const Offset(20, 20));
+
+    } else {
+      // Catch-all empty canvas or default layout
+      final paintBg = Paint()..color = Colors.transparent;
+      canvas.drawPaint(paintBg);
     }
   }
 

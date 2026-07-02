@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <!-- Definitions for gradients and markers -->
+  <defs>
+    <radialGradient id="flameGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#FACC15" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#F97316" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brightGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Line / Bench -->
+  <line x1="20" y1="210" x2="380" y2="210" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- Bunsen Burner -->
+  <!-- Base -->
+  <path d="M 60 210 L 100 210 L 90 200 L 70 200 Z" fill="#475569" />
+  <!-- Stem -->
+  <rect x="76" y="140" width="8" height="60" fill="#64748B" />
+  <!-- Collar -->
+  <rect x="74" y="135" width="12" height="5" fill="#94A3B8" />
+
+  <!-- Burner Flame -->
+  <path d="M 80 135 C 65 110, 70 80, 80 70 C 90 80, 95 110, 80 135 Z" fill="url(#flameGrad)" />
+  <path d="M 80 135 C 74 125, 75 110, 80 105 C 85 110, 86 125, 80 135 Z" fill="#60A5FA" opacity="0.8" />
+
+  <!-- Watch Glass -->
+  <path d="M 120 202 Q 150 212, 180 202 Q 150 206, 120 202" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+  <!-- Magnesium Oxide Pile (White Powder) -->
+  <path d="M 140 202 C 145 195, 155 195, 160 202 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+
+  <!-- Tongs holding the Ribbon -->
+  <!-- Upper Handle & Arm -->
+  <path d="M 320 60 Q 280 65, 230 100 L 160 115" fill="none" stroke="#64748B" stroke-width="3" stroke-linecap="round" />
+  <!-- Lower Handle & Arm -->
+  <path d="M 320 80 Q 280 75, 230 115 L 162 120" fill="none" stroke="#64748B" stroke-width="3" stroke-linecap="round" />
+  <!-- Joint -->
+  <circle cx="238" cy="108" r="4" fill="#475569" />
+
+  <!-- Burning Ribbon / Bright Spark -->
+  <line x1="160" y1="117" x2="110" y2="128" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round" />
+  <!-- The White Flame / Glow -->
+  <circle cx="110" cy="128" r="28" fill="url(#brightGrad)" />
+  <!-- Ray Lines -->
+  <line x1="110" y1="128" x2="80" y2="128" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="140" y2="128" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="110" y2="98" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="110" y2="158" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="89" y2="107" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="131" y2="149" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="131" y2="107" stroke="#FFF" stroke-width="1.5" />
+  <line x1="110" y1="128" x2="89" y2="149" stroke="#FFF" stroke-width="1.5" />
+
+  <!-- Text Labels -->
+  <text x="35" y="170" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Bunsen Burner</text>
+  <path d="M 68 167 L 76 167" stroke="#94A3B8" stroke-width="1" />
+
+  <text x="290" y="50" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Pair of Tongs</text>
+  <path d="M 285 53 Q 260 60, 250 80" fill="none" stroke="#94A3B8" stroke-width="1" />
+
+  <text x="180" y="150" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Magnesium Ribbon</text>
+  <path d="M 175 145 Q 150 135, 135 125" fill="none" stroke="#94A3B8" stroke-width="1" />
+
+  <text x="195" y="195" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Watch Glass</text>
+  <path d="M 190 195 Q 175 198, 165 201" fill="none" stroke="#94A3B8" stroke-width="1" />
+
+  <text x="195" y="225" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Magnesium Oxide (MgO)</text>
+  <path d="M 190 222 Q 170 215, 155 205" fill="none" stroke="#94A3B8" stroke-width="1" />
+</svg>

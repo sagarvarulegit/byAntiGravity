@@ -15,6 +15,9 @@ import '../utils/download.dart';
 import '../widgets/jargon_modal.dart';
 import '../widgets/interactive_example.dart';
 import '../widgets/question_card.dart';
+import '../widgets/animated_svg/animated_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class LessonsView extends StatefulWidget {
   final DatabaseService dbService;
@@ -1636,14 +1639,19 @@ class _LessonsViewState extends State<LessonsView> {
           }
         }
 
-        for (var line in questionBlockLines) {
+        for (var rawQLine in questionBlockLines) {
+          var line = rawQLine.trim();
+          if (line.startsWith('* ') && !line.startsWith('*Answer:*')) {
+            line = '• ${line.substring(2)}';
+          }
+          
           if (RegExp(r'^\*\*\d+\.').hasMatch(line)) {
             flushSingleQ();
             inAnswer = false;
             currentQ.add(line);
-          } else if (line.trim().startsWith('*Answer:*')) {
+          } else if (line.startsWith('*Answer:*')) {
             inAnswer = true;
-            currentA.add(line.replaceFirst('*Answer:*', '').trim());
+            currentA.add('**Answer:** ${line.replaceFirst('*Answer:*', '').trim()}');
           } else if (inAnswer) {
             currentA.add(line);
           } else {
@@ -1658,6 +1666,36 @@ class _LessonsViewState extends State<LessonsView> {
 
     for (var rawLine in lines) {
       var line = rawLine.trim();
+
+      // Strip blockquote '>' prefix if it is not an alert block header and not inside an active alert
+      final bool isAlertHeader = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION)\]', caseSensitive: false).hasMatch(line);
+      if (line.startsWith('>') && !isAlertHeader && currentAlert.isEmpty) {
+        line = line.substring(1).trim();
+        rawLine = rawLine.replaceFirst(RegExp(r'^\s*>\s?'), '');
+      }
+
+      // Check for figures (explicit tags or fallback auto-injections)
+      bool hasFigure = false;
+      String? figType;
+
+      final figRegex = RegExp(r'\[FIGURE(?::\s*([a-zA-Z0-9_-]+))?\]');
+      final figMatch = figRegex.firstMatch(line);
+      if (figMatch != null) {
+        hasFigure = true;
+        figType = figMatch.group(1) ?? 'magnesium_burner';
+        line = line.replaceAll(figRegex, '').trim();
+        rawLine = rawLine.replaceAll(figRegex, '');
+      }
+
+      if (line.contains('Magnesium burns with a bright white flame')) {
+        hasFigure = true;
+        figType ??= 'magnesium_burner';
+      }
+
+      if (line.contains('Gas bubbles (Hydrogen')) {
+        hasFigure = true;
+        figType = 'zinc_acid';
+      }
 
       if (line.startsWith('**Example ')) {
         flushActivity();
@@ -1681,7 +1719,7 @@ class _LessonsViewState extends State<LessonsView> {
           }
           continue;
         }
-        if (line.startsWith('## ') || line.startsWith('---') || line == '**❓ QUESTIONS**') {
+        if (line.startsWith('## ') || line.startsWith('---') || line == '**❓ QUESTIONS**' || line == '**❓ IN-TEXT QUESTIONS**') {
           flushExample();
         } else {
           if (inSolution) {
@@ -1693,7 +1731,7 @@ class _LessonsViewState extends State<LessonsView> {
         }
       }
 
-      if (line == '**❓ QUESTIONS**') {
+      if (line == '**❓ QUESTIONS**' || line == '**❓ IN-TEXT QUESTIONS**') {
         flushActivity();
         flushExample();
         flushQuestions();
@@ -1957,24 +1995,7 @@ class _LessonsViewState extends State<LessonsView> {
           final infoText = cleanMathText(infoTipMatch.group(2)!.trim());
           children.add(_buildInfoTipBox(infoText));
         } else {
-          var cleanLine = rawLine;
-          bool hasFigure = false;
-          String? figType;
-
-          final figRegex = RegExp(r'\[FIGURE(?::\s*([a-zA-Z0-9_-]+))?\]');
-          final figMatch = figRegex.firstMatch(cleanLine);
-          if (figMatch != null) {
-            hasFigure = true;
-            figType = figMatch.group(1) ?? 'magnesium_burner';
-            cleanLine = cleanLine.replaceAll(figRegex, '');
-          }
-
-          if (cleanLine.contains('Magnesium burns with a bright white flame')) {
-            hasFigure = true;
-            figType ??= 'magnesium_burner';
-          }
-
-          final text = cleanMathText(cleanLine);
+          final text = cleanMathText(line);
           if (text.trim().isNotEmpty) {
             children.add(Padding(
               padding: const EdgeInsets.only(bottom: 12.0),
@@ -1988,16 +2009,15 @@ class _LessonsViewState extends State<LessonsView> {
               ),
             ));
           }
-
-          if (hasFigure && figType != null) {
-            children.add(Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: _buildFigureBox(figType, isDark),
-            ));
-          }
         }
       }
 
+      if (hasFigure && figType != null) {
+        children.add(Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          child: _buildFigureBox(figType, isDark),
+        ));
+      }
     }
 
     if (inRevision && revisionLines != null) {
@@ -2407,63 +2427,104 @@ class _LessonsViewState extends State<LessonsView> {
   }
 
   Widget _buildFigureBox(String figType, bool isDark) {
-    CustomPainter painterWidget;
+    CustomPainter? painterWidget;
+    String? svgPath;
     String figNum;
     String figCaption;
     double figHeight = 180;
 
     if (figType == 'double_circulation') {
-      painterWidget = DoubleCirculationPainter(isDark: isDark);
+      svgPath = "assets/double_circulation.svg";
       figNum = "Figure 5.1 ";
       figCaption = "Schematic representation of double circulation in human beings, showing separation of oxygenated (red) and deoxygenated (blue) blood routes.";
       figHeight = 280;
     } else if (figType == 'neuron') {
-      painterWidget = NeuronPainter(isDark: isDark);
+      svgPath = "assets/neuron.svg";
       figNum = "Figure 6.1 ";
       figCaption = "Structure of a typical motor neuron showing dendrites, cell body with nucleus, axon, myelin sheath, and nerve endings.";
       figHeight = 220;
     } else if (figType == 'prism_dispersion') {
-      painterWidget = PrismDispersionPainter(isDark: isDark);
+      svgPath = "assets/prism_dispersion.svg";
       figNum = "Figure 10.1 ";
       figCaption = "Dispersion of white light through a triangular glass prism, splitting it into a spectrum of seven colors (VIBGYOR).";
       figHeight = 200;
     } else if (figType == 'bar_magnet_field') {
-      painterWidget = BarMagnetFieldPainter(isDark: isDark);
+      svgPath = "assets/bar_magnet_field.svg";
       figNum = "Figure 12.1 ";
       figCaption = "Magnetic field lines around a bar magnet, demonstrating closed loops emerging from the North Pole (N) and entering the South Pole (S).";
       figHeight = 200;
     } else if (figType == 'trophic_levels') {
-      painterWidget = TrophicLevelsPainter(isDark: isDark);
+      svgPath = "assets/trophic_levels.svg";
       figNum = "Figure 13.1 ";
       figCaption = "Trophic level pyramid representing the unidirectional flow of energy and the 10% law of energy transfer in an ecosystem.";
       figHeight = 220;
     } else if (figType == 'ohms_law_circuit') {
-      painterWidget = OhmsLawCircuitPainter(isDark: isDark);
-      figNum = "Figure 11.3 ";
+      svgPath = "assets/ohms_law_circuit.svg";
+      figNum = "Figure 11.5 ";
       figCaption = "Circuit diagram for verification of Ohm's Law showing the voltmeter connected in parallel across the resistor, and ammeter, key, rheostat, and battery in series.";
       figHeight = 220;
     } else if (figType == 'circuit_symbols') {
-      painterWidget = CircuitSymbolsPainter(isDark: isDark);
+      svgPath = "assets/circuit_symbols.svg";
       figNum = "Figure 11.1 ";
       figCaption = "Standard symbols used in electric circuit diagrams.";
       figHeight = 250;
     } else if (figType == 'basic_circuit') {
-      painterWidget = BasicCircuitPainter(isDark: isDark);
-      figNum = "Figure 11.1 ";
+      svgPath = "assets/basic_circuit.svg";
+      figNum = "Figure 11.2 ";
       figCaption = "A schematic diagram of an electric circuit comprising – cell, electric bulb, ammeter and plug key.";
       figHeight = 200;
     } else if (figType == 'series_circuit') {
-      painterWidget = ResistorsInSeriesPainter(isDark: isDark);
-      figNum = "Figure 11.2 ";
+      svgPath = "assets/series_circuit.svg";
+      figNum = "Figure 11.3 ";
       figCaption = "Resistors connected in series. The current (I) is constant throughout the circuit.";
       figHeight = 220;
     } else if (figType == 'parallel_circuit') {
-      painterWidget = ResistorsInParallelPainter(isDark: isDark);
-      figNum = "Figure 11.3 ";
+      svgPath = "assets/parallel_circuit.svg";
+      figNum = "Figure 11.4 ";
       figCaption = "Resistors connected in parallel. The potential difference (V) across all resistors is the same.";
       figHeight = 240;
+    } else if (figType == 'combination_reaction') {
+      svgPath = "assets/combination_animated.svg";
+      figNum = "Figure 1.2 ";
+      figCaption = "Quicklime (calcium oxide) reacts vigorously with water to produce slaked lime (calcium hydroxide) in an exothermic combination reaction.";
+      figHeight = 220;
+    } else if (figType == 'ferrous_sulphate_decomposition') {
+      svgPath = "assets/ferrous_sulphate_decomposition_animated.svg";
+      figNum = "Figure 1.3 ";
+      figCaption = "Thermal decomposition of ferrous sulphate crystals. Green crystals turn white/brownish and emit choking SO₂/SO₃ gases.";
+      figHeight = 180;
+    } else if (figType == 'lead_nitrate_decomposition') {
+      svgPath = "assets/lead_nitrate_decomposition_animated.svg";
+      figNum = "Figure 1.4 ";
+      figCaption = "Thermal decomposition of lead nitrate resulting in the emission of brown nitrogen dioxide (NO₂) fumes.";
+      figHeight = 180;
+    } else if (figType == 'decomposition_reaction') {
+      svgPath = "assets/decomposition_reaction_animated.svg";
+      figNum = "Figure 1.5 ";
+      figCaption = "Decomposition of calcium carbonate to calcium oxide and carbon dioxide on heating.";
+      figHeight = 180;
+    } else if (figType == 'electrolysis_of_water') {
+      svgPath = "assets/electrolysis_of_water_animated.svg";
+      figNum = "Figure 1.6 ";
+      figCaption = "Electrolytic decomposition of water. Acidified water is decomposed into hydrogen (at cathode, double volume) and oxygen (at anode).";
+      figHeight = 220;
+    } else if (figType == 'silver_chloride_sunlight') {
+      svgPath = "assets/silver_chloride_sunlight_animated.svg";
+      figNum = "Figure 1.7 ";
+      figCaption = "Photolytic decomposition of silver chloride. White silver chloride turns grey in sunlight, yielding silver metal and chlorine gas.";
+      figHeight = 180;
+    } else if (figType == 'displacement_reaction') {
+      svgPath = "assets/displacement_reaction_animated.svg";
+      figNum = "Figure 1.8 ";
+      figCaption = "Displacement reaction. Iron nail dipped in blue copper sulphate solution becomes brownish, and the solution fades to light green.";
+      figHeight = 180;
+    } else if (figType == 'zinc_acid') {
+      svgPath = "assets/zinc_acid_animated.svg";
+      figNum = "Figure 1.2 ";
+      figCaption = "Formation of hydrogen gas by the action of dilute sulphuric acid on zinc";
+      figHeight = 220;
     } else {
-      painterWidget = MagnesiumBurnerPainter(isDark: isDark);
+      svgPath = "assets/magnesium_burner_animated.svg";
       figNum = "Figure 1.1 ";
       figCaption = "Burning of a magnesium ribbon in air and collection of magnesium oxide in a watch-glass";
       figHeight = 180;
@@ -2480,11 +2541,28 @@ class _LessonsViewState extends State<LessonsView> {
       ),
       child: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: figHeight,
-            child: CustomPaint(
-              painter: painterWidget,
+          Center(
+            child: Container(
+              constraints: const BoxConstraints(
+                maxHeight: 360.0,
+              ),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: svgPath != null
+                    ? LayoutBuilder(
+                        builder: (context, constraints) {
+                          return buildAnimatedSvg(
+                            svgPath: svgPath!,
+                            width: constraints.maxWidth,
+                            height: constraints.maxHeight,
+                            isDark: isDark,
+                          );
+                        },
+                      )
+                    : CustomPaint(
+                        painter: painterWidget,
+                      ),
+              ),
             ),
           ),
           const SizedBox(height: 8),

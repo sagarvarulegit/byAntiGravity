@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <!-- Definition for markers -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M 0 0.5 L 5 3 L 0 5.5 z" fill="#EF4444" />
+    </marker>
+  </defs>
+
+  <!-- Wires (Main Loop) -->
+  <path d="M 60 60 L 180 60 M 220 60 L 340 60 L 340 120 M 340 150 L 340 140 L 225 140 M 195 140 L 175 140 M 140 140 L 60 140 L 60 60" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+  <!-- Bulb at the top -->
+  <circle cx="200" cy="60" r="18" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+  <path d="M 192 78 L 196 66 L 200 72 L 204 66 L 208 78" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+  <!-- Ammeter (A) on the right side -->
+  <circle cx="340" cy="135" r="15" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" />
+  <text x="340" y="139" fill="#1E293B" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">A</text>
+  <text x="328" y="113" fill="#EF4444" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">+</text>
+  <text x="328" y="157" fill="#EF4444" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">-</text>
+
+  <!-- Battery at the bottom -->
+  <g transform="translate(210, 140)">
+    <line x1="-15" y1="-10" x2="-15" y2="10" stroke="#475569" stroke-width="2" />
+    <line x1="-9" y1="-5" x2="-9" y2="5" stroke="#475569" stroke-width="3.5" />
+    <line x1="-9" y1="0" x2="-1" y2="0" stroke="#94A3B8" stroke-width="2" />
+    <line x1="-1" y1="-10" x2="-1" y2="10" stroke="#475569" stroke-width="2" />
+    <line x1="5" y1="-5" x2="5" y2="5" stroke="#475569" stroke-width="3.5" />
+    <line x1="5" y1="0" x2="13" y2="0" stroke="#94A3B8" stroke-width="2" />
+    <line x1="13" y1="-10" x2="13" y2="10" stroke="#475569" stroke-width="2" />
+    <line x1="19" y1="-5" x2="19" y2="5" stroke="#475569" stroke-width="3.5" />
+    
+    <text x="-22" y="-12" fill="#EF4444" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">+</text>
+    <text x="26" y="-12" fill="#EF4444" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">-</text>
+  </g>
+
+  <!-- Key at the bottom -->
+  <g transform="translate(155, 140)">
+    <path d="M -10 -6 A 8 8 0 0 1 -2 6" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <path d="M 2 -6 A 8 8 0 0 0 10 6" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <circle cx="0" cy="0" r="2" fill="#64748B" />
+    <text x="0" y="-15" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">K</text>
+  </g>
+
+  <!-- Direction Arrows -->
+  <line x1="60" y1="105" x2="60" y2="100" stroke="#EF4444" stroke-width="1" marker-end="url(#arrow)" />
+  <text x="75" y="103" fill="#EF4444" font-family="sans-serif" font-size="9" font-weight="bold">I</text>
+
+  <line x1="170" y1="60" x2="175" y2="60" stroke="#EF4444" stroke-width="1" marker-end="url(#arrow)" />
+  <line x1="340" y1="95" x2="340" y2="100" stroke="#EF4444" stroke-width="1" marker-end="url(#arrow)" />
+</svg>

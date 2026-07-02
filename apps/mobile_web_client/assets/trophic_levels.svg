@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <!-- Definition for linear gradients -->
+  <!-- Title -->
+  <text x="180" y="20" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">10% Energy Transfer Law</text>
+
+  <!-- Level 4: Tertiary Consumers (Eagle) -->
+  <polygon points="180,40 210,80 150,80" fill="#EF4444" fill-opacity="0.12" stroke="#EF4444" stroke-width="1.2" stroke-linejoin="round" />
+  <text x="180" y="68" fill="#94A3B8" font-family="sans-serif" font-size="7.5" font-weight="bold" text-anchor="middle">Tertiary Consumers (Eagle) - 10 J</text>
+
+  <!-- Level 3: Secondary Consumers (Snake) -->
+  <polygon points="150,80 210,80 230,120 130,120" fill="#F97316" fill-opacity="0.12" stroke="#F97316" stroke-width="1.2" stroke-linejoin="round" />
+  <text x="180" y="105" fill="#94A3B8" font-family="sans-serif" font-size="7.5" font-weight="bold" text-anchor="middle">Secondary Consumers (Snake) - 100 J</text>
+
+  <!-- Level 2: Primary Consumers (Grasshopper) -->
+  <polygon points="130,120 230,120 250,160 110,160" fill="#FBBF24" fill-opacity="0.12" stroke="#FBBF24" stroke-width="1.2" stroke-linejoin="round" />
+  <text x="180" y="145" fill="#94A3B8" font-family="sans-serif" font-size="7.5" font-weight="bold" text-anchor="middle">Primary Consumers (Grasshopper) - 1,000 J</text>
+
+  <!-- Level 1: Producers (Green Plants) -->
+  <polygon points="110,160 250,160 270,195 90,195" fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
+  <text x="180" y="182" fill="#94A3B8" font-family="sans-serif" font-size="7.5" font-weight="bold" text-anchor="middle">Producers (Green Plants) - 10,000 J</text>
+
+  <!-- Energy Flow Arrow -->
+  <g transform="translate(340, 0)">
+    <line x1="0" y1="185" x2="0" y2="50" stroke="#EF4444" stroke-width="2" />
+    <polygon points="0,45 -4,53 4,53" fill="#EF4444" />
+    
+    <!-- Rotated label along arrow -->
+    <text x="10" y="120" fill="#94A3B8" font-family="sans-serif" font-size="8" transform="rotate(-90, 10, 120)" text-anchor="middle">Energy Flow</text>
+  </g>
+</svg>

@@ -340,3 +340,335 @@ Thus the cost of energy to operate the refrigerator for 30 days is $96\text{ kW 
 🔥 **Heater:** Oh, and when they bump into Resistance a lot? They get mad and generate **Heat ($H = I^2Rt$)**. We use that to iron your clothes!
 
 ', TRUE, 4);
+
+DELETE FROM lessons WHERE type='study_guide' AND chapter_id = 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221';
+
+INSERT INTO lessons (id, chapter_id, title, type, note_content, is_free, sequence_number) VALUES
+('e0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Chapter 1: Chemical Reactions (NCERT Simplified)', 'study_guide',
+'# Chapter 1: Chemical Reactions and Equations (NCERT Simplified)
+
+Welcome to the simplified, easy-to-grasp version of your NCERT Chemical Reactions and Equations chapter! We will follow the exact textbook structure, but explain everything simply and beautifully.
+
+Let''s consider a few situations of daily life and think about what happens:
+* **Milk is left at room temperature during summers:** It gets sour/spoiled due to lactic acid fermentation.
+* **An iron tawa/pan/nail is left exposed to humid atmosphere:** It gets rusted (a reddish-brown coating forms).
+* **Grapes get fermented:** Yeast converts sugars into alcohol.
+* **Food is cooked:** The chemical structure of raw food materials changes.
+* **Food gets digested in our body:** Complex food particles break down into simpler substances.
+* **We respire:** Oxygen reacts with glucose inside our cells to release carbon dioxide and energy.
+
+In all the above situations, the nature and identity of the initial substance have changed. We call these **chemical changes**, and whenever a chemical change occurs, we say that a **chemical reaction** has taken place!
+
+### How do we determine if a chemical reaction has occurred?
+The NCERT textbook outlines three introductory activities to help us find out:
+
+* **Activity 1.1 (Burning of Magnesium Ribbon):** 
+  * Clean a 3-4 cm magnesium ribbon with sandpaper (to remove the protective layer of basic magnesium carbonate). Hold it with tongs and burn it.
+  * **Observation:** The magnesium ribbon burns with a dazzling white flame and changes into a white powder, which is magnesium oxide ($MgO$).
+  [FIGURE: magnesium_burner]
+
+* **Activity 1.2 (Lead Nitrate + Potassium Iodide):**
+  * Mix lead nitrate solution and potassium iodide solution in a test tube.
+  * **Observation:** A yellow precipitate of lead iodide ($PbI_2$) is immediately formed.
+
+* **Activity 1.3 (Zinc Granules + Acid):**
+  * Add dilute hydrochloric acid or sulphuric acid to zinc granules in a flask.
+  * **Observation:** Gas bubbles (Hydrogen, $H_2$) form around the zinc granules, and the temperature of the flask increases (it feels warm/exothermic).
+
+Based on these activities, any of the following **four observations** helps us determine that a chemical reaction has taken place:
+1. **Change in state**
+2. **Change in colour**
+3. **Evolution of a gas**
+4. **Change in temperature**
+
+---
+
+## 1.1 CHEMICAL EQUATIONS
+
+A chemical reaction can be written in a sentence form, but that is quite long. The simplest way to write it is in the form of a **word-equation**:
+
+$$\text{Magnesium} + \text{Oxygen} \rightarrow \text{Magnesium oxide}$$
+$$\text{(Reactants)} \rightarrow \text{(Product)}$$
+
+* **Reactants:** The substances that undergo chemical change ($Magnesium$ and $Oxygen$). They are written on the Left-Hand Side (LHS) with a plus sign ($+$) between them.
+* **Products:** The new substances formed ($Magnesium\ oxide$). They are written on the Right-Hand Side (RHS) with a plus sign ($+$) between them.
+* **Arrowhead:** Points towards the products, showing the direction of the reaction.
+
+### 1.1.1 Writing a Chemical Equation
+
+To make chemical equations even more concise, we use chemical formulae instead of words:
+
+$$Mg + O_2 \rightarrow MgO$$
+
+This is a **skeletal chemical equation** because the number of atoms of each element is not the same on both sides of the arrow (it is unbalanced).
+
+### 1.1.2 Balanced Chemical Equations
+
+According to the [JARGON: Law of Conservation of Mass | Mass can neither be created nor destroyed in a chemical reaction.], the total mass of the elements present in the products must equal the total mass of the elements present in the reactants. In other words, the number of atoms of each element must remain the same before and after the reaction.
+
+For example, the equation for Activity 1.3 is already balanced:
+$$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2$$
+*(LHS: Zn=1, H=2, S=1, O=4 | RHS: Zn=1, H=2, S=1, O=4).*
+
+#### Step-by-Step Balancing (Hit-and-Trial Method)
+Let''s balance the skeletal equation:
+$$Fe + H_2O \rightarrow Fe_3O_4 + H_2$$
+
+* **Step I:** Draw boxes around each formula. Do not change anything inside the boxes while balancing.
+* **Step II:** List the number of atoms of different elements:
+  * Fe: 1 (LHS), 3 (RHS)
+  * H: 2 (LHS), 2 (RHS)
+  * O: 1 (LHS), 4 (RHS)
+* **Step III:** Start balancing with the compound containing the maximum number of atoms ($Fe_3O_4$). To balance Oxygen (4 atoms on RHS, 1 on LHS), put coefficient 4 before $H_2O$:
+  $$Fe + 4H_2O \rightarrow Fe_3O_4 + H_2$$
+* **Step IV:** Balance Hydrogen. There are now 8 H atoms on LHS. Put coefficient 4 before $H_2$ on RHS:
+  $$Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
+* **Step V:** Balance Iron. There are 3 Fe atoms on RHS. Put coefficient 3 before $Fe$ on LHS:
+  $$3Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
+* **Step VI (Checking):** Count atoms on both sides:
+  * Fe: 3 (LHS), 3 (RHS)
+  * H: 8 (LHS), 8 (RHS)
+  * O: 4 (LHS), 4 (RHS)
+  The equation is now balanced!
+* **Step VII (Writing Physical States):** Mention the physical states—gaseous (g), liquid (l), aqueous (aq), and solid (s):
+  $$3Fe(s) + 4H_2O(g) \rightarrow Fe_3O_4(s) + 4H_2(g)$$
+  *(Note: The symbol (g) with $H_2O$ indicates that water is used in the form of steam).*
+
+Sometimes, **reaction conditions** like temperature, pressure, or catalyst are written above and/or below the arrow:
+* **Methanol formation:**
+  $$CO(g) + 2H_2(g) \xrightarrow{340\text{ atm}} CH_3OH(l)$$
+* **Photosynthesis:**
+  $$6CO_2(aq) + 12H_2O(l) \xrightarrow{\text{Sunlight, Chlorophyll}} C_6H_{12}O_6(aq) + 6O_2(aq) + 6H_2O(l)$$
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. Why should a magnesium ribbon be cleaned before burning in air?**
+> *Answer:* To remove the protective layer of basic magnesium carbonate that forms on its surface, allowing it to burn readily in oxygen.
+> 
+> **2. Write the balanced equation for:**
+> * (i) Hydrogen + Chlorine $\rightarrow$ Hydrogen chloride
+>   *Answer:* $H_2 + Cl_2 \rightarrow 2HCl$
+> * (ii) Barium chloride + Aluminium sulphate $\rightarrow$ Barium sulphate + Aluminium chloride
+>   *Answer:* $3BaCl_2 + Al_2(SO_4)_3 \rightarrow 3BaSO_4 + 2AlCl_3$
+> * (iii) Sodium + Water $\rightarrow$ Sodium hydroxide + Hydrogen
+>   *Answer:* $2Na + 2H_2O \rightarrow 2NaOH + H_2$
+> 
+> **3. Write a balanced chemical equation with state symbols for:**
+> * (i) Solutions of barium chloride and sodium sulphate in water react to give insoluble barium sulphate and the solution of sodium chloride.
+>   *Answer:* $BaCl_2(aq) + Na_2SO_4(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$
+> * (ii) Sodium hydroxide solution (in water) reacts with hydrochloric acid solution (in water) to produce sodium chloride solution and water.
+>   *Answer:* $NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$
+
+---
+
+## 1.2 TYPES OF CHEMICAL REACTIONS
+
+Chemical reactions involve the breaking and making of bonds between atoms to produce new substances.
+
+### 1.2.1 Combination Reaction
+
+A reaction in which a single product is formed from two or more reactants is known as a **combination reaction**.
+
+* **Activity 1.4 (Quicklime + Water):** 
+  * Add water slowly to a small amount of calcium oxide (quicklime) in a beaker. Touch the beaker.
+  * **Observation:** The reaction is highly vigorous, produces slaked lime, and the beaker becomes very hot.
+  * **Chemical Equation:**
+    $$CaO(s) + H_2O(l) \rightarrow Ca(OH)_2(aq) + \text{Heat}$$
+
+  [FIGURE: combination_reaction]
+
+> **💡 DO YOU KNOW? (Whitewashing Walls)**
+> Slaked lime ($Ca(OH)_2$) is used for whitewashing walls. It reacts slowly with carbon dioxide in the air over 2-3 days to form a thin, shiny layer of calcium carbonate ($CaCO_3$, marble):
+> $$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+#### More Examples of Combination Reactions:
+* **Burning of coal:**
+  $$C(s) + O_2(g) \rightarrow CO_2(g)$$
+* **Formation of water:**
+  $$2H_2(g) + O_2(g) \rightarrow 2H_2O(l)$$
+
+#### Exothermic Chemical Reactions
+Reactions in which heat/energy is released along with the formation of products are called **exothermic chemical reactions**.
+* **Burning of natural gas:**
+  $$CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(g)$$
+* **Respiration:** Respiration is an exothermic process because the glucose from digested carbohydrates reacts with oxygen in our cells to supply energy:
+  $$C_6H_{12}O_6(aq) + 6O_2(aq) \rightarrow 6CO_2(aq) + 6H_2O(l) + \text{Energy}$$
+* **Decomposition of vegetable matter** into compost is also exothermic.
+
+---
+
+### 1.2.2 Decomposition Reaction
+
+In a decomposition reaction, a single reactant breaks down to give two or more simpler products (opposite of combination reactions).
+
+#### A. Thermal Decomposition (Using Heat)
+
+1. **Activity 1.5 (Decomposition of Ferrous Sulphate):**
+   * Heat green ferrous sulphate crystals ($FeSO_4 \cdot 7H_2O$) in a dry boiling tube.
+   * **Observation:** The green crystals lose water of crystallisation and decompose into solid brown ferric oxide ($Fe_2O_3$) and choking gases $SO_2$ (sulphur dioxide) and $SO_3$ (sulphur trioxide).
+   * **Chemical Equation:**
+     $$2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$$
+   [FIGURE: ferrous_sulphate_decomposition]
+
+2. **Activity 1.6 (Decomposition of Lead Nitrate):**
+   * Heat lead nitrate powder in a boiling tube.
+   * **Observation:** Brown fumes of nitrogen dioxide ($NO_2$) gas are emitted, leaving behind a yellow residue of lead oxide ($PbO$).
+   * **Chemical Equation:**
+     $$2Pb(NO_3)_2(s) \xrightarrow{\text{Heat}} 2PbO(s) + 4NO_2(g) + O_2(g)$$
+   [FIGURE: lead_nitrate_decomposition]
+
+3. **Heating of Limestone (Industrial Application):**
+   * Calcium carbonate decomposes into quicklime (calcium oxide, used in cement manufacture) and carbon dioxide.
+   * **Chemical Equation:**
+     $$CaCO_3(s) \xrightarrow{\text{Heat}} CaO(s) + CO_2(g)$$
+   [FIGURE: decomposition_reaction]
+
+#### B. Electrolytic Decomposition (Using Electricity)
+
+4. **Activity 1.7 (Electrolysis of Water):**
+   * Pass an electric current through acidified water using carbon electrodes.
+   * **Observation:** Gas bubbles form at both electrodes. The volume of gas collected at the cathode (Hydrogen, $H_2$) is **double** that collected at the anode (Oxygen, $O_2$).
+   * **Chemical Equation:**
+     $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$
+   [FIGURE: electrolysis_of_water]
+
+#### C. Photolytic Decomposition / Photolysis (Using Light)
+
+5. **Activity 1.8 (Silver Chloride / Bromide in Sunlight):**
+   * Place white silver chloride ($AgCl$) in a china dish in sunlight.
+   * **Observation:** The white powder turns grey due to decomposition into silver metal and chlorine gas.
+   * **Chemical Equations:**
+     $$2AgCl(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Cl_2(g)$$
+     $$2AgBr(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Br_2(g)$$
+     *(These reactions are used in black and white photography).*
+   [FIGURE: silver_chloride_sunlight]
+
+#### Endothermic Reactions
+Reactions in which energy is absorbed (as heat, light, or electricity) to break chemical bonds are called [JARGON: Endothermic reactions | Reactions that absorb energy from their surroundings, making the reaction mixture cold unless heat is continuously supplied.].
+* **Example (Barium Hydroxide + Ammonium Chloride):** Mixing barium hydroxide and ammonium chloride in a test tube makes the bottom of the tube very cold (absorbs heat, endothermic).
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. A solution of a substance ‘X’ is used for whitewashing.**
+> * (i) Name the substance ‘X’ and write its formula.
+>   *Answer:* Substance ''X'' is Calcium oxide (quicklime). Its formula is $CaO$.
+> * (ii) Write the reaction of the substance ‘X’ with water.
+>   *Answer:* $CaO(s) + H_2O(l) \rightarrow Ca(OH)_2(aq) + \text{Heat}$
+> 
+> **2. Why is the amount of gas collected in one of the test tubes in Activity 1.7 double of the amount collected in the other? Name this gas.**
+> *Answer:* Water ($H_2O$) consists of two atoms of Hydrogen and one atom of Oxygen (2:1 ratio). During electrolysis, water decomposes to release 2 volumes of Hydrogen gas at the cathode for every 1 volume of Oxygen gas at the anode. The double-volume gas is Hydrogen.
+
+---
+
+### 1.2.3 Displacement Reaction
+
+A chemical reaction in which a more reactive element displaces a less reactive element from its salt solution is a **displacement reaction**.
+
+* **Activity 1.9 (Iron Nails in Copper Sulphate):**
+   * Immerse two clean iron nails in 10 mL copper sulphate solution for 20 minutes.
+   * **Observation:** The shiny grey iron nails become coated with a brownish layer of copper metal, and the blue colour of the copper sulphate solution fades to a light green (due to the formation of iron sulphate).
+   * **Chemical Equation:**
+     $$Fe(s) + CuSO_4(aq) \rightarrow FeSO_4(aq) + Cu(s)$$
+     *(Iron is more reactive than copper and displaces it).*
+   [FIGURE: displacement_reaction]
+
+#### More Examples:
+* **Zinc displacing copper:**
+  $$Zn(s) + CuSO_4(aq) \rightarrow ZnSO_4(aq) + Cu(s)$$
+* **Lead displacing copper:**
+  $$Pb(s) + CuCl_2(aq) \rightarrow PbCl_2(aq) + Cu(s)$$
+  *(Zinc and lead are more reactive than copper and displace it).*
+
+---
+
+### 1.2.4 Double Displacement Reaction
+
+Reactions in which there is an exchange of ions between the reactants to form new compounds are called **double displacement reactions**.
+
+* **Activity 1.10 (Sodium Sulphate + Barium Chloride):**
+  * Mix 3 mL of sodium sulphate solution with 3 mL of barium chloride solution.
+  * **Observation:** A white insoluble substance forms immediately. Any insoluble solid that falls out of a liquid solution is called a [JARGON: Precipitate | An insoluble solid substance that forms and separates from a liquid solution during a chemical reaction.]. A reaction that produces a precipitate is a **precipitation reaction**.
+  * **Chemical Equation:**
+    $$Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$$
+    *(The white precipitate is formed by the reaction of $Ba^{2+}$ and $SO_4^{2-}$ ions).*
+
+#### Recall Activity 1.2 (Lead Nitrate + Potassium Iodide)
+When mixing lead nitrate and potassium iodide, we get a yellow precipitate of lead iodide:
+$$Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$$
+*(This is also a double displacement and a precipitation reaction).*
+
+---
+
+### 1.2.5 Oxidation and Reduction
+
+* **Oxidation:** The gain of oxygen or the loss of hydrogen.
+* **Reduction:** The loss of oxygen or the gain of hydrogen.
+* **Redox Reaction (Oxidation-Reduction):** A reaction where one reactant gets oxidised while another gets reduced.
+
+* **Activity 1.11 (Heating Copper Powder):**
+  * Heat 1 g of brown copper powder in a china dish.
+  * **Observation:** The surface of the copper powder becomes coated with black copper(II) oxide ($CuO$).
+  * **Chemical Equation:**
+    $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$
+  
+  If hydrogen gas is passed over this hot black $CuO$, it turns brown again (reverse reaction):
+  $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$
+  *(Here, $CuO$ loses oxygen and is reduced to $Cu$. $H_2$ gains oxygen and is oxidised to $H_2O$).*
+
+#### More Examples of Redox Reactions:
+* **Reduction of Zinc Oxide:**
+  $$ZnO + C \rightarrow Zn + CO$$
+  *(Carbon is oxidised to $CO$, and $ZnO$ is reduced to $Zn$).*
+* **Reduction of Manganese Dioxide:**
+  $$MnO_2 + 4HCl \rightarrow MnCl_2 + 2H_2O + Cl_2$$
+  *(HCl is oxidised to $Cl_2$, and $MnO_2$ is reduced to $MnCl_2$).*
+
+#### Recall Activity 1.1 (Magnesium ribbon burning):
+$$2Mg + O_2 \rightarrow 2MgO$$
+*(Magnesium gains oxygen, so it is oxidised).*
+
+---
+
+## 1.3 EFFECTS OF OXIDATION REACTIONS IN EVERYDAY LIFE
+
+### 1.3.1 Corrosion
+
+When a metal is attacked by substances around it such as moisture, air, acids, etc., it is said to corrode, and the process is called **corrosion**.
+* **Examples:**
+  * Reddish-brown coating on iron (rusting).
+  * Black coating on silver.
+  * Green coating on copper.
+* **Impact:** Corrosion causes massive damage to car bodies, bridges, iron railings, ships, and other metal objects (especially iron). It is a serious economic problem, requiring huge expenditures yearly for replacement.
+
+### 1.3.2 Rancidity
+
+When fats and oils are oxidised, they become rancid. Their smell and taste change, making food unpleasant to eat.
+* **Prevention:**
+  * Add [JARGON: Antioxidants | Chemical substances added to fatty/oily foods to prevent oxidation and spoilage.] (like BHA, BHT).
+  * Keep food in airtight containers to slow down oxidation.
+  * Flush food packaging (like potato chips bags) with an inert gas like **nitrogen** to prevent oxygen exposure.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. Why does the colour of copper sulphate solution change when an iron nail is dipped in it?**
+> *Answer:* Iron is more reactive than copper. It displaces copper from the blue copper sulphate ($CuSO_4$) solution to form light green iron sulphate ($FeSO_4$) and deposits metallic copper on the iron nail.
+> 
+> **2. Give an example of a double displacement reaction other than the one given in Activity 1.10.**
+> *Answer:* Reaction between lead nitrate and potassium iodide:
+> $Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$
+> 
+> **3. Identify the substances that are oxidised and the substances that are reduced in the following reactions:**
+> * (i) $4Na(s) + O_2(g) \rightarrow 2Na_2O(s)$
+>   *Answer:* Sodium ($Na$) gains oxygen, so it is oxidised. Oxygen ($O_2$) is reduced.
+> * (ii) $CuO(s) + H_2(g) \rightarrow Cu(s) + H_2O(l)$
+>   *Answer:* Hydrogen ($H_2$) gains oxygen, so it is oxidised to $H_2O$. Copper oxide ($CuO$) loses oxygen, so it is reduced to $Cu$.
+
+---
+
+## 🎭 COMIC STYLE RECAP: A CHAT IN THE BEAKER
+
+👦 **Rahul:** I still don''t get it. Why do equations need to be balanced?
+👩‍🔬 **Scientist Priya:** Because you can''t create or destroy atoms, Rahul! If you put 5 Lego blocks in, you must get exactly 5 Lego blocks out!
+🔥 **Oxygen Atom:** That''s right! And when I jump onto a molecule, we call it **Oxidation**!
+💧 **Hydrogen Atom:** And when Oxygen leaves, it''s **Reduction**. We like to do it together, creating a **Redox Reaction**!
+👦 **Rahul:** What if two molecules just swap parts like dancers changing partners?
+👩‍🔬 **Scientist Priya:** That''s exactly what a **Double Displacement Reaction** is! You''re getting the hang of this!
+
+', TRUE, 10);

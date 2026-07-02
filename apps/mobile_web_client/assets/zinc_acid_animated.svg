@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>CBSE Class 10 Science Activity 1.3: Action of Dilute Acid on Zinc</title>
+  <desc>Educational animated illustration demonstrating the reaction between zinc granules and dilute sulphuric acid to produce hydrogen gas (Zn + H₂SO₄ → ZnSO₄ + H₂↑).</desc>
+
+  <defs>
+    <!-- Dark Mahogany Wood Desk Gradient -->
+    <linearGradient id="woodBenchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3D2E"/>
+      <stop offset="100%" stop-color="#3D251E"/>
+    </linearGradient>
+
+    <!-- Cork Stopper Gradient -->
+    <linearGradient id="corkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5A2B"/>
+      <stop offset="40%" stop-color="#CD853F"/>
+      <stop offset="70%" stop-color="#D2B48C"/>
+      <stop offset="100%" stop-color="#8B5A2B"/>
+    </linearGradient>
+
+    <!-- Metallic Zinc Granules Gradient -->
+    <linearGradient id="zincGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="50%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <!-- Soft Glass Highlights Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+      <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="80%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Glass tube shine -->
+    <linearGradient id="tubeShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Typography Styles from howsvg.md */
+    .text-title { font-family: 'Georgia', serif; font-size: 36px; font-weight: bold; fill: #F8FAFC; }
+    .text-label { font-family: 'Arial', sans-serif; font-size: 26px; font-weight: bold; fill: #CBD5E1; }
+    .text-equation { font-family: 'Georgia', serif; font-size: 38px; font-weight: bold; fill: #F8FAFC; }
+    .text-observation-title { font-family: 'Arial', sans-serif; font-size: 26px; font-weight: bold; fill: #38BDF8; }
+    .text-observation-desc { font-family: 'Arial', sans-serif; font-size: 20px; fill: #CBD5E1; }
+    .text-caution-title { font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; fill: #78350F; }
+    .text-caution-desc { font-family: 'Arial', sans-serif; font-size: 17px; fill: #78350F; }
+  </style>
+
+  <!-- WOODEN LABORATORY BENCH -->
+  <g id="bench">
+    <rect x="0" y="540" width="1280" height="180" fill="url(#woodBenchGrad)" />
+    <line x1="0" y1="540" x2="1280" y2="540" stroke="#475569" stroke-width="4" />
+  </g>
+
+  <!-- Title -->
+  <text x="640" y="55" class="text-title" text-anchor="middle">Activity 1.3: Action of Dilute Sulphuric Acid on Zinc</text>
+
+  <!-- LEFT SIDE: CHEMICAL EQUATION -->
+  <g id="left-ui" transform="translate(45, 160)">
+    <text x="0" y="0" class="text-equation" text-anchor="start">Zn + H₂SO₄ → ZnSO₄ + H₂↑</text>
+    <!-- State Symbols -->
+    <text x="22" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(s)</text>
+    <text x="145" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(aq)</text>
+    <text x="312" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(aq)</text>
+    <text x="442" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(g)</text>
+  </g>
+
+  <!-- RIGHT SIDE: OBSERVATIONS LIST -->
+  <g id="right-ui" transform="translate(940, 150)">
+    <text x="0" y="0" class="text-observation-title">OBSERVATIONS:</text>
+    <text x="0" y="38" class="text-observation-desc">• Effervescence (rapid bubbling)</text>
+    <text x="0" y="70" class="text-observation-desc">  around the Zinc granules.</text>
+    <text x="0" y="105" class="text-observation-desc">• Flask becomes hot (evolution of</text>
+    <text x="0" y="137" class="text-observation-desc">  heat - exothermic reaction).</text>
+    <text x="0" y="172" class="text-observation-desc">• H₂ gas burns with a 'pop' sound.</text>
+  </g>
+
+  <!-- APPARATUS: CONICAL FLASK (Centered at x = 640) -->
+  <g id="conical-flask">
+    <!-- Liquid fill (Dilute Sulphuric Acid) -->
+    <!-- Base lies at y = 538, surface at y = 440 -->
+    <path d="M 505 538 L 775 538 C 752 470, 735 440, 735 440 L 545 440 C 545 440, 528 470, 505 538 Z" fill="#06B6D4" fill-opacity="0.15" stroke="none" />
+    <ellipse cx="640" cy="440" rx="95" ry="8" fill="#06B6D4" fill-opacity="0.25" stroke="#22D3EE" stroke-width="1.5" stroke-opacity="0.6" />
+
+    <!-- Glass Body Outline and Highlights -->
+    <!-- Flask path: Base L 800, 540 -> neck start 675, 280 -> mouth 675, 200 -> across to 605, 200 -> neck 605, 280 -> base 480, 540 -->
+    <path d="M 480 540 L 800 540 C 760 480, 680 340, 675 280 L 675 200 C 675 194, 605 194, 605 200 L 605 280 C 600 340, 520 480, 480 540 Z" fill="url(#glassGrad)" fill-opacity="0.1" stroke="#E2E8F0" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85" />
+    
+    <!-- Curved lip at mouth -->
+    <ellipse cx="640" cy="198" rx="36" ry="6" fill="none" stroke="#E2E8F0" stroke-width="4.5" opacity="0.9" />
+
+    <!-- Table Shadow below flask base -->
+    <ellipse cx="640" cy="540" rx="165" ry="8" fill="#0F172A" fill-opacity="0.6" stroke="none" />
+  </g>
+
+  <!-- APPARATUS: CORK STOPPER -->
+  <g id="cork">
+    <!-- Wedged inside neck from y = 198 to 245 -->
+    <polygon points="608,202 672,202 666,245 614,245" fill="url(#corkGrad)" stroke="#5C3D2E" stroke-width="1.5" />
+    <ellipse cx="640" cy="202" rx="32" ry="4" fill="#CD853F" opacity="0.5" />
+  </g>
+
+  <!-- APPARATUS: GLASS TUBE -->
+  <g id="glass-tube">
+    <!-- Tube rectangle passing through cork from y = 80 to 290 -->
+    <rect x="633" y="80" width="14" height="210" fill="url(#tubeShine)" fill-opacity="0.2" stroke="#E2E8F0" stroke-width="2" opacity="0.8" />
+    <!-- Top opening rim -->
+    <ellipse cx="640" cy="80" rx="7" ry="2" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
+    <!-- Bottom opening rim -->
+    <ellipse cx="640" cy="290" rx="7" ry="2" fill="none" stroke="#E2E8F0" stroke-width="1.5" opacity="0.8" />
+  </g>
+
+  <!-- CHEMICALS: ZINC GRANULES (Metallic pebbles sitting at the bottom) -->
+  <g id="zinc-granules">
+    <!-- Pebble 1 -->
+    <path d="M 520 535 Q 515 520, 530 522 Q 545 524, 540 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 2 -->
+    <path d="M 555 538 Q 548 522, 562 525 Q 575 528, 570 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 3 -->
+    <path d="M 590 538 Q 582 525, 600 524 Q 618 523, 612 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 4 -->
+    <path d="M 625 538 Q 618 527, 638 528 Q 652 529, 648 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 5 -->
+    <path d="M 660 538 Q 652 523, 672 524 Q 688 525, 680 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 6 -->
+    <path d="M 698 538 Q 690 526, 708 528 Q 722 530, 715 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 7 -->
+    <path d="M 735 538 Q 728 521, 744 522 Q 760 523, 755 538 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 8 (Upper row) -->
+    <path d="M 540 526 Q 532 512, 548 514 Q 562 516, 558 528 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 9 (Upper row) -->
+    <path d="M 610 526 Q 602 514, 618 515 Q 632 516, 628 528 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+    <!-- Pebble 10 (Upper row) -->
+    <path d="M 675 528 Q 667 515, 682 516 Q 696 517, 692 529 Z" fill="url(#zincGrad)" stroke="#1E293B" stroke-width="1" />
+  </g>
+
+  <!-- ANIMATION: RISING HYDROGEN BUBBLES (Effervescence inside the acid solution) -->
+  <g id="rising-bubbles">
+    <!-- Stream 1: rising from Pebble 1 (x = 530) -->
+    <circle cx="530" cy="520" r="3.5" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.4s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="r" from="1.5" to="3.5" dur="1.4s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.4s" repeatCount="indefinite" begin="0s" />
+    </circle>
+    <circle cx="532" cy="520" r="2.5" fill="none" stroke="#E2E8F0" stroke-width="1" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.4s" repeatCount="indefinite" begin="0.7s" />
+      <animate attributeName="r" from="1.0" to="2.5" dur="1.4s" repeatCount="indefinite" begin="0.7s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.4s" repeatCount="indefinite" begin="0.7s" />
+    </circle>
+
+    <!-- Stream 2: rising from Pebble 2 (x = 558) -->
+    <circle cx="558" cy="514" r="4.0" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="514" to="440" dur="1.2s" repeatCount="indefinite" begin="0.3s" />
+      <animate attributeName="r" from="1.5" to="4.0" dur="1.2s" repeatCount="indefinite" begin="0.3s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.2s" repeatCount="indefinite" begin="0.3s" />
+    </circle>
+
+    <!-- Stream 3: rising from Pebble 3 (x = 600) -->
+    <circle cx="600" cy="520" r="4.5" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.6s" repeatCount="indefinite" begin="0.1s" />
+      <animate attributeName="r" from="1.5" to="4.5" dur="1.6s" repeatCount="indefinite" begin="0.1s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.6s" repeatCount="indefinite" begin="0.1s" />
+    </circle>
+    <circle cx="598" cy="520" r="3.0" fill="none" stroke="#E2E8F0" stroke-width="1" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.6s" repeatCount="indefinite" begin="0.9s" />
+      <animate attributeName="r" from="1.0" to="3.0" dur="1.6s" repeatCount="indefinite" begin="0.9s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.6s" repeatCount="indefinite" begin="0.9s" />
+    </circle>
+
+    <!-- Stream 4: rising from Pebble 4 (x = 628) -->
+    <circle cx="628" cy="515" r="4.0" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="515" to="440" dur="1.1s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="r" from="1.5" to="4.0" dur="1.1s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.1s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+
+    <!-- Stream 5: rising from Pebble 5 (x = 655) -->
+    <circle cx="655" cy="522" r="4.2" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="522" to="440" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+      <animate attributeName="r" from="1.5" to="4.2" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+    </circle>
+    <circle cx="653" cy="522" r="2.8" fill="none" stroke="#E2E8F0" stroke-width="1" opacity="0.7">
+      <animate attributeName="cy" from="522" to="440" dur="1.5s" repeatCount="indefinite" begin="0.95s" />
+      <animate attributeName="r" from="1.0" to="2.8" dur="1.5s" repeatCount="indefinite" begin="0.95s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.5s" repeatCount="indefinite" begin="0.95s" />
+    </circle>
+
+    <!-- Stream 6: rising from Pebble 6 (x = 690) -->
+    <circle cx="690" cy="516" r="4.8" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="516" to="440" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
+      <animate attributeName="r" from="1.5" to="4.8" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.3s" repeatCount="indefinite" begin="0.4s" />
+    </circle>
+
+    <!-- Stream 7: rising from Pebble 7 (x = 735) -->
+    <circle cx="735" cy="520" r="4.5" fill="none" stroke="#E2E8F0" stroke-width="1.2" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.7s" repeatCount="indefinite" begin="0.05s" />
+      <animate attributeName="r" from="1.5" to="4.5" dur="1.7s" repeatCount="indefinite" begin="0.05s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.7s" repeatCount="indefinite" begin="0.05s" />
+    </circle>
+    <circle cx="733" cy="520" r="3.2" fill="none" stroke="#E2E8F0" stroke-width="1" opacity="0.7">
+      <animate attributeName="cy" from="520" to="440" dur="1.7s" repeatCount="indefinite" begin="0.85s" />
+      <animate attributeName="r" from="1.0" to="3.2" dur="1.7s" repeatCount="indefinite" begin="0.85s" />
+      <animate attributeName="opacity" values="0; 0.8; 0.8; 0" keyTimes="0; 0.1; 0.85; 1" dur="1.7s" repeatCount="indefinite" begin="0.85s" />
+    </circle>
+  </g>
+
+  <!-- ANIMATION: RISING HYDROGEN GAS MOLECULES (Flowing out of liquid, into tube, and out at top) -->
+  <g id="gas-flow">
+    <!-- Molecule 1 (Path 1) -->
+    <circle r="3.5" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 570 430 L 640 285 L 640 70" dur="2.8s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.8s" repeatCount="indefinite" begin="0s" />
+    </circle>
+
+    <!-- Molecule 2 (Path 2) -->
+    <circle r="3.0" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 610 430 L 640 285 L 640 70" dur="2.4s" repeatCount="indefinite" begin="0.4s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.4s" repeatCount="indefinite" begin="0.4s" />
+    </circle>
+
+    <!-- Molecule 3 (Path 3) -->
+    <circle r="4.0" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 640 430 L 640 70" dur="2.2s" repeatCount="indefinite" begin="0.8s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.2s" repeatCount="indefinite" begin="0.8s" />
+    </circle>
+
+    <!-- Molecule 4 (Path 4) -->
+    <circle r="3.2" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 670 430 L 640 285 L 640 70" dur="2.6s" repeatCount="indefinite" begin="1.2s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.6s" repeatCount="indefinite" begin="1.2s" />
+    </circle>
+
+    <!-- Molecule 5 (Path 5) -->
+    <circle r="3.6" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 710 430 L 640 285 L 640 70" dur="2.5s" repeatCount="indefinite" begin="1.6s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.5s" repeatCount="indefinite" begin="1.6s" />
+    </circle>
+
+    <!-- Extra Staggered Molecules for density -->
+    <circle r="3.0" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 590 430 L 640 285 L 640 70" dur="2.6s" repeatCount="indefinite" begin="1.8s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.6s" repeatCount="indefinite" begin="1.8s" />
+    </circle>
+    <circle r="3.4" fill="#22D3EE" opacity="0.8">
+      <animateMotion path="M 685 430 L 640 285 L 640 70" dur="2.3s" repeatCount="indefinite" begin="0.9s" />
+      <animate attributeName="opacity" values="0; 0.9; 0.9; 0" keyTimes="0; 0.05; 0.9; 1" dur="2.3s" repeatCount="indefinite" begin="0.9s" />
+    </circle>
+  </g>
+
+  <!-- CAUTION NOTE BOX -->
+  <g id="caution" transform="translate(80, 580)">
+    <!-- Warning Box shape -->
+    <rect x="0" y="0" width="480" height="95" rx="8" fill="#FEF08A" stroke="#F59E0B" stroke-width="1.8" />
+    <path d="M 25 25 L 42 60 L 8 60 Z" fill="#D97706" />
+    <text x="25" y="53" fill="#FFFFFF" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">!</text>
+    <!-- Warning descriptions -->
+    <text x="60" y="30" class="text-caution-title">CAUTION:</text>
+    <text x="60" y="54" class="text-caution-desc">Handle acid with care. Hydrogen gas is highly</text>
+    <text x="60" y="76" class="text-caution-desc">flammable. Keep away from open flames.</text>
+  </g>
+
+  <!-- DIAGRAM LABELS (Large & legible based on howsvg.md) -->
+  <g id="labels">
+    <!-- 1. Cork Label -->
+    <path d="M 470 220 L 630 220" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="630" cy="220" r="3.5" fill="#94A3B8" />
+    <text x="460" y="228" class="text-label" text-anchor="end">Cork</text>
+
+    <!-- 2. Glass tube Label -->
+    <path d="M 470 270 L 638 140" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="638" cy="140" r="3.5" fill="#94A3B8" />
+    <text x="460" y="278" class="text-label" text-anchor="end">Glass tube</text>
+
+    <!-- 3. H2 gas Label -->
+    <!-- Point to empty flask area containing gas -->
+    <path d="M 470 360 L 610 360" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="610" cy="360" r="3.5" fill="#94A3B8" />
+    <text x="460" y="368" class="text-label" text-anchor="end">H₂ gas</text>
+
+    <!-- 4. Conical flask Label -->
+    <path d="M 810 420 L 710 360" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="710" cy="360" r="3.5" fill="#94A3B8" />
+    <text x="820" y="428" class="text-label">Conical flask</text>
+
+    <!-- 5. Dilute sulphuric acid Label -->
+    <path d="M 810 480 L 685 460" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="685" cy="460" r="3.5" fill="#94A3B8" />
+    <text x="820" y="488" class="text-label">Dilute sulphuric acid</text>
+
+    <!-- 6. Zinc granules Label -->
+    <path d="M 810 540 L 680 526" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="680" cy="526" r="3.5" fill="#94A3B8" />
+    <text x="820" y="548" class="text-label">Zinc granules</text>
+  </g>
+</svg>

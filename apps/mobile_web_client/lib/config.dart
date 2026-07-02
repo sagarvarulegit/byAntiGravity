@@ -4,7 +4,7 @@ class AppConfig {
   /// `--dart-define=SUPABASE_URL=https://your-project.supabase.co`
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: 'https://canal-physiology-rhode-guru.trycloudflare.com',
+    defaultValue: 'http://127.0.0.1:54321',
   );
 
   /// The Supabase Anon Key.

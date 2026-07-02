@@ -149,8 +149,11 @@ Magnesium burns with a bright white flame to form white magnesium oxide powder.
 ## 5. 📖 Concept 3: Types of Chemical Reactions
 Reactions happen in different ways:
 - **[JARGON: Combination Reaction | A reaction where two or more reactants join to form one single product | Burning magnesium to form magnesium oxide]** (joining together): Two reactants join into one product. $2Mg + O_2 \rightarrow 2MgO$.
+[FIGURE: combination_reaction]
 - **[JARGON: Decomposition Reaction | A reaction where a single reactant breaks down into two or more products | Heating calcium carbonate to get calcium oxide and carbon dioxide]** (breaking apart): One reactant splits into two or more products. $CaCO_3 \rightarrow CaO + CO_2$.
+[FIGURE: decomposition_reaction]
 - **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger element replaces a weaker one. $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$. The blue copper solution turns green!
+[FIGURE: displacement_reaction]
 - **[JARGON: Double Displacement Reaction | A reaction where two compounds swap ions to form new compounds | Barium chloride reacting with sodium sulfate]** (swapping partners): Reactants swap ions. $Na_2SO_4 + BaCl_2 \rightarrow BaSO_4 + 2NaCl$.
 - **[JARGON: Exothermic Reaction | A reaction that releases heat energy into the surroundings | Respiration inside our cells]** (heat releasing): Releases heat. Example: respiration.
 - **[JARGON: Endothermic Reaction | A reaction that absorbs heat energy from the surroundings | Photosynthesis in plants]** (heat absorbing): Absorbs heat. Example: photosynthesis.

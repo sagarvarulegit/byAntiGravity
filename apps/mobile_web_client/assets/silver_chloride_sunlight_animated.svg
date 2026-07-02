@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="100%" height="100%">
+  <defs>
+    <!-- Sunlight Gradient Beam -->
+    <linearGradient id="sunbeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#FDE047" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Sun Radial Glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#EAB308" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Sunlight Rays Pulsing */
+    .sun-ray {
+      animation: pulseRay 3s infinite alternate ease-in-out;
+    }
+    @keyframes pulseRay {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.7; }
+    }
+
+    /* Sun rotates slowly */
+    .sun-core {
+      transform-origin: 350px 40px;
+      animation: rotateSun 20s infinite linear;
+    }
+    @keyframes rotateSun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* AgCl turns grey under sunlight */
+    .chemical-powder {
+      animation: decomposeAgCl 6s infinite ease-in-out;
+    }
+    @keyframes decomposeAgCl {
+      0%, 20% { fill: #FFFFFF; stroke: #E2E8F0; } /* White AgCl */
+      60%, 85% { fill: #78716C; stroke: #57534E; } /* Grey Silver metal */
+      100% { fill: #FFFFFF; stroke: #E2E8F0; }
+    }
+
+    /* Chlorine gas escaping animation */
+    .gas-escape {
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: releaseCl 6s infinite linear;
+      opacity: 0;
+    }
+    .cl-1 { animation-delay: 2s; }
+    .cl-2 { animation-delay: 3s; }
+    @keyframes releaseCl {
+      0%, 20% { stroke-dashoffset: 40; opacity: 0; }
+      30% { opacity: 0.5; }
+      60%, 80% { stroke-dashoffset: 0; opacity: 0.7; }
+      90%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- Ground Line / Table -->
+  <line x1="20" y1="210" x2="400" y2="210" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- LEFT COLUMN: Instruction / Legend -->
+  <g transform="translate(20, 45)">
+    <rect x="0" y="0" width="135" height="150" rx="8" fill="#F8FAFC" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="12" y="20" fill="#94A3B8" font-family="sans-serif" font-size="9.5" font-weight="bold">ACT 1.8: PHOTOLYSIS</text>
+    
+    <circle cx="18" cy="45" r="3" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.5" />
+    <text x="28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="8.5">1. White AgCl in china dish</text>
+
+    <circle cx="18" cy="75" r="3" fill="#FDE047" />
+    <text x="28" y="78" fill="#94A3B8" font-family="sans-serif" font-size="8.5">2. Sun rays hit powder</text>
+    <text x="28" y="90" fill="#64748B" font-family="sans-serif" font-size="7.5">(Light supplies energy)</text>
+
+    <circle cx="18" cy="115" r="3" fill="#78716C" />
+    <text x="28" y="118" fill="#94A3B8" font-family="sans-serif" font-size="8.5">3. Chlorine gas released</text>
+    <text x="28" y="130" fill="#E2E8F0" font-family="sans-serif" font-size="7.5" font-weight="bold">(Powder turns grey Silver)</text>
+  </g>
+
+  <!-- RIGHT COLUMN: Experimental setup -->
+  <g transform="translate(180, 0)">
+    <!-- Sun (Top Right) -->
+    <g class="sun-core" transform="translate(170, 40)">
+      <!-- Rays -->
+      <path d="M 0 -15 L 0 15 M -15 0 L 15 0 M -10 -10 L 10 10 M -10 10 L 10 -10" stroke="#EAB308" stroke-width="2" />
+      <circle cx="0" cy="0" r="15" fill="url(#sunGlow)" />
+      <circle cx="0" cy="0" r="8" fill="#FDE047" />
+    </g>
+
+    <!-- Sun Beams directed at the china dish -->
+    <!-- China dish center is at x=70, y=180 -->
+    <polygon class="sun-ray" points="170,40 50,175 90,175" fill="url(#sunbeam)" />
+
+    <!-- China Dish resting on the table -->
+    <path d="M 35 170 C 35 195, 105 195, 105 170 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5" />
+    <!-- Stand/rim of china dish -->
+    <path d="M 50 188 L 90 188" stroke="#94A3B8" stroke-width="2.5" />
+
+    <!-- AgCl Chemical powder inside china dish -->
+    <path class="chemical-powder" d="M 42 170 C 50 176, 90 176, 98 170 C 85 185, 55 185, 42 170 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5" />
+
+    <!-- Chlorine Gas escaping animation -->
+    <path class="gas-escape cl-1" d="M 55 160 Q 45 130, 50 100" fill="none" stroke="#A7F3D0" stroke-width="1.5" stroke-linecap="round" />
+    <path class="gas-escape cl-2" d="M 85 160 Q 95 135, 80 105" fill="none" stroke="#A7F3D0" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Labels -->
+    <text x="70" y="200" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">China Dish</text>
+    <text x="140" y="110" fill="#EAB308" font-family="sans-serif" font-size="8.5" font-weight="bold">Sunlight</text>
+    <path d="M 135 115 L 115 135" stroke="#EAB308" stroke-width="1" />
+  </g>
+</svg>

@@ -70,3 +70,5 @@ node_modules/
 
 # Local video generation output
 Video-Out/
+.reasonix/
+

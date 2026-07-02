@@ -106,32 +106,15 @@ A number $s$ is called **irrational** if it cannot be written in the form $\frac
 2. The product and quotient of a non-zero rational and irrational number is **irrational**. (e.g., $3\sqrt{2}$)', TRUE, 3),
 
 -- Science Chapter 1 Lessons
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Writing Chemical Equations', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 850, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2 Types of Chemical Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1470, NULL, FALSE, 2),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Revision Notes: Chemical Reactions', 'note', NULL, NULL, 
-'# Chapter 1: Chemical Reactions and Equations
-
-## Core Concepts
-A chemical reaction is a process in which one or more substances, the reactants, are converted to one or more different substances, the products.
-
-### Daily Life Observations of Chemical Changes:
-- **Rusting of Iron**: When iron is exposed to moist air for a long period, it acquires a coating of a brown flaky substance called rust.
-- **Souring of Milk**: Milk left at room temperature during summers gets soured due to lactic acid fermentation.
-- **Digestion of Food**: Complex food molecules are broken down into simpler substances in our digestive system.
-- **Respiration**: Oxygen is used to break down glucose into carbon dioxide, water, and energy.
-
-### Activity 1.1: Magnesium Ribbon Combustion
-*Caution: This activity needs the teacher’s assistance. It would be better if students wear eye protection.*
-1. Clean a magnesium ribbon about 2 cm long by rubbing it with sandpaper.
-2. Hold it with a pair of tongs. Burn it using a spirit lamp or burner and collect the ash so formed in a watch-glass.
-3. Burn the magnesium ribbon keeping it as far as possible from your eyes.
-
-**Observation**: You will observe that the magnesium ribbon burns with a dazzling white flame and changes into a white powder. This powder is **magnesium oxide (MgO)**. It is formed due to the reaction between magnesium and oxygen present in the air.
-
-```
-2Mg + O2 --> 2MgO
-```
-', TRUE, 3),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Introduction to Chemical Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 850, NULL, TRUE, 1),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1.2 Balancing Chemical Equations', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1200, NULL, TRUE, 2),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.1 Combination Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 900, NULL, FALSE, 3),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.2 Decomposition Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1100, NULL, FALSE, 4),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.3 Displacement Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 850, NULL, FALSE, 5),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.4 Double Displacement Reactions & Precipitation', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1050, NULL, FALSE, 6),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381007', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.5 Oxidation and Reduction (Redox)', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1300, NULL, FALSE, 7),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381008', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.3 Corrosion & Rancidity', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 750, NULL, FALSE, 8),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381009', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', 'Exothermic vs Endothermic Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 900, NULL, FALSE, 9),
 
 -- Science Chapter 12 Lessons
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380222', '11.1 Electric Current & Circuit', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1010, NULL, TRUE, 1),

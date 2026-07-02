@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <!-- Definition for markers -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M 0 0.5 L 5 3 L 0 5.5 z" fill="#EF4444" />
+    </marker>
+  </defs>
+
+  <!-- Wires (Main Loop) -->
+  <path d="M 60 80 L 60 170 L 140 170 M 165 170 L 190 170 M 210 170 L 240 170 M 285 170 L 340 170 L 340 80" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+  <!-- Parallel Branch structures -->
+  <!-- Left branch vertical wire (Node X) -->
+  <line x1="60" y1="40" x2="60" y2="120" stroke="#94A3B8" stroke-width="2" />
+  <!-- Right branch vertical wire (Node Y) -->
+  <line x1="340" y1="40" x2="340" y2="120" stroke="#94A3B8" stroke-width="2" />
+
+  <!-- Node Dots X & Y -->
+  <circle cx="60" cy="80" r="3" fill="#64748B" />
+  <text x="48" y="83" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">X</text>
+  <circle cx="340" cy="80" r="3" fill="#64748B" />
+  <text x="352" y="83" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="bold">Y</text>
+
+  <!-- Branch 1 (Top - R1) -->
+  <path d="M 60 40 L 175 40 L 179 34 L 184 46 L 189 34 L 194 46 L 199 34 L 202 46 L 205 40 L 340 40" fill="none" stroke="#94A3B8" stroke-width="2" />
+  <text x="190" y="26" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">R1</text>
+
+  <!-- Branch 2 (Middle - R2) -->
+  <path d="M 60 80 L 175 80 L 179 74 L 184 86 L 189 74 L 194 86 L 199 74 L 202 86 L 205 80 L 340 80" fill="none" stroke="#94A3B8" stroke-width="2" />
+  <text x="190" y="66" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">R2</text>
+
+  <!-- Branch 3 (Bottom - R3) -->
+  <path d="M 60 120 L 175 120 L 179 114 L 184 126 L 189 114 L 194 126 L 199 114 L 202 126 L 205 120 L 340 120" fill="none" stroke="#94A3B8" stroke-width="2" />
+  <text x="190" y="106" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">R3</text>
+
+  <!-- Voltmeter parallel loop (Across X and Y) -->
+  <path d="M 60 40 L 60 15 L 185 15 M 340 40 L 340 15 L 215 15" fill="none" stroke="#94A3B8" stroke-width="1" />
+  <!-- Voltmeter (V) -->
+  <circle cx="200" cy="15" r="15" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" />
+  <text x="200" y="19" fill="#1E293B" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">V</text>
+
+  <!-- Ammeter (A) -->
+  <circle cx="265" cy="170" r="15" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" />
+  <text x="265" y="174" fill="#1E293B" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">A</text>
+
+  <!-- Battery -->
+  <g transform="translate(205, 170)">
+    <line x1="-10" y1="-10" x2="-10" y2="10" stroke="#475569" stroke-width="2" />
+    <line x1="-4" y1="-6" x2="-4" y2="6" stroke="#475569" stroke-width="3.5" />
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#94A3B8" stroke-width="2" />
+    <line x1="4" y1="-10" x2="4" y2="10" stroke="#475569" stroke-width="2" />
+    <line x1="10" y1="-6" x2="10" y2="6" stroke="#475569" stroke-width="3.5" />
+  </g>
+
+  <!-- Key (K) -->
+  <g transform="translate(155, 170)">
+    <path d="M -10 -6 A 8 8 0 0 1 -2 6" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <path d="M 2 -6 A 8 8 0 0 0 10 6" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <circle cx="0" cy="0" r="2" fill="#64748B" />
+  </g>
+
+  <!-- Direction Arrows -->
+  <line x1="60" y1="145" x2="60" y2="140" stroke="#EF4444" stroke-width="1" marker-end="url(#arrow)" />
+  <line x1="340" y1="130" x2="340" y2="135" stroke="#EF4444" stroke-width="1" marker-end="url(#arrow)" />
+</svg>

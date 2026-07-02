@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>CBSE Class 10 Science Activity 1.1: Burning of Magnesium Ribbon</title>
+  <desc>Educational animated illustration demonstrating the chemical reaction: 2Mg + O₂ → 2MgO (Magnesium burning in air to form Magnesium Oxide powder in a watch-glass).</desc>
+
+  <defs>
+    <!-- Bunsen Burner Flame Normal Gradient (Saffron/Orange) -->
+    <radialGradient id="burnerFlameGrad" cx="40%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#EA580C" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Blinding Dazzling White Spark Glow Gradient -->
+    <radialGradient id="dazzleSparkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#E0F2FE" stop-opacity="0.85"/>
+      <stop offset="75%" stop-color="#38BDF8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Burner Metal Tube Gradient -->
+    <linearGradient id="metalTubeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="35%" stop-color="#CBD5E1"/>
+      <stop offset="70%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Dark Mahogany Wood Desk Color Gradient -->
+    <linearGradient id="woodBenchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3D2E"/>
+      <stop offset="100%" stop-color="#3D251E"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Default typography styles */
+    .text-title { font-family: 'Georgia', serif; font-size: 36px; font-weight: bold; fill: #F8FAFC; }
+    .text-label { font-family: 'Arial', sans-serif; font-size: 26px; font-weight: bold; fill: #CBD5E1; }
+    .text-equation { font-family: 'Georgia', serif; font-size: 48px; font-weight: bold; fill: #F8FAFC; }
+    .text-observation { font-family: 'Arial', sans-serif; font-size: 28px; font-weight: bold; fill: #38BDF8; }
+    .text-caution-title { font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; fill: #78350F; }
+    .text-caution-desc { font-family: 'Arial', sans-serif; font-size: 17px; fill: #78350F; }
+
+    /* Burner Flame Flickering */
+    .flame-effect {
+      animation: flameFlicker 0.15s infinite alternate ease-in-out;
+      transform-origin: 415px 390px;
+    }
+    @keyframes flameFlicker {
+      0% { transform: scale(0.96) rotate(-0.5deg); opacity: 0.9; }
+      100% { transform: scale(1.04) rotate(0.5deg); opacity: 1; }
+    }
+
+    /* Tongs insertion movement (10s Loop) */
+    .tongs-movement {
+      animation: moveTongs 10s infinite ease-in-out;
+    }
+    @keyframes moveTongs {
+      0%, 15% { transform: translate(150px, -50px); } /* Retracted state */
+      25%, 75% { transform: translate(0px, 0px); }    /* Positioned at flame */
+      85%, 100% { transform: translate(150px, -50px); } /* Pull back */
+    }
+
+    /* Blinding dazzling reaction spark (10s Loop) */
+    .dazzling-effect {
+      animation: igniteSpark 10s infinite ease-in-out;
+      opacity: 0;
+      transform-origin: 440px 355px;
+    }
+    @keyframes igniteSpark {
+      0%, 26% { opacity: 0; transform: scale(0.2); }
+      30%, 70% { opacity: 1; transform: scale(1); }    /* Blinding white glow */
+      76%, 100% { opacity: 0; transform: scale(0.2); }
+    }
+
+    /* Glowing Starburst rays rotation and pulse */
+    .star-rays {
+      animation: spinRays 4s infinite linear, pulseRays 0.2s infinite alternate ease-in-out;
+      transform-origin: 440px 355px;
+    }
+    @keyframes spinRays {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulseRays {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    /* Magnesium Ribbon segment consumption color shift */
+    .ribbon-glow {
+      animation: burnRibbon 10s infinite ease-in-out;
+    }
+    @keyframes burnRibbon {
+      0%, 25% { stroke: #94A3B8; filter: none; }
+      28% { stroke: #F97316; filter: drop-shadow(0 0 6px #F97316); } /* Heating/Orange glow */
+      32%, 72% { stroke: #FFFFFF; filter: drop-shadow(0 0 10px #FFFFFF); } /* Dazzling white */
+      78%, 100% { stroke: #94A3B8; filter: none; }
+    }
+
+    /* Falling MgO particles group visibility */
+    .particles-stream {
+      animation: showStream 10s infinite ease-in-out;
+      opacity: 0;
+    }
+    @keyframes showStream {
+      0%, 29% { opacity: 0; }
+      32%, 71% { opacity: 1; }
+      74%, 100% { opacity: 0; }
+    }
+
+
+    /* Fade-in animation for chemical equation and observation */
+    .fade-in-ui {
+      animation: viewUI 10s infinite ease-in-out;
+      opacity: 0;
+    }
+    @keyframes viewUI {
+      0%, 30% { opacity: 0; }
+      35%, 72% { opacity: 1; }
+      78%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- WOODEN LABORATORY DESK -->
+  <g id="laboratory-desk">
+    <!-- Desk surface with woodBenchGrad -->
+    <rect x="0" y="520" width="1280" height="200" fill="url(#woodBenchGrad)" />
+    <line x1="0" y1="520" x2="1280" y2="520" stroke="#475569" stroke-width="4" />
+  </g>
+
+  <!-- Title and Description Header -->
+  <text x="640" y="55" class="text-title" text-anchor="middle">Activity 1.1: Heating of Magnesium Ribbon in Air</text>
+
+  <!-- BUNSEN BURNER (Explicit geometry pointing to ribbon tip at 440,355) -->
+  <g id="burner">
+    <!-- Gas supply tube -->
+    <path d="M 280 510 Q 200 520, 80 490" fill="none" stroke="#334155" stroke-width="6" stroke-linecap="round" opacity="0.7" />
+
+    <!-- Burner base -->
+    <ellipse cx="280" cy="520" rx="65" ry="16" fill="#1E293B" stroke="#0F172A" stroke-width="2" />
+    <ellipse cx="280" cy="517" rx="55" ry="13" fill="#334155" />
+
+    <!-- Collar -->
+    <rect x="270" y="498" width="20" height="18" fill="url(#metalTubeGrad)" stroke="#1E293B" stroke-width="0.5" />
+
+    <!-- Tilted Stem pointing to (415, 390) -->
+    <polygon points="272,500 407,395 423,385 288,495" fill="url(#metalTubeGrad)" stroke="#1E293B" stroke-width="1.5" />
+    <ellipse cx="415" cy="390" rx="10" ry="4" transform="rotate(-30 415 390)" fill="#1E293B" />
+
+    <!-- Normal gas burner flame (Shooting from mouth 415,390 to ribbon tip 440,355) -->
+    <g class="flame-effect">
+      <!-- Outer Flame -->
+      <path d="M 405 392 C 397 370, 423 348, 440 342 C 447 355, 435 378, 425 388 Z" fill="url(#burnerFlameGrad)" />
+      <!-- Hot inner core -->
+      <path d="M 409 391 C 405 378, 423 362, 435 354 C 437 364, 430 378, 421 389 Z" fill="#FDE047" opacity="0.85" />
+    </g>
+  </g>
+
+  <!-- WATCH GLASS and ACCUMULATING MgO POWDER -->
+  <g id="watch-glass" transform="translate(440, 520)">
+    <!-- Watch glass dish body -->
+    <!-- Back Rim shadow -->
+    <path d="M -90 0 C -90 -22, 90 -22, 90 0" fill="none" stroke="#64748B" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6" />
+    <!-- Main glass bowl (With soft white opacity to stand out on dark background) -->
+    <path d="M -90 0 C -80 30, 80 30, 90 0 Z" fill="#FFFFFF" fill-opacity="0.12" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Front rim highlights -->
+    <ellipse cx="0" cy="0" rx="90" ry="6" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.4" />
+
+    <!-- MgO White Powder Pile (accumulates at center) -->
+    <path d="M -30 0 C -20 -17, 20 -17, 30 0 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1">
+      <animateTransform 
+        attributeName="transform" 
+        type="scale" 
+        values="0.2 0.1; 1 1; 1 1; 0.2 0.1" 
+        keyTimes="0; 0.7; 0.75; 1" 
+        dur="10s" 
+        repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- TONGS and MAGNESIUM RIBBON (Group animated with insert/retract) -->
+  <g class="tongs-movement">
+    <!-- Metal Tongs (Scissor-style) -->
+    <g id="tongs" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" fill="none">
+      <!-- Upper handle ring and arm -->
+      <circle cx="965" cy="200" r="18" stroke-width="3.5" />
+      <path d="M 948 206 Q 820 220, 552 316" />
+      <!-- Lower handle ring and arm -->
+      <circle cx="980" cy="232" r="18" stroke-width="3.5" />
+      <path d="M 963 226 Q 820 238, 555 324" />
+      <!-- Joint pivot screw -->
+      <circle cx="800" cy="225" r="5" fill="#475569" stroke="none" />
+    </g>
+
+    <!-- Magnesium Ribbon (held in tongs tip) -->
+    <!-- Tips clamp at (552, 320). Ribbon extends down-left directly into flame and spark point at (440, 355) -->
+    <line id="magnesium-ribbon" class="ribbon-glow" x1="552" y1="320" x2="440" y2="355" stroke-width="9" stroke-linecap="round" />
+  </g>
+
+  <!-- BLINDING DAZZLING WHITE GLOW (Active at 440, 355) -->
+  <g id="white-glow" class="dazzling-effect">
+    <!-- Large radial blue/white glow -->
+    <circle cx="440" cy="355" r="95" fill="url(#dazzleSparkGlow)" />
+    <!-- Core bright white sphere -->
+    <circle cx="440" cy="355" r="35" fill="#FFFFFF" />
+
+    <!-- White starburst rays -->
+    <g class="star-rays" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.95">
+      <line x1="440" y1="355" x2="340" y2="355" />
+      <line x1="440" y1="355" x2="540" y2="355" />
+      <line x1="440" y1="355" x2="440" y2="255" />
+      <line x1="440" y1="355" x2="440" y2="455" />
+      <line x1="440" y1="355" x2="370" y2="285" />
+      <line x1="440" y1="355" x2="510" y2="425" />
+      <line x1="440" y1="355" x2="510" y2="285" />
+      <line x1="440" y1="355" x2="370" y2="425" />
+    </g>
+  </g>
+
+  <!-- FALLING MgO PARTICLES STREAM (Animated vertically from 440, 355 to 440, 520) -->
+  <g id="mgo-particles" class="particles-stream">
+    <circle cx="440" cy="355" r="4.5" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="r" from="2.5" to="4.5" dur="1.2s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="0s" />
+    </circle>
+    <circle cx="440" cy="355" r="3.5" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="0.2s" />
+      <animate attributeName="r" from="2.0" to="3.5" dur="1.2s" repeatCount="indefinite" begin="0.2s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="0.2s" />
+    </circle>
+    <circle cx="440" cy="355" r="5.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="0.4s" />
+      <animate attributeName="r" from="2.8" to="5.0" dur="1.2s" repeatCount="indefinite" begin="0.4s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="0.4s" />
+    </circle>
+    <circle cx="440" cy="355" r="4.0" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="0.6s" />
+      <animate attributeName="r" from="2.2" to="4.0" dur="1.2s" repeatCount="indefinite" begin="0.6s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="0.6s" />
+    </circle>
+    <circle cx="440" cy="355" r="3.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="0.8s" />
+      <animate attributeName="r" from="1.8" to="3.0" dur="1.2s" repeatCount="indefinite" begin="0.8s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="0.8s" />
+    </circle>
+    <circle cx="440" cy="355" r="4.6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="0.5">
+      <animate attributeName="cy" from="355" to="520" dur="1.2s" repeatCount="indefinite" begin="1.0s" />
+      <animate attributeName="r" from="2.5" to="4.6" dur="1.2s" repeatCount="indefinite" begin="1.0s" />
+      <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.1; 0.9; 1" dur="1.2s" repeatCount="indefinite" begin="1.0s" />
+    </circle>
+  </g>
+
+  <!-- REACTION EQUATION and OBSERVATION TEXT -->
+  <g id="equation" class="fade-in-ui" transform="translate(640, 110)">
+    <!-- Equation Display -->
+    <text x="0" y="0" class="text-equation" text-anchor="middle">2Mg + O₂ → 2MgO</text>
+    <!-- State Symbols -->
+    <text x="-150" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(s)</text>
+    <text x="-40" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(g)</text>
+    <text x="145" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#94A3B8">(s)</text>
+    
+    <!-- Brief Observation note -->
+    <text x="0" y="95" class="text-observation" text-anchor="middle">Magnesium burns with dazzling white flame to form white Magnesium Oxide powder.</text>
+  </g>
+
+  <!-- CAUTION NOTE BOX -->
+  <g id="caution" transform="translate(80, 580)">
+    <!-- Warning Box shape -->
+    <rect x="0" y="0" width="480" height="95" rx="8" fill="#FEF08A" stroke="#F59E0B" stroke-width="1.8" />
+    <path d="M 25 25 L 42 60 L 8 60 Z" fill="#D97706" />
+    <text x="25" y="53" fill="#FFFFFF" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">!</text>
+    <!-- Warning descriptions -->
+    <text x="60" y="30" class="text-caution-title">CAUTION:</text>
+    <text x="60" y="54" class="text-caution-desc">Burn away from eyes. Suitable eyeglasses and</text>
+    <text x="60" y="76" class="text-caution-desc">teacher supervision are highly recommended.</text>
+  </g>
+
+  <!-- TEXTBOOK DIAGRAM STYLE LABELS -->
+  <g id="labels">
+    <!-- 1. Tongs Label -->
+    <path d="M 750 150 L 710 215" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="710" cy="215" r="3.5" fill="#94A3B8" />
+    <text x="760" y="155" class="text-label">Tongs</text>
+
+    <!-- 2. Magnesium ribbon Label -->
+    <path d="M 620 420 L 510 335" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="510" cy="335" r="3.5" fill="#94A3B8" />
+    <text x="630" y="425" class="text-label">Magnesium ribbon</text>
+
+    <!-- 3. Burner Label -->
+    <path d="M 120 360 L 280 480" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="280" cy="480" r="3.5" fill="#94A3B8" />
+    <text x="110" y="365" class="text-label" text-anchor="end">Burner</text>
+
+    <!-- 4. Watch-glass Label -->
+    <path d="M 620 510 L 530 525" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="530" cy="525" r="3.5" fill="#94A3B8" />
+    <text x="630" y="515" class="text-label">Watch-glass</text>
+
+    <!-- 5. Magnesium oxide Label -->
+    <path d="M 620 560 L 465 528" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    <circle cx="465" cy="528" r="3.5" fill="#94A3B8" />
+    <text x="630" y="565" class="text-label">Magnesium oxide (white ash)</text>
+  </g>
+</svg>

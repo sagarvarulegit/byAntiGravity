@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="100%" height="100%">
+  <defs>
+    <!-- Liquid fill style -->
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Gas bubbles rising animation */
+    .bubble {
+      fill: none;
+      stroke: #60A5FA;
+      stroke-width: 1;
+      opacity: 0;
+      animation: rise 3s infinite linear;
+    }
+    
+    /* Cathode (Hydrogen) bubbles - double density */
+    .b-h1 { animation-delay: 0s; }
+    .b-h2 { animation-delay: 0.5s; }
+    .b-h3 { animation-delay: 1s; }
+    .b-h4 { animation-delay: 1.5s; }
+    .b-h5 { animation-delay: 2s; }
+    .b-h6 { animation-delay: 2.5s; }
+
+    /* Anode (Oxygen) bubbles - single density */
+    .b-o1 { animation-delay: 0.2s; }
+    .b-o2 { animation-delay: 1.2s; }
+    .b-o3 { animation-delay: 2.2s; }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.6); opacity: 0; }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.7; }
+      100% { transform: translateY(-70px) scale(1.2); opacity: 0; }
+    }
+  </style>
+
+  <!-- Ground Line / Bench -->
+  <line x1="20" y1="220" x2="400" y2="220" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- LEFT COLUMN: Instruction / Legend -->
+  <g transform="translate(20, 40)">
+    <rect x="0" y="0" width="135" height="165" rx="8" fill="#F8FAFC" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="12" y="20" fill="#94A3B8" font-family="sans-serif" font-size="9.5" font-weight="bold">ACT 1.7: ELECTROLYSIS</text>
+    
+    <circle cx="18" cy="45" r="3" fill="#2563EB" />
+    <text x="28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="8.5">1. Acidified H₂O in mug</text>
+
+    <circle cx="18" cy="75" r="3" fill="#4B5563" />
+    <text x="28" y="78" fill="#94A3B8" font-family="sans-serif" font-size="8.5">2. Carbon Electrodes</text>
+
+    <circle cx="18" cy="105" r="3" fill="#EF4444" />
+    <text x="28" y="108" fill="#94A3B8" font-family="sans-serif" font-size="8.5">3. 6V DC battery splits H₂O</text>
+
+    <circle cx="18" cy="135" r="3" fill="#60A5FA" />
+    <text x="28" y="138" fill="#E2E8F0" font-family="sans-serif" font-size="8.5" font-weight="bold">4. H₂ collected = 2x O₂</text>
+    <text x="28" y="148" fill="#64748B" font-family="sans-serif" font-size="7.5">(Cathode gets double gas)</text>
+  </g>
+
+  <!-- RIGHT COLUMN: Experimental setup -->
+  <g transform="translate(180, 0)">
+    <!-- Plastic Mug Outline -->
+    <path d="M 50 170 L 60 70 L 140 70 L 150 170 Z" fill="url(#liquidGrad)" stroke="#64748B" stroke-width="2" />
+    <!-- Mug Handle -->
+    <path d="M 145 90 Q 170 100, 165 130 Q 160 150, 148 150" fill="none" stroke="#64748B" stroke-width="2" />
+
+    <!-- Rubber stoppers at bottom -->
+    <rect x="75" y="165" width="14" height="10" fill="#1E293B" rx="1" />
+    <rect x="111" y="165" width="14" height="10" fill="#1E293B" rx="1" />
+
+    <!-- Electrodes (Carbon rods) -->
+    <rect x="80" y="110" width="4" height="60" fill="#111827" />
+    <rect x="116" y="110" width="4" height="60" fill="#111827" />
+
+    <!-- INVERTED TEST TUBES -->
+    <!-- Tube 1 (Anode - Left - Oxygen) - Water level higher, less gas space (1x) -->
+    <path d="M 70 160 L 70 60 C 70 54, 94 54, 94 60 L 94 160" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
+    <line x1="71" y1="85" x2="93" y2="85" stroke="#3B82F6" stroke-dasharray="2 2" stroke-width="1" />
+    <text x="82" y="75" fill="#E2E8F0" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">O₂</text>
+
+    <!-- Tube 2 (Cathode - Right - Hydrogen) - Water level lower, double gas space (2x) -->
+    <path d="M 106 160 L 106 60 C 106 54, 130 54, 130 60 L 130 160" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
+    <line x1="107" y1="110" x2="129" y2="110" stroke="#3B82F6" stroke-dasharray="2 2" stroke-width="1" />
+    <text x="118" y="85" fill="#E2E8F0" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">H₂</text>
+
+    <!-- Wire Connections -->
+    <!-- Positive Terminal (Red) connects to Left Electrode (Anode) -->
+    <path d="M 82 170 Q 82 205, 50 205 Q 20 205, 20 215" fill="none" stroke="#EF4444" stroke-width="2" />
+    <text x="74" y="185" fill="#EF4444" font-family="sans-serif" font-size="8" font-weight="bold">+</text>
+    <text x="82" y="195" fill="#94A3B8" font-family="sans-serif" font-size="7" text-anchor="middle">Anode</text>
+
+    <!-- Negative Terminal (Black) connects to Right Electrode (Cathode) -->
+    <path d="M 118 170 Q 118 205, 150 205 Q 180 205, 180 215" fill="none" stroke="#1E293B" stroke-width="2" />
+    <text x="126" y="185" fill="#94A3B8" font-family="sans-serif" font-size="8" font-weight="bold">-</text>
+    <text x="118" y="195" fill="#94A3B8" font-family="sans-serif" font-size="7" text-anchor="middle">Cathode</text>
+
+    <!-- Battery block -->
+    <rect x="75" y="200" width="50" height="18" fill="#1E293B" rx="2" stroke="#475569" stroke-width="1" />
+    <text x="100" y="212" fill="#E2E8F0" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">6V Battery</text>
+
+    <!-- Bubbles rising (Left: Oxygen, Right: Hydrogen) -->
+    <!-- Anode bubbles -->
+    <circle class="bubble b-o1" cx="82" cy="110" r="1.5" style="transform-origin: 82px 110px;" />
+    <circle class="bubble b-o2" cx="81" cy="110" r="2" style="transform-origin: 81px 110px;" />
+    <circle class="bubble b-o3" cx="83" cy="110" r="1.8" style="transform-origin: 83px 110px;" />
+
+    <!-- Cathode bubbles (double quantity) -->
+    <circle class="bubble b-h1" cx="117" cy="110" r="1.5" style="transform-origin: 117px 110px;" />
+    <circle class="bubble b-h2" cx="119" cy="110" r="2" style="transform-origin: 119px 110px;" />
+    <circle class="bubble b-h3" cx="118" cy="110" r="1.7" style="transform-origin: 118px 110px;" />
+    <circle class="bubble b-h4" cx="116" cy="110" r="2.2" style="transform-origin: 116px 110px;" />
+    <circle class="bubble b-h5" cx="117" cy="110" r="1.4" style="transform-origin: 117px 110px;" />
+    <circle class="bubble b-h6" cx="119" cy="110" r="1.9" style="transform-origin: 119px 110px;" />
+  </g>
+</svg>

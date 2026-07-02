@@ -494,6 +494,15 @@ class SupabaseDatabaseService implements DatabaseService {
   /// Assigns vector whiteboards diagrams based on title context keywords.
   static VideoType _mapVideoType(String title) {
     final lower = title.toLowerCase();
+    if (lower.contains('combination')) {
+      return VideoType.scienceCombination;
+    }
+    if (lower.contains('decomposition')) {
+      return VideoType.scienceDecomposition;
+    }
+    if (lower.contains('displacement')) {
+      return VideoType.scienceDisplacement;
+    }
     if (lower.contains('ohm') || lower.contains('elect')) {
       return VideoType.scienceCircuit;
     }

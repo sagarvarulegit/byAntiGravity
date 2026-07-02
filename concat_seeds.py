@@ -1,6 +1,7 @@
 import os
 
 seed_files = [
+    "db/seed_0_auth.sql",
     "db/seed.sql",
     "db/seed_chapters_batch2.sql",
     "db/seed_batch3_math_science_patched.sql",

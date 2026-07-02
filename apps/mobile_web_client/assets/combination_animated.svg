@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="100%" height="100%">
+  <defs>
+    <!-- Exothermic Glow Gradient -->
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#EF4444" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Steam Gradient -->
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#E2E8F0" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#F1F5F9" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F1F5F9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Timeline: 6s Loop */
+
+    /* CaO Chunks falling */
+    .cao-chunk {
+      animation: fall 6s infinite ease-in-out;
+    }
+    .cao-chunk-1 { animation-delay: 0.3s; }
+    .cao-chunk-2 { animation-delay: 0.6s; }
+    .cao-chunk-3 { animation-delay: 0.9s; }
+
+    @keyframes fall {
+      0% { transform: translate(0, -60px); opacity: 0; }
+      8% { opacity: 1; }
+      20%, 100% { transform: translate(0, 82px); opacity: 0; }
+    }
+
+    /* Slaked Lime solution cloudiness */
+    .liquid-blend {
+      animation: cloudify 6s infinite ease-in-out;
+    }
+    @keyframes cloudify {
+      0%, 18% { fill: #93C5FD; fill-opacity: 0.25; }
+      30%, 100% { fill: #CBD5E1; fill-opacity: 0.55; }
+    }
+
+    /* Steam rising */
+    .steam-wave {
+      animation: rise 6s infinite linear;
+      opacity: 0;
+    }
+    .steam-1 { animation-delay: 1.5s; }
+    .steam-2 { animation-delay: 1.9s; }
+    .steam-3 { animation-delay: 2.3s; }
+
+    @keyframes rise {
+      0% { transform: translateY(10px) scale(0.8); opacity: 0; }
+      15% { opacity: 0.6; }
+      45% { transform: translateY(-55px) scale(1.15); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Exothermic Heat Pulse */
+    .heat-glow {
+      animation: glow 6s infinite ease-in-out;
+      opacity: 0;
+    }
+    @keyframes glow {
+      0%, 25% { opacity: 0; transform: scale(1); }
+      35%, 75% { opacity: 0.8; transform: scale(1.2); }
+      90%, 100% { opacity: 0; transform: scale(1); }
+    }
+
+    /* Warning Text Pulse */
+    .alert-text {
+      animation: alertPulse 6s infinite ease-in-out;
+      opacity: 0;
+    }
+    @keyframes alertPulse {
+      0%, 28% { opacity: 0; transform: translate(0, 10px) scale(0.7); }
+      38%, 78% { opacity: 1; transform: translate(0, 0) scale(1); }
+      88%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- Ground Line / Bench -->
+  <line x1="20" y1="210" x2="400" y2="210" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- LEFT COLUMN: Instruction / Legend -->
+  <g transform="translate(20, 45)">
+    <rect x="0" y="0" width="135" height="150" rx="8" fill="#F8FAFC" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="12" y="20" fill="#94A3B8" font-family="sans-serif" font-size="9.5" font-weight="bold">EXOTHERMIC PROCESS</text>
+    
+    <circle cx="18" cy="45" r="3" fill="#EF4444" />
+    <text x="28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="8.5">1. CaO chunks added</text>
+
+    <circle cx="18" cy="75" r="3" fill="#EF4444" />
+    <text x="28" y="78" fill="#94A3B8" font-family="sans-serif" font-size="8.5">2. Vigorous reaction</text>
+    <text x="28" y="90" fill="#64748B" font-family="sans-serif" font-size="7.5">(Releases steam &amp; gas)</text>
+
+    <circle cx="18" cy="115" r="3" fill="#EF4444" />
+    <text x="28" y="118" fill="#94A3B8" font-family="sans-serif" font-size="8.5">3. Temperature rises</text>
+    <text x="28" y="130" fill="#EF4444" font-family="sans-serif" font-size="7.5" font-weight="bold">(Exothermic reaction)</text>
+  </g>
+
+  <!-- RIGHT COLUMN: Chemical setup (Beaker & CaO) -->
+  <g transform="translate(280, 110)">
+    <!-- Exothermic Heat Glow (Behind Beaker) -->
+    <circle class="heat-glow" cx="0" cy="40" r="55" fill="url(#glowGrad)" style="transform-origin: 0px 40px;" />
+
+    <!-- Beaker Liquid (CaO + H2O) -->
+    <rect class="liquid-blend" x="-50" y="5" width="100" height="90" rx="5" />
+    
+    <!-- Beaker Graduations -->
+    <line x1="-40" y1="20" x2="-32" y2="20" stroke="#94A3B8" stroke-width="1.5" />
+    <text x="-28" y="23" fill="#94A3B8" font-family="sans-serif" font-size="7">200ml</text>
+    <line x1="-40" y1="45" x2="-32" y2="45" stroke="#94A3B8" stroke-width="1.5" />
+    <text x="-28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="7">100ml</text>
+    <line x1="-40" y1="70" x2="-35" y2="70" stroke="#94A3B8" stroke-width="1" />
+
+    <!-- Beaker Outline -->
+    <path d="M -55 -25 L -55 95 Q -55 100, -50 100 L 50 100 Q 50 95, 50 -25" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    <path d="M -58 -25 L -52 -25" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 52 -25 L 58 -25" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Falling CaO Chunks (Crystalline Shards) -->
+    <polygon class="cao-chunk cao-chunk-1" points="-10,-60 -4,-65 -2,-58 -8,-54" fill="#CBD5E1" stroke="#94A3B8" stroke-width="0.5" />
+    <polygon class="cao-chunk cao-chunk-2" points="8,-70 14,-62 6,-56 2,-65" fill="#CBD5E1" stroke="#94A3B8" stroke-width="0.5" />
+    <polygon class="cao-chunk cao-chunk-3" points="20,-58 26,-64 22,-52 14,-54" fill="#CBD5E1" stroke="#94A3B8" stroke-width="0.5" />
+
+    <!-- CaO Solid Pile (Quicklime) at bottom -->
+    <path d="M -20 100 C -10 82, 15 82, 25 100" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1" />
+    <path d="M -40 100 C -30 88, -15 88, -5 100" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1" />
+
+    <!-- Steam / Heat Waves rising (Gradients) -->
+    <path class="steam-wave steam-1" d="M -25 -15 Q -35 -30, -25 -45 T -25 -65" fill="none" stroke="url(#steamGrad)" stroke-width="3" stroke-linecap="round" />
+    <path class="steam-wave steam-2" d="M 0 -20 Q -10 -35, 0 -50 T 0 -70" fill="none" stroke="url(#steamGrad)" stroke-width="3" stroke-linecap="round" />
+    <path class="steam-wave steam-3" d="M 25 -15 Q 15 -30, 25 -45 T 25 -65" fill="none" stroke="url(#steamGrad)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Label above beaker -->
+    <text x="0" y="112" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">Quicklime + Water</text>
+
+    <!-- Warn exclamation overlay -->
+    <g class="alert-text" transform="translate(0, 0)" style="transform-origin: 0px 0px;">
+      <rect x="-30" y="-45" width="60" height="20" rx="4" fill="#EF4444" />
+      <text x="0" y="-32" fill="#FFFFFF" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">🔥 HOT!</text>
+    </g>
+  </g>
+</svg>

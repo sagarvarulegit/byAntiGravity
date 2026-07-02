@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="100%" height="100%">
+  <style>
+    /* Timeline: 6s Loop */
+
+    /* Nail lowering and raising (0s to 1.5s and 5.0s to 6.0s) */
+    .nail-thread-group {
+      animation: lowerNail 6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes lowerNail {
+      0% { transform: translateY(-35px); }
+      25%, 75% { transform: translateY(0); }
+      85%, 100% { transform: translateY(-35px); }
+    }
+
+    /* Solution changes from Blue to Pale Green (1.5s to 4.5s) */
+    .solution-color {
+      animation: colorShift 6s infinite ease-in-out;
+    }
+    @keyframes colorShift {
+      0%, 25% { fill: #3B82F6; fill-opacity: 0.35; }
+      50%, 75% { fill: #10B981; fill-opacity: 0.25; }
+      85%, 100% { fill: #3B82F6; fill-opacity: 0.35; }
+    }
+
+    /* Immersed nail coats with brown copper (1.5s to 4.5s) */
+    .nail-coating {
+      animation: coatBrown 6s infinite ease-in-out;
+    }
+    @keyframes coatBrown {
+      0%, 25% { fill: #78716C; stroke: #475569; }
+      50%, 75% { fill: #B45309; stroke: #78350F; }
+      85%, 100% { fill: #78716C; stroke: #475569; }
+    }
+  </style>
+
+  <!-- Ground Line / Bench -->
+  <line x1="20" y1="210" x2="400" y2="210" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- LEFT COLUMN: Instruction / Legend -->
+  <g transform="translate(20, 45)">
+    <rect x="0" y="0" width="135" height="150" rx="8" fill="#F8FAFC" fill-opacity="0.05" stroke="#475569" stroke-width="1" />
+    
+    <text x="12" y="20" fill="#94A3B8" font-family="sans-serif" font-size="9.5" font-weight="bold">DISPLACEMENT</text>
+    
+    <circle cx="18" cy="45" r="3" fill="#EF4444" />
+    <text x="28" y="48" fill="#94A3B8" font-family="sans-serif" font-size="8.5">1. Iron nail immersed</text>
+
+    <circle cx="18" cy="75" r="3" fill="#EF4444" />
+    <text x="28" y="78" fill="#94A3B8" font-family="sans-serif" font-size="8.5">2. Blue solution fades</text>
+    <text x="28" y="90" fill="#10B981" font-family="sans-serif" font-size="7.5" font-weight="bold">(Turns light green)</text>
+
+    <circle cx="18" cy="115" r="3" fill="#EF4444" />
+    <text x="28" y="118" fill="#94A3B8" font-family="sans-serif" font-size="8.5">3. Brown deposit on nail</text>
+    <text x="28" y="130" fill="#B45309" font-family="sans-serif" font-size="7.5" font-weight="bold">(Metallic copper coats nail)</text>
+  </g>
+
+  <!-- RIGHT COLUMN: Experimental setup -->
+  <g transform="translate(180, 0)">
+    <!-- Stand -->
+    <rect x="130" y="200" width="70" height="10" fill="#334155" rx="2" />
+    <rect x="166" y="50" width="6" height="150" fill="#475569" />
+    <rect x="158" y="80" width="12" height="10" fill="#1E293B" rx="1" />
+    <rect x="60" y="83" width="100" height="4" fill="#475569" />
+    <path d="M 55 75 L 60 85 L 55 95" fill="none" stroke="#1E293B" stroke-width="2" />
+
+    <!-- Test Tube -->
+    <!-- Liquid Solution (Color shifted dynamically) -->
+    <path class="solution-color" d="M 33 100 L 77 100 L 77 185 C 77 195, 33 195, 33 185 Z" />
+    
+    <!-- Test Tube Outline -->
+    <path d="M 33 60 L 33 185 C 33 198, 77 198, 77 185 L 77 60" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    <ellipse cx="55" cy="60" rx="22" ry="4" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+    <!-- Suspended Thread & Nail Group (Animated translation) -->
+    <g class="nail-thread-group">
+      <!-- Suspension Thread -->
+      <path d="M 55 25 L 55 110" fill="none" stroke="#64748B" stroke-width="1.5" />
+
+      <!-- Iron Nail -->
+      <!-- Top Loop/Head -->
+      <path d="M 51 110 L 59 110 L 59 113 L 51 113 Z" fill="#78716C" stroke="#475569" stroke-width="1" />
+      <!-- Upper part of nail body (Remains steel-grey) -->
+      <path d="M 52 113 L 58 113 L 58 135 L 52 135 Z" fill="#78716C" stroke="#475569" stroke-width="1" />
+      <!-- Immersed part of nail body (Coats with Copper Brown) -->
+      <path class="nail-coating" d="M 52 135 L 58 135 L 58 165 L 55 174 L 52 165 Z" stroke-width="1" />
+    </g>
+
+    <!-- Labels -->
+    <text x="55" y="16" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">Thread</text>
+    <path d="M 55 20 L 55 25" stroke="#64748B" stroke-width="1" />
+    
+    <text x="120" y="145" fill="#94A3B8" font-family="sans-serif" font-size="8.5" font-weight="bold">CuSO₄ Solution</text>
+    <path d="M 115 142 L 77 142" stroke="#64748B" stroke-width="1" />
+  </g>
+</svg>
