@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Seed Chapter 5: The Age of Industrialisation (Social Science)
+description: This plan outlines the steps to generate SQL seed data for Chapter 5 of Class 10 Social Science ("The Age of Industrialisation") and write it to the t...
+tags: [plan]
+timestamp: 2026-06-24T08:13:16Z
+---
 # Implementation Plan: Seed Chapter 5: The Age of Industrialisation (Social Science)
 
 This plan outlines the steps to generate SQL seed data for Chapter 5 of Class 10 Social Science ("The Age of Industrialisation") and write it to the target SQL file.

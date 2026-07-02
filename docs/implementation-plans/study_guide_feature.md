@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Study Guide Feature
+description: Introduce a new "Self-Study Guide" content type that serves as a complete textbook replacement, with in-depth theory, solved numericals, and PYQs.
+tags: [plan]
+timestamp: 2026-06-24T22:51:59Z
+---
 # Implementation Plan: Study Guide Feature
 
 ## Goal

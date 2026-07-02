@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Global Diagram and Activity Rendering in Revision Notes
+description: This plan details the changes required to parse and display textbook opener diagrams (including QR codes and Flask drawings) globally for all chapters...
+tags: [plan]
+timestamp: 2026-06-24T21:44:14Z
+---
 # Implementation Plan: Global Diagram and Activity Rendering in Revision Notes
 
 This plan details the changes required to parse and display textbook opener diagrams (including QR codes and Flask drawings) globally for all chapters across all subjects, as well as NCERT Activity Boxes.

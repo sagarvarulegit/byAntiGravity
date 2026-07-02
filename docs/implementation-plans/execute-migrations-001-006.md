@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Execution Plan: Schema Migrations 001–006
+description: > **Purpose**: This document contains EXACT, copy-pasteable instructions for every step of migrations 001–006. A smaller execution agent (Gemini Flash...
+tags: [plan]
+timestamp: 2026-06-24T17:17:13Z
+---
 # Execution Plan: Schema Migrations 001–006
 
 > **Purpose**: This document contains EXACT, copy-pasteable instructions for every step of migrations 001–006. A smaller execution agent (Gemini Flash) should be able to apply every change with **ZERO interpretation or decision-making**.

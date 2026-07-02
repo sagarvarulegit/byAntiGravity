@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: CBSE Class 10 Social Science Content Generation (Batch 4)
+description: This plan details the content generation and seeding of all remaining 20 Social Science chapters to achieve 100% syllabus coverage.
+tags: [plan]
+timestamp: 2026-06-24T08:11:39Z
+---
 # Implementation Plan: CBSE Class 10 Social Science Content Generation (Batch 4)
 
 This plan details the content generation and seeding of all remaining 20 Social Science chapters to achieve 100% syllabus coverage.

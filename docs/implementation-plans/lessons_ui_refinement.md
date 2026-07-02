@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan — Lessons UI Refinement (Sections 10 and 11)
+description: Refine the UI rendering of revision notes inside `lessons_view.dart` for two key sections:
+tags: [plan]
+timestamp: 2026-06-24T14:21:08Z
+---
 # Implementation Plan — Lessons UI Refinement (Sections 10 and 11)
 
 Refine the UI rendering of revision notes inside `lessons_view.dart` for two key sections:

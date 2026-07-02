@@ -1,3 +1,10 @@
+---
+type: Standard
+title: 🏗️ CBSE Class 10 Learning Portal — Architecture Document
+description: > **Document Version**: 1.0
+tags: [standard]
+timestamp: 2026-06-23T17:41:11Z
+---
 # 🏗️ CBSE Class 10 Learning Portal — Architecture Document
 
 > **Document Version**: 1.0  

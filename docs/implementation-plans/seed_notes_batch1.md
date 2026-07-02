@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - NCERT-Faithful Revision Notes (Batch 1)
+description: Create NCERT-faithful revision notes for two CBSE Class 10 chapters:
+tags: [plan]
+timestamp: 2026-06-23T19:37:32Z
+---
 # Implementation Plan - NCERT-Faithful Revision Notes (Batch 1)
 
 Create NCERT-faithful revision notes for two CBSE Class 10 chapters:

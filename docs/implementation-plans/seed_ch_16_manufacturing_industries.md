@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Seed Chapter 16 (Manufacturing Industries) SQL Data
+description: This plan outlines the generation and seeding of Chapter 16 data for CBSE Class 10 Social Science (Geography - Manufacturing Industries).
+tags: [plan]
+timestamp: 2026-06-24T08:13:23Z
+---
 # Implementation Plan: Seed Chapter 16 (Manufacturing Industries) SQL Data
 
 This plan outlines the generation and seeding of Chapter 16 data for CBSE Class 10 Social Science (Geography - Manufacturing Industries).

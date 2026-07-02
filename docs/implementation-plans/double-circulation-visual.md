@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Double Circulation Diagram for Chapter 5
+description: This plan details the changes required to implement a high-fidelity vector diagram of **Double Circulation** via a `CustomPainter` and integrate it in...
+tags: [plan]
+timestamp: 2026-06-24T21:55:27Z
+---
 # Implementation Plan: Double Circulation Diagram for Chapter 5
 
 This plan details the changes required to implement a high-fidelity vector diagram of **Double Circulation** via a `CustomPainter` and integrate it into **Science Chapter 5 (Life Processes)** revision notes.

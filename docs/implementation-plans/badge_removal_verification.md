@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Verification and Web Build for Badge Removal
+description: We verified that `showBadge` is set to `false` (default value) in `interactive_example.dart` and `question_card.dart`, and it is no longer passed as `...
+tags: [plan]
+timestamp: 2026-06-26T14:05:14Z
+---
 # Implementation Plan: Verification and Web Build for Badge Removal
 
 We verified that `showBadge` is set to `false` (default value) in `interactive_example.dart` and `question_card.dart`, and it is no longer passed as `true` in `lessons_view.dart`.

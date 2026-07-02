@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Generate SQL Seed for Chapter 19: Sectors of the Indian Economy
+description: We need to generate raw SQL seed statements to populate a new chapter: **Chapter 19: Sectors of the Indian Economy** (Subject: Social Science, ID: `a0...
+tags: [plan]
+timestamp: 2026-06-24T08:13:09Z
+---
 # Implementation Plan - Generate SQL Seed for Chapter 19: Sectors of the Indian Economy
 
 We need to generate raw SQL seed statements to populate a new chapter: **Chapter 19: Sectors of the Indian Economy** (Subject: Social Science, ID: `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33`).

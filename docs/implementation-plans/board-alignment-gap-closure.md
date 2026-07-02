@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Board Alignment Gap Closure — Implementation Plan
+description: > **Created**: 2026-06-24
+tags: [plan]
+timestamp: 2026-06-24T16:21:19Z
+---
 # Board Alignment Gap Closure — Implementation Plan
 
 > **Created**: 2026-06-24

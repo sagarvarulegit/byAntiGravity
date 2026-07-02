@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - CBSE Class 10 Science Revision Notes & Seed Data (Batch 3, Part 2)
+description: This plan details the generation of PostgreSQL seed data for Science Chapters 9, 10, 12, and 13.
+tags: [plan]
+timestamp: 2026-06-24T08:06:35Z
+---
 # Implementation Plan - CBSE Class 10 Science Revision Notes & Seed Data (Batch 3, Part 2)
 
 This plan details the generation of PostgreSQL seed data for Science Chapters 9, 10, 12, and 13.

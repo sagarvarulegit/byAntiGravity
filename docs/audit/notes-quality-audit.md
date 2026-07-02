@@ -1,3 +1,10 @@
+---
+type: Standard
+title: CBSE Content Quality Audit: Notes
+description: This audit evaluates the five existing revision notes in `db/seed.sql` and `db/seed_notes_batch1.sql` against the 7 Content Quality Standards defined ...
+tags: [standard]
+timestamp: 2026-06-23T20:19:35Z
+---
 # CBSE Content Quality Audit: Notes
 
 This audit evaluates the five existing revision notes in `db/seed.sql` and `db/seed_notes_batch1.sql` against the 7 Content Quality Standards defined in [CONTENT_QUALITY_STANDARDS.md](file:///home/sagarv/Projects/byAntiGravity/docs/CONTENT_QUALITY_STANDARDS.md).

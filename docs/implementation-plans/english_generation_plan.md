@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan — CBSE Class 10 English Content Generation
+description: This plan details the generation of comprehensive English content for CBSE Class 10 (Code 184) to be stored in `db/seed_english_batch1.sql`. It follow...
+tags: [plan]
+timestamp: 2026-06-24T17:55:41Z
+---
 # Implementation Plan — CBSE Class 10 English Content Generation
 
 This plan details the generation of comprehensive English content for CBSE Class 10 (Code 184) to be stored in `db/seed_english_batch1.sql`. It follows the specifications in the codebase rules and schema definitions.

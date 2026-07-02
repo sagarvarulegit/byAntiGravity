@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Rewrite Science Chapter 12 (Electricity) Notes
+description: Rewrite the revision notes for Science Chapter 12 (Electricity) to align with the depth and comprehensiveness of the NCERT textbook, covering all nece...
+tags: [plan]
+timestamp: 2026-06-24T22:39:27Z
+---
 # Implementation Plan: Rewrite Science Chapter 12 (Electricity) Notes
 
 ## Goal

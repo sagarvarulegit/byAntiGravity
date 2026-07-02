@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - seed_batch3_math_part2
+description: Create NCERT-faithful PostgreSQL seed code for Mathematics Chapters 10, 11, 12, 13, 14, following the V2 Revision Notes standard and database schema c...
+tags: [plan]
+timestamp: 2026-06-24T08:06:14Z
+---
 # Implementation Plan - seed_batch3_math_part2
 
 Create NCERT-faithful PostgreSQL seed code for Mathematics Chapters 10, 11, 12, 13, 14, following the V2 Revision Notes standard and database schema conventions.

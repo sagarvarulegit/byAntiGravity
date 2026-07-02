@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Seed Chapter 21 (Globalisation and the Indian Economy) SQL Data
+description: This plan outlines the generation and seeding of Chapter 21 data for CBSE Class 10 Social Science (Economics).
+tags: [plan]
+timestamp: 2026-06-24T08:14:03Z
+---
 # Implementation Plan: Seed Chapter 21 (Globalisation and the Indian Economy) SQL Data
 
 This plan outlines the generation and seeding of Chapter 21 data for CBSE Class 10 Social Science (Economics).

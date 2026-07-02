@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Multichapter Science Diagrams Integration
+description: This plan details the addition of 4 high-fidelity vector diagrams across key Science chapters using Flutter's `CustomPainter` to align with the CBSE C...
+tags: [plan]
+timestamp: 2026-06-24T22:01:20Z
+---
 # Implementation Plan: Multichapter Science Diagrams Integration
 
 This plan details the addition of 4 high-fidelity vector diagrams across key Science chapters using Flutter's `CustomPainter` to align with the CBSE Class 10 textbook content.

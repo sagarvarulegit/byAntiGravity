@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Notes Quality Audit & Rewrite
+description: Audit and rewrite all 5 existing notes from `db/seed.sql` and `db/seed_notes_batch1.sql` to align with the CBSE Class 10 Online Learning Portal conten...
+tags: [plan]
+timestamp: 2026-06-23T20:19:29Z
+---
 # Implementation Plan: Notes Quality Audit & Rewrite
 
 ## Objective

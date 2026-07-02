@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Add "Electric Potential & Potential Difference" Video Lesson
+description: This plan details the steps to introduce the newly generated "Electric Potential & Potential Difference" video into the learning platform. We will ins...
+tags: [plan]
+timestamp: 2026-06-27T06:41:41Z
+---
 # Implementation Plan: Add "Electric Potential & Potential Difference" Video Lesson
 
 This plan details the steps to introduce the newly generated "Electric Potential & Potential Difference" video into the learning platform. We will insert a new lesson in the database, adjust sequence numbers, and wire the video path in the Flutter client.

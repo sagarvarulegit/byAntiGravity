@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Chapter 6 - Print Culture and the Modern World SQL Seed Generation
+description: This plan details the generation and seeding of Chapter 6 (Print Culture and the Modern World) for Subject ID: `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33` ...
+tags: [plan]
+timestamp: 2026-06-24T08:13:14Z
+---
 # Implementation Plan: Chapter 6 - Print Culture and the Modern World SQL Seed Generation
 
 This plan details the generation and seeding of Chapter 6 (Print Culture and the Modern World) for Subject ID: `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33` (Social Science).

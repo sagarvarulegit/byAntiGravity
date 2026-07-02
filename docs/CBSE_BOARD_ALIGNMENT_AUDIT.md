@@ -1,3 +1,10 @@
+---
+type: Standard
+title: CBSE Board Alignment Audit
+description: Chapter-pack coverage is **fairly strong** for Mathematics, Science, and Social Science. However, the platform is **not yet fully board-paper aligned*...
+tags: [standard]
+timestamp: 2026-06-24T15:48:07Z
+---
 # CBSE Board Alignment Audit
 
 **Date:** June 24, 2026  

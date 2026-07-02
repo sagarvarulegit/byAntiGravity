@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Generate SQL Seed for Chapter 15: Minerals and Energy Resources
+description: We need to generate raw SQL seed statements for the database of the CBSE Class 10 Learning Portal to populate a new chapter: **Chapter 15: Minerals an...
+tags: [plan]
+timestamp: 2026-06-24T08:13:34Z
+---
 # Implementation Plan - Generate SQL Seed for Chapter 15: Minerals and Energy Resources
 
 We need to generate raw SQL seed statements for the database of the CBSE Class 10 Learning Portal to populate a new chapter: **Chapter 15: Minerals and Energy Resources** (Subject: Social Science, ID: `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33`).

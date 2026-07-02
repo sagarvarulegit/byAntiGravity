@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Chapter Look & Feel Guidelines
+description: This document outlines the standard UI/UX improvements and patterns implemented in the main lesson viewer component to improve student engagement and ...
+tags: [standard]
+timestamp: 2026-06-26T12:55:43Z
+---
 # Chapter Look & Feel Guidelines
 
 This document outlines the standard UI/UX improvements and patterns implemented in the main lesson viewer component to improve student engagement and visual hierarchy based on EdTech best practices. These patterns should be repeated and maintained across all subject chapters.

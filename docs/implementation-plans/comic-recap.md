@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Comic-Style Chapter Recap Widget
+description: Create a reusable Flutter widget at `apps/mobile_web_client/lib/widgets/comic_recap.dart` that presents a comic-style recap of chapter concepts with d...
+tags: [plan]
+timestamp: 2026-06-23T20:18:02Z
+---
 # Implementation Plan - Comic-Style Chapter Recap Widget
 
 Create a reusable Flutter widget at `apps/mobile_web_client/lib/widgets/comic_recap.dart` that presents a comic-style recap of chapter concepts with dialogue between Priya and Rahul.

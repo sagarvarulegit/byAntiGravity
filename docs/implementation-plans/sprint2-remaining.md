@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Sprint 2 Remaining Features
+description: Implement "Continue where you left off" card on DashboardView and Subject Filtering in QuizView.
+tags: [plan]
+timestamp: 2026-06-23T19:34:55Z
+---
 # Implementation Plan - Sprint 2 Remaining Features
 
 Implement "Continue where you left off" card on DashboardView and Subject Filtering in QuizView.

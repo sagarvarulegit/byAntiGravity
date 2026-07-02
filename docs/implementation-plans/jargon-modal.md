@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Jargon Pop-up Modal
+description: This plan describes the creation of the reusable Jargon Pop-up Modal (`jargon_modal.dart`) and the helper methods/widgets required to parse jargon mar...
+tags: [plan]
+timestamp: 2026-06-23T20:18:01Z
+---
 # Implementation Plan: Jargon Pop-up Modal
 
 This plan describes the creation of the reusable Jargon Pop-up Modal (`jargon_modal.dart`) and the helper methods/widgets required to parse jargon markers from lessons text in the CBSE Class 10 Learning Portal.

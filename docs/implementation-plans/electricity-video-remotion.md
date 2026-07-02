@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Video Content Delivery via Remotion (Electricity Chapter)
+description: This plan outlines the architecture and implementation steps for integrating video content into the CBSE Class 10 Learning Portal, starting with the "...
+tags: [plan]
+timestamp: 2026-06-26T14:44:34Z
+---
 # Implementation Plan: Video Content Delivery via Remotion (Electricity Chapter)
 
 ## Overview

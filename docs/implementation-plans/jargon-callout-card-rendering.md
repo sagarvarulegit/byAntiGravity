@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Jargon Callout Cards & Chemistry Subscripts in Revision Notes
+description: This plan details the changes required to parse jargon markers from lesson revision notes and render them directly to the screen as custom Callout Car...
+tags: [plan]
+timestamp: 2026-06-24T20:42:46Z
+---
 # Implementation Plan: Jargon Callout Cards & Chemistry Subscripts in Revision Notes
 
 This plan details the changes required to parse jargon markers from lesson revision notes and render them directly to the screen as custom Callout Cards, while cleaning up formatting and adding support for subscripts in chemical/math formulas.

@@ -1,3 +1,10 @@
+---
+type: Standard
+title: CBSE Content Quality Standards
+description: Every piece of learning content on this platform must meet these standards. This is non-negotiable.
+tags: [standard]
+timestamp: 2026-06-23T20:16:36Z
+---
 # CBSE Content Quality Standards
 
 Every piece of learning content on this platform must meet these standards. This is non-negotiable.

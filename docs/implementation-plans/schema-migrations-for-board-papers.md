@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Schema Migrations for Board-Paper Format Support
+description: > **Created**: 2026-06-24
+tags: [plan]
+timestamp: 2026-06-24T17:00:41Z
+---
 # Schema Migrations for Board-Paper Format Support
 
 > **Created**: 2026-06-24

@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Chapter 12 Forest and Wildlife Resources Content Generation
+description: This plan details the steps for generating CBSE Class 10 Social Science Chapter 12 ("Forest and Wildlife Resources") SQL seed data.
+tags: [plan]
+timestamp: 2026-06-24T08:13:04Z
+---
 # Implementation Plan: Chapter 12 Forest and Wildlife Resources Content Generation
 
 This plan details the steps for generating CBSE Class 10 Social Science Chapter 12 ("Forest and Wildlife Resources") SQL seed data.

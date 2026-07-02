@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Execution Plan: CBSE Class 10 Syllabus Audit — Batch 3
+description: This document details the step-by-step execution plan for Batch 3 (10 Mathematics and 9 Science chapters) as outlined in [full-syllabus-audit.md](file...
+tags: [plan]
+timestamp: 2026-06-24T08:05:15Z
+---
 # Execution Plan: CBSE Class 10 Syllabus Audit — Batch 3
 
 This document details the step-by-step execution plan for Batch 3 (10 Mathematics and 9 Science chapters) as outlined in [full-syllabus-audit.md](file:///home/sagarv/Projects/byAntiGravity/docs/implementation-plans/full-syllabus-audit.md).

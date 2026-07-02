@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - LaTeX Math Rendering with 3607864 Delimiter
+description: Implement rendering of mathematical formulas and equations written in LaTeX format using `flutter_math_fork`. Splitting display equations by `3607864....
+tags: [plan]
+timestamp: 2026-06-23T19:31:54Z
+---
 # Implementation Plan - LaTeX Math Rendering with 3607864 Delimiter
 
 Implement rendering of mathematical formulas and equations written in LaTeX format using `flutter_math_fork`. Splitting display equations by `3607864...3607864` and inline equations by `$`.

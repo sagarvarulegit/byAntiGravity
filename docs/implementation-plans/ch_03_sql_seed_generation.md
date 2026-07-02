@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Generate SQL Seed for Chapter 3: The Rise of Nationalism in Europe
+description: We need to generate raw SQL seed statements for the database of the CBSE Class 10 Learning Portal to populate a new chapter: **Chapter 3: The Rise of ...
+tags: [plan]
+timestamp: 2026-06-24T08:12:49Z
+---
 # Implementation Plan - Generate SQL Seed for Chapter 3: The Rise of Nationalism in Europe
 
 We need to generate raw SQL seed statements for the database of the CBSE Class 10 Learning Portal to populate a new chapter: **Chapter 3: The Rise of Nationalism in Europe** (Subject: Social Science, ID: `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33`).

@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Walkthrough: Verification of Badge Removal
+description: We verified that all mockup badges have been successfully removed from the codebase and the application builds cleanly.
+tags: [plan]
+timestamp: 2026-06-26T14:06:19Z
+---
 # Walkthrough: Verification of Badge Removal
 
 We verified that all mockup badges have been successfully removed from the codebase and the application builds cleanly.

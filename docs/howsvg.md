@@ -1,3 +1,10 @@
+---
+type: Standard
+title: SVG Design & Animation Guide (howsvg.md)
+description: This document serves as the design standard and technical guide for creating, animating, and integrating SVG illustrations within the CBSE Class 10 Le...
+tags: [standard]
+timestamp: 2026-06-29T18:30:21Z
+---
 # SVG Design & Animation Guide (howsvg.md)
 
 This document serves as the design standard and technical guide for creating, animating, and integrating SVG illustrations within the CBSE Class 10 Learning Portal. These guidelines are compiled from key learnings and bug resolutions during the development of **Figure 1.1 (Magnesium Ribbon Activity)**.

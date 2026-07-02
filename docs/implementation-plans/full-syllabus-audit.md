@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Full CBSE Class 10 Syllabus Content Audit
+description: > **Created**: 2026-06-24
+tags: [plan]
+timestamp: 2026-06-24T08:02:59Z
+---
 # Full CBSE Class 10 Syllabus Content Audit
 
 > **Created**: 2026-06-24

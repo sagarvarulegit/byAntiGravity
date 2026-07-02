@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Walkthrough: Add "Electric Potential & Potential Difference" Video Lesson
+description: We successfully integrated the new video lesson into both the database and the client UI.
+tags: [plan]
+timestamp: 2026-06-27T06:43:54Z
+---
 # Walkthrough: Add "Electric Potential & Potential Difference" Video Lesson
 
 We successfully integrated the new video lesson into both the database and the client UI.

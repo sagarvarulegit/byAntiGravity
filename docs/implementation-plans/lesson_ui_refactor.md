@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Lesson UI/UX Refactor
+description: Refactor the UI/UX of the main lesson viewer component (`apps/mobile_web_client/lib/views/lessons_view.dart`) to improve student engagement and visual...
+tags: [plan]
+timestamp: 2026-06-26T11:59:20Z
+---
 # Implementation Plan: Lesson UI/UX Refactor
 
 ## Objective

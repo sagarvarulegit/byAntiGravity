@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan: Seed Chapter 11 (Resources and Development) SQL Data
+description: This plan outlines the generation and seeding of Chapter 11 data for CBSE Class 10 Social Science (Geography).
+tags: [plan]
+timestamp: 2026-06-24T08:13:01Z
+---
 # Implementation Plan: Seed Chapter 11 (Resources and Development) SQL Data
 
 This plan outlines the generation and seeding of Chapter 11 data for CBSE Class 10 Social Science (Geography).

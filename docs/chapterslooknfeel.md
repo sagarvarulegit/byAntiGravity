@@ -1,3 +1,10 @@
+---
+type: Standard
+title: Chapter Look & Feel (NCERT Standard)
+description: This document outlines the core decisions and conventions established while refining the **Class 10 Science - Electricity** chapter. These guidelines ...
+tags: [standard]
+timestamp: 2026-06-26T12:58:25Z
+---
 # Chapter Look & Feel (NCERT Standard)
 
 This document outlines the core decisions and conventions established while refining the **Class 10 Science - Electricity** chapter. These guidelines serve as the source of truth for creating and formatting all future study guides (Math, Science, etc.) to ensure a consistent, premium, and highly accurate user experience.

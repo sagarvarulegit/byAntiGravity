@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Chapter 17 SQL Seed Generation: Lifelines of National Economy
+description: This plan details the generation and verification of SQL seed data for Chapter 17: Lifelines of National Economy, mapping to the CBSE Class 10 Social ...
+tags: [plan]
+timestamp: 2026-06-24T08:13:14Z
+---
 # Implementation Plan - Chapter 17 SQL Seed Generation: Lifelines of National Economy
 
 This plan details the generation and verification of SQL seed data for Chapter 17: Lifelines of National Economy, mapping to the CBSE Class 10 Social Science curriculum.

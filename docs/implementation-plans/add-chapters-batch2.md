@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Add CBSE Class 10 Chapters, Lessons & Quizzes (Batch 2)
+description: We need to add 5 new chapters to the database:
+tags: [plan]
+timestamp: 2026-06-23T19:37:35Z
+---
 # Implementation Plan - Add CBSE Class 10 Chapters, Lessons & Quizzes (Batch 2)
 
 We need to add 5 new chapters to the database:

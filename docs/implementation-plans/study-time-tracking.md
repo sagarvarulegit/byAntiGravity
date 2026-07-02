@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - Study Time Tracking
+description: Track actual study time spent by students while watching video lessons (whiteboard animations).
+tags: [plan]
+timestamp: 2026-06-23T19:22:59Z
+---
 # Implementation Plan - Study Time Tracking
 
 Track actual study time spent by students while watching video lessons (whiteboard animations).

@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Question Types Expansion Plan — Math, Science, Social Science
+description: | Subject | Chapters | IDs (short) | Source Textbook Files |
+tags: [plan]
+timestamp: 2026-06-24T17:50:36Z
+---
 # Question Types Expansion Plan — Math, Science, Social Science
 
 **Created:** 2026-06-24

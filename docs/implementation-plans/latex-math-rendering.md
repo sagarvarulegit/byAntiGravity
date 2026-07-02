@@ -1,3 +1,10 @@
+---
+type: Plan
+title: Implementation Plan - LaTeX Math Rendering for Revision Notes
+description: Enable rich rendering of mathematical formulas and equations written in LaTeX format ($...$ for inline and $$...$$ or 3607150...3607150 for display eq...
+tags: [plan]
+timestamp: 2026-06-23T19:28:45Z
+---
 # Implementation Plan - LaTeX Math Rendering for Revision Notes
 
 Enable rich rendering of mathematical formulas and equations written in LaTeX format ($...$ for inline and $$...$$ or 3607150...3607150 for display equations) using `flutter_math_fork`.
