@@ -13,6 +13,12 @@
       "description": "Automatically generated index of all knowledge concepts and documentation in this project."
     },
     {
+      "id": "NOTES_GUIDELINES_STANDARD.md",
+      "title": "CBSE Portal Note Formatting & Structural Guidelines Standard",
+      "type": "Standard",
+      "description": "The official formatting, style, and structure guidelines for writing and seeding revision notes and self-study content on the CBSE Class 10 Learning Portal."
+    },
+    {
       "id": "CBSE_BOARD_ALIGNMENT_AUDIT.md",
       "title": "CBSE Board Alignment Audit",
       "type": "Standard",
@@ -577,6 +583,10 @@
     {
       "source": "index.md",
       "target": "CONTENT_QUALITY_STANDARDS.md"
+    },
+    {
+      "source": "index.md",
+      "target": "NOTES_GUIDELINES_STANDARD.md"
     },
     {
       "source": "index.md",

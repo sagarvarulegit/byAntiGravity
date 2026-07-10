@@ -8634,33 +8634,52 @@ This is a **skeletal chemical equation** because the number of atoms of each ele
 
 According to the [JARGON: Law of Conservation of Mass | Mass can neither be created nor destroyed in a chemical reaction.], the total mass of the elements present in the products must equal the total mass of the elements present in the reactants. In other words, the number of atoms of each element must remain the same before and after the reaction.
 
-For example, the equation for Activity 1.3 is already balanced:
-$$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2$$
-*(LHS: Zn=1, H=2, S=1, O=4 | RHS: Zn=1, H=2, S=1, O=4).*
+---
 
-#### Step-by-Step Balancing (Hit-and-Trial Method)
-Let''s balance the skeletal equation:
+### 🎯 The Core Goal of Balancing
+Our target is simple: **Make LHS (Reactant Side) atoms equal RHS (Product Side) atoms** for every element in the reaction.
+
+**Case Study: An already Balanced Equation:**
+$$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2$$
+
+Let''s check the atom counts:
+↳ **LHS (Reactants):** Zinc ($Zn$) = 1, Hydrogen ($H$) = 2, Sulfur ($S$) = 1, Oxygen ($O$) = 4
+↳ **RHS (Products):** Zinc ($Zn$) = 1, Hydrogen ($H$) = 2, Sulfur ($S$) = 1, Oxygen ($O$) = 4
+↳ *Status: Since LHS equals RHS for all elements, the equation is balanced.*
+
+---
+
+### 🛠️ Step-by-Step Balancing (Hit-and-Trial Method)
+Let''s balance this unbalanced (**skeletal**) equation:
 $$Fe + H_2O \rightarrow Fe_3O_4 + H_2$$
 
-* **Step I:** Draw boxes around each formula. Do not change anything inside the boxes while balancing.
-* **Step II:** List the number of atoms of different elements:
-  * Fe: 1 (LHS), 3 (RHS)
-  * H: 2 (LHS), 2 (RHS)
-  * O: 1 (LHS), 4 (RHS)
-* **Step III:** Start balancing with the compound containing the maximum number of atoms ($Fe_3O_4$). To balance Oxygen (4 atoms on RHS, 1 on LHS), put coefficient 4 before $H_2O$:
-  $$Fe + 4H_2O \rightarrow Fe_3O_4 + H_2$$
-* **Step IV:** Balance Hydrogen. There are now 8 H atoms on LHS. Put coefficient 4 before $H_2$ on RHS:
-  $$Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
-* **Step V:** Balance Iron. There are 3 Fe atoms on RHS. Put coefficient 3 before $Fe$ on LHS:
-  $$3Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
-* **Step VI (Checking):** Count atoms on both sides:
-  * Fe: 3 (LHS), 3 (RHS)
-  * H: 8 (LHS), 8 (RHS)
-  * O: 4 (LHS), 4 (RHS)
-  The equation is now balanced!
-* **Step VII (Writing Physical States):** Mention the physical states—gaseous (g), liquid (l), aqueous (aq), and solid (s):
-  $$3Fe(s) + 4H_2O(g) \rightarrow Fe_3O_4(s) + 4H_2(g)$$
-  *(Note: The symbol (g) with $H_2O$ indicates that water is used in the form of steam).*
+* **Step I: Count the Atoms (Identify the imbalance)**
+  ↳ **LHS (Reactant Side):** Iron ($Fe$) = 1, Hydrogen ($H$) = 2, Oxygen ($O$) = 1
+  ↳ **RHS (Product Side):** Iron ($Fe$) = 3, Hydrogen ($H$) = 2, Oxygen ($O$) = 4
+  ↳ **Goal:** Increase $Fe$ and $O$ on the LHS to match the RHS, while keeping $H$ balanced.
+
+* **Step II: Balance Oxygen ($O$)**
+  ↳ **Action:** Multiply $H_2O$ on the LHS by **4** (putting coefficient `4` *in front* of the formula: $4H_2O$).
+  ↳ **Rule:** Never change the subscripts (do not write $H_2O_4$).
+  ↳ **Equation so far:** $$Fe + 4H_2O \rightarrow Fe_3O_4 + H_2$$
+  ↳ **New Counts:** LHS has $Fe$ = 1, $H$ = 8, $O$ = 4 | RHS has $Fe$ = 3, $H$ = 2, $O$ = 4.
+
+* **Step III: Balance Hydrogen ($H$)**
+  ↳ **Action:** Multiply $H_2$ on the RHS by **4** ($4 \times 2 = 8$).
+  ↳ **Equation so far:** $$Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
+  ↳ **New Counts:** LHS has $Fe$ = 1, $H$ = 8, $O$ = 4 | RHS has $Fe$ = 3, $H$ = 8, $O$ = 4.
+
+* **Step IV: Balance Iron ($Fe$)**
+  ↳ **Action:** Multiply $Fe$ on the LHS by **3**.
+  ↳ **Equation so far:** $$3Fe + 4H_2O \rightarrow Fe_3O_4 + 4H_2$$
+  ↳ **New Counts:** LHS has $Fe$ = 3, $H$ = 8, $O$ = 4 | RHS has $Fe$ = 3, $H$ = 8, $O$ = 4.
+  ↳ *Status: All elements are now perfectly balanced!*
+
+* **Step V: Write the Physical States (Final Touch)**
+  ↳ **Action:** Add state symbols to make the equation fully informative: solid ($s$), liquid ($l$), aqueous solution ($aq$), and gaseous ($g$).
+  ↳ **Final Balanced Equation:**
+    $$\mathbf{3Fe(s) + 4H_2O(g) \rightarrow Fe_3O_4(s) + 4H_2(g)}$$
+  ↳ *(Note: The symbol (g) with $H_2O$ indicates that water is used in the form of steam).*
 
 Sometimes, **reaction conditions** like temperature, pressure, or catalyst are written above and/or below the arrow:
 * **Methanol formation:**

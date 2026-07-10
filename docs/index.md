@@ -2,7 +2,7 @@
 type: Catalog
 title: Open Knowledge Format Catalog Index
 description: Automatically generated index of all knowledge concepts and documentation in this project.
-timestamp: 2026-07-02T12:11:16Z
+timestamp: 2026-07-08T12:23:27Z
 ---
 
 # Open Knowledge Format (OKF) Catalog Index
@@ -71,6 +71,7 @@ This catalog indexes the organizational knowledge of this repository in accordan
 | [CBSE Board Alignment Audit](CBSE_BOARD_ALIGNMENT_AUDIT.md) | Chapter-pack coverage is **fairly strong** for Mathematics, Science, and Social Science. However, the platform is **not yet fully board-paper aligned*... | `standard` | 2026-06-24T15:48:07Z |
 | [CBSE Content Quality Audit: Notes](audit/notes-quality-audit.md) | This audit evaluates the five existing revision notes in `db/seed.sql` and `db/seed_notes_batch1.sql` against the 7 Content Quality Standards defined ... | `standard` | 2026-06-23T20:19:35Z |
 | [CBSE Content Quality Standards](CONTENT_QUALITY_STANDARDS.md) | Every piece of learning content on this platform must meet these standards. This is non-negotiable. | `standard` | 2026-06-23T20:16:36Z |
+| [CBSE Portal Note Formatting & Structural Guidelines Standard](NOTES_GUIDELINES_STANDARD.md) | The official formatting, style, and structure guidelines for writing and seeding revision notes and self-study content on the CBSE Class 10 Learning Portal. | `standard`, `content`, `guide` | 2026-07-08T17:54:00Z |
 | [Chapter Look & Feel (NCERT Standard)](chapterslooknfeel.md) | This document outlines the core decisions and conventions established while refining the **Class 10 Science - Electricity** chapter. These guidelines ... | `standard` | 2026-06-26T12:58:25Z |
 | [Chapter Look & Feel Guidelines](chapterlooknfeel.md) | This document outlines the standard UI/UX improvements and patterns implemented in the main lesson viewer component to improve student engagement and ... | `standard` | 2026-06-26T12:55:43Z |
 | [SVG Design & Animation Guide (howsvg.md)](howsvg.md) | This document serves as the design standard and technical guide for creating, animating, and integrating SVG illustrations within the CBSE Class 10 Le... | `standard` | 2026-06-29T18:30:21Z |
