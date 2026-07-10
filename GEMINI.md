@@ -90,6 +90,10 @@ No CI workflows present yet.
 - Payment integration is Phase 5 (last) — ship free MVP first.
 - Content tables (subjects, chapters, lessons, quizzes, quiz_questions) must allow
   SELECT for anon + authenticated roles. User-private tables restrict to own rows.
+- **Custom Markdown Parsing Conventions**:
+  - Keep block parsing state-machines robust. Always flush active containers (e.g. `inActivity`) when encountering new sub-topics (bold text ending in colons), alert callouts, questions, or divider rules.
+  - Group multiple questions and answers under a single styled `QuestionsSection` widget using Outfit font for badges and Georgia font for answer text, rather than spawning individual cards.
+  - Support markdown tables dynamically, rendering cells through `_buildMathText` to preserve inline math formatting (e.g. chemical formulas like $Cl_2$, $NaOH$).
 
 ## Notes
 - `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2

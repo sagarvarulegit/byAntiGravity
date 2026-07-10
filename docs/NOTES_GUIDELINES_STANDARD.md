@@ -332,8 +332,9 @@ Format:
 
 Parser behavior:
 
-* Collects blocks after `**❓ QUESTIONS**` or `**❓ IN-TEXT QUESTIONS**`.
-* Maps each question-answer pair into a `QuestionCard`.
+* Scans for blocks containing `QUESTIONS` or `IN-TEXT QUESTIONS` (including blockquote variants like `> ? IN-TEXT QUESTIONS`).
+* Dynamically extracts the section title.
+* Groups all questions and answers within that block under a single unified `QuestionsSection` widget (using index badges `Q1`, `Q2`, etc. and Georgia font for answer blocks) rather than spawning individual separate card layouts.
 
 Rules:
 
@@ -454,6 +455,24 @@ Rules:
 
 * Keep the recap conceptually aligned with the textbook.
 * Do not introduce unsupported claims.
+
+### 4.9 Tables
+
+Standard markdown table format is supported:
+
+```markdown
+| Product | Key Uses |
+|---|---|
+| **Chlorine gas ($Cl_2$)** | Making bleaching powder... |
+| **Hydrogen gas ($H_2$)** | Fuel... |
+```
+
+Parser behavior:
+
+* Scans for blocks starting with `|`.
+* Ignores the header separator lines (e.g. `|---|---|`).
+* Renders the table using a clean, custom `Table` layout.
+* Automatically processes cell contents via the math/formula formatting compiler to preserve chemical subscripts and LaTeX inline math.
 
 ---
 
@@ -847,8 +866,9 @@ Before saying notes are aligned, confirm every item below.
 
 * Required markdown triggers are used correctly.
 * Activity blocks use `### Activity [number]`.
-* Question blocks use `**❓ QUESTIONS**` or `**❓ IN-TEXT QUESTIONS**`.
+* Question blocks use `**❓ QUESTIONS**` or `**❓ IN-TEXT QUESTIONS**` (or blockquote/clean variants).
 * Answers use `*Answer:*`.
+* Markdown tables render correctly with formatted math and proper styling.
 * Figure tokens use supported `[FIGURE: figure_id]` format.
 * LaTeX and chemical formulas render correctly.
 * No hardcoded colors are stored inside database note values.

@@ -15,6 +15,7 @@ import '../utils/download.dart';
 import '../widgets/jargon_modal.dart';
 import '../widgets/interactive_example.dart';
 import '../widgets/question_card.dart';
+import '../widgets/questions_section.dart';
 import '../widgets/animated_svg/animated_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -1504,6 +1505,96 @@ class _LessonsViewState extends State<LessonsView> {
     return _formatSubscripts(cleaned);
   }
 
+  Widget _buildTableWidget(List<List<String>> rows, bool isDark) {
+    if (rows.isEmpty) return const SizedBox();
+
+    final headerRow = rows.first;
+    final bodyRows = rows.skip(1).toList();
+    final int colCount = headerRow.length;
+    final Map<int, TableColumnWidth> columnWidths = {};
+    if (colCount == 2) {
+      columnWidths[0] = const FlexColumnWidth(1.2);
+      columnWidths[1] = const FlexColumnWidth(2.0);
+    } else {
+      for (int i = 0; i < colCount; i++) {
+        columnWidths[i] = const FlexColumnWidth(1.0);
+      }
+    }
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 16),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.cardDark : AppColors.cardLight,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isDark ? AppColors.borderDark : AppColors.borderLight,
+        ),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Table(
+        columnWidths: columnWidths,
+        border: TableBorder(
+          horizontalInside: BorderSide(
+            color: isDark ? AppColors.borderDark : AppColors.borderLight,
+            width: 1,
+          ),
+          verticalInside: BorderSide(
+            color: isDark ? AppColors.borderDark : AppColors.borderLight,
+            width: 1,
+          ),
+        ),
+        children: [
+          // Header Row
+          TableRow(
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.purpleDark.withValues(alpha: 0.2) : AppColors.purpleLight.withValues(alpha: 0.5),
+            ),
+            children: headerRow.map((cell) {
+              return Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  cell,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                    color: isDark ? const Color(0xFFFCE7F3) : AppColors.purpleDark,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+          
+          // Body Rows
+          ...List.generate(bodyRows.length, (rowIndex) {
+            final row = bodyRows[rowIndex];
+            final isEven = rowIndex % 2 == 0;
+            return TableRow(
+              decoration: BoxDecoration(
+                color: isEven 
+                    ? Colors.transparent 
+                    : (isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.015)),
+              ),
+              children: row.map((cell) {
+                return Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: _buildMathText(
+                    cell,
+                    TextStyle(
+                      fontSize: 12.5,
+                      color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                      height: 1.4,
+                    ),
+                  ),
+                );
+              }).toList(),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
   Widget _buildDoYouKnowBoxWithTitle({
     required String title,
     required String text,
@@ -1566,6 +1657,20 @@ class _LessonsViewState extends State<LessonsView> {
 
   Widget _parseMarkdownNotes(String content) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // Find if the active lesson belongs to Chapter 1 (Chemical Reactions & Equations)
+    String? currentChapterId;
+    for (final subject in widget.subjects) {
+      for (final chapter in subject.chapters) {
+        if (chapter.lessons.any((l) => l.id == _selectedLesson?.id)) {
+          currentChapterId = chapter.id;
+          break;
+        }
+      }
+      if (currentChapterId != null) break;
+    }
+    final isChapter1 = currentChapterId == 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221';
+
     final lines = content.split('\n');
     final List<Widget> children = [];
     
@@ -1590,6 +1695,18 @@ class _LessonsViewState extends State<LessonsView> {
     bool inQuestionsSection = false;
     List<String> questionBlockLines = [];
     int questionCount = 0;
+    String questionsSectionTitle = "IN-TEXT QUESTIONS";
+
+    bool inTable = false;
+    List<List<String>> tableRows = [];
+
+    void flushTable() {
+      if (tableRows.isNotEmpty) {
+        children.add(_buildTableWidget(tableRows, isDark));
+        tableRows.clear();
+        inTable = false;
+      }
+    }
 
     void flushAlert() {
       if (currentAlertLines.isNotEmpty) {
@@ -1630,16 +1747,14 @@ class _LessonsViewState extends State<LessonsView> {
 
     bool inActivity = false;
     String activityTitle = "";
-    String activityCaution = "";
-    List<String> activitySteps = [];
+    List<String> activityLines = [];
 
     void flushActivity() {
       if (inActivity) {
-        children.add(_buildActivityBox(activityTitle, activityCaution, activitySteps));
+        children.add(_buildActivityBox(activityTitle, List<String>.from(activityLines), isDark));
         inActivity = false;
         activityTitle = "";
-        activityCaution = "";
-        activitySteps.clear();
+        activityLines.clear();
       }
     }
 
@@ -1662,15 +1777,26 @@ class _LessonsViewState extends State<LessonsView> {
 
     void flushQuestions() {
       if (questionBlockLines.isNotEmpty) {
+        final List<QuestionAnswerPair> qaPairs = [];
         List<String> currentQ = [];
         List<String> currentA = [];
         bool inAnswer = false;
         
         void flushSingleQ() {
           if (currentQ.isNotEmpty) {
-            children.add(QuestionCard(
-              questionWidget: _buildMathText(currentQ.join('\n'), TextStyle(fontWeight: FontWeight.bold, fontSize: 13.5, color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary, height: 1.4)),
-              answerWidget: _buildMathText(currentA.join('\n'), TextStyle(fontSize: 13, color: isDark ? AppColors.textDarkSecondary : AppColors.textLightSecondary, height: 1.4)),
+            String qText = currentQ.join('\n').trim();
+            // First strip any matching outer bold markers **...**
+            if (qText.startsWith('**') && qText.endsWith('**')) {
+              qText = qText.substring(2, qText.length - 2).trim();
+            }
+            // Now strip the digit prefix
+            qText = qText.replaceFirst(RegExp(r'^\d+\.?\s*'), '').trim();
+
+            String aText = currentA.join('\n').trim();
+
+            qaPairs.add(QuestionAnswerPair(
+              question: qText,
+              answer: aText,
             ));
             questionCount++;
             currentQ.clear();
@@ -1690,7 +1816,7 @@ class _LessonsViewState extends State<LessonsView> {
             currentQ.add(line);
           } else if (line.startsWith('*Answer:*')) {
             inAnswer = true;
-            currentA.add('**Answer:** ${line.replaceFirst('*Answer:*', '').trim()}');
+            currentA.add(line.replaceFirst('*Answer:*', '').trim());
           } else if (inAnswer) {
             currentA.add(line);
           } else {
@@ -1698,6 +1824,15 @@ class _LessonsViewState extends State<LessonsView> {
           }
         }
         flushSingleQ();
+
+        if (qaPairs.isNotEmpty) {
+          children.add(QuestionsSection(
+            title: questionsSectionTitle,
+            qaPairs: qaPairs,
+            buildMathText: (text, [style]) => _buildMathText(text, style),
+          ));
+        }
+
         questionBlockLines.clear();
         inQuestionsSection = false;
       }
@@ -1705,6 +1840,72 @@ class _LessonsViewState extends State<LessonsView> {
 
     for (var rawLine in lines) {
       var line = rawLine.trim();
+      final cleanUpperLine = line.toUpperCase().replaceAll('*', '').replaceAll('❓', '').replaceAll('?', '').replaceAll('>', '').trim();
+      final isQuestionsTrigger = cleanUpperLine == 'QUESTIONS' || cleanUpperLine == 'IN-TEXT QUESTIONS';
+
+      // Table handling
+      if (line.startsWith('|')) {
+        flushActivity();
+        flushExample();
+        flushQuestions();
+        flushAlert();
+        flushCodeBlock();
+
+        inTable = true;
+        final isSeparator = line.replaceAll(RegExp(r'[\s\-:|]'), '').isEmpty;
+        if (!isSeparator) {
+          final cells = line.split('|').map((c) => c.trim()).toList();
+          if (cells.isNotEmpty && cells.first.isEmpty) cells.removeAt(0);
+          if (cells.isNotEmpty && cells.last.isEmpty) cells.removeLast();
+          tableRows.add(cells);
+        }
+        continue;
+      } else if (inTable) {
+        flushTable();
+      }
+
+      final isNewActivity = line.startsWith('### Activity') || line.startsWith('#### Activity');
+      final isHeading = line.startsWith('# ') || line.startsWith('## ') || line.startsWith('### ') || line.startsWith('#### ');
+
+      if (inActivity) {
+        final isAlertHeader = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION)\]', caseSensitive: false).hasMatch(line);
+        final isQuestionHeader = isQuestionsTrigger || 
+                                 line.startsWith('> **❓') || 
+                                 line.startsWith('> ?') || 
+                                 (line.contains('QUESTIONS') && line.startsWith('>'));
+        
+        bool isTopicHeader = false;
+        if (line.endsWith(':')) {
+          final cleanLine = line.replaceAll('*', '').trim();
+          final isStepOrBullet = RegExp(r'^\d+\.').hasMatch(cleanLine) || cleanLine.startsWith('-') || cleanLine.startsWith('*');
+          final isObsOrConclusion = cleanLine.toLowerCase().startsWith('observation') || 
+                                    cleanLine.toLowerCase().startsWith('conclusion') || 
+                                    cleanLine.toLowerCase().startsWith('caution') || 
+                                    cleanLine.toLowerCase().startsWith('result') || 
+                                    cleanLine.toLowerCase().startsWith('step') ||
+                                    cleanLine.toLowerCase().startsWith('note');
+          if (!isStepOrBullet && !isObsOrConclusion) {
+            isTopicHeader = true;
+          }
+        }
+
+        final isAlertToFlush = isAlertHeader && activityLines.isNotEmpty;
+
+        if ((isHeading && !isNewActivity) ||
+            line.startsWith('**Example ') ||
+            isQuestionsTrigger ||
+            isQuestionHeader ||
+            isTopicHeader ||
+            isAlertToFlush ||
+            line == '---') {
+          flushActivity();
+        }
+      }
+
+      if (inActivity && !isNewActivity) {
+        activityLines.add(rawLine);
+        continue;
+      }
 
       // Strip blockquote '>' prefix if it is not an alert block header and not inside an active alert
       final bool isAlertHeader = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION)\]', caseSensitive: false).hasMatch(line);
@@ -1726,12 +1927,12 @@ class _LessonsViewState extends State<LessonsView> {
         rawLine = rawLine.replaceAll(figRegex, '');
       }
 
-      if (line.contains('Magnesium burns with a bright white flame')) {
+      if (isChapter1 && line.contains('Magnesium burns with a bright white flame')) {
         hasFigure = true;
         figType ??= 'magnesium_burner';
       }
 
-      if (line.contains('Gas bubbles (Hydrogen')) {
+      if (isChapter1 && line.contains('Gas bubbles (Hydrogen')) {
         hasFigure = true;
         figType = 'zinc_acid';
       }
@@ -1758,7 +1959,7 @@ class _LessonsViewState extends State<LessonsView> {
           }
           continue;
         }
-        if (line.startsWith('## ') || line.startsWith('---') || line == '**❓ QUESTIONS**' || line == '**❓ IN-TEXT QUESTIONS**') {
+        if (line.startsWith('## ') || line.startsWith('---') || isQuestionsTrigger) {
           flushExample();
         } else {
           if (inSolution) {
@@ -1770,11 +1971,15 @@ class _LessonsViewState extends State<LessonsView> {
         }
       }
 
-      if (line == '**❓ QUESTIONS**' || line == '**❓ IN-TEXT QUESTIONS**') {
+      if (isQuestionsTrigger) {
         flushActivity();
         flushExample();
         flushQuestions();
         inQuestionsSection = true;
+        questionsSectionTitle = line.replaceAll('**', '').replaceAll('❓', '').replaceAll('>', '').replaceAll('?', '').trim();
+        if (questionsSectionTitle.isEmpty) {
+          questionsSectionTitle = "IN-TEXT QUESTIONS";
+        }
         continue;
       }
 
@@ -1825,7 +2030,7 @@ class _LessonsViewState extends State<LessonsView> {
         continue;
       }
 
-      if (line.startsWith('### Activity')) {
+      if (line.startsWith('### Activity') || line.startsWith('#### Activity')) {
         flushExample();
         flushQuestions();
         if (inRevision && revisionLines != null) {
@@ -1840,27 +2045,10 @@ class _LessonsViewState extends State<LessonsView> {
         }
         flushActivity();
         inActivity = true;
-        activityTitle = line.substring(4).trim();
+        final int hashCount = line.indexOf('Activity');
+        activityTitle = line.substring(hashCount).trim();
+        activityLines.clear();
         continue;
-      }
-
-      if (inActivity) {
-        if (line.startsWith('*Caution:') || line.startsWith('Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
-          var caution = line.replaceAll('*', '').trim();
-          if (caution.toLowerCase().startsWith('caution:')) {
-            caution = caution.substring(8).trim();
-          }
-          activityCaution = caution;
-          continue;
-        } else if (RegExp(r'^\d+\.\s').hasMatch(line)) {
-          final dotIndex = line.indexOf('.');
-          activitySteps.add(cleanMathText(line.substring(dotIndex + 1).trim()));
-          continue;
-        } else if (line.isEmpty) {
-          continue;
-        } else {
-          flushActivity();
-        }
       }
 
       if (!inCodeBlock) {
@@ -1974,6 +2162,20 @@ class _LessonsViewState extends State<LessonsView> {
             ),
           ),
         ));
+      } else if (line.startsWith('#### ')) {
+        final text = cleanMathText(line.substring(5));
+        children.add(Padding(
+          padding: const EdgeInsets.only(top: 10, bottom: 4),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 13, 
+              fontWeight: FontWeight.bold, 
+              fontFamily: 'Outfit',
+              color: isDark ? Colors.white60 : Colors.black54,
+            ),
+          ),
+        ));
       } else if (line == '---') {
         children.add(Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -2068,6 +2270,7 @@ class _LessonsViewState extends State<LessonsView> {
     flushActivity();
     flushExample();
     flushQuestions();
+    flushTable();
 
     flushAlert();
     flushCodeBlock();
@@ -2340,60 +2543,336 @@ class _LessonsViewState extends State<LessonsView> {
     );
   }
 
-  Widget _buildActivityBox(String title, String cautionText, List<String> items) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+  Widget _buildActivityBox(String title, List<String> lines, bool isDark) {
+    // Process title into badgeText and headingText
+    String badgeText = "Activity";
+    String headingText = "";
+    if (title.startsWith("Activity ")) {
+      final colonIndex = title.indexOf(':');
+      if (colonIndex != -1) {
+        badgeText = title.substring(0, colonIndex).trim();
+        headingText = title.substring(colonIndex + 1).trim();
+      } else {
+        badgeText = title;
+      }
+    } else {
+      badgeText = title;
+    }
+
+    final List<Widget> bodyWidgets = [];
+    
+    // Check if the lesson belongs to Chapter 1
+    String? currentChapterId;
+    for (final subject in widget.subjects) {
+      for (final chapter in subject.chapters) {
+        if (chapter.lessons.any((l) => l.id == _selectedLesson?.id)) {
+          currentChapterId = chapter.id;
+          break;
+        }
+      }
+      if (currentChapterId != null) break;
+    }
+    final isChapter1 = currentChapterId == 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221';
+
+    for (var rawLine in lines) {
+      var line = rawLine.trim();
+      
+      // Check for figures in activity lines
+      bool hasFigure = false;
+      String? figType;
+
+      final figRegex = RegExp(r'\[FIGURE(?::\s*([a-zA-Z0-9_-]+))?\]');
+      final figMatch = figRegex.firstMatch(line);
+      if (figMatch != null) {
+        hasFigure = true;
+        figType = figMatch.group(1) ?? 'magnesium_burner';
+        line = line.replaceAll(figRegex, '').trim();
+        rawLine = rawLine.replaceAll(figRegex, '');
+      }
+
+      if (isChapter1 && line.contains('Magnesium burns with a bright white flame')) {
+        hasFigure = true;
+        figType ??= 'magnesium_burner';
+      }
+
+      if (isChapter1 && line.contains('Gas bubbles (Hydrogen')) {
+        hasFigure = true;
+        figType = 'zinc_acid';
+      }
+
+      // 1. Caution:
+      if (line.startsWith('*Caution:') || line.startsWith('Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
+        var cautionText = line.replaceAll('*', '').trim();
+        if (cautionText.toLowerCase().startsWith('caution:')) {
+          cautionText = cautionText.substring(8).trim();
+        }
+        bodyWidgets.add(
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.red.withOpacity(0.15) : const Color(0xFFFEF2F2),
+              border: Border.all(color: Colors.red.withOpacity(0.5)),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(Icons.warning_amber_rounded, color: Colors.red, size: 20),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'CAUTION',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 11,
+                          fontFamily: 'Outfit',
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      _buildMathText(
+                        cautionText,
+                        TextStyle(
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          height: 1.4,
+                          fontSize: 12.5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+      // 2. Observations Header/Text block:
+      else if (line.startsWith('**Observations:**') || line.startsWith('**Observation:**')) {
+        bodyWidgets.add(
+          Padding(
+            padding: const EdgeInsets.only(top: 12.0, bottom: 6.0),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.greenDark.withOpacity(0.4) : AppColors.greenLight,
+                borderRadius: BorderRadius.circular(4),
+                border: Border.all(color: AppColors.green.withOpacity(0.3)),
+              ),
+              child: const Text(
+                "OBSERVATIONS",
+                style: TextStyle(
+                  color: AppColors.green,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 11,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+            ),
+          ),
+        );
+        var restText = line.replaceFirst(RegExp(r'^\*\*Observation(s)?:\*\*'), '').trim();
+        if (restText.isNotEmpty) {
+          bodyWidgets.add(
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: _buildMathText(
+                cleanMathText(restText),
+                TextStyle(
+                  fontSize: 13,
+                  color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+            ),
+          );
+        }
+      }
+      // 3. Bullet list item:
+      else if (line.startsWith('- ') || line.startsWith('* ')) {
+        final text = cleanMathText(line.substring(2));
+        bodyWidgets.add(
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 5,
+                  height: 5,
+                  margin: const EdgeInsets.only(right: 8, top: 7),
+                  decoration: const BoxDecoration(
+                    color: AppColors.purple,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                Expanded(
+                  child: _buildMathText(
+                    text,
+                    TextStyle(
+                      fontSize: 13,
+                      color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                      fontFamily: 'Georgia',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+      // 4. Numbered list step:
+      else if (RegExp(r'^\d+\.\s').hasMatch(line)) {
+        final dotIndex = line.indexOf('.');
+        final number = line.substring(0, dotIndex + 1);
+        final text = cleanMathText(line.substring(dotIndex + 2));
+        bodyWidgets.add(
+          Padding(
+            padding: const EdgeInsets.only(left: 4.0, bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "$number ",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                    color: AppColors.purple,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: _buildMathText(
+                    text,
+                    TextStyle(
+                      fontSize: 13,
+                      color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                      fontFamily: 'Georgia',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+      // 5. Ordinary text:
+      else if (line.isNotEmpty) {
+        final infoTipMatch = RegExp(r'^\[(INFO|TIP):(.+)\]$').firstMatch(line);
+        if (infoTipMatch != null) {
+          final infoText = cleanMathText(infoTipMatch.group(2)!.trim());
+          bodyWidgets.add(_buildInfoTipBox(infoText));
+        } else {
+          final text = cleanMathText(line);
+          if (text.trim().isNotEmpty) {
+            bodyWidgets.add(
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: _buildMathText(
+                  text,
+                  TextStyle(
+                    fontSize: 13,
+                    height: 1.4,
+                    color: isDark ? AppColors.textDarkPrimary : AppColors.textLightPrimary,
+                    fontFamily: 'Georgia',
+                  ),
+                ),
+              ),
+            );
+          }
+        }
+      }
+
+      if (hasFigure && figType != null) {
+        bodyWidgets.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: _buildFigureBox(figType, isDark),
+          ),
+        );
+      }
+    }
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 16),
-      padding: const EdgeInsets.all(16),
+      width: double.infinity,
       decoration: BoxDecoration(
-        color: isDark ? AppColors.blueDark.withOpacity(0.2) : AppColors.blueLight,
-        border: Border.all(color: AppColors.blue),
-        borderRadius: BorderRadius.circular(8),
+        color: isDark ? AppColors.blueDark.withOpacity(0.15) : AppColors.blueLight.withOpacity(0.7),
+        border: Border.all(color: AppColors.blue.withOpacity(0.5), width: 1.5),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          )
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: const Color(0xFFFEF08A),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: Color(0xFF713F12),
-                fontWeight: FontWeight.bold,
-                fontSize: 11,
+              color: isDark ? AppColors.blueDark.withOpacity(0.3) : AppColors.blueLight,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10.5),
+                topRight: Radius.circular(10.5),
+              ),
+              border: Border(
+                bottom: BorderSide(
+                  color: AppColors.blue.withOpacity(0.3),
+                  width: 1,
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          if (cautionText.isNotEmpty) ...[
-            Text.rich(
-              TextSpan(
-                children: [
-                  const TextSpan(
-                    text: "CAUTION: ",
-                    style: TextStyle(
-                      color: AppColors.purple,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFEF08A),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: const Color(0xFFEAB308).withOpacity(0.5)),
+                  ),
+                  child: Text(
+                    badgeText,
+                    style: const TextStyle(
+                      color: Color(0xFF713F12),
                       fontWeight: FontWeight.bold,
-                      fontSize: 12,
+                      fontSize: 11,
+                      fontFamily: 'Outfit',
                     ),
                   ),
-                  TextSpan(
-                    text: cautionText,
+                ),
+                if (headingText.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    headingText,
                     style: TextStyle(
-                      fontSize: 12,
-                      color: isDark ? Colors.white70 : Colors.black87,
+                      color: isDark ? Colors.white : AppColors.textLightPrimary,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.5,
+                      fontFamily: 'Outfit',
                     ),
                   ),
                 ],
-              ),
+              ],
             ),
-            const SizedBox(height: 12),
-          ],
-          ...items.map((item) => _buildBulletItem(item)).toList(),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: bodyWidgets,
+            ),
+          ),
         ],
       ),
     );
@@ -2436,28 +2915,6 @@ class _LessonsViewState extends State<LessonsView> {
     );
   }
 
-  Widget _buildBulletItem(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 6,
-            height: 6,
-            margin: const EdgeInsets.only(right: 10, top: 6),
-            color: AppColors.purple,
-          ),
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(fontSize: 12.5),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   String _formatTime(int seconds) {
     final int m = seconds ~/ 60;

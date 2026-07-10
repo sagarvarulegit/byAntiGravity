@@ -2,6 +2,8 @@
 
 enum VideoType { mathGraph, scienceAtom, scienceCircuit, socialMap, scienceCombination, scienceDecomposition, scienceDisplacement, mathFactorTree }
 
+enum LessonType { video, note, studyGuide }
+
 class Lesson {
   final String id;
   final String title;
