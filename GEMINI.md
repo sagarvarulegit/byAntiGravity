@@ -92,3 +92,8 @@ No CI workflows present yet.
   SELECT for anon + authenticated roles. User-private tables restrict to own rows.
 
 ## Notes
+- `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2
+  (Acids, Bases & Salts). Two lessons: Revision Notes (UUID b0eebc99…0233,
+  seq 3) + NCERT Study Guide (UUID e0eebc99…0223, seq 10). Figure tokens for all
+  10 Ch2 figures render as labelled placeholders pending CustomPainter builds.
+  Run manually: `psql $SUPABASE_DB_URL -f db/seed_science_ch2_notes.sql`
