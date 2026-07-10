@@ -512,6 +512,9 @@ class SupabaseDatabaseService implements DatabaseService {
     if (lower.contains('satyagraha') || lower.contains('india') || lower.contains('movement')) {
       return VideoType.socialMap;
     }
+    if (lower.contains('real number') || lower.contains('fundamental') || lower.contains('arithmetic') || lower.contains('euclid')) {
+      return VideoType.mathFactorTree;
+    }
     return VideoType.mathGraph;
   }
 }

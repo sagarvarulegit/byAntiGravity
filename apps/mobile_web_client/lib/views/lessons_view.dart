@@ -52,6 +52,8 @@ class LessonsView extends StatefulWidget {
 class _LessonsViewState extends State<LessonsView> {
   Lesson? _selectedLesson;
   bool _isPlaying = false;
+  bool _isMuted = false;
+  double _volume = 1.0;
 
   String _getVideoUrl(Lesson lesson) {
     if (lesson.id == 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380006') {
@@ -547,6 +549,8 @@ class _LessonsViewState extends State<LessonsView> {
                         : InteractiveWhiteboardCanvas(
                             videoType: _selectedLesson!.videoType,
                             isPlaying: _isPlaying,
+                            isMuted: _isMuted,
+                            volume: _volume,
                           ),
 
                   // Black blur overlay if premium locked
@@ -644,6 +648,41 @@ class _LessonsViewState extends State<LessonsView> {
                               ),
                             ),
                             const SizedBox(width: 12),
+                            // Volume control
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _isMuted = !_isMuted;
+                                });
+                              },
+                              icon: Icon(_isMuted || _volume == 0 ? Icons.volume_off_rounded : (_volume < 0.5 ? Icons.volume_down_rounded : Icons.volume_up_rounded)),
+                              color: Colors.white,
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(),
+                              iconSize: 20,
+                            ),
+                            SizedBox(
+                              width: 60,
+                              child: SliderTheme(
+                                data: SliderTheme.of(context).copyWith(
+                                  trackHeight: 2,
+                                  thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 5),
+                                  overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
+                                ),
+                                child: Slider(
+                                  value: _volume,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      _volume = val;
+                                      if (val > 0) _isMuted = false;
+                                    });
+                                  },
+                                  activeColor: AppColors.blue,
+                                  inactiveColor: Colors.white30,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
                             // Quality selection
                             DropdownButton<String>(
                               value: _selectedQuality,

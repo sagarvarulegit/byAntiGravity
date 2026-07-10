@@ -72,3 +72,7 @@ node_modules/
 Video-Out/
 .reasonix/
 
+# SkillOpt framework
+skillopt_framework/
+
+

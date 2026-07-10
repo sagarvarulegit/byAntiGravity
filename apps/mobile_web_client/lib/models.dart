@@ -1,8 +1,6 @@
 // CBSE Class 10 Learning Portal Models
 
-enum LessonType { video, note, studyGuide }
-
-enum VideoType { mathGraph, scienceAtom, scienceCircuit, socialMap, scienceCombination, scienceDecomposition, scienceDisplacement }
+enum VideoType { mathGraph, scienceAtom, scienceCircuit, socialMap, scienceCombination, scienceDecomposition, scienceDisplacement, mathFactorTree }
 
 class Lesson {
   final String id;

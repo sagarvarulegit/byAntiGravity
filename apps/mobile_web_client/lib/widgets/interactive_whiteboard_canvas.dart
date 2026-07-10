@@ -1,16 +1,21 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import '../models.dart';
 import '../theme.dart';
 
 class InteractiveWhiteboardCanvas extends StatefulWidget {
   final VideoType videoType;
   final bool isPlaying;
+  final bool isMuted;
+  final double volume;
 
   const InteractiveWhiteboardCanvas({
     super.key,
     required this.videoType,
     required this.isPlaying,
+    this.isMuted = false,
+    this.volume = 1.0,
   });
 
   @override
@@ -20,32 +25,97 @@ class InteractiveWhiteboardCanvas extends StatefulWidget {
 class _InteractiveWhiteboardCanvasState extends State<InteractiveWhiteboardCanvas>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  final FlutterTts _flutterTts = FlutterTts();
+  List<bool> _spokenMilestones = [false, false, false, false, false];
 
   @override
   void initState() {
     super.initState();
+    _initTts();
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 10),
     );
+    _controller.addListener(_onAnimationTick);
     if (widget.isPlaying) {
       _controller.repeat();
+    }
+  }
+
+  void _initTts() async {
+    try {
+      await _flutterTts.setSpeechRate(0.5);
+    } catch (e) {
+      print("TTS Init Error: $e");
+    }
+  }
+
+  void _onAnimationTick() {
+    if (widget.videoType != VideoType.mathFactorTree || !widget.isPlaying) return;
+    
+    // Manage Volume dynamically
+    _flutterTts.setVolume(widget.isMuted ? 0.0 : widget.volume);
+
+    double p = _controller.value;
+    
+    // Reset on loop
+    if (p < 0.05 && _spokenMilestones[0]) {
+      _spokenMilestones = [false, false, false, false, false];
+    }
+
+    if (p >= 0.0 && !_spokenMilestones[0]) {
+      _spokenMilestones[0] = true;
+      _speakSafe("Let's find the prime factorization of 140 using a factor tree.");
+    } else if (p >= 0.2 && !_spokenMilestones[1]) {
+      _spokenMilestones[1] = true;
+      _speakSafe("Dividing by 2 leaves us with 70.");
+    } else if (p >= 0.4 && !_spokenMilestones[2]) {
+      _spokenMilestones[2] = true;
+      _speakSafe("Dividing 70 by 2 gives 35.");
+    } else if (p >= 0.6 && !_spokenMilestones[3]) {
+      _spokenMilestones[3] = true;
+      _speakSafe("And dividing 35 by 5 leaves 7, which is prime.");
+    } else if (p >= 0.8 && !_spokenMilestones[4]) {
+      _spokenMilestones[4] = true;
+      _speakSafe("So, 140 is equal to 2 squared, times 5, times 7.");
+    }
+  }
+
+  void _speakSafe(String text) {
+    try {
+      _flutterTts.setVolume(widget.isMuted ? 0.0 : widget.volume);
+      _flutterTts.speak(text);
+    } catch (e) {
+      print("TTS Speak Error: $e");
     }
   }
 
   @override
   void didUpdateWidget(covariant InteractiveWhiteboardCanvas oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.isPlaying) {
+    
+    // Prime the TTS engine within a user gesture stack (play/pause or volume change)
+    if (widget.isPlaying != oldWidget.isPlaying || 
+        widget.isMuted != oldWidget.isMuted || 
+        widget.volume != oldWidget.volume) {
+      _flutterTts.setVolume(0.0);
+      _flutterTts.speak(" ").then((_) {
+        _flutterTts.setVolume(widget.isMuted ? 0.0 : widget.volume);
+      });
+    }
+
+    if (widget.isPlaying && !oldWidget.isPlaying) {
       _controller.repeat();
-    } else {
+    } else if (!widget.isPlaying && oldWidget.isPlaying) {
       _controller.stop();
+      _flutterTts.stop();
     }
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _flutterTts.stop();
     super.dispose();
   }
 
@@ -298,12 +368,127 @@ class WhiteboardPainter extends CustomPainter {
       textPainter.layout();
       textPainter.paint(canvas, const Offset(30, 20));
 
+    } else if (videoType == VideoType.mathFactorTree) {
+      // Fundamental Theorem of Arithmetic - Factor Tree Animation
+      final double centerX = width / 2;
+      
+      final paintLine = Paint()
+        ..color = brightness == Brightness.dark ? Colors.white30 : Colors.black26
+        ..strokeWidth = 2.0;
+        
+      final paintComposite = Paint()..color = AppColors.blue;
+      final paintPrime = Paint()..color = AppColors.orange;
+      
+      // Node positions
+      final Offset root = Offset(centerX, 60);
+      final Offset n70 = Offset(centerX + 60, 120);
+      final Offset p2_1 = Offset(centerX - 60, 120);
+      final Offset n35 = Offset(centerX + 100, 180);
+      final Offset p2_2 = Offset(centerX + 20, 180);
+      final Offset p5 = Offset(centerX + 60, 240);
+      final Offset p7 = Offset(centerX + 140, 240);
+      
+      void drawEdge(Offset start, Offset end, double startT, double endT) {
+        if (progress > startT) {
+          final double t = ((progress - startT) / (endT - startT)).clamp(0.0, 1.0);
+          final Offset current = Offset(
+            start.dx + (end.dx - start.dx) * t,
+            start.dy + (end.dy - start.dy) * t,
+          );
+          canvas.drawLine(start, current, paintLine);
+        }
+      }
+      
+      void drawNode(Offset pos, String text, Paint paint, double appearT) {
+        if (progress > appearT) {
+          final double scale = ((progress - appearT) * 10).clamp(0.0, 1.0);
+          canvas.drawCircle(pos, 20.0 * scale, paint);
+          
+          if (scale == 1.0) {
+            final textPainter = TextPainter(
+              text: TextSpan(
+                text: text,
+                style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              textDirection: TextDirection.ltr,
+            );
+            textPainter.layout();
+            textPainter.paint(canvas, Offset(pos.dx - textPainter.width/2, pos.dy - textPainter.height/2));
+          }
+        }
+      }
+
+      drawNode(root, "140", paintComposite, 0.0);
+      
+      drawEdge(root, p2_1, 0.1, 0.2);
+      drawEdge(root, n70, 0.1, 0.2);
+      drawNode(p2_1, "2", paintPrime, 0.2);
+      drawNode(n70, "70", paintComposite, 0.2);
+      
+      drawEdge(n70, p2_2, 0.3, 0.4);
+      drawEdge(n70, n35, 0.3, 0.4);
+      drawNode(p2_2, "2", paintPrime, 0.4);
+      drawNode(n35, "35", paintComposite, 0.4);
+      
+      drawEdge(n35, p5, 0.5, 0.6);
+      drawEdge(n35, p7, 0.5, 0.6);
+      drawNode(p5, "5", paintPrime, 0.6);
+      drawNode(p7, "7", paintPrime, 0.6);
+      
+      if (progress > 0.8) {
+        final eqPainter = TextPainter(
+          text: TextSpan(
+            text: "140 = 2² × 5 × 7\n(Fundamental Theorem of Arithmetic)",
+            style: TextStyle(
+              color: brightness == Brightness.dark ? Colors.white70 : Colors.black87,
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.ltr,
+        );
+        eqPainter.layout();
+        eqPainter.paint(canvas, Offset(centerX - eqPainter.width/2, height - 80));
+      }
+
+      // Dynamic Subtitles
+      String explanation = "";
+      if (progress < 0.2) {
+        explanation = "Let's find the prime factorization of 140 using a factor tree.";
+      } else if (progress < 0.4) {
+        explanation = "Dividing by 2 leaves us with 70.";
+      } else if (progress < 0.6) {
+        explanation = "Dividing 70 by 2 gives 35.";
+      } else if (progress < 0.8) {
+        explanation = "And dividing 35 by 5 leaves 7, which is prime.";
+      } else {
+        explanation = "So, 140 is equal to 2² × 5 × 7.";
+      }
+      
+      final subPainter = TextPainter(
+        text: TextSpan(
+          text: explanation,
+          style: TextStyle(
+            color: brightness == Brightness.dark ? AppColors.orange : AppColors.blue,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+        textAlign: TextAlign.center,
+        textDirection: TextDirection.ltr,
+      );
+      subPainter.layout(maxWidth: width - 20);
+      subPainter.paint(canvas, Offset(centerX - subPainter.width/2, height - 30));
+
     } else if (videoType == VideoType.socialMap) {
       // Social Map Outline & Pins
       final paintContour = Paint()
         ..color = brightness == Brightness.dark ? Colors.white10 : Colors.black12
         ..strokeWidth = 2.0
         ..style = PaintingStyle.stroke;
+
       
       final contourPath = Path()
         ..moveTo(80, 80)
