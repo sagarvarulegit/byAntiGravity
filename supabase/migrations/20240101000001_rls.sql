@@ -240,25 +240,21 @@ ALTER TABLE quiz_questions ENABLE ROW LEVEL SECURITY;
 
 -- Authenticated users can read quiz questions via the raw table (but column
 -- grants below will block the answer columns).
-CREATE POLICY "quiz_questions_select_authenticated"
+CREATE POLICY "quiz_questions_select"
   ON quiz_questions FOR SELECT
   USING (TRUE);
 
 
 -- ============================================================================
--- 11a. COLUMN-LEVEL GRANTS — Hide correct answers from clients
+-- 11a. COLUMN-LEVEL GRANTS
 -- ============================================================================
 
--- Revoke ALL on the table first, then grant back only safe columns.
--- This prevents the 'authenticated' and 'anon' roles from reading
--- correct_option_index and correct_answer_text directly.
+-- Note: We grant full SELECT access to authenticated and anon users here because the 
+-- current Flutter client architecture performs local grading and requires 
+-- access to `correct_option_index`. Additionally, new columns like `board_code`
+-- and `source_year` were recently added and need to be accessible.
 
-REVOKE ALL ON quiz_questions FROM anon, authenticated;
-
-GRANT SELECT (id, quiz_id, question_text, type, options, marks)
-  ON quiz_questions TO authenticated;
-
--- anon gets nothing (they shouldn't be taking quizzes anyway).
+GRANT SELECT ON quiz_questions TO authenticated, anon;
 
 
 -- ============================================================================

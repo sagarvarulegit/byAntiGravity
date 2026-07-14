@@ -475,7 +475,7 @@ INSERT INTO quizzes (id, chapter_id, title, passing_percentage) VALUES
 ('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380066', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380116', 'Mathematics Chapter 6 Quiz', 60),
 ('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380077', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380117', 'Mathematics Chapter 7 Quiz', 60),
 ('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380088', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380118', 'Mathematics Chapter 8 Quiz', 60),
-('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380119', 'Mathematics Chapter 9 Quiz', 60)
+('d0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380119', 'Mathematics Chapter 9 Quiz', 60)
 ON CONFLICT (id) DO NOTHING;
 
 
@@ -510,11 +510,11 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
 ('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380815', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380088', 'If 9 \sec^2 A - 9 \tan^2 A is evaluated, it equals:', 'multiple_choice', '["A. 1", "B. 9", "C. 8", "D. 0"]', 1, NULL, 1),
 
 -- Mathematics Chapter 9 Quiz Questions
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380911', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'If the length of the shadow of a tower is equal to its height, then the angle of elevation of the sun is:', 'multiple_choice', '["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 90 degrees"]', 1, NULL, 1),
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380912', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'A pole 6 m high casts a shadow 2\sqrt{3} m long on the ground, then the sun''s elevation is:', 'multiple_choice', '["A. 60 degrees", "B. 45 degrees", "C. 30 degrees", "D. 90 degrees"]', 0, NULL, 1),
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380913', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'If the angle of elevation of a cloud from a point h meters above a lake is \alpha and the angle of depression of its reflection in the lake is \beta, then the height of the cloud is:', 'multiple_choice', '["A. h(tan beta - tan alpha)/(tan beta + tan alpha)", "B. h(tan beta + tan alpha)/(tan beta - tan alpha)", "C. h(tan alpha + tan beta)/(tan alpha - tan beta)", "D. h"]', 1, NULL, 1),
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380914', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'An observer 1.5 m tall is 20.5 m away from a tower 22 m high. The angle of elevation of the top of the tower from their eye is:', 'multiple_choice', '["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 0 degrees"]', 1, NULL, 1),
-('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380915', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099', 'The angle of depression of a car parked on the road from the top of a 150 m high tower is 30^\circ. The distance of the car from the tower is:', 'multiple_choice', '["A. 50 sqrt(3) m", "B. 150 sqrt(3) m", "C. 150/sqrt(3) m", "D. 75 m"]', 1, NULL, 1)
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380911', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'If the length of the shadow of a tower is equal to its height, then the angle of elevation of the sun is:', 'multiple_choice', '["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 90 degrees"]', 1, NULL, 1),
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380912', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'A pole 6 m high casts a shadow 2\sqrt{3} m long on the ground, then the sun''s elevation is:', 'multiple_choice', '["A. 60 degrees", "B. 45 degrees", "C. 30 degrees", "D. 90 degrees"]', 0, NULL, 1),
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380913', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'If the angle of elevation of a cloud from a point h meters above a lake is \alpha and the angle of depression of its reflection in the lake is \beta, then the height of the cloud is:', 'multiple_choice', '["A. h(tan beta - tan alpha)/(tan beta + tan alpha)", "B. h(tan beta + tan alpha)/(tan beta - tan alpha)", "C. h(tan alpha + tan beta)/(tan alpha - tan beta)", "D. h"]', 1, NULL, 1),
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380914', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'An observer 1.5 m tall is 20.5 m away from a tower 22 m high. The angle of elevation of the top of the tower from their eye is:', 'multiple_choice', '["A. 30 degrees", "B. 45 degrees", "C. 60 degrees", "D. 0 degrees"]', 1, NULL, 1),
+('f0eebc99-9c0b-4ef8-bb6d-6bb9bd380915', 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380999', 'The angle of depression of a car parked on the road from the top of a 150 m high tower is 30^\circ. The distance of the car from the tower is:', 'multiple_choice', '["A. 50 sqrt(3) m", "B. 150 sqrt(3) m", "C. 150/sqrt(3) m", "D. 75 m"]', 1, NULL, 1)
 ON CONFLICT (id) DO NOTHING;
 -- CBSE Class 10 Learning Portal Seed Data - Batch 3 Mathematics Part 2
 -- Generated on 2026-06-24

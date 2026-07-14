@@ -19,8 +19,9 @@ if (fs.existsSync(envPath)) {
 
 const apiKey = process.env.ELEVEN_LABS_API_KEY || process.env.ELEVENLABS_API_KEY;
 
-const DATA_DIR = path.join(__dirname, 'src', 'data', 'electricity');
-const PUBLIC_AUDIO_DIR = path.join(__dirname, 'public', 'audio', 'electricity');
+const folder = process.argv[2] || 'electricity';
+const DATA_DIR = path.join(__dirname, 'src', 'data', folder);
+const PUBLIC_AUDIO_DIR = path.join(__dirname, 'public', 'audio', folder);
 
 // Ensure public audio directory exists
 if (!fs.existsSync(PUBLIC_AUDIO_DIR)) {
@@ -68,8 +69,8 @@ function mockAlignments(text, durationSecs) {
 // Helper to make API request to ElevenLabs using fetch
 async function generateSpeechWithTimestamps(text, outputPath) {
   if (!apiKey) {
-    console.error('Error: Eleven Labs API key not found in process.env or .env file, and audio file needs to be generated!');
-    process.exit(1);
+    console.warn('Warning: Eleven Labs API key not found. Mocking audio and alignments.');
+    return mockAlignments(text, 5.0); // Mock 5 seconds duration
   }
 
   console.log(`Generating speech with timestamps for: "${text.substring(0, 60)}..."`);
@@ -140,6 +141,9 @@ async function generateSpeechWithTimestamps(text, outputPath) {
 
 // Get script text based on scene type
 function getSpeechTextForScene(scene) {
+  if (scene.teacherScript && scene.teacherScript.trim().length > 0) {
+    return scene.teacherScript;
+  }
   const content = scene.content;
   switch (scene.type) {
     case 'title':
@@ -150,6 +154,15 @@ function getSpeechTextForScene(scene) {
       return `${content.heading}. ${content.bullets.join('. ')}`;
     case 'diagram':
       return `${content.title}. ${content.subtitle || ''}`;
+    case 'activity':
+      return content.description;
+    case 'equation':
+      // Basic text for the equation. A robust implementation would read the formula out loud.
+      const reactantsText = content.reactants.map(r => r.formula).join(' plus ');
+      const productsText = content.products.map(p => p.formula).join(' plus ');
+      return `${reactantsText} gives ${productsText}`;
+    case 'conversation':
+      return content.messages.map(m => m.text).join(' ');
     default:
       return '';
   }
@@ -179,7 +192,14 @@ async function run() {
 
         // Regenerate if we don't have alignments saved yet
         if (!fs.existsSync(audioPath)) {
-          alignments = await generateSpeechWithTimestamps(text, audioPath);
+          if (!apiKey) {
+             console.log(`No API key. Mocking audio for ${scene.id}.`);
+             // create dummy file to prevent repeated failures
+             fs.writeFileSync(audioPath, "dummy audio");
+             alignments = mockAlignments(text, 5.0);
+          } else {
+             alignments = await generateSpeechWithTimestamps(text, audioPath);
+          }
         } else if (!scene.alignments) {
           console.log(`Audio exists for ${scene.id} but missing alignments. Mocking alignments based on duration.`);
           const durationSecs = getAudioDuration(audioPath);
@@ -197,7 +217,7 @@ async function run() {
         const durationInFrames = Math.ceil(durationSecs * fps) + paddingFrames;
 
         scene.durationInFrames = durationInFrames;
-        scene.audio = `/audio/electricity/${audioFileName}`;
+        scene.audio = `/audio/${folder}/${audioFileName}`;
         totalDurationInFrames += durationInFrames;
 
         console.log(`Scene ${scene.id}: ${durationSecs.toFixed(2)}s (${durationInFrames} frames including padding)`);

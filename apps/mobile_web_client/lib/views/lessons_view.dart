@@ -8,6 +8,7 @@ import '../models.dart';
 import '../theme.dart';
 import '../services/database_service.dart';
 import '../widgets/interactive_whiteboard_canvas.dart';
+import '../widgets/board_badge.dart';
 import '../widgets/video_player_widget.dart';
 import '../widgets/confetti_overlay.dart';
 import '../widgets/comic_recap.dart';
@@ -397,14 +398,21 @@ class _LessonsViewState extends State<LessonsView> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
-              child: Text(
-                chapter.title.toUpperCase(),
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 0.5,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      chapter.title.toUpperCase(),
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             ...chapter.lessons.map((lesson) {
@@ -795,7 +803,7 @@ class _LessonsViewState extends State<LessonsView> {
                           if (note != null && _currentNoteContent.isNotEmpty) {
                             downloadFile(_currentNoteContent, "${note.title.replaceAll(' ', '_')}.txt");
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text("PDF revision notes downloaded successfully.")),
+                              const SnackBar(content: Text("Raw revision notes downloaded successfully.")),
                             );
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -804,7 +812,7 @@ class _LessonsViewState extends State<LessonsView> {
                           }
                         },
                         icon: const Icon(Icons.download_rounded, size: 14, color: AppColors.purple),
-                        label: const Text("PDF Notes", style: TextStyle(color: AppColors.purple, fontSize: 12)),
+                        label: const Text("Download Raw Notes (.txt)", style: TextStyle(color: AppColors.purple, fontSize: 12)),
                         style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: Size.zero),
                       ),
                     ],
@@ -1552,9 +1560,9 @@ class _LessonsViewState extends State<LessonsView> {
             children: headerRow.map((cell) {
               return Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text(
+                child: _buildMathText(
                   cell,
-                  style: TextStyle(
+                  TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
                     color: isDark ? const Color(0xFFFCE7F3) : AppColors.purpleDark,
@@ -1609,6 +1617,10 @@ class _LessonsViewState extends State<LessonsView> {
       boxColor = isDark ? Colors.red.withOpacity(0.1) : const Color(0xFFFEF2F2);
       borderColor = Colors.red;
       titleColor = Colors.red;
+    } else if (type == "important") {
+      boxColor = isDark ? Colors.deepPurple.withOpacity(0.1) : const Color(0xFFF3E8FF);
+      borderColor = Colors.deepPurple;
+      titleColor = Colors.deepPurple;
     } else if (type == "caution") {
       boxColor = isDark ? Colors.amber.withOpacity(0.1) : const Color(0xFFFFFBEB);
       borderColor = Colors.amber;
@@ -2104,8 +2116,24 @@ class _LessonsViewState extends State<LessonsView> {
         continue;
       }
 
+      if (line.contains('Board Exam Hot Topic')) {
+        String badgeText = line.replaceAll(RegExp(r'\**>?\s*\*?(🔥\s*|\?\?\s*)?Board Exam Hot Topic\s*(—|-)?\s*'), '').replaceAll('**', '').trim();
+        // Translate "Repeated 4x (2026)" into "[2026] - Asked 4 times" or similar, or just "[2026]"
+        if (badgeText.contains('Repeated')) {
+          final yearMatch = RegExp(r'\((.*?)\)').firstMatch(badgeText);
+          if (yearMatch != null) {
+            badgeText = '[${yearMatch.group(1)}] Board PYQ';
+          }
+        }
+        children.add(Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          child: BoardBadge(text: badgeText),
+        ));
+        continue;
+      }
+
       if (line.startsWith('>')) {
-        final alertHeaderMatch = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION)\]').firstMatch(line);
+        final alertHeaderMatch = RegExp(r'^>\s*\[!(NOTE|WARNING|CAUTION|IMPORTANT)\]').firstMatch(line);
         if (alertHeaderMatch != null) {
           flushAlert();
           currentAlert = alertHeaderMatch.group(1)!.toLowerCase();
@@ -2906,9 +2934,9 @@ class _LessonsViewState extends State<LessonsView> {
             ),
           ),
           const SizedBox(height: 8),
-          Text(
+          _buildMathText(
             text,
-            style: const TextStyle(fontSize: 12.5, height: 1.4),
+            const TextStyle(fontSize: 12.5, height: 1.4),
           ),
         ],
       ),
@@ -2928,6 +2956,20 @@ class _LessonsViewState extends State<LessonsView> {
     String figNum;
     String figCaption;
     double figHeight = 180;
+
+    final isRevisionNote = _selectedLesson?.type == LessonType.note;
+
+    String? currentChapterId;
+    for (final subject in widget.subjects) {
+      for (final chapter in subject.chapters) {
+        if (chapter.lessons.any((l) => l.id == _selectedLesson?.id)) {
+          currentChapterId = chapter.id;
+          break;
+        }
+      }
+      if (currentChapterId != null) break;
+    }
+    final isChapter1 = currentChapterId == 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221';
 
     if (figType == 'double_circulation') {
       svgPath = "assets/double_circulation.svg";
@@ -2980,23 +3022,23 @@ class _LessonsViewState extends State<LessonsView> {
       figCaption = "Resistors connected in parallel. The potential difference (V) across all resistors is the same.";
       figHeight = 240;
     } else if (figType == 'combination_reaction') {
-      svgPath = "assets/combination_animated.svg";
-      figNum = "Figure 1.2 ";
+      svgPath = isRevisionNote ? "assets/combination_reaction.svg" : "assets/combination_animated.svg";
+      figNum = "Figure 1.3 ";
       figCaption = "Quicklime (calcium oxide) reacts vigorously with water to produce slaked lime (calcium hydroxide) in an exothermic combination reaction.";
       figHeight = 220;
     } else if (figType == 'ferrous_sulphate_decomposition') {
       svgPath = "assets/ferrous_sulphate_decomposition_animated.svg";
-      figNum = "Figure 1.3 ";
+      figNum = "Figure 1.4 ";
       figCaption = "Thermal decomposition of ferrous sulphate crystals. Green crystals turn white/brownish and emit choking SO₂/SO₃ gases.";
       figHeight = 180;
     } else if (figType == 'lead_nitrate_decomposition') {
       svgPath = "assets/lead_nitrate_decomposition_animated.svg";
-      figNum = "Figure 1.4 ";
+      figNum = "Figure 1.5 ";
       figCaption = "Thermal decomposition of lead nitrate resulting in the emission of brown nitrogen dioxide (NO₂) fumes.";
       figHeight = 180;
     } else if (figType == 'decomposition_reaction') {
-      svgPath = "assets/decomposition_reaction_animated.svg";
-      figNum = "Figure 1.5 ";
+      svgPath = isRevisionNote ? "assets/decomposition_reaction.svg" : "assets/decomposition_reaction_animated.svg";
+      figNum = "Figure ";
       figCaption = "Decomposition of calcium carbonate to calcium oxide and carbon dioxide on heating.";
       figHeight = 180;
     } else if (figType == 'electrolysis_of_water') {
@@ -3010,19 +3052,60 @@ class _LessonsViewState extends State<LessonsView> {
       figCaption = "Photolytic decomposition of silver chloride. White silver chloride turns grey in sunlight, yielding silver metal and chlorine gas.";
       figHeight = 180;
     } else if (figType == 'displacement_reaction') {
-      svgPath = "assets/displacement_reaction_animated.svg";
+      svgPath = isRevisionNote ? "assets/displacement_reaction.svg" : "assets/displacement_reaction_animated.svg";
       figNum = "Figure 1.8 ";
       figCaption = "Displacement reaction. Iron nail dipped in blue copper sulphate solution becomes brownish, and the solution fades to light green.";
       figHeight = 180;
+    } else if (figType == 'double_displacement') {
+      figNum = "Figure 1.9 ";
+      figCaption = "Double displacement reaction between sodium sulphate and barium chloride, forming a white precipitate of barium sulphate.";
+      figHeight = 220;
     } else if (figType == 'zinc_acid') {
       svgPath = "assets/zinc_acid_animated.svg";
       figNum = "Figure 1.2 ";
       figCaption = "Formation of hydrogen gas by the action of dilute sulphuric acid on zinc";
       figHeight = 220;
+    } else if (figType == 'acid_metal_reaction') {
+      figNum = "Figure 2.1 ";
+      figCaption = "Reaction of zinc granules with dilute sulphuric acid, and testing hydrogen gas by burning.";
+      figHeight = 220;
+    } else if (figType == 'co2_limewater_test') {
+      figNum = "Figure 2.2 ";
+      figCaption = "Passing carbon dioxide gas through calcium hydroxide solution (lime water).";
+      figHeight = 220;
+    } else if (figType == 'acid_base_conductivity') {
+      figNum = "Figure 2.3 ";
+      figCaption = "Acid solution in water conducts electricity.";
+      figHeight = 220;
+    } else if (figType == 'hcl_gas_preparation') {
+      figNum = "Figure 2.4 ";
+      figCaption = "Preparation of HCl gas; testing dry and wet litmus paper.";
+      figHeight = 220;
+    } else if (figType == 'ph_scale') {
+      figNum = "Figure 2.6 ";
+      figCaption = "Variation of pH with the change in concentration of H+(aq) and OH-(aq) ions.";
+      figHeight = 220;
+    } else if (figType == 'ph_paper_substances') {
+      figNum = "Figure 2.7 ";
+      figCaption = "pH of some common substances shown on a pH paper.";
+      figHeight = 220;
+    } else if (figType == 'chlor_alkali_process') {
+      figNum = "Figure 2.8 ";
+      figCaption = "Important products from the chlor-alkali process.";
+      figHeight = 220;
+    } else if (figType == 'copper_sulphate_crystals') {
+      figNum = "Figure 2.9 ";
+      figCaption = "Removing water of crystallisation from copper sulphate crystals.";
+      figHeight = 220;
     } else {
-      svgPath = "assets/magnesium_burner_animated.svg";
-      figNum = "Figure 1.1 ";
-      figCaption = "Burning of a magnesium ribbon in air and collection of magnesium oxide in a watch-glass";
+      if (isChapter1) {
+        svgPath = isRevisionNote ? "assets/magnesium_burner.svg" : "assets/magnesium_burner_animated.svg";
+        figNum = "Figure 1.1 ";
+        figCaption = "Burning of a magnesium ribbon in air and collection of magnesium oxide in a watch-glass";
+      } else {
+        figNum = "Figure ";
+        figCaption = "Illustration for ${figType.replaceAll('_', ' ')}";
+      }
       figHeight = 180;
     }
 
@@ -3055,9 +3138,11 @@ class _LessonsViewState extends State<LessonsView> {
                           );
                         },
                       )
-                    : CustomPaint(
-                        painter: painterWidget,
-                      ),
+                    : (painterWidget != null
+                        ? CustomPaint(
+                            painter: painterWidget,
+                          )
+                        : _buildPlaceholderGraphic(figNum, figCaption, isDark)),
               ),
             ),
           ),
@@ -3083,6 +3168,56 @@ class _LessonsViewState extends State<LessonsView> {
             textAlign: TextAlign.center,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildPlaceholderGraphic(String figNum, String figCaption, bool isDark) {
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white.withOpacity(0.02) : const Color(0xFFF9FAFB),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.grey.shade300,
+          style: BorderStyle.solid,
+        ),
+      ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.science_outlined,
+              size: 40,
+              color: isDark ? Colors.white30 : Colors.grey.shade400,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              "Diagram Placeholder",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Outfit',
+                color: isDark ? Colors.white60 : Colors.grey.shade600,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                figCaption,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 10,
+                  fontFamily: 'Georgia',
+                  color: isDark ? Colors.white38 : Colors.grey.shade500,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

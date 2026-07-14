@@ -1,0 +1,28 @@
+
+--- Searching in seed_science_ch2_notes.sql ---
+Keyword 'NaOH(aq) + HCl(aq)' found at position 4472:
+'ach other out | Antacid tablets (a base) neutralise excess stomach acid to relieve indigestion].\n\n$$NaOH(aq) + HCl(aq) \\rightarrow NaCl(aq) + H_2O(l)$$\n\n---\n\n### 2.1.5 Reaction of Metallic Oxides with Acids\n\nMetal oxides are **basic** in nature:\n\n$$CuO(s) + 2HCl(aq) \\'
+Keyword 'glucose and alcohol' found at position 6515:
+' ions ($OH^-$) in water:\n\n$$NaOH(s) \\xrightarrow{H_2O} Na^+(aq) + OH^-(aq)$$\n\n[INFO: Compounds like glucose and alcohol contain hydrogen but do NOT ionise in water, so they do not produce $H^+$ ions and are not classified as acids.]\n\n### 2.2.1 What Happens to an Acid o'
+Keyword 'Chlor-alkali process' found at position 12728:
+'lt\n\nWhen electricity is passed through brine (aqueous $NaCl$ solution), this is called the [JARGON: Chlor-alkali process | An industrial process where electricity is passed through brine (salt water) to produce chlorine gas, hydrogen gas, and sodium hydroxide | Used to '
+Keyword 'The Chlor-alkali Process:' found at position 40306:
+'\n\nCommon salt ($NaCl$) is used as raw material to produce many industrially important chemicals.\n\n**The Chlor-alkali Process:**\n\nWhen electric current is passed through an aqueous solution of sodium chloride (called brine), it decomposes into three very useful products:\n\n$$2'
+
+--- Searching in seed_notes_v2.sql ---
+Keyword 'Displacement Reaction' found at position 10307:
+'wo or more products. $CaCO_3 \\rightarrow CaO + CO_2$.\n[FIGURE: decomposition_reaction]\n- **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger ele'
+Keyword 'Ohm''s Law' found at position 22317:
+"w pointing through or down on it. Used to change the resistance in the circuit.\n\n## 6. 📖 Concept 4: Ohm''s Law\nOhm''s Law is the most important law in electricity! It states that the potential difference ($V$) across the ends of a given metallic wire in an ele"
+Keyword 'Ohm's Law' NOT found!
+Keyword 'R_p' found at position 25593:
+"stors.\n- The total current is the sum of currents: $I = I_1 + I_2 + I_3$\n- By Ohm''s Law: $\\frac{V}{R_p} = \\frac{V}{R_1} + \\frac{V}{R_2} + \\frac{V}{R_3}$\n- **Equivalent Resistance Formula:** $$\\frac{1}{R_p} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3"
+Keyword 'R_1' found at position 25150:
+" sum of potential differences across each resistor: $V = V_1 + V_2 + V_3$\n- By Ohm''s Law: $IR_s = IR_1 + IR_2 + IR_3$\n- **Equivalent Resistance Formula:** $$R_s = R_1 + R_2 + R_3$$\n- The total resistance in series is *greater* than the highest individu"
+
+--- Searching in seed_study_guides.sql ---
+Keyword 'Observation: Gas bubbles' NOT found!
+Keyword 'Displacement Reaction' found at position 34136:
+'e for every 1 volume of Oxygen gas at the anode. The double-volume gas is Hydrogen.\n\n---\n\n### 1.2.3 Displacement Reaction\n\nA chemical reaction in which a more reactive element displaces a less reactive element from its salt solution is a **displacement reaction**.\n\n> [!I'
+Keyword 'Resistors in Parallel' found at position 10864:
+'cross the conductor, $V_2 = I R_2 = 0.25\\text{ A} \\times 4\\text{ }\\Omega = 1\\text{ V}$.\n\n### 11.6.2 Resistors in Parallel\n\nWhen resistors are connected together between the same two points, they are said to be in parallel.\n\n> [!IMPORTANT]\n> **?? Board Exam Hot Topic — Re'

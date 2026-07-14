@@ -1,0 +1,3169 @@
+{
+  "id": "ch1_part1",
+  "title": "Chemical Reactions and Equations",
+  "fps": 30,
+  "durationInFrames": 6376,
+  "scenes": [
+    {
+      "id": "scene1_title",
+      "type": "title",
+      "durationInFrames": 107,
+      "content": {
+        "text": "Class 10 Science",
+        "subtitle": "Chapter 1: Chemical Reactions and Equations"
+      },
+      "teacherScript": "Welcome students! Today, we are going to dive into the fascinating world of Chemistry with Chapter 1: Chemical Reactions and Equations.",
+      "alignments": [
+        {
+          "word": "Welcome",
+          "start": 0,
+          "end": 0.18656728695652172
+        },
+        {
+          "word": "students!",
+          "start": 0.19989352173913041,
+          "end": 0.4397657478260869
+        },
+        {
+          "word": "Today,",
+          "start": 0.45309198260869565,
+          "end": 0.6130068
+        },
+        {
+          "word": "we",
+          "start": 0.6263330347826087,
+          "end": 0.6796379739130435
+        },
+        {
+          "word": "are",
+          "start": 0.6929642086956522,
+          "end": 0.7729216173913044
+        },
+        {
+          "word": "going",
+          "start": 0.7862478521739131,
+          "end": 0.9195102
+        },
+        {
+          "word": "to",
+          "start": 0.9328364347826088,
+          "end": 0.9861413739130436
+        },
+        {
+          "word": "dive",
+          "start": 0.9994676086956523,
+          "end": 1.106077486956522
+        },
+        {
+          "word": "into",
+          "start": 1.1194037217391306,
+          "end": 1.2260136000000001
+        },
+        {
+          "word": "the",
+          "start": 1.2393398347826088,
+          "end": 1.319297243478261
+        },
+        {
+          "word": "fascinating",
+          "start": 1.3326234782608697,
+          "end": 1.625800643478261
+        },
+        {
+          "word": "world",
+          "start": 1.6391268782608697,
+          "end": 1.7723892260869567
+        },
+        {
+          "word": "of",
+          "start": 1.7857154608695653,
+          "end": 1.8390204
+        },
+        {
+          "word": "Chemistry",
+          "start": 1.8523466347826087,
+          "end": 2.0922188608695653
+        },
+        {
+          "word": "with",
+          "start": 2.105545095652174,
+          "end": 2.2121549739130435
+        },
+        {
+          "word": "Chapter",
+          "start": 2.225481208695652,
+          "end": 2.412048495652174
+        },
+        {
+          "word": "1:",
+          "start": 2.4253747304347826,
+          "end": 2.4786796695652176
+        },
+        {
+          "word": "Chemical",
+          "start": 2.492005904347826,
+          "end": 2.7052256608695653
+        },
+        {
+          "word": "Reactions",
+          "start": 2.718551895652174,
+          "end": 2.9584241217391303
+        },
+        {
+          "word": "and",
+          "start": 2.9717503565217394,
+          "end": 3.0517077652173916
+        },
+        {
+          "word": "Equations.",
+          "start": 3.0650340000000003,
+          "end": 3.3315586956521743
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene1_title.mp3"
+    },
+    {
+      "id": "scene2_physical_chemical",
+      "type": "text",
+      "durationInFrames": 406,
+      "content": {
+        "heading": "Changes Around Us",
+        "bullets": [
+          "Physical Change: No new substance is formed (e.g., melting ice).",
+          "Chemical Change: A new substance is formed with new properties."
+        ]
+      },
+      "teacherScript": "Before we begin, remember that in our daily lives, we see physical changes, like ice melting, where no new substance is formed. But when milk turns into curd or iron rusts, a chemical change takes place. That's a chemical reaction!",
+      "alignments": [
+        {
+          "word": "Before",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "word": "we",
+          "start": 0.372,
+          "end": 0.441
+        },
+        {
+          "word": "begin,",
+          "start": 0.499,
+          "end": 0.882
+        },
+        {
+          "word": "remember",
+          "start": 0.952,
+          "end": 1.312
+        },
+        {
+          "word": "that",
+          "start": 1.358,
+          "end": 1.486
+        },
+        {
+          "word": "in",
+          "start": 1.544,
+          "end": 1.625
+        },
+        {
+          "word": "our",
+          "start": 1.672,
+          "end": 1.776
+        },
+        {
+          "word": "daily",
+          "start": 1.834,
+          "end": 2.09
+        },
+        {
+          "word": "lives,",
+          "start": 2.148,
+          "end": 2.496
+        },
+        {
+          "word": "we",
+          "start": 2.543,
+          "end": 2.659
+        },
+        {
+          "word": "see",
+          "start": 2.717,
+          "end": 2.879
+        },
+        {
+          "word": "physical",
+          "start": 2.961,
+          "end": 3.355
+        },
+        {
+          "word": "changes,",
+          "start": 3.413,
+          "end": 3.878
+        },
+        {
+          "word": "like",
+          "start": 3.959,
+          "end": 4.191
+        },
+        {
+          "word": "ice",
+          "start": 4.261,
+          "end": 4.528
+        },
+        {
+          "word": "melting,",
+          "start": 4.574,
+          "end": 5.05
+        },
+        {
+          "word": "where",
+          "start": 5.201,
+          "end": 5.422
+        },
+        {
+          "word": "no",
+          "start": 5.48,
+          "end": 5.608
+        },
+        {
+          "word": "new",
+          "start": 5.689,
+          "end": 5.805
+        },
+        {
+          "word": "substance",
+          "start": 5.863,
+          "end": 6.293
+        },
+        {
+          "word": "is",
+          "start": 6.327,
+          "end": 6.385
+        },
+        {
+          "word": "formed.",
+          "start": 6.444,
+          "end": 6.896
+        },
+        {
+          "word": "But",
+          "start": 7.221,
+          "end": 7.372
+        },
+        {
+          "word": "when",
+          "start": 7.396,
+          "end": 7.523
+        },
+        {
+          "word": "milk",
+          "start": 7.558,
+          "end": 7.744
+        },
+        {
+          "word": "turns",
+          "start": 7.802,
+          "end": 8.046
+        },
+        {
+          "word": "into",
+          "start": 8.081,
+          "end": 8.208
+        },
+        {
+          "word": "curd",
+          "start": 8.278,
+          "end": 8.638
+        },
+        {
+          "word": "or",
+          "start": 8.684,
+          "end": 8.789
+        },
+        {
+          "word": "iron",
+          "start": 8.87,
+          "end": 9.137
+        },
+        {
+          "word": "rusts,",
+          "start": 9.207,
+          "end": 9.636
+        },
+        {
+          "word": "a",
+          "start": 9.706,
+          "end": 9.776
+        },
+        {
+          "word": "chemical",
+          "start": 9.845,
+          "end": 10.217
+        },
+        {
+          "word": "change",
+          "start": 10.275,
+          "end": 10.53
+        },
+        {
+          "word": "takes",
+          "start": 10.553,
+          "end": 10.751
+        },
+        {
+          "word": "place.",
+          "start": 10.797,
+          "end": 11.238
+        },
+        {
+          "word": "That's",
+          "start": 11.413,
+          "end": 11.656
+        },
+        {
+          "word": "a",
+          "start": 11.68,
+          "end": 11.703
+        },
+        {
+          "word": "chemical",
+          "start": 11.749,
+          "end": 12.098
+        },
+        {
+          "word": "reaction!",
+          "start": 12.156,
+          "end": 13.003
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene2_physical_chemical.mp3"
+    },
+    {
+      "id": "scene3_activity1",
+      "type": "activity",
+      "durationInFrames": 626,
+      "content": {
+        "activityName": "Burning of Magnesium Ribbon",
+        "description": "Magnesium burns in air to form Magnesium Oxide.",
+        "animationType": "magnesium_burn"
+      },
+      "teacherScript": "Let's perform an activity. Watch closely as we take a magnesium ribbon and burn it over a flame. Notice how it burns with a dazzling white flame! It changes into a white powder, which is Magnesium Oxide. This happens because magnesium reacts with oxygen in the air.",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "perform",
+          "start": 0.279,
+          "end": 0.58
+        },
+        {
+          "word": "an",
+          "start": 0.615,
+          "end": 0.662
+        },
+        {
+          "word": "activity.",
+          "start": 0.697,
+          "end": 1.382
+        },
+        {
+          "word": "Watch",
+          "start": 2.078,
+          "end": 2.368
+        },
+        {
+          "word": "closely",
+          "start": 2.426,
+          "end": 2.844
+        },
+        {
+          "word": "as",
+          "start": 2.902,
+          "end": 2.984
+        },
+        {
+          "word": "we",
+          "start": 3.03,
+          "end": 3.1
+        },
+        {
+          "word": "take",
+          "start": 3.158,
+          "end": 3.379
+        },
+        {
+          "word": "a",
+          "start": 3.413,
+          "end": 3.448
+        },
+        {
+          "word": "magnesium",
+          "start": 3.506,
+          "end": 4.052
+        },
+        {
+          "word": "ribbon",
+          "start": 4.11,
+          "end": 4.412
+        },
+        {
+          "word": "and",
+          "start": 4.923,
+          "end": 5.12
+        },
+        {
+          "word": "burn",
+          "start": 5.178,
+          "end": 5.364
+        },
+        {
+          "word": "it",
+          "start": 5.399,
+          "end": 5.468
+        },
+        {
+          "word": "over",
+          "start": 5.515,
+          "end": 5.7
+        },
+        {
+          "word": "a",
+          "start": 5.759,
+          "end": 5.793
+        },
+        {
+          "word": "flame.",
+          "start": 5.851,
+          "end": 6.385
+        },
+        {
+          "word": "Notice",
+          "start": 7.686,
+          "end": 7.999
+        },
+        {
+          "word": "how",
+          "start": 8.034,
+          "end": 8.15
+        },
+        {
+          "word": "it",
+          "start": 8.208,
+          "end": 8.278
+        },
+        {
+          "word": "burns",
+          "start": 8.324,
+          "end": 8.58
+        },
+        {
+          "word": "with",
+          "start": 8.603,
+          "end": 8.719
+        },
+        {
+          "word": "a",
+          "start": 8.766,
+          "end": 8.8
+        },
+        {
+          "word": "dazzling",
+          "start": 8.87,
+          "end": 9.369
+        },
+        {
+          "word": "white",
+          "start": 9.416,
+          "end": 9.636
+        },
+        {
+          "word": "flame!",
+          "start": 9.694,
+          "end": 10.286
+        },
+        {
+          "word": "It",
+          "start": 11.401,
+          "end": 11.54
+        },
+        {
+          "word": "changes",
+          "start": 11.587,
+          "end": 11.935
+        },
+        {
+          "word": "into",
+          "start": 11.993,
+          "end": 12.179
+        },
+        {
+          "word": "a",
+          "start": 12.272,
+          "end": 12.307
+        },
+        {
+          "word": "white",
+          "start": 12.365,
+          "end": 12.585
+        },
+        {
+          "word": "powder,",
+          "start": 12.643,
+          "end": 13.282
+        },
+        {
+          "word": "which",
+          "start": 13.607,
+          "end": 13.793
+        },
+        {
+          "word": "is",
+          "start": 13.839,
+          "end": 13.932
+        },
+        {
+          "word": "Magnesium",
+          "start": 14.025,
+          "end": 14.629
+        },
+        {
+          "word": "Oxide.",
+          "start": 14.698,
+          "end": 15.348
+        },
+        {
+          "word": "This",
+          "start": 16.649,
+          "end": 16.846
+        },
+        {
+          "word": "happens",
+          "start": 16.916,
+          "end": 17.276
+        },
+        {
+          "word": "because",
+          "start": 17.322,
+          "end": 17.636
+        },
+        {
+          "word": "magnesium",
+          "start": 17.694,
+          "end": 18.332
+        },
+        {
+          "word": "reacts",
+          "start": 18.39,
+          "end": 18.773
+        },
+        {
+          "word": "with",
+          "start": 18.797,
+          "end": 18.924
+        },
+        {
+          "word": "oxygen",
+          "start": 18.994,
+          "end": 19.505
+        },
+        {
+          "word": "in",
+          "start": 19.563,
+          "end": 19.632
+        },
+        {
+          "word": "the",
+          "start": 19.667,
+          "end": 19.737
+        },
+        {
+          "word": "air.",
+          "start": 19.795,
+          "end": 20.341
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene3_activity1.mp3"
+    },
+    {
+      "id": "scene3b_activity2",
+      "type": "text",
+      "durationInFrames": 385,
+      "content": {
+        "heading": "Activity 1.2: Mixing Solutions",
+        "imageUrl": "images/activity_1_2.png",
+        "bullets": [
+          "Take lead nitrate solution in a test tube.",
+          "Add potassium iodide solution to this.",
+          "A yellow solid precipitate is formed instantly."
+        ]
+      },
+      "teacherScript": "Let's try another experiment. If you take some lead nitrate solution in a test tube and add potassium iodide solution to it, you'll see a vibrant yellow precipitate form instantly. A chemical reaction has occurred!",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "word": "try",
+          "start": 0.255,
+          "end": 0.372
+        },
+        {
+          "word": "another",
+          "start": 0.418,
+          "end": 0.639
+        },
+        {
+          "word": "experiment.",
+          "start": 0.685,
+          "end": 1.289
+        },
+        {
+          "word": "If",
+          "start": 1.672,
+          "end": 1.788
+        },
+        {
+          "word": "you",
+          "start": 1.823,
+          "end": 1.892
+        },
+        {
+          "word": "take",
+          "start": 1.962,
+          "end": 2.136
+        },
+        {
+          "word": "some",
+          "start": 2.171,
+          "end": 2.31
+        },
+        {
+          "word": "lead",
+          "start": 2.368,
+          "end": 2.554
+        },
+        {
+          "word": "nitrate",
+          "start": 2.612,
+          "end": 2.949
+        },
+        {
+          "word": "solution",
+          "start": 2.972,
+          "end": 3.367
+        },
+        {
+          "word": "in",
+          "start": 3.425,
+          "end": 3.495
+        },
+        {
+          "word": "a",
+          "start": 3.541,
+          "end": 3.564
+        },
+        {
+          "word": "test",
+          "start": 3.611,
+          "end": 3.831
+        },
+        {
+          "word": "tube",
+          "start": 3.878,
+          "end": 4.214
+        },
+        {
+          "word": "and",
+          "start": 4.331,
+          "end": 4.528
+        },
+        {
+          "word": "add",
+          "start": 4.598,
+          "end": 4.76
+        },
+        {
+          "word": "potassium",
+          "start": 4.818,
+          "end": 5.445
+        },
+        {
+          "word": "iodide",
+          "start": 5.515,
+          "end": 5.956
+        },
+        {
+          "word": "solution",
+          "start": 5.979,
+          "end": 6.362
+        },
+        {
+          "word": "to",
+          "start": 6.409,
+          "end": 6.478
+        },
+        {
+          "word": "it,",
+          "start": 6.571,
+          "end": 6.757
+        },
+        {
+          "word": "you'll",
+          "start": 7.14,
+          "end": 7.326
+        },
+        {
+          "word": "see",
+          "start": 7.372,
+          "end": 7.5
+        },
+        {
+          "word": "a",
+          "start": 7.546,
+          "end": 7.581
+        },
+        {
+          "word": "vibrant",
+          "start": 7.697,
+          "end": 8.162
+        },
+        {
+          "word": "yellow",
+          "start": 8.255,
+          "end": 8.545
+        },
+        {
+          "word": "precipitate",
+          "start": 8.615,
+          "end": 9.218
+        },
+        {
+          "word": "form",
+          "start": 9.253,
+          "end": 9.497
+        },
+        {
+          "word": "instantly.",
+          "start": 9.567,
+          "end": 10.217
+        },
+        {
+          "word": "A",
+          "start": 10.542,
+          "end": 10.623
+        },
+        {
+          "word": "chemical",
+          "start": 10.693,
+          "end": 11.064
+        },
+        {
+          "word": "reaction",
+          "start": 11.122,
+          "end": 11.494
+        },
+        {
+          "word": "has",
+          "start": 11.54,
+          "end": 11.633
+        },
+        {
+          "word": "occurred!",
+          "start": 11.668,
+          "end": 12.307
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene3b_activity2.mp3"
+    },
+    {
+      "id": "scene3c_activity3",
+      "type": "text",
+      "durationInFrames": 479,
+      "content": {
+        "heading": "Activity 1.3: Zinc and Acid",
+        "imageUrl": "images/activity_1_3.png",
+        "bullets": [
+          "Take a few zinc granules in a conical flask.",
+          "Add dilute sulphuric acid.",
+          "Hydrogen gas bubbles are evolved, and the flask becomes hot."
+        ]
+      },
+      "teacherScript": "Or consider this: Take some zinc granules in a conical flask and add dilute sulphuric acid. You will see bubbles of hydrogen gas forming around the zinc. If you touch the flask, you'll feel it has become hot. Another chemical reaction!",
+      "alignments": [
+        {
+          "word": "Or",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "consider",
+          "start": 0.186,
+          "end": 0.476
+        },
+        {
+          "word": "this:",
+          "start": 0.522,
+          "end": 0.906
+        },
+        {
+          "word": "Take",
+          "start": 1.416,
+          "end": 1.672
+        },
+        {
+          "word": "some",
+          "start": 1.707,
+          "end": 1.869
+        },
+        {
+          "word": "zinc",
+          "start": 1.916,
+          "end": 2.136
+        },
+        {
+          "word": "granules",
+          "start": 2.252,
+          "end": 2.694
+        },
+        {
+          "word": "in",
+          "start": 2.752,
+          "end": 2.821
+        },
+        {
+          "word": "a",
+          "start": 2.856,
+          "end": 2.891
+        },
+        {
+          "word": "conical",
+          "start": 2.961,
+          "end": 3.355
+        },
+        {
+          "word": "flask",
+          "start": 3.413,
+          "end": 3.866
+        },
+        {
+          "word": "and",
+          "start": 4.191,
+          "end": 4.447
+        },
+        {
+          "word": "add",
+          "start": 4.528,
+          "end": 4.714
+        },
+        {
+          "word": "dilute",
+          "start": 4.772,
+          "end": 5.201
+        },
+        {
+          "word": "sulphuric",
+          "start": 5.236,
+          "end": 5.759
+        },
+        {
+          "word": "acid.",
+          "start": 5.84,
+          "end": 6.397
+        },
+        {
+          "word": "You",
+          "start": 7.001,
+          "end": 7.117
+        },
+        {
+          "word": "will",
+          "start": 7.152,
+          "end": 7.268
+        },
+        {
+          "word": "see",
+          "start": 7.314,
+          "end": 7.442
+        },
+        {
+          "word": "bubbles",
+          "start": 7.488,
+          "end": 7.79
+        },
+        {
+          "word": "of",
+          "start": 7.825,
+          "end": 7.883
+        },
+        {
+          "word": "hydrogen",
+          "start": 7.953,
+          "end": 8.348
+        },
+        {
+          "word": "gas",
+          "start": 8.394,
+          "end": 8.603
+        },
+        {
+          "word": "forming",
+          "start": 8.673,
+          "end": 8.94
+        },
+        {
+          "word": "around",
+          "start": 8.986,
+          "end": 9.195
+        },
+        {
+          "word": "the",
+          "start": 9.23,
+          "end": 9.3
+        },
+        {
+          "word": "zinc.",
+          "start": 9.334,
+          "end": 9.741
+        },
+        {
+          "word": "If",
+          "start": 10.182,
+          "end": 10.298
+        },
+        {
+          "word": "you",
+          "start": 10.333,
+          "end": 10.403
+        },
+        {
+          "word": "touch",
+          "start": 10.461,
+          "end": 10.646
+        },
+        {
+          "word": "the",
+          "start": 10.693,
+          "end": 10.762
+        },
+        {
+          "word": "flask,",
+          "start": 10.797,
+          "end": 11.355
+        },
+        {
+          "word": "you'll",
+          "start": 11.529,
+          "end": 11.703
+        },
+        {
+          "word": "feel",
+          "start": 11.738,
+          "end": 11.912
+        },
+        {
+          "word": "it",
+          "start": 11.958,
+          "end": 12.005
+        },
+        {
+          "word": "has",
+          "start": 12.04,
+          "end": 12.121
+        },
+        {
+          "word": "become",
+          "start": 12.167,
+          "end": 12.457
+        },
+        {
+          "word": "hot.",
+          "start": 12.527,
+          "end": 13.05
+        },
+        {
+          "word": "Another",
+          "start": 13.862,
+          "end": 14.222
+        },
+        {
+          "word": "chemical",
+          "start": 14.28,
+          "end": 14.605
+        },
+        {
+          "word": "reaction!",
+          "start": 14.663,
+          "end": 15.464
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene3c_activity3.mp3"
+    },
+    {
+      "id": "scene3d_observations",
+      "type": "text",
+      "durationInFrames": 422,
+      "content": {
+        "heading": "Identifying a Chemical Reaction",
+        "bullets": [
+          "Change in state",
+          "Change in colour",
+          "Evolution of a gas",
+          "Change in temperature"
+        ]
+      },
+      "teacherScript": "From these three activities, we can say that any of the following observations helps us determine whether a chemical reaction has taken place: a change in state, a change in colour, the evolution of a gas, or a change in temperature.",
+      "alignments": [
+        {
+          "word": "From",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "these",
+          "start": 0.244,
+          "end": 0.418
+        },
+        {
+          "word": "three",
+          "start": 0.453,
+          "end": 0.639
+        },
+        {
+          "word": "activities,",
+          "start": 0.697,
+          "end": 1.312
+        },
+        {
+          "word": "we",
+          "start": 1.347,
+          "end": 1.463
+        },
+        {
+          "word": "can",
+          "start": 1.521,
+          "end": 1.649
+        },
+        {
+          "word": "say",
+          "start": 1.718,
+          "end": 1.892
+        },
+        {
+          "word": "that",
+          "start": 1.939,
+          "end": 2.078
+        },
+        {
+          "word": "any",
+          "start": 2.171,
+          "end": 2.426
+        },
+        {
+          "word": "of",
+          "start": 2.473,
+          "end": 2.519
+        },
+        {
+          "word": "the",
+          "start": 2.566,
+          "end": 2.635
+        },
+        {
+          "word": "following",
+          "start": 2.694,
+          "end": 3.065
+        },
+        {
+          "word": "observations",
+          "start": 3.135,
+          "end": 3.82
+        },
+        {
+          "word": "helps",
+          "start": 3.889,
+          "end": 4.145
+        },
+        {
+          "word": "us",
+          "start": 4.191,
+          "end": 4.261
+        },
+        {
+          "word": "determine",
+          "start": 4.307,
+          "end": 4.725
+        },
+        {
+          "word": "whether",
+          "start": 4.748,
+          "end": 4.981
+        },
+        {
+          "word": "a",
+          "start": 5.027,
+          "end": 5.062
+        },
+        {
+          "word": "chemical",
+          "start": 5.108,
+          "end": 5.468
+        },
+        {
+          "word": "reaction",
+          "start": 5.538,
+          "end": 5.921
+        },
+        {
+          "word": "has",
+          "start": 5.968,
+          "end": 6.072
+        },
+        {
+          "word": "taken",
+          "start": 6.118,
+          "end": 6.374
+        },
+        {
+          "word": "place:",
+          "start": 6.42,
+          "end": 6.896
+        },
+        {
+          "word": "a",
+          "start": 7.338,
+          "end": 7.396
+        },
+        {
+          "word": "change",
+          "start": 7.465,
+          "end": 7.732
+        },
+        {
+          "word": "in",
+          "start": 7.767,
+          "end": 7.814
+        },
+        {
+          "word": "state,",
+          "start": 7.872,
+          "end": 8.417
+        },
+        {
+          "word": "a",
+          "start": 8.742,
+          "end": 8.812
+        },
+        {
+          "word": "change",
+          "start": 8.882,
+          "end": 9.137
+        },
+        {
+          "word": "in",
+          "start": 9.172,
+          "end": 9.23
+        },
+        {
+          "word": "colour,",
+          "start": 9.3,
+          "end": 9.834
+        },
+        {
+          "word": "the",
+          "start": 10.159,
+          "end": 10.263
+        },
+        {
+          "word": "evolution",
+          "start": 10.333,
+          "end": 10.809
+        },
+        {
+          "word": "of",
+          "start": 10.844,
+          "end": 10.89
+        },
+        {
+          "word": "a",
+          "start": 10.937,
+          "end": 10.96
+        },
+        {
+          "word": "gas,",
+          "start": 11.018,
+          "end": 11.633
+        },
+        {
+          "word": "or",
+          "start": 11.912,
+          "end": 12.202
+        },
+        {
+          "word": "a",
+          "start": 12.295,
+          "end": 12.341
+        },
+        {
+          "word": "change",
+          "start": 12.411,
+          "end": 12.666
+        },
+        {
+          "word": "in",
+          "start": 12.69,
+          "end": 12.736
+        },
+        {
+          "word": "temperature.",
+          "start": 12.783,
+          "end": 13.56
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene3d_observations.mp3"
+    },
+    {
+      "id": "scene4_word_equation",
+      "type": "text",
+      "durationInFrames": 507,
+      "content": {
+        "heading": "Word Equation",
+        "bullets": [
+          "Magnesium + Oxygen → Magnesium Oxide",
+          "Reactants: Magnesium and Oxygen",
+          "Product: Magnesium Oxide"
+        ]
+      },
+      "teacherScript": "Describing this reaction in a full sentence is too long. So, we write it as a word equation. Magnesium plus Oxygen gives Magnesium Oxide. The substances that react are the reactants, written on the left. The new substance formed is the product, on the right.",
+      "alignments": [
+        {
+          "word": "Describing",
+          "start": 0,
+          "end": 0.511
+        },
+        {
+          "word": "this",
+          "start": 0.546,
+          "end": 0.662
+        },
+        {
+          "word": "reaction",
+          "start": 0.708,
+          "end": 1.126
+        },
+        {
+          "word": "in",
+          "start": 1.184,
+          "end": 1.254
+        },
+        {
+          "word": "a",
+          "start": 1.3,
+          "end": 1.324
+        },
+        {
+          "word": "full",
+          "start": 1.37,
+          "end": 1.556
+        },
+        {
+          "word": "sentence",
+          "start": 1.602,
+          "end": 1.962
+        },
+        {
+          "word": "is",
+          "start": 1.997,
+          "end": 2.078
+        },
+        {
+          "word": "too",
+          "start": 2.136,
+          "end": 2.322
+        },
+        {
+          "word": "long.",
+          "start": 2.392,
+          "end": 2.833
+        },
+        {
+          "word": "So,",
+          "start": 3.216,
+          "end": 3.622
+        },
+        {
+          "word": "we",
+          "start": 3.796,
+          "end": 3.936
+        },
+        {
+          "word": "write",
+          "start": 3.982,
+          "end": 4.203
+        },
+        {
+          "word": "it",
+          "start": 4.238,
+          "end": 4.307
+        },
+        {
+          "word": "as",
+          "start": 4.365,
+          "end": 4.47
+        },
+        {
+          "word": "a",
+          "start": 4.516,
+          "end": 4.551
+        },
+        {
+          "word": "word",
+          "start": 4.598,
+          "end": 4.807
+        },
+        {
+          "word": "equation.",
+          "start": 4.841,
+          "end": 5.433
+        },
+        {
+          "word": "Magnesium",
+          "start": 5.759,
+          "end": 6.362
+        },
+        {
+          "word": "plus",
+          "start": 6.409,
+          "end": 6.653
+        },
+        {
+          "word": "Oxygen",
+          "start": 6.722,
+          "end": 7.303
+        },
+        {
+          "word": "gives",
+          "start": 7.454,
+          "end": 7.732
+        },
+        {
+          "word": "Magnesium",
+          "start": 7.802,
+          "end": 8.417
+        },
+        {
+          "word": "Oxide.",
+          "start": 8.499,
+          "end": 9.125
+        },
+        {
+          "word": "The",
+          "start": 9.369,
+          "end": 9.497
+        },
+        {
+          "word": "substances",
+          "start": 9.555,
+          "end": 10.054
+        },
+        {
+          "word": "that",
+          "start": 10.089,
+          "end": 10.182
+        },
+        {
+          "word": "react",
+          "start": 10.228,
+          "end": 10.565
+        },
+        {
+          "word": "are",
+          "start": 10.623,
+          "end": 10.739
+        },
+        {
+          "word": "the",
+          "start": 10.762,
+          "end": 10.832
+        },
+        {
+          "word": "reactants,",
+          "start": 10.879,
+          "end": 11.691
+        },
+        {
+          "word": "written",
+          "start": 11.773,
+          "end": 12.074
+        },
+        {
+          "word": "on",
+          "start": 12.121,
+          "end": 12.19
+        },
+        {
+          "word": "the",
+          "start": 12.225,
+          "end": 12.295
+        },
+        {
+          "word": "left.",
+          "start": 12.341,
+          "end": 12.759
+        },
+        {
+          "word": "The",
+          "start": 13.27,
+          "end": 13.41
+        },
+        {
+          "word": "new",
+          "start": 13.479,
+          "end": 13.63
+        },
+        {
+          "word": "substance",
+          "start": 13.7,
+          "end": 14.106
+        },
+        {
+          "word": "formed",
+          "start": 14.141,
+          "end": 14.408
+        },
+        {
+          "word": "is",
+          "start": 14.454,
+          "end": 14.536
+        },
+        {
+          "word": "the",
+          "start": 14.571,
+          "end": 14.64
+        },
+        {
+          "word": "product,",
+          "start": 14.687,
+          "end": 15.267
+        },
+        {
+          "word": "on",
+          "start": 15.441,
+          "end": 15.581
+        },
+        {
+          "word": "the",
+          "start": 15.627,
+          "end": 15.697
+        },
+        {
+          "word": "right.",
+          "start": 15.755,
+          "end": 16.393
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene4_word_equation.mp3"
+    },
+    {
+      "id": "scene5_chemical_equation",
+      "type": "equation",
+      "durationInFrames": 439,
+      "content": {
+        "reactants": [
+          {
+            "formula": "Mg",
+            "coefficient": 1
+          },
+          {
+            "formula": "O2",
+            "coefficient": 1
+          }
+        ],
+        "products": [
+          {
+            "formula": "MgO",
+            "coefficient": 1
+          }
+        ],
+        "focusSide": "none"
+      },
+      "teacherScript": "We can make it even shorter and more useful by using chemical formulae. Magnesium is Mg. Oxygen gas is O2. Magnesium oxide is MgO. So the chemical equation is Mg plus O2 gives MgO.",
+      "alignments": [
+        {
+          "word": "We",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "can",
+          "start": 0.186,
+          "end": 0.29
+        },
+        {
+          "word": "make",
+          "start": 0.325,
+          "end": 0.464
+        },
+        {
+          "word": "it",
+          "start": 0.488,
+          "end": 0.534
+        },
+        {
+          "word": "even",
+          "start": 0.58,
+          "end": 0.755
+        },
+        {
+          "word": "shorter",
+          "start": 0.824,
+          "end": 1.138
+        },
+        {
+          "word": "and",
+          "start": 1.196,
+          "end": 1.289
+        },
+        {
+          "word": "more",
+          "start": 1.335,
+          "end": 1.463
+        },
+        {
+          "word": "useful",
+          "start": 1.521,
+          "end": 1.858
+        },
+        {
+          "word": "by",
+          "start": 1.927,
+          "end": 2.043
+        },
+        {
+          "word": "using",
+          "start": 2.113,
+          "end": 2.345
+        },
+        {
+          "word": "chemical",
+          "start": 2.392,
+          "end": 2.752
+        },
+        {
+          "word": "formulae.",
+          "start": 2.81,
+          "end": 3.495
+        },
+        {
+          "word": "Magnesium",
+          "start": 3.878,
+          "end": 4.516
+        },
+        {
+          "word": "is",
+          "start": 4.586,
+          "end": 4.714
+        },
+        {
+          "word": "Mg.",
+          "start": 4.83,
+          "end": 5.132
+        },
+        {
+          "word": "Oxygen",
+          "start": 5.166,
+          "end": 5.631
+        },
+        {
+          "word": "gas",
+          "start": 5.689,
+          "end": 5.979
+        },
+        {
+          "word": "is",
+          "start": 6.049,
+          "end": 6.153
+        },
+        {
+          "word": "O2.",
+          "start": 6.235,
+          "end": 6.85
+        },
+        {
+          "word": "Magnesium",
+          "start": 7.233,
+          "end": 7.814
+        },
+        {
+          "word": "oxide",
+          "start": 7.872,
+          "end": 8.313
+        },
+        {
+          "word": "is",
+          "start": 8.336,
+          "end": 8.44
+        },
+        {
+          "word": "MgO.",
+          "start": 8.557,
+          "end": 9.265
+        },
+        {
+          "word": "So",
+          "start": 9.706,
+          "end": 9.857
+        },
+        {
+          "word": "the",
+          "start": 9.903,
+          "end": 9.973
+        },
+        {
+          "word": "chemical",
+          "start": 10.019,
+          "end": 10.379
+        },
+        {
+          "word": "equation",
+          "start": 10.449,
+          "end": 10.855
+        },
+        {
+          "word": "is",
+          "start": 10.913,
+          "end": 11.041
+        },
+        {
+          "word": "Mg",
+          "start": 11.215,
+          "end": 11.575
+        },
+        {
+          "word": "plus",
+          "start": 11.819,
+          "end": 12.179
+        },
+        {
+          "word": "O2",
+          "start": 12.295,
+          "end": 12.771
+        },
+        {
+          "word": "gives",
+          "start": 12.945,
+          "end": 13.189
+        },
+        {
+          "word": "MgO.",
+          "start": 13.282,
+          "end": 14.118
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene5_chemical_equation.mp3"
+    },
+    {
+      "id": "scene6_skeletal",
+      "type": "kinetic_typography",
+      "durationInFrames": 282,
+      "content": {
+        "text": "But wait! Is the number of atoms the same on both sides?"
+      },
+      "teacherScript": "But wait! If you count the oxygen atoms, there are two on the left, but only one on the right. This is called a skeletal or unbalanced chemical equation.",
+      "alignments": [
+        {
+          "word": "But",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "wait!",
+          "start": 0.221,
+          "end": 0.557
+        },
+        {
+          "word": "If",
+          "start": 1.161,
+          "end": 1.277
+        },
+        {
+          "word": "you",
+          "start": 1.324,
+          "end": 1.393
+        },
+        {
+          "word": "count",
+          "start": 1.474,
+          "end": 1.672
+        },
+        {
+          "word": "the",
+          "start": 1.707,
+          "end": 1.776
+        },
+        {
+          "word": "oxygen",
+          "start": 1.846,
+          "end": 2.229
+        },
+        {
+          "word": "atoms,",
+          "start": 2.287,
+          "end": 2.577
+        },
+        {
+          "word": "there",
+          "start": 2.601,
+          "end": 2.752
+        },
+        {
+          "word": "are",
+          "start": 2.786,
+          "end": 2.902
+        },
+        {
+          "word": "two",
+          "start": 2.949,
+          "end": 3.204
+        },
+        {
+          "word": "on",
+          "start": 3.286,
+          "end": 3.367
+        },
+        {
+          "word": "the",
+          "start": 3.402,
+          "end": 3.471
+        },
+        {
+          "word": "left,",
+          "start": 3.518,
+          "end": 3.773
+        },
+        {
+          "word": "but",
+          "start": 3.796,
+          "end": 3.947
+        },
+        {
+          "word": "only",
+          "start": 4.017,
+          "end": 4.261
+        },
+        {
+          "word": "one",
+          "start": 4.342,
+          "end": 4.481
+        },
+        {
+          "word": "on",
+          "start": 4.516,
+          "end": 4.574
+        },
+        {
+          "word": "the",
+          "start": 4.609,
+          "end": 4.679
+        },
+        {
+          "word": "right.",
+          "start": 4.725,
+          "end": 5.143
+        },
+        {
+          "word": "This",
+          "start": 5.468,
+          "end": 5.654
+        },
+        {
+          "word": "is",
+          "start": 5.7,
+          "end": 5.77
+        },
+        {
+          "word": "called",
+          "start": 5.828,
+          "end": 6.06
+        },
+        {
+          "word": "a",
+          "start": 6.095,
+          "end": 6.118
+        },
+        {
+          "word": "skeletal",
+          "start": 6.177,
+          "end": 6.711
+        },
+        {
+          "word": "or",
+          "start": 6.827,
+          "end": 6.966
+        },
+        {
+          "word": "unbalanced",
+          "start": 7.059,
+          "end": 7.605
+        },
+        {
+          "word": "chemical",
+          "start": 7.639,
+          "end": 8.011
+        },
+        {
+          "word": "equation.",
+          "start": 8.069,
+          "end": 8.87
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene6_skeletal.mp3"
+    },
+    {
+      "id": "scene7_conservation_mass",
+      "type": "text",
+      "durationInFrames": 528,
+      "content": {
+        "heading": "Law of Conservation of Mass",
+        "bullets": [
+          "Mass can neither be created nor destroyed in a chemical reaction.",
+          "Total mass of reactants = Total mass of products.",
+          "Number of atoms of each element must be equal on both sides."
+        ]
+      },
+      "teacherScript": "Why is this a problem? Because of the Law of Conservation of Mass. Mass can neither be created nor destroyed. The total mass of the reactants must equal the total mass of the products. So, the number of atoms of each element must remain the same!",
+      "alignments": [
+        {
+          "word": "Why",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "word": "is",
+          "start": 0.313,
+          "end": 0.418
+        },
+        {
+          "word": "this",
+          "start": 0.453,
+          "end": 0.569
+        },
+        {
+          "word": "a",
+          "start": 0.615,
+          "end": 0.65
+        },
+        {
+          "word": "problem?",
+          "start": 0.697,
+          "end": 1.265
+        },
+        {
+          "word": "Because",
+          "start": 1.962,
+          "end": 2.31
+        },
+        {
+          "word": "of",
+          "start": 2.334,
+          "end": 2.38
+        },
+        {
+          "word": "the",
+          "start": 2.426,
+          "end": 2.496
+        },
+        {
+          "word": "Law",
+          "start": 2.554,
+          "end": 2.763
+        },
+        {
+          "word": "of",
+          "start": 2.821,
+          "end": 2.879
+        },
+        {
+          "word": "Conservation",
+          "start": 2.949,
+          "end": 3.564
+        },
+        {
+          "word": "of",
+          "start": 3.599,
+          "end": 3.646
+        },
+        {
+          "word": "Mass.",
+          "start": 3.715,
+          "end": 4.238
+        },
+        {
+          "word": "Mass",
+          "start": 5.05,
+          "end": 5.352
+        },
+        {
+          "word": "can",
+          "start": 5.41,
+          "end": 5.538
+        },
+        {
+          "word": "neither",
+          "start": 5.596,
+          "end": 5.863
+        },
+        {
+          "word": "be",
+          "start": 5.933,
+          "end": 6.014
+        },
+        {
+          "word": "created",
+          "start": 6.072,
+          "end": 6.525
+        },
+        {
+          "word": "nor",
+          "start": 6.734,
+          "end": 6.92
+        },
+        {
+          "word": "destroyed.",
+          "start": 6.989,
+          "end": 7.616
+        },
+        {
+          "word": "The",
+          "start": 8.057,
+          "end": 8.197
+        },
+        {
+          "word": "total",
+          "start": 8.278,
+          "end": 8.615
+        },
+        {
+          "word": "mass",
+          "start": 8.673,
+          "end": 8.916
+        },
+        {
+          "word": "of",
+          "start": 8.951,
+          "end": 8.998
+        },
+        {
+          "word": "the",
+          "start": 9.033,
+          "end": 9.102
+        },
+        {
+          "word": "reactants",
+          "start": 9.149,
+          "end": 9.648
+        },
+        {
+          "word": "must",
+          "start": 9.764,
+          "end": 10.019
+        },
+        {
+          "word": "equal",
+          "start": 10.136,
+          "end": 10.437
+        },
+        {
+          "word": "the",
+          "start": 10.495,
+          "end": 10.565
+        },
+        {
+          "word": "total",
+          "start": 10.646,
+          "end": 10.995
+        },
+        {
+          "word": "mass",
+          "start": 11.053,
+          "end": 11.273
+        },
+        {
+          "word": "of",
+          "start": 11.308,
+          "end": 11.355
+        },
+        {
+          "word": "the",
+          "start": 11.389,
+          "end": 11.459
+        },
+        {
+          "word": "products.",
+          "start": 11.494,
+          "end": 12.144
+        },
+        {
+          "word": "So,",
+          "start": 12.655,
+          "end": 13.131
+        },
+        {
+          "word": "the",
+          "start": 13.514,
+          "end": 13.63
+        },
+        {
+          "word": "number",
+          "start": 13.746,
+          "end": 14.06
+        },
+        {
+          "word": "of",
+          "start": 14.118,
+          "end": 14.176
+        },
+        {
+          "word": "atoms",
+          "start": 14.257,
+          "end": 14.559
+        },
+        {
+          "word": "of",
+          "start": 14.594,
+          "end": 14.652
+        },
+        {
+          "word": "each",
+          "start": 14.745,
+          "end": 14.965
+        },
+        {
+          "word": "element",
+          "start": 15.023,
+          "end": 15.43
+        },
+        {
+          "word": "must",
+          "start": 15.604,
+          "end": 15.882
+        },
+        {
+          "word": "remain",
+          "start": 15.964,
+          "end": 16.266
+        },
+        {
+          "word": "the",
+          "start": 16.324,
+          "end": 16.393
+        },
+        {
+          "word": "same!",
+          "start": 16.44,
+          "end": 17.09
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene7_conservation_mass.mp3"
+    },
+    {
+      "id": "scene8_hit_and_trial_intro",
+      "type": "kinetic_typography",
+      "durationInFrames": 245,
+      "content": {
+        "text": "Let's learn how to balance equations using the Hit and Trial method."
+      },
+      "teacherScript": "To fix our equation, we need to balance it. We use a step-by-step process called the Hit and Trial method. Let's see how it works!",
+      "alignments": [
+        {
+          "word": "To",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "fix",
+          "start": 0.197,
+          "end": 0.348
+        },
+        {
+          "word": "our",
+          "start": 0.395,
+          "end": 0.476
+        },
+        {
+          "word": "equation,",
+          "start": 0.522,
+          "end": 0.998
+        },
+        {
+          "word": "we",
+          "start": 1.057,
+          "end": 1.173
+        },
+        {
+          "word": "need",
+          "start": 1.219,
+          "end": 1.358
+        },
+        {
+          "word": "to",
+          "start": 1.393,
+          "end": 1.451
+        },
+        {
+          "word": "balance",
+          "start": 1.521,
+          "end": 1.916
+        },
+        {
+          "word": "it.",
+          "start": 1.95,
+          "end": 2.171
+        },
+        {
+          "word": "We",
+          "start": 2.554,
+          "end": 2.682
+        },
+        {
+          "word": "use",
+          "start": 2.752,
+          "end": 2.891
+        },
+        {
+          "word": "a",
+          "start": 2.926,
+          "end": 2.949
+        },
+        {
+          "word": "step-by-step",
+          "start": 2.995,
+          "end": 3.576
+        },
+        {
+          "word": "process",
+          "start": 3.634,
+          "end": 4.04
+        },
+        {
+          "word": "called",
+          "start": 4.098,
+          "end": 4.377
+        },
+        {
+          "word": "the",
+          "start": 4.447,
+          "end": 4.551
+        },
+        {
+          "word": "Hit",
+          "start": 4.621,
+          "end": 4.853
+        },
+        {
+          "word": "and",
+          "start": 4.923,
+          "end": 5.05
+        },
+        {
+          "word": "Trial",
+          "start": 5.108,
+          "end": 5.445
+        },
+        {
+          "word": "method.",
+          "start": 5.515,
+          "end": 5.968
+        },
+        {
+          "word": "Let's",
+          "start": 6.293,
+          "end": 6.502
+        },
+        {
+          "word": "see",
+          "start": 6.536,
+          "end": 6.653
+        },
+        {
+          "word": "how",
+          "start": 6.687,
+          "end": 6.78
+        },
+        {
+          "word": "it",
+          "start": 6.838,
+          "end": 6.896
+        },
+        {
+          "word": "works!",
+          "start": 6.943,
+          "end": 7.663
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene8_hit_and_trial_intro.mp3"
+    },
+    {
+      "id": "scene9_balanced_equation",
+      "type": "equation",
+      "durationInFrames": 420,
+      "content": {
+        "reactants": [
+          {
+            "formula": "Mg",
+            "coefficient": 2,
+            "state": "s"
+          },
+          {
+            "formula": "O2",
+            "coefficient": 1,
+            "state": "g"
+          }
+        ],
+        "products": [
+          {
+            "formula": "MgO",
+            "coefficient": 2,
+            "state": "s"
+          }
+        ],
+        "focusSide": "none"
+      },
+      "teacherScript": "By placing a coefficient of 2 in front of Magnesium on the left, and a 2 in front of Magnesium Oxide on the right, we now have exactly two Magnesium atoms and two Oxygen atoms on both sides. The equation is now balanced!",
+      "alignments": [
+        {
+          "word": "By",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "placing",
+          "start": 0.221,
+          "end": 0.522
+        },
+        {
+          "word": "a",
+          "start": 0.569,
+          "end": 0.592
+        },
+        {
+          "word": "coefficient",
+          "start": 0.65,
+          "end": 1.184
+        },
+        {
+          "word": "of",
+          "start": 1.219,
+          "end": 1.277
+        },
+        {
+          "word": "2",
+          "start": 1.393,
+          "end": 1.637
+        },
+        {
+          "word": "in",
+          "start": 1.707,
+          "end": 1.765
+        },
+        {
+          "word": "front",
+          "start": 1.811,
+          "end": 1.974
+        },
+        {
+          "word": "of",
+          "start": 2.009,
+          "end": 2.055
+        },
+        {
+          "word": "Magnesium",
+          "start": 2.113,
+          "end": 2.67
+        },
+        {
+          "word": "on",
+          "start": 2.717,
+          "end": 2.775
+        },
+        {
+          "word": "the",
+          "start": 2.81,
+          "end": 2.879
+        },
+        {
+          "word": "left,",
+          "start": 2.914,
+          "end": 3.344
+        },
+        {
+          "word": "and",
+          "start": 3.587,
+          "end": 3.727
+        },
+        {
+          "word": "a",
+          "start": 3.785,
+          "end": 3.808
+        },
+        {
+          "word": "2",
+          "start": 3.889,
+          "end": 4.098
+        },
+        {
+          "word": "in",
+          "start": 4.156,
+          "end": 4.214
+        },
+        {
+          "word": "front",
+          "start": 4.272,
+          "end": 4.447
+        },
+        {
+          "word": "of",
+          "start": 4.481,
+          "end": 4.528
+        },
+        {
+          "word": "Magnesium",
+          "start": 4.586,
+          "end": 5.085
+        },
+        {
+          "word": "Oxide",
+          "start": 5.166,
+          "end": 5.55
+        },
+        {
+          "word": "on",
+          "start": 5.573,
+          "end": 5.619
+        },
+        {
+          "word": "the",
+          "start": 5.654,
+          "end": 5.724
+        },
+        {
+          "word": "right,",
+          "start": 5.77,
+          "end": 6.13
+        },
+        {
+          "word": "we",
+          "start": 6.304,
+          "end": 6.409
+        },
+        {
+          "word": "now",
+          "start": 6.478,
+          "end": 6.594
+        },
+        {
+          "word": "have",
+          "start": 6.653,
+          "end": 6.78
+        },
+        {
+          "word": "exactly",
+          "start": 6.815,
+          "end": 7.21
+        },
+        {
+          "word": "two",
+          "start": 7.279,
+          "end": 7.512
+        },
+        {
+          "word": "Magnesium",
+          "start": 7.593,
+          "end": 8.15
+        },
+        {
+          "word": "atoms",
+          "start": 8.208,
+          "end": 8.51
+        },
+        {
+          "word": "and",
+          "start": 8.557,
+          "end": 8.673
+        },
+        {
+          "word": "two",
+          "start": 8.719,
+          "end": 8.928
+        },
+        {
+          "word": "Oxygen",
+          "start": 9.009,
+          "end": 9.439
+        },
+        {
+          "word": "atoms",
+          "start": 9.497,
+          "end": 9.764
+        },
+        {
+          "word": "on",
+          "start": 9.81,
+          "end": 9.88
+        },
+        {
+          "word": "both",
+          "start": 9.927,
+          "end": 10.124
+        },
+        {
+          "word": "sides.",
+          "start": 10.182,
+          "end": 10.739
+        },
+        {
+          "word": "The",
+          "start": 11.064,
+          "end": 11.192
+        },
+        {
+          "word": "equation",
+          "start": 11.25,
+          "end": 11.761
+        },
+        {
+          "word": "is",
+          "start": 12.086,
+          "end": 12.249
+        },
+        {
+          "word": "now",
+          "start": 12.33,
+          "end": 12.504
+        },
+        {
+          "word": "balanced!",
+          "start": 12.62,
+          "end": 13.468
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene9_balanced_equation.mp3"
+    },
+    {
+      "id": "scene10_complex_balancing",
+      "type": "text",
+      "durationInFrames": 890,
+      "content": {
+        "heading": "Balancing Complex Equations",
+        "bullets": [
+          "Equation: Fe + H2O → Fe3O4 + H2",
+          "Step 1: Balance atoms with the most number first (Oxygen).",
+          "Step 2: Balance Hydrogen next.",
+          "Step 3: Finally, balance Iron (Fe).",
+          "Balanced: 3Fe + 4H2O → Fe3O4 + 4H2"
+        ]
+      },
+      "teacherScript": "Let's try a harder one using the Hit and Trial method: Iron reacting with steam to form Iron Oxide and Hydrogen. First, we balance the element with the maximum number of atoms, which is Oxygen. We put a 4 in front of water. This gives us 8 Hydrogens, so we put a 4 in front of Hydrogen gas on the right. Finally, we balance Iron by putting a 3 on the left. The balanced equation is 3 Fe plus 4 H2O gives Fe3O4 plus 4 H2.",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "try",
+          "start": 0.279,
+          "end": 0.453
+        },
+        {
+          "word": "a",
+          "start": 0.522,
+          "end": 0.557
+        },
+        {
+          "word": "harder",
+          "start": 0.65,
+          "end": 0.929
+        },
+        {
+          "word": "one",
+          "start": 0.998,
+          "end": 1.173
+        },
+        {
+          "word": "using",
+          "start": 1.231,
+          "end": 1.474
+        },
+        {
+          "word": "the",
+          "start": 1.521,
+          "end": 1.591
+        },
+        {
+          "word": "Hit",
+          "start": 1.672,
+          "end": 1.892
+        },
+        {
+          "word": "and",
+          "start": 1.974,
+          "end": 2.09
+        },
+        {
+          "word": "Trial",
+          "start": 2.148,
+          "end": 2.508
+        },
+        {
+          "word": "method:",
+          "start": 2.577,
+          "end": 3.065
+        },
+        {
+          "word": "Iron",
+          "start": 3.448,
+          "end": 3.773
+        },
+        {
+          "word": "reacting",
+          "start": 3.831,
+          "end": 4.261
+        },
+        {
+          "word": "with",
+          "start": 4.296,
+          "end": 4.412
+        },
+        {
+          "word": "steam",
+          "start": 4.47,
+          "end": 4.83
+        },
+        {
+          "word": "to",
+          "start": 4.899,
+          "end": 4.969
+        },
+        {
+          "word": "form",
+          "start": 5.062,
+          "end": 5.364
+        },
+        {
+          "word": "Iron",
+          "start": 5.48,
+          "end": 5.817
+        },
+        {
+          "word": "Oxide",
+          "start": 5.898,
+          "end": 6.42
+        },
+        {
+          "word": "and",
+          "start": 6.478,
+          "end": 6.606
+        },
+        {
+          "word": "Hydrogen.",
+          "start": 6.699,
+          "end": 7.384
+        },
+        {
+          "word": "First,",
+          "start": 7.988,
+          "end": 8.324
+        },
+        {
+          "word": "we",
+          "start": 8.359,
+          "end": 8.464
+        },
+        {
+          "word": "balance",
+          "start": 8.522,
+          "end": 8.847
+        },
+        {
+          "word": "the",
+          "start": 8.87,
+          "end": 8.94
+        },
+        {
+          "word": "element",
+          "start": 8.998,
+          "end": 9.276
+        },
+        {
+          "word": "with",
+          "start": 9.3,
+          "end": 9.416
+        },
+        {
+          "word": "the",
+          "start": 9.451,
+          "end": 9.52
+        },
+        {
+          "word": "maximum",
+          "start": 9.578,
+          "end": 10.043
+        },
+        {
+          "word": "number",
+          "start": 10.112,
+          "end": 10.356
+        },
+        {
+          "word": "of",
+          "start": 10.414,
+          "end": 10.472
+        },
+        {
+          "word": "atoms,",
+          "start": 10.542,
+          "end": 10.867
+        },
+        {
+          "word": "which",
+          "start": 10.89,
+          "end": 11.041
+        },
+        {
+          "word": "is",
+          "start": 11.076,
+          "end": 11.146
+        },
+        {
+          "word": "Oxygen.",
+          "start": 11.227,
+          "end": 11.831
+        },
+        {
+          "word": "We",
+          "start": 12.214,
+          "end": 12.341
+        },
+        {
+          "word": "put",
+          "start": 12.388,
+          "end": 12.516
+        },
+        {
+          "word": "a",
+          "start": 12.55,
+          "end": 12.574
+        },
+        {
+          "word": "4",
+          "start": 12.725,
+          "end": 13.05
+        },
+        {
+          "word": "in",
+          "start": 13.108,
+          "end": 13.166
+        },
+        {
+          "word": "front",
+          "start": 13.224,
+          "end": 13.398
+        },
+        {
+          "word": "of",
+          "start": 13.444,
+          "end": 13.502
+        },
+        {
+          "word": "water.",
+          "start": 13.572,
+          "end": 14.06
+        },
+        {
+          "word": "This",
+          "start": 14.303,
+          "end": 14.501
+        },
+        {
+          "word": "gives",
+          "start": 14.559,
+          "end": 14.733
+        },
+        {
+          "word": "us",
+          "start": 14.779,
+          "end": 14.872
+        },
+        {
+          "word": "8",
+          "start": 15.046,
+          "end": 15.255
+        },
+        {
+          "word": "Hydrogens,",
+          "start": 15.325,
+          "end": 15.975
+        },
+        {
+          "word": "so",
+          "start": 16.01,
+          "end": 16.126
+        },
+        {
+          "word": "we",
+          "start": 16.184,
+          "end": 16.254
+        },
+        {
+          "word": "put",
+          "start": 16.3,
+          "end": 16.428
+        },
+        {
+          "word": "a",
+          "start": 16.463,
+          "end": 16.486
+        },
+        {
+          "word": "4",
+          "start": 16.637,
+          "end": 16.962
+        },
+        {
+          "word": "in",
+          "start": 17.078,
+          "end": 17.16
+        },
+        {
+          "word": "front",
+          "start": 17.218,
+          "end": 17.368
+        },
+        {
+          "word": "of",
+          "start": 17.392,
+          "end": 17.438
+        },
+        {
+          "word": "Hydrogen",
+          "start": 17.519,
+          "end": 17.926
+        },
+        {
+          "word": "gas",
+          "start": 17.972,
+          "end": 18.193
+        },
+        {
+          "word": "on",
+          "start": 18.262,
+          "end": 18.344
+        },
+        {
+          "word": "the",
+          "start": 18.379,
+          "end": 18.448
+        },
+        {
+          "word": "right.",
+          "start": 18.495,
+          "end": 18.866
+        },
+        {
+          "word": "Finally,",
+          "start": 19.307,
+          "end": 19.714
+        },
+        {
+          "word": "we",
+          "start": 19.737,
+          "end": 19.83
+        },
+        {
+          "word": "balance",
+          "start": 19.888,
+          "end": 20.236
+        },
+        {
+          "word": "Iron",
+          "start": 20.294,
+          "end": 20.608
+        },
+        {
+          "word": "by",
+          "start": 20.677,
+          "end": 20.793
+        },
+        {
+          "word": "putting",
+          "start": 20.851,
+          "end": 21.107
+        },
+        {
+          "word": "a",
+          "start": 21.142,
+          "end": 21.177
+        },
+        {
+          "word": "3",
+          "start": 21.327,
+          "end": 21.571
+        },
+        {
+          "word": "on",
+          "start": 21.641,
+          "end": 21.711
+        },
+        {
+          "word": "the",
+          "start": 21.745,
+          "end": 21.815
+        },
+        {
+          "word": "left.",
+          "start": 21.862,
+          "end": 22.303
+        },
+        {
+          "word": "The",
+          "start": 22.686,
+          "end": 22.79
+        },
+        {
+          "word": "balanced",
+          "start": 22.848,
+          "end": 23.185
+        },
+        {
+          "word": "equation",
+          "start": 23.208,
+          "end": 23.591
+        },
+        {
+          "word": "is",
+          "start": 23.649,
+          "end": 23.766
+        },
+        {
+          "word": "3",
+          "start": 23.917,
+          "end": 24.16
+        },
+        {
+          "word": "Fe",
+          "start": 24.369,
+          "end": 24.648
+        },
+        {
+          "word": "plus",
+          "start": 24.718,
+          "end": 25.019
+        },
+        {
+          "word": "4",
+          "start": 25.136,
+          "end": 25.414
+        },
+        {
+          "word": "H2O",
+          "start": 25.53,
+          "end": 26.122
+        },
+        {
+          "word": "gives",
+          "start": 26.215,
+          "end": 26.436
+        },
+        {
+          "word": "Fe3O4",
+          "start": 26.587,
+          "end": 27.481
+        },
+        {
+          "word": "plus",
+          "start": 27.574,
+          "end": 27.852
+        },
+        {
+          "word": "4",
+          "start": 27.968,
+          "end": 28.212
+        },
+        {
+          "word": "H2.",
+          "start": 28.305,
+          "end": 29.164
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene10_complex_balancing.mp3"
+    },
+    {
+      "id": "scene11_state_symbols",
+      "type": "text",
+      "durationInFrames": 640,
+      "content": {
+        "heading": "Physical States of Matter",
+        "bullets": [
+          "(s) = Solid (e.g., Ice, Iron)",
+          "(l) = Liquid (e.g., Water)",
+          "(g) = Gas (e.g., Oxygen, Steam)",
+          "(aq) = Aqueous (dissolved in water)"
+        ]
+      },
+      "teacherScript": "You might have noticed the small letters s, l, g, and a q next to the chemical formulas. These indicate the physical state of the substance. S means solid, L means liquid, and G means gas. A Q stands for aqueous, which means the substance is dissolved in water.",
+      "alignments": [
+        {
+          "word": "You",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "might",
+          "start": 0.209,
+          "end": 0.337
+        },
+        {
+          "word": "have",
+          "start": 0.36,
+          "end": 0.453
+        },
+        {
+          "word": "noticed",
+          "start": 0.488,
+          "end": 0.731
+        },
+        {
+          "word": "the",
+          "start": 0.755,
+          "end": 0.824
+        },
+        {
+          "word": "small",
+          "start": 0.859,
+          "end": 1.115
+        },
+        {
+          "word": "letters",
+          "start": 1.161,
+          "end": 1.44
+        },
+        {
+          "word": "s,",
+          "start": 1.498,
+          "end": 1.823
+        },
+        {
+          "word": "l,",
+          "start": 1.939,
+          "end": 2.264
+        },
+        {
+          "word": "g,",
+          "start": 2.415,
+          "end": 2.891
+        },
+        {
+          "word": "and",
+          "start": 3.135,
+          "end": 3.286
+        },
+        {
+          "word": "a",
+          "start": 3.402,
+          "end": 3.518
+        },
+        {
+          "word": "q",
+          "start": 3.634,
+          "end": 4.075
+        },
+        {
+          "word": "next",
+          "start": 4.4,
+          "end": 4.644
+        },
+        {
+          "word": "to",
+          "start": 4.667,
+          "end": 4.714
+        },
+        {
+          "word": "the",
+          "start": 4.76,
+          "end": 4.83
+        },
+        {
+          "word": "chemical",
+          "start": 4.876,
+          "end": 5.236
+        },
+        {
+          "word": "formulas.",
+          "start": 5.294,
+          "end": 6.014
+        },
+        {
+          "word": "These",
+          "start": 6.711,
+          "end": 6.966
+        },
+        {
+          "word": "indicate",
+          "start": 7.012,
+          "end": 7.465
+        },
+        {
+          "word": "the",
+          "start": 7.5,
+          "end": 7.581
+        },
+        {
+          "word": "physical",
+          "start": 7.651,
+          "end": 8.046
+        },
+        {
+          "word": "state",
+          "start": 8.092,
+          "end": 8.29
+        },
+        {
+          "word": "of",
+          "start": 8.313,
+          "end": 8.359
+        },
+        {
+          "word": "the",
+          "start": 8.394,
+          "end": 8.464
+        },
+        {
+          "word": "substance.",
+          "start": 8.499,
+          "end": 9.218
+        },
+        {
+          "word": "S",
+          "start": 9.659,
+          "end": 9.834
+        },
+        {
+          "word": "means",
+          "start": 9.915,
+          "end": 10.182
+        },
+        {
+          "word": "solid,",
+          "start": 10.333,
+          "end": 11.029
+        },
+        {
+          "word": "L",
+          "start": 11.355,
+          "end": 11.529
+        },
+        {
+          "word": "means",
+          "start": 11.773,
+          "end": 12.086
+        },
+        {
+          "word": "liquid,",
+          "start": 12.237,
+          "end": 12.875
+        },
+        {
+          "word": "and",
+          "start": 13.201,
+          "end": 13.351
+        },
+        {
+          "word": "G",
+          "start": 13.444,
+          "end": 13.653
+        },
+        {
+          "word": "means",
+          "start": 14.095,
+          "end": 14.35
+        },
+        {
+          "word": "gas.",
+          "start": 14.466,
+          "end": 15.174
+        },
+        {
+          "word": "A",
+          "start": 16.126,
+          "end": 16.208
+        },
+        {
+          "word": "Q",
+          "start": 16.324,
+          "end": 16.44
+        },
+        {
+          "word": "stands",
+          "start": 16.614,
+          "end": 16.904
+        },
+        {
+          "word": "for",
+          "start": 16.951,
+          "end": 17.101
+        },
+        {
+          "word": "aqueous,",
+          "start": 17.252,
+          "end": 18.112
+        },
+        {
+          "word": "which",
+          "start": 18.262,
+          "end": 18.46
+        },
+        {
+          "word": "means",
+          "start": 18.518,
+          "end": 18.762
+        },
+        {
+          "word": "the",
+          "start": 18.797,
+          "end": 18.866
+        },
+        {
+          "word": "substance",
+          "start": 18.913,
+          "end": 19.377
+        },
+        {
+          "word": "is",
+          "start": 19.4,
+          "end": 19.482
+        },
+        {
+          "word": "dissolved",
+          "start": 19.528,
+          "end": 19.969
+        },
+        {
+          "word": "in",
+          "start": 20.004,
+          "end": 20.062
+        },
+        {
+          "word": "water.",
+          "start": 20.12,
+          "end": 20.805
+        }
+      ],
+      "audio": "/audio/science/ch1_part1_scene11_state_symbols.mp3"
+    }
+  ]
+}

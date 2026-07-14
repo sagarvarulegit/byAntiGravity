@@ -1,0 +1,2162 @@
+{
+  "id": "ch1_part3",
+  "title": "Redox Reactions and Everyday Effects",
+  "fps": 30,
+  "durationInFrames": 3230,
+  "scenes": [
+    {
+      "id": "scene1_redox_intro",
+      "type": "kinetic_typography",
+      "durationInFrames": 145,
+      "content": {
+        "text": "What about Oxygen and Hydrogen? Let's talk about Oxidation and Reduction."
+      },
+      "teacherScript": "But what happens to Oxygen and Hydrogen during reactions? Let's talk about Oxidation and Reduction.",
+      "alignments": [
+        {
+          "word": "But",
+          "start": 0,
+          "end": 0.1524321882352941
+        },
+        {
+          "word": "what",
+          "start": 0.17783755294117648,
+          "end": 0.3810804705882353
+        },
+        {
+          "word": "happens",
+          "start": 0.40648583529411764,
+          "end": 0.7621609411764706
+        },
+        {
+          "word": "to",
+          "start": 0.787566305882353,
+          "end": 0.8891877647058823
+        },
+        {
+          "word": "Oxygen",
+          "start": 0.9145931294117647,
+          "end": 1.219457505882353
+        },
+        {
+          "word": "and",
+          "start": 1.2448628705882352,
+          "end": 1.3972950588235293
+        },
+        {
+          "word": "Hydrogen",
+          "start": 1.4227004235294116,
+          "end": 1.8291862588235293
+        },
+        {
+          "word": "during",
+          "start": 1.8545916235294115,
+          "end": 2.1594559999999996
+        },
+        {
+          "word": "reactions?",
+          "start": 2.184861364705882,
+          "end": 2.692968658823529
+        },
+        {
+          "word": "Let's",
+          "start": 2.7183740235294116,
+          "end": 2.9724276705882353
+        },
+        {
+          "word": "talk",
+          "start": 2.9978330352941174,
+          "end": 3.201075952941176
+        },
+        {
+          "word": "about",
+          "start": 3.2264813176470586,
+          "end": 3.480534964705882
+        },
+        {
+          "word": "Oxidation",
+          "start": 3.5059403294117644,
+          "end": 3.963236894117647
+        },
+        {
+          "word": "and",
+          "start": 3.988642258823529,
+          "end": 4.1410744470588225
+        },
+        {
+          "word": "Reduction.",
+          "start": 4.166479811764705,
+          "end": 4.6745871058823525
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene1_redox_intro.mp3"
+    },
+    {
+      "id": "scene1b_activity_1_11",
+      "type": "text",
+      "durationInFrames": 583,
+      "content": {
+        "heading": "Activity 1.11: Heating Copper",
+        "imageUrl": "images/activity_1_11.png",
+        "bullets": [
+          "Heat about 1g of copper powder in a china dish.",
+          "The surface becomes coated with a black substance.",
+          "This black substance is Copper(II) oxide."
+        ]
+      },
+      "teacherScript": "Let's look at an experiment. If you heat a china dish containing about 1 gram of copper powder, you'll observe that the surface of the copper powder becomes coated with a black substance. Why has this black substance formed? This is because oxygen from the air is added to the copper, forming copper(II) oxide.",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "word": "look",
+          "start": 0.255,
+          "end": 0.372
+        },
+        {
+          "word": "at",
+          "start": 0.406,
+          "end": 0.453
+        },
+        {
+          "word": "an",
+          "start": 0.488,
+          "end": 0.546
+        },
+        {
+          "word": "experiment.",
+          "start": 0.592,
+          "end": 1.324
+        },
+        {
+          "word": "If",
+          "start": 2.136,
+          "end": 2.252
+        },
+        {
+          "word": "you",
+          "start": 2.287,
+          "end": 2.368
+        },
+        {
+          "word": "heat",
+          "start": 2.485,
+          "end": 2.694
+        },
+        {
+          "word": "a",
+          "start": 2.752,
+          "end": 2.786
+        },
+        {
+          "word": "china",
+          "start": 2.856,
+          "end": 3.158
+        },
+        {
+          "word": "dish",
+          "start": 3.216,
+          "end": 3.425
+        },
+        {
+          "word": "containing",
+          "start": 3.471,
+          "end": 3.889
+        },
+        {
+          "word": "about",
+          "start": 3.936,
+          "end": 4.145
+        },
+        {
+          "word": "1",
+          "start": 4.261,
+          "end": 4.505
+        },
+        {
+          "word": "gram",
+          "start": 4.586,
+          "end": 4.818
+        },
+        {
+          "word": "of",
+          "start": 4.865,
+          "end": 4.911
+        },
+        {
+          "word": "copper",
+          "start": 4.969,
+          "end": 5.259
+        },
+        {
+          "word": "powder,",
+          "start": 5.317,
+          "end": 5.735
+        },
+        {
+          "word": "you'll",
+          "start": 5.944,
+          "end": 6.13
+        },
+        {
+          "word": "observe",
+          "start": 6.165,
+          "end": 6.478
+        },
+        {
+          "word": "that",
+          "start": 6.502,
+          "end": 6.606
+        },
+        {
+          "word": "the",
+          "start": 6.641,
+          "end": 6.711
+        },
+        {
+          "word": "surface",
+          "start": 6.757,
+          "end": 7.117
+        },
+        {
+          "word": "of",
+          "start": 7.14,
+          "end": 7.187
+        },
+        {
+          "word": "the",
+          "start": 7.233,
+          "end": 7.303
+        },
+        {
+          "word": "copper",
+          "start": 7.338,
+          "end": 7.616
+        },
+        {
+          "word": "powder",
+          "start": 7.663,
+          "end": 7.895
+        },
+        {
+          "word": "becomes",
+          "start": 7.953,
+          "end": 8.266
+        },
+        {
+          "word": "coated",
+          "start": 8.336,
+          "end": 8.684
+        },
+        {
+          "word": "with",
+          "start": 8.719,
+          "end": 8.847
+        },
+        {
+          "word": "a",
+          "start": 8.882,
+          "end": 8.905
+        },
+        {
+          "word": "black",
+          "start": 8.951,
+          "end": 9.195
+        },
+        {
+          "word": "substance.",
+          "start": 9.253,
+          "end": 9.973
+        },
+        {
+          "word": "Why",
+          "start": 10.577,
+          "end": 10.762
+        },
+        {
+          "word": "has",
+          "start": 10.832,
+          "end": 10.948
+        },
+        {
+          "word": "this",
+          "start": 10.995,
+          "end": 11.111
+        },
+        {
+          "word": "black",
+          "start": 11.157,
+          "end": 11.401
+        },
+        {
+          "word": "substance",
+          "start": 11.459,
+          "end": 11.889
+        },
+        {
+          "word": "formed?",
+          "start": 11.923,
+          "end": 12.399
+        },
+        {
+          "word": "This",
+          "start": 13.212,
+          "end": 13.386
+        },
+        {
+          "word": "is",
+          "start": 13.432,
+          "end": 13.502
+        },
+        {
+          "word": "because",
+          "start": 13.548,
+          "end": 13.85
+        },
+        {
+          "word": "oxygen",
+          "start": 13.908,
+          "end": 14.384
+        },
+        {
+          "word": "from",
+          "start": 14.431,
+          "end": 14.558
+        },
+        {
+          "word": "the",
+          "start": 14.593,
+          "end": 14.663
+        },
+        {
+          "word": "air",
+          "start": 14.733,
+          "end": 14.918
+        },
+        {
+          "word": "is",
+          "start": 14.976,
+          "end": 15.046
+        },
+        {
+          "word": "added",
+          "start": 15.116,
+          "end": 15.36
+        },
+        {
+          "word": "to",
+          "start": 15.394,
+          "end": 15.441
+        },
+        {
+          "word": "the",
+          "start": 15.499,
+          "end": 15.569
+        },
+        {
+          "word": "copper,",
+          "start": 15.627,
+          "end": 16.126
+        },
+        {
+          "word": "forming",
+          "start": 16.242,
+          "end": 16.579
+        },
+        {
+          "word": "copper(II)",
+          "start": 16.637,
+          "end": 17.763
+        },
+        {
+          "word": "oxide.",
+          "start": 17.972,
+          "end": 18.901
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene1b_activity_1_11.mp3"
+    },
+    {
+      "id": "scene1c_oxidation_eq",
+      "type": "equation",
+      "durationInFrames": 333,
+      "content": {
+        "reactants": [
+          {
+            "formula": "Cu",
+            "coefficient": 2,
+            "state": "s"
+          },
+          {
+            "formula": "O2",
+            "coefficient": 1,
+            "state": "g"
+          }
+        ],
+        "products": [
+          {
+            "formula": "CuO",
+            "coefficient": 2,
+            "state": "s"
+          }
+        ],
+        "focusSide": "none"
+      },
+      "teacherScript": "The chemical equation for this is 2Cu plus O2 gives 2CuO. Here, oxygen is added to copper. When a substance gains oxygen during a reaction, it is said to be oxidised.",
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "chemical",
+          "start": 0.197,
+          "end": 0.546
+        },
+        {
+          "word": "equation",
+          "start": 0.604,
+          "end": 0.952
+        },
+        {
+          "word": "for",
+          "start": 0.998,
+          "end": 1.091
+        },
+        {
+          "word": "this",
+          "start": 1.138,
+          "end": 1.312
+        },
+        {
+          "word": "is",
+          "start": 1.37,
+          "end": 1.451
+        },
+        {
+          "word": "2Cu",
+          "start": 1.533,
+          "end": 1.95
+        },
+        {
+          "word": "plus",
+          "start": 2.032,
+          "end": 2.252
+        },
+        {
+          "word": "O2",
+          "start": 2.322,
+          "end": 2.717
+        },
+        {
+          "word": "gives",
+          "start": 2.786,
+          "end": 2.984
+        },
+        {
+          "word": "2CuO.",
+          "start": 3.042,
+          "end": 3.843
+        },
+        {
+          "word": "Here,",
+          "start": 4.284,
+          "end": 4.632
+        },
+        {
+          "word": "oxygen",
+          "start": 4.748,
+          "end": 5.236
+        },
+        {
+          "word": "is",
+          "start": 5.306,
+          "end": 5.375
+        },
+        {
+          "word": "added",
+          "start": 5.433,
+          "end": 5.642
+        },
+        {
+          "word": "to",
+          "start": 5.666,
+          "end": 5.712
+        },
+        {
+          "word": "copper.",
+          "start": 5.782,
+          "end": 6.281
+        },
+        {
+          "word": "When",
+          "start": 6.606,
+          "end": 6.769
+        },
+        {
+          "word": "a",
+          "start": 6.803,
+          "end": 6.827
+        },
+        {
+          "word": "substance",
+          "start": 6.873,
+          "end": 7.256
+        },
+        {
+          "word": "gains",
+          "start": 7.279,
+          "end": 7.477
+        },
+        {
+          "word": "oxygen",
+          "start": 7.546,
+          "end": 7.976
+        },
+        {
+          "word": "during",
+          "start": 8.022,
+          "end": 8.231
+        },
+        {
+          "word": "a",
+          "start": 8.266,
+          "end": 8.29
+        },
+        {
+          "word": "reaction,",
+          "start": 8.348,
+          "end": 8.893
+        },
+        {
+          "word": "it",
+          "start": 8.963,
+          "end": 9.079
+        },
+        {
+          "word": "is",
+          "start": 9.125,
+          "end": 9.183
+        },
+        {
+          "word": "said",
+          "start": 9.207,
+          "end": 9.346
+        },
+        {
+          "word": "to",
+          "start": 9.369,
+          "end": 9.416
+        },
+        {
+          "word": "be",
+          "start": 9.462,
+          "end": 9.543
+        },
+        {
+          "word": "oxidised.",
+          "start": 9.601,
+          "end": 10.588
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene1c_oxidation_eq.mp3"
+    },
+    {
+      "id": "scene2_redox_text",
+      "type": "text",
+      "durationInFrames": 449,
+      "content": {
+        "heading": "Redox Reactions",
+        "bullets": [
+          "Oxidation: Gain of oxygen or loss of hydrogen.",
+          "Reduction: Loss of oxygen or gain of hydrogen.",
+          "Redox: One reactant gets oxidised while the other gets reduced."
+        ]
+      },
+      "teacherScript": "Oxidation is simply the gain of oxygen, or the loss of hydrogen. Conversely, Reduction is the loss of oxygen, or the gain of hydrogen. These two usually happen side by side! If one reactant gets oxidised, the other gets reduced. Such reactions are called Oxidation-Reduction, or Redox reactions.",
+      "alignments": [
+        {
+          "word": "Oxidation",
+          "start": 0,
+          "end": 0.524134306451613
+        },
+        {
+          "word": "is",
+          "start": 0.5532528790322582,
+          "end": 0.6697271693548388
+        },
+        {
+          "word": "simply",
+          "start": 0.698845741935484,
+          "end": 1.048268612903226
+        },
+        {
+          "word": "the",
+          "start": 1.077387185483871,
+          "end": 1.252098620967742
+        },
+        {
+          "word": "gain",
+          "start": 1.2812171935483871,
+          "end": 1.5141657741935484
+        },
+        {
+          "word": "of",
+          "start": 1.5432843467741937,
+          "end": 1.6597586370967743
+        },
+        {
+          "word": "oxygen,",
+          "start": 1.6888772096774196,
+          "end": 2.096537225806452
+        },
+        {
+          "word": "or",
+          "start": 2.125655798387097,
+          "end": 2.242130088709678
+        },
+        {
+          "word": "the",
+          "start": 2.271248661290323,
+          "end": 2.445960096774194
+        },
+        {
+          "word": "loss",
+          "start": 2.475078669354839,
+          "end": 2.70802725
+        },
+        {
+          "word": "of",
+          "start": 2.7371458225806453,
+          "end": 2.853620112903226
+        },
+        {
+          "word": "hydrogen.",
+          "start": 2.8827386854838712,
+          "end": 3.4068729919354843
+        },
+        {
+          "word": "Conversely,",
+          "start": 3.4359915645161294,
+          "end": 4.076600161290323
+        },
+        {
+          "word": "Reduction",
+          "start": 4.105718733870968,
+          "end": 4.629853040322581
+        },
+        {
+          "word": "is",
+          "start": 4.658971612903226,
+          "end": 4.7754459032258065
+        },
+        {
+          "word": "the",
+          "start": 4.804564475806452,
+          "end": 4.979275911290323
+        },
+        {
+          "word": "loss",
+          "start": 5.008394483870968,
+          "end": 5.24134306451613
+        },
+        {
+          "word": "of",
+          "start": 5.2704616370967745,
+          "end": 5.386935927419355
+        },
+        {
+          "word": "oxygen,",
+          "start": 5.4160545,
+          "end": 5.823714516129033
+        },
+        {
+          "word": "or",
+          "start": 5.852833088709678,
+          "end": 5.969307379032259
+        },
+        {
+          "word": "the",
+          "start": 5.998425951612904,
+          "end": 6.173137387096775
+        },
+        {
+          "word": "gain",
+          "start": 6.20225595967742,
+          "end": 6.435204540322582
+        },
+        {
+          "word": "of",
+          "start": 6.464323112903227,
+          "end": 6.580797403225807
+        },
+        {
+          "word": "hydrogen.",
+          "start": 6.6099159758064525,
+          "end": 7.134050282258065
+        },
+        {
+          "word": "These",
+          "start": 7.163168854838711,
+          "end": 7.4543545806451625
+        },
+        {
+          "word": "two",
+          "start": 7.483473153225807,
+          "end": 7.658184588709678
+        },
+        {
+          "word": "usually",
+          "start": 7.687303161290323,
+          "end": 8.094963177419356
+        },
+        {
+          "word": "happen",
+          "start": 8.12408175,
+          "end": 8.473504620967741
+        },
+        {
+          "word": "side",
+          "start": 8.502623193548388,
+          "end": 8.735571774193549
+        },
+        {
+          "word": "by",
+          "start": 8.764690346774195,
+          "end": 8.881164637096775
+        },
+        {
+          "word": "side!",
+          "start": 8.91028320967742,
+          "end": 9.201468935483872
+        },
+        {
+          "word": "If",
+          "start": 9.230587508064517,
+          "end": 9.347061798387097
+        },
+        {
+          "word": "one",
+          "start": 9.376180370967742,
+          "end": 9.550891806451613
+        },
+        {
+          "word": "reactant",
+          "start": 9.580010379032258,
+          "end": 10.045907540322581
+        },
+        {
+          "word": "gets",
+          "start": 10.075026112903226,
+          "end": 10.307974693548386
+        },
+        {
+          "word": "oxidised,",
+          "start": 10.337093266129033,
+          "end": 10.861227572580646
+        },
+        {
+          "word": "the",
+          "start": 10.890346145161292,
+          "end": 11.065057580645163
+        },
+        {
+          "word": "other",
+          "start": 11.094176153225808,
+          "end": 11.38536187903226
+        },
+        {
+          "word": "gets",
+          "start": 11.414480451612905,
+          "end": 11.647429032258065
+        },
+        {
+          "word": "reduced.",
+          "start": 11.676547604838712,
+          "end": 12.142444766129035
+        },
+        {
+          "word": "Such",
+          "start": 12.17156333870968,
+          "end": 12.40451191935484
+        },
+        {
+          "word": "reactions",
+          "start": 12.433630491935487,
+          "end": 12.9577647983871
+        },
+        {
+          "word": "are",
+          "start": 12.986883370967746,
+          "end": 13.161594806451618
+        },
+        {
+          "word": "called",
+          "start": 13.190713379032262,
+          "end": 13.540136250000003
+        },
+        {
+          "word": "Oxidation-Reduction,",
+          "start": 13.56925482258065,
+          "end": 14.733997725806457
+        },
+        {
+          "word": "or",
+          "start": 14.763116298387102,
+          "end": 14.879590588709682
+        },
+        {
+          "word": "Redox",
+          "start": 14.908709161290327,
+          "end": 15.199894887096779
+        },
+        {
+          "word": "reactions.",
+          "start": 15.229013459677423,
+          "end": 15.811384911290327
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene2_redox_text.mp3"
+    },
+    {
+      "id": "scene3_redox_eq",
+      "type": "equation",
+      "durationInFrames": 116,
+      "content": {
+        "reactants": [
+          {
+            "formula": "CuO",
+            "coefficient": 1,
+            "state": "s"
+          },
+          {
+            "formula": "H2",
+            "coefficient": 1,
+            "state": "g"
+          }
+        ],
+        "products": [
+          {
+            "formula": "Cu",
+            "coefficient": 1,
+            "state": "s"
+          },
+          {
+            "formula": "H2O",
+            "coefficient": 1,
+            "state": "l"
+          }
+        ],
+        "focusSide": "none"
+      },
+      "teacherScript": "For example, when hydrogen gas is passed over heated Copper Oxide, the black coating turns brown as copper is obtained. The Copper Oxide loses oxygen, so it is reduced to copper. The hydrogen gains oxygen to form water, so it is oxidised. This is a classic Redox reaction!",
+      "alignments": [
+        {
+          "word": "For",
+          "start": 0,
+          "end": 0.04458230666666666
+        },
+        {
+          "word": "example,",
+          "start": 0.052012691111111106,
+          "end": 0.1708988422222222
+        },
+        {
+          "word": "when",
+          "start": 0.17832922666666667,
+          "end": 0.23777230222222223
+        },
+        {
+          "word": "hydrogen",
+          "start": 0.24520268666666667,
+          "end": 0.3640888377777778
+        },
+        {
+          "word": "gas",
+          "start": 0.3715192222222222,
+          "end": 0.4161015288888889
+        },
+        {
+          "word": "is",
+          "start": 0.42353191333333334,
+          "end": 0.4532534511111111
+        },
+        {
+          "word": "passed",
+          "start": 0.4606838355555556,
+          "end": 0.549848448888889
+        },
+        {
+          "word": "over",
+          "start": 0.5572788333333334,
+          "end": 0.6167219088888889
+        },
+        {
+          "word": "heated",
+          "start": 0.6241522933333334,
+          "end": 0.7133169066666668
+        },
+        {
+          "word": "Copper",
+          "start": 0.7207472911111112,
+          "end": 0.8099119044444446
+        },
+        {
+          "word": "Oxide,",
+          "start": 0.817342288888889,
+          "end": 0.9065069022222224
+        },
+        {
+          "word": "the",
+          "start": 0.9139372866666668,
+          "end": 0.9585195933333335
+        },
+        {
+          "word": "black",
+          "start": 0.9659499777777779,
+          "end": 1.0402538222222224
+        },
+        {
+          "word": "coating",
+          "start": 1.0476842066666667,
+          "end": 1.1517095888888889
+        },
+        {
+          "word": "turns",
+          "start": 1.1591399733333334,
+          "end": 1.2334438177777778
+        },
+        {
+          "word": "brown",
+          "start": 1.2408742022222223,
+          "end": 1.3151780466666667
+        },
+        {
+          "word": "as",
+          "start": 1.3226084311111113,
+          "end": 1.352329968888889
+        },
+        {
+          "word": "copper",
+          "start": 1.3597603533333336,
+          "end": 1.4489249666666668
+        },
+        {
+          "word": "is",
+          "start": 1.4563553511111114,
+          "end": 1.4860768888888891
+        },
+        {
+          "word": "obtained.",
+          "start": 1.4935072733333337,
+          "end": 1.6272541933333335
+        },
+        {
+          "word": "The",
+          "start": 1.634684577777778,
+          "end": 1.6792668844444447
+        },
+        {
+          "word": "Copper",
+          "start": 1.6866972688888893,
+          "end": 1.7758618822222225
+        },
+        {
+          "word": "Oxide",
+          "start": 1.783292266666667,
+          "end": 1.8575961111111114
+        },
+        {
+          "word": "loses",
+          "start": 1.865026495555556,
+          "end": 1.9393303400000004
+        },
+        {
+          "word": "oxygen,",
+          "start": 1.946760724444445,
+          "end": 2.050786106666667
+        },
+        {
+          "word": "so",
+          "start": 2.0582164911111116,
+          "end": 2.0879380288888894
+        },
+        {
+          "word": "it",
+          "start": 2.095368413333334,
+          "end": 2.1250899511111117
+        },
+        {
+          "word": "is",
+          "start": 2.132520335555556,
+          "end": 2.162241873333334
+        },
+        {
+          "word": "reduced",
+          "start": 2.1696722577777785,
+          "end": 2.273697640000001
+        },
+        {
+          "word": "to",
+          "start": 2.281128024444445,
+          "end": 2.3108495622222227
+        },
+        {
+          "word": "copper.",
+          "start": 2.3182799466666673,
+          "end": 2.4223053288888896
+        },
+        {
+          "word": "The",
+          "start": 2.4297357133333337,
+          "end": 2.4743180200000006
+        },
+        {
+          "word": "hydrogen",
+          "start": 2.4817484044444447,
+          "end": 2.6006345555555557
+        },
+        {
+          "word": "gains",
+          "start": 2.60806494,
+          "end": 2.682368784444445
+        },
+        {
+          "word": "oxygen",
+          "start": 2.689799168888889,
+          "end": 2.778963782222222
+        },
+        {
+          "word": "to",
+          "start": 2.7863941666666667,
+          "end": 2.8161157044444445
+        },
+        {
+          "word": "form",
+          "start": 2.823546088888889,
+          "end": 2.8829891644444445
+        },
+        {
+          "word": "water,",
+          "start": 2.890419548888889,
+          "end": 2.9795841622222223
+        },
+        {
+          "word": "so",
+          "start": 2.987014546666667,
+          "end": 3.0167360844444446
+        },
+        {
+          "word": "it",
+          "start": 3.024166468888889,
+          "end": 3.053888006666667
+        },
+        {
+          "word": "is",
+          "start": 3.0613183911111115,
+          "end": 3.0910399288888892
+        },
+        {
+          "word": "oxidised.",
+          "start": 3.098470313333334,
+          "end": 3.232217233333334
+        },
+        {
+          "word": "This",
+          "start": 3.239647617777778,
+          "end": 3.2990906933333335
+        },
+        {
+          "word": "is",
+          "start": 3.306521077777778,
+          "end": 3.336242615555556
+        },
+        {
+          "word": "a",
+          "start": 3.3436730000000003,
+          "end": 3.3585337688888894
+        },
+        {
+          "word": "classic",
+          "start": 3.3659641533333335,
+          "end": 3.469989535555556
+        },
+        {
+          "word": "Redox",
+          "start": 3.47741992,
+          "end": 3.5517237644444446
+        },
+        {
+          "word": "reaction!",
+          "start": 3.5591541488888887,
+          "end": 3.692901068888889
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene3_redox_eq.mp3"
+    },
+    {
+      "id": "scene4_everyday_intro",
+      "type": "kinetic_typography",
+      "durationInFrames": 141,
+      "content": {
+        "text": "Have you observed the effects of oxidation reactions in everyday life?"
+      },
+      "teacherScript": "Now, you don't need a laboratory to see oxidation. Have you observed the effects of oxidation reactions in your everyday life? Let's look at Corrosion and Rancidity.",
+      "alignments": [
+        {
+          "word": "Now,",
+          "start": 0,
+          "end": 0.12027602877697843
+        },
+        {
+          "word": "you",
+          "start": 0.13531053237410073,
+          "end": 0.22551755395683457
+        },
+        {
+          "word": "don't",
+          "start": 0.24055205755395687,
+          "end": 0.3908970935251799
+        },
+        {
+          "word": "need",
+          "start": 0.4059315971223022,
+          "end": 0.5262076258992806
+        },
+        {
+          "word": "a",
+          "start": 0.5412421294964029,
+          "end": 0.5713111366906476
+        },
+        {
+          "word": "laboratory",
+          "start": 0.5863456402877698,
+          "end": 0.8870357122302159
+        },
+        {
+          "word": "to",
+          "start": 0.9020702158273382,
+          "end": 0.9622082302158274
+        },
+        {
+          "word": "see",
+          "start": 0.9772427338129497,
+          "end": 1.0674497553956834
+        },
+        {
+          "word": "oxidation.",
+          "start": 1.0824842589928059,
+          "end": 1.383174330935252
+        },
+        {
+          "word": "Have",
+          "start": 1.3982088345323742,
+          "end": 1.5184848633093526
+        },
+        {
+          "word": "you",
+          "start": 1.533519366906475,
+          "end": 1.6237263884892088
+        },
+        {
+          "word": "observed",
+          "start": 1.6387608920863312,
+          "end": 1.879312949640288
+        },
+        {
+          "word": "the",
+          "start": 1.8943474532374105,
+          "end": 1.9845544748201442
+        },
+        {
+          "word": "effects",
+          "start": 1.9995889784172667,
+          "end": 2.210072028776979
+        },
+        {
+          "word": "of",
+          "start": 2.225106532374101,
+          "end": 2.2852445467625904
+        },
+        {
+          "word": "oxidation",
+          "start": 2.3002790503597126,
+          "end": 2.5709001151079143
+        },
+        {
+          "word": "reactions",
+          "start": 2.5859346187050365,
+          "end": 2.856555683453238
+        },
+        {
+          "word": "in",
+          "start": 2.8715901870503604,
+          "end": 2.9317282014388497
+        },
+        {
+          "word": "your",
+          "start": 2.946762705035972,
+          "end": 3.0670387338129506
+        },
+        {
+          "word": "everyday",
+          "start": 3.0820732374100728,
+          "end": 3.3226252949640296
+        },
+        {
+          "word": "life?",
+          "start": 3.337659798561152,
+          "end": 3.488004834532375
+        },
+        {
+          "word": "Let's",
+          "start": 3.503039338129497,
+          "end": 3.65338437410072
+        },
+        {
+          "word": "look",
+          "start": 3.6684188776978424,
+          "end": 3.788694906474821
+        },
+        {
+          "word": "at",
+          "start": 3.803729410071943,
+          "end": 3.8638674244604325
+        },
+        {
+          "word": "Corrosion",
+          "start": 3.8789019280575547,
+          "end": 4.149522992805756
+        },
+        {
+          "word": "and",
+          "start": 4.164557496402878,
+          "end": 4.254764517985612
+        },
+        {
+          "word": "Rancidity.",
+          "start": 4.269799021582735,
+          "end": 4.570489093525181
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene4_everyday_intro.mp3"
+    },
+    {
+      "id": "scene5_corrosion",
+      "type": "text",
+      "durationInFrames": 683,
+      "content": {
+        "heading": "Corrosion & Rancidity",
+        "bullets": [
+          "Corrosion: Metal is attacked by moisture and air (e.g., Rusting of iron).",
+          "Rancidity: Fats and oils are oxidised, changing smell and taste.",
+          "Prevention: Add antioxidants or flush bags with Nitrogen."
+        ]
+      },
+      "teacherScript": "When a metal is attacked by substances around it, like moisture or acids, it is said to corrode. Rusting of iron, the black coating on silver, and the green coating on copper are all examples of Corrosion, which causes massive damage to bridges and car bodies! Then we have Rancidity. When fats and oils are oxidised, they become rancid, and their smell and taste change. To prevent this, manufacturers add antioxidants to foods, or flush bags of chips with unreactive Nitrogen gas.",
+      "alignments": [
+        {
+          "word": "When",
+          "start": 0,
+          "end": 0.22189243890274316
+        },
+        {
+          "word": "a",
+          "start": 0.24962899376558606,
+          "end": 0.30510210349127187
+        },
+        {
+          "word": "metal",
+          "start": 0.33283865835411475,
+          "end": 0.6102042069825437
+        },
+        {
+          "word": "is",
+          "start": 0.6379407618453865,
+          "end": 0.7488869812967581
+        },
+        {
+          "word": "attacked",
+          "start": 0.776623536159601,
+          "end": 1.2204084139650873
+        },
+        {
+          "word": "by",
+          "start": 1.2481449688279302,
+          "end": 1.3590911882793018
+        },
+        {
+          "word": "substances",
+          "start": 1.3868277431421447,
+          "end": 1.9415588403990025
+        },
+        {
+          "word": "around",
+          "start": 1.9692953952618455,
+          "end": 2.3021340536159602
+        },
+        {
+          "word": "it,",
+          "start": 2.329870608478803,
+          "end": 2.4962899376558605
+        },
+        {
+          "word": "like",
+          "start": 2.5240264925187033,
+          "end": 2.7459189314214463
+        },
+        {
+          "word": "moisture",
+          "start": 2.7736554862842895,
+          "end": 3.217440364089776
+        },
+        {
+          "word": "or",
+          "start": 3.2451769189526187,
+          "end": 3.3561231384039902
+        },
+        {
+          "word": "acids,",
+          "start": 3.383859693266833,
+          "end": 3.7166983516209475
+        },
+        {
+          "word": "it",
+          "start": 3.7444349064837907,
+          "end": 3.8553811259351622
+        },
+        {
+          "word": "is",
+          "start": 3.883117680798005,
+          "end": 3.9940639002493765
+        },
+        {
+          "word": "said",
+          "start": 4.02180045511222,
+          "end": 4.243692894014963
+        },
+        {
+          "word": "to",
+          "start": 4.2714294488778055,
+          "end": 4.3823756683291775
+        },
+        {
+          "word": "corrode.",
+          "start": 4.41011222319202,
+          "end": 4.853897100997506
+        },
+        {
+          "word": "Rusting",
+          "start": 4.881633655860349,
+          "end": 5.2699454239401495
+        },
+        {
+          "word": "of",
+          "start": 5.297681978802992,
+          "end": 5.408628198254364
+        },
+        {
+          "word": "iron,",
+          "start": 5.436364753117207,
+          "end": 5.713730301745636
+        },
+        {
+          "word": "the",
+          "start": 5.741466856608479,
+          "end": 5.907886185785537
+        },
+        {
+          "word": "black",
+          "start": 5.9356227406483795,
+          "end": 6.212988289276808
+        },
+        {
+          "word": "coating",
+          "start": 6.240724844139652,
+          "end": 6.629036612219452
+        },
+        {
+          "word": "on",
+          "start": 6.656773167082295,
+          "end": 6.767719386533667
+        },
+        {
+          "word": "silver,",
+          "start": 6.79545594139651,
+          "end": 7.18376770947631
+        },
+        {
+          "word": "and",
+          "start": 7.211504264339153,
+          "end": 7.37792359351621
+        },
+        {
+          "word": "the",
+          "start": 7.405660148379053,
+          "end": 7.572079477556111
+        },
+        {
+          "word": "green",
+          "start": 7.599816032418953,
+          "end": 7.877181581047382
+        },
+        {
+          "word": "coating",
+          "start": 7.904918135910226,
+          "end": 8.293229903990026
+        },
+        {
+          "word": "on",
+          "start": 8.320966458852869,
+          "end": 8.43191267830424
+        },
+        {
+          "word": "copper",
+          "start": 8.459649233167083,
+          "end": 8.792487891521198
+        },
+        {
+          "word": "are",
+          "start": 8.82022444638404,
+          "end": 8.986643775561097
+        },
+        {
+          "word": "all",
+          "start": 9.014380330423942,
+          "end": 9.180799659600998
+        },
+        {
+          "word": "examples",
+          "start": 9.208536214463843,
+          "end": 9.652321092269329
+        },
+        {
+          "word": "of",
+          "start": 9.680057647132172,
+          "end": 9.791003866583543
+        },
+        {
+          "word": "Corrosion,",
+          "start": 9.818740421446385,
+          "end": 10.373471518703242
+        },
+        {
+          "word": "which",
+          "start": 10.401208073566085,
+          "end": 10.678573622194515
+        },
+        {
+          "word": "causes",
+          "start": 10.706310177057357,
+          "end": 11.039148835411472
+        },
+        {
+          "word": "massive",
+          "start": 11.066885390274315,
+          "end": 11.455197158354116
+        },
+        {
+          "word": "damage",
+          "start": 11.482933713216958,
+          "end": 11.815772371571073
+        },
+        {
+          "word": "to",
+          "start": 11.843508926433916,
+          "end": 11.954455145885287
+        },
+        {
+          "word": "bridges",
+          "start": 11.98219170074813,
+          "end": 12.37050346882793
+        },
+        {
+          "word": "and",
+          "start": 12.398240023690773,
+          "end": 12.56465935286783
+        },
+        {
+          "word": "car",
+          "start": 12.592395907730674,
+          "end": 12.758815236907731
+        },
+        {
+          "word": "bodies!",
+          "start": 12.786551791770576,
+          "end": 13.174863559850376
+        },
+        {
+          "word": "Then",
+          "start": 13.202600114713219,
+          "end": 13.424492553615963
+        },
+        {
+          "word": "we",
+          "start": 13.452229108478805,
+          "end": 13.563175327930177
+        },
+        {
+          "word": "have",
+          "start": 13.59091188279302,
+          "end": 13.812804321695763
+        },
+        {
+          "word": "Rancidity.",
+          "start": 13.840540876558606,
+          "end": 14.395271973815463
+        },
+        {
+          "word": "When",
+          "start": 14.423008528678306,
+          "end": 14.64490096758105
+        },
+        {
+          "word": "fats",
+          "start": 14.672637522443893,
+          "end": 14.894529961346636
+        },
+        {
+          "word": "and",
+          "start": 14.92226651620948,
+          "end": 15.088685845386536
+        },
+        {
+          "word": "oils",
+          "start": 15.11642240024938,
+          "end": 15.338314839152124
+        },
+        {
+          "word": "are",
+          "start": 15.366051394014967,
+          "end": 15.532470723192024
+        },
+        {
+          "word": "oxidised,",
+          "start": 15.560207278054868,
+          "end": 16.05946526558604
+        },
+        {
+          "word": "they",
+          "start": 16.087201820448882,
+          "end": 16.309094259351625
+        },
+        {
+          "word": "become",
+          "start": 16.33683081421447,
+          "end": 16.669669472568582
+        },
+        {
+          "word": "rancid,",
+          "start": 16.697406027431427,
+          "end": 17.08571779551123
+        },
+        {
+          "word": "and",
+          "start": 17.11345435037407,
+          "end": 17.279873679551127
+        },
+        {
+          "word": "their",
+          "start": 17.30761023441397,
+          "end": 17.5849757830424
+        },
+        {
+          "word": "smell",
+          "start": 17.612712337905243,
+          "end": 17.89007788653367
+        },
+        {
+          "word": "and",
+          "start": 17.917814441396516,
+          "end": 18.084233770573572
+        },
+        {
+          "word": "taste",
+          "start": 18.111970325436417,
+          "end": 18.389335874064844
+        },
+        {
+          "word": "change.",
+          "start": 18.41707242892769,
+          "end": 18.80538419700749
+        },
+        {
+          "word": "To",
+          "start": 18.833120751870332,
+          "end": 18.944066971321703
+        },
+        {
+          "word": "prevent",
+          "start": 18.971803526184548,
+          "end": 19.360115294264347
+        },
+        {
+          "word": "this,",
+          "start": 19.38785184912719,
+          "end": 19.66521739775562
+        },
+        {
+          "word": "manufacturers",
+          "start": 19.692953952618463,
+          "end": 20.41410437905238
+        },
+        {
+          "word": "add",
+          "start": 20.44184093391522,
+          "end": 20.608260263092276
+        },
+        {
+          "word": "antioxidants",
+          "start": 20.63599681795512,
+          "end": 21.30167413466335
+        },
+        {
+          "word": "to",
+          "start": 21.329410689526192,
+          "end": 21.440356908977563
+        },
+        {
+          "word": "foods,",
+          "start": 21.468093463840408,
+          "end": 21.80093212219452
+        },
+        {
+          "word": "or",
+          "start": 21.828668677057365,
+          "end": 21.939614896508736
+        },
+        {
+          "word": "flush",
+          "start": 21.96735145137158,
+          "end": 22.24471700000001
+        },
+        {
+          "word": "bags",
+          "start": 22.272453554862853,
+          "end": 22.494345993765595
+        },
+        {
+          "word": "of",
+          "start": 22.52208254862844,
+          "end": 22.63302876807981
+        },
+        {
+          "word": "chips",
+          "start": 22.660765322942655,
+          "end": 22.938130871571083
+        },
+        {
+          "word": "with",
+          "start": 22.965867426433928,
+          "end": 23.18775986533667
+        },
+        {
+          "word": "unreactive",
+          "start": 23.215496420199514,
+          "end": 23.770227517456373
+        },
+        {
+          "word": "Nitrogen",
+          "start": 23.797964072319214,
+          "end": 24.241748950124702
+        },
+        {
+          "word": "gas.",
+          "start": 24.269485504987543,
+          "end": 24.491377943890285
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene5_corrosion.mp3"
+    },
+    {
+      "id": "scene6_recap_intro",
+      "type": "title",
+      "durationInFrames": 87,
+      "content": {
+        "text": "Comic Recap",
+        "subtitle": "Let's review what we've learned!"
+      },
+      "teacherScript": "That covers the entire chapter! Let's do a quick comic recap to review some of these concepts.",
+      "alignments": [
+        {
+          "word": "That",
+          "start": 0,
+          "end": 0.12145820512820513
+        },
+        {
+          "word": "covers",
+          "start": 0.13664048076923077,
+          "end": 0.3188277884615385
+        },
+        {
+          "word": "the",
+          "start": 0.33401006410256406,
+          "end": 0.42510371794871793
+        },
+        {
+          "word": "entire",
+          "start": 0.4402859935897435,
+          "end": 0.6224733012820511
+        },
+        {
+          "word": "chapter!",
+          "start": 0.6376555769230768,
+          "end": 0.880571987179487
+        },
+        {
+          "word": "Let's",
+          "start": 0.8957542628205127,
+          "end": 1.0475770192307692
+        },
+        {
+          "word": "do",
+          "start": 1.0627592948717948,
+          "end": 1.1234883974358973
+        },
+        {
+          "word": "a",
+          "start": 1.138670673076923,
+          "end": 1.1690352243589741
+        },
+        {
+          "word": "quick",
+          "start": 1.1842175,
+          "end": 1.3360402564102563
+        },
+        {
+          "word": "comic",
+          "start": 1.351222532051282,
+          "end": 1.5030452884615384
+        },
+        {
+          "word": "recap",
+          "start": 1.5182275641025642,
+          "end": 1.6700503205128205
+        },
+        {
+          "word": "to",
+          "start": 1.6852325961538464,
+          "end": 1.745961698717949
+        },
+        {
+          "word": "review",
+          "start": 1.7611439743589745,
+          "end": 1.9433312820512822
+        },
+        {
+          "word": "some",
+          "start": 1.9585135576923078,
+          "end": 2.079971762820513
+        },
+        {
+          "word": "of",
+          "start": 2.095154038461539,
+          "end": 2.155883141025641
+        },
+        {
+          "word": "these",
+          "start": 2.171065416666667,
+          "end": 2.3228881730769233
+        },
+        {
+          "word": "concepts.",
+          "start": 2.338070448717949,
+          "end": 2.6113514102564106
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene6_recap_intro.mp3"
+    },
+    {
+      "id": "scene7_recap",
+      "type": "conversation",
+      "durationInFrames": 693,
+      "content": {
+        "imageUrl": "/images/recap_political_cartoon.png",
+        "messages": [
+          {
+            "speaker": "Rahul",
+            "role": "Student",
+            "text": "I still don't get it. Why do equations need to be balanced?"
+          },
+          {
+            "speaker": "Scientist Priya",
+            "role": "Teacher",
+            "text": "Because of the Law of Conservation of Mass! You can't create or destroy atoms, Rahul. If you put 5 atoms in, you must get exactly 5 atoms out!"
+          },
+          {
+            "speaker": "Oxygen Atom",
+            "role": "Element",
+            "text": "That's right! And when I jump onto a molecule, we call it Oxidation!"
+          },
+          {
+            "speaker": "Hydrogen Atom",
+            "role": "Element",
+            "text": "And when Oxygen leaves, it's Reduction. We like to do it together, creating a Redox Reaction!"
+          },
+          {
+            "speaker": "Rahul",
+            "role": "Student",
+            "text": "And what about all those color changes and heat we saw?"
+          },
+          {
+            "speaker": "Scientist Priya",
+            "role": "Teacher",
+            "text": "Those are signs of different reactions! Combination, Decomposition, Displacement, and Double Displacement. Plus, if it gets hot, it's Exothermic!"
+          }
+        ]
+      },
+      "alignments": [
+        {
+          "word": "I",
+          "start": 0,
+          "end": 0.07599257912457913
+        },
+        {
+          "word": "still",
+          "start": 0.1139888686868687,
+          "end": 0.49395176430976434
+        },
+        {
+          "word": "don't",
+          "start": 0.5319480538720539,
+          "end": 0.9119109494949496
+        },
+        {
+          "word": "get",
+          "start": 0.9499072390572392,
+          "end": 1.1778849764309767
+        },
+        {
+          "word": "it.",
+          "start": 1.215881265993266,
+          "end": 1.4438590033670033
+        },
+        {
+          "word": "Why",
+          "start": 1.481855292929293,
+          "end": 1.7098330303030305
+        },
+        {
+          "word": "do",
+          "start": 1.7478293198653199,
+          "end": 1.8998144781144781
+        },
+        {
+          "word": "equations",
+          "start": 1.9378107676767677,
+          "end": 2.62174397979798
+        },
+        {
+          "word": "need",
+          "start": 2.6597402693602694,
+          "end": 2.963710585858586
+        },
+        {
+          "word": "to",
+          "start": 3.0017068754208753,
+          "end": 3.1536920336700334
+        },
+        {
+          "word": "be",
+          "start": 3.191688323232323,
+          "end": 3.3436734814814812
+        },
+        {
+          "word": "balanced?",
+          "start": 3.381669771043771,
+          "end": 4.065602983164983
+        },
+        {
+          "word": "Because",
+          "start": 4.103599272727273,
+          "end": 4.635547326599327
+        },
+        {
+          "word": "of",
+          "start": 4.673543616161616,
+          "end": 4.825528774410775
+        },
+        {
+          "word": "the",
+          "start": 4.863525063973064,
+          "end": 5.0915028013468016
+        },
+        {
+          "word": "Law",
+          "start": 5.129499090909091,
+          "end": 5.357476828282828
+        },
+        {
+          "word": "of",
+          "start": 5.395473117845118,
+          "end": 5.547458276094276
+        },
+        {
+          "word": "Conservation",
+          "start": 5.5854545656565655,
+          "end": 6.497365515151515
+        },
+        {
+          "word": "of",
+          "start": 6.535361804713805,
+          "end": 6.687346962962963
+        },
+        {
+          "word": "Mass!",
+          "start": 6.725343252525253,
+          "end": 7.1053061481481485
+        },
+        {
+          "word": "You",
+          "start": 7.143302437710438,
+          "end": 7.371280175084175
+        },
+        {
+          "word": "can't",
+          "start": 7.409276464646465,
+          "end": 7.78923936026936
+        },
+        {
+          "word": "create",
+          "start": 7.82723564983165,
+          "end": 8.283191124579124
+        },
+        {
+          "word": "or",
+          "start": 8.321187414141415,
+          "end": 8.473172572390572
+        },
+        {
+          "word": "destroy",
+          "start": 8.511168861952862,
+          "end": 9.043116915824916
+        },
+        {
+          "word": "atoms,",
+          "start": 9.081113205387206,
+          "end": 9.53706868013468
+        },
+        {
+          "word": "Rahul.",
+          "start": 9.575064969696971,
+          "end": 10.031020444444446
+        },
+        {
+          "word": "If",
+          "start": 10.069016734006736,
+          "end": 10.221001892255893
+        },
+        {
+          "word": "you",
+          "start": 10.258998181818184,
+          "end": 10.486975919191922
+        },
+        {
+          "word": "put",
+          "start": 10.52497220875421,
+          "end": 10.752949946127949
+        },
+        {
+          "word": "5",
+          "start": 10.790946235690237,
+          "end": 10.866938814814816
+        },
+        {
+          "word": "atoms",
+          "start": 10.904935104377106,
+          "end": 11.284898000000002
+        },
+        {
+          "word": "in,",
+          "start": 11.322894289562292,
+          "end": 11.55087202693603
+        },
+        {
+          "word": "you",
+          "start": 11.588868316498319,
+          "end": 11.816846053872057
+        },
+        {
+          "word": "must",
+          "start": 11.854842343434346,
+          "end": 12.158812659932662
+        },
+        {
+          "word": "get",
+          "start": 12.196808949494951,
+          "end": 12.42478668686869
+        },
+        {
+          "word": "exactly",
+          "start": 12.462782976430978,
+          "end": 12.994731030303031
+        },
+        {
+          "word": "5",
+          "start": 13.032727319865321,
+          "end": 13.1087198989899
+        },
+        {
+          "word": "atoms",
+          "start": 13.14671618855219,
+          "end": 13.526679084175086
+        },
+        {
+          "word": "out!",
+          "start": 13.564675373737376,
+          "end": 13.868645690235693
+        },
+        {
+          "word": "That's",
+          "start": 13.906641979797982,
+          "end": 14.362597454545456
+        },
+        {
+          "word": "right!",
+          "start": 14.400593744107747,
+          "end": 14.856549218855221
+        },
+        {
+          "word": "And",
+          "start": 14.894545508417512,
+          "end": 15.12252324579125
+        },
+        {
+          "word": "when",
+          "start": 15.160519535353538,
+          "end": 15.464489851851855
+        },
+        {
+          "word": "I",
+          "start": 15.502486141414144,
+          "end": 15.578478720538723
+        },
+        {
+          "word": "jump",
+          "start": 15.616475010101013,
+          "end": 15.92044532659933
+        },
+        {
+          "word": "onto",
+          "start": 15.958441616161618,
+          "end": 16.262411932659933
+        },
+        {
+          "word": "a",
+          "start": 16.300408222222224,
+          "end": 16.376400801346804
+        },
+        {
+          "word": "molecule,",
+          "start": 16.41439709090909,
+          "end": 17.098330303030302
+        },
+        {
+          "word": "we",
+          "start": 17.136326592592592,
+          "end": 17.28831175084175
+        },
+        {
+          "word": "call",
+          "start": 17.32630804040404,
+          "end": 17.630278356902355
+        },
+        {
+          "word": "it",
+          "start": 17.668274646464646,
+          "end": 17.820259804713803
+        },
+        {
+          "word": "Oxidation!",
+          "start": 17.858256094276094,
+          "end": 18.618181885521885
+        },
+        {
+          "word": "And",
+          "start": 18.656178175084175,
+          "end": 18.884155912457913
+        },
+        {
+          "word": "when",
+          "start": 18.922152202020204,
+          "end": 19.22612251851852
+        },
+        {
+          "word": "Oxygen",
+          "start": 19.26411880808081,
+          "end": 19.720074282828286
+        },
+        {
+          "word": "leaves,",
+          "start": 19.758070572390572,
+          "end": 20.290018626262626
+        },
+        {
+          "word": "it's",
+          "start": 20.328014915824916,
+          "end": 20.63198523232323
+        },
+        {
+          "word": "Reduction.",
+          "start": 20.66998152188552,
+          "end": 21.429907313131313
+        },
+        {
+          "word": "We",
+          "start": 21.467903602693603,
+          "end": 21.61988876094276
+        },
+        {
+          "word": "like",
+          "start": 21.65788505050505,
+          "end": 21.961855367003366
+        },
+        {
+          "word": "to",
+          "start": 21.999851656565657,
+          "end": 22.151836814814814
+        },
+        {
+          "word": "do",
+          "start": 22.189833104377104,
+          "end": 22.341818262626262
+        },
+        {
+          "word": "it",
+          "start": 22.379814552188552,
+          "end": 22.53179971043771
+        },
+        {
+          "word": "together,",
+          "start": 22.569796,
+          "end": 23.25372921212121
+        },
+        {
+          "word": "creating",
+          "start": 23.2917255016835,
+          "end": 23.899666134680135
+        },
+        {
+          "word": "a",
+          "start": 23.937662424242426,
+          "end": 24.013655003367006
+        },
+        {
+          "word": "Redox",
+          "start": 24.051651292929293,
+          "end": 24.43161418855219
+        },
+        {
+          "word": "Reaction!",
+          "start": 24.46961047811448,
+          "end": 25.15354369023569
+        }
+      ],
+      "audio": "/audio/science/ch1_part3_scene7_recap.mp3"
+    }
+  ]
+}

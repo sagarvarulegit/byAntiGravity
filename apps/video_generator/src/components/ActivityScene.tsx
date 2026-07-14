@@ -1,0 +1,171 @@
+import React from "react";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, random, Audio, staticFile } from "remotion";
+import { WordAlignment } from "../data/schema";
+
+const MagnesiumBurn: React.FC = () => {
+  const frame = useCurrentFrame();
+  const burnProgress = interpolate(frame, [30, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const ribbonLength = 181;
+  const tipX = 250 - (burnProgress * 100);
+  const tipY = 300 - (burnProgress * 150);
+  const isBurning = frame > 30 && frame < 150;
+  const flicker = isBurning ? Math.abs(Math.sin(frame * 0.7)) : 0;
+  const flameRadius = interpolate(flicker, [0, 1], [30, 45]);
+  const glowOpacity = interpolate(burnProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0], { extrapolateRight: "clamp", extrapolateLeft: "clamp" });
+
+  const ashParticles = new Array(20).fill(0).map((_, i) => {
+    const startFrame = 40 + (i * 4);
+    const dropFrame = frame - startFrame;
+    if (dropFrame < 0) return null;
+    const pProgress = interpolate(startFrame, [30, 120], [0, 1], { extrapolateRight: "clamp", extrapolateLeft: "clamp" });
+    const startX = 250 - (pProgress * 100);
+    const startY = 300 - (pProgress * 150);
+    const x = startX + random(`x-${i}`) * 30 - 15;
+    const y = startY + Math.pow(dropFrame, 1.2) * 2;
+    const opacity = interpolate(dropFrame, [0, 30, 60], [1, 1, 0]);
+    return <circle key={i} cx={x} cy={y} r={random(`r-${i}`) * 2 + 1} fill="#e2e8f0" opacity={opacity} />;
+  });
+
+  return (
+    <div style={{ position: "relative", width: 400, height: 400 }}>
+      <svg width="400" height="400" viewBox="0 0 400 400" style={{ overflow: "visible" }}>
+        <defs>
+          <radialGradient id="dazzling-glow">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity={1} />
+            <stop offset="20%" stopColor="#ffffaa" stopOpacity={0.8} />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
+          </radialGradient>
+        </defs>
+        <rect x="230" y="360" width="40" height="15" fill="#333" rx="4" />
+        <rect x="245" y="320" width="10" height="40" fill="#555" />
+        {frame > 10 && (
+          <path d={`M 250 320 Q 240 ${300 + Math.sin(frame*0.5)*10} 250 280 Q 260 ${300 + Math.cos(frame*0.5)*10} 250 320`} fill="rgba(100, 200, 255, 0.6)" />
+        )}
+        <path d="M 50 50 L 150 150" stroke="#666" strokeWidth="16" strokeLinecap="round" />
+        <path d="M 70 30 L 155 145" stroke="#444" strokeWidth="8" strokeLinecap="round" />
+        <line x1="150" y1="150" x2="250" y2="300" stroke="#E2E8F0" strokeWidth="12" strokeLinecap="round" strokeDasharray={`${ribbonLength} ${ribbonLength}`} strokeDashoffset={burnProgress * ribbonLength} />
+        {burnProgress > 0 && <ellipse cx="250" cy="385" rx={20 * burnProgress} ry={5} fill="#e2e8f0" opacity={0.8} />}
+        {ashParticles}
+        {glowOpacity > 0 && <circle cx={tipX} cy={tipY} r={flameRadius * 2} fill="url(#dazzling-glow)" opacity={glowOpacity} />}
+        {glowOpacity > 0 && <circle cx={tipX} cy={tipY} r={flameRadius * 0.5} fill="#ffffff" opacity={glowOpacity} />}
+      </svg>
+    </div>
+  );
+};
+
+const QuicklimeWater: React.FC = () => {
+  const frame = useCurrentFrame();
+  const progress = interpolate(frame, [30, 90], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const heatOpacity = interpolate(progress, [0, 1], [0, 0.6]);
+  
+  return (
+    <svg width="400" height="400" viewBox="0 0 400 400">
+      <defs>
+        <radialGradient id="heat-glow">
+          <stop offset="0%" stopColor="#ff4d4f" stopOpacity={1} />
+          <stop offset="100%" stopColor="#ff4d4f" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      {/* Beaker back */}
+      <path d="M 120 100 L 120 300 Q 120 320 140 320 L 260 320 Q 280 320 280 300 L 280 100" fill="none" stroke="#555" strokeWidth="4" />
+      {/* Heat Glow */}
+      <circle cx="200" cy="320" r="100" fill="url(#heat-glow)" opacity={heatOpacity} />
+      {/* Liquid */}
+      <rect x="122" y={300 - (progress * 150)} width="156" height={progress * 150 + 20} fill="rgba(200, 220, 255, 0.4)" rx="5" />
+      {/* Quicklime powder at bottom */}
+      <path d="M 140 315 Q 200 290 260 315 L 260 318 L 140 318 Z" fill="#fff" opacity={1 - progress*0.5} />
+      {/* Slaked lime slurry */}
+      {progress > 0 && <path d="M 130 310 Q 200 280 270 310 L 270 318 L 130 318 Z" fill="#eee" opacity={progress} />}
+    </svg>
+  );
+};
+
+const IronCopperSulphate: React.FC = () => {
+  const frame = useCurrentFrame();
+  const progress = interpolate(frame, [30, 120], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  
+  // Blue to green
+  const r = Math.round(interpolate(progress, [0, 1], [50, 150]));
+  const g = Math.round(interpolate(progress, [0, 1], [150, 255]));
+  const b = Math.round(interpolate(progress, [0, 1], [255, 100]));
+  
+  // Nail color (grey to brown)
+  const nr = Math.round(interpolate(progress, [0, 1], [150, 139]));
+  const ng = Math.round(interpolate(progress, [0, 1], [150, 69]));
+  const nb = Math.round(interpolate(progress, [0, 1], [150, 19]));
+
+  return (
+    <svg width="400" height="400" viewBox="0 0 400 400">
+      {/* Beaker */}
+      <path d="M 100 150 L 100 350 Q 100 370 120 370 L 280 370 Q 300 370 300 350 L 300 150" fill="none" stroke="#555" strokeWidth="4" />
+      {/* Liquid */}
+      <rect x="102" y="200" width="196" height="168" fill={`rgba(${r}, ${g}, ${b}, 0.6)`} />
+      {/* Iron Nails dipping down */}
+      <g transform={`translate(0, ${interpolate(frame, [0, 30], [-100, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })})`}>
+        <rect x="170" y="100" width="10" height="150" fill={`rgb(${nr}, ${ng}, ${nb})`} rx="2" />
+        <rect x="165" y="100" width="20" height="5" fill="#333" />
+        
+        <rect x="220" y="120" width="10" height="150" fill={`rgb(${nr}, ${ng}, ${nb})`} rx="2" transform="rotate(10 220 120)" />
+        <rect x="215" y="120" width="20" height="5" fill="#333" transform="rotate(10 220 120)" />
+      </g>
+    </svg>
+  );
+};
+
+const Electrolysis: React.FC = () => {
+  const frame = useCurrentFrame();
+  const bubbles = new Array(30).fill(0).map((_, i) => {
+    const isHydrogen = i % 3 !== 0; // H2 volume is double O2 volume!
+    const x = isHydrogen ? 150 + random(`hx-${i}`) * 20 - 10 : 250 + random(`ox-${i}`) * 20 - 10;
+    const dropFrame = (frame + i * 5) % 100;
+    const y = 320 - dropFrame * 1.5;
+    return <circle key={i} cx={x} cy={y} r={random(`r-${i}`) * 2 + 1} fill="rgba(255,255,255,0.8)" />;
+  });
+
+  return (
+    <svg width="400" height="400" viewBox="0 0 400 400">
+      <path d="M 80 150 L 80 350 Q 80 370 100 370 L 300 370 Q 320 370 320 350 L 320 150" fill="none" stroke="#555" strokeWidth="4" />
+      <rect x="82" y="200" width="236" height="168" fill="rgba(100, 200, 255, 0.3)" />
+      
+      {/* Electrodes (Cathode Left, Anode Right) */}
+      <rect x="140" y="220" width="20" height="100" fill="#333" />
+      <rect x="240" y="220" width="20" height="100" fill="#333" />
+      
+      {/* Test tubes inverted over electrodes */}
+      <path d="M 130 150 L 130 300 A 10 10 0 0 0 170 300 L 170 150" fill="none" stroke="#888" strokeWidth="2" />
+      <path d="M 230 150 L 230 300 A 10 10 0 0 0 270 300 L 270 150" fill="none" stroke="#888" strokeWidth="2" />
+
+      {/* Wires & Battery */}
+      <path d="M 150 370 L 150 390 L 250 390 L 250 370" fill="none" stroke="#888" strokeWidth="2" />
+      <rect x="185" y="380" width="30" height="20" fill="#fadb14" />
+      <text x="175" y="395" fill="white" fontSize="12">-</text>
+      <text x="220" y="395" fill="white" fontSize="12">+</text>
+
+      {/* Bubbles forming (active after frame 30) */}
+      {frame > 30 && bubbles}
+    </svg>
+  );
+};
+
+export const ActivityScene: React.FC<{
+  activityName: string;
+  description: string;
+  animationType: string;
+  audio?: string;
+  alignments?: WordAlignment[];
+}> = ({ activityName, description, animationType, audio }) => {
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#1A1A1A", color: "white", padding: 80 }}>
+      {audio && <Audio src={staticFile(audio)} />}
+      <h2 style={{ fontSize: 48, color: "#fadb14", fontFamily: "Outfit, sans-serif" }}>{activityName}</h2>
+      <p style={{ fontSize: 32, maxWidth: 800, fontFamily: "Georgia, serif" }}>{description}</p>
+      
+      <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+        {animationType === "magnesium_burn" && <MagnesiumBurn />}
+        {animationType === "quicklime_water" && <QuicklimeWater />}
+        {animationType === "iron_copper_sulphate" && <IronCopperSulphate />}
+        {animationType === "electrolysis" && <Electrolysis />}
+      </div>
+    </AbsoluteFill>
+  );
+};

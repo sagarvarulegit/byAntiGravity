@@ -13,11 +13,12 @@ seed_files = [
     "db/seed_science_ch1_quizzes.sql",
     "db/seed_question_types_batch1.sql",
     "db/seed_study_guides.sql",
+    "db/seed_pyq_questions.sql",
 ]
 
-with open("supabase/seed.sql", "w") as outfile:
+with open("supabase/seed.sql", "w", encoding="utf-8") as outfile:
     for f in seed_files:
         if os.path.exists(f):
-            with open(f, "r") as infile:
+            with open(f, "r", encoding="utf-8") as infile:
                 outfile.write(f"\n\n-- --- FROM FILE {f} ---\n\n")
                 outfile.write(infile.read())

@@ -199,6 +199,10 @@ Potential difference across the conductor, $V_2 = I R_2 = 0.25\text{ A} \times 4
 
 ### 11.6.2 Resistors in Parallel
 
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 6x (2025, 2026)**  
+> *Key Concept:* Practice calculating the equivalent resistance of combined series and parallel resistors and finding the current/potential difference across specific components.
+
 When resistors are connected together between the same two points, they are said to be in parallel.
 In a parallel circuit, the potential difference ($V$) is constant across each resistor. The total current ($I$) is the sum of separate currents.
 
@@ -374,6 +378,7 @@ The NCERT textbook outlines three introductory activities to help us find out:
 * **Activity 1.3 (Zinc Granules + Acid):**
   * Add dilute hydrochloric acid or sulphuric acid to zinc granules in a flask.
   * **Observation:** Gas bubbles (Hydrogen, $H_2$) form around the zinc granules, and the temperature of the flask increases (it feels warm/exothermic).
+  [FIGURE: zinc_acid]
 
 Based on these activities, any of the following **four observations** helps us determine that a chemical reaction has taken place:
 1. **Change in state**
@@ -550,6 +555,10 @@ In a decomposition reaction, a single reactant breaks down to give two or more s
      $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$
    [FIGURE: electrolysis_of_water]
 
+> [!IMPORTANT]
+   > **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+   > *Key Concept:* During the electrolysis of water, the mole ratio (volume ratio) of hydrogen to oxygen gases released is $2:1$, while the mass ratio ($M_H : M_O$) of hydrogen to oxygen gases is $1:8$.
+
 #### C. Photolytic Decomposition / Photolysis (Using Light)
 
 5. **Activity 1.8 (Silver Chloride / Bromide in Sunlight):**
@@ -581,6 +590,10 @@ Reactions in which energy is absorbed (as heat, light, or electricity) to break 
 
 A chemical reaction in which a more reactive element displaces a less reactive element from its salt solution is a **displacement reaction**.
 
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 4x (2026)**  
+> *Key Concept:* Iron reacting with copper sulfate solution is a displacement reaction. The blue solution turns green (formation of $FeSO_4$) and a reddish-brown coating of copper deposits on the iron nail.
+
 * **Activity 1.9 (Iron Nails in Copper Sulphate):**
    * Immerse two clean iron nails in 10 mL copper sulphate solution for 20 minutes.
    * **Observation:** The shiny grey iron nails become coated with a brownish layer of copper metal, and the blue colour of the copper sulphate solution fades to a light green (due to the formation of iron sulphate).
@@ -608,6 +621,7 @@ Reactions in which there is an exchange of ions between the reactants to form ne
   * **Chemical Equation:**
     $$Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$$
     *(The white precipitate is formed by the reaction of $Ba^{2+}$ and $SO_4^{2-}$ ions).*
+  [FIGURE: double_displacement]
 
 #### Recall Activity 1.2 (Lead Nitrate + Potassium Iodide)
 When mixing lead nitrate and potassium iodide, we get a yellow precipitate of lead iodide:
@@ -678,6 +692,214 @@ When fats and oils are oxidised, they become rancid. Their smell and taste chang
 >   *Answer:* Sodium ($Na$) gains oxygen, so it is oxidised. Oxygen ($O_2$) is reduced.
 > * (ii) $CuO(s) + H_2(g) \rightarrow Cu(s) + H_2O(l)$
 >   *Answer:* Hydrogen ($H_2$) gains oxygen, so it is oxidised to $H_2O$. Copper oxide ($CuO$) loses oxygen, so it is reduced to $Cu$.
+
+---
+
+## 1.4 NCERT TEXTBOOK EXERCISES (QUESTIONS & ANSWERS)
+
+> **Q1. Which of the statements about the reaction below are incorrect?**
+> $$2PbO(s) + C(s) \rightarrow 2Pb(s) + CO_2(g)$$
+> (a) Lead is getting reduced.  
+> (b) Carbon dioxide is getting oxidised.  
+> (c) Carbon is getting oxidised.  
+> (d) Lead oxide is getting reduced.  
+> *Options:* (i) (a) and (b), (ii) (a) and (c), (iii) (a), (b) and (c), (iv) all.  
+> *Answer:* **(i) (a) and (b)**  
+> *Explanation:* In the reaction, lead oxide ($PbO$) is reduced to lead ($Pb$) by losing oxygen, and carbon ($C$) is oxidised to carbon dioxide ($CO_2$) by gaining oxygen. The statements (a) and (b) say "Lead" and "Carbon dioxide" are reduced/oxidised, which is incorrect because only the reactants on the LHS get oxidised or reduced.
+
+> **Q2. $$Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$$**  
+> **The above reaction is an example of a:**  
+> (a) combination reaction.  
+> (b) double displacement reaction.  
+> (c) decomposition reaction.  
+> (d) displacement reaction.  
+> *Answer:* **(d) displacement reaction.**  
+> *Explanation:* Aluminium is more reactive than iron. It displaces iron from iron oxide ($Fe_2O_3$) to form aluminium oxide ($Al_2O_3$) and free iron metal.
+
+> **Q3. What happens when dilute hydrochloric acid is added to iron filings? Tick the correct answer.**  
+> (a) Hydrogen gas and iron chloride are produced.  
+> (b) Chlorine gas and iron hydroxide are produced.  
+> (c) No reaction takes place.  
+> (d) Iron salt and water are produced.  
+> *Answer:* **(a) Hydrogen gas and iron chloride are produced.**  
+> *Explanation:* Iron is more reactive than hydrogen and displaces it from hydrochloric acid to form iron(II) chloride ($FeCl_2$) and hydrogen gas:  
+> $$Fe(s) + 2HCl(aq) \rightarrow FeCl_2(aq) + H_2(g)$$
+
+> **Q4. What is a balanced chemical equation? Why should chemical equations be balanced?**  
+> *Answer:* A **balanced chemical equation** is one in which the total number of atoms of each element is the same on both the reactant side (left-hand side) and the product side (right-hand side).  
+> According to the **Law of Conservation of Mass**, mass can neither be created nor destroyed in a chemical reaction. Therefore, the total mass of the reactants must equal the total mass of the products. To satisfy this law, the number of atoms of each element must remain constant before and after the reaction, which requires chemical equations to be balanced.
+
+> **Q5. Translate the following statements into chemical equations and then balance them.**  
+> (a) Hydrogen gas combines with nitrogen to form ammonia.  
+> (b) Hydrogen sulphide gas burns in air to give water and sulphur dioxide.  
+> (c) Barium chloride reacts with aluminium sulphate to give aluminium chloride and a precipitate of barium sulphate.  
+> (d) Potassium metal reacts with water to give potassium hydroxide and hydrogen gas.  
+> *Answers:*  
+> * (a) **Word Equation:** Hydrogen + Nitrogen $\rightarrow$ Ammonia  
+>   **Balanced Equation:** $$3H_2(g) + N_2(g) \rightarrow 2NH_3(g)$$  
+> * (b) **Word Equation:** Hydrogen sulphide + Oxygen $\rightarrow$ Water + Sulphur dioxide  
+>   **Balanced Equation:** $$2H_2S(g) + 3O_2(g) \rightarrow 2H_2O(l) + 2SO_2(g)$$  
+> * (c) **Word Equation:** Barium chloride + Aluminium sulphate $\rightarrow$ Aluminium chloride + Barium sulphate (precipitate)  
+>   **Balanced Equation:** $$3BaCl_2(aq) + Al_2(SO_4)_3(aq) \rightarrow 2AlCl_3(aq) + 3BaSO_4(s)$$  
+> * (d) **Word Equation:** Potassium + Water $\rightarrow$ Potassium hydroxide + Hydrogen  
+>   **Balanced Equation:** $$2K(s) + 2H_2O(l) \rightarrow 2KOH(aq) + H_2(g)$$
+
+> **Q6. Balance the following chemical equations.**  
+> (a) $$HNO_3 + Ca(OH)_2 \rightarrow Ca(NO_3)_2 + H_2O$$  
+> (b) $$NaOH + H_2SO_4 \rightarrow Na_2SO_4 + H_2O$$  
+> (c) $$NaCl + AgNO_3 \rightarrow AgCl + NaNO_3$$  
+> (d) $$BaCl_2 + H_2SO_4 \rightarrow BaSO_4 + HCl$$  
+> *Answers:*  
+> * (a) $$2HNO_3 + Ca(OH)_2 \rightarrow Ca(NO_3)_2 + 2H_2O$$  
+> * (b) $$2NaOH + H_2SO_4 \rightarrow Na_2SO_4 + 2H_2O$$  
+> * (c) $$NaCl + AgNO_3 \rightarrow AgCl + NaNO_3$$ *(Already balanced!)*  
+> * (d) $$BaCl_2 + H_2SO_4 \rightarrow BaSO_4 + 2HCl$$
+
+> **Q7. Write the balanced chemical equations for the following reactions.**  
+> (a) Calcium hydroxide + Carbon dioxide $\rightarrow$ Calcium carbonate + Water  
+> (b) Zinc + Silver nitrate $\rightarrow$ Zinc nitrate + Silver  
+> (c) Aluminium + Copper chloride $\rightarrow$ Aluminium chloride + Copper  
+> (d) Barium chloride + Potassium sulphate $\rightarrow$ Barium sulphate + Potassium chloride  
+> *Answers:*  
+> * (a) $$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$  
+> * (b) $$Zn(s) + 2AgNO_3(aq) \rightarrow Zn(NO_3)_2(aq) + 2Ag(s)$$  
+> * (c) $$2Al(s) + 3CuCl_2(aq) \rightarrow 2AlCl_3(aq) + 3Cu(s)$$  
+> * (d) $$BaCl_2(aq) + K_2SO_4(aq) \rightarrow BaSO_4(s) + 2KCl(aq)$$
+
+> **Q8. Write the balanced chemical equation for the following and identify the type of reaction in each case.**  
+> (a) Potassium bromide(aq) + Barium iodide(aq) $\rightarrow$ Potassium iodide(aq) + Barium bromide(s)  
+> (b) Zinc carbonate(s) $\rightarrow$ Zinc oxide(s) + Carbon dioxide(g)  
+> (c) Hydrogen(g) + Chlorine(g) $\rightarrow$ Hydrogen chloride(g)  
+> (d) Magnesium(s) + Hydrochloric acid(aq) $\rightarrow$ Magnesium chloride(aq) + Hydrogen(g)  
+> *Answers:*  
+> * (a) $$2KBr(aq) + BaI_2(aq) \rightarrow 2KI(aq) + BaBr_2(s)$$  
+>   **Type:** Double Displacement (Precipitation) reaction.  
+> * (b) $$ZnCO_3(s) \xrightarrow{\text{Heat}} ZnO(s) + CO_2(g)$$  
+>   **Type:** Thermal Decomposition reaction.  
+> * (c) $$H_2(g) + Cl_2(g) \rightarrow 2HCl(g)$$  
+>   **Type:** Combination reaction.  
+> * (d) $$Mg(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + H_2(g)$$  
+>   **Type:** Displacement reaction.
+
+> **Q9. What does one mean by exothermic and endothermic reactions? Give examples.**  
+> *Answer:*  
+> * **Exothermic Reactions:** Chemical reactions that release energy (heat, light, or sound) into the surroundings.  
+>   *Example 1 (Respiration):* $$C_6H_{12}O_6(aq) + 6O_2(aq) \rightarrow 6CO_2(aq) + 6H_2O(l) + \text{Energy}$$  
+>   *Example 2 (Burning of natural gas):* $$CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(g) + \text{Heat}$$  
+> * **Endothermic Reactions:** Chemical reactions that absorb energy from their surroundings in the form of heat, light, or electricity to break chemical bonds.  
+>   *Example 1 (Thermal Decomposition of Limestone):* $$CaCO_3(s) \xrightarrow{\text{Heat}} CaO(s) + CO_2(g)$$  
+>   *Example 2 (Photolytic Decomposition of Silver Chloride):* $$2AgCl(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Cl_2(g)$$
+
+> **Q10. Why is respiration considered an exothermic reaction? Explain.**  
+> *Answer:* Respiration is considered an exothermic reaction because it releases energy for our body cells.  
+> During digestion, food containing carbohydrates (like rice, potatoes, bread) is broken down into simple sugars like glucose ($C_6H_{12}O_6$). During respiration, glucose combines with oxygen in the cells of our body to form carbon dioxide, water, and release energy (ATP) that powers metabolic processes:  
+> $$C_6H_{12}O_6(aq) + 6O_2(aq) \rightarrow 6CO_2(aq) + 6H_2O(l) + \text{Energy}$$
+
+> **Q11. Why are decomposition reactions called the opposite of combination reactions? Write equations for these reactions.**  
+> *Answer:*  
+> * In a **combination reaction**, two or more elements/compounds combine to form a single substance:  
+>   $$2H_2(g) + O_2(g) \rightarrow 2H_2O(l)$$  
+> * In a **decomposition reaction**, a single substance breaks down into two or more simpler elements/compounds:  
+>   $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$  
+> Since combination reactions form a single product from multiple reactants, whereas decomposition reactions yield multiple products from a single reactant, they are exact opposites.
+
+> **Q12. Write one equation each for decomposition reactions where energy is supplied in the form of heat, light and electricity.**  
+> *Answer:*  
+> * (1) **Thermal Decomposition (Heat):**  
+>   $$2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$$  
+> * (2) **Photolytic Decomposition (Light):**  
+>   $$2AgCl(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Cl_2(g)$$  
+> * (3) **Electrolytic Decomposition (Electricity):**  
+>   $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$
+
+> **Q13. What is the difference between displacement and double displacement reactions? Write equations for these reactions.**  
+> *Answer:*  
+> * **Displacement Reaction:** A single more reactive element displaces a less reactive element from its aqueous salt solution:  
+>   $$Fe(s) + CuSO_4(aq) \rightarrow FeSO_4(aq) + Cu(s)$$  
+>   *(Iron displaces copper because iron is more reactive).*  
+> * **Double Displacement Reaction:** Two reactant compounds exchange ions to form two new product compounds, often resulting in an insoluble precipitate:  
+>   $$Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$$  
+>   *(Sodium and Barium ions swap partners, forming a solid barium sulphate precipitate).*
+
+> **Q14. In the refinement of silver, the recovery of silver from silver nitrate solution involved displacement by copper metal. Write down the reaction involved.**  
+> *Answer:* Copper is more reactive than silver and displaces silver from a silver nitrate solution:  
+> $$Cu(s) + 2AgNO_3(aq) \rightarrow Cu(NO_3)_2(aq) + 2Ag(s)$$  
+> Shiny brown copper metal dissolves to form blue copper nitrate solution, and solid silver crystals precipitate out.
+
+> **Q15. What do you mean by a precipitation reaction? Explain by giving examples.**  
+> *Answer:* A chemical reaction in which two soluble compounds in aqueous solutions react to form an insoluble solid product (called a **precipitate**) that separates from the liquid mixture is called a **precipitation reaction**.  
+> * **Example 1:** Sodium sulphate and Barium chloride react to form a white precipitate of Barium sulphate:  
+>   $$Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$$  
+> * **Example 2:** Lead nitrate and Potassium iodide react to form a yellow precipitate of Lead iodide:  
+>   $$Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$$
+
+> **Q16. Explain the following in terms of gain or loss of oxygen with two examples each.**  
+> (a) Oxidation  
+> (b) Reduction  
+> *Answer:*  
+> * (a) **Oxidation:** A chemical process in which a substance gains oxygen.  
+>   *Example 1:* $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$ *(Copper gains oxygen to form black copper oxide).*  
+>   *Example 2:* $$2Mg + O_2 \rightarrow 2MgO$$ *(Magnesium gains oxygen to form magnesium oxide).*  
+> * (b) **Reduction:** A chemical process in which a substance loses oxygen.  
+>   *Example 1:* $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$ *(Copper oxide loses oxygen to form copper metal).*  
+>   *Example 2:* $$ZnO + C \rightarrow Zn + CO$$ *(Zinc oxide loses oxygen to form zinc metal).*
+
+> **Q17. A shiny brown coloured element ''X'' on heating in air becomes black in colour. Name the element ''X'' and the black coloured compound formed.**  
+> *Answer:*  
+> * The shiny brown element **''X''** is **Copper ($Cu$)**.  
+> * The black coloured compound formed is **Copper(II) oxide ($CuO$)**.  
+> * **Chemical Equation:**  
+>   $$2Cu(s) + O_2(g) \xrightarrow{\text{Heat}} 2CuO(s)$$
+
+> **Q18. Why do we apply paint on iron articles?**  
+> *Answer:* We apply paint on iron articles to protect them from **corrosion (rusting)**.  
+> Rusting occurs when iron reacts with moisture (water) and oxygen present in the atmosphere to form hydrated iron oxide ($Fe_2O_3 \cdot xH_2O$). Painting forms a protective barrier over the iron surface, preventing direct contact with atmospheric oxygen and water, thereby stopping the corrosion reaction.
+
+> **Q19. Oil and fat containing food items are flushed with nitrogen. Why?**  
+> *Answer:* Oil and fat containing food items are flushed with nitrogen to prevent **rancidity**.  
+> When fats and oils in food items react with oxygen in the atmosphere, they undergo oxidation. This chemical change changes their smell and taste, making them rancid and unfit for consumption. Nitrogen is an inert gas that does not react with fats or oils. Flushing packages with nitrogen displaces oxygen, preventing oxidation and keeping the food fresh.
+
+> **Q20. Explain the following terms with one example each.**  
+> (a) Corrosion  
+> (b) Rancidity  
+> *Answer:*  
+> * (a) **Corrosion:** The slow and gradual eating away of metal surfaces due to their reaction with gases, moisture, or acids in the environment.  
+>   *Example:* Rusting of iron, where iron reacts with oxygen and water to form a flaky, reddish-brown hydrated ferric oxide coating:  
+>   $$4Fe(s) + 3O_2(g) + 2xH_2O(l) \rightarrow 2Fe_2O_3 \cdot xH_2O(s)\text{ (Rust)}$$  
+> * (b) **Rancidity:** The slow oxidation of fats and oils present in food items, resulting in an unpleasant odor and taste.  
+>   *Example:* A bag of potato chips left open for a few days becomes stale, soft, and smells bad due to the oxidation of the cooking oil used in them.
+
+---
+
+## 1.5 NCERT GROUP ACTIVITY: EXOTHERMIC VS ENDOTHERMIC REACTIONS
+
+*   **Objective:** To determine whether chemical changes/dissolutions are exothermic or endothermic by monitoring temperature.
+*   **Materials Required:** Four 100 mL beakers (labeled A, B, C, and D), water, copper sulphate ($CuSO_4$) solution, thermometer, spatula, potassium sulphate ($K_2SO_4$), ammonium nitrate ($NH_4NO_3$), anhydrous copper sulphate ($CuSO_4$), and fine iron filings.
+*   **Procedure:**
+    1. Take the four beakers and label them A, B, C, and D.
+    2. Add 25 mL of water to beakers A, B, and C. Add 25 mL of copper sulphate solution to beaker D.
+    3. Measure the initial temperature of each liquid using a thermometer and record it.
+    4. Using a spatula, add 2 scoops of:
+       * **Beaker A:** Potassium sulphate ($K_2SO_4$)
+       * **Beaker B:** Ammonium nitrate ($NH_4NO_3$)
+       * **Beaker C:** Anhydrous copper sulphate ($CuSO_4$)
+       * **Beaker D:** Fine iron filings
+    5. Stir each mixture gently and measure the final stable temperature.
+*   **Observations & Data Table:**
+
+| Beaker | Substance Added | Initial Temp ($T_1$) | Final Temp ($T_2$) | Temperature Change | Reaction Type |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| **Beaker A** | Potassium sulphate | $25^\circ\text{C}$ | $23^\circ\text{C}$ | Temperature Decreases | **Endothermic** |
+| **Beaker B** | Ammonium nitrate | $25^\circ\text{C}$ | $18^\circ\text{C}$ | Temperature Decreases | **Endothermic** |
+| **Beaker C** | Anhydrous copper sulphate | $25^\circ\text{C}$ | $32^\circ\text{C}$ | Temperature Increases | **Exothermic** |
+| **Beaker D** | Fine iron filings | $25^\circ\text{C}$ | $30^\circ\text{C}$ | Temperature Increases | **Exothermic** |
+
+*   **Scientific Explanation:**
+    *   **Beaker A & B:** Dissolving $K_2SO_4$ and $NH_4NO_3$ in water absorbs heat energy from the solvent to break the crystal lattices. This absorption of heat causes the water temperature to drop, indicating an **endothermic dissolution process**.
+    *   **Beaker C:** Adding anhydrous copper sulphate (white powder) to water causes hydration to form copper sulphate pentahydrate ($CuSO_4 \cdot 5H_2O$). This hydration reaction releases a significant amount of heat energy, causing the temperature to rise, which is **exothermic**.
+    *   **Beaker D:** Iron is more reactive than copper and displaces copper from copper sulphate solution:
+        $$Fe(s) + CuSO_4(aq) \rightarrow FeSO_4(aq) + Cu(s) + \text{Heat}$$
+        This displacement reaction is highly **exothermic**, releasing chemical energy as heat, causing the beaker to feel warm.
 
 ---
 

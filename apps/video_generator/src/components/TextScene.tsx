@@ -9,9 +9,10 @@ interface TextSceneProps {
   bullets: string[];
   audio?: string;
   alignments?: WordAlignment[];
+  imageUrl?: string;
 }
 
-export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, alignments }) => {
+export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, alignments, imageUrl }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -23,6 +24,12 @@ export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, a
   const headingTranslateY = interpolate(frame, [0, 15], [-20, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
+  });
+
+  const imageOpacity = spring({
+    frame: frame - 15,
+    fps,
+    config: { damping: 15 },
   });
 
   // Calculate bullet delays
@@ -60,87 +67,119 @@ export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, a
           right: "80px",
           bottom: "80px",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
+          flexDirection: "row",
+          gap: "40px",
         }}
       >
-        {/* Heading */}
-        <h2
-          style={{
-            fontFamily: outfitFont,
-            fontSize: "48px",
-            fontWeight: 800,
-            color: AppColors.blue,
-            margin: "0 0 40px 0",
-            opacity: headingOpacity,
-            transform: `translateY(${headingTranslateY}px)`,
-          }}
-        >
-          {heading}
-        </h2>
+        {/* Left Column: Text */}
+        <div style={{ 
+          flex: imageUrl ? 0.55 : 1, 
+          display: "flex", 
+          flexDirection: "column", 
+          justifyContent: "flex-start", 
+          alignItems: "flex-start" 
+        }}>
+          {/* Heading */}
+          <h2
+            style={{
+              fontFamily: outfitFont,
+              fontSize: "48px",
+              fontWeight: 800,
+              color: AppColors.blue,
+              margin: "0 0 40px 0",
+              opacity: headingOpacity,
+              transform: `translateY(${headingTranslateY}px)`,
+            }}
+          >
+            {heading}
+          </h2>
 
-        {/* Bullets */}
-        <ul
-          style={{
-            listStyle: "none",
-            padding: 0,
-            margin: 0,
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "24px",
-          }}
-        >
-          {bullets.map((bullet, index) => {
-            const delay = bulletDelays[index];
-            const bulletProgress = spring({
-              frame: frame - delay,
-              fps,
-              config: { damping: 15 },
-            });
+          {/* Bullets */}
+          <ul
+            style={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+            }}
+          >
+            {bullets.map((bullet, index) => {
+              const delay = bulletDelays[index];
+              const bulletProgress = spring({
+                frame: frame - delay,
+                fps,
+                config: { damping: 15 },
+              });
 
-            if (frame < delay) return null;
+              if (frame < delay) return null;
 
-            const opacity = interpolate(bulletProgress, [0, 1], [0, 1]);
-            const translateX = interpolate(bulletProgress, [0, 1], [-30, 0]);
+              const opacity = interpolate(bulletProgress, [0, 1], [0, 1]);
+              const translateX = interpolate(bulletProgress, [0, 1], [-30, 0]);
 
-            return (
-              <li
-                key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "16px",
-                  opacity,
-                  transform: `translateX(${translateX}px)`,
-                }}
-              >
-                <span
+              return (
+                <li
+                  key={index}
                   style={{
-                    fontFamily: outfitFont,
-                    color: AppColors.purple,
-                    fontSize: "32px",
-                    lineHeight: "36px",
-                    fontWeight: 900,
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "16px",
+                    opacity,
+                    transform: `translateX(${translateX}px)`,
                   }}
                 >
-                  ■
-                </span>
-                <span
-                  style={{
-                    fontFamily: serifFont,
-                    fontSize: "28px",
-                    lineHeight: "40px",
-                    color: AppColors.textLightPrimary,
-                  }}
-                >
-                  {bullet}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
+                  <span
+                    style={{
+                      fontFamily: outfitFont,
+                      color: AppColors.purple,
+                      fontSize: "32px",
+                      lineHeight: "36px",
+                      fontWeight: 900,
+                    }}
+                  >
+                    ■
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: serifFont,
+                      fontSize: "28px",
+                      lineHeight: "40px",
+                      color: AppColors.textLightPrimary,
+                    }}
+                  >
+                    {bullet}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Right Column: Image */}
+        {imageUrl && (
+          <div style={{ 
+            flex: 0.45, 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center",
+            opacity: imageOpacity,
+            transform: `scale(${interpolate(imageOpacity, [0, 1], [0.9, 1])})`
+          }}>
+            <img 
+              src={staticFile(imageUrl)} 
+              alt="Illustration" 
+              style={{ 
+                maxWidth: "100%", 
+                maxHeight: "100%", 
+                objectFit: "contain",
+                borderRadius: "16px",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+              }} 
+            />
+          </div>
+        )}
       </div>
     </div>
   );

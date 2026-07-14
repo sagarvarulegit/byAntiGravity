@@ -1,5 +1,4 @@
 import React from "react";
-import { Audio, staticFile } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { slide } from "@remotion/transitions/slide";
 import { VideoData } from "./data/schema";
@@ -7,6 +6,10 @@ import { TitleScene } from "./components/TitleScene";
 import { TextScene } from "./components/TextScene";
 import { KineticTypographyScene } from "./components/KineticTypographyScene";
 import { DiagramScene } from "./components/DiagramScene";
+import { EquationScene } from "./components/EquationScene";
+import { ActivityScene } from "./components/ActivityScene";
+import { ConversationScene } from "./components/ConversationScene";
+import { BoardExamHighlight } from "./components/BoardExamHighlight";
 import defaultData from "./data/electricity/01_introduction.json";
 
 export const MyComposition: React.FC<VideoData> = (props) => {
@@ -41,6 +44,7 @@ export const MyComposition: React.FC<VideoData> = (props) => {
                     bullets={scene.content.bullets}
                     audio={scene.audio}
                     alignments={scene.alignments}
+                    imageUrl={scene.content.imageUrl}
                   />
                 )}
                 {scene.type === "diagram" && (
@@ -50,6 +54,40 @@ export const MyComposition: React.FC<VideoData> = (props) => {
                     audio={scene.audio}
                     components={scene.content.components}
                     wires={scene.content.wires}
+                  />
+                )}
+                {scene.type === "equation" && (
+                  <EquationScene
+                    reactants={scene.content.reactants}
+                    products={scene.content.products}
+                    focusSide={scene.content.focusSide}
+                    focusElement={scene.content.focusElement}
+                    audio={scene.audio}
+                    alignments={scene.alignments}
+                  />
+                )}
+                {scene.type === "activity" && (
+                  <ActivityScene
+                    activityName={scene.content.activityName}
+                    description={scene.content.description}
+                    animationType={scene.content.animationType}
+                    audio={scene.audio}
+                    alignments={scene.alignments}
+                  />
+                )}
+                {scene.type === "conversation" && (
+                  <ConversationScene
+                    messages={scene.content.messages}
+                    imageUrl={"imageUrl" in scene.content ? scene.content.imageUrl : undefined}
+                    audio={scene.audio}
+                    alignments={scene.alignments}
+                  />
+                )}
+                {scene.boardExam && (
+                  <BoardExamHighlight
+                    repeated={scene.boardExam.repeated}
+                    years={scene.boardExam.years}
+                    marks={scene.boardExam.marks}
                   />
                 )}
               </TransitionSeries.Sequence>
@@ -65,4 +103,32 @@ export const MyComposition: React.FC<VideoData> = (props) => {
       </TransitionSeries>
     </>
   );
+};
+
+import { Series, AbsoluteFill } from "remotion";
+import { AppColors } from "./theme";
+
+export const FullChapterComposition: React.FC<{ parts: VideoData[] }> = ({ parts }) => {
+  const PAUSE_FRAMES = 120; // 4 seconds pause
+  
+  const sequences: React.ReactNode[] = [];
+  parts.forEach((part, index) => {
+    // TransitionSeries overlaps each scene by 15 frames
+    const actualDuration = part.durationInFrames - (part.scenes.length - 1) * 15;
+
+    sequences.push(
+      <Series.Sequence key={`part-${index}`} durationInFrames={actualDuration}>
+        <MyComposition {...part} />
+      </Series.Sequence>
+    );
+    if (index < parts.length - 1) {
+      sequences.push(
+        <Series.Sequence key={`pause-${index}`} durationInFrames={PAUSE_FRAMES}>
+          <AbsoluteFill style={{ backgroundColor: AppColors.bgLight }} />
+        </Series.Sequence>
+      );
+    }
+  });
+
+  return <Series>{sequences}</Series>;
 };

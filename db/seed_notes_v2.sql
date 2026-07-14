@@ -120,7 +120,7 @@ INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_
 '# Chapter 1: Chemical Reactions and Equations
 
 ## 1. 🎯 Chapter Goal
-Learn how to write and balance chemical equations. Learn the different types of chemical reactions.
+Learn how to write and balance chemical equations. Learn the different types of chemical reactions, including redox, and understand corrosion and rancidity in daily life.
 
 ## 2. 🪝 Hook
 Leave a shiny iron nail outside in the rain. In a few days, it turns brown and flaky. Why does this happen? The iron reacted with air and water. Let''s explore how substances change!
@@ -133,60 +133,113 @@ We call the starting substances **[JARGON: Reactants | The starting substances i
 We can spot a reaction by:
 - Change in state (e.g., liquid to gas).
 - Change in color.
-- Gas release.
+- Gas release (evolution of gas).
 - Temperature change.
 
 ## 4. 📖 Concept 2: Balancing Chemical Equations
 A chemical equation shows the reactants and products. We must balance it. This satisfies the **[JARGON: Law of Conservation of Mass | Mass cannot be created or destroyed in a chemical reaction | Total mass of reactants must equal total mass of products]** (the rule that total mass does not change). The total atoms on both sides must match.
 
-To balance an equation:
-1. Write the raw equation: $Mg + O_2 \rightarrow MgO$.
+To balance an equation using the hit-and-trial method:
+1. Write the raw (skeletal) equation: $Mg + O_2 \rightarrow MgO$.
 2. Count the atoms of each element on both sides.
-3. Put numbers in front of formulas, not inside them.
+3. Put numbers (coefficients) in front of formulas, not inside them.
 4. Balanced: $2Mg + O_2 \rightarrow 2MgO$.
-Magnesium burns with a bright white flame to form white magnesium oxide powder.
+Magnesium burns with a dazzling white flame to form white magnesium oxide powder.
 
 ## 5. 📖 Concept 3: Types of Chemical Reactions
 Reactions happen in different ways:
 - **[JARGON: Combination Reaction | A reaction where two or more reactants join to form one single product | Burning magnesium to form magnesium oxide]** (joining together): Two reactants join into one product. $2Mg + O_2 \rightarrow 2MgO$.
-[FIGURE: combination_reaction]
-- **[JARGON: Decomposition Reaction | A reaction where a single reactant breaks down into two or more products | Heating calcium carbonate to get calcium oxide and carbon dioxide]** (breaking apart): One reactant splits into two or more products. $CaCO_3 \rightarrow CaO + CO_2$.
-[FIGURE: decomposition_reaction]
-- **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger element replaces a weaker one. $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$. The blue copper solution turns green!
-[FIGURE: displacement_reaction]
-- **[JARGON: Double Displacement Reaction | A reaction where two compounds swap ions to form new compounds | Barium chloride reacting with sodium sulfate]** (swapping partners): Reactants swap ions. $Na_2SO_4 + BaCl_2 \rightarrow BaSO_4 + 2NaCl$.
-- **[JARGON: Exothermic Reaction | A reaction that releases heat energy into the surroundings | Respiration inside our cells]** (heat releasing): Releases heat. Example: respiration.
-- **[JARGON: Endothermic Reaction | A reaction that absorbs heat energy from the surroundings | Photosynthesis in plants]** (heat absorbing): Absorbs heat. Example: photosynthesis.
+  - *Example:* Quicklime reacts vigorously with water to form slaked lime, releasing heat:
+    $$CaO(s) + H_2O(l) \rightarrow Ca(OH)_2(aq) + \text{Heat}$$
+  [FIGURE: combination_reaction]
+- **[JARGON: Decomposition Reaction | A reaction where a single reactant breaks down into two or more products | Heating calcium carbonate to get calcium oxide and carbon dioxide]** (breaking apart): One reactant splits into two or more products.
+  There are three main subtypes based on energy source:
+  1. **Thermal Decomposition** (using heat):
+     - Limestone breakdown: $CaCO_3(s) \xrightarrow{\text{Heat}} CaO(s) + CO_2(g)$
+     - Ferrous sulphate crystals heated: $2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$ (green crystals turn brown, choking sulphur smell).
+     - Lead nitrate heating: $2Pb(NO_3)_2(s) \xrightarrow{\text{Heat}} 2PbO(s) + 4NO_2(g) + O_2(g)$ (yellow residue, brown nitrogen dioxide fumes).
+  2. **Electrolytic Decomposition** (using electricity):
+     - Water electrolysis: $2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$ (Hydrogen volume is double that of oxygen).
+  3. **Photolytic Decomposition** (using light):
+     - Silver chloride in sunlight: $2AgCl(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Cl_2(g)$ (white powder turns grey).
+     - Silver bromide in sunlight: $2AgBr(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Br_2(g)$ (used in black-and-white photography).
+  [FIGURE: decomposition_reaction]
+- **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger element replaces a weaker one. $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$. The blue copper solution turns green, and brown copper deposits on the iron nail!
+  > [!IMPORTANT]
+  > **🔥 Board Exam Hot Topic — Repeated 4x (2026)**  
+  > *Key Concept:* In a displacement reaction, a more reactive metal (e.g. Iron, Zinc) displaces a less reactive metal (e.g. Copper) from its salt solution.
+  [FIGURE: displacement_reaction]
+- **[JARGON: Double Displacement Reaction | A reaction where two compounds swap ions to form new compounds | Barium chloride reacting with sodium sulfate]** (swapping partners): Reactants swap ions. $Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$. The insoluble white solid $BaSO_4$ is a precipitate.
+- **[JARGON: Exothermic Reaction | A reaction that releases heat energy into the surroundings | Respiration inside our cells]** (heat releasing): Releases heat. Examples: respiration, burning natural gas, quicklime in water.
+- **[JARGON: Endothermic Reaction | A reaction that absorbs heat energy from the surroundings | Photosynthesis in plants]** (heat absorbing): Absorbs heat. Examples: photosynthesis, all decomposition reactions, barium hydroxide + ammonium chloride.
 
-## 6. ⚠️ Common Mistakes
+## 6. 📖 Concept 4: Oxidation-Reduction (Redox) Reactions
+- **Oxidation**: Gain of oxygen or loss of hydrogen by a substance during a reaction.
+- **Reduction**: Loss of oxygen or gain of hydrogen by a substance during a reaction.
+- **Redox Reaction**: A reaction where oxidation and reduction occur simultaneously.
+  - *Example 1:* Heating copper powder in air forms black copper oxide:
+    $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$ (Copper is oxidised).
+  - *Example 2:* Passing hydrogen gas over hot copper oxide:
+    $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$
+    Here, copper oxide loses oxygen and is **reduced** to copper. Hydrogen gains oxygen and is **oxidised** to water.
+  - *Example 3:* $$ZnO + C \rightarrow Zn + CO$$ (Zinc oxide is reduced to Zn; carbon is oxidised to carbon monoxide).
+
+## 7. 📖 Concept 5: Everyday Effects of Oxidation
+- **[JARGON: Corrosion | The gradual destruction of metals when exposed to moisture, air, and chemicals | Rusting of iron is corrosion]**: A metal surface is eaten away by air, water, or acids.
+  - *Examples:* Reddish-brown coating on iron (rust), black coating on silver, green coating on copper.
+  - *Prevention:* Painting, galvanisation (coating with zinc), oiling/greasing, electroplating.
+- **[JARGON: Rancidity | The spoilage of fats and oils in food due to oxidation, leading to bad smell and taste | Potato chips becoming stale]**: Fats and oils in food get oxidised when exposed to air.
+  - *Prevention:* Flushing packaging bags with inert nitrogen gas, storing food in airtight containers, adding antioxidants (like BHT).
+
+## 8. 🧪 NCERT Activities Cheat Sheet
+- **Activity 1.1:** Clean magnesium ribbon with sandpaper and burn. *Observation:* Burns with dazzling white flame, forming white magnesium oxide ($MgO$) powder.
+- **Activity 1.2:** Mix lead nitrate and potassium iodide solutions. *Observation:* Yellow precipitate of lead iodide ($PbI_2$) forms.
+- **Activity 1.3:** Add zinc granules to dilute acid. *Observation:* Hydrogen gas bubbles evolve, temperature rises (exothermic).
+- **Activity 1.4:** Add water to quicklime ($CaO$). *Observation:* Vigorous reaction, beaker becomes hot (exothermic combination), slaked lime ($Ca(OH)_2$) formed.
+- **Activity 1.5:** Heat green ferrous sulphate crystals. *Observation:* Crystals turn brown, choking smell of sulphur dioxide ($SO_2$) and sulphur trioxide ($SO_3$).
+- **Activity 1.6:** Heat lead nitrate powder. *Observation:* Brown nitrogen dioxide ($NO_2$) fumes and yellow lead oxide residue.
+- **Activity 1.7:** Electrolysis of water. *Observation:* Hydrogen gas collected at cathode is double the volume of oxygen gas at anode.
+- **Activity 1.8:** Place silver chloride in sunlight. *Observation:* White powder turns grey (decomposes into silver metal and chlorine).
+- **Activity 1.9:** Immerse iron nails in blue copper sulphate solution. *Observation:* Nails turn brown, blue solution turns light green (displacement).
+- **Activity 1.10:** Mix sodium sulphate and barium chloride solutions. *Observation:* White precipitate of barium sulphate ($BaSO_4$) forms.
+- **Activity 1.11:** Heat copper powder in china dish. *Observation:* Reddish-brown copper turns black (oxidises to copper oxide, $CuO$).
+
+## 9. ⚠️ Common Mistakes
 - Balancing by changing chemical formulas (e.g., writing $H_2O_2$ instead of $2H_2O$).
 - Forgetting to write physical states like solid (s), liquid (l), gas (g), and aqueous (aq).
-- Confusing single displacement with double displacement.
+- Confusing single displacement (one element swaps) with double displacement (two compounds swap ions).
+- Identifying lead and carbon dioxide as oxidised/reduced instead of the reactants (always look at LHS reactants for what is oxidised/reduced).
 
-## 7. 💡 Memory Tricks
+## 10. 💡 Memory Tricks
 - **Combination**: Two friends join hands to form a team.
 - **Decomposition**: A team splits into separate friends.
 - **Displacement**: A stronger kid takes a seat from a weaker kid.
 - **Double Displacement**: Two couples swap partners to dance.
+- **OIL RIG**: **O**xidation **I**s **L**oss (of hydrogen/electrons), **R**eduction **I**s **G**ain (of hydrogen/electrons).
 
-## 8. 📝 Quick Practice
+## 11. 📝 Quick Practice
 - **Question 1**: What type of reaction is $2H_2 + O_2 \rightarrow 2H_2O$?
   - *Answer*: Combination reaction. Two reactants join to form one product.
 - **Question 2**: Balance this equation: $H_2 + Cl_2 \rightarrow HCl$.
   - *Answer*: $H_2 + Cl_2 \rightarrow 2HCl$.
+- **Question 3**: In $CuO + H_2 \rightarrow Cu + H_2O$, identify the oxidising and reducing agents.
+  - *Answer:* $CuO$ is the oxidising agent (supplies oxygen/gets reduced). $H_2$ is the reducing agent (takes oxygen/gets oxidised).
 
-## 9. 🎓 Board Tips
-- Always clean the magnesium ribbon with sandpaper before burning it. This removes the protective oxide layer on its surface.
-- Remember the color changes! Iron in copper sulfate turns the blue solution pale green.
+## 12. 🎓 Board Tips
+- Always clean the magnesium ribbon with sandpaper before burning it. This removes the protective basic magnesium carbonate layer.
+- Remember color changes: iron in copper sulphate turns blue solution pale green.
+- Respiration is exothermic; decomposition reactions are endothermic.
 
-## 10. 🔄 One-Minute Revision
+## 13. 🔄 One-Minute Revision
 - Chemical reactions turn reactants into products.
 - You must balance equations to show that mass is conserved.
 - Combination joins elements; decomposition breaks them down.
 - Displacement swaps elements based on how reactive they are.
 - Exothermic reactions release heat; endothermic reactions absorb heat.
+- Oxidation is gain of oxygen; reduction is loss of oxygen.
+- Corrosion degrades metals; rancidity spoils fats/oils.
 
-## 11. 🎬 Comic Recap
+## 14. 🎬 Comic Recap
 ```
 ┌────────────────────────────────────────────┐
 │ PANEL 1:                                   │
@@ -213,7 +266,7 @@ Reactions happen in different ways:
 │ Reactants turn into products.              │
 │ Always balance the atoms on both sides.    │
 └────────────────────────────────────────────┘
-```', TRUE, 3)
+```', TRUE, 11)
 ON CONFLICT (id) DO UPDATE SET note_content = EXCLUDED.note_content;
 
 
@@ -354,6 +407,10 @@ To study electricity, we draw circuit diagrams using standard symbols:
 - **Variable Resistor (Rheostat):** A zigzag line with an arrow pointing through or down on it. Used to change the resistance in the circuit.
 
 ## 6. 📖 Concept 4: Ohm''s Law
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 6x (2025, 2026)**  
+> *Key Concept:* Circuit numericals that require calculating equivalent resistance, total current, and potential differences using Ohm''s Law ($V = IR$) are highly repeated.
 Ohm''s Law is the most important law in electricity! It states that the potential difference ($V$) across the ends of a given metallic wire in an electric circuit is directly proportional to the current ($I$) flowing through it, provided its temperature remains the same.
 
 - **Formula:** $$V = IR$$
@@ -402,6 +459,10 @@ When resistors are connected between the same two points, they are in parallel.
 - The **potential difference ($V$) is the same** across all resistors.
 - The total current is the sum of currents: $I = I_1 + I_2 + I_3$
 - By Ohm''s Law: $\frac{V}{R_p} = \frac{V}{R_1} + \frac{V}{R_2} + \frac{V}{R_3}$
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+> *Key Concept:* If a wire of resistance $R$ is cut into $n$ equal parts, the resistance of each part becomes $R/n$. When these $n$ parts are connected in parallel, the equivalent resistance $R_p$ is $R/n^2$.
 - **Equivalent Resistance Formula:** $$\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$$
 - The total resistance in parallel is *less* than the lowest individual resistance.
 

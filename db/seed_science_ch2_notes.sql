@@ -104,6 +104,10 @@ This is called [JARGON: Neutralisation | A reaction where an acid and a base rea
 
 $$NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$$
 
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 5x (2025, 2026)**  
+> *Key Concept:* Reaction of acids with bases (neutralisation), basic metallic oxides with acids, and acidic non-metallic oxides with bases all yield salt and water.
+
 ---
 
 ### 2.1.5 Reaction of Metallic Oxides with Acids
@@ -148,6 +152,10 @@ All bases produce hydroxide ions ($OH^-$) in water:
 $$NaOH(s) \xrightarrow{H_2O} Na^+(aq) + OH^-(aq)$$
 
 [INFO: Compounds like glucose and alcohol contain hydrogen but do NOT ionise in water, so they do not produce $H^+$ ions and are not classified as acids.]
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2024)**  
+> *Key Concept:* Solutions of glucose and alcohol do not conduct electricity (bulb does not glow) because they do not dissociate into ions in water, unlike HCl and $H_2SO_4$.
 
 ### 2.2.1 What Happens to an Acid or a Base in a Water Solution?
 
@@ -244,6 +252,10 @@ Salts with the same positive or negative radical belong to a family:
 ### 2.4.3 Chemicals from Common Salt
 
 When electricity is passed through brine (aqueous $NaCl$ solution), this is called the [JARGON: Chlor-alkali process | An industrial process where electricity is passed through brine (salt water) to produce chlorine gas, hydrogen gas, and sodium hydroxide | Used to manufacture chlorine for bleaching and NaOH for soap making]:
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+> *Key Concept:* In the Chlor-alkali process, electrolysis of brine yields $Cl_2$ gas at the anode, $H_2$ gas at the cathode, and sodium hydroxide ($NaOH$) near the cathode.
 
 $$2NaCl(aq) + 2H_2O(l) \xrightarrow{\text{Electricity}} 2NaOH(aq) + Cl_2(g) + H_2(g)$$
 
@@ -726,6 +738,10 @@ Salts are made of a positive ion (cation) from the base and a negative ion (anio
 Common salt ($NaCl$) is used as raw material to produce many industrially important chemicals.
 
 **The Chlor-alkali Process:**
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+> *Key Concept:* Common salt ($NaCl$) separated from seawater contains impurities that make it brown, known as rock salt. It is a vital raw material for making daily-use chemicals like sodium hydroxide ($NaOH$) and baking soda ($NaHCO_3$).
 
 When electric current is passed through an aqueous solution of sodium chloride (called brine), it decomposes into three very useful products:
 
