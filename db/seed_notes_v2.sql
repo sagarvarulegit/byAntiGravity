@@ -156,10 +156,10 @@ Reactions happen in different ways:
   There are three main subtypes based on energy source:
   1. **Thermal Decomposition** (using heat):
      - Limestone breakdown: $CaCO_3(s) \xrightarrow{\text{Heat}} CaO(s) + CO_2(g)$
-     - Ferrous sulphate crystals heated: $2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$ (green crystals turn brown, choking sulphur smell).
+     - Ferrous sulphate crystals heated: Green crystals first lose water to become white anhydrous salt $FeSO_4 \cdot 7H_2O \xrightarrow{\text{Heat}} FeSO_4 + 7H_2O$, then decompose $2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$ (turns brown, choking sulphur smell).
      - Lead nitrate heating: $2Pb(NO_3)_2(s) \xrightarrow{\text{Heat}} 2PbO(s) + 4NO_2(g) + O_2(g)$ (yellow residue, brown nitrogen dioxide fumes).
   2. **Electrolytic Decomposition** (using electricity):
-     - Water electrolysis: $2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$ (Hydrogen volume is double that of oxygen).
+     - Water electrolysis: $2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$ (Hydrogen volume is double that of oxygen. The mass ratio of hydrogen to oxygen is $1:8$).
   3. **Photolytic Decomposition** (using light):
      - Silver chloride in sunlight: $2AgCl(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Cl_2(g)$ (white powder turns grey).
      - Silver bromide in sunlight: $2AgBr(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Br_2(g)$ (used in black-and-white photography).
@@ -171,11 +171,13 @@ Reactions happen in different ways:
   [FIGURE: displacement_reaction]
 - **[JARGON: Double Displacement Reaction | A reaction where two compounds swap ions to form new compounds | Barium chloride reacting with sodium sulfate]** (swapping partners): Reactants swap ions. $Na_2SO_4(aq) + BaCl_2(aq) \rightarrow BaSO_4(s) + 2NaCl(aq)$. The insoluble white solid $BaSO_4$ is a precipitate.
 - **[JARGON: Exothermic Reaction | A reaction that releases heat energy into the surroundings | Respiration inside our cells]** (heat releasing): Releases heat. Examples: respiration, burning natural gas, quicklime in water.
-- **[JARGON: Endothermic Reaction | A reaction that absorbs heat energy from the surroundings | Photosynthesis in plants]** (heat absorbing): Absorbs heat. Examples: photosynthesis, all decomposition reactions, barium hydroxide + ammonium chloride.
+- **[JARGON: Endothermic Reaction | A reaction that absorbs heat energy from the surroundings | Photosynthesis in plants]** (heat absorbing): Absorbs heat. Examples: photosynthesis, generally decomposition reactions (though decomposition of vegetable matter into compost is exothermic), barium hydroxide + ammonium chloride.
 
 ## 6. 📖 Concept 4: Oxidation-Reduction (Redox) Reactions
 - **Oxidation**: Gain of oxygen or loss of hydrogen by a substance during a reaction.
 - **Reduction**: Loss of oxygen or gain of hydrogen by a substance during a reaction.
+- **Oxidising agent**: The substance that causes oxidation and is itself reduced.
+- **Reducing agent**: The substance that causes reduction and is itself oxidised.
 - **Redox Reaction**: A reaction where oxidation and reduction occur simultaneously.
   - *Example 1:* Heating copper powder in air forms black copper oxide:
     $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$ (Copper is oxidised).
@@ -186,7 +188,7 @@ Reactions happen in different ways:
 
 ## 7. 📖 Concept 5: Everyday Effects of Oxidation
 - **[JARGON: Corrosion | The gradual destruction of metals when exposed to moisture, air, and chemicals | Rusting of iron is corrosion]**: A metal surface is eaten away by air, water, or acids.
-  - *Examples:* Reddish-brown coating on iron (rust), black coating on silver, green coating on copper.
+  - *Examples:* Reddish-brown coating on iron (rust), black coating on silver, green coating on copper (basic copper carbonate, $CuCO_3 \cdot Cu(OH)_2$).
   - *Prevention:* Painting, galvanisation (coating with zinc), oiling/greasing, electroplating.
 - **[JARGON: Rancidity | The spoilage of fats and oils in food due to oxidation, leading to bad smell and taste | Potato chips becoming stale]**: Fats and oils in food get oxidised when exposed to air.
   - *Prevention:* Flushing packaging bags with inert nitrogen gas, storing food in airtight containers, adding antioxidants (like BHT).
@@ -196,9 +198,9 @@ Reactions happen in different ways:
 - **Activity 1.2:** Mix lead nitrate and potassium iodide solutions. *Observation:* Yellow precipitate of lead iodide ($PbI_2$) forms.
 - **Activity 1.3:** Add zinc granules to dilute acid. *Observation:* Hydrogen gas bubbles evolve, temperature rises (exothermic).
 - **Activity 1.4:** Add water to quicklime ($CaO$). *Observation:* Vigorous reaction, beaker becomes hot (exothermic combination), slaked lime ($Ca(OH)_2$) formed.
-- **Activity 1.5:** Heat green ferrous sulphate crystals. *Observation:* Crystals turn brown, choking smell of sulphur dioxide ($SO_2$) and sulphur trioxide ($SO_3$).
+- **Activity 1.5:** Heat green ferrous sulphate crystals. *Observation:* Crystals first turn white (water droplets appear as water of crystallisation is lost), then turn brown with a choking smell of sulphur dioxide ($SO_2$) and sulphur trioxide ($SO_3$).
 - **Activity 1.6:** Heat lead nitrate powder. *Observation:* Brown nitrogen dioxide ($NO_2$) fumes and yellow lead oxide residue.
-- **Activity 1.7:** Electrolysis of water. *Observation:* Hydrogen gas collected at cathode is double the volume of oxygen gas at anode.
+- **Activity 1.7:** Electrolysis of water. *Observation:* Hydrogen gas collected at cathode is double the volume of oxygen gas at anode. The mass ratio of $H_2$ to $O_2$ is $1:8$.
 - **Activity 1.8:** Place silver chloride in sunlight. *Observation:* White powder turns grey (decomposes into silver metal and chlorine).
 - **Activity 1.9:** Immerse iron nails in blue copper sulphate solution. *Observation:* Nails turn brown, blue solution turns light green (displacement).
 - **Activity 1.10:** Mix sodium sulphate and barium chloride solutions. *Observation:* White precipitate of barium sulphate ($BaSO_4$) forms.
@@ -226,7 +228,7 @@ Reactions happen in different ways:
   - *Answer:* $CuO$ is the oxidising agent (supplies oxygen/gets reduced). $H_2$ is the reducing agent (takes oxygen/gets oxidised).
 
 ## 12. 🎓 Board Tips
-- Always clean the magnesium ribbon with sandpaper before burning it. This removes the protective basic magnesium carbonate layer.
+- Always clean the magnesium ribbon with sandpaper before burning it. This removes the protective magnesium oxide layer.
 - Remember color changes: iron in copper sulphate turns blue solution pale green.
 - Respiration is exothermic; decomposition reactions are endothermic.
 

@@ -921,7 +921,7 @@ This section shows how many questions from each chapter appeared in the board ex
 
 | Chapter ID | Chapter Name | Total Questions | Repeated Questions (>= 3 times) |
 |---|---|---|---|
-| 1 | Chemical Reactions and Equations | 102 | 18 |
+| 1 | Chemical Reactions and Equations | 102* | 18* |
 | 2 | Acids, Bases and Salts | 146 | 23 |
 | 3 | Metals and Non-metals | 40 | 10 |
 | 4 | Carbon and its Compounds | 39 | 8 |
@@ -934,3 +934,5 @@ This section shows how many questions from each chapter appeared in the board ex
 | 11 | Electricity | 59 | 5 |
 | 12 | Magnetic Effects of Electric Current | 51 | 10 |
 | 13 | Our Environment | 60 | 11 |
+
+*\* Chapter 1 data is currently undergoing reclassification due to incorrectly mapped PYQs.*

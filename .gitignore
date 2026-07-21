@@ -75,4 +75,9 @@ Video-Out/
 # SkillOpt framework
 skillopt_framework/
 
+# Playwright
+.playwright-cli/
+tests/test-results/
+
+
 

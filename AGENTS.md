@@ -17,6 +17,11 @@
   4. The official end-of-chapter Group Activity.
   5. Chronologically numbered and captioned figure placeholders (e.g., `[FIGURE: ...]`) matching the exact textbook figures and their corresponding assets in the client code.
 - **Emoji & Character Encoding Validation:** When editing or refactoring database seed files, actively scan for and replace legacy encoding corruptions (e.g., double question marks `??` created from corrupted emojis like `🔥` or other symbols) to ensure that all data is correctly stored and parsed as UTF-8.
+- **Avoid Hardcoded Text-Matching for UI Components:** Never use hardcoded English string matches (e.g., `line.contains('Gas bubbles')`) inside the Dart parser to inject widgets or figures. Always rely on explicit database token tags (e.g., `[FIGURE: zinc_acid]`) to trigger UI elements, and remove any legacy text-matching fallback logic when explicit tokens are introduced to prevent duplicate widget rendering.
+
+## Supabase / Local Development Rules
+- **Windows NAT Port Conflicts:** If `supabase start` fails with `listen tcp 0.0.0.0:54322: bind` or Flutter cannot connect to Supabase locally (e.g. `statusCode: null`), it is often because Windows Hyper-V/NAT has reserved the Supabase ports (54321, 54322). Fix this by having the user run `net stop winnat; net start winnat` in an Administrator PowerShell to clear the dynamic port exclusions, then restart Supabase.
+- **Missing Edge Functions:** If `supabase start` crashes with `failed to load import map` referencing a missing `deno.json` for an edge function, check if the function directory is empty. If it is, edit `supabase/config.toml` and set `enabled = false` for that specific function block (e.g. `[functions.generate_pdf]`) to allow the backend to start.
 
 ## Remotion Development Rules
 - **Remotion Render Parallelization**: For long-running or full-chapter video renders (compositions with large frame counts, e.g., > 1000 frames), always recommend or apply Remotion's parallel rendering options. When invoking `remotion render` via CLI, explicitly pass or suggest the `--concurrency=<number>` flag (e.g., matching target CPU core/thread count) to reduce render times.

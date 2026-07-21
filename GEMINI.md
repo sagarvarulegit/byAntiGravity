@@ -94,6 +94,7 @@ No CI workflows present yet.
   - Keep block parsing state-machines robust. Always flush active containers (e.g. `inActivity`) when encountering new sub-topics (bold text ending in colons), alert callouts, questions, or divider rules.
   - Group multiple questions and answers under a single styled `QuestionsSection` widget using Outfit font for badges and Georgia font for answer text, rather than spawning individual cards.
   - Support markdown tables dynamically, rendering cells through `_buildMathText` to preserve inline math formatting (e.g. chemical formulas like $Cl_2$, $NaOH$).
+  - **Avoid Hardcoded Text-Matching for UI Components**: Never use hardcoded English string matches (e.g., `line.contains('Gas bubbles')`) inside the Dart parser to inject widgets or figures. Always rely on explicit database token tags (e.g., `[FIGURE: zinc_acid]`) to trigger UI elements, and remove any legacy text-matching fallback logic when explicit tokens are introduced to prevent duplicate widget rendering.
 
 ## Notes
 - `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2

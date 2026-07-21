@@ -107,7 +107,6 @@ A number $s$ is called **irrational** if it cannot be written in the form $\frac
 
 -- Science Chapter 1 Lessons
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381001', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1 Introduction to Chemical Reactions', 'video', '/videos/science_ch1_full.mp4', 850, NULL, TRUE, 1),
-('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381002', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.1.2 Balancing Chemical Equations', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1200, NULL, TRUE, 2),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381003', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.1 Combination Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 900, NULL, FALSE, 3),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381004', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.2 Decomposition Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 1100, NULL, FALSE, 4),
 ('b0eebc99-9c0b-4ef8-bb6d-6bb9bd381005', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380221', '1.2.3 Displacement Reactions', 'video', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 850, NULL, FALSE, 5),

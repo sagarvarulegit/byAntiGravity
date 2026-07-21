@@ -5,44 +5,77 @@ import 'package:flutter/material.dart';
 // Unique token generated once per app load to completely bust iframe browser cache
 final String _sessionBuster = DateTime.now().millisecondsSinceEpoch.toString();
 
-// Cache to prevent duplicate platform view registration
-final Set<String> _registeredViewIds = {};
-
 Widget buildAnimatedSvg({
   required String svgPath,
   required double width,
   required double height,
   required bool isDark,
 }) {
-  // Unique view ID based on the SVG path, theme, and session buster
-  final String viewId = 'svg-view-${svgPath.replaceAll('/', '-').replaceAll('.', '-')}-$isDark-$_sessionBuster';
-  
-  // Register the element view factory once per session
-  if (!_registeredViewIds.contains(viewId)) {
+  return _AnimatedSvgKeepAlive(
+    svgPath: svgPath,
+    isDark: isDark,
+    width: width,
+    height: height,
+  );
+}
+
+class _AnimatedSvgKeepAlive extends StatefulWidget {
+  final String svgPath;
+  final bool isDark;
+  final double width;
+  final double height;
+
+  const _AnimatedSvgKeepAlive({
+    super.key,
+    required this.svgPath,
+    required this.isDark,
+    required this.width,
+    required this.height,
+  });
+  @override
+  State<_AnimatedSvgKeepAlive> createState() => _AnimatedSvgKeepAliveState();
+}
+
+class _AnimatedSvgKeepAliveState extends State<_AnimatedSvgKeepAlive>
+    with AutomaticKeepAliveClientMixin {
+  static int _instanceCounter = 0;
+  late String _viewId;
+
+  @override
+  void initState() {
+    super.initState();
+    _instanceCounter++;
+    // Generate a unique viewId for this specific widget instance to prevent Flutter Web DOM recycling bugs
+    _viewId = 'svg-view-${widget.svgPath.replaceAll('/', '-').replaceAll('.', '-')}-${widget.isDark}-$_sessionBuster-$_instanceCounter';
+
     ui_web.platformViewRegistry.registerViewFactory(
-      viewId,
+      _viewId,
       (int viewId) {
-        // Use an IFrameElement instead of ImageElement.
-        // Chrome disables CSS animations inside SVGs when loaded via <img> tag (ImageElement).
-        // Using an <iframe> allows the browser to render it as a document, executing the CSS animations.
-        // We append the session buster to the src URL to force Chrome to request the file fresh from the server.
-        final iframe = html.IFrameElement()
-          ..src = 'assets/$svgPath?v=$_sessionBuster'
+        final objectElem = html.ObjectElement()
+          ..type = 'image/svg+xml'
+          ..data = '${widget.svgPath}?v=$_sessionBuster'
           ..style.width = '100%'
           ..style.height = '100%'
           ..style.border = 'none'
           ..style.overflow = 'hidden';
-        return iframe;
+        return objectElem;
       },
     );
-    _registeredViewIds.add(viewId);
   }
 
-  return SizedBox(
-    width: width,
-    height: height,
-    child: HtmlElementView(
-      viewType: viewId,
-    ),
-  );
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return SizedBox(
+      width: widget.width,
+      height: widget.height,
+      child: HtmlElementView(
+        key: ValueKey(_viewId),
+        viewType: _viewId,
+      ),
+    );
+  }
 }

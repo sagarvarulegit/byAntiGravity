@@ -367,8 +367,8 @@ In all the above situations, the nature and identity of the initial substance ha
 The NCERT textbook outlines three introductory activities to help us find out:
 
 * **Activity 1.1 (Burning of Magnesium Ribbon):** 
-  * Clean a 3-4 cm magnesium ribbon with sandpaper (to remove the protective layer of basic magnesium carbonate). Hold it with tongs and burn it.
-  * **Observation:** The magnesium ribbon burns with a dazzling white flame and changes into a white powder, which is magnesium oxide ($MgO$).
+  * Clean a 3-4 cm magnesium ribbon with sandpaper (to remove the protective magnesium oxide layer). Hold it with tongs and burn it.
+  * **Observation:** The magnesium ribbon burns with a dazzling white flame and changes into a white powder, which is magnesium oxide ($MgO$). When this powder is dissolved in water, it forms magnesium hydroxide ($MgO + H_2O \rightarrow Mg(OH)_2$), which is a basic solution that turns red litmus blue.
   [FIGURE: magnesium_burner]
 
 * **Activity 1.2 (Lead Nitrate + Potassium Iodide):**
@@ -466,7 +466,7 @@ Sometimes, **reaction conditions** like temperature, pressure, or catalyst are w
 
 > **❓ IN-TEXT QUESTIONS**
 > **1. Why should a magnesium ribbon be cleaned before burning in air?**
-> *Answer:* To remove the protective layer of basic magnesium carbonate that forms on its surface, allowing it to burn readily in oxygen.
+> *Answer:* To remove the protective magnesium oxide layer that forms on its surface, allowing it to burn readily in oxygen.
 > 
 > **2. Write the balanced equation for:**
 > * (i) Hydrogen + Chlorine $\rightarrow$ Hydrogen chloride
@@ -513,7 +513,7 @@ A reaction in which a single product is formed from two or more reactants is kno
 #### Exothermic Chemical Reactions
 Reactions in which heat/energy is released along with the formation of products are called **exothermic chemical reactions**.
 * **Burning of natural gas:**
-  $$CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(g)$$
+  $$CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(g) + \text{Heat}$$
 * **Respiration:** Respiration is an exothermic process because the glucose from digested carbohydrates reacts with oxygen in our cells to supply energy:
   $$C_6H_{12}O_6(aq) + 6O_2(aq) \rightarrow 6CO_2(aq) + 6H_2O(l) + \text{Energy}$$
 * **Decomposition of vegetable matter** into compost is also exothermic.
@@ -528,8 +528,9 @@ In a decomposition reaction, a single reactant breaks down to give two or more s
 
 1. **Activity 1.5 (Decomposition of Ferrous Sulphate):**
    * Heat green ferrous sulphate crystals ($FeSO_4 \cdot 7H_2O$) in a dry boiling tube.
-   * **Observation:** The green crystals lose water of crystallisation and decompose into solid brown ferric oxide ($Fe_2O_3$) and choking gases $SO_2$ (sulphur dioxide) and $SO_3$ (sulphur trioxide).
-   * **Chemical Equation:**
+   * **Observation:** First, the green crystals lose water of crystallisation to form white anhydrous iron sulphate ($FeSO_4$), and water droplets appear in the tube. Then, it decomposes into solid brown ferric oxide ($Fe_2O_3$) and choking gases $SO_2$ (sulphur dioxide) and $SO_3$ (sulphur trioxide).
+   * **Chemical Equations:**
+     $$FeSO_4 \cdot 7H_2O(s) \xrightarrow{\text{Heat}} FeSO_4(s) + 7H_2O(l)$$
      $$2FeSO_4(s) \xrightarrow{\text{Heat}} Fe_2O_3(s) + SO_2(g) + SO_3(g)$$
    [FIGURE: ferrous_sulphate_decomposition]
 
@@ -544,7 +545,6 @@ In a decomposition reaction, a single reactant breaks down to give two or more s
    * Calcium carbonate decomposes into quicklime (calcium oxide, used in cement manufacture) and carbon dioxide.
    * **Chemical Equation:**
      $$CaCO_3(s) \xrightarrow{\text{Heat}} CaO(s) + CO_2(g)$$
-   [FIGURE: decomposition_reaction]
 
 #### B. Electrolytic Decomposition (Using Electricity)
 
@@ -603,6 +603,9 @@ A chemical reaction in which a more reactive element displaces a less reactive e
    [FIGURE: displacement_reaction]
 
 #### More Examples:
+* **The Thermite Reaction:**
+  $$Fe_2O_3(s) + 2Al(s) \rightarrow Al_2O_3(s) + 2Fe(l) + \text{Heat}$$
+  *(This displacement reaction is highly exothermic. Aluminium reduces iron oxide to produce molten iron, which is used to weld railway tracks together).*
 * **Zinc displacing copper:**
   $$Zn(s) + CuSO_4(aq) \rightarrow ZnSO_4(aq) + Cu(s)$$
 * **Lead displacing copper:**
@@ -638,9 +641,11 @@ $$Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$$
 
 * **Activity 1.11 (Heating Copper Powder):**
   * Heat 1 g of brown copper powder in a china dish.
-  * **Observation:** The surface of the copper powder becomes coated with black copper(II) oxide ($CuO$).
+  * **Observation:** The surface of copper powder becomes coated with black copper(II) oxide ($CuO$).
   * **Chemical Equation:**
-    $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$
+    $$2Cu(s) + O_2(g) \xrightarrow{\text{Heat}} 2CuO(s)$$
+  *(Copper gains oxygen, so it is oxidised).*
+  [FIGURE: copper_oxidation]
   
   If hydrogen gas is passed over this hot black $CuO$, it turns brown again (reverse reaction):
   $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$
@@ -668,7 +673,7 @@ When a metal is attacked by substances around it such as moisture, air, acids, e
 * **Examples:**
   * Reddish-brown coating on iron (rusting).
   * Black coating on silver.
-  * Green coating on copper.
+  * Green coating on copper (basic copper carbonate, $CuCO_3 \cdot Cu(OH)_2$).
 * **Impact:** Corrosion causes massive damage to car bodies, bridges, iron railings, ships, and other metal objects (especially iron). It is a serious economic problem, requiring huge expenditures yearly for replacement.
 
 ### 1.3.2 Rancidity
@@ -889,10 +894,10 @@ When fats and oils are oxidised, they become rancid. Their smell and taste chang
 
 | Beaker | Substance Added | Initial Temp ($T_1$) | Final Temp ($T_2$) | Temperature Change | Reaction Type |
 | :--- | :--- | :---: | :---: | :--- | :--- |
-| **Beaker A** | Potassium sulphate | $25^\circ\text{C}$ | $23^\circ\text{C}$ | Temperature Decreases | **Endothermic** |
-| **Beaker B** | Ammonium nitrate | $25^\circ\text{C}$ | $18^\circ\text{C}$ | Temperature Decreases | **Endothermic** |
-| **Beaker C** | Anhydrous copper sulphate | $25^\circ\text{C}$ | $32^\circ\text{C}$ | Temperature Increases | **Exothermic** |
-| **Beaker D** | Fine iron filings | $25^\circ\text{C}$ | $30^\circ\text{C}$ | Temperature Increases | **Exothermic** |
+| **Beaker A** | Potassium sulphate | $25^\circ\text{C}$*(illustrative)* | $23^\circ\text{C}$*(illustrative)* | Temperature Decreases | **Endothermic** |
+| **Beaker B** | Ammonium nitrate | $25^\circ\text{C}$*(illustrative)* | $18^\circ\text{C}$*(illustrative)* | Temperature Decreases | **Endothermic** |
+| **Beaker C** | Anhydrous copper sulphate | $25^\circ\text{C}$*(illustrative)* | $32^\circ\text{C}$*(illustrative)* | Temperature Increases | **Exothermic** |
+| **Beaker D** | Fine iron filings | $25^\circ\text{C}$*(illustrative)* | $30^\circ\text{C}$*(illustrative)* | Temperature Increases | **Exothermic** |
 
 *   **Scientific Explanation:**
     *   **Beaker A & B:** Dissolving $K_2SO_4$ and $NH_4NO_3$ in water absorbs heat energy from the solvent to break the crystal lattices. This absorption of heat causes the water temperature to drop, indicating an **endothermic dissolution process**.

@@ -803,7 +803,7 @@ class _LessonsViewState extends State<LessonsView> {
                           if (note != null && _currentNoteContent.isNotEmpty) {
                             downloadFile(_currentNoteContent, "${note.title.replaceAll(' ', '_')}.txt");
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text("Raw revision notes downloaded successfully.")),
+                              const SnackBar(content: Text("Raw notes downloaded successfully.")),
                             );
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -1939,15 +1939,6 @@ class _LessonsViewState extends State<LessonsView> {
         rawLine = rawLine.replaceAll(figRegex, '');
       }
 
-      if (isChapter1 && line.contains('Magnesium burns with a bright white flame')) {
-        hasFigure = true;
-        figType ??= 'magnesium_burner';
-      }
-
-      if (isChapter1 && line.contains('Gas bubbles (Hydrogen')) {
-        hasFigure = true;
-        figType = 'zinc_acid';
-      }
 
       if (line.startsWith('**Example ')) {
         flushActivity();
@@ -2618,15 +2609,6 @@ class _LessonsViewState extends State<LessonsView> {
         rawLine = rawLine.replaceAll(figRegex, '');
       }
 
-      if (isChapter1 && line.contains('Magnesium burns with a bright white flame')) {
-        hasFigure = true;
-        figType ??= 'magnesium_burner';
-      }
-
-      if (isChapter1 && line.contains('Gas bubbles (Hydrogen')) {
-        hasFigure = true;
-        figType = 'zinc_acid';
-      }
 
       // 1. Caution:
       if (line.startsWith('*Caution:') || line.startsWith('Caution:') || (line.startsWith('*') && line.toLowerCase().contains('caution'))) {
@@ -3057,9 +3039,15 @@ class _LessonsViewState extends State<LessonsView> {
       figCaption = "Displacement reaction. Iron nail dipped in blue copper sulphate solution becomes brownish, and the solution fades to light green.";
       figHeight = 180;
     } else if (figType == 'double_displacement') {
+      svgPath = isRevisionNote ? "assets/double_displacement.svg" : "assets/double_displacement_animated.svg";
       figNum = "Figure 1.9 ";
       figCaption = "Double displacement reaction between sodium sulphate and barium chloride, forming a white precipitate of barium sulphate.";
       figHeight = 220;
+    } else if (figType == 'copper_oxidation') {
+      svgPath = isRevisionNote ? "assets/copper_oxidation.svg" : "assets/copper_oxidation_animated.svg";
+      figNum = "Figure 1.10 ";
+      figCaption = "Oxidation of copper to copper oxide on heating.";
+      figHeight = 180;
     } else if (figType == 'zinc_acid') {
       svgPath = "assets/zinc_acid_animated.svg";
       figNum = "Figure 1.2 ";

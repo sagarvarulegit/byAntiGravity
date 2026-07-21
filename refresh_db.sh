@@ -2,7 +2,7 @@
 set -e
 
 echo "🔄 [1/2] Concatenating database seed files..."
-python3 concat_seeds.py
+python concat_seeds.py
 
 echo "🔥 [2/2] Resetting local Supabase database with the latest seed..."
 npx supabase db reset
