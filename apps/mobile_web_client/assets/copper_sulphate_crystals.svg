@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>Water of Crystallisation</title>
+  
+  <text x="640" y="60" font-family="Georgia" font-size="36" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Removing Water of Crystallisation from Copper Sulphate</text>
+
+  <rect x="0" y="580" width="1280" height="140" fill="#3D251E" />
+  <line x1="0" y1="580" x2="1280" y2="580" stroke="#475569" stroke-width="4" />
+
+  <!-- LEFT: Heating Crystals -->
+  <g transform="translate(300, 250)">
+    <!-- Burner -->
+    <rect x="-30" y="300" width="60" height="30" fill="#94A3B8" />
+    <path d="M -15 300 L 0 250 L 15 300 Z" fill="#EF4444" opacity="0.8">
+      <animate attributeName="opacity" values="0.6; 1; 0.6" dur="0.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M -10 300 L 0 270 L 10 300 Z" fill="#FACC15" />
+
+    <!-- Boiling Tube (tilted) -->
+    <g transform="rotate(30, 0, 200)">
+      <!-- Blue Crystals turning White -->
+      <path d="M -15 220 L 15 220 C 15 240, -15 240, -15 220 Z" fill="#E2E8F0" />
+      <path d="M -15 180 L 15 180 C 15 220, -15 220, -15 180 Z" fill="#3B82F6" opacity="0.3" />
+      
+      <path d="M -20 0 L -20 230 C -20 260, 20 260, 20 230 L 20 0 Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#E2E8F0" stroke-width="3" />
+      <text x="-90" y="220" font-family="Arial" font-size="18" fill="#CBD5E1">White CuSO₄</text>
+      <text x="-90" y="190" font-family="Arial" font-size="18" fill="#3B82F6">Blue CuSO₄.5H₂O</text>
+
+      <!-- Water droplets at mouth -->
+      <circle cx="-10" cy="20" r="3" fill="#60A5FA" />
+      <circle cx="12" cy="40" r="2" fill="#60A5FA" />
+      <circle cx="-8" cy="60" r="2.5" fill="#60A5FA" />
+      <text x="30" y="30" font-family="Arial" font-size="18" fill="#60A5FA">Water droplets</text>
+    </g>
+    
+    <!-- Test Tube Holder -->
+    <rect x="-160" y="110" width="140" height="10" fill="#CD853F" transform="rotate(30, -20, 120)" />
+  </g>
+
+  <!-- RIGHT: Adding Water back -->
+  <g transform="translate(850, 250)">
+    <g transform="rotate(0, 0, 200)">
+      <!-- White turning Blue -->
+      <path d="M -15 200 L 15 200 C 15 240, -15 240, -15 200 Z" fill="#3B82F6" />
+      <path d="M -20 0 L -20 230 C -20 260, 20 260, 20 230 L 20 0 Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#E2E8F0" stroke-width="3" />
+      <text x="40" y="220" font-family="Arial" font-size="18" fill="#3B82F6">Turns Blue again</text>
+    </g>
+
+    <!-- Dropper -->
+    <path d="M -5 -80 L 5 -80 L 3 -30 L 0 -10 L -3 -30 Z" fill="#FFFFFF" fill-opacity="0.3" stroke="#E2E8F0" stroke-width="2" />
+    <rect x="-10" y="-120" width="20" height="40" rx="10" fill="#EF4444" />
+    
+    <!-- Water Drop -->
+    <path d="M 0 0 C -5 5, -5 15, 0 20 C 5 15, 5 5, 0 0 Z" fill="#60A5FA">
+      <animate attributeName="cy" from="0" to="180" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Explanation -->
+  <text x="300" y="660" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Heating: CuSO₄·5H₂O → CuSO₄ + 5H₂O</text>
+  <text x="850" y="660" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Adding Water: CuSO₄ + 5H₂O → CuSO₄·5H₂O</text>
+</svg>

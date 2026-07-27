@@ -549,7 +549,7 @@ In a decomposition reaction, a single reactant breaks down to give two or more s
 #### B. Electrolytic Decomposition (Using Electricity)
 
 4. **Activity 1.7 (Electrolysis of Water):**
-   * Pass an electric current through acidified water using carbon electrodes.
+   * Pass an electric current through acidified water using carbon electrodes. *(Note: A few drops of dilute sulphuric acid are added because pure water is a very poor conductor of electricity. The acid provides ions that allow the current to flow).*
    * **Observation:** Gas bubbles form at both electrodes. The volume of gas collected at the cathode (Hydrogen, $H_2$) is **double** that collected at the anode (Oxygen, $O_2$).
    * **Chemical Equation:**
      $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$
@@ -638,6 +638,9 @@ $$Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$$
 * **Oxidation:** The gain of oxygen or the loss of hydrogen.
 * **Reduction:** The loss of oxygen or the gain of hydrogen.
 * **Redox Reaction (Oxidation-Reduction):** A reaction where one reactant gets oxidised while another gets reduced.
+  > [!CAUTION]
+  > **The "LHS Rule" (Left Hand Side Rule)**
+  > When asked to identify what is oxidised, what is reduced, or the agents, **ALWAYS pick your answer from the Reactants (Left Hand Side)**. Never pick a Product (RHS)!
 
 * **Activity 1.11 (Heating Copper Powder):**
   * Heat 1 g of brown copper powder in a china dish.
@@ -876,7 +879,43 @@ When fats and oils are oxidised, they become rancid. Their smell and taste chang
 
 ---
 
-## 1.5 NCERT GROUP ACTIVITY: EXOTHERMIC VS ENDOTHERMIC REACTIONS
+## 1.5 QUICK REVISION: KEY OBSERVATIONS (OBSERVATION MATRIX)
+
+| Activity / Reaction | Initial State / Color | Final State / Color | Gas Evolved / Smell | Precipitate (Insoluble Solid) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Heating Ferrous Sulphate ($FeSO_4 \cdot 7H_2O$)** | Green crystals | White powder, then Brown solid ($Fe_2O_3$) | Pungent smell ($SO_2$, $SO_3$) | None |
+| **Heating Lead Nitrate ($Pb(NO_3)_2$)** | White powder | Yellow residue ($PbO$) | Brown fumes ($NO_2$) | None |
+| **Lead Nitrate + Potassium Iodide** | Colorless solutions | Yellow solid forms | None | **Yellow ppt** ($PbI_2$) |
+| **Sodium Sulphate + Barium Chloride** | Colorless solutions | White solid forms | None | **White ppt** ($BaSO_4$) |
+| **Iron nail in Copper Sulphate ($CuSO_4$)** | Blue solution, Grey nail | Green solution ($FeSO_4$), Brown coating on nail | None | None |
+| **Zinc granules + Dilute $H_2SO_4$** | Silvery-white metal | Bubbles form, flask gets hot | Hydrogen ($H_2$) - *Pop sound* | None |
+
+---
+
+## 1.6 BOARD EXAM SECRETS: HOW TO WRITE YOUR ANSWERS
+
+Examiners look for specific keywords and formats. Even if you know the chemistry, you might lose marks for poor presentation!
+Follow these templates for 3-mark and 5-mark subjective questions:
+
+> [!TIP]
+> **Template for "Observation Based" Questions**
+> **Question:** What happens when an iron nail is dipped in copper sulphate solution? (3 Marks)
+> **Your Answer Must Have 3 Parts:**
+> 1. **State the Observation:** The blue colour of the copper sulphate solution fades to light green, and a reddish-brown coating deposits on the iron nail. *(1 Mark)*
+> 2. **Write the Balanced Equation:** $Fe(s) + CuSO_4(aq) \rightarrow FeSO_4(aq) + Cu(s)$. *(1 Mark for correct formulas and state symbols)*
+> 3. **Name the Type of Reaction & Reason:** It is a single displacement reaction because Iron is more reactive than Copper and displaces it from its salt solution. *(1 Mark)*
+
+> [!TIP]
+> **Template for "Identify X and Y" Questions**
+> **Question:** A shiny brown metal ''X'' turns black on heating in air to form compound ''Y''. Identify X and Y and write the equation. (3 Marks)
+> **Your Answer Must Have 3 Parts:**
+> 1. **Identify the Unknowns clearly:** Metal X = Copper ($Cu$). Black compound Y = Copper(II) oxide ($CuO$). *(1 Mark)*
+> 2. **Write the Balanced Equation:** $2Cu(s) + O_2(g) \xrightarrow{\text{Heat}} 2CuO(s)$. *(1 Mark)*
+> 3. **Name the Type of Reaction:** It is an oxidation reaction (or combination reaction) because Copper gains oxygen. *(1 Mark)*
+
+---
+
+## 1.7 NCERT GROUP ACTIVITY: EXOTHERMIC VS ENDOTHERMIC REACTIONS
 
 *   **Objective:** To determine whether chemical changes/dissolutions are exothermic or endothermic by monitoring temperature.
 *   **Materials Required:** Four 100 mL beakers (labeled A, B, C, and D), water, copper sulphate ($CuSO_4$) solution, thermometer, spatula, potassium sulphate ($K_2SO_4$), ammonium nitrate ($NH_4NO_3$), anhydrous copper sulphate ($CuSO_4$), and fine iron filings.

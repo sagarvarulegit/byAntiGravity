@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>Preparation of HCl Gas</title>
+  
+  <text x="640" y="60" font-family="Georgia" font-size="36" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Preparation of HCl Gas and Litmus Test</text>
+  
+  <rect x="0" y="580" width="1280" height="140" fill="#3D251E" />
+  <line x1="0" y1="580" x2="1280" y2="580" stroke="#475569" stroke-width="4" />
+
+  <!-- Reaction Tube -->
+  <g transform="translate(350, 250)">
+    <!-- Liquid (H2SO4) and Solid (NaCl) -->
+    <path d="M 65 280 L 115 280 C 115 320, 65 320, 65 280 Z" fill="#E2E8F0" fill-opacity="0.3" stroke="none" />
+    <path d="M 75 310 L 105 310 C 105 320, 75 320, 75 310 Z" fill="#F8FAFC" />
+    
+    <!-- Glass Tube -->
+    <path d="M 60 50 L 60 280 C 60 340, 120 340, 120 280 L 120 50 Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#E2E8F0" stroke-width="3" />
+    
+    <!-- Cork with Delivery Tube -->
+    <rect x="62" y="50" width="56" height="30" fill="#CD853F" />
+    <path d="M 90 60 L 90 20 L 300 20 L 300 150" fill="none" stroke="#E2E8F0" stroke-width="6" />
+    
+    <text x="-40" y="280" font-family="Arial" font-size="20" fill="#CBD5E1">Conc. H₂SO₄</text>
+    <text x="-40" y="320" font-family="Arial" font-size="20" fill="#CBD5E1">NaCl (Solid)</text>
+    <text x="140" y="80" font-family="Arial" font-size="20" fill="#CBD5E1">Delivery Tube</text>
+  </g>
+
+  <!-- Hand holding Litmus Paper -->
+  <g transform="translate(620, 420)">
+    <!-- Gas coming out -->
+    <circle cx="30" cy="-10" r="15" fill="#F8FAFC" opacity="0.3" />
+    <circle cx="20" cy="-30" r="20" fill="#F8FAFC" opacity="0.2" />
+    
+    <!-- Wet Blue Litmus turning Red -->
+    <rect x="-10" y="-80" width="30" height="80" fill="#EF4444" />
+    <rect x="-10" y="0" width="30" height="40" fill="#3B82F6" />
+    <rect x="-10" y="-80" width="30" height="120" fill="none" stroke="#E2E8F0" stroke-width="1" />
+    
+    <text x="50" y="-40" font-family="Arial" font-size="20" fill="#EF4444" font-weight="bold">Turns Red!</text>
+    <text x="50" y="-10" font-family="Arial" font-size="20" fill="#CBD5E1">Moist Blue Litmus Paper</text>
+  </g>
+
+  <text x="640" y="660" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">2NaCl(s) + H₂SO₄(l) → Na₂SO₄(s) + 2HCl(g)</text>
+</svg>

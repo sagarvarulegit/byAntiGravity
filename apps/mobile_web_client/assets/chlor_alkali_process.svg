@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>Chlor-Alkali Process</title>
+  
+  <text x="640" y="60" font-family="Georgia" font-size="36" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Important Products from the Chlor-Alkali Process</text>
+
+  <rect x="240" y="150" width="800" height="400" rx="20" fill="#334155" stroke="#475569" stroke-width="6" />
+
+  <!-- Membrane -->
+  <line x1="640" y1="150" x2="640" y2="550" stroke="#94A3B8" stroke-width="8" stroke-dasharray="15,10" />
+  <text x="655" y="360" font-family="Arial" font-size="20" fill="#94A3B8">Membrane</text>
+
+  <!-- Electrodes -->
+  <rect x="340" y="100" width="40" height="350" fill="#94A3B8" />
+  <text x="360" y="85" font-family="Arial" font-size="24" font-weight="bold" fill="#EF4444" text-anchor="middle">Anode (+)</text>
+
+  <rect x="900" y="100" width="40" height="350" fill="#94A3B8" />
+  <text x="920" y="85" font-family="Arial" font-size="24" font-weight="bold" fill="#3B82F6" text-anchor="middle">Cathode (-)</text>
+
+  <!-- Battery -->
+  <path d="M 360 100 L 360 50 L 920 50 L 920 100" fill="none" stroke="#FACC15" stroke-width="4" />
+  <circle cx="640" cy="50" r="20" fill="#FACC15" />
+  <text x="640" y="57" font-family="Arial" font-size="20" font-weight="bold" fill="#1E293B" text-anchor="middle">DC</text>
+
+  <!-- Inputs and Outputs -->
+  <!-- Brine In -->
+  <path d="M 100 250 L 240 250" fill="none" stroke="#22D3EE" stroke-width="15" />
+  <polygon points="240,250 220,240 220,260" fill="#22D3EE" />
+  <text x="170" y="235" font-family="Arial" font-size="22" font-weight="bold" fill="#22D3EE" text-anchor="middle">Brine</text>
+  <text x="170" y="280" font-family="Arial" font-size="18" fill="#94A3B8" text-anchor="middle">NaCl (aq)</text>
+
+  <!-- Brine Out with NaOH -->
+  <path d="M 1040 450 L 1180 450" fill="none" stroke="#22C55E" stroke-width="15" />
+  <polygon points="1180,450 1160,440 1160,460" fill="#22C55E" />
+  <text x="1110" y="435" font-family="Arial" font-size="22" font-weight="bold" fill="#22C55E" text-anchor="middle">NaOH (aq)</text>
+  <text x="1110" y="480" font-family="Arial" font-size="18" fill="#94A3B8" text-anchor="middle">Brine containing NaOH</text>
+
+  <!-- Chlorine Gas Out -->
+  <path d="M 360 150 L 360 110" fill="none" stroke="#A3E635" stroke-width="8" />
+  <text x="300" y="130" font-family="Arial" font-size="24" font-weight="bold" fill="#A3E635">Cl₂ Gas</text>
+
+  <!-- Hydrogen Gas Out -->
+  <path d="M 920 150 L 920 110" fill="none" stroke="#60A5FA" stroke-width="8" />
+  <text x="940" y="130" font-family="Arial" font-size="24" font-weight="bold" fill="#60A5FA">H₂ Gas</text>
+
+  <!-- Ions inside -->
+  <text x="440" y="280" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC">Cl⁻</text>
+  <text x="440" y="380" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC">Na⁺</text>
+
+  <text x="820" y="280" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC">H⁺</text>
+  <text x="820" y="380" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC">OH⁻</text>
+
+  <!-- Membrane Crossings -->
+  <path d="M 500 370 L 780 370" fill="none" stroke="#F8FAFC" stroke-width="4" stroke-dasharray="8,4" />
+  <polygon points="780,370 760,360 760,380" fill="#F8FAFC" />
+
+  <!-- Reaction Eq -->
+  <text x="640" y="650" font-family="Georgia" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">2NaCl(aq) + 2H₂O(l) → 2NaOH(aq) + Cl₂(g) + H₂(g)</text>
+</svg>

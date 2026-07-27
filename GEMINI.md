@@ -100,5 +100,5 @@ No CI workflows present yet.
 - `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2
   (Acids, Bases & Salts). Two lessons: Revision Notes (UUID b0eebc99…0233,
   seq 3) + NCERT Study Guide (UUID e0eebc99…0223, seq 10). Figure tokens for all
-  10 Ch2 figures render as labelled placeholders pending CustomPainter builds.
+  Ch2 figures are fully wired up in `lessons_view.dart` using a mix of SVG vector graphics and realistic JPG illustrations.
   Run manually: `psql $SUPABASE_DB_URL -f db/seed_science_ch2_notes.sql`

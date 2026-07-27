@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="100%" height="100%" style="background-color: #1E293B; border-radius: 8px;">
+  <title>CBSE Class 10 Science: pH Scale</title>
+  
+  <defs>
+    <!-- pH Scale Gradient from Red to Green to Violet -->
+    <linearGradient id="phGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/> <!-- Red (pH 0) -->
+      <stop offset="14%" stop-color="#F97316"/> <!-- Orange (pH 2) -->
+      <stop offset="28%" stop-color="#FBBF24"/> <!-- Yellow (pH 4) -->
+      <stop offset="42%" stop-color="#84CC16"/> <!-- Light Green (pH 6) -->
+      <stop offset="50%" stop-color="#22C55E"/> <!-- Green (pH 7) -->
+      <stop offset="64%" stop-color="#06B6D4"/> <!-- Cyan (pH 9) -->
+      <stop offset="78%" stop-color="#3B82F6"/> <!-- Blue (pH 11) -->
+      <stop offset="100%" stop-color="#8B5CF6"/> <!-- Violet (pH 14) -->
+    </linearGradient>
+
+    <!-- H+ Concentration Gradient (fades out towards basic) -->
+    <linearGradient id="hPlusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F8FAFC" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- OH- Concentration Gradient (fades out towards acidic) -->
+    <linearGradient id="ohMinusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.0"/>
+      <stop offset="50%" stop-color="#F8FAFC" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .text-title { font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; fill: #F8FAFC; }
+    .text-label { font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; fill: #CBD5E1; }
+    .text-ph { font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; fill: #1E293B; }
+    .text-desc { font-family: 'Arial', sans-serif; font-size: 20px; fill: #94A3B8; }
+    .text-ion { font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; fill: #F8FAFC; }
+  </style>
+
+  <text x="640" y="50" class="text-title" text-anchor="middle">The pH Scale: H⁺ and OH⁻ Concentrations</text>
+
+  <!-- pH Scale Base Rectangle -->
+  <rect x="140" y="140" width="1000" height="60" rx="30" fill="url(#phGrad)" />
+
+  <!-- H+ Area Polygon (Diagonal line showing decreasing H+) -->
+  <polygon points="140,140 1140,140 140,200" fill="url(#hPlusGrad)" />
+  <!-- OH- Area Polygon (Diagonal line showing increasing OH-) -->
+  <polygon points="1140,140 1140,200 140,200" fill="url(#ohMinusGrad)" />
+
+  <!-- Scale markings and numbers (0 to 14) -->
+  <g id="ph-numbers">
+    <!-- Generated marks -->
+    <text x="160" y="177" class="text-ph" text-anchor="middle">0</text>
+    <text x="230" y="177" class="text-ph" text-anchor="middle">1</text>
+    <text x="300" y="177" class="text-ph" text-anchor="middle">2</text>
+    <text x="370" y="177" class="text-ph" text-anchor="middle">3</text>
+    <text x="440" y="177" class="text-ph" text-anchor="middle">4</text>
+    <text x="510" y="177" class="text-ph" text-anchor="middle">5</text>
+    <text x="580" y="177" class="text-ph" text-anchor="middle">6</text>
+    
+    <text x="640" y="177" class="text-ph" text-anchor="middle" fill="#FFFFFF" font-size="24">7</text>
+    <circle cx="640" cy="170" r="20" fill="none" stroke="#FFFFFF" stroke-width="3" />
+    
+    <text x="700" y="177" class="text-ph" text-anchor="middle">8</text>
+    <text x="770" y="177" class="text-ph" text-anchor="middle">9</text>
+    <text x="840" y="177" class="text-ph" text-anchor="middle">10</text>
+    <text x="910" y="177" class="text-ph" text-anchor="middle">11</text>
+    <text x="980" y="177" class="text-ph" text-anchor="middle">12</text>
+    <text x="1050" y="177" class="text-ph" text-anchor="middle">13</text>
+    <text x="1120" y="177" class="text-ph" text-anchor="middle">14</text>
+  </g>
+
+  <!-- Labels -->
+  <text x="300" y="240" class="text-label" text-anchor="middle" fill="#EF4444">Acidic Nature</text>
+  <text x="640" y="240" class="text-label" text-anchor="middle" fill="#22C55E">Neutral</text>
+  <text x="980" y="240" class="text-label" text-anchor="middle" fill="#3B82F6">Basic Nature</text>
+
+  <!-- Arrows indicating increase -->
+  <g transform="translate(0, 260)">
+    <!-- Acidic Arrow -->
+    <line x1="600" y1="0" x2="160" y2="0" stroke="#EF4444" stroke-width="4" />
+    <polygon points="160,0 175,-8 175,8" fill="#EF4444" />
+    <text x="380" y="30" class="text-desc" text-anchor="middle">Increase in H⁺ ion concentration</text>
+    
+    <!-- Basic Arrow -->
+    <line x1="680" y1="0" x2="1120" y2="0" stroke="#3B82F6" stroke-width="4" />
+    <polygon points="1120,0 1105,-8 1105,8" fill="#3B82F6" />
+    <text x="900" y="30" class="text-desc" text-anchor="middle">Decrease in H⁺ (Increase in OH⁻)</text>
+  </g>
+
+  <!-- Animated Ion Particles -->
+  <g id="animated-ions">
+    <!-- H+ Ions moving left (getting denser) -->
+    <text x="440" y="100" class="text-ion" fill="#F8FAFC" opacity="0.8">
+      H⁺
+      <animate attributeName="x" values="440; 240; 440" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8; 1; 0.8" dur="4s" repeatCount="indefinite" />
+    </text>
+    <text x="540" y="110" class="text-ion" fill="#F8FAFC" opacity="0.6">
+      H⁺
+      <animate attributeName="x" values="540; 340; 540" dur="4.5s" repeatCount="indefinite" />
+    </text>
+    <text x="240" y="90" class="text-ion" fill="#F8FAFC" opacity="0.9">
+      H⁺
+      <animate attributeName="x" values="240; 160; 240" dur="3s" repeatCount="indefinite" />
+    </text>
+
+    <!-- OH- Ions moving right (getting denser) -->
+    <text x="840" y="100" class="text-ion" fill="#F8FAFC" opacity="0.8">
+      OH⁻
+      <animate attributeName="x" values="840; 1040; 840" dur="4s" repeatCount="indefinite" />
+    </text>
+    <text x="740" y="110" class="text-ion" fill="#F8FAFC" opacity="0.6">
+      OH⁻
+      <animate attributeName="x" values="740; 940; 740" dur="4.5s" repeatCount="indefinite" />
+    </text>
+    <text x="1040" y="90" class="text-ion" fill="#F8FAFC" opacity="0.9">
+      OH⁻
+      <animate attributeName="x" values="1040; 1120; 1040" dur="3s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+</svg>

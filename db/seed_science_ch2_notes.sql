@@ -37,6 +37,17 @@ Why does vinegar taste sour? Why does soap feel slippery? Why do antacid tablets
 
 ## 2.1 Chemical Properties of Acids and Bases
 
+### Natural Sources of Acids
+Many sour-tasting foods contain naturally occurring weak acids:
+| Natural Source | Acid Present |
+|----------------|--------------|
+| Vinegar        | Acetic acid  |
+| Orange / Lemon | Citric acid  |
+| Tamarind       | Tartaric acid|
+| Tomato         | Oxalic acid  |
+| Curd (Sour milk)| Lactic acid  |
+| Ant / Nettle sting | Methanoic (Formic) acid |
+
 ### 2.1.1 Acids and Bases in the Laboratory
 
 We can tell acids and bases apart using [JARGON: Indicators | Substances that change colour in the presence of an acid or a base | Litmus paper turns red in acid and blue in base].
@@ -60,6 +71,10 @@ Caution: Acids and bases are corrosive. Use dilute solutions only and handle wit
 1. Take onion pieces or vanilla essence on cotton. Seal in polythene bags.
 2. Place one bag near concentrated HCl and one near concentrated NaOH.
 3. Observe whether the smell of onion or vanilla changes. Olfactory indicators lose their smell in bases.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. You have been provided with three test tubes. One of them contains distilled water and the other two contain an acidic solution and a basic solution, respectively. If you are given only red litmus paper, how will you identify the contents of each test tube?**
+> *Answer:* Dip the red litmus paper into each test tube. The one that turns it blue is the basic solution. Now, use this blue litmus paper to test the remaining two solutions. The one that turns it back to red is the acidic solution. The remaining solution that has no effect on the litmus paper is distilled water.
 
 ---
 
@@ -93,6 +108,10 @@ $$Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$$
 $$NaHCO_3(s) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l) + CO_2(g)$$
 
 The $CO_2$ gas turns lime water milky (forms white $CaCO_3$ precipitate). This is the standard test for $CO_2$.
+$$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+On passing excess carbon dioxide, the following reaction occurs and the milkiness disappears due to the formation of soluble calcium hydrogencarbonate:
+$$CaCO_3(s) + H_2O(l) + CO_2(g) \rightarrow Ca(HCO_3)_2(aq)$$
 
 [FIGURE: co2_limewater_test]
 
@@ -166,6 +185,7 @@ Diluting an acid decreases the concentration of $H_3O^+$ ions.
 Diluting a base decreases the concentration of $OH^-$ ions.
 
 [FIGURE: acid_base_conductivity]
+[FIGURE: hcl_gas_preparation]
 
 **❓ QUESTIONS**
 
@@ -191,11 +211,14 @@ Diluting a base decreases the concentration of $OH^-$ ions.
 
 ## 2.3 How Strong are Acid or Base Solutions?
 
+[JARGON: Strong acid | An acid that completely ionises in water to produce a high concentration of $H^+$ ions | Examples: $HCl$, $H_2SO_4$, $HNO_3$].
+[JARGON: Weak acid | An acid that partially ionises in water to produce a low concentration of $H^+$ ions | Examples: Acetic acid ($CH_3COOH$), Carbonic acid ($H_2CO_3$), Citric acid].
+
 The strength of an acid or base is measured using the [JARGON: pH scale | A numerical scale from 0 to 14 that measures the concentration of hydrogen ions in a solution — lower pH means more acidic, higher pH means more basic | The pH of stomach acid is about 1.5–3.5, while the pH of blood is about 7.4].
 
 | pH | Nature | Example |
 |----|--------|---------|
-| 0–6 | Acidic | HCl (pH 1), vinegar (pH 3), acid rain (pH 4–5) |
+| 0–6 | Acidic | HCl (pH 1), vinegar (pH 3), acid rain (pH < 5.6) |
 | 7 | Neutral | Pure water |
 | 8–14 | Basic | Baking soda (pH 8.3), bleach (pH 12), NaOH (pH 13–14) |
 
@@ -268,8 +291,11 @@ $$Ca(OH)_2(s) + Cl_2(g) \rightarrow CaOCl_2(s) + H_2O(l)$$
 Uses: bleaching woven fabrics, disinfecting drinking water, manufacturing chloroform.
 
 **Baking soda** — $NaHCO_3$ (sodium hydrogen carbonate):
-$$NaHCO_3 + Heat \rightarrow Na_2CO_3 + H_2O + CO_2$$
-Uses: baking (CO_2 makes cakes rise), antacid, soda-acid fire extinguishers.
+$$2NaHCO_3(s) \xrightarrow{\text{Heat}} Na_2CO_3(s) + H_2O(l) + CO_2(g)$$
+Uses: making baking powder, as an antacid, in soda-acid fire extinguishers.
+
+> [!TIP]
+> **Baking Powder vs Baking Soda**: Baking powder is a mixture of baking soda ($NaHCO_3$) and a mild edible acid like tartaric acid. When heated, baking soda produces sodium carbonate, which tastes bitter. The tartaric acid neutralises this bitterness!
 
 **Washing soda** — $Na_2CO_3 \cdot 10H_2O$ (sodium carbonate decahydrate):
 $$Na_2CO_3 \xrightarrow{\text{Recrystallisation}} Na_2CO_3 \cdot 10H_2O$$
@@ -328,6 +354,23 @@ $$CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(l) \rightarrow CaSO_4 \cdot
 - Always state the colour of the precipitate in reactions (e.g., $CaCO_3$ is white, $CuCl_2$ turns solution blue-green).
 - Write state symbols $(s), (l), (g), (aq)$ in every equation.
 - For electrolysis questions: name the product at each electrode (cathode → $H_2$, anode → $Cl_2$).
+
+## 🧪 NCERT Activities Cheat Sheet
+- **Activity 2.1:** Test indicators on acids/bases. *Observation:* Red litmus turns blue in base, blue turns red in acid. Phenolphthalein is pink in base, colourless in acid.
+- **Activity 2.2:** Olfactory indicators. *Observation:* Vanilla, onion, and clove lose their smell in basic solutions (NaOH) but retain it in acidic solutions (HCl).
+- **Activity 2.3:** Zinc granules + dilute $H_2SO_4$. *Observation:* Hydrogen gas bubbles evolve, burns with a ''pop'' sound. Exothermic.
+- **Activity 2.4:** Zinc granules + NaOH. *Observation:* Sodium zincate forms, hydrogen gas is evolved. Needs heating.
+- **Activity 2.5:** Metal carbonates/bicarbonates + HCl. *Observation:* Brisk effervescence of $CO_2$ gas. Turns lime water milky.
+- **Activity 2.6:** Neutralisation (NaOH + HCl). *Observation:* Phenolphthalein turns pink in NaOH, becomes colourless when HCl is added.
+- **Activity 2.7:** Copper oxide + dilute HCl. *Observation:* Black $CuO$ dissolves, solution turns blue-green due to $CuCl_2$ formation.
+- **Activity 2.8:** Electricity through acid/glucose/alcohol. *Observation:* Bulb glows in acid (conducts electricity due to $H^+$), but not in glucose or alcohol (no ionisation).
+- **Activity 2.9:** Dry HCl gas vs moist litmus. *Observation:* Dry HCl gas does not change dry blue litmus paper. Only moist blue litmus turns red, proving $H^+$ needs water to form.
+- **Activity 2.10:** Mixing concentrated acid and water. *Observation:* Highly exothermic. Never add water to acid; always add acid to water slowly with stirring.
+- **Activity 2.11:** Testing pH of common solutions. *Observation:* Lemon juice and vinegar are acidic (pH < 7), baking soda and soap are basic (pH > 7), water is neutral (pH = 7).
+- **Activity 2.12:** Testing pH of soil. *Observation:* Different plants require different soil pH ranges. Acidic soil is treated with basic substances like quicklime.
+- **Activity 2.13:** Grouping salt families. *Observation:* Salts with the same positive or negative radicals belong to a family (e.g., $NaCl$ and $Na_2SO_4$ are sodium salts).
+- **Activity 2.14:** Testing pH of salt solutions. *Observation:* Salts of strong acid + strong base are neutral. Strong acid + weak base are acidic. Weak acid + strong base are basic.
+- **Activity 2.15:** Heating copper sulphate crystals. *Observation:* Blue crystals turn into a white powder ($CuSO_4$) as they lose 5 water of crystallisation molecules. Turns blue again on adding water.
 
 ## 🔄 One-Minute Revision
 - Acids → $H^+$ in water (acidic). Bases → $OH^-$ in water (basic).
@@ -398,6 +441,17 @@ In all of these situations, acids or bases are at work. Whenever the chemical na
 
 ## 2.1 UNDERSTANDING THE CHEMICAL PROPERTIES OF ACIDS AND BASES
 
+### Natural Sources of Acids
+Many sour-tasting foods contain naturally occurring weak acids:
+| Natural Source | Acid Present |
+|----------------|--------------|
+| Vinegar        | Acetic acid  |
+| Orange / Lemon | Citric acid  |
+| Tamarind       | Tartaric acid|
+| Tomato         | Oxalic acid  |
+| Curd (Sour milk)| Lactic acid  |
+| Ant / Nettle sting | Methanoic (Formic) acid |
+
 ### 2.1.1 Acids and Bases in the Laboratory
 
 To identify whether a substance is an acid or a base in the laboratory, we use [JARGON: Indicators | Dyes or mixtures of dyes that change colour in the presence of an acid or a base | Litmus is a natural dye extracted from lichens that turns red in acid and blue in base].
@@ -432,6 +486,14 @@ Sometimes we use **smell** to identify acids and bases. Such indicators are call
 5. After 5 minutes, smell each bag carefully.
 
 **Observation:** The smell of onion is gone near NaOH (the onion extract acts as an olfactory indicator — its smell is destroyed by base). The smell of vanilla is also affected by the base. Acids do not destroy these smells.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. You have been provided with three test tubes. One of them contains distilled water and the other two contain an acidic solution and a basic solution, respectively. If you are given only red litmus paper, how will you identify the contents of each test tube?**
+> *Answer:* 
+> 1. Put a drop of the solution from each test tube on the red litmus paper.
+> 2. The solution that turns red litmus blue is the **basic solution**. (Now you have identified the base, and you have blue litmus paper).
+> 3. Use the newly formed blue litmus paper and test the remaining two solutions. The one that turns blue litmus red is the **acidic solution**.
+> 4. The solution that has no effect on either red or blue litmus is **distilled water**.
 
 ---
 
@@ -481,6 +543,9 @@ $$NaHCO_3(s) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l) + CO_2(g)$$
 $$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
 
 The white milky precipitate of $CaCO_3$ is the standard test for carbon dioxide gas.
+
+On passing excess carbon dioxide, the following reaction occurs and the milkiness disappears due to the formation of soluble calcium hydrogencarbonate:
+$$CaCO_3(s) + H_2O(l) + CO_2(g) \rightarrow Ca(HCO_3)_2(aq)$$
 
 **General rule:**
 $$\text{Metal carbonate} + \text{Acid} \rightarrow \text{Salt} + H_2O + CO_2\uparrow$$
@@ -842,6 +907,106 @@ This hardening property makes Plaster of Paris useful for:
 > Plaster of Paris absorbs water and sets to gypsum, a hard solid.
 
 ---
+
+---
+
+## 📝 NCERT End-of-Chapter Exercises
+
+**1. A solution turns red litmus blue, its pH is likely to be**
+(a) 1 (b) 4 (c) 5 (d) 10
+*Answer:* (d) 10. (Bases turn red litmus blue and have a pH greater than 7.)
+
+**2. A solution reacts with crushed egg-shells to give a gas that turns lime-water milky. The solution contains**
+(a) NaCl (b) HCl (c) LiCl (d) KCl
+*Answer:* (b) HCl. (Egg shells contain calcium carbonate, which reacts with acid like HCl to produce $CO_2$ gas.)
+
+**3. 10 mL of a solution of NaOH is found to be completely neutralised by 8 mL of a given solution of HCl. If we take 20 mL of the same solution of NaOH, the amount HCl solution (the same solution as before) required to neutralise it will be**
+(a) 4 mL (b) 8 mL (c) 12 mL (d) 16 mL
+*Answer:* (d) 16 mL. (Double the base requires double the acid.)
+
+**4. Which one of the following types of medicines is used for treating indigestion?**
+(a) Antibiotic (b) Analgesic (c) Antacid (d) Antiseptic
+*Answer:* (c) Antacid. (Antacids are mild bases that neutralise excess stomach acid.)
+
+**5. Write word equations and then balanced equations for the reaction taking place when:**
+**(a) dilute sulphuric acid reacts with zinc granules.**
+*Answer:* Zinc + Sulphuric acid → Zinc sulphate + Hydrogen gas
+$Zn(s) + H_2SO_4(aq) ightarrow ZnSO_4(aq) + H_2(g)$
+**(b) dilute hydrochloric acid reacts with magnesium ribbon.**
+*Answer:* Magnesium + Hydrochloric acid → Magnesium chloride + Hydrogen gas
+$Mg(s) + 2HCl(aq) ightarrow MgCl_2(aq) + H_2(g)$
+**(c) dilute sulphuric acid reacts with aluminium powder.**
+*Answer:* Aluminium + Sulphuric acid → Aluminium sulphate + Hydrogen gas
+$2Al(s) + 3H_2SO_4(aq) ightarrow Al_2(SO_4)_3(aq) + 3H_2(g)$
+**(d) dilute hydrochloric acid reacts with iron filings.**
+*Answer:* Iron + Hydrochloric acid → Iron(II) chloride + Hydrogen gas
+$Fe(s) + 2HCl(aq) ightarrow FeCl_2(aq) + H_2(g)$
+
+**6. Compounds such as alcohols and glucose also contain hydrogen but are not categorised as acids. Describe an Activity to prove it.**
+*Answer:* Set up an electrical circuit using a beaker, two nails on a rubber cork, a 6-volt battery, a bulb, and a switch. Pour glucose or alcohol solution into the beaker and switch on the current. The bulb does not glow. This proves that glucose and alcohol do not ionise in water to produce $H^+$ ions, and therefore do not conduct electricity. Thus, they are not acids.
+
+**7. Why does distilled water not conduct electricity, whereas rain water does?**
+*Answer:* Distilled water is pure and does not contain any dissolved ions. Rain water contains dissolved gases from the atmosphere (like $CO_2$, $SO_2$) which form acids (like carbonic acid) that dissociate into ions ($H^+$ and anions). These ions conduct electricity.
+
+**8. Why do acids not show acidic behaviour in the absence of water?**
+*Answer:* Acids exhibit acidic behaviour only when they dissociate to produce $H^+$ (or hydronium, $H_3O^+$) ions. This dissociation can only happen in the presence of water.
+
+**9. Five solutions A,B,C,D and E when tested with universal indicator showed pH as 4,1,11,7 and 9, respectively. Which solution is:**
+(a) neutral? (b) strongly alkaline? (c) strongly acidic? (d) weakly acidic? (e) weakly alkaline? Arrange the pH in increasing order of hydrogen-ion concentration.
+*Answer:* (a) Neutral: D (pH 7) (b) Strongly alkaline: C (pH 11) (c) Strongly acidic: B (pH 1) (d) Weakly acidic: A (pH 4) (e) Weakly alkaline: E (pH 9).
+Increasing order of $H^+$ concentration (i.e., decreasing order of pH): C (11) < E (9) < D (7) < A (4) < B (1).
+
+**10. Equal lengths of magnesium ribbons are taken in test tubes A and B. Hydrochloric acid (HCl) is added to test tube A, while acetic acid ($CH_3COOH$) is added to test tube B. In which test tube will the fizzing occur more vigorously and why?**
+*Answer:* Fizzing will occur more vigorously in test tube A. HCl is a strong acid and completely dissociates to produce a high concentration of $H^+$ ions, leading to a faster reaction (more rapid evolution of $H_2$ gas). Acetic acid is a weak acid.
+
+**11. Fresh milk has a pH of 6. How do you think the pH will change as it turns into curd? Explain your answer.**
+*Answer:* The pH will decrease (become less than 6). As milk turns into curd, bacteria (Lactobacillus) convert lactose into lactic acid. The increase in acid concentration lowers the pH.
+
+**12. A milkman adds a very small amount of baking soda to fresh milk.**
+**(a) Why does he shift the pH of the fresh milk from 6 to slightly alkaline?**
+**(b) Why does this milk take a long time to set as curd?**
+*Answer:* (a) He shifts the pH to slightly alkaline to prevent the milk from spoiling quickly. In alkaline conditions, it takes longer for the bacteria to produce enough lactic acid to sour the milk.
+(b) It takes a long time to set as curd because the lactic acid produced by bacteria must first neutralise the added alkali (baking soda) before the pH can fall enough to coagulate the milk.
+
+**13. Plaster of Paris should be stored in a moisture-proof container. Explain why?**
+*Answer:* Plaster of Paris ($CaSO_4 \cdot \frac{1}{2}H_2O$) readily absorbs moisture (water) from the air and reacts to form a hard, solid mass called gypsum ($CaSO_4 \cdot 2H_2O$). This makes it useless for plastering.
+Equation: $CaSO_4 \cdot \frac{1}{2}H_2O + 1\frac{1}{2}H_2O \rightarrow CaSO_4 \cdot 2H_2O$
+
+**14. What is a neutralisation reaction? Give two examples.**
+*Answer:* A reaction in which an acid reacts with a base to form salt and water is called a neutralisation reaction.
+Examples:
+1. $NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$
+2. $Mg(OH)_2(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + 2H_2O(l)$
+
+**15. Give two important uses of washing soda and baking soda.**
+*Answer:*
+**Washing Soda ($Na_2CO_3 \cdot 10H_2O$):**
+1. Used in glass, soap, and paper industries.
+2. Used for removing permanent hardness of water.
+**Baking Soda ($NaHCO_3$):**
+1. Used in making baking powder (for baking cakes, bread).
+2. Used as an antacid to treat indigestion.
+
+---
+
+## 👥 NCERT Group Activity
+
+**Prepare your own indicator:**
+1. Crush beetroot in a mortar.
+2. Add sufficient water to obtain the extract.
+3. Filter the extract by the procedure learnt by you in earlier classes.
+4. Collect the filtrate to test the substances you may have tasted earlier.
+5. Arrange four test tubes in a test tube stand. Label them as A, B, C and D. Pour 2 mL each of lemon juice solution, soda-water, vinegar and baking soda solution in them respectively.
+6. Put 2-3 drops of the beetroot extract in each test tube and note the colour change if any. Write your observation in a Table.
+*Observation:* Beetroot is a natural indicator. It remains red/purple in acidic solutions (lemon juice, soda-water, vinegar) and turns yellow/green in basic solutions (baking soda).
+
+**Preparing a soda-acid fire extinguisher:**
+1. Take 20 mL of sodium hydrogencarbonate ($NaHCO_3$) solution in a wash-bottle.
+2. Suspend an ignition tube containing dilute sulphuric acid ($H_2SO_4$) in the wash-bottle.
+3. Close the mouth of the wash-bottle.
+4. Tilt the wash-bottle so that the acid from the ignition tube mixes with the sodium hydrogencarbonate solution.
+5. You will see an effervescence of carbon dioxide gas coming out of the nozzle.
+6. Direct this gas on a burning candle. The candle will go out because $CO_2$ doesn''t support combustion and smothers the fire.
 
 ## 🎭 COMIC STYLE RECAP: A CHAT IN THE CHEMISTRY LAB
 

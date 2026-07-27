@@ -6778,6 +6778,26 @@ We can spot a reaction by:
 - Gas release (evolution of gas).
 - Temperature change.
 
+### 🛠️ Pre-requisite: Writing Chemical Formulas
+Before balancing equations, you must know how to write the correct chemical formulas! If you write $MgCl$ instead of $MgCl_2$, your equation will never balance.
+Use the **Criss-Cross Method** to build formulas using valencies:
+
+| Cations (Positive Ions) | Valency | | Anions (Negative Ions) | Valency |
+| :--- | :--- | :--- | :--- | :--- |
+| Sodium ($Na^+$) / Potassium ($K^+$) | +1 | | Chloride ($Cl^-$) / Hydroxide ($OH^-$) | -1 |
+| Magnesium ($Mg^{2+}$) / Calcium ($Ca^{2+}$) | +2 | | Oxide ($O^{2-}$) / Sulphate ($SO_4^{2-}$) | -2 |
+| Aluminium ($Al^{3+}$) | +3 | | Phosphate ($PO_4^{3-}$) | -3 |
+
+**Example 1: Calcium Hydroxide**
+1. Write symbols: $Ca$ and $OH$
+2. Write valencies below: $Ca$ (2) and $OH$ (1)
+3. Criss-cross: $Ca_1(OH)_2 \rightarrow Ca(OH)_2$
+
+**Example 2: Aluminium Sulphate**
+1. Write symbols: $Al$ and $SO_4$
+2. Write valencies below: $Al$ (3) and $SO_4$ (2)
+3. Criss-cross: $Al_2(SO_4)_3$
+
 ## 4. 📖 Concept 2: Balancing Chemical Equations
 A chemical equation shows the reactants and products. We must balance it. This satisfies the **[JARGON: Law of Conservation of Mass | Mass cannot be created or destroyed in a chemical reaction | Total mass of reactants must equal total mass of products]** (the rule that total mass does not change). The total atoms on both sides must match.
 
@@ -6807,6 +6827,27 @@ Reactions happen in different ways:
      - Silver bromide in sunlight: $2AgBr(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Br_2(g)$ (used in black-and-white photography).
   [FIGURE: decomposition_reaction]
 - **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger element replaces a weaker one. $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$. The blue copper solution turns green, and brown copper deposits on the iron nail!
+  > [!TIP]
+  > **The Reactivity Series Mnemonic**  
+  > To predict if a displacement reaction will happen, you MUST know the Reactivity Series! The top metals are the strongest.  
+  > **P**lease **S**top **C**alling **M**e **A** **C**areless **Z**ebra **I**nstead **T**ry **L**earning **H**ow **C**opper **S**aves **G**old
+  > 
+  > | Mnemonic | Metal | Symbol | Reactivity |
+  > | :--- | :--- | :--- | :--- |
+  > | **P**lease | Potassium | K | Most Reactive |
+  > | **S**top | Sodium | Na | |
+  > | **C**alling | Calcium | Ca | |
+  > | **M**e | Magnesium | Mg | |
+  > | **A** | Aluminium | Al | |
+  > | **C**areless | (Carbon) | C | *(Non-metal reference)* |
+  > | **Z**ebra | Zinc | Zn | |
+  > | **I**nstead | Iron | Fe | |
+  > | **T**ry | Tin | Sn | |
+  > | **L**earning | Lead | Pb | |
+  > | **H**ow | (Hydrogen) | H | *(Non-metal reference)* |
+  > | **C**opper | Copper | Cu | |
+  > | **S**aves | Silver | Ag | |
+  > | **G**old | Gold | Au | Least Reactive |
   > [!IMPORTANT]
   > **🔥 Board Exam Hot Topic — Repeated 4x (2026)**  
   > *Key Concept:* In a displacement reaction, a more reactive metal (e.g. Iron, Zinc) displaces a less reactive metal (e.g. Copper) from its salt solution.
@@ -6821,12 +6862,17 @@ Reactions happen in different ways:
 - **Oxidising agent**: The substance that causes oxidation and is itself reduced.
 - **Reducing agent**: The substance that causes reduction and is itself oxidised.
 - **Redox Reaction**: A reaction where oxidation and reduction occur simultaneously.
+  > [!CAUTION]
+  > **The "LHS Rule" (Left Hand Side Rule)**
+  > When the examiner asks you to identify what is oxidised, what is reduced, or the agents, **ALWAYS pick your answer from the Reactants (Left Hand Side)**. Never pick a Product (RHS)!
+
   - *Example 1:* Heating copper powder in air forms black copper oxide:
     $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$ (Copper is oxidised).
   - *Example 2:* Passing hydrogen gas over hot copper oxide:
     $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$
-    Here, copper oxide loses oxygen and is **reduced** to copper. Hydrogen gains oxygen and is **oxidised** to water.
-  - *Example 3:* $$ZnO + C \rightarrow Zn + CO$$ (Zinc oxide is reduced to Zn; carbon is oxidised to carbon monoxide).
+    Here, copper oxide ($CuO$) loses oxygen and is **reduced** to copper. Hydrogen ($H_2$) gains oxygen and is **oxidised** to water.
+    *Applying LHS Rule:* What is oxidised? $H_2$. What is reduced? $CuO$. Oxidising Agent? $CuO$. Reducing Agent? $H_2$. All answers come from the left side!
+  - *Example 3:* $$ZnO + C \rightarrow Zn + CO$$ (Zinc oxide is reduced to Zn; carbon is oxidised to carbon monoxide. Oxidising Agent = $ZnO$, Reducing Agent = $C$).
 
 ## 7. 📖 Concept 5: Everyday Effects of Oxidation
 - **[JARGON: Corrosion | The gradual destruction of metals when exposed to moisture, air, and chemicals | Rusting of iron is corrosion]**: A metal surface is eaten away by air, water, or acids.
@@ -7445,7 +7491,7 @@ ON CONFLICT (id) DO NOTHING;
 -- Quiz: Science Chapter 1 Assessment (ID: d0eebc99-9c0b-4ef8-bb6d-6bb9bd380099)
 -- Reference: science_1.txt (CBSE Class 10 Science Chapter 1)
 
-INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_option_index, correct_answer_text, marks) VALUES
+INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_option_index, correct_answer_text, marks, explanation, difficulty) VALUES
 (
     'f0eebc99-9c0b-4ef8-bb6d-6bb9bd385551',
     'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
@@ -7454,7 +7500,9 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
     '["A. Nitrogen monoxide (NO)", "B. Nitrogen dioxide (NO2)", "C. Dinitrogen oxide (N2O)", "D. Nitrogen pentoxide (N2O5)"]',
     1,
     NULL,
-    1
+    1,
+    'Heating lead nitrate produces lead oxide, oxygen gas, and nitrogen dioxide (NO2) gas, which emits characteristic brown fumes.',
+    'standard'
 ),
 (
     'f0eebc99-9c0b-4ef8-bb6d-6bb9bd385552',
@@ -7464,7 +7512,9 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
     '["A. Calcium oxide", "B. Calcium sulphate", "C. Calcium carbonate", "D. Calcium chloride"]',
     2,
     NULL,
-    1
+    1,
+    'Slaked lime (Ca(OH)2) reacts with CO2 in the air to form Calcium carbonate (CaCO3), giving the walls a shiny finish.',
+    'standard'
 ),
 (
     'f0eebc99-9c0b-4ef8-bb6d-6bb9bd385553',
@@ -7474,7 +7524,9 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
     '["A. Silver metal and chlorine gas", "B. Silver oxide and chlorine gas", "C. Silver metal and oxygen gas", "D. Silver nitrate and chlorine gas"]',
     0,
     NULL,
-    1
+    1,
+    'This is a photolytic decomposition reaction. AgCl breaks down into grey silver metal (Ag) and chlorine gas (Cl2).',
+    'basic'
 ),
 (
     'f0eebc99-9c0b-4ef8-bb6d-6bb9bd385554',
@@ -7484,7 +7536,9 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
     '["A. Evolution of a gas", "B. Change in physical state", "C. Increase in the total mass of substances", "D. Change in temperature"]',
     2,
     NULL,
-    1
+    1,
+    'According to the Law of Conservation of Mass, the total mass of substances remains constant during a chemical reaction, it does not increase.',
+    'basic'
 ),
 (
     'f0eebc99-9c0b-4ef8-bb6d-6bb9bd385555',
@@ -7494,7 +7548,129 @@ INSERT INTO quiz_questions (id, quiz_id, question_text, type, options, correct_o
     '["A. The blue colour of the solution intensifies and the nail remains grey", "B. The blue colour of the solution fades and the nail becomes brownish", "C. The solution turns yellow and the nail dissolves completely", "D. There is no change in colour or state of either the solution or nail"]',
     1,
     NULL,
-    1
+    1,
+    'Iron is more reactive than copper. It displaces copper from CuSO4, fading the blue color (as FeSO4 forms) and depositing brown copper on the nail.',
+    'standard'
+),
+(
+    '61d18190-5b75-433c-806a-1a2f6e364524',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'What is the correct balanced equation for the reaction of Iron with steam?',
+    'multiple_choice',
+    '["A. 3Fe + 4H2O -> Fe3O4 + 4H2", "B. 3Fe + H2O -> Fe3O4 + H2", "C. Fe + H2O -> FeO + H2", "D. 2Fe + 3H2O -> Fe2O3 + 3H2"]',
+    0,
+    NULL,
+    1,
+    'According to the Law of Conservation of Mass, the number of atoms on the LHS must equal the RHS. In 3Fe + 4H2O -> Fe3O4 + 4H2, we have 3 Fe, 8 H, and 4 O on both sides.',
+    'medium'
+),
+(
+    'f1a72a34-615a-4363-a55d-17df5c977728',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'When Magnesium burns in oxygen, what gets oxidized?',
+    'multiple_choice',
+    '["A. Oxygen", "B. Magnesium oxide", "C. Magnesium", "D. Both Magnesium and Oxygen"]',
+    2,
+    NULL,
+    1,
+    'Applying the LHS Rule: The answer must be a reactant. Magnesium (Mg) gains oxygen to form MgO. The substance that gains oxygen is oxidized.',
+    'basic'
+),
+(
+    '7d70e9eb-5ae7-4b1c-ad66-f88b7d5509ec',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'A student mixes Lead Nitrate and Potassium Iodide solutions. What will be the observation?',
+    'multiple_choice',
+    '["A. A white precipitate of Lead Sulphate forms", "B. A yellow precipitate of Lead Iodide forms", "C. A green solution is produced", "D. Brown fumes of NO2 gas are released"]',
+    1,
+    NULL,
+    1,
+    'This is a double displacement reaction. Pb(NO3)2 + 2KI -> PbI2 (yellow ppt) + 2KNO3.',
+    'standard'
+),
+(
+    'eb92c4bb-861a-4416-bca9-c4ae44f83149',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'In the reaction: CuO + H2 -> Cu + H2O, identify the oxidizing agent.',
+    'multiple_choice',
+    '["A. H2", "B. Cu", "C. H2O", "D. CuO"]',
+    3,
+    NULL,
+    1,
+    'Using the LHS rule: CuO loses oxygen to become Cu, meaning it is reduced. The substance that gets reduced acts as the oxidizing agent. So, CuO is the oxidizing agent.',
+    'hard'
+),
+(
+    'e4253ee1-909a-44d5-984e-82fe1aba0514',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'Assertion (A): Respiration is an exothermic reaction. Reason (R): Respiration involves the breakdown of glucose with oxygen to release energy.',
+    'multiple_choice',
+    '["A. Both A and R are true and R is the correct explanation of A", "B. Both A and R are true but R is NOT the correct explanation of A", "C. A is true but R is false", "D. A is false but R is true"]',
+    0,
+    NULL,
+    1,
+    'An exothermic reaction is one that releases energy. Since respiration releases energy (ATP) by breaking down glucose with oxygen, the reason correctly explains the assertion.',
+    'hard'
+),
+(
+    '0d7f8ee9-579e-4d09-be72-c8f73e9b3614',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'A shiny brown metal X turns black on heating in air. Which of the following statements is correct?',
+    'multiple_choice',
+    '["A. X is iron and the black compound is Fe3O4", "B. X is copper and the reaction is a reduction", "C. X is copper and the black compound is CuO", "D. X is silver and the black compound is Ag2S"]',
+    2,
+    NULL,
+    1,
+    'Copper (Cu) is a shiny brown metal. On heating in air, it undergoes oxidation to form black Copper(II) oxide (CuO).',
+    'standard'
+),
+(
+    'af86cff0-e56f-4581-b934-c22b4e4092d3',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'Which method is used to balance a chemical equation?',
+    'multiple_choice',
+    '["A. Hit and trial method", "B. Criss-cross method", "C. Substitution method", "D. Oxidation state method"]',
+    0,
+    NULL,
+    1,
+    'The hit and trial method is used to balance chemical equations by equating the number of atoms of each element on LHS and RHS.',
+    'basic'
+),
+(
+    '3c63e94f-0980-42f6-b674-ded13a81ee9e',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'To protect iron articles from rusting, they are painted. Why?',
+    'multiple_choice',
+    '["A. It makes the iron look shiny", "B. It increases the reactivity of iron", "C. It prevents iron from coming into contact with oxygen and moisture", "D. It converts iron into iron oxide"]',
+    2,
+    NULL,
+    1,
+    'Rusting requires both oxygen and moisture. Paint acts as a physical barrier, preventing these from reaching the iron surface.',
+    'standard'
+),
+(
+    '4fdc5b46-be3a-4dfb-9ce5-bb29b02a5734',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'Why are chips packets flushed with nitrogen gas?',
+    'multiple_choice',
+    '["A. To prevent corrosion", "B. To make the chips crispier", "C. To prevent rancidity of fats and oils", "D. To increase the weight of the packet"]',
+    2,
+    NULL,
+    1,
+    'Nitrogen is an inert gas. It replaces oxygen in the packet, preventing the oxidation (rancidity) of the oils and fats present in the chips.',
+    'basic'
+),
+(
+    'c190c705-2ec5-407b-a82d-ac518bc0ee53',
+    'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380099',
+    'Which of the following is an endothermic reaction?',
+    'multiple_choice',
+    '["A. Burning of natural gas", "B. Dilution of sulphuric acid", "C. Respiration", "D. Decomposition of silver chloride"]',
+    3,
+    NULL,
+    1,
+    'Decomposition of silver chloride requires energy in the form of sunlight (photolytic decomposition). Reactions that absorb energy are endothermic.',
+    'medium'
 )
 ON CONFLICT (id) DO NOTHING;
 
@@ -8839,7 +9015,7 @@ In a decomposition reaction, a single reactant breaks down to give two or more s
 #### B. Electrolytic Decomposition (Using Electricity)
 
 4. **Activity 1.7 (Electrolysis of Water):**
-   * Pass an electric current through acidified water using carbon electrodes.
+   * Pass an electric current through acidified water using carbon electrodes. *(Note: A few drops of dilute sulphuric acid are added because pure water is a very poor conductor of electricity. The acid provides ions that allow the current to flow).*
    * **Observation:** Gas bubbles form at both electrodes. The volume of gas collected at the cathode (Hydrogen, $H_2$) is **double** that collected at the anode (Oxygen, $O_2$).
    * **Chemical Equation:**
      $$2H_2O(l) \xrightarrow{\text{Electricity}} 2H_2(g) + O_2(g)$$
@@ -8928,6 +9104,9 @@ $$Pb(NO_3)_2(aq) + 2KI(aq) \rightarrow PbI_2(s) + 2KNO_3(aq)$$
 * **Oxidation:** The gain of oxygen or the loss of hydrogen.
 * **Reduction:** The loss of oxygen or the gain of hydrogen.
 * **Redox Reaction (Oxidation-Reduction):** A reaction where one reactant gets oxidised while another gets reduced.
+  > [!CAUTION]
+  > **The "LHS Rule" (Left Hand Side Rule)**
+  > When asked to identify what is oxidised, what is reduced, or the agents, **ALWAYS pick your answer from the Reactants (Left Hand Side)**. Never pick a Product (RHS)!
 
 * **Activity 1.11 (Heating Copper Powder):**
   * Heat 1 g of brown copper powder in a china dish.
@@ -9166,7 +9345,43 @@ When fats and oils are oxidised, they become rancid. Their smell and taste chang
 
 ---
 
-## 1.5 NCERT GROUP ACTIVITY: EXOTHERMIC VS ENDOTHERMIC REACTIONS
+## 1.5 QUICK REVISION: KEY OBSERVATIONS (OBSERVATION MATRIX)
+
+| Activity / Reaction | Initial State / Color | Final State / Color | Gas Evolved / Smell | Precipitate (Insoluble Solid) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Heating Ferrous Sulphate ($FeSO_4 \cdot 7H_2O$)** | Green crystals | White powder, then Brown solid ($Fe_2O_3$) | Pungent smell ($SO_2$, $SO_3$) | None |
+| **Heating Lead Nitrate ($Pb(NO_3)_2$)** | White powder | Yellow residue ($PbO$) | Brown fumes ($NO_2$) | None |
+| **Lead Nitrate + Potassium Iodide** | Colorless solutions | Yellow solid forms | None | **Yellow ppt** ($PbI_2$) |
+| **Sodium Sulphate + Barium Chloride** | Colorless solutions | White solid forms | None | **White ppt** ($BaSO_4$) |
+| **Iron nail in Copper Sulphate ($CuSO_4$)** | Blue solution, Grey nail | Green solution ($FeSO_4$), Brown coating on nail | None | None |
+| **Zinc granules + Dilute $H_2SO_4$** | Silvery-white metal | Bubbles form, flask gets hot | Hydrogen ($H_2$) - *Pop sound* | None |
+
+---
+
+## 1.6 BOARD EXAM SECRETS: HOW TO WRITE YOUR ANSWERS
+
+Examiners look for specific keywords and formats. Even if you know the chemistry, you might lose marks for poor presentation!
+Follow these templates for 3-mark and 5-mark subjective questions:
+
+> [!TIP]
+> **Template for "Observation Based" Questions**
+> **Question:** What happens when an iron nail is dipped in copper sulphate solution? (3 Marks)
+> **Your Answer Must Have 3 Parts:**
+> 1. **State the Observation:** The blue colour of the copper sulphate solution fades to light green, and a reddish-brown coating deposits on the iron nail. *(1 Mark)*
+> 2. **Write the Balanced Equation:** $Fe(s) + CuSO_4(aq) \rightarrow FeSO_4(aq) + Cu(s)$. *(1 Mark for correct formulas and state symbols)*
+> 3. **Name the Type of Reaction & Reason:** It is a single displacement reaction because Iron is more reactive than Copper and displaces it from its salt solution. *(1 Mark)*
+
+> [!TIP]
+> **Template for "Identify X and Y" Questions**
+> **Question:** A shiny brown metal ''X'' turns black on heating in air to form compound ''Y''. Identify X and Y and write the equation. (3 Marks)
+> **Your Answer Must Have 3 Parts:**
+> 1. **Identify the Unknowns clearly:** Metal X = Copper ($Cu$). Black compound Y = Copper(II) oxide ($CuO$). *(1 Mark)*
+> 2. **Write the Balanced Equation:** $2Cu(s) + O_2(g) \xrightarrow{\text{Heat}} 2CuO(s)$. *(1 Mark)*
+> 3. **Name the Type of Reaction:** It is an oxidation reaction (or combination reaction) because Copper gains oxygen. *(1 Mark)*
+
+---
+
+## 1.7 NCERT GROUP ACTIVITY: EXOTHERMIC VS ENDOTHERMIC REACTIONS
 
 *   **Objective:** To determine whether chemical changes/dissolutions are exothermic or endothermic by monitoring temperature.
 *   **Materials Required:** Four 100 mL beakers (labeled A, B, C, and D), water, copper sulphate ($CuSO_4$) solution, thermometer, spatula, potassium sulphate ($K_2SO_4$), ammonium nitrate ($NH_4NO_3$), anhydrous copper sulphate ($CuSO_4$), and fine iron filings.
@@ -9208,6 +9423,1040 @@ When fats and oils are oxidised, they become rancid. Their smell and taste chang
 👩‍🔬 **Scientist Priya:** That''s exactly what a **Double Displacement Reaction** is! You''re getting the hang of this!
 
 ', TRUE, 10);
+
+
+-- --- FROM FILE db/seed_science_ch2_notes.sql ---
+
+-- =============================================================================
+-- Science Chapter 2: Acids, Bases and Salts — Complete Notes & Study Guide
+-- Generated: 2026-07-10
+-- Chapter ID: c0eebc99-9c0b-4ef8-bb6d-6bb9bd380223
+-- Lesson UUIDs:
+--   Revision Notes:   b0eebc99-9c0b-4ef8-bb6d-6bb9bd380233
+--   NCERT Study Guide: e0eebc99-9c0b-4ef8-bb6d-6bb9bd380223
+-- =============================================================================
+
+-- =========================================================================
+-- LESSON 1: REVISION NOTES (concise, student-friendly)
+-- =========================================================================
+INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number)
+VALUES (
+  'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380233',
+  'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380223',
+  'Revision Notes: Acids, Bases and Salts',
+  'note',
+  NULL,
+  NULL,
+  '# Chapter 2: Acids, Bases and Salts
+
+## 🎯 Chapter Goal
+Learn how acids and bases behave chemically, understand what makes them acidic or basic at the ion level, use the pH scale to measure strength, and discover important salts and their everyday uses.
+
+## 🪝 Hook
+Why does vinegar taste sour? Why does soap feel slippery? Why do antacid tablets stop stomach pain? They all involve acids and bases — chemicals that affect almost everything in our daily lives. Let''s find out how!
+
+## 📖 Learning Goals
+- Identify acids and bases using indicators.
+- Explain the chemical reactions of acids and bases with metals, carbonates, and each other.
+- Understand that acids produce $H_3O^+$ ions and bases produce $OH^-$ ions in water.
+- Use the pH scale to compare strength of acids and bases.
+- Describe important industrial salts: bleaching powder, baking soda, washing soda, Plaster of Paris.
+
+---
+
+## 2.1 Chemical Properties of Acids and Bases
+
+### Natural Sources of Acids
+Many sour-tasting foods contain naturally occurring weak acids:
+| Natural Source | Acid Present |
+|----------------|--------------|
+| Vinegar        | Acetic acid  |
+| Orange / Lemon | Citric acid  |
+| Tamarind       | Tartaric acid|
+| Tomato         | Oxalic acid  |
+| Curd (Sour milk)| Lactic acid  |
+| Ant / Nettle sting | Methanoic (Formic) acid |
+
+### 2.1.1 Acids and Bases in the Laboratory
+
+We can tell acids and bases apart using [JARGON: Indicators | Substances that change colour in the presence of an acid or a base | Litmus paper turns red in acid and blue in base].
+
+| Indicator | In Acid | In Base |
+|-----------|---------|---------|
+| Blue litmus | Turns **red** | Stays blue |
+| Red litmus | Stays red | Turns **blue** |
+| Phenolphthalein | Colourless | **Pink** |
+| Methyl orange | **Red** | Yellow |
+
+[TIP: Olfactory indicators like onion, vanilla, and clove change their smell in acids or bases instead of colour.]
+
+### Activity 2.1
+Caution: Acids and bases are corrosive. Use dilute solutions only and handle with care.
+
+1. Place solutions of HCl, $H_2SO_4$, acetic acid, NaOH, and $Ca(OH)_2$ in separate test tubes.
+2. Test each with red litmus, blue litmus, and phenolphthalein. Record which colour changes occur.
+
+### Activity 2.2
+1. Take onion pieces or vanilla essence on cotton. Seal in polythene bags.
+2. Place one bag near concentrated HCl and one near concentrated NaOH.
+3. Observe whether the smell of onion or vanilla changes. Olfactory indicators lose their smell in bases.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. You have been provided with three test tubes. One of them contains distilled water and the other two contain an acidic solution and a basic solution, respectively. If you are given only red litmus paper, how will you identify the contents of each test tube?**
+> *Answer:* Dip the red litmus paper into each test tube. The one that turns it blue is the basic solution. Now, use this blue litmus paper to test the remaining two solutions. The one that turns it back to red is the acidic solution. The remaining solution that has no effect on the litmus paper is distilled water.
+
+---
+
+### 2.1.2 How do Acids and Bases React with Metals?
+
+**Acid + Metal → Salt + Hydrogen gas ($H_2$)**
+
+$$Zn(s) + H_2SO_4(aq) \rightarrow ZnSO_4(aq) + H_2(g)$$
+$$2HCl(aq) + Mg(s) \rightarrow MgCl_2(aq) + H_2(g)$$
+
+The hydrogen gas burns with a **pop sound** — this is the standard test for $H_2$.
+
+[FIGURE: acid_metal_reaction]
+
+**Base + Metal → Salt + Hydrogen gas ($H_2$)**
+
+$$2NaOH(aq) + Zn(s) \rightarrow Na_2ZnO_2(aq) + H_2(g)$$
+
+[JARGON: Amphoteric substance | A substance that reacts with both acids and bases to form salt and water | Zinc reacts with dilute $H_2SO_4$ (acid) and also with NaOH (base)].
+
+---
+
+### 2.1.3 How do Metal Carbonates and Metal Hydrogencarbonates React with Acids?
+
+**Metal Carbonate + Acid → Salt + $CO_2$ + Water**
+
+$$Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$$
+
+**Metal Hydrogencarbonate + Acid → Salt + $CO_2$ + Water**
+
+$$NaHCO_3(s) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l) + CO_2(g)$$
+
+The $CO_2$ gas turns lime water milky (forms white $CaCO_3$ precipitate). This is the standard test for $CO_2$.
+$$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+On passing excess carbon dioxide, the following reaction occurs and the milkiness disappears due to the formation of soluble calcium hydrogencarbonate:
+$$CaCO_3(s) + H_2O(l) + CO_2(g) \rightarrow Ca(HCO_3)_2(aq)$$
+
+[FIGURE: co2_limewater_test]
+
+---
+
+### 2.1.4 How do Acids and Bases React with each other?
+
+This is called [JARGON: Neutralisation | A reaction where an acid and a base react together to form salt and water, with the acidic and basic properties cancelling each other out | Antacid tablets (a base) neutralise excess stomach acid to relieve indigestion].
+
+$$NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$$
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 5x (2025, 2026)**  
+> *Key Concept:* Reaction of acids with bases (neutralisation), basic metallic oxides with acids, and acidic non-metallic oxides with bases all yield salt and water.
+
+---
+
+### 2.1.5 Reaction of Metallic Oxides with Acids
+
+Metal oxides are **basic** in nature:
+
+$$CuO(s) + 2HCl(aq) \rightarrow CuCl_2(aq) + H_2O(l)$$
+
+The black colour of $CuO$ disappears and the solution turns blue-green as $CuCl_2$ forms.
+
+---
+
+### 2.1.6 Reaction of a Non-metallic Oxide with Base
+
+Non-metallic oxides are **acidic** in nature:
+
+$$CO_2(g) + Ca(OH)_2(aq) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+**❓ QUESTIONS**
+
+**1. Why should curd and sour substances not be kept in brass and copper vessels?**
+*Answer:* Curd and sour substances contain acids. These acids react with brass (copper + zinc alloy) and copper to form toxic metallic salts. This contaminates the food and can cause food poisoning.
+
+**2. Which gas is usually liberated when an acid reacts with a metal? Illustrate with an example. How will you test for the presence of this gas?**
+*Answer:* Hydrogen gas ($H_2$) is liberated. Example: $Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2$. Test: hold a burning splint near the mouth of the test tube — a pop sound confirms the presence of $H_2$.
+
+**3. Metal compound A reacts with dilute hydrochloric acid to produce effervescence. The gas evolved extinguishes a burning candle. Write a balanced chemical equation for the reaction if one of the compounds formed is calcium chloride.**
+*Answer:* The gas is $CO_2$ (it extinguishes fire). So compound A is calcium carbonate ($CaCO_3$):
+$$CaCO_3(s) + 2HCl(aq) \rightarrow CaCl_2(aq) + H_2O(l) + CO_2(g)$$
+
+---
+
+## 2.2 What do all Acids and Bases have in Common?
+
+All acids produce [JARGON: Hydronium ions | Ions with formula $H_3O^+$ formed when a hydrogen ion ($H^+$) released by an acid bonds with a water molecule | Every acid solution in water contains hydronium ions as the actual acidic species] in water.
+
+$$HCl \xrightarrow{H_2O} H^+(aq) + Cl^-(aq)$$
+$$H^+(aq) + H_2O(l) \rightarrow H_3O^+(aq)$$
+
+All bases produce hydroxide ions ($OH^-$) in water:
+
+$$NaOH(s) \xrightarrow{H_2O} Na^+(aq) + OH^-(aq)$$
+
+[INFO: Compounds like glucose and alcohol contain hydrogen but do NOT ionise in water, so they do not produce $H^+$ ions and are not classified as acids.]
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2024)**  
+> *Key Concept:* Solutions of glucose and alcohol do not conduct electricity (bulb does not glow) because they do not dissociate into ions in water, unlike HCl and $H_2SO_4$.
+
+### 2.2.1 What Happens to an Acid or a Base in a Water Solution?
+
+> [!CAUTION]
+> Always add acid to water slowly while stirring. Never add water to concentrated acid — the heat generated can cause violent spattering and burns.
+
+Diluting an acid decreases the concentration of $H_3O^+$ ions.
+Diluting a base decreases the concentration of $OH^-$ ions.
+
+[FIGURE: acid_base_conductivity]
+[FIGURE: hcl_gas_preparation]
+
+**❓ QUESTIONS**
+
+**1. Why do HCl, $HNO_3$, etc., show acidic characters in aqueous solutions while solutions of compounds like alcohol and glucose do not show acidic character?**
+*Answer:* HCl and $HNO_3$ ionise in water to produce $H^+$ (hydronium) ions, which make the solution acidic. Alcohol and glucose dissolve in water but do not ionise to release $H^+$ ions, so they do not show acidic properties.
+
+**2. Why does an aqueous solution of an acid conduct electricity?**
+*Answer:* When an acid dissolves in water, it ionises to produce charged particles called ions. These ions carry electric charge through the solution, allowing it to conduct electricity.
+
+**3. Why does dry HCl gas not change the colour of the dry litmus paper?**
+*Answer:* Dry HCl gas cannot ionise without water. Since no $H^+$ ions are produced in the absence of water, it cannot show acidic properties and therefore cannot change dry litmus paper.
+
+**4. While diluting an acid, why is it recommended that the acid should be added to water and not water to the acid?**
+*Answer:* The process of dissolving acid in water is highly exothermic. Adding water to concentrated acid generates intense heat suddenly, which can cause the acid to splatter violently. Adding acid to water slowly allows the heat to be safely absorbed by the large volume of water.
+
+**5. How is the concentration of hydronium ions ($H_3O^+$) affected when a solution of an acid is diluted?**
+*Answer:* When an acid solution is diluted, the concentration of hydronium ions ($H_3O^+$) decreases.
+
+**6. How is the concentration of hydroxide ions ($OH^-$) affected when excess base is dissolved in a solution of sodium hydroxide?**
+*Answer:* When excess base is dissolved, the concentration of hydroxide ions ($OH^-$) in the solution increases.
+
+---
+
+## 2.3 How Strong are Acid or Base Solutions?
+
+[JARGON: Strong acid | An acid that completely ionises in water to produce a high concentration of $H^+$ ions | Examples: $HCl$, $H_2SO_4$, $HNO_3$].
+[JARGON: Weak acid | An acid that partially ionises in water to produce a low concentration of $H^+$ ions | Examples: Acetic acid ($CH_3COOH$), Carbonic acid ($H_2CO_3$), Citric acid].
+
+The strength of an acid or base is measured using the [JARGON: pH scale | A numerical scale from 0 to 14 that measures the concentration of hydrogen ions in a solution — lower pH means more acidic, higher pH means more basic | The pH of stomach acid is about 1.5–3.5, while the pH of blood is about 7.4].
+
+| pH | Nature | Example |
+|----|--------|---------|
+| 0–6 | Acidic | HCl (pH 1), vinegar (pH 3), acid rain (pH < 5.6) |
+| 7 | Neutral | Pure water |
+| 8–14 | Basic | Baking soda (pH 8.3), bleach (pH 12), NaOH (pH 13–14) |
+
+[FIGURE: ph_scale]
+
+A [JARGON: Universal indicator | A mixture of several indicators that shows a wide range of colour changes across the entire pH scale, from red (very acidic) to violet (very basic) | pH paper is coated with universal indicator and turns different colours depending on how acidic or basic a solution is].
+
+### 2.3.1 Importance of pH in Everyday Life
+
+[INFO: Our body maintains blood pH at 7.4. Even a small change in this range can be life-threatening.]
+
+- **Tooth decay**: Bacteria produce acid from sugars. When mouth pH drops below **5.5**, calcium phosphate enamel corrodes. Toothpastes are basic to neutralise this acid.
+- **Stomach**: HCl in the stomach has pH 1–3. Excess acid causes acidity, treated with antacids like Milk of Magnesia ($Mg(OH)_2$).
+- **Soil**: Farmers add quicklime ($CaO$), slaked lime ($Ca(OH)_2$), or chalk ($CaCO_3$) to neutralise overly acidic soil.
+- **Bee stings and ant bites**: Inject formic acid (acidic). Applying baking soda (basic) neutralises and relieves pain.
+- **Nettle sting**: Injects methanoic acid. Applying a dock leaf (basic) gives relief.
+
+[FIGURE: ph_paper_substances]
+
+**❓ QUESTIONS**
+
+**1. You have two solutions, A and B. The pH of solution A is 6 and pH of solution B is 8. Which solution has more hydrogen ion concentration? Which of this is acidic and which one is basic?**
+*Answer:* Solution A (pH 6) has more hydrogen ions and is acidic. Solution B (pH 8) has fewer hydrogen ions and is basic.
+
+**2. What effect does the concentration of $H^+(aq)$ ions have on the nature of the solution?**
+*Answer:* Higher concentration of $H^+(aq)$ ions makes the solution more acidic (lower pH). Lower concentration makes it less acidic (moving towards neutral or basic).
+
+**3. Do basic solutions also have $H^+(aq)$ ions? If yes, then why are these basic?**
+*Answer:* Yes, basic solutions do contain $H^+(aq)$ ions, but the concentration of $OH^-$ ions is greater than that of $H^+$ ions. It is this excess of $OH^-$ ions that makes the solution basic.
+
+**4. Under what soil condition do you think a farmer would treat the soil of his fields with quick lime (calcium oxide) or slaked lime (calcium hydroxide) or chalk (calcium carbonate)?**
+*Answer:* A farmer would use these substances when the soil is too acidic (low pH). These basic substances neutralise the excess acid in the soil, raising the pH to a level suitable for healthy plant growth.
+
+---
+
+## 2.4 More About Salts
+
+A [JARGON: Salt | An ionic compound formed when the hydrogen of an acid is replaced by a metal ion or an ammonium ion, typically produced by the reaction of an acid with a base | Sodium chloride (NaCl) is the most common salt, formed from HCl and NaOH].
+
+### 2.4.1 Family of Salts
+
+Salts with the same positive or negative radical belong to a family:
+- $NaCl$ and $Na_2SO_4$ → Family of **sodium** salts
+- $NaCl$ and $KCl$ → Family of **chloride** salts
+
+### 2.4.2 pH of Salts
+
+| Parent Acid + Parent Base | Salt | pH | Example |
+|--------------------------|------|----|---------|
+| Strong acid + Strong base | Neutral | ~7 | $NaCl$ |
+| Strong acid + Weak base | Acidic | < 7 | $NH_4Cl$ |
+| Weak acid + Strong base | Basic | > 7 | $Na_2CO_3$ |
+
+### 2.4.3 Chemicals from Common Salt
+
+When electricity is passed through brine (aqueous $NaCl$ solution), this is called the [JARGON: Chlor-alkali process | An industrial process where electricity is passed through brine (salt water) to produce chlorine gas, hydrogen gas, and sodium hydroxide | Used to manufacture chlorine for bleaching and NaOH for soap making]:
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+> *Key Concept:* In the Chlor-alkali process, electrolysis of brine yields $Cl_2$ gas at the anode, $H_2$ gas at the cathode, and sodium hydroxide ($NaOH$) near the cathode.
+
+$$2NaCl(aq) + 2H_2O(l) \xrightarrow{\text{Electricity}} 2NaOH(aq) + Cl_2(g) + H_2(g)$$
+
+[FIGURE: chlor_alkali_process]
+
+**Key salts and their uses:**
+
+**Bleaching powder** — $Ca(OCl)_2$ (calcium hypochlorite):
+$$Ca(OH)_2(s) + Cl_2(g) \rightarrow CaOCl_2(s) + H_2O(l)$$
+Uses: bleaching woven fabrics, disinfecting drinking water, manufacturing chloroform.
+
+**Baking soda** — $NaHCO_3$ (sodium hydrogen carbonate):
+$$2NaHCO_3(s) \xrightarrow{\text{Heat}} Na_2CO_3(s) + H_2O(l) + CO_2(g)$$
+Uses: making baking powder, as an antacid, in soda-acid fire extinguishers.
+
+> [!TIP]
+> **Baking Powder vs Baking Soda**: Baking powder is a mixture of baking soda ($NaHCO_3$) and a mild edible acid like tartaric acid. When heated, baking soda produces sodium carbonate, which tastes bitter. The tartaric acid neutralises this bitterness!
+
+**Washing soda** — $Na_2CO_3 \cdot 10H_2O$ (sodium carbonate decahydrate):
+$$Na_2CO_3 \xrightarrow{\text{Recrystallisation}} Na_2CO_3 \cdot 10H_2O$$
+Uses: cleaning glass, paper, and textile industries; removing permanent hardness of water.
+
+### 2.4.4 Are the Crystals of Salts really Dry?
+
+Some salts contain water molecules within their crystal structure called [JARGON: Water of crystallisation | Fixed water molecules that are chemically part of a salt''s crystal structure and are required to maintain its crystal form and colour | Blue copper sulphate crystals ($CuSO_4 \cdot 5H_2O$) contain 5 water molecules — heating them turns them white as they lose this water].
+
+**Gypsum** — $CaSO_4 \cdot 2H_2O$: On heating at 373 K:
+$$CaSO_4 \cdot 2H_2O(s) \xrightarrow{373\text{ K}} CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(g)$$
+The product $CaSO_4 \cdot \frac{1}{2}H_2O$ is called **Plaster of Paris**.
+
+On mixing Plaster of Paris with water, it sets back to gypsum in about 30 minutes:
+$$CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(l) \rightarrow CaSO_4 \cdot 2H_2O(s)$$
+
+Uses of Plaster of Paris: supporting fractured bones, making toys, decorative materials, and smooth surfaces.
+
+[FIGURE: copper_sulphate_crystals]
+
+**❓ QUESTIONS**
+
+**1. What is the common name of the compound $Ca(ClO)_2$?**
+*Answer:* Bleaching powder.
+
+**2. Name the substance which on treatment with chlorine yields bleaching powder.**
+*Answer:* Calcium hydroxide (slaked lime), $Ca(OH)_2$.
+
+**3. Name the sodium compound which is used for softening hard water.**
+*Answer:* Sodium carbonate (washing soda), $Na_2CO_3 \cdot 10H_2O$.
+
+**4. What will happen if a solution of sodium hydrogencarbonate is heated? Give the equation of the reaction involved.**
+*Answer:* Sodium hydrogencarbonate decomposes to give sodium carbonate, carbon dioxide, and water:
+$$2NaHCO_3(s) \xrightarrow{\text{Heat}} Na_2CO_3(s) + H_2O(l) + CO_2(g)$$
+
+**5. Write an equation to show the reaction between Plaster of Paris and water.**
+*Answer:* Plaster of Paris absorbs water and sets to gypsum:
+$$CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(l) \rightarrow CaSO_4 \cdot 2H_2O(s)$$
+
+---
+
+## ⚠️ Common Mistakes
+- Writing that dry HCl gas shows acidic properties — it does not. Ionisation needs water.
+- Confusing **dilution rule**: add acid to water, not water to acid.
+- Writing balanced equations with wrong subscripts (e.g. $H_2O_2$ instead of $2H_2O$).
+- Saying neutralisation produces only salt — always add "and water".
+- Forgetting that tooth decay threshold is pH **5.5**, not 7.
+
+## 💡 Memory Tricks
+- **Red Acid, Blue Base** → RAB (Red Acid Blue — litmus colours).
+- **pH below 7 = sour (acid), above 7 = soapy (base)**.
+- **Chlor-alkali products**: Cl → Chlorine, Al → Alkali (NaOH), H → Hydrogen. "CAH".
+- **Plaster of Paris** sets because it absorbs water. "Plaster Picks up Paris (water)".
+
+## 🎓 Board Tips
+- Always state the colour of the precipitate in reactions (e.g., $CaCO_3$ is white, $CuCl_2$ turns solution blue-green).
+- Write state symbols $(s), (l), (g), (aq)$ in every equation.
+- For electrolysis questions: name the product at each electrode (cathode → $H_2$, anode → $Cl_2$).
+
+## 🧪 NCERT Activities Cheat Sheet
+- **Activity 2.1:** Test indicators on acids/bases. *Observation:* Red litmus turns blue in base, blue turns red in acid. Phenolphthalein is pink in base, colourless in acid.
+- **Activity 2.2:** Olfactory indicators. *Observation:* Vanilla, onion, and clove lose their smell in basic solutions (NaOH) but retain it in acidic solutions (HCl).
+- **Activity 2.3:** Zinc granules + dilute $H_2SO_4$. *Observation:* Hydrogen gas bubbles evolve, burns with a ''pop'' sound. Exothermic.
+- **Activity 2.4:** Zinc granules + NaOH. *Observation:* Sodium zincate forms, hydrogen gas is evolved. Needs heating.
+- **Activity 2.5:** Metal carbonates/bicarbonates + HCl. *Observation:* Brisk effervescence of $CO_2$ gas. Turns lime water milky.
+- **Activity 2.6:** Neutralisation (NaOH + HCl). *Observation:* Phenolphthalein turns pink in NaOH, becomes colourless when HCl is added.
+- **Activity 2.7:** Copper oxide + dilute HCl. *Observation:* Black $CuO$ dissolves, solution turns blue-green due to $CuCl_2$ formation.
+- **Activity 2.8:** Electricity through acid/glucose/alcohol. *Observation:* Bulb glows in acid (conducts electricity due to $H^+$), but not in glucose or alcohol (no ionisation).
+- **Activity 2.9:** Dry HCl gas vs moist litmus. *Observation:* Dry HCl gas does not change dry blue litmus paper. Only moist blue litmus turns red, proving $H^+$ needs water to form.
+- **Activity 2.10:** Mixing concentrated acid and water. *Observation:* Highly exothermic. Never add water to acid; always add acid to water slowly with stirring.
+- **Activity 2.11:** Testing pH of common solutions. *Observation:* Lemon juice and vinegar are acidic (pH < 7), baking soda and soap are basic (pH > 7), water is neutral (pH = 7).
+- **Activity 2.12:** Testing pH of soil. *Observation:* Different plants require different soil pH ranges. Acidic soil is treated with basic substances like quicklime.
+- **Activity 2.13:** Grouping salt families. *Observation:* Salts with the same positive or negative radicals belong to a family (e.g., $NaCl$ and $Na_2SO_4$ are sodium salts).
+- **Activity 2.14:** Testing pH of salt solutions. *Observation:* Salts of strong acid + strong base are neutral. Strong acid + weak base are acidic. Weak acid + strong base are basic.
+- **Activity 2.15:** Heating copper sulphate crystals. *Observation:* Blue crystals turn into a white powder ($CuSO_4$) as they lose 5 water of crystallisation molecules. Turns blue again on adding water.
+
+## 🔄 One-Minute Revision
+- Acids → $H^+$ in water (acidic). Bases → $OH^-$ in water (basic).
+- Acid + Metal → Salt + $H_2$↑. Acid + Metal Carbonate → Salt + $CO_2$↑ + Water.
+- Acid + Base → Salt + Water (Neutralisation).
+- pH < 7 = Acid. pH 7 = Neutral. pH > 7 = Base.
+- Common salts: Bleaching powder ($CaOCl_2$), Baking soda ($NaHCO_3$), Washing soda ($Na_2CO_3 \cdot 10H_2O$), Plaster of Paris ($CaSO_4 \cdot \frac{1}{2}H_2O$).
+
+## 🎬 Comic Recap
+```
+┌────────────────────────────────────────────────────┐
+│ PANEL 1:                                           │
+│ Priya: "Rahul, why do antacids help with           │
+│          stomach pain?"                            │
+│ Rahul: "Our stomach has HCl — pH around 1-2!      │
+│          The antacid is basic and neutralises      │
+│          the excess acid. Neutralisation!"         │
+├────────────────────────────────────────────────────┤
+│ PANEL 2:                                           │
+│ Priya: "So if pH is below 7 it is acid, and        │
+│          above 7 it is a base?"                    │
+│ Rahul: "Exactly! And pH 7 is pure neutral water.  │
+│          Our blood is 7.4 — slightly basic!"       │
+├────────────────────────────────────────────────────┤
+│ PANEL 3:                                           │
+│ Priya: "What about baking soda in a recipe?"       │
+│ Rahul: "It is NaHCO3. When heated it releases     │
+│          CO2 gas which makes the cake rise!        │
+│          Chemistry in your kitchen!"               │
+├────────────────────────────────────────────────────┤
+│ 📌 REMEMBER THIS!                                  │
+│ Acid + Metal → Salt + H2 (pop!)                    │
+│ Acid + Base → Salt + Water (Neutralisation)        │
+│ pH < 7 = Acid  |  7 = Neutral  |  > 7 = Base      │
+└────────────────────────────────────────────────────┘
+```',
+  TRUE,
+  3
+)
+ON CONFLICT (id) DO UPDATE SET note_content = EXCLUDED.note_content;
+
+
+-- =========================================================================
+-- LESSON 2: NCERT STUDY GUIDE (Full activity-by-activity, textbook-faithful)
+-- =========================================================================
+INSERT INTO lessons (id, chapter_id, title, type, video_hls_url, video_duration_seconds, note_content, is_free, sequence_number)
+VALUES (
+  'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380223',
+  'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380223',
+  'Chapter 2: Acids, Bases and Salts (NCERT Simplified)',
+  'study_guide',
+  NULL,
+  NULL,
+  '# Chapter 2: Acids, Bases and Salts (NCERT Simplified)
+
+Welcome to the simplified, textbook-faithful version of NCERT Chapter 2! We follow the exact structure, section numbers, and activity sequence of the textbook — but explain everything in simple, clear language.
+
+Think about these situations from daily life:
+* **Curd and citrus fruits taste sour** — they contain acids.
+* **Soap and detergent feel slippery** — they are basic.
+* **Vinegar preserves pickles** — acetic acid prevents bacterial growth.
+* **Stomach pain after overeating** — excess hydrochloric acid causes indigestion.
+* **Ant bites and bee stings hurt** — they inject formic (methanoic) acid.
+
+In all of these situations, acids or bases are at work. Whenever the chemical nature of a substance changes a reaction, we call it a **chemical change**, and chemistry is happening!
+
+---
+
+## 2.1 UNDERSTANDING THE CHEMICAL PROPERTIES OF ACIDS AND BASES
+
+### Natural Sources of Acids
+Many sour-tasting foods contain naturally occurring weak acids:
+| Natural Source | Acid Present |
+|----------------|--------------|
+| Vinegar        | Acetic acid  |
+| Orange / Lemon | Citric acid  |
+| Tamarind       | Tartaric acid|
+| Tomato         | Oxalic acid  |
+| Curd (Sour milk)| Lactic acid  |
+| Ant / Nettle sting | Methanoic (Formic) acid |
+
+### 2.1.1 Acids and Bases in the Laboratory
+
+To identify whether a substance is an acid or a base in the laboratory, we use [JARGON: Indicators | Dyes or mixtures of dyes that change colour in the presence of an acid or a base | Litmus is a natural dye extracted from lichens that turns red in acid and blue in base].
+
+The most common indicators are:
+* **Litmus** (natural, from lichens): turns red in acid, turns blue in base.
+* **Phenolphthalein**: colourless in acid, pink in base.
+* **Methyl orange**: red/orange in acid, yellow in base.
+* **Universal indicator**: gives a whole range of colours for different pH values.
+
+#### Activity 2.1
+Caution: Handle all acids and bases with care. Use only dilute solutions in the laboratory.
+
+1. Take small amounts of the following solutions in separate test tubes: hydrochloric acid, sulphuric acid, nitric acid, acetic acid (vinegar), sodium hydroxide, calcium hydroxide, and distilled water.
+2. Test each solution with a strip of **red litmus** paper. Record which solutions turn red litmus blue (bases).
+3. Test each solution with a strip of **blue litmus** paper. Record which solutions turn blue litmus red (acids).
+4. Test with phenolphthalein — which turn pink? (bases)
+5. Test with methyl orange — which turn red? (acids)
+6. Note: distilled water changes neither litmus.
+
+**Observations:**
+* Acids: turn blue litmus red, do not affect red litmus, keep phenolphthalein colourless, turn methyl orange red.
+* Bases: turn red litmus blue, do not affect blue litmus, turn phenolphthalein pink, turn methyl orange yellow.
+
+#### Activity 2.2
+Sometimes we use **smell** to identify acids and bases. Such indicators are called [JARGON: Olfactory indicators | Substances that change their smell in the presence of an acid or a base | Onion loses its smell in a base but retains it in an acid].
+
+1. Take a few pieces of onion and put them in a sealed polythene bag labelled A.
+2. Take some vanilla essence on a cotton ball and put in a polythene bag labelled B.
+3. Prepare two separate polythene bags each for A and B.
+4. Place one pair of bags near a beaker of concentrated HCl and the other pair near a beaker of concentrated NaOH.
+5. After 5 minutes, smell each bag carefully.
+
+**Observation:** The smell of onion is gone near NaOH (the onion extract acts as an olfactory indicator — its smell is destroyed by base). The smell of vanilla is also affected by the base. Acids do not destroy these smells.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. You have been provided with three test tubes. One of them contains distilled water and the other two contain an acidic solution and a basic solution, respectively. If you are given only red litmus paper, how will you identify the contents of each test tube?**
+> *Answer:* 
+> 1. Put a drop of the solution from each test tube on the red litmus paper.
+> 2. The solution that turns red litmus blue is the **basic solution**. (Now you have identified the base, and you have blue litmus paper).
+> 3. Use the newly formed blue litmus paper and test the remaining two solutions. The one that turns blue litmus red is the **acidic solution**.
+> 4. The solution that has no effect on either red or blue litmus is **distilled water**.
+
+---
+
+### 2.1.2 How do Acids and Bases React with Metals?
+
+#### Activity 2.3
+1. Take three conical flasks. Put zinc granules in each.
+2. Add dilute $H_2SO_4$ to Flask 1, dilute HCl to Flask 2, and dilute $HNO_3$ to Flask 3.
+3. Fit a delivery tube leading to a soap solution to collect gas bubbles.
+4. Test the gas with a burning splint: listen for a pop sound, which confirms hydrogen gas.
+
+$$Zn(s) + H_2SO_4(aq) \rightarrow ZnSO_4(aq) + H_2(g)$$
+$$Zn(s) + 2HCl(aq) \rightarrow ZnCl_2(aq) + H_2(g)$$
+
+[FIGURE: acid_metal_reaction]
+
+**General rule:**
+$$\text{Acid} + \text{Metal} \rightarrow \text{Salt} + H_2\uparrow$$
+
+The hydrogen gas produced burns with a characteristic pop sound — this is the standard laboratory test for hydrogen gas.
+
+#### Activity 2.4
+1. Take a few pieces of zinc granules in a test tube. Add dilute NaOH solution.
+2. Warm gently. Test the gas evolved with a burning splint.
+
+$$2NaOH(aq) + Zn(s) \rightarrow Na_2ZnO_2(aq) + H_2(g)$$
+
+**Observation:** Hydrogen gas is produced, just like with acids. Zinc is therefore an [JARGON: Amphoteric substance | A substance that can react with both acids and bases to produce salt and water | Zinc, aluminium, and lead are common amphoteric substances] — it reacts with both acids and bases.
+
+Note: Not all metals react with bases. Only certain metals like zinc, aluminium, and lead show this property.
+
+---
+
+### 2.1.3 How do Metal Carbonates and Metal Hydrogencarbonates React with Acids?
+
+#### Activity 2.5
+1. Take two test tubes. Put sodium carbonate ($Na_2CO_3$) in test tube A and sodium hydrogencarbonate ($NaHCO_3$) in test tube B.
+2. Add dilute HCl to both test tubes.
+3. Pass the gas produced through lime water in a separate flask.
+
+$$Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$$
+$$NaHCO_3(s) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l) + CO_2(g)$$
+
+[FIGURE: co2_limewater_test]
+
+**Observation:** Both produce $CO_2$ gas, which turns lime water milky:
+$$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+The white milky precipitate of $CaCO_3$ is the standard test for carbon dioxide gas.
+
+On passing excess carbon dioxide, the following reaction occurs and the milkiness disappears due to the formation of soluble calcium hydrogencarbonate:
+$$CaCO_3(s) + H_2O(l) + CO_2(g) \rightarrow Ca(HCO_3)_2(aq)$$
+
+**General rule:**
+$$\text{Metal carbonate} + \text{Acid} \rightarrow \text{Salt} + H_2O + CO_2\uparrow$$
+
+---
+
+### 2.1.4 How do Acids and Bases React with each other?
+
+#### Activity 2.6
+1. Take 10 mL of dilute NaOH in a conical flask and add a few drops of phenolphthalein indicator. The solution turns pink (base is present).
+2. Add dilute HCl solution from a burette, drop by drop, swirling after each addition.
+3. Note when the pink colour just disappears — this is the **neutralisation point**.
+4. After neutralisation, check with litmus — neither acid nor base is present.
+
+$$NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$$
+
+This reaction is called [JARGON: Neutralisation | A reaction in which an acid and a base react together in the right amounts to produce salt and water, with neither substance left over | When you take an antacid tablet, the basic $Mg(OH)_2$ neutralises the excess HCl in your stomach].
+
+**General rule:**
+$$\text{Acid} + \text{Base} \rightarrow \text{Salt} + H_2O$$
+
+The reaction is always **exothermic** — heat is released.
+
+---
+
+### 2.1.5 Reaction of Metallic Oxides with Acids
+
+Metal oxides react with acids to give salt and water. This shows that metal oxides are **basic** in nature (they behave like bases).
+
+#### Activity 2.7
+1. Heat some copper oxide ($CuO$) in a crucible — observe the black powder.
+2. Add dilute HCl to the copper oxide powder in a test tube.
+3. Heat gently while stirring.
+
+$$CuO(s) + 2HCl(aq) \rightarrow CuCl_2(aq) + H_2O(l)$$
+
+**Observation:** The black copper oxide dissolves and the solution turns **blue-green** because copper chloride ($CuCl_2$) is formed. The colour change confirms the reaction has taken place.
+
+**General rule:**
+$$\text{Metal oxide (Basic oxide)} + \text{Acid} \rightarrow \text{Salt} + H_2O$$
+
+---
+
+### 2.1.6 Reaction of a Non-metallic Oxide with Base
+
+Non-metallic oxides react with bases to give salt and water. This shows that non-metallic oxides are **acidic** in nature.
+
+$$Ca(OH)_2(aq) + CO_2(g) \rightarrow CaCO_3(s) + H_2O(l)$$
+
+This is the same reaction as the lime water test for $CO_2$. $CO_2$ is a non-metallic oxide that acts as an acid.
+
+**General rule:**
+$$\text{Non-metallic oxide (Acidic oxide)} + \text{Base} \rightarrow \text{Salt} + H_2O$$
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. Why should curd and sour substances not be kept in brass and copper vessels?**
+> *Answer:* Curd and sour substances contain acids (like lactic acid). These acids react with brass (an alloy of copper and zinc) and copper to form toxic salts. The food gets contaminated with these metallic compounds, making it harmful to consume.
+>
+> **2. Which gas is usually liberated when an acid reacts with a metal? Illustrate with an example. How will you test for the presence of this gas?**
+> *Answer:* Hydrogen gas ($H_2$) is liberated. Example: $Zn(s) + H_2SO_4(aq) \rightarrow ZnSO_4(aq) + H_2(g)$. Test: bring a burning splint near the mouth of the test tube — a pop sound confirms $H_2$.
+>
+> **3. Metal compound A reacts with dilute hydrochloric acid to produce effervescence. The gas evolved extinguishes a burning candle. Write a balanced chemical equation for the reaction if one of the compounds formed is calcium chloride.**
+> *Answer:* The gas is $CO_2$ (extinguishes flame). Compound A is calcium carbonate ($CaCO_3$):
+> $$CaCO_3(s) + 2HCl(aq) \rightarrow CaCl_2(aq) + H_2O(l) + CO_2(g)$$
+
+---
+
+## 2.2 WHAT DO ALL ACIDS AND ALL BASES HAVE IN COMMON?
+
+We have seen that all acids show similar properties (turn blue litmus red, react with metals to give $H_2$, etc.) and all bases show similar properties. What is the common factor?
+
+The answer was found by testing acids with electricity:
+
+#### Activity 2.8
+1. Set up an electric circuit with a battery, LED bulb, and two carbon electrodes.
+2. Test several solutions: glucose solution, alcohol solution, HCl solution, $H_2SO_4$ solution.
+3. Observe which solutions conduct electricity (bulb glows) and which do not.
+
+[FIGURE: acid_base_conductivity]
+
+**Observation:** The bulb glows brightly for HCl and $H_2SO_4$ but not for glucose or alcohol.
+
+**Conclusion:** Acids conduct electricity because they produce charged particles (ions) when dissolved in water. Glucose and alcohol do not produce ions — they simply dissolve without ionising. Therefore, the ability to conduct electricity (and cause acidic properties) comes from the **production of hydrogen ions ($H^+$)** in water.
+
+$$HCl \xrightarrow{H_2O} H^+(aq) + Cl^-(aq)$$
+$$H_2SO_4 \xrightarrow{H_2O} 2H^+(aq) + SO_4^{2-}(aq)$$
+
+Similarly, all bases produce hydroxide ions ($OH^-$) in water:
+$$NaOH \xrightarrow{H_2O} Na^+(aq) + OH^-(aq)$$
+
+---
+
+### 2.2.1 What Happens to an Acid or a Base in a Water Solution?
+
+#### Activity 2.9: Preparation and Properties of Dry HCl Gas
+1. Set up an apparatus to generate dry HCl gas by heating concentrated HCl with concentrated $H_2SO_4$.
+2. Pass the dry HCl gas through a delivery tube and test it with dry blue litmus paper.
+3. Now allow the HCl gas to dissolve in water in another flask and test this solution with blue litmus paper.
+
+[FIGURE: hcl_gas_preparation]
+
+**Observation:**
+* Dry HCl gas does **NOT** change the colour of dry blue litmus paper.
+* But the aqueous HCl solution turns blue litmus **red**.
+
+**Conclusion:** HCl gas itself is not acidic. It shows acidic properties only in the **presence of water**. In water, HCl ionises to produce $H^+$ ions:
+$$HCl(g) \xrightarrow{H_2O} H^+(aq) + Cl^-(aq)$$
+These $H^+$ ions then combine with water to form hydronium ions:
+$$H^+(aq) + H_2O(l) \rightarrow H_3O^+(aq)$$
+
+So the actual species responsible for acidity in a solution is always the [JARGON: Hydronium ion | An ion with the formula $H_3O^+$ formed when a proton ($H^+$) from an acid combines with a water molecule | Every acid''s acidity in water is due to hydronium ions, not bare protons].
+
+#### Activity 2.10: Effect of Dilution on Acids and Bases
+> [!CAUTION]
+> Always add acid to water slowly. Never add water to concentrated acid — it is a highly exothermic reaction that causes violent spattering.
+
+1. Take a beaker with 10 mL of water. Slowly and carefully add 1 mL of concentrated $H_2SO_4$ while stirring. Touch the outside of the beaker.
+2. Observe that the beaker becomes very warm (exothermic process).
+
+**Conclusion:** Dissolving an acid in water is exothermic. This is why diluting concentrated acid must always be done by adding acid to water slowly, never the other way around.
+
+When an acid is diluted:
+* The concentration of $H_3O^+$ ions **decreases**.
+* The solution becomes less acidic.
+
+When a base is diluted:
+* The concentration of $OH^-$ ions **decreases**.
+* The solution becomes less basic.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. Why do HCl, $HNO_3$, etc., show acidic characters in aqueous solutions while solutions of compounds like alcohol and glucose do not show acidic character?**
+> *Answer:* HCl and $HNO_3$ ionise in water to produce $H^+(aq)$ ions (hydronium ions), which cause acidic properties. Alcohol and glucose dissolve in water but do not ionise — they do not release $H^+$ ions, so they show no acidic character.
+>
+> **2. Why does an aqueous solution of an acid conduct electricity?**
+> *Answer:* When an acid dissolves in water, it dissociates (ionises) to produce positively charged $H^+$ ions and negatively charged anions. These mobile charged ions carry current through the solution, allowing it to conduct electricity.
+>
+> **3. Why does dry HCl gas not change the colour of the dry litmus paper?**
+> *Answer:* Dry HCl gas cannot ionise in the absence of water. Without ionisation, no $H^+$ (hydronium) ions are formed. Since acidic properties come from $H^+$ ions in solution, dry HCl gas cannot show acidic properties and cannot change dry litmus paper.
+>
+> **4. While diluting an acid, why is it recommended that the acid should be added to water and not water to the acid?**
+> *Answer:* Dissolving acid in water is highly exothermic. If water is added to concentrated acid, the heat is generated in a small volume, causing the mixture to boil violently and the acid to splatter, causing severe burns. Adding acid to a large volume of water dissipates the heat safely.
+>
+> **5. How is the concentration of hydronium ions ($H_3O^+$) affected when a solution of an acid is diluted?**
+> *Answer:* Diluting an acid increases the volume of the solution while the number of $H^+$ ions remains the same. Therefore, the concentration of $H_3O^+$ ions decreases.
+>
+> **6. How is the concentration of hydroxide ions ($OH^-$) affected when excess base is dissolved in a solution of sodium hydroxide?**
+> *Answer:* Adding excess base to a sodium hydroxide solution increases the number of $OH^-$ ions in the same volume. Therefore, the concentration of $OH^-$ ions increases.
+
+---
+
+## 2.3 HOW STRONG ARE ACID OR BASE SOLUTIONS?
+
+Not all acids and bases are equally strong. We measure their strength using the [JARGON: pH scale | A numerical scale from 0–14 that measures the concentration of hydrogen ions in a solution, where lower pH means higher $H^+$ concentration (more acidic) and higher pH means lower $H^+$ concentration (more basic) | The pH of battery acid is 0, pure water is 7, and bleach is around 12–13].
+
+[FIGURE: ph_scale]
+
+* **pH 0–6**: Acidic (the lower the number, the stronger the acid)
+* **pH 7**: Neutral (pure water)
+* **pH 8–14**: Basic/Alkaline (the higher the number, the stronger the base)
+
+The [JARGON: Universal indicator | A mixture of several different indicators that shows a continuous range of colours from red (very acidic, pH 0) through green (neutral, pH 7) to violet (very basic, pH 14) | pH paper is coated with universal indicator] can tell us the approximate pH of a solution by comparing the colour it shows with a standard colour chart.
+
+#### Activity 2.11
+1. Collect the following solutions: lemon juice, vinegar, baking soda solution, soap solution, distilled water, lime water, milk, salt solution, tomato juice, coffee.
+2. Test each solution by dipping a piece of pH paper into it. Compare the colour with the standard chart.
+3. Record the pH value of each solution.
+
+[FIGURE: ph_paper_substances]
+
+**Observations:** You will find that lemon juice and vinegar show low pH (acidic), baking soda and soap solutions show pH above 7 (basic), while distilled water and salt solution are close to pH 7 (neutral).
+
+---
+
+### 2.3.1 Importance of pH in Everyday Life
+
+pH plays a crucial role in our daily lives and in living organisms:
+
+**1. pH in our digestive system:**
+Our stomach produces hydrochloric acid (pH 1.5–3.5) to help digest food. When excess HCl is produced, it causes indigestion (acidity). Antacids like Milk of Magnesia ($Mg(OH)_2$, basic) are taken to neutralise this excess acid.
+
+**2. pH change and tooth decay:**
+Bacteria in the mouth feed on sugar and produce acids that lower the mouth''s pH below **5.5**. At this pH, the tooth''s enamel (made of calcium phosphate, the hardest substance in the body) begins to dissolve — this is **tooth decay**. Toothpastes are slightly basic (pH > 7) to neutralise this acid and protect enamel.
+
+**3. pH and plants:**
+Plants grow best in a specific pH range. Different crops prefer different pH levels:
+* Most crops prefer pH 6–7.
+* If soil is too acidic (low pH), quicklime ($CaO$), slaked lime ($Ca(OH)_2$), or chalk ($CaCO_3$) is added to neutralise the acid and raise the pH.
+
+#### Activity 2.12
+1. Collect soil samples from different fields in your area.
+2. Take a small amount of each soil in separate test tubes. Add distilled water. Shake and filter.
+3. Test the pH of each filtrate using pH paper or universal indicator.
+4. Note which soils are acidic, which are basic, and which are neutral.
+5. You can also note down which plants are growing near each soil sample.
+
+**4. pH of water in rivers and lakes:**
+When acid rain (caused by $SO_2$ and $NO_x$ pollution) falls into rivers, it lowers the pH of the water. Fish and other aquatic organisms need a pH of 7–8 to survive. Too acidic water kills them.
+
+**5. Self-defence by animals:**
+* **Bee sting**: injects formic acid (acidic, pH ~3.5). Applying baking soda solution (basic) neutralises the pain.
+* **Wasp sting**: injects an alkali. Applying vinegar (acidic) neutralises it.
+* **Nettle sting**: injects methanoic acid. A dock leaf (basic) provides relief.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. You have two solutions, A and B. The pH of solution A is 6 and pH of solution B is 8. Which solution has more hydrogen ion concentration? Which of this is acidic and which one is basic?**
+> *Answer:* Solution A (pH 6) has a higher $H^+$ concentration and is **acidic**. Solution B (pH 8) has a lower $H^+$ concentration and is **basic**.
+>
+> **2. What effect does the concentration of $H^+(aq)$ ions have on the nature of the solution?**
+> *Answer:* A higher concentration of $H^+(aq)$ ions makes the solution more acidic (lower pH). A lower $H^+$ concentration means the solution is less acidic and tends toward neutral or basic.
+>
+> **3. Do basic solutions also have $H^+(aq)$ ions? If yes, then why are these basic?**
+> *Answer:* Yes, even basic solutions contain $H^+(aq)$ ions because water itself slightly self-ionises. However, in basic solutions, the concentration of $OH^-$ ions is greater than the concentration of $H^+$ ions. It is this excess of $OH^-$ that makes the solution basic.
+>
+> **4. Under what soil condition do you think a farmer would treat the soil of his fields with quick lime (calcium oxide) or slaked lime (calcium hydroxide) or chalk (calcium carbonate)?**
+> *Answer:* A farmer would add these basic substances when the soil is too acidic (pH below the optimal range for the crop). These materials neutralise the excess acid, raise the soil pH, and make it more suitable for plant growth.
+
+---
+
+## 2.4 MORE ABOUT SALTS
+
+A [JARGON: Salt | An ionic compound formed when the hydrogen of an acid is replaced by a metal (from the base). Salts can be neutral, acidic, or basic depending on the strength of the acid and base that formed them | Common salt (NaCl) is formed when HCl (strong acid) reacts with NaOH (strong base) — it is a neutral salt].
+
+Salts are made of a positive ion (cation) from the base and a negative ion (anion) from the acid.
+
+### 2.4.1 Family of Salts
+
+#### Activity 2.13
+1. Collect samples of these salts: NaCl, $Na_2SO_4$, $Na_2CO_3$, $NaNO_3$, KCl, $MgCl_2$, $CaCl_2$, $KNO_3$.
+2. Identify the acid and base from which each salt may have been obtained.
+3. Group salts that share the same positive radical (same metal cation) — these form a "family".
+4. Group salts that share the same negative radical (same anion) — these also form a "family".
+
+**Examples of salt families:**
+* **Sodium salts family**: $NaCl$, $Na_2SO_4$, $Na_2CO_3$, $NaNO_3$ — all contain $Na^+$.
+* **Chloride salts family**: $NaCl$, $KCl$, $MgCl_2$, $CaCl_2$ — all contain $Cl^-$.
+
+---
+
+### 2.4.2 pH of Salts
+
+#### Activity 2.14
+1. Collect samples of sodium chloride ($NaCl$), potassium nitrate ($KNO_3$), aluminium chloride ($AlCl_3$), zinc sulphate ($ZnSO_4$), sodium carbonate ($Na_2CO_3$), sodium hydrogencarbonate ($NaHCO_3$), and sodium acetate ($CH_3COONa$).
+2. Dissolve each in distilled water. Test the pH of each solution.
+3. Record whether each salt solution is acidic, basic, or neutral.
+
+**Observations and explanation:**
+* $NaCl$ and $KNO_3$: pH ≈ 7 (**neutral**) — formed from strong acid + strong base.
+* $AlCl_3$ and $ZnSO_4$: pH < 7 (**acidic**) — formed from strong acid + weak base.
+* $Na_2CO_3$, $NaHCO_3$, $CH_3COONa$: pH > 7 (**basic**) — formed from weak acid + strong base.
+
+---
+
+### 2.4.3 Chemicals from Common Salt
+
+Common salt ($NaCl$) is used as raw material to produce many industrially important chemicals.
+
+**The Chlor-alkali Process:**
+
+> [!IMPORTANT]
+> **🔥 Board Exam Hot Topic — Repeated 3x (2025)**  
+> *Key Concept:* Common salt ($NaCl$) separated from seawater contains impurities that make it brown, known as rock salt. It is a vital raw material for making daily-use chemicals like sodium hydroxide ($NaOH$) and baking soda ($NaHCO_3$).
+
+When electric current is passed through an aqueous solution of sodium chloride (called brine), it decomposes into three very useful products:
+
+$$2NaCl(aq) + 2H_2O(l) \xrightarrow{\text{Electricity}} 2NaOH(aq) + Cl_2(g) + H_2(g)$$
+
+[FIGURE: chlor_alkali_process]
+
+* **At the cathode (negative electrode)**: Hydrogen gas ($H_2$) is produced.
+* **At the anode (positive electrode)**: Chlorine gas ($Cl_2$) is produced.
+* **In the solution**: Sodium hydroxide ($NaOH$) remains dissolved.
+
+**Uses of the three products:**
+
+| Product | Key Uses |
+|---------|---------|
+| **Chlorine gas ($Cl_2$)** | Making bleaching powder and PVC; disinfecting water; manufacturing HCl |
+| **Hydrogen gas ($H_2$)** | Fuel; making margarine (hydrogenation of oils); manufacturing ammonia |
+| **Sodium hydroxide ($NaOH$)** | Making soap, detergents, paper, artificial fibres; as a degreasing agent |
+
+**Bleaching Powder — $CaOCl_2$:**
+
+$$Ca(OH)_2(s) + Cl_2(g) \rightarrow CaOCl_2(s) + H_2O(l)$$
+
+Bleaching powder (calcium hypochlorite) is made by passing $Cl_2$ over dry slaked lime. It is used to:
+* Bleach woven fabrics and paper in factories.
+* Disinfect drinking water supplies.
+
+**Baking Soda — $NaHCO_3$:**
+
+Baking soda (sodium hydrogencarbonate) is manufactured from sodium chloride:
+$$NaCl + H_2O + CO_2 + NH_3 \rightarrow NH_4Cl + NaHCO_3$$
+
+When heated, baking soda produces $CO_2$ that makes baked goods rise:
+$$2NaHCO_3(s) \xrightarrow{\text{Heat}} Na_2CO_3(s) + H_2O(l) + CO_2(g)$$
+
+Uses: baking, as an antacid (relieves indigestion), in soda-acid fire extinguishers (reacts with acid to produce $CO_2$ that smothers fire).
+
+**Washing Soda — $Na_2CO_3 \cdot 10H_2O$:**
+
+Sodium carbonate (soda ash) is recrystallised from water to get washing soda:
+$$Na_2CO_3 + 10H_2O \rightarrow Na_2CO_3 \cdot 10H_2O$$
+
+Uses: cleaning glass, paper, textile; removing permanent hardness of water by precipitating calcium and magnesium ions.
+
+---
+
+### 2.4.4 Are the Crystals of Salts really Dry?
+
+Some salts appear dry but actually have water molecules chemically bound within their crystal structure. This is called [JARGON: Water of crystallisation | A fixed number of water molecules that are chemically combined with a salt and form an essential part of its crystal structure. The salt loses its crystal form when this water is removed | Blue copper sulphate ($CuSO_4 \cdot 5H_2O$) turns white when heated because it loses its 5 water of crystallisation molecules].
+
+#### Activity 2.15
+1. Heat a few crystals of blue copper sulphate ($CuSO_4 \cdot 5H_2O$) in a dry boiling tube.
+2. Note the colour change as the crystals are heated.
+3. After heating, allow the tube to cool. Then add a few drops of water to the white residue.
+
+[FIGURE: copper_sulphate_crystals]
+
+**Observation:**
+* On heating: blue crystals → white powder (loses water of crystallisation: $CuSO_4 \cdot 5H_2O \rightarrow CuSO_4 + 5H_2O$).
+* On adding water to white powder: it turns blue again — the water of crystallisation is restored.
+
+**Gypsum and Plaster of Paris:**
+
+**Gypsum** ($CaSO_4 \cdot 2H_2O$) is a naturally occurring mineral. When gypsum is heated at 373 K (100°C), it loses one and a half water molecules to form Plaster of Paris:
+
+$$CaSO_4 \cdot 2H_2O(s) \xrightarrow{373\text{ K}} CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(g)$$
+
+**Plaster of Paris** ($CaSO_4 \cdot \frac{1}{2}H_2O$) is a white powder. When water is added to it, it absorbs water and sets hard as gypsum again within about 30 minutes:
+
+$$CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(l) \rightarrow CaSO_4 \cdot 2H_2O(s) \text{ (Hard solid)}$$
+
+This hardening property makes Plaster of Paris useful for:
+* Supporting fractured bones (orthopaedic casts).
+* Making toys, decorative materials, and chalk.
+* Creating smooth surfaces on walls and ceilings.
+
+> [!NOTE]
+> Plaster of Paris should always be stored in a moisture-proof container. If it absorbs moisture from the air, it will react and set hard — becoming useless for plastering.
+
+> **❓ IN-TEXT QUESTIONS**
+> **1. What is the common name of the compound $Ca(ClO)_2$?**
+> *Answer:* Bleaching powder. (The IUPAC name is calcium hypochlorite.)
+>
+> **2. Name the substance which on treatment with chlorine yields bleaching powder.**
+> *Answer:* Calcium hydroxide (slaked lime), $Ca(OH)_2$:
+> $$Ca(OH)_2(s) + Cl_2(g) \rightarrow CaOCl_2(s) + H_2O(l)$$
+>
+> **3. Name the sodium compound which is used for softening hard water.**
+> *Answer:* Sodium carbonate (washing soda), $Na_2CO_3 \cdot 10H_2O$. It softens hard water by precipitating the calcium and magnesium ions responsible for hardness.
+>
+> **4. What will happen if a solution of sodium hydrogencarbonate is heated? Give the equation of the reaction involved.**
+> *Answer:* Sodium hydrogencarbonate decomposes on heating to form sodium carbonate, water, and carbon dioxide:
+> $$2NaHCO_3(s) \xrightarrow{\text{Heat}} Na_2CO_3(s) + H_2O(l) + CO_2(g)$$
+>
+> **5. Write an equation to show the reaction between Plaster of Paris and water.**
+> *Answer:*
+> $$CaSO_4 \cdot \frac{1}{2}H_2O(s) + 1\frac{1}{2}H_2O(l) \rightarrow CaSO_4 \cdot 2H_2O(s)$$
+> Plaster of Paris absorbs water and sets to gypsum, a hard solid.
+
+---
+
+---
+
+## 📝 NCERT End-of-Chapter Exercises
+
+**1. A solution turns red litmus blue, its pH is likely to be**
+(a) 1 (b) 4 (c) 5 (d) 10
+*Answer:* (d) 10. (Bases turn red litmus blue and have a pH greater than 7.)
+
+**2. A solution reacts with crushed egg-shells to give a gas that turns lime-water milky. The solution contains**
+(a) NaCl (b) HCl (c) LiCl (d) KCl
+*Answer:* (b) HCl. (Egg shells contain calcium carbonate, which reacts with acid like HCl to produce $CO_2$ gas.)
+
+**3. 10 mL of a solution of NaOH is found to be completely neutralised by 8 mL of a given solution of HCl. If we take 20 mL of the same solution of NaOH, the amount HCl solution (the same solution as before) required to neutralise it will be**
+(a) 4 mL (b) 8 mL (c) 12 mL (d) 16 mL
+*Answer:* (d) 16 mL. (Double the base requires double the acid.)
+
+**4. Which one of the following types of medicines is used for treating indigestion?**
+(a) Antibiotic (b) Analgesic (c) Antacid (d) Antiseptic
+*Answer:* (c) Antacid. (Antacids are mild bases that neutralise excess stomach acid.)
+
+**5. Write word equations and then balanced equations for the reaction taking place when:**
+**(a) dilute sulphuric acid reacts with zinc granules.**
+*Answer:* Zinc + Sulphuric acid → Zinc sulphate + Hydrogen gas
+$Zn(s) + H_2SO_4(aq) 
+ightarrow ZnSO_4(aq) + H_2(g)$
+**(b) dilute hydrochloric acid reacts with magnesium ribbon.**
+*Answer:* Magnesium + Hydrochloric acid → Magnesium chloride + Hydrogen gas
+$Mg(s) + 2HCl(aq) 
+ightarrow MgCl_2(aq) + H_2(g)$
+**(c) dilute sulphuric acid reacts with aluminium powder.**
+*Answer:* Aluminium + Sulphuric acid → Aluminium sulphate + Hydrogen gas
+$2Al(s) + 3H_2SO_4(aq) 
+ightarrow Al_2(SO_4)_3(aq) + 3H_2(g)$
+**(d) dilute hydrochloric acid reacts with iron filings.**
+*Answer:* Iron + Hydrochloric acid → Iron(II) chloride + Hydrogen gas
+$Fe(s) + 2HCl(aq) 
+ightarrow FeCl_2(aq) + H_2(g)$
+
+**6. Compounds such as alcohols and glucose also contain hydrogen but are not categorised as acids. Describe an Activity to prove it.**
+*Answer:* Set up an electrical circuit using a beaker, two nails on a rubber cork, a 6-volt battery, a bulb, and a switch. Pour glucose or alcohol solution into the beaker and switch on the current. The bulb does not glow. This proves that glucose and alcohol do not ionise in water to produce $H^+$ ions, and therefore do not conduct electricity. Thus, they are not acids.
+
+**7. Why does distilled water not conduct electricity, whereas rain water does?**
+*Answer:* Distilled water is pure and does not contain any dissolved ions. Rain water contains dissolved gases from the atmosphere (like $CO_2$, $SO_2$) which form acids (like carbonic acid) that dissociate into ions ($H^+$ and anions). These ions conduct electricity.
+
+**8. Why do acids not show acidic behaviour in the absence of water?**
+*Answer:* Acids exhibit acidic behaviour only when they dissociate to produce $H^+$ (or hydronium, $H_3O^+$) ions. This dissociation can only happen in the presence of water.
+
+**9. Five solutions A,B,C,D and E when tested with universal indicator showed pH as 4,1,11,7 and 9, respectively. Which solution is:**
+(a) neutral? (b) strongly alkaline? (c) strongly acidic? (d) weakly acidic? (e) weakly alkaline? Arrange the pH in increasing order of hydrogen-ion concentration.
+*Answer:* (a) Neutral: D (pH 7) (b) Strongly alkaline: C (pH 11) (c) Strongly acidic: B (pH 1) (d) Weakly acidic: A (pH 4) (e) Weakly alkaline: E (pH 9).
+Increasing order of $H^+$ concentration (i.e., decreasing order of pH): C (11) < E (9) < D (7) < A (4) < B (1).
+
+**10. Equal lengths of magnesium ribbons are taken in test tubes A and B. Hydrochloric acid (HCl) is added to test tube A, while acetic acid ($CH_3COOH$) is added to test tube B. In which test tube will the fizzing occur more vigorously and why?**
+*Answer:* Fizzing will occur more vigorously in test tube A. HCl is a strong acid and completely dissociates to produce a high concentration of $H^+$ ions, leading to a faster reaction (more rapid evolution of $H_2$ gas). Acetic acid is a weak acid.
+
+**11. Fresh milk has a pH of 6. How do you think the pH will change as it turns into curd? Explain your answer.**
+*Answer:* The pH will decrease (become less than 6). As milk turns into curd, bacteria (Lactobacillus) convert lactose into lactic acid. The increase in acid concentration lowers the pH.
+
+**12. A milkman adds a very small amount of baking soda to fresh milk.**
+**(a) Why does he shift the pH of the fresh milk from 6 to slightly alkaline?**
+**(b) Why does this milk take a long time to set as curd?**
+*Answer:* (a) He shifts the pH to slightly alkaline to prevent the milk from spoiling quickly. In alkaline conditions, it takes longer for the bacteria to produce enough lactic acid to sour the milk.
+(b) It takes a long time to set as curd because the lactic acid produced by bacteria must first neutralise the added alkali (baking soda) before the pH can fall enough to coagulate the milk.
+
+**13. Plaster of Paris should be stored in a moisture-proof container. Explain why?**
+*Answer:* Plaster of Paris ($CaSO_4 \cdot \frac{1}{2}H_2O$) readily absorbs moisture (water) from the air and reacts to form a hard, solid mass called gypsum ($CaSO_4 \cdot 2H_2O$). This makes it useless for plastering.
+Equation: $CaSO_4 \cdot \frac{1}{2}H_2O + 1\frac{1}{2}H_2O \rightarrow CaSO_4 \cdot 2H_2O$
+
+**14. What is a neutralisation reaction? Give two examples.**
+*Answer:* A reaction in which an acid reacts with a base to form salt and water is called a neutralisation reaction.
+Examples:
+1. $NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)$
+2. $Mg(OH)_2(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + 2H_2O(l)$
+
+**15. Give two important uses of washing soda and baking soda.**
+*Answer:*
+**Washing Soda ($Na_2CO_3 \cdot 10H_2O$):**
+1. Used in glass, soap, and paper industries.
+2. Used for removing permanent hardness of water.
+**Baking Soda ($NaHCO_3$):**
+1. Used in making baking powder (for baking cakes, bread).
+2. Used as an antacid to treat indigestion.
+
+---
+
+## 👥 NCERT Group Activity
+
+**Prepare your own indicator:**
+1. Crush beetroot in a mortar.
+2. Add sufficient water to obtain the extract.
+3. Filter the extract by the procedure learnt by you in earlier classes.
+4. Collect the filtrate to test the substances you may have tasted earlier.
+5. Arrange four test tubes in a test tube stand. Label them as A, B, C and D. Pour 2 mL each of lemon juice solution, soda-water, vinegar and baking soda solution in them respectively.
+6. Put 2-3 drops of the beetroot extract in each test tube and note the colour change if any. Write your observation in a Table.
+*Observation:* Beetroot is a natural indicator. It remains red/purple in acidic solutions (lemon juice, soda-water, vinegar) and turns yellow/green in basic solutions (baking soda).
+
+**Preparing a soda-acid fire extinguisher:**
+1. Take 20 mL of sodium hydrogencarbonate ($NaHCO_3$) solution in a wash-bottle.
+2. Suspend an ignition tube containing dilute sulphuric acid ($H_2SO_4$) in the wash-bottle.
+3. Close the mouth of the wash-bottle.
+4. Tilt the wash-bottle so that the acid from the ignition tube mixes with the sodium hydrogencarbonate solution.
+5. You will see an effervescence of carbon dioxide gas coming out of the nozzle.
+6. Direct this gas on a burning candle. The candle will go out because $CO_2$ doesn''t support combustion and smothers the fire.
+
+## 🎭 COMIC STYLE RECAP: A CHAT IN THE CHEMISTRY LAB
+
+👧 **Priya:** "Rahul, I just had stomach pain after eating too much. What is happening chemically?"
+👦 **Rahul:** "Your stomach produces HCl to digest food — it has a pH of about 1 to 2! When there is too much, it causes pain."
+👧 **Priya:** "So antacids work by neutralising it?"
+👦 **Rahul:** "Exactly! Milk of Magnesia ($Mg(OH)_2$) is basic. It neutralises the excess acid: Acid + Base → Salt + Water!"
+🔬 **Litmus paper:** "And I turn red in acid, blue in base — use me to find out!"
+👧 **Priya:** "What about the pH scale? How does it work?"
+👦 **Rahul:** "Think of it as a ruler from 0 to 14. Below 7 is acidic — the lower, the stronger. Above 7 is basic. Exactly 7 is neutral, like pure water."
+👧 **Priya:** "Is our blood acidic or basic?"
+👦 **Rahul:** "Blood is 7.4 — slightly basic! Even a small change in blood pH can be dangerous for our body."
+',
+  TRUE,
+  10
+)
+ON CONFLICT (id) DO UPDATE SET note_content = EXCLUDED.note_content;
 
 
 -- --- FROM FILE db/seed_pyq_questions.sql ---
@@ -9447,11 +10696,11 @@ BEGIN
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, '(a) Write the relationship between resistivity and resistance of a cylindrical conductor of length l and area of cross-section A. Hence derive the SI unit of resistivity. (b) Why are alloys used in electrical heating devices ? 3', 'short_answer', 3, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Consider the following circuits : In which circuit will the power dissipated in the circuit be (I) minimum (II) maximum ? Justify your answer. 2 OR (b) Two lamps, rated 100 W; 220 V and 60 W; 220 V are connected in parallel to electric main supply of 220 V. Find the current drawn by the two lamps from the supply. 2', 'short_answer', 2, '2025', 'medium');
+        VALUES (v_quiz_id, '(a) Consider the following circuits : In which circuit will the power dissipated in the circuit be (I) minimum (II) maximum ? Justify your answer. 2 OR (b) Two lamps, rated 100 W, 220 V and 60 W, 220 V are connected in parallel to electric main supply of 220 V. Find the current drawn by the two lamps from the supply. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, '(a) Define one ampere. (b) The resistance of a wire of 0·01 cm radius is 14 . If the resistivity of the material of the wire is 44  10–8 m, find the length of the wire. (Given  = 22 7 ) 3', 'short_answer', 3, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Consider two lamps A and B of rating 50 W; 220 V and 25 W; 220 V respectively. Find the ratio of the resistances of the two lamps (i.e. RA : RB). 2 OR (b) Heat produced per second due to a current in a resistor of 4  is 400 joules. Calculate the potential difference across the resistor. 2', 'short_answer', 2, '2025', 'medium');
+        VALUES (v_quiz_id, '(a) Consider two lamps A and B of rating 50 W, 220 V and 25 W, 220 V respectively. Find the ratio of the resistances of the two lamps (i.e. RA : RB). 2 OR (b) Heat produced per second due to a current in a resistor of 4  is 400 joules. Calculate the potential difference across the resistor. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, '(a) Define one volt potential difference between two points in an electric field. (b) Draw a schematic diagram of an electric circuit of a cell of 1·5 V, 5  and 10  resistor and a plug key, all connected in series. Calculate the current drawn from the cell when the key is closed. 3', 'short_answer', 3, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
@@ -9463,7 +10712,7 @@ BEGIN
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'How and why is an electric fuse used in an electric circuit ? Briefly describe its function. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'An electric kettle is rated 230 V; 1000 W. Calculate the resistance of its heating element when in operation. 2', 'short_answer', 2, '2025', 'medium');
+        VALUES (v_quiz_id, 'An electric kettle is rated 230 V, 1000 W. Calculate the resistance of its heating element when in operation. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'A voltage source sends a current of 2 A to a resistor of 40  connected across it for 5 minutes. Calculate the electrical energy supplied by the source. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
@@ -9483,7 +10732,7 @@ BEGIN
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'Work done in displacing an electron between two points having potential difference of 1 V, is : 1 (A) – 1·6  10–19 C (B) – 1·6  10–19 J (C) + 1·6  10–19 J (D) – 1·6  10–19 V', 'short_answer', 3, '2026', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) (i) In a house , 5 fans, rated 100 W; 220 V each are used for 4 hours daily and an electric heater rated 1000 W; 220 V is used for 5 hours daily. Calculate the cost of electrical energy consumed by the fans and the electric heater in a month of 30 days if the cost of 1 unit of electrical energy is ₹ 5. [ ] 31(B) Page 26 of 27 [ ] 31(B) Page 27 of 27 P.T.O. (ii) You have two fuse wires X and Y with electric current rating 5 A and 10 A respectively. Which of the two would you use with a heater rated 2000 W; 220 V ? Justify your answer. 5 OR (b) (i) State the relationship of the resistance (R) of a wire with its area of cross -section (A) and its length ( l). With the help of this relation , define resistivity of the material of the wire. (ii) In an electric c ircuit, 2 A electric current flows through a 40  resistor for 50 seconds. (I) Calculate the heat produced in the wire. (II) If another 40  resistor is connected in parallel to the given 40  resistor, calculate the heat produced in the circuit in 50 seconds. 5', 'short_answer', 5, '2026', 'medium');
+        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) (i) In a house , 5 fans, rated 100 W, 220 V each are used for 4 hours daily and an electric heater rated 1000 W, 220 V is used for 5 hours daily. Calculate the cost of electrical energy consumed by the fans and the electric heater in a month of 30 days if the cost of 1 unit of electrical energy is ₹ 5. [ ] 31(B) Page 26 of 27 [ ] 31(B) Page 27 of 27 P.T.O. (ii) You have two fuse wires X and Y with electric current rating 5 A and 10 A respectively. Which of the two would you use with a heater rated 2000 W, 220 V ? Justify your answer. 5 OR (b) (i) State the relationship of the resistance (R) of a wire with its area of cross -section (A) and its length ( l). With the help of this relation , define resistivity of the material of the wire. (ii) In an electric c ircuit, 2 A electric current flows through a 40  resistor for 50 seconds. (I) Calculate the heat produced in the wire. (II) If another 40  resistor is connected in parallel to the given 40  resistor, calculate the heat produced in the circuit in 50 seconds. 5', 'short_answer', 5, '2026', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'In an electric circuit carrying current I, a 2  resistor is replaced by an 8  resistor without changing the connected (ideal) battery. Then : 1 (A) current becomes 4 I and potential difference 4 V (B) current becomes 4 I and potential difference remains V (C) current becomes 4I and potential difference remains V (D) current becomes 4I and potential difference 4 V [ ] 31/3/2 Page 24 of 31', 'short_answer', 3, '2026', 'medium');
     ELSE
@@ -9527,7 +10776,7 @@ BEGIN
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'In our homes, we receive the supply of electric power through a main supply also called mains, either supported through overhead electric poles or by underground cables. In our country the potential difference between the two wires (live wire and neutral wire) of this supply is 220 V. (a) Write the colours of the insulation covers of the line wires through which supply comes to our homes. 1 (b) What should be the current rating of the electric circuit (220 V) so that an electric iron of 1 kW power rating can be operated ? 1 1 (c) (i) What is the function of the earth wire ? State the advantage of the earth wire in domestic electric appliances such as electric iron. 2 OR (c) (ii) List two precautions to be taken to avoid electrical accidents. State how these precautions prevent possible damage to the circuit/appliance. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'An electric kettle is rated 750 W; 220 V. Can this kettle be used in a circuit which has a fuse of current rating 3 A ? Give reason for your answer. 2', 'short_answer', 2, '2025', 'medium');
+        VALUES (v_quiz_id, 'An electric kettle is rated 750 W, 220 V. Can this kettle be used in a circuit which has a fuse of current rating 3 A ? Give reason for your answer. 2', 'short_answer', 2, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
         VALUES (v_quiz_id, 'Consider a rectangular cardboard having two holes P and Q through which a current carrying circular loop has been inserted as shown in the diagram. (a) Make this diagram on your answer sheet and draw three magnetic field lines, one each passing through the points 1 (near P), 2 (at the centre of the loop) and 3 (near Q). (b) List two factors on which the intensity of the magnetic field produced at the centre of the loop depends. (c) Name the rule you will apply to determine the direction of magnetic field produced due to a current carrying straight conductor. 3', 'short_answer', 3, '2025', 'medium');
         INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
@@ -9564,677 +10813,116 @@ BEGIN
         VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
         RETURNING id INTO v_quiz_id;
 
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Consider the following reactions : (i) Dilute hydrochloric acid reacts with sodium hydroxide. (ii) Magnesium oxide reacts with dilute hydrochloric acid. (iii) Carbon dioxide reacts with sodium hydroxide. It is found that in each case : (A) Salt and water is formed. (B) Neutral salts are formed. (C) Hydrogen gas is formed. (D) Acidic salts are formed.', 'short_answer', 1, '2025, 2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Ozone (O3) gas at higher levels of atmosphere is a product of UV radiation acting on Oxygen (O2). Reason (R) : The amount of ozone in the atmosphere began to drop sharply in 1980s. 1', 'short_answer', 1, '2025, 2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Four solutions, namely glucose, alcohol, hydrochloric acid and sulphuric acid filled in four separate beakers are connected one by one in an electric circuit with a bulb. The solutions in which the bulb will glow when current is passed are : (A) Glucose and alcohol (B) Alcohol and hydrochloric acid (C) Glucose and sulphuric acid (D) Hydrochloric acid and sulphuric acid 4. The metals which are found in both free state as well as combined state are : (A) Gold and platinum (B) Platinum and silver (C) Copper and silver (D) Gold and silver 5. The number of single and double bonds present in a molecule of benzene (C6H6) respectively, are : (A) 6 and 6 (B) 9 and 3 (C) 3 and 9 (D) 3 and 3 6. In human beings, when the process of digestion is completed, the (i) proteins, (ii) carbohydrates, and (iii) fats are respectively finally converted into : (A) (i) Amino acids, (ii) glucose and (iii) fatty acids (B) (i) Amino acids, (ii) glucose, (iii) fatty acids and glycerol (C) (i) Glucose, (ii) fatty acids and glycerol, (iii) amino acids (D) (i) Sugars, (ii) amino acids, (iii) fatty acids and glycerol 7. A plant growth inhibitor hormone which causes wilting of leaves is called : (A) Auxin (B) Cytokinin (C) Abscisic acid (D) Gibberellin 8. The plants that can be raised by the method of vegetative propagation are : (A) Sugarcane, roses, grapes (B) Sugarcane, mustard, potato (C) Banana, orange, mustard (D) Papaya, mustard, potato 9. The part of seed which is a source of food during germination of seed is : (A) Cotyledon (B) Radicle (C) Plumule (D) Embryo 14-31/4/1 6', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Secretion of less saliva in mouth will effect the conversion of : (A) proteins into amino acids (B) fats into fatty acids and glycerol (C) starch into simple sugars (D) sugars into alcohol', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Seawater contains many salts dissolved in it. Common salt is separated from these salts. Deposits of solid salt are also found i n several parts of the world. These large crystals are often brown d ue to impurities. This is called rock salt and is mined like coal. The common salt is an important raw material for chemicals of daily use. (a) Write balanced chemical equations to show the products formed during electrolysis of brine. 1 (b) List two uses of any one product obtained during electrolysis of brine. 1 (c) (i) A mild non-corrosive basic salt ‘A’, used for faster coo king, is strongly heated to produce a compound ‘B’, th at is used for removing permanent hardness of water . Identify A and B and also write the equation for the reaction that occurs when A is heated. 2 OR (c) (ii) Define water of crystallisation . G ive two examples of salts that have water of crystallisation. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) “The length of the small intestine in various animals depends on the food they eat.” Justify the statement. (ii) Discuss the role of the pancreas and bile juice in the digestion of food in human beings. (iii) How is the small intestine designed to absorb digested food ? 5 OR (b) (i) State the role of rings of cartilage present in the throat. (ii) Discuss the role of the ribs and diaphragm when air is taken in during the breathing cycle. (iii) Why do we get muscle cramps during heavy exercise ? Explain. 5', 'short_answer', 5, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Acid-base indicators can be used to distinguish between an acid and a base. Universal indicator, a mixture of several indicators, shows different colours at different concentrations of acids and bases, thereby indicating their pH on the pH scale of 0 – 14. The pH of a solution is measured by pH paper, which is a paper impregnated with a universal indicator. pH Scale Answer the following questions : (a) Solution P is a strong acid while solution Q is a strong base. On the pH scale, where would you place the solutions P and Q ? 1 (b) A solution has a pH of 7. Name a compound you would use to (i) increase its pH, and (ii) decrease its pH. 1 (c) (i) When the pH of a solution is decreased from 4 to 2, what effect does it produce on its hydronium ion concentration ? State the colour change shown by the pH paper. 2 OR (c) (ii) A person is feeling pain and irritation in the stomach due to indigestion. What could be the pH of the fluid in the stomach ? Write the common name of the medicines people use for remedy. Give the chemical name of ‘‘milk of magnesia’’ often used for this purpose. 2', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the given option represents a family of salts ? (A) NaCl, Na2SO4, CaSO4 (B) K2SO4, Na2SO4, CaSO4 (C) NaNO3, CaCO3, Na2CO3 (D) MgSO4, CuSO4, MgCl2', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : In our actions of writing or talking, our nervous system communicates with the muscles. Reason (R) : Cranial nerves and spinal nerves form the peripheral nervous system.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Common salt is an important raw material for various chemicals of daily use. State in brief the method of preparation of (i) Sodium hydroxide, and (ii) Sodium hydrogen carbonate from common salt. Write balanced chemical equations of the reactions that occur. 3 OR (b) Design an experimental set -up to demonstrate that ‘‘Alcohol and glucose contai n hydrogen but are not categorised as acids’’. Also give the reason to justify this fact. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '‘A’ and ‘B’ are two salts used for washing purposes. Salt ‘A’ is used for bathing also. Four test tubes I, II, III and IV as mentioned below are taken. I. Rain water + solution of salt ‘A’ II. Rain water + solution of salt ‘B’ III. Tubewell water + solution of salt ‘A’ IV. Tubewell water + solution of salt ‘B’ The test tubes are shaken one by one almost identically for the same time and the lengths of foam formed in each test tube is noted. (a) In which one of the four test tubes is the foam formed the minimum ? 1 (b) Differentiate between salt A and salt B. 1', 'short_answer', 4, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) (a) Draw a labelled diagram showing open and closed stomatal pore. 5 (b) List the main events that occur during the process of photo- synthesis. (c) Write a balanced chemical equation showing photo-synthesis in plants. OR (B) (a) Draw a well-labelled diagram of nephron and label atleast 4 of its parts. (b) Write the role of capillary cluster inside Bowman’s capsule. (c) What is meant by selective reabsorption ? { } 31/4/1 Page 14 of 32  –  ( )', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'An aqueous solution turns red litmus blue. Excess addition of which of the following solution would reverse the change ? 1 (A) Sodium hydroxide (B) Hydrochloric acid (C) Baking soda (D) Slaked lime { } 31/4/2 Page 16 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'While washing dirty clothes by soap, micelles are formed. Select the correct statement about micelles. 1 (A) The hydrophobic tail of the soap molecule is in the interior of the cluster, whereas hydrophilic end is on the surface of the cluster. (B) The hydrophobic tail is on the surface of the cluster, whereas hydrophilic end is in the interior of cluster. (C) Both hydrophobic tail and hydrophilic end are in the interior of the cluster. (D) Both hydrophobic tail and hydrophilic end are on the surface of the cluster. { } 31/4/1 Page 16 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the question, two statements are given – One labelled as Assertion (A) and other labelled as Reason (R). Write the correct answer selecting the appropriate option from (A), (B), (C) & (D) given below : 1 Assertion (A) : Pure ethanoic acid is also known as glacial acetic acid. Reason (R) : Pure ethanoic acid often freezes during winter due to its low melting point of 290 K. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The pH plays an important role in our daily life. Strength of acids and bases depends on the number of H+ ions and OH– ions produced by these respectively. pH scale helps in predicting the strength of acids and bases by measuring hydrogen ion concentration in a solution. Answer the following : (a) What type of indicator is used to predict how strong an acid or base is ? (b) Three solutions A, B and C showed pH as 3, 5 and 7. Which solution has the highest concentration of H+ ions ? (c) What are strong acids and weak acids ? OR (c) (i) Under what condition is rainwater called acid rain ? (ii) In the following acids, identify weak acids : Nitric acid, hydrochloric acid, acetic acid, sulphuric acid, formic acid. 1+1+2 { } 31/4/1 Page 22 of 32', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following is an amphoteric oxide ? 1 (A) Na 2O (B) K 2O (C) CO 2 (D) A l2O3 { } 31/5/1 Page 16 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the following table and select the correct option : 1 Salt Acid used Base used Nature of Salt (A) NaCl HC l NaOH Basic (B) Na 2CO3 H 2CO3 NaOH Neutral (C) Na 2SO4 H 2SO4 NaOH Acidic (D) CH3COONa CH3COOH NaOH Basic', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Identify the type of tropic movement that is responsible for the movement of the pollen tube towards an ovule from the following options. 1 (A) Hydrotropism (B) Geotropism (C) Chemotropism (D) Phototropism [ ] 31/2/1 Page 4 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either (a) or (b) : (a) (i) Name an organ that helps in the formation of male germ cells in humans and also mention the condition that favours the formation of male germ cells. (ii) In male reproductive system, write the pathway followed to deliver male germ cells to the site of fertilisation. (iii) Mention the main physical feature of the male germ cell that helps it move towards the female germ cell. 2+2+1=5 OR (b) Radha has three children. She does not want to have more children. Radha visits a nearby hospital, to know the methods to prevent pregnancy. (i) Mention the name of any two ways other than the surgical methods, following which Radha can avoid unwanted pregnancies. (ii) Name the surgical methods to prevent pregnancy. (iii) Give one example eac h of sexually transmitted diseases caused by bacteria and virus. 2+2+1=5 [ ] 31/2/2 Page 12 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When ferrous sulphate crystals are heated in a test tube, we observe that : 1 (A) A colourless gas with no smell is evolved. (B) A brown gas is evolved. (C) The g reen colour of the salt fades and a gas with the smell of burning sulphur is evolved. (D) The green colour of the salt fades and no gas is evolved. For Question number 24, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'To a small amount of copper oxide in a beaker , when we add dilute hydrochloric acid slowly with stirring, the change in the colour of the solution is due to the formation of : 1 (A) Copper(II) oxide, which is black in colour. (B) Copper(I) chloride, which is blue in colour. (C) Copper(II) chloride, which is blue-green in colour. (D) Copper(I) oxide, which is black in colour.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In human beings, when the process of digestion is completed, the (i) proteins, (ii) carbohydrates, and (iii) fats are respectively finally converted into : (A) (i) Amino acids, (ii) glucose and (iii) fatty acids (B) (i) Amino acids, (ii) glucose, (iii) fatty acids and glycerol (C) (i) Glucose, (ii) fatty acids and glycerol, (iii) amino acids (D) (i) Sugars, (ii) amino acids, (iii) fatty acids and glycerol 11. Some wastes are given below : (i) Garden waste (ii) Ball point pen refills (iii) Empty medicine bottles made of glass (iv) Peels of fruits and vegetables (v) Old cotton shirt The non-biodegradable wastes among these are : (A) (i) and (ii) (B) (ii) and (iii) (C) (i), (iv) and (v) (D) (i), (iii) and (iv) 12. A rectangular loop ABCD carrying a current I is situated near a straight conductor XY, such that the conductor is parallel to the side AB of the loop and is in the plane of the loop. If a steady current I is established in the conductor as shown, the conductor XY will (A) remain stationary. (B) move towards the side AB of the loop. (C) move away from the side AB of the loop. (D) rotate about its axis. 14-31/4/2 8', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Three metal samples of magnesium, aluminium and iron were taken and rubbed with sand paper. These samples were then put separately in test tubes containing dilute hydrochloric acid. Thermometers were also suspended in each test tube so that their bulbs dipped in the acid. The rate of formation of bubbles was observed. The above activity was repeated with dilute nitric acid and the observations were recorded. Answer the following questions : (a) When activity was done with dilute hydrochloric acid, then in which one of the test tubes was the rate of formation of bubbles the fastest and the thermometer showed the highest temperature ? 1 (b) Which metal did not react with dilute hydrochloric acid ? Give reason. 1 (c) (i) Why is hydrogen gas not evolved when a metal reacts with dilute nitric acid ? Name the ultimate products formed in the reaction. 2 OR (c) (ii) Name the type of reaction on the basis of which reactivity of metals is decided. You have two metals X and Y. How would you decide which is more reactive than the other ? 2 14-31/4/2 26', 'short_answer', 4, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The body of human beings works within the pH range of : (A) 61 to 68 (B) 65 to 73 (C) 70 to 78 (D) 75 to 81', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write the essential function performed by ozone at the higher levels of the atmosphere. How is it formed in the upper atmosphere ? Write the name of the group of chemicals mainly responsible for the depletion of ozone layer. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Hydrogen gas is not evolved when a metal reacts with nitric acid. Reason (R) : Nitric acid is a strong reducing agent and reduces the hydrogen produced in the reaction to water.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'How will you protect yourself from the heat generated while diluting a concentrated acid ? 1 (A) By adding acid to water with constant stirring. (B) By adding water to acid with constant stirring. (C) By adding water to acid followed by base. (D) By adding base to acid with constant stirring. { } 31/4/1 Page 18 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either option (A) or (B). (A) (i) Which method will be used to convert each of them to their respective metal oxides ? (a) Carbonate ore (b) Sulphide ore { } 31/4/1 Page 20 of 32 (ii)                    (iii)     ,       -                          ? 3  (B) (i) ZnS  Zn         (ii)                   2+1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Four solutions, namely fructose, ethanol, hydrochloric acid and sodium hydroxide filled in four separate beakers are connected one by one in an electric circuit with a bulb. The solutions in which the bulb will glow when current is passed are : 1 (A) ethanol and hydrochloric acid (B) fructose and ethanol (C) fructose and sodium hydroxide (D) hydrochloric acid and sodium hydroxide', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) (a) Give the chemical name and formula of Plaster of Paris. 3 (b) Write the chemical equation of its preparation. (c) Give any two uses of it. OR (B) (a) Name the acid present in ant’s sting. (b) Give reason : (i) While diluting an acid, it is recommended that the acid should be added to water. (ii) Baking soda is used as an antacid.', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Tamarind is a natural source of which acid ? 1 (A) Acetic acid (B) Tartaric acid (C) Oxalic acid (D) Citric acid', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either (a) or (b) : (a) What happens when light is scattered from (i) very fine particles and (ii) very large size particles of medium ? Justify your answer in each case. 2 OR (b) With the help of a ray diagram , explain any phenomenon of formation of spectrum in nature. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'ì`m»`m H$s{OE {H$ g§V{V _| Za OZH$ Am¡a _mXm OZH$ H$m g_mZ AmZwd§{eH$ `moJXmZ {H$g àH$ma gw{ZpíMV {H$`m OmVm h¡ & 2 25. `{X n¥Ïdr na H$moB© dm`w_ÊS>b Zht hmoVm, Vmo AmH$me {H$g a§J H$m hmoVm ? AnZo CÎma H$s H$maU g{hV nw{îQ> H$s{OE & 2 26. 1000 m bå~o Am¡a 2 mm2 AZwàñW-H$mQ> joÌ\$b Ho$ H$m°na Ho$ {H$gr Vma H$m à{VamoY n[aH${bV H$s{OE & H$m°na H$s à{VamoYH$Vm 1·6 108 m h¡ & 2 IÊS> J 27 33 27. _mZd ZoÌ H$s g_§OZ j_Vm H$s n[a^mfm Xr{OE & O~ h_ {H$gr {~å~ H$s ZoÌ go Xÿar _| ? Bg àH$aU _| _mZd ZoÌ Ho$ Cg ^mJ H$m Zm_ Am¡a ^y{_H$m H$s ì`m»`m H$s{OE Omo BgHo$ {bE CÎmaXm`r h¡ & 3 28. àË`oH$ àH$aU _| A{^{H«$`m Ho$ {bE eVm] H$m CëboI H$aVo hþE {ZåZ{b{IV A{^{H«$`mAm| Ho$ {bE amgm`{ZH$ g_rH$aU {b{IE : 3 (a) EWoZm°b H$s EWoZm°BH$ Aåb go A{^{H«$`m (b) EñQ>a H$s {H$gr jmaH$ (NaOH) go A{^{H«$`m (c) EWoZm°b go EWrZ H$m ~ZZm 29. H$moB© N>mÌ S´>mB§J ~moS>© na gµ\o$X H$mJµO H$s erQ> bJmVm h¡ & dh Bg H$mJµO Ho$ Ho$ÝÐ na EH$ -MyU© S´>mB§J ~moS>© H$mo Yrao go WnWnmVm h¡ Am¡a XoIVm h¡ {H$, bmoh-MyU© ñd`§ EH$ {deof n¡Q>Z© _| ì`dpñWV hmo OmVm h¡ & (a) bmoh- ? (b) Mwå~H$ Ho$ {gam| na bmoh- aVr h¡ ? (c) dh aoImE±, {OZHo$ AZw{Xe bmoh-MyU© ao{IV §g ? (d) `{X `h N>mÌ {H$gr Ymamdmhr n[aZm{bH$m Ho$ ^rVa {H$gr H$mS>©~moS>© H$mo j¡{VOV: aIH$a Cn`w©º$ {H«$`mH$bmn H$mo XmohamE, Vmo bmoh-MyU© {H$g n¡Q>Z© _| ì`dpñWV hmoJm ? BZ ào{jV aoImAm| Ho$ n¡Q>Z© Ho$ AmYma na Mwå~H$s` joÌ Ho$ ~mao _| {ZH$mbo JE {ZîH$f© H$m CëboI H$s{OE & 3 14-31/4/3 15 P.T.O.', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) A few crystals of ferrous sulphate were taken in a dry boiling tube and heated. Tiny water droplets were observed in the tube after some time. (i) From where did these water droplets appear ? Explain. (ii) What colour change will be observed during heating ? (iii) How many molecules of water are attached per molecule of FeSO4 crystal ? Write the molecular formula of crystalline forms of (I) Copper sulphate, and (II) Sodium carbonate. (iv) State how is Plaster of Paris obtained from gypsum. Write two uses of Plaster of Paris. 5 OR (b) cakes faster cooking. (i) Write the common names o (ii) soft and spongy ? Illustrate the reaction with suitable chemical equation. (iii) Write the name and chemical formula of a mild base other 5 15-31/5/3 22', 'short_answer', 5, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Consider the following statements : i. Ciliary muscles adjust for changing the intensity of light entering the eye. ii. Myopic eye can be corrected by converging lenses of suitable power. iii. The function of the pupil is to regulate the quantity of light entering the eye. iv. When ciliary muscles are completely relaxed, the focal length of the eye lens is maximum. The correct statements are : (A) i, ii and iv (B) i, ii and iii (C) iii and iv (D) ii and iv 6. Consider the following chemical equations : p MnO2 + q Al r Mn + s Al2O3 To balance this chemical equation the values of the coefficients p, q, r and s must be respectively : (A) 3, 2, 3, 4 (B) 4, 3, 4, 2 (C) 3, 4, 3, 2 (D) 4, 2, 4, 3 7. The pH of an aqueous solution of a salt is 9. The types of acid and base from which this salt is formed are : (A) weak acid and weak base (B) weak acid and strong base (C) strong acid and weak base (D) strong acid and strong base 11-31(B) 8', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A colourless gas G is produced when egg-shells are treated with a solution S. The gas G turns lime water milky. S and G respectively are : (A) H2SO4 and SO2 (B) HCl and SO2 (C) NaCl and CO2 (D) HCl and CO2 9. The most reactive metal among the following towards cold water is : (A) Aluminium (B) Potassium (C) Sodium (D) Calcium 10. One mole of a hydrocarbon, on combustion in air, produces two moles of CO2, two moles of H2O and a large amount of heat. This hydrocarbon is : (A) ethyne (B) ethene (C) ethane (D) methane 11. An organism which breaks down the food material outside the body and then absorbs it is : (A) Bread mould (B) Cuscuta (C) Lice (D) Tapeworm 11-31(B) 10', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The following table shows the pH values of four solutions A, B, C and D on a pH scale : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 The solutions A, B, C and D respectively are of a (A) Strong acid, weak acid, neutral, strong base (B) Weak acid, neutral, weak base, strong base (C) Weak acid, neutral, strong base, weak base (D) Weak acid, neutral, strong base, strong acid', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In one formula unit of salt ‘X’, seven molecules of water of crystallisation are present. The salt ‘X’ is : (A) CuSO4 (B) Na2CO3 (C) FeSO4 (D) CaSO4', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Tooth enamel is made up of calcium hydroxyapatite (a crystalline form of calcium phosphate). This chemical starts corroding in the mouth when the pH is : (A) 7 (B) 5 (C) 10 (D) 14', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Bryophyllum produces new plant through : (A) Apical buds formed on the tip of the plant (B) Vegetative buds produced in the notches of the leaf (C) Flowers produced in the notches of the branches (D) Fruits formed on the branches of the plant', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The essential element used in the synthesis of proteins is : (A) Nitrogen (B) Phosphorus (C) Iron (D) Magnesium', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Two substances ‘A’ and ‘B’ are burnt in air separately. For ‘A’, ashes are collected and dissolved in water to get solution ‘X’, while for ‘B’, fumes produced are passed through water to get solution ‘Y’. Both the solutions ‘X’ and ‘Y’ are then tested with pH paper. 3 (a) If ‘X’ gives light blue colour and ‘Y’ gives orange colour to the pH paper, then write the nature and range of pH of ‘X’ and ‘Y’. (b) Which one of the two – A and B, is a metal ? Justify your answer.', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Some harmful chemicals get accumulated in human bodies through the food chain. Name this phenomenon. Explain the reason of maximum concentration of these chemicals found in our bodies. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Write the formula of the ions which (i) acids, and (ii) bases generate in water solutions. (b) Dry HCl gas does not change the colour of dry litmus paper. Why ? 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Giving reason, state the advantage of using baking powder over baking soda for the preparation of bread or cakes. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The growth of the pollen tubes towards ovules is an example of : (A) Phototropism (B) Hydrotropism (C) Geotropism (D) Chemotropism', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Parasitic mode of nutrition is observed in : (A) Bryophyllum (B) Hibiscus (C) Cuscuta (D) Helianthus', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) A compound ‘A’ is used in soda-lime fire-extinguisher and decomposes on heating to form compound ‘B’. Compound ‘B’ is used for removing permanent hardness of water. Identify ‘A’ and ‘B’. 1 (b) Write chemical formula of Plaster of Paris. At what temperature gypsum is heated to obtain Plaster of Paris ? 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In terms of various trophic levels of a food chain, which of the following organisms belong to the same level ? 1 (A) Snake and Grasshopper (B) Grass and tree (C) Lizard and elephant (D) Bacteria and grass', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Four chambered heart is a characteristic of : 1 (A) Fishes (B) Amphibians (C) Reptiles (D) Mammals', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The leaves of a plant first prepares food ‘P’ by photo-synthesis. Food ‘P’ is then converted to food ‘Q’, which is stored in the leaves if not used immediately. What are ‘P’ and ‘Q’ ? What are the raw materials and conditions required for synthesis of ‘P’ ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which one of the following chemicals is used in soda-acid fire- extinguishers ? 1 (A) Sodium carbonate (B) Sodium hydrogen carbonate (C) Sodium hydroxide (D) Sodium acetate { } 31/4/3 Page 18 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Answer the following : 3  1 = 3 (a) Write two observations when green coloured crystals of ferrous sulphate are heated in a boiling tube. (b) Why brown coloured copper powder turns black on heating ? (c) What happens when limestone is heated strongly ?', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Explain the phenomenon of rainbow formation in the sky. Draw the labelled ray diagram in support of your explanation. 3 36. 3 On the basis of the given circuit arrangement, answer the following questions : (a) What happens to the rod AB when the key K is closed and why ? (b) Name and state the rule that determines this behaviour of the rod AB in the above situation.', 'short_answer', 5, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which gas is evolved when magnesium metal reacts with very dilute HNO3 ? 1 (A) Oxygen (B) Nitrogen (C) Hydrogen (D) Nitrogen Dioxide { } 31/5/1 Page 18 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the following diagram, if acetic acid of same concentration is taken in place of dilute sulphuric acid, then 1 (A) Same amount of H2 gas will be evolved. (B) H 2 gas will not be evolved. (C) The amount of H2 gas evolved in less amount. (D) In place of H2 gas, O2 gas will be evolved. { } 31/5/2 Page 16 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'On reaction with dilute HCl, which of the following pair of metals will evolve hydrogen gas ? 1 (A) copper and zinc (B) copper and iron (C) silver and magnesium (D) magnesium and aluminium { } 31/5/2 Page 18 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'How is a universal indicator obtained ? How is the wide range of pH of solution tested by it ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Select the incorrect statement from the following : 1 (A) Ozone is a molecule formed by three atoms of oxygen. (B) Ozone shields earth’s surface from harmful infrared radiations. (C) CFC’s are linked to decline of O3 layer in our atmosphere. (D) Ozone at higher levels is a product of UV radiations acting on oxygen molecule.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Magnesium ribbon burns with a dazzling white flame and changes into a white powder as shown in the diagram given below : 1 The powder is dissolved in water. Identify the chemical formula of the white powder and the correct change observed when the solution is tested with litmus paper. (A) MgO, turns blue litmus into red. (B) MgO, turns red litmus blue. (C) MgO 2, turns red litmus blue. (D) Mg 2O, turns blue litmus red.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write the preparation of Baking soda. How does it help in making cakes soft and spongy ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Oxygen at the higher levels of the atmosphere is a product of UV radiation. Reason (R) : At higher levels of the atmosphere, ozone shields the surface of the Earth from UV radiation from the Sun. 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The acid presents in nettle sting is : 1 (A) Tartaric acid (B) Oxalic acid (C) Methanoic acid (D) Acetic acid', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which one of the following non -metals exists as liquid at room temperature ? 1 (A) Bromine (B) Sulphur (C) Iodine (D) Chlorine', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When ethanoic acid is treated with sodium hydrogen carbonate, the gas evolved is : 1 (A) CO2 (B) CH4 (C) CO (D) H2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : It is advised t hat while diluting a concentrated acid, acid should be added slowly to water and not water to acid. Reason (R) : The process of dissolving an acid in water is endothermic. 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give reasons for the following : (a) Dry HCl gas does not change the colour of a dry blue litmus paper. (b) Copper sulphate crystals turn white on heating. 21=2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) Name the phenomenon due to which a prism splits the incident white light into a band of colours. State the reason of the phenomenon also. 2 OR (b) When a ray of light passes from water to air ( I) will the angle of refraction in air (r) be greater than the angle of incidence in water (i) or less than it ? ( II) and when we increase the angle of incidence in water, will the angle of refraction in air increase or decrease ? What is the limiting value for r ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A metal carbonate reacts with a solution X which forms a salt, water and a gas Y. What are X and Y ? 1 (A) X – Sodium hydroxide, Y – Carbon dioxide (B) X – Sodium hydroxide, Y – Hydrogen (C) X – Hydrochloric acid, Y – Carbon dioxide (D) X – Hydrochloric acid, Y – Hydrogen [ ] 31/2/1 Page 14 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The pH of the gastric juices released during digestion is : 1 (A) Less than 7 (B) More than 7 (C) Equal to 7 (D) Equal to 0', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Baking powder is a mixture of : 1 (A) Sodium carbonate + Acetic acid (B) Sodium carbonate + Tartaric acid (C) Sodium hydrogen carbonate + Tartaric acid (D) Sodium hydrogen carbonate + Acetic acid [ ] 31/2/1 Page 16 of 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Rain water is called ‘acid rain’ when its : 1 (A) pH falls below 7·2. (B) pH falls below 14. (C) pH is above 7. (D) pH falls below 5·6. [ ] 31/2/2 Page 14 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following compounds is used for removing permanent hardness of water ? 1 (A) Bleaching powder (B) Washing soda (C) Baking soda (D) Caustic soda', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : In the given diagram, when electricity is passed through an aqueous solution of a common salt, a substance ‘Z’ is produced, along with the evolution of gases ‘X’ and ‘Y’. When a burning matchstick is brought near the gas ‘Y’, it burns with a pop sound, whereas ‘X’ is used for disinfecting drinking water. When ‘X’ is passed through slaked lime, an insoluble substance ‘A’ is produced. (a) Write the names of the gases ‘X’ and ‘Y’. 1 [ ] 31/2/3 Page 20 of 31', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When zinc reacts with NaOH, the product formed is : 1 (A) Na2O (B) ZnO (C) Na2ZnO2 (D) Zn(OH)2 For Question number 24, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true. [ ] 31/3/1 Page 18 of 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When zinc reacts with NaOH, the product formed is : 1 (A) Na2O (B) ZnO (C) Na2ZnO2 (D) Zn(OH)2 18. In which case/cases will the bulb glow considering that all other connections of electric circuit are complete and working ? 1 (A) Case (i) only (B) Case (ii) only (C) Cases (ii) and (iii) (D) Case (iii) only', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When zinc reacts with NaOH, the product formed is : 1 (A) Na2O (B) ZnO (C) Na2ZnO2 (D) Zn(OH)2 [ ] 31/3/3 Page 16 of 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) State Ohm’s law and justify that V – I graph for Ohm’s law will always be a straight line passing through the origin. (b) The figure shows V – I graphs for two identical wires A and B having the same length and area of cross -section, but made of different materials. Which of these wire s will be more suitable for making the heating element of an electric heater and why ? 3', 'short_answer', 3, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 2 not found. Skipping PYQ insertion.';
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Consider the following reactions: (i) Dilute hydrochloric acid reacts with sodium hydroxide. (ii) Magnesium oxide reacts with dilute hydrochloric acid. (iii) Carbon dioxide reacts with sodium hydroxide. It is found that in each case : (A) Salt and water is formed. (B) Neutral salts are formed. (C) Hydrogen gas is formed. (D) Acidic salts are formed.', 'multiple_choice', 1, '2025, 2026', 'medium', 'Option (A)', '1 mark for correct option (A). In all cases, neutralisation (or reaction of basic/acidic oxides) yields salt and water.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Acid-base indicators can be used to distinguish between an acid and a base. Universal indicator, a mixture of several indicators, shows different colours at different concentrations of acids and bases, thereby indicating their pH on the pH scale of 0 – 14. The pH of a solution is measured by pH paper, which is a paper impregnated with a universal indicator.
+Answer the following questions :
+(a) Solution P is a strong acid while solution Q is a strong base. On the pH scale, where would you place the solutions P and Q?
+(b) A solution has a pH of 7. Name a compound you would use to (i) increase its pH, and (ii) decrease its pH.
+(c) (i) When the pH of a solution is decreased from 4 to 2, what effect does it produce on its hydronium ion concentration? State the colour change shown by the pH paper.
+OR
+(c) (ii) A person is feeling pain and irritation in the stomach due to indigestion. What could be the pH of the fluid in the stomach? Write the common name of the medicines people use for remedy. Give the chemical name of "milk of magnesia" often used for this purpose.', 'short_answer', 4, '2025', 'medium', '(a) Solution P (strong acid) is placed between 0-2. Solution Q (strong base) is placed between 12-14.
+(b) (i) To increase pH, add a base like Sodium Hydroxide ($NaOH$). (ii) To decrease pH, add an acid like Hydrochloric acid ($HCl$).
+(c) (i) The hydronium ion ($H_3O^+$) concentration increases (it becomes 100 times more concentrated). The colour of pH paper changes from orange (pH 4) to red (pH 2).
+OR
+(c) (ii) The pH could be around 1 to 3 (highly acidic due to excess HCl). The medicines used are called Antacids. The chemical name of milk of magnesia is Magnesium hydroxide ($Mg(OH)_2$).', '(a) 1 mark for correct positions (b) 1 mark for correct examples (c) (i) 1 mark for concentration effect, 1 mark for colour OR (c) (ii) 1 mark for pH/Antacid, 1 mark for Magnesium hydroxide.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Seawater contains many salts dissolved in it. Common salt is separated from these salts.
+(a) Write balanced chemical equations to show the products formed during electrolysis of brine.
+(b) List two uses of any one product obtained during electrolysis of brine.
+(c) (i) A mild non-corrosive basic salt A, used for faster cooking, is strongly heated to produce a compound B, that is used for removing permanent hardness of water. Identify A and B and also write the equation for the reaction that occurs when A is heated.
+OR
+(c) (ii) Define water of crystallisation. Give two examples of salts that have water of crystallisation.', 'short_answer', 4, '2025', 'medium', '(a) $2NaCl(aq) + 2H_2O(l) \rightarrow 2NaOH(aq) + Cl_2(g) + H_2(g)$
+(b) Uses of $Cl_2$: Water treatment, manufacturing PVC. (Or uses of $H_2$ or $NaOH$).
+(c) (i) A is Sodium hydrogencarbonate (Baking soda, $NaHCO_3$). B is Sodium carbonate (Washing soda, $Na_2CO_3$). Equation: $2NaHCO_3 \rightarrow Na_2CO_3 + H_2O + CO_2$.
+OR
+(c) (ii) Water of crystallisation is the fixed number of water molecules present in one formula unit of a salt. Examples: Copper sulphate ($CuSO_4 \cdot 5H_2O$), Washing soda ($Na_2CO_3 \cdot 10H_2O$).', '(a) 1 mark for balanced equation (b) 1 mark for uses (c) (i) 1 mark for identifying A & B, 1 mark for equation OR (c) (ii) 1 mark for definition, 1 mark for examples.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Which of the given option represents a family of salts? (A) NaCl, Na2SO4, CaSO4 (B) K2SO4, Na2SO4, CaSO4 (C) NaNO3, CaCO3, Na2CO3 (D) MgSO4, CuSO4, MgCl2', 'multiple_choice', 1, '2025', 'medium', 'Option (B)', '1 mark for correct option (B). All salts in this option contain the sulphate ($SO_4^{2-}$) radical, hence belonging to the sulphate family.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, '(a) Common salt is an important raw material for various chemicals of daily use. State in brief the method of preparation of (i) Sodium hydroxide, and (ii) Sodium hydrogen carbonate from common salt. Write balanced chemical equations of the reactions that occur.
+OR
+(b) Design an experimental set-up to demonstrate that "Alcohol and glucose contain hydrogen but are not categorised as acids". Also give the reason to justify this fact.', 'short_answer', 3, '2025', 'medium', '(a) (i) Sodium hydroxide is prepared by the Chlor-alkali process. Electricity is passed through brine (aqueous NaCl). Eq: $2NaCl(aq) + 2H_2O(l) \rightarrow 2NaOH(aq) + Cl_2(g) + H_2(g)$. (ii) Sodium hydrogen carbonate is prepared by reacting brine with $CO_2$ and $NH_3$ (Solvay process). Eq: $NaCl + H_2O + CO_2 + NH_3 \rightarrow NH_4Cl + NaHCO_3$.
+OR
+(b) Experiment: Connect a battery, bulb, and switch to two iron nails in a beaker. Pour glucose or alcohol solution and switch on the current. Observation: The bulb does not glow. Reason: Glucose and alcohol do not ionise in water to produce $H^+$ ions, hence they do not conduct electricity and are not categorised as acids.', '(a) 1.5 marks for each preparation and equation OR (b) 1.5 marks for setup/observation, 1.5 marks for reason.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'An aqueous solution turns red litmus blue. Excess addition of which of the following solution would reverse the change? (A) Sodium hydroxide (B) Hydrochloric acid (C) Baking soda (D) Slaked lime', 'multiple_choice', 1, '2026', 'medium', 'Option (B)', '1 mark for correct option (B). The solution is basic. Adding excess acid (HCl) will neutralise it and make it acidic, turning blue litmus red.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'The pH plays an important role in our daily life. Strength of acids and bases depends on the number of H+ ions and OH– ions produced by these respectively. pH scale helps in predicting the strength of acids and bases by measuring hydrogen ion concentration in a solution. Answer the following :
+(a) What type of indicator is used to predict how strong an acid or base is?
+(b) Three solutions A, B and C showed pH as 3, 5 and 7. Which solution has the highest concentration of H+ ions?
+(c) What are strong acids and weak acids?
+OR
+(c) (i) Under what condition is rainwater called acid rain? (ii) In the following acids, identify weak acids : Nitric acid, hydrochloric acid, acetic acid, sulphuric acid, formic acid.', 'short_answer', 4, '2026', 'medium', '(a) Universal indicator is used.
+(b) Solution A (pH 3) has the highest concentration of $H^+$ ions.
+(c) Strong acids completely ionise in water to produce high $H^+$ concentration (e.g. HCl). Weak acids partially ionise in water to produce low $H^+$ concentration (e.g. Acetic acid).
+OR
+(c) (i) Rainwater is called acid rain when its pH falls below 5.6. (ii) Weak acids: Acetic acid, formic acid.', '(a) 1 mark (b) 1 mark (c) 2 marks for definitions OR (c) (i) 1 mark (ii) 1 mark.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Study the following table and select the correct option :
+| Salt | Acid used | Base used | Nature of Salt |
+|---|---|---|---|
+| (A) NaCl | HCl | NaOH | Basic |
+| (B) Na2CO3 | H2CO3 | NaOH | Neutral |
+| (C) Na2SO4 | H2SO4 | NaOH | Acidic |
+| (D) CH3COONa | CH3COOH | NaOH | Basic |', 'multiple_choice', 1, '2026', 'medium', 'Option (D)', '1 mark for correct option (D). $CH_3COOH$ is a weak acid and $NaOH$ is a strong base, so the resulting salt is basic.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'To a small amount of copper oxide in a beaker, when we add dilute hydrochloric acid slowly with stirring, the change in the colour of the solution is due to the formation of : (A) Copper(II) oxide (B) Copper(I) chloride (C) Copper(II) chloride (D) Copper(I) oxide', 'multiple_choice', 1, '2026', 'medium', 'Option (C)', '1 mark for correct option (C). The black copper oxide dissolves and forms copper(II) chloride, which is blue-green.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'The body of human beings works within the pH range of : (A) 6.1 to 6.8 (B) 6.5 to 7.3 (C) 7.0 to 7.8 (D) 7.5 to 8.1', 'multiple_choice', 1, '2025', 'medium', 'Option (C)', '1 mark for correct option (C).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'How will you protect yourself from the heat generated while diluting a concentrated acid? (A) By adding acid to water with constant stirring. (B) By adding water to acid with constant stirring. (C) By adding water to acid followed by base. (D) By adding base to acid with constant stirring.', 'multiple_choice', 1, '2026', 'medium', 'Option (A)', '1 mark for correct option (A). Dilution is highly exothermic, so acid must be added to a large volume of water slowly.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, '(A) (a) Give the chemical name and formula of Plaster of Paris. (b) Write the chemical equation of its preparation. (c) Give any two uses of it.
+OR
+(B) (a) Name the acid present in ant’s sting. (b) Give reason : (i) While diluting an acid, it is recommended that the acid should be added to water. (ii) Baking soda is used as an antacid.', 'short_answer', 3, '2026', 'medium', '(A) (a) Calcium sulphate hemihydrate, $CaSO_4 \cdot \frac{1}{2}H_2O$. (b) $CaSO_4 \cdot 2H_2O \xrightarrow{373 K} CaSO_4 \cdot \frac{1}{2}H_2O + 1\frac{1}{2}H_2O$. (c) Uses: Supporting fractured bones, making toys.
+OR
+(B) (a) Methanoic acid (Formic acid). (b) (i) Dissolving acid in water is highly exothermic. Adding water to acid can cause sudden boiling and splashing. (ii) Baking soda is mildly basic, so it neutralises excess stomach acid.', '(A) 1 mark each OR (B) 1 mark for (a), 1 mark each for (b)(i) and (b)(ii).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Tamarind is a natural source of which acid? (A) Acetic acid (B) Tartaric acid (C) Oxalic acid (D) Citric acid', 'multiple_choice', 1, '2026', 'medium', 'Option (B)', '1 mark for correct option (B).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'A colourless gas G is produced when egg-shells are treated with a solution S. The gas G turns lime water milky. S and G respectively are : (A) H2SO4 and SO2 (B) HCl and SO2 (C) NaCl and CO2 (D) HCl and CO2', 'multiple_choice', 1, '2024', 'medium', 'Option (D)', '1 mark for correct option (D). Egg shells are made of calcium carbonate. They react with an acid (HCl) to produce $CO_2$ gas.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Solutions A, B, C and D have pH 1, 4, 7, and 14 respectively. The solutions are of a: (A) Strong acid, weak acid, neutral, strong base (B) Weak acid, neutral, weak base, strong base (C) Weak acid, neutral, strong base, weak base (D) Weak acid, neutral, strong base, strong acid', 'multiple_choice', 1, '2025', 'medium', 'Option (A)', '1 mark for correct option (A).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'In one formula unit of salt ‘X’, seven molecules of water of crystallisation are present. The salt ‘X’ is : (A) CuSO4 (B) Na2CO3 (C) FeSO4 (D) CaSO4', 'multiple_choice', 1, '2025', 'medium', 'Option (C)', '1 mark for correct option (C). Green vitriol is Ferrous sulphate heptahydrate ($FeSO_4 \cdot 7H_2O$).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Tooth enamel is made up of calcium hydroxyapatite (a crystalline form of calcium phosphate). This chemical starts corroding in the mouth when the pH is : (A) 7 (B) 5 (C) 10 (D) 14', 'multiple_choice', 1, '2025', 'medium', 'Option (B)', '1 mark for correct option (B). Tooth decay begins when mouth pH falls below 5.5.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, '(a) Write the formula of the ions which (i) acids, and (ii) bases generate in water solutions. (b) Dry HCl gas does not change the colour of dry litmus paper. Why ?', 'short_answer', 2, '2025', 'medium', '(a) (i) Acids generate $H^+(aq)$ or $H_3O^+$ (hydronium) ions. (ii) Bases generate $OH^-(aq)$ (hydroxide) ions.
+(b) Dry HCl gas cannot ionise in the absence of water. Because no $H^+$ ions are produced, it shows no acidic properties and cannot change the colour of dry litmus.', '1 mark for (a), 1 mark for (b).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Giving reason, state the advantage of using baking powder over baking soda for the preparation of bread or cakes.', 'short_answer', 2, '2025', 'medium', 'Baking soda ($NaHCO_3$) produces sodium carbonate ($Na_2CO_3$) upon heating, which gives a bitter taste to the cake. Baking powder contains a mild edible acid (like tartaric acid) which neutralises the bitter sodium carbonate, producing a pleasant-tasting sodium salt instead.', '1 mark for stating bitterness of sodium carbonate, 1 mark for stating neutralization by tartaric acid.');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, '(a) A compound ‘A’ is used in soda-acid fire-extinguisher and decomposes on heating to form compound ‘B’. Compound ‘B’ is used for removing permanent hardness of water. Identify ‘A’ and ‘B’. (b) Write chemical formula of Plaster of Paris. At what temperature gypsum is heated to obtain Plaster of Paris ?', 'short_answer', 2, '2026', 'medium', '(a) Compound A is Sodium hydrogencarbonate (Baking soda, $NaHCO_3$). Compound B is Sodium carbonate (Washing soda, $Na_2CO_3 \cdot 10H_2O$).
+(b) The formula of Plaster of Paris is $CaSO_4 \cdot \frac{1}{2}H_2O$. Gypsum is heated at 373 K (or $100^{\circ}C$) to obtain it.', '1 mark for (a), 1 mark for (b).');
+
+        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty, model_answer, marking_scheme)
+        VALUES (v_quiz_id, 'Which one of the following chemicals is used in soda-acid fire- extinguishers ? (A) Sodium carbonate (B) Sodium hydrogen carbonate (C) Sodium hydroxide (D) Sodium acetate', 'multiple_choice', 1, '2026', 'medium', 'Option (B)', '1 mark for correct option (B).');
+        
     END IF;
 
-    -- Chapter: Life Processes (Seq: 5)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 5 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the electrolysis of water, the mass ratio of hydrogen and oxygen gases liberated at the electrodes is : (A) 1 : 2 (B) 1 : 4 (C) 1 : 8 (D) 1 : 16', 'short_answer', 1, '2025, 2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In human beings the oxygen rich blood is pumped out to the body by : 1 (A) contraction of right atrium (B) relaxation of left ventricle (C) contraction of right ventricle (D) contraction of left ventricle Question Nos. 8 & 9 consists of two statements : Assertion (A) and Reason (R). Answer these questions selecting the appropriate option from (A), (B), (C) and (D) given below : (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Kidneys are vital organs for survival. Several factors like infections, injury or restricted blood flow to kidneys reduce the activity of kidneys. This leads to accumulation of poisonous wastes in the body, which can even lead to death. In case of kidney failure, an artificial kidney can be used. An artificial kidney is a device to remove waste products from the blood through dialysis. (a) (i) Name the artery that brings oxygenated blood to the kidney. (ii) Name the cluster the thin-walled blood capillaries present in the Bowmans capsule. 1 (b) In human excretory system name the organ which stores urine. Is this organ under hormonal control or nervous control ? 1 (c) (i) List two major steps involved in the formation of urine and state in brief their functions. 2 OR (c) (ii) In which part of the nephron does selective reabsorption take place ? List the factors which the amount of water reabsorbed depends on. 2', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The products formed when Aluminium and Magnesium are burnt in the presence of air respectively are : (A) Al3O4 and MgO2 (B) Al2O3 and MgO (C) Al3O4 and MgO (D) Al2O3 and MgO2', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The formation of magnesium oxide is correctly shown in option :', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The breakdown of glucose has taken the following pathway : Glucose (a)⎯⎯⎯ → Pyruvate + Energy (b)⎯⎯⎯ → Lactic acid + Energy The sites ‘a’ and ‘b’ respectively are : (A) Mitochondria and Oxygen deficient muscle cells (B) Cytoplasm and Oxygen rich muscle cells (C) Cytoplasm and Yeast cells (D) Cytoplasm and Oxygen deficient muscle cells', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Besides minimising the loss of blood, why is it essential to plug any leak in a blood vessel ? Name the component of blood which helps in this process and state how th is component perform this function. 2 OR (b) (i) The transport system in plants is relatively slower than in animals. Give reasons. (ii) State the role of phloem in the transport of materials in plants. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The warning sign shown in the given figure must invariably be displayed/pasted on the containers which contain hydroxide of : (A) Aluminium (B) Calcium (C) Sodium (D) Magnesium', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'One-cell thick blood vessels are known as : (A) Alveoli (B) Capillaries (C) Arteries (D) Veins', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Animals will not get energy if they eat (consume) coal as food. Reason (R) : Specific enzymes are needed for the breakdown of a particular food.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'State the main function of veins in human circulatory system. Why do they not need thick walls ? 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) Varun is diabetic. His latest ultrasound reports showed a blockage in his pancreatic duct. How will this affect the dual functioning of the pancreas ? 2 OR (B) Sunil unconsciously touched the hot iron rod and immediately withdrew his hand. Which type of action is involved ? Also define this action. Draw a flow chart to show the path followed for this action. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Identify the part that controls the closing and opening of the stomatal pore in leaves of plants. 1 Select the correct option. (A) Stomata (B) Epidermal cells (C) Guard cells (D) Chloroplasts { } 31/5/3 Page 6 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Choose the equation of reaction that correctly represents anaerobic respiration in muscles : 1 (A) Glucose  Pyruvate Absence of O2 Ethanol + CO2 + Energy (B) Glucose O2  Pyruvate O2  Energy (C) Glucose O2  Pyruvate Lack of oxygen Ethanol + Energy (D) Glucose  Pyruvate Lack of oxygen Lactic acid + Energy { } 31/5/2 Page 6 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Briefly mention the steps in double-circulation through human heart. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Kidneys help to regulate the volume of fluid and various metabolites waste products in the body. 4 Normally, kidney filter about 180 L of fluid daily but the volume actually excreted out is only a litre or two a day. { } 31/5/1 Page 12 of 32                  (a)          1 (b)     ( 180 L )      ,                ? 1 (c)   /              ? 2  (c)  ()          2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The genotype of green stemmed tomato plant is denoted by ‘GG’ and that of purple stemmed tomato plant as ‘gg’. Hybrid of a cross between these two were self -pollinated to obtain F 2 progeny. What will be the ratio of GG, Gg and gg in this F2 progeny ? 1 (A) 2 : 1 : 1 (B) 3 : 1 : 0 (C) 1 : 1 : 2 (D) 1 : 2 : 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What kind of respiration provides more energy and why ? 2 [ ] 31/3/2 Page 8 of 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '^ygånH©$ Vma Kaoby {dÚwV n[anWm| _| EH$ gwajm Cnm` h¡ & {dÚwV gm{YÌm| _| AMmZH$ jaU Ho$ àH$aU _| ^ygånH©$ Vma H$s ^y{_H$m H$s ì`m»`m H$aVo hþE Bg H$WZ H$s nw{îQ> H$s{OE & 3 33. Amhma ûm¥§Ibm Am¡a Amhma Omb Ho$ ~rM {d^oXZ H$s{OE & `{X {haU, Kmg Am¡a eoa H$s {H$gr Amhma ûm¥§Ibm _| {haUm| H$s g§»`m KQ> OmE, Vmo àW_ nmofr ñVa Am¡a V¥Vr` nmofr ñVa Ho$ Ordm| H$s Ord-? 3 IÊS> K 34 36 34. (a) -jma àH«$_ H$s ì`m»`m H$s{OE Am¡a Bg_| hmoZo dmbr A{^{H«$`mAm| H$m g§Vw{bV amgm`{ZH$ g_rH$aU {b{IE & EoZmoS> Am¡a H¡$WmoS> na H«$_e: àmßV hmoZo dmbr J¡gm| Ho$ Zm_ {b{IE & Cn`w©º$ àH«$_ _| àmßV hmoZo dmbr XmoZm| J¡gm| _| àË`oH$ Ho$ Xmo-Xmo Cn`moJm| H$m CëboI H$s{OE & 5 AWdm (b) BS> go YmoZo H$m gmoS>m ~ZmZo H$s {d{Y H$s ì`m»`m amgm`{ZH$ g_rH$aUm| H$mo XoH$a H$s{OE & YmoZo Ho$ gmoS>o Ho$ Mma Am¡Úmo{JH$/Kaoby Cn`moJm| H$s gyMr ~ZmBE & 5 35. (a) (i) {H$gr n[anW Ad`d Ho$ Xmo {gam| na {d^dmÝVa KQ>H$a AnZo àmapå^H$ _mZ H$m EH$-{VhmB© ah OmVm h¡, O~{H$ BgH$m à{VamoY {Z`V ahVm h¡ & Bggo ? Cg {Z`_ H$m Zm_ Am¡a dh {Z`_ {b{IE Omo Bg àíZ H$m CÎma XoZo _| AmnH$s ghm`Vm H$aVm h¡ & (ii) {H$gr n[anW H$m ì`dñWm AmaoI It{ME {Og_| 1·5 V Ho$ Mma gobm| H$s ~¡Q>ar, EH$ 5 H$m à{VamoYH$, EH$ 10 H$m à{VamoYH$ Am¡a EH$ 15 H$m à{VamoYH$ VWm EH$ ßbJ Hw§$Or, g^r loUr _| g§`mo{OV h¢ & A~ (I) n[anW go hmoH$a JwµOaZo dmbr {dÚwV Ymam, VWm (II) 10 à{VamoYH$ Ho$ {gam| na {d^dmÝVa kmV H$s{OE O~{H$ ßbJ Hw§$Or ~ÝX h¡ & 5 AWdm 15-31/5/2 19 P.T.O.', 'short_answer', 3, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) Observe the given figure and identify the labelled parts P, Q, R and S : 2 OR { } 31/5/1 Page 10 of 32 (B)            (i)      ()  (ii)     (iii)    (iv)   ', 'short_answer', 1, '2025, 2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Observe the given figure and select the statement that correctly states how these fungi obtain nutrition. 1 (A) By eating the bread on which it is growing. (B) By using nutrients from the bread to prepare their own food. (C) By breaking down the nutrients of bread outside the body and then absorbing them. (D) By allowing other organisms to grow on the bread and then consuming them. { } 31/4/3 Page 6 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '“Transpiration in plants is a necessary evil.” Comment on the statement giving two reasons. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : The peristaltic movements occur all along the gut. 1 Reason (R) : The lining of the gut has muscles that contract rhythmically to push the food in regulated manner.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Pravin was given a list of characteristics associated with the process of anaerobic respiration in humans, in the table given below : Location Condition End Product Characteristic (i) Muscle Cell (ii) Requires presence of Oxygen (O2) and Carbon dioxide (CO2) (iii) 3-Carbon molecules Which of the above characteristics is/are related to the above process ? 1 (A) (i) and (ii) (B) (i) and (iii) (C) (ii) and (iii) (D) (i) only [ ] 31/3/1 Page 4 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : The basic filtration unit in the kidneys, like in the lungs, is a cluster of very thin-walled blood capillaries. Reason (R) : Each capillary cluster in the kidney is associated with the cup-shaped end of a coiled tube called Bowman’s capsule. 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Separation of right side and left side of the heart is useful to keep oxygenated and deoxygenated blood from mixing. Various organisms have different types of heart. (I) Fill in the blanks (i) to (iii) correctly according to the type of organisms and their evolution in terms of blood circulation : Organisms Number of chambers in heart Type of blood being circulated Type of circulation Fish (i) ______ Mixed Single (ii) ______ 3-chambered Mixed Incomplete double circulation Birds and Mammals 4-chambered Separated circulation path of oxygenated and deoxygenated blood (iii) ______ (II) Which type of circulation is most efficient ? 2 [ ] 31/3/1 Page 10 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In xylem tissue, vessels and tracheids of the roots, stem s and leaves are interconnected to form a continuous system of water -conducting channels reaching all parts of the plant. Explain how this is achieved. 3 [ ] 31/3/2 Page 10 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '{ZåZ{b{IV n[anW H$m AÜ``Z H$s{OE : Bg n[anW Ho$ AmYma na, {ZåZ{b{IV àíZm| Ho$ CÎma Xr{OE : (a) {~ÝXþ A Am¡a B Ho$ ~rM Hw$b à{VamoY H$m _mZ kmV H$s{OE & 1 (b) {~ÝXþ B Am¡a C Ho$ ~rM à{VamoY kmV H$s{OE & 1 (c) (i) O~ Hw§$Or ~ÝX h¡, V~ ~¡Q>ar go br OmZo dmbr Ymam n[aH${bV H$s{OE & 2 AWdm (c) (ii) Cn`w©º$ n[anW _| 16 Ho$ à{VamoYH$ AWdm Cg g§`moOZ {Og_| 8 Ho$ Xmo à{VamoYH$ nmíd© _| g§`mo{OV h¢, BZ XmoZm| _| go {H$gHo$ {gam| na {d^dmÝVa A{YH$ h¡ ? AnZo CÎma H$s nw{îQ> H$s{OE & 2 14-31/4/2 23 P.T.O.', 'short_answer', 4, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) : YmVw Ho$ gë\$mBS> A`ñH$m| go A`ñH$ H$mo {~Zm ^O©Z {H$E YmVw {ZîH${f©V Zht {H$`m Om gH$Vm h¡ & (R) : ^O©Z go gë\$mBS> A`ñH$ grYo hr YmVw _| n[ad{V©V hmo OmVo h¢ & 20. (A) : _mZd öX` _| A{bÝX H$s Anojm {Zb` H$s noer` {^{Îm _moQ>r hmoVr h¡ & (R) : {Zb` H$mo eara Ho$ {d{^Þ A§Jm| _| é{Ya H$mo n§n H$aZm hmoVm h¡ & IÊS> I 21 26 -21. (a) h_| nm¡Ym| H$s _¥Xm H$mo {Z`{_V ê$n go nmZr XoZo H$s Amdí`H$Vm hmoVr h¡ & naÝVw `h nmZr A§{V_V: nm¡Yo H$s n{Îm`m| VH$ nhþ±M OmVm h¡ & ì`m»`m H$s{OE {H$ Eogm {H$g àH$ma hmoVm h¡ & 2 AWdm (b) A_r~m Ûmam Xem©E OmZo dmbo nmofU Ho$ àH$ma H$m Zm_ {b{IE & ì`m»`m H$s{OE {H$ `h Ord AnZm ^moOZ {H$g àH$ma J«hU H$aVm h¡ Am¡a Cgo nMmVm h¡ & 2 22. O~ {H$gr gm~wZ H$mo nmZr _| Kmobm OmVm h¡, Vmo gm~wZ Ho$ AUw Hw$N> g§aMZmE± ~ZmVo h¢ & BZ ? BZ g§aMZmAm| H$m Zm_m§{H$V AmaoI It{ME & 2 23. (a) {H$gr ñdÀN d> ewîH$ naIZbr _| 1 gëâ`y[aH$ Aåb {_bm`m J`m & (i) A{^{H«$`m _| CËg{O©V hmoZo dmbr J¡g H$m Zm_ {b{IE & (ii) (I) ewîH$, VWm (II) AmÐ© (Jrbo) Zrbo {bQ>_g nona go {H$`m OmEJm ? Bg J¡g H$s àH¥${V (Aåbr`/jmaH$s`) Ho$ ~mao _| AnZm {ZîH$f© {b{IE & 2 AWdm (b) Hw$N> YmVwE± Aåbm| go A{^{H«$`m H$aHo$ bdU Am¡a hmBS´>moOZ J¡g ~ZmVr h¢ & H$moB© CXmhaU XoH$a Bgo ñnîQ> H$s{OE & Bg J¡g H$s CnpñW{V H$m narjU Amn {H$g àH$ma H$a|Jo ? 2 14-31/4/3 13 P.T.O.', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'b|g H$s j_Vm H$s n[a^mfm {b{IE & Cg b|g H$s j_Vm kmV H$s{OE {OgH$s \$moH$g Xÿar 50 cm h¡ & 2 26. H$moB© {dÚwV òmoV 750 Hy$bm°_ Amdoe H$s Amny{V© H$a gH$Vm h¡ & `{X {H$gr `w{º$ Ûmam 15 mA Ymam br OmVr h¡, Vmo kmV H$s{OE {H$ `h {dÚwV òmoV {H$VZo g_` _| nyU© ê$n go AZmdo{eV ({S>ñMmO©) hmo OmEJm & 2 IÊS> J 27 33 27. (a) ZrMo {XE JE AmaoI H$m AÜ``Z H$aHo$ g§~§{YV àíZm| Ho$ CÎma Xr{OE : (i) Bg AmaoI _| Xem©E JE Ñ{îQ>-Xmof H$m Zm_ {b{IE Am¡a Bg pñW{V (Xmof) Ho$ {bE CÎmaXm`r ZoÌ Ho$ ^mJ H$m CëboI H$s{OE & (ii) Bg Xmof Ho$ Xmo H$maUm| H$s gyMr ~ZmBE & (iii) Bg Xmof Ho$ g§emoYZ Ho$ {bE Cn`moJ {H$E OmZo dmbo b|g Ho$ àH$ma H$m Zm_ {b{IE VWm Bg àH$aU _| CgH$s ^y{_H$m H$m CëboI H$s{OE & 3 AWdm (b) ídoV àH$me H$m {djonU (n[ajonU) {H$go H$hVo h¢ ? BgHo$ hmoZo Ho$ H$maU H$m CëboI H$s{OE & H$m±M Ho$ {àµÁ_ Ûmam ídoV àH$me nw§O Ho$ {djonU H$mo Xem©Zo Ho$ {bE AmaoI It{ME & 3 28. {H$gr YmVw (_¡½Zr{e`_) Am¡a AYmVw (gë\$a) Ho$ XhZ go àmßV CËnmX Ho$ amgm`{ZH$ JwUY_m] (Aåbr` AWdm jmaH$s` bjU) Ho$ ~rM {d^oXZ Ho$ {bE H$moB© {H«$`mH$bmn gwPmBE & 3 15-31/5/2 15 P.T.O.', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) : (R) : 19. (A) : OZH$m| go d§emZwJV JwUgyÌ & (R) :Y JwUgyÌ Cgo AnZo {nVm go d§emZwJV hmoVm h¡ & 20. (A) : àË`oH$ Amhma ûm¥§Ibm _| {ZMbo nmofr ñVam| na ì`pîQ>`m| H$s g§»`m A{YH$ hmoVr h¢ & (R) :My±{H$ àË`oH$ H«$_mJV nmofr ñVa na D$Om© H$s _mÌm KQ>Vr OmVr h¡, AJbo nmofr ñVam| Ho$ ^aU-nmofU Ho$ {bE {ZMbo nmofr ñVa na A{YH$ g§»`m _| ì`pîQ>`m|o H$s Amdí`H$Vm hmoVr h¡ & IÊS> I 21. (H$) g_Vb Xn©U Ûmam ~Zo à{V{~å~m| Ho$ Mma JwUm| H$s gyMr ~ZmBE & 2 AWdm (I) AdVb Xn©U Ho$ g§X^© _| ZrMo {XE JE nXm| H$s n[a^mfm {b{IE : 2 (i) Y«wd (ii) dH«$Vm Ho$ÝÐ (iii) dH«$Vm {ÌÁ`m (iv) _w»` Aj 22. {H$gr Ymamdmhr grYo MmbH$ Ûmam CËnÞ Mwå~H$s` joÌ H$s AmH¥${V H$m CëboI H$s{OE & Bg joÌ H$s {Xem H$mo kmV H$aZo H$m {Z`_ {b{IE & 2 11-31(B) 15 P.T.O.', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(H$) _mZd _pñVîH$ Ho$ Cg ^mJ H$m Zm_ {b{IE Omo ZrMo {XE JE H$m`m] Ho$ {bE CÎmaXm`r hmoVm h¡ : 2 (i) gmoMZm (ii) aº$Mmn (iii) eara H$s g§pñW{V Am¡a g§VwbZ ~ZmE aIZm (iv) bma AmZm AWdm (I) nmXn Ho$ Cg A§J/^mJ H$m Zm_ {b{IE Omo Xem©Vm h¡ : 2 (i) YZmË_H$ ObmZwdV©Z (ii) YZmË_H$ àH$memZwdV©Z (iii) G$UmË_H$ JwéËdmZwdV©Z (iv) YZmË_H$ agm`ZmZwdV©Z IÊS> J 27. (H$) (i) {dÚwV â`yµO {H$g àH$ma n[anW Am¡a gm{YÌ H$mo bKwnWZ AWdm A{V^maÊm go hmoZo dmbr g§^m{dV j{V go ~MmVm h¡ ? (ii) Kaoby Amny{V© _| Cn`moJ hmoZo dmbr {dÚwV Ymam Ho$ àH$ma go ewîH$ gobm| AWdm g§Mm`r ~¡Q>[a`m| go àmá {dÚwV Ymam {H$g àH$ma {^Þ hmoVr h¡ ? (iii) {dÚwV e{º$ Ho$ XÿañW àofU Ho$ {bE àË`mdVu Ymam (ac) H$mo {XîQ> Ymam (dc) OmVm h¡ ? 3 AWdm 11-31(B) 19 P.T.O.', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The maintenance functions of every living organism on the earth keeps going on even when they are not doing anything particular. The processes which together perform the job of maintenance of life are known as life processes. These processes are nutrition, respiration, transportation and excretion. (i) List two types of nutrition. 1 (ii) We eat food. What happens to this food during aerobic respiration in our body ? 1 (iii) (a) What is transpiration ? How is it useful to plants ? 2 OR (iii) (b) Mention the pathway of urine starting from the organ of its formation. Name any two substances which are reabsorbed from the initial filtrate in the tubular part of the nephron. 2', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The opening and closing of stomata is regulated by : (A) CO2 concentration in stomata (B) Temperature in guard cells (C) O2 concentration in stomata (D) Amount of water in guard cells', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the given figure the angle of incidence and the angle of deviation respectively are : (A) 1 and 5 (B) 7 and 6 (C) 7 and 4 (D) 1 and 6', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write the electron -dot structures of (i) sodium, and (ii) oxygen. Using these structures, show the formation of sodium oxide. Mark the anion and cation present in this compound. 3 (At. No. – Sodium = 11 and Oxygen = 8)', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A few pieces of granulated zinc are taken in a test tube and 2 mL of sodium hydroxide solution is added to it. When the contents are warmed, the product formed is : (A) Na2ZnO (B) NaZnO2 (C) Na2ZnO2 (D) NaZn(OH)2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Select the correct option from the following statements about the functioning of the human heart. (A) Right atrium receives deoxygenated blood from different parts of the body and sends it to pulmonary veins. (B) Left atrium sends oxygenated blood to right ventricle which pumps it to different parts of the body. (C) Right atrium receives deoxygenated blood from the body and sends it to the right ventricle. (D) Left atrium receives oxygenated blood from the pulmonary arteries and sends it to the left ventricle.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The gastric glands present in the wall of the stomach release : (A) Mucus and Trypsin (B) Pepsin and Trypsin (C) Mucus and Pepsin (D) Pepsin and Salivary amylase', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the following cases : (i) CuSO4 + Mg ⎯→⎯ (ii) FeSO4 + Pb ⎯→⎯ (iii) CaSO4 + Al ⎯→⎯ (iv) ZnSO4 + Ca ⎯→⎯ The case/cases in which new product(s) will form is/are : (A) Only (i) (B) Only (iii) (C) (i) and (iv) (D) (i), (ii) and (iv)', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Enlist any two nitrogenous waste products removed from the blood of human kidney. (b) Name the capillary cluster formed by the branch of renal artery in the Bowman’s capsule. (c) Depict in the form of a flow chart the path of the urine formed in each kidney until it is finally passed out through the urethra. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Why is blood circulation in vertebrates known as ‘‘double circulation’’? Trace its path in the form of a flow chart. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Identify the traits that cannot be transmitted from parents to the off- springs : 1 (i) Swimming technique (ii) Blood group (iii) Eye colour (iv) Dancing skills Options : (A) (i) and (ii) (B) (i) and (iv) (C) (iii) and (iv) (D) (ii) and (iii)', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Account for the following : 3 (a) White silver chloride turns grey when exposed to sunlight. (b) Lead (II) nitrate on heating releases brown fumes. (c) Bags of oil and fat containing food items are flushed with nitrogen gas.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give reasons for the following : (a) Plants do not have an excretory system so how they excrete their wastes ? 1 (b) Why do mammals and birds have double circulation ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When lead nitrate is heated in a boiling tube, we observe : 1 (A) brown fumes of O2 gas (B) white fumes of NO2 gas (C) yellow fumes of lead oxide (D) brown fumes of NO2 gas', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Translocation is the process in which plants deliver : 1 (A) Minerals from leaves to other parts of the plant. (B) Plant growth hormones from leaves to other parts of the plant. (C) Water and inorganic substances from leaves to other parts of the plant. (D) Organic substances from leaves to the other parts of the plant.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give a diagrammatic representation of nutrition in Amoeba. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Define the following terms : (i) Olfactory indicator (ii) Water of crystallization 1+1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : In case of iodine deficiency in our diet, there is a possibility that we might suffer from goitre. 1 Reason (R) : One of the symptoms of goitre is swelling of neck.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Why the lungs always contain a residual volume of air ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Choose the option that indicates the common structure between the basic filtration unit of kidneys and in the walls of alveoli of lungs. 1 (A) Thin-walled veins poorly supplied with blood. (B) Thick-walled arteries richly supplied with blood. (C) A cluster of thin -walled capillaries richly supplied with blood. (D) Thick-walled capillaries poorly supplied with blood.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Given below a set of statements regarding blood circulation in humans. Identify the correct statement. 1 (A) Oxygenated blood from lungs comes to the right auricle through pulmonary veins. (B) Vena cavas take o xygenated blood from body parts to right auricle. (C) Pulmonary artery takes oxygenated blood from heart to lungs. (D) Aorta takes oxygenated blood from heart to body parts.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Decomposers play an important role in the nature. Which role do they not perform ? 1 (A) Convert simple inorganic sub stances into complex organic substances using radiant energy of the Sun. (B) Act on the garbage and reduce it. (C) Natural replenishment of the soil. (D) Breakdown of complex organic matter of dead animals and plants into simple form.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Mammals and birds have efficient supply of oxygen to the body. Reason (R) : Mammals and birds have four -chambered heart. 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '‘‘The sex of the children in the human beings will be determined by what they inherit from their father.’’ Explain this statement. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Name the organ that helps in the digestion of fats in human beings. Also describe its complete digestion into simple form. Where does absorption of food take place in the humans ? 3', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What happens when : (a) silver chloride is kept in sunlight ? (b) lead nitrate solution is added to potassium iodide solution ? (c) food materials containing fats and oils are left for a long time ? 31=3', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Complete the pathways given below, showing the breakdown of glucose. Identify ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ and ‘F’. 3 [ ] 31/2/1 Page 10 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'If the stomatal pore is open, it indicates which situation from the following ? 1 (A) The guard cells have shrunk. (B) The water comes out of the guard cells. (C) Large amount of water is lost through stomata. (D) The guard cells have swelled due to inflow of water.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Observe the following diagrams : 3 Case P Case Q Case R (a) What change will be observed in Cases ‘P’, ‘Q’ and ‘R’ ? Give reasons. [ ] 31/2/2 Page 10 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Draw a neat diagram of the human respiratory system and label its lungs, trachea, bronchi and alveoli. (b) State the roles of the following in the process of respiration : 3 (i) Alveoli (ii) Respiratory pigments', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : Swati, a class 10 student, observes that when she passes close to the refrigerator in her kitchen, she feels the heat, although the things kept inside the refrigerator are cool. (a) Describe the cause of heating in the above-mentioned case. 1 [ ] 31/2/3 Page 28 of 31', 'short_answer', 4, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In plants, the role of cytokinin is to/in : 1 (A) promote cell division (B) wilting of leaves (C) promote opening of stomatal pore (D) growth of stem [ ] 31/3/2 Page 6 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The sexually transmitted disease caused by bacteria is : 1 (A) Diarrhoea (B) AIDS (C) Gonorrhoea (D) Wart For Questions number 8 and 9, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to these questions from the codes (A), (B), (C) and ( D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true. [ ] 31/3/3 Page 8 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Arteries have valves as th ey have to withstand high pressure. Reason (R) : Arteries are vessels which carry blood away from the heart to various organs. 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give reasons for the following : 3×1=3 (a) Herbivores have a longer small intestine. (b) Inner lining of small intestine has numerous finger -like projections. (c) Rate of breathing in aquatic organisms is much faster than that in terrestrial organisms. [ ] 31/3/3 Page 10 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Show the formation of NaCl by transfer of electrons. Why does solid NaCl not conduct electricity ? [Atomic number : Na = 11, Cl = 17] 2', 'short_answer', 2, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 5 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: Chemical Reactions and Equations (Seq: 1)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 1 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following is an example of a displacement reaction ? 1 (A) The combustion of natural gas (B) The reaction of a reactive metal with dilute acid (C) The electrolysis of water (D) The reaction of quick lime with water For Question number 24, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Electrolysis of water is a decomposition reaction. The mass ratio (MH : M O) of hydrogen and oxygen gases liberated at the electrodes during electrolysis of water is : (A) 8 : 1 (B) 2 : 1 (C) 1 : 2 (D) 1 : 8', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Reaction between two elements A and B, forms a compound C. A loses electrons and B gains electrons. Which one of the following properties will not be shown by compound C ? (A) It has high melting point. (B) It is highly soluble in water. (C) It has weak electrostatic forces of attraction between its oppositely charged ions. (D) It conducts electricity in its molten state or aqueous solution.   D  C B A ', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The metals obtained from their molten chlorides by the process of electrolytic reduction are : (A) Gold and silver (B) Calcium and magnesium (C) Aluminium and silver (D) Sodium and iron', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Decomposition reactions are generally endothermic reactions. Reason (R) : Decomposition of organic matter into compost i s an exothermic process.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The maintenance functions of all living organisms must go on even when they are not doing anything particular. Even when we are just sitting in a class or even asleep , this maintenance job has to go on. These maintenance processes require energy to prevent damage and break-down of cells and tissues, which is obtained by the individual organism from the food prepared by the autotrophs, called producers. (a) Name and define the process by which green plants prepare food. 1 (b) Write chemical equation involved in the above process. 1 (c) (i) State in proper sequence the events that occur in synthesis of food by desert plants. 2 OR (c) (ii) Explain giving reasons what happens to the rate at which the green plants will prepare food 2 (I) during cloudy weather, and (II) when stomata get blocked due to dust.', 'short_answer', 4, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Aluminium powder is used in thermit welding because : (A) Its reaction with iron is highly exothermic. (B) When it is heated with iron (III) oxide, molten iron is obtained. (C) When it is heated with iron ( III) oxide, molten aluminium oxide is obtained to join railway tracks. (D) Its melting point is low as compared to iron and a molten alloy of iron and aluminium is formed on heating which is used to join railway tracks.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) Define the term decomposition reaction. Write one chemical equation each for decomposition reaction where energy is supplied in the form of heat, light or electricity. (ii) Decomposition of vegetable matter into compost is considered an exothermic reaction. Why ? 3 OR (b) Why are decomposition reactions called the opposite of combination reactions ? Write one chemical equation each for these two types of reactions mentioning the name of the reactant(s) and the product(s) involved in the reactions. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Consider the following chemical equation : p Al + q H2O ⎯→⎯ r Al2O3 + s H2 To balance this chemical equation, the values of ‘p’, ‘q’, ‘r’ and ‘s’ mus t be respectively : (A) 3, 2, 2, 1 (B) 2, 3, 3, 1 (C) 2, 3, 1, 3 (D) 3, 1, 2, 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) List the possi ble sources of energy required in decomposition reactions. Illustrate any one with a suitable example. 2 OR (b) What is observed when hydrated ferrous sulphate crystals are heated in a dry boiling tube ? Give balanced chemical equation(s) of the reactions(s) that occur(s). 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'C6H12O6(aq) + 6O2(g) – 6CO2(g) + 6H2O(l). 1 The above reaction is an example of - (A) Displacement Reaction (B) Endothermic Reaction (C) Exothermic Reaction (D) Neutralisation Reaction', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What happens when (i) potassium iodide solution is added to lead (II) nitrate solution ? (ii) zinc is added to copper (II) chloride solution ? (iii) hydrogen gas is passed over hot copper (II) oxide ? Write balanced chemical equations of the reactions involved in support of your answer. 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following are decomposition reactions ? 1 (i) 2KClO3 ⎯⎯ → 2KCl + 3O2 (ii) MgO + H2O ⎯⎯ → Mg(OH)2 (iii) 2H2O ⎯⎯ → H2 + O2 (iv) Zn + CuSO4 ⎯⎯ → ZnSO4 + Cu Options : (A) (i) and (ii) (B) (iii) and (iv) (C) (i) and (iii) (D) (ii) and (iv) [ ] 31/2/3 Page 14 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A student notices that he r silver jewellery turned dull and had a grey-black coating over it after wearing for a few months. What results in the change in colour of the silver metal ? 1 (A) The polish over the jewellery was removed after wearing for a few months. (B) The jewellery comes in contact with air, moisture and acids and corrodes. (C) Dust particles over the jewellery change its colour. (D) Its colour changes due to rusting. For Question number 24, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the following equation x KI + H2O2 ⎯⎯ → I2 + y KOH x and y respectively are : 1 (A) 2, 2 (B) 1, 2 (C) 2, 1 (D) 1, 1', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The reaction of calcium with cold water is : 1 (A) Less violent, but the heat evolved is sufficient for the hydrogen to catch fire. (B) Very violent and exothermic and hydrogen catches fire. (C) Exothermic, but the heat evolved is not sufficient for the hydrogen to catch fire. (D) Slow and endothermic. 23. In which case/cases will the bulb glow considering that all other connections of electric circuit are complete and working ? 1 (A) Case (i) only (B) Case (ii) only (C) Cases (ii) and (iii) (D) Case (iii) only For Question number 24, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A student performs the following experiment in his school laboratory. List two observations to justify that in this experiment a chemical change has taken place. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The correct balanced chemical equation showing exothermic reaction in which natural gas burns in air is : (A) CH4 + O2 ⎯→⎯ CO2 + 2H2O (B) CH4 + 2O2 ⎯→⎯ 2CO2 + 2H2O + Energy (C) CH4 + 2O2 ⎯→⎯ CO2 + 2H2O (D) CH4 + 2O2 ⎯→⎯ CO2 + 2H2O + Energy', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) In common practice silver is recovered from silver nitrate solution by the use of copper metal. Name the type of reaction that takes place in this process and give the chemical equation of the reaction involved. (b) Name the method used for refining silver. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The most common method of extraction of metals from their oxide ores is : (A) Reduction with carbon (B) Reduction with hydrogen (C) Reduction with aluminium (D) Electrolytic reduction', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : In the given diagram, when electricity is passed through an aqueous solution of a common salt, a substance ‘Z’ is produced, along with the evolution of gases ‘X’ and ‘Y’. When a burning matchstick is brought near the gas ‘Y’, it burns with a pop sound, whereas ‘X’ is used for disinfecting drinking water. When ‘X’ is passed through slaked lime, an insoluble substance ‘A’ is produced. (a) Write the names of the gases ‘X’ and ‘Y’. 1 (b) Write the balanced chemical equation for the formation of substance ‘Z’. 1 (c) (i) What happens : 2 (I) If a drop of red litmus solution is added to the aqueous solution of substance ‘Z’ ? (II) If CO 2 gas is passed through ammoniacal solution of aqueous NaCl ? OR (c) (ii) Identify the substance ‘A’ and write the balanced chemical equation of the reaction which takes place in its preparation. 2 [ ] 31/2/1 Page 22 of 31', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Define the following terms : 3×1=3 (a) Corrosion (b) Rancidity (c) Double displacement reaction', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following is an example of a displacement reaction ? 1 (A) The combustion of natural gas (B) The reaction of a reactive metal with dilute acid (C) The electrolysis of water (D) The reaction of quick lime with water', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) doctors for supporting fractured bones in the right position. (i) Identify and . (ii) How can we obtain from ? 2 OR (b) Two solutions X and Y give red and blue colour respectively with universal indicator. (i) In which solution is the hydrogen ion concentration more than the other ? Justify your answer. (ii) If X and Y are mixed in proper amounts and the resultant mixture is tested with a universal indicator, it turns green. What is the nature of the salt formed ? Justify your answer. 2 24. When a strip of aluminium metal is dipped in a solution of ferrous sulphate, the pale green colour of the solution fades away. State the conclusion you can draw from this observation. Write chemical equation for the reaction that occurs in this case. 2 25. Give reason for the following : 2 (a) Fine hair and mucus are present in the nasal passage. (b) Rings of cartilage are present in the throat. 11-31(B) 18', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Consider the following organic compounds : C2H5CHO, CH3COOH, C2H5OH, CH3COCH3 (a) Which one of these compounds when heated at 443 K in excess conc. H2SO4 forms ethene as its major product ? State the role of conc. H2SO4 in the reaction. Also, write the chemical equation for the chemical reaction involved. (b) Give chemical equation for the chemical reaction when CH3COOH and C2H5OH react in the presence of conc. H2SO4. 3 31. (a) Name the (i) hormone released, and the (ii) gland which secretes it in human beings during scary situations. Explain how our body responds to enable it to deal with such situations. 3 OR (b) Name the plant growth hormone which is synthesized at the shoot tip. Explain why the shoot of a potted plant bends towards light coming from a window. 3 32. Is it possible that a trait gets inherited, but not expressed ? Give an example to justify your answer. 3 33. (a) What are decomposers ? Explain how the decomposers (i) keep the environment clean, and also (ii) replenish the soil nutrients. 3 OR (b) What stating reason to justify this statement. 3 11-31(B) 24 IÊS> K 34. (H$) (i) bå~mB© (l) VWm AZwàñW-H$mQ> joÌ\$b (A) Ho$ {H$gr EH$g_mZ YmpËdH$ MmbH$ Ho$ {bE à{VamoYH$Vm () Am¡a à{VamoY (R) Ho$ ~rM g§~§Y {b{IE & Bg g§~§Y H$m Cn`moJ H$aHo$ à{VamoYH$Vm H$m SI _mÌH$ àmá H$s{OE & (ii) 100 m bå~mB© Ho$ {H$gr YmVw Ho$ Vma H$m à{VamoY 20 h¡ & `{X Bg Vma H$s {ÌÁ`m 5 mm h¡, Vmo Vma Ho$ YmVw H$s à{VamoYH$Vm kmV H$s{OE & 5 AWdm (I) (i) à{VamoY R Ho$ {H$gr MmbH$ _| CËnÝZ D$î_m Ho$ {bE H$moB© ì`§OH$ àmá H$s{OE O~{H$ Bg MmbH$ go g_` t Ho$ {bE H$moB© ñWm`r Ymam I àdm{hV hmo ahr h¡ & (ii) H$moB© {dÚwV VmnH$ {OgH$m à{VamoY 10 h¡ {dÚwV _oÝg _| go 2 K§Q>o VH$ 5 A H$s ñWm`r Ymam bo ahm h¡ & Bg VmnH$ H$s e{º$ VWm BgHo$ Ûmam {H$bmodmQ> K§Q>m _| Cn^wº$ D$Om© kmV H$s{OE & 5 35. H$s à{H«$`m H$m Zm_ {b{IE Am¡a CgH$s ì`m»`m H$s{OE & EZmoS> Am¡a H¡$WmoS> na H«$_e: _wº$ hmoZo dmbr Xmo J¡gm| H$m Zm_ {b{IE & BZ_| àË`oH$ J¡g Ho$ Xmo-Xmo Cn`moJm| H$s gyMr ~ZmBE & 5 36. (H$) (i) H$m{`H$ àdY©Z {H$go H$hVo h¢ ? `h à{H«$`m b¢{JH$ h¡ AWdm Ab¢{JH$ ? AnZo CÎma H$s nwpîQ> H${OE & (ii) {H$gmZmo§ Ûmam Bg à{H«$`m/VH$ZrH$ H$m Cn`moJ H$aZo Ho$ VrZ bm^m| H$s gyMr ~ZmBE & (iii) Bg VH$ZrH$ Ûmam {ZåZ{b{IV _| go àmá {H$E Om gH$Zo dmbo Xmo nm¡Yo Mw{ZE : 5 Ho$bm, nnrVm, M_obr, gagm| AWdm 11-31(B) 25 P.T.O.', 'short_answer', 3, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) Draw two isomeric structures of Butene (C4H8). (ii) Name the following compounds : (I) lH HHH – C – C – C – C HHH   (II) H H H – C – C – C – C – HH OH H H       (iii) Write the chemical equations for the following reactions. Mention one essential condition each for these reactions to take place. (I) Ethanol undergoes complete oxidation (II) Propene undergoes hydrogenation (III) Ethanoic acid reacts with ethanol 5 OR (b) (i) A carbon compound X is a good solvent. On reaction with sodium, X forms two products Y and Z. Z is used to convert vegetable oil into vegetable ghee. Identify and name X, Y and Z. Also write the equation of reaction of X with sodium to justify your answer.', 'short_answer', 5, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What happens when : (write balanced chemical equation) 2 (a) Lead nitrate is thermally decomposed, (b) Natural gas burns in oxygen (or air) ?', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Translate the following statements into chemical equations an d then balance them : 2 (a) Nitric acid reacts with calcium hydroxide to form calcium nitrate and water. (b) Sodium chloride reacts with silver nitrate to form silver chloride and sodium nitrate.', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) Draw electron dot structure of chlorine molecule. (Atomic Number of Chlorine = 17) (ii) What happens when chlorine reacts with methane in the presence of sunlight ? Write the name of the reaction. A B C', 'short_answer', 5, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : The m etals high up in the reactivity series cannot be obtained from their compounds by heating with carbon. Reason (R) : Displacement reactions can also be used to obtain metal.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Balance the following chemical equations : 2 (a) 2 2 6 12 6 2 2Chlorophyll OunlightSCO + H O C H O + O + H⎯⎯⎯⎯⎯⎯⎯ → (b) Pb(NO3)2 ⎯⎯⎯⎯ →Heat PbO + NO2 + O2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the experimental set -up given in the figure and answer the following questions : (a) Identify these metals from the following which can be used as ‘‘metal sample’’ in the given set-up : Aluminium, Copper, Iron, Lead, Silver (b) Write balanced chemical equations for the reaction in each case. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) What is a reactivity series of ele ments ? How is it developed ? Arrange the following elements as they are arranged in the reactivity series : Aluminum, Calcium, Copper, Lead (b) Write balanced chemical equation to show the reaction of iron (III) oxide (Fe2O3) with aluminium. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'How is a double displacement reaction different from a displacement reaction ? Explain giving example in the form of balanced chemical equations. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A chemical compound ‘X’ is used to bleach washed clothes in laundry as well as to make drinking water free from germs. Identify ‘X’. How is this compound represented ? Write the method of its preparation along with the chemical equation for the reaction that occurs. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'State the change that is observed when a China dish containing copper powder is heated over the flame of a burner. Name the phenomenon responsible for the change and write balanced equation for the chemical reaction that occurs. How is this reaction different from the reaction that occurs when copper wares kept in open air slowly lose their shiny brown surface and gain a coat ? Write chemical name of the coating and state its colour. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write the balanced chemical equations involved in the preparation of 2 (a) Bleaching powder (b) Baking soda', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Answer the following : 3 (a) Identify the substance oxidized and the substance reduced in the following reaction : 4Na + O2  2Na2O (b) What type of reaction occurs when Lead (II) nitrate solution is mixed with potassium iodide solution ? (c) Why is silver chloride stored in dark coloured bottles ? { } 31/4/2 Page 20 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write the balanced chemical equation for the preparation of : 2 (a) Sodium hydroxide by electrolysis of brine solution (b) Sodium carbonate', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Given below is a diagrammatic representation of cross-section of a leaf : (i) Identify ‘P’ in the given diagram and write down its role in plants. (ii) Write down a balanced equation of process of photo-synthesis. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Galvanization is a process of coating iron articles with a thin layer of zinc to prevent iron from rusting. The iron is protected even if the zinc coating is scratched and iron is exposed. Which of the following is/are true about how zinc prevents the rusting of iron ? 1 (P) A galvanised iron article does not undergo oxidation. (Q) The zinc coating prevents contact of iron with air. (R) Zinc provides continuous protection to iron from rusting. (A) Only (P) (B) Only (Q) (C) (Q) and (R) (D) (P) and (Q) { } 31/5/3 Page 18 of 32', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) (a) Give the chemical name and formula of Plaster of Paris. 3 (b) Write the chemical equation of its preparation. (c) Give any two uses of it. OR { } 31/5/3 Page 20 of 32 (B) (a)           (b)   : (i)                  (ii)         ', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following is not an exothermic reaction ? 1 (A) Decomposition of vegetable matter into compost (B) Reaction of water with quick lime (C) Respiration process taking place in the cells of our body (D) Decomposition of calcium carbonate to calcium oxide and carbon dioxide', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Electrolysis of water is an example of : 1 (A) thermal decomposition reaction (B) photochemical decomposition reaction (C) double-displacement reaction (D) electrolytic decomposition reaction [ ] 31(B) Page 14 of 27', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) During electrolysis of brine solution, a gas (A) is liberated at the anode. When the gas (A) is passed through slaked lime, a compound (B) is formed which is used for disinfecting drinking water. (i) Write the names of (A) and (B). (ii) Write the chemical equation involved. (iii) Write one use of compound (B) other than disinfecting water. 31=3 OR (b) Define the following terms with an example : 31=3 (i) Olfactory indicators (ii) Water of crystallisation (iii) Basic salt [ ] 31(B) Page 18 of 27', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : One student was comparing the reactivity of different metals for his science project. He added iron filings in four test tubes A, B, C and D containing aqueous solutions of ZnSO4, CuSO4, FeSO4 and Al2(SO4)3. (i) In which of the test tubes will he observe the reaction to be the most vigorous and why ? (ii) Write a balanced equation for the reaction involved. 1+1=2 [ ] 31/2/1 Page 18 of 31', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Answer the following : 1+1=2 (a) Why should chemical equations be balanced ? (b) Name the oxidising and reducing agent in the following equation : 4Na + O2 ⎯⎯ → 2Na2O', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Write balanced equations for the reactions of the following : 2×1=2 (a) Iron with steam (b) Calcium with water', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either (a) or (b) : (a) A carbon compound ‘P’ of molecular formula C 2H6O is found to be neutral when tested with red and blue litmus. A gas that burns with a pop sound is produced when sodium metal reacts with compound ‘P’. (i) Identify the compound ‘P’. (ii) The carbon compound ‘P’ is heated with conc. H 2SO4 at 443 K to produce compound ‘Q’. (I) Write the chemical equation for the reaction. (II) What is the role of conc. H2SO4 in this reaction ? (iii) What is likely to be observed on heating compound ‘P’ with ethanoic acid with an acid as a catalyst ? Write the chemical equation for the reaction. 1+2+2=5 OR [ ] 31/2/3 Page 22 of 31 CH3COOC2H5 + NaOH ⎯⎯ →', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '2 g of green coloured crystals of ferrous sulphate are heated in a dry boiling tube. Name the type of chemical reaction taking place. Write the balanced chemical equation for the reaction. Is this an exothermic or an endothermic reaction ? 3', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give reasons : 3×1=3 (i) Potato chips manufacturers fill the packet of chips with nitrogen gas. (ii) Respiration is an exothermic reaction. (iii) Silver chloride is stored in dark coloured bottles.', 'short_answer', 2, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 1 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: Heredity and Evolution (Seq: 8)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 8 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'If pea plants with round and green seeds (RRyy) are crossed with pea plants having wrinkled and yellow seeds (rrYY), the seeds developed by the plants of F1 generation will be : (A) 50% round and green (B) 75% wrinkled and green (C) 100% round and yellow (D) 75% wrinkled and yellow', 'short_answer', 1, '2025, 2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : A human child bears all the basic features of human beings. Reason (R) : It looks exactly like its parents, showing very little variations.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A pure pea plant having round (R), yellow (Y) seeds is crossed with another pure pea plant having wrinkled (r), green (y) seeds. Subsequently F1 progeny is self-pollinated to obtain F2 progeny. (a) What do the seeds of F1 generation look like ? (b) Give the possible combinations of traits in seeds of F2 generation. Also give their ratio. (c) State the reason of obtaining seeds of new combination of traits in F2 generation. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Two pea plants, one with round green seeds (RRyy) and another with wrinkled yellow (rrYY) seeds were crossed with each other which produced F1 progeny that have only round yellow (RrYy) seeds. When F1 plants are self-pollinated, the F2 progeny will have which new combination of characters, as compared to the parents : 1 (i) Round, yellow (ii) Round, green (iii) Wrinkled, yellow (iv) Wrinkled, green Correct options are : (A) (i) and (ii) (B) (i) and (iv) (C) (ii) and (iv) (D) (i) and (iii) Question Nos. 8 & 9 consists of two statements : Assertion (A) and Reason (R). Answer these questions selecting the appropriate option from (A), (B), (C) and (D) given below : (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Giving two examples, justify the statement that the sex of the offspring in all animals is not always genetically determined. (b) Differentiate between the sex chromosomes of male and female human beings. 3 [ ] 31/2/3 Page 10 of 31', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The lowest part of the ear called earlobe, is closely attached to the side of the head in some of us (Figure ‘X’), and not in others, called free earlobe (Figure ‘Y’). Attached and free earlobes are two variants found in human populations. The gene for free earlobe is dominant over attached earlobes. 3 Figure ‘X’ Figure ‘Y’ (a) A man with attached earlobes marries a woman having free earlobes. 50% of their children have free earlobes and 50% have attached earlobes. Explain the inheritance of this trait and write the trait combinations of the progeny. (b) Write the gene combinations of the father and the mother in the above case.', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Explain how the proteins control the ‘characteristics’ in an organism with the help of an example of ‘tallness’ trait in pea plant. (b) Name the section of DNA that controls the ‘characteristics’ in an organism. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Variations are not often seen in off-springs produced by asexual reproduction. 1 Reason (R) : DNA molecule generated by replication is not similar to the original DNA. { } 31/4/1 Page 10 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Explain why food chains generally consist of three or four steps. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When a human egg is fertilized by a sperm having ‘Y’ chromosome, the zygote has the following combination of chromosomes : 1 (A) 44 + XX (B) 22 + XX (C) 44 + XY (D) 22 + XY', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Bacteria that can withstand heat have better chances of survival in a heat wave. 1 Reason (R) : Accumulation of variations in a species increases the chances of its survival in changing environment. { } 31/5/3 Page 8 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Based on Mendel’s experiment show the cross between round, yellow seeds of pea plant (RRYY) with wrinkled and green seeds of pea plant (rryy) upto F2 generation. Write the number of seeds/plants with following genetic (Genotype) makeup in F2 generation : 3 (i) RRYY (ii) rryy', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Do all variations in a species have equal chances of surviving in the environment in which they find themselves ? Explain. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Show the cross and observations made by Mendel when he crossed pure tall pea plant with a pure short pea plant to get F1 progeny. 3', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Name any two pairs of contrasting characters other than height used by Mendel in his experiments. (b) On crossing a tall and a short pea plant, Mendel obtained F1 generation in which all pea plants were tall. (i) Are these plants exactly the same as tall plants of the parent generation ? Write their gene combination. (ii) Give the percentage of short plants obtained in F2 generation when F1 plants are self-pollinated. (iii) In what ratio would you find TT and Tt in F2 generation ? 3 31. Write the common name and the chemical name of the compound CaSO4 . 12 H2O. Write the method of its preparation. Give chemical equation for the reaction, when water reacts with CaSO4 . 12 H2O. 3 32. (a) Explain with the help of a labelled diagram, the process of reproduction in Hydra by budding. Name the cells used for reproduction in this process. 3 OR (b) List two roles of each of the following in human reproductive system : 3 (i) Seminal vesicles and prostate gland (ii) Oviduct (iii) Testis 33. Differentiate between biodegradable and non-biodegradable wastes. We generate a lot of non-biodegradable wastes in our daily life. Write any two harmful effects caused by these wastes if not disposed off properly. 3 14-31/4/3 18 IÊS> K 34 36 34. (a) (i) {dH${gV hþAm h¡ ? O~ Amn AMmZH$ {H$gr J_© dñVw H$mo ñne© H$aVo h¢, Vmo hmoZo dmbr KQ>ZmAm| H$mo H«$_dma aoIm§{H$V H$s{OE & (ii) V§{ÌH$m V§Ì Ho$ Cg ^mJ H$m Zm_ {b{IE Omo Ho$ÝÐr` V§{ÌH$m V§Ì VWm eara Ho$ AÝ` ^mJm| Ho$ ~rM g§Mma _| ghm`Vm H$aVm h¡ & Bg V§Ì Ho$ Xmo Ad`d H$m¡Z-go h¢ ? 5 AWdm (b) (i) {H$gr CÔrnZ H$s AZw{H«$`m _| Nw>B©-_wB© _waPm OmVr h¢ & CÔrnZ H$m Zm_ {b{IE Am¡a BVZr Vrd« J{V H$m H$maU ? (ii) nm¡Ym| _| JwéËdmZwdV©Z H$s n[a^mfm Xr{OE & YZmË_H$ Am¡a G$UmË_H$ ? àË`oH$ àH$ma H$m EH$-EH$ CXmhaU Xr{OE & 5 35. (a) amgm`{ZH$ A{^{H«$`m {H$go H$hVo h¢ ? `h Xem©Zo Ho$ {bE {H$ amgm`{ZH$ A{^{H«$`m hþB© h¡ {Og_| (i) a§J _| n[adV©Z, VWm (ii) Vmn _| n[adV©Z hþAm h¡, àË`oH$ àH$aU Ho$ {bE EH$-EH$ {H«$`mH$bmn H$m dU©Z H$s{OE & 5 AWdm 14-31/4/3 19 P.T.O.', 'short_answer', 3, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) What are chromosomes ? (b) Explain in brief how stability of DNA content of a species is ensured in sexually reproducing organisms ? 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In one of Mendalian experiments, when F 1 generation pea plants with round yellow seeds were self -pollinated, pea seeds with the following combinations were obtained in F2 generation : Seeds Round yellow Round green Wrinkled yellow Wrinkled green Number 800 275 268 90 Analyse the result and describe the mechanism of inheritance of traits which explains the above results. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) How many chromosomes are present in human beings ? Out of these how many are sex chromosomes ? (b) Explain how, in sexually reproducing organisms, the number of chromosomes in the progeny is maintained. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A pure pea plant bearing terminal flowers was cross -pollinated with a pure plant having axillary flowers. In F 1 generation, plants with axial flowers only were obtained. F 1 generation plants are self -pollinated and F2 generation is obtained. 3 (a) Work out the pattern of inheritance in this case. (b) What will be the ratio of plants obtained in F2 generation ?', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '‘‘Sex of the children is determined by type of sex chromosome which they inherit from their father.’’ Justify the statement. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Use the following information for Pea plants : 3 Dominant allele for tall plants – T Recessive allele for short plants – t Dominant allele for purple flowers – P Recessive allele for white flowers – p (a) Perform a cross between pure plant dominant for both the traits with another plant which is recessive for both the traits and work out the progeny upto F2 generation. (b) What is the probability of obtaining tall plants with white flowers in F2 progeny ?', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When a human egg is fertilized by a sperm having ‘Y’ chromosome, the zygote has the following combination of chromosomes : 1 (A) 44 + XX (B) 22 + XX (C) 44 + XY (D) 22 + XY Question No. 8 & 9 consists of two statements – Assertion (A) and Reason (R). Answer these questions selecting the appropriate option from (A), (B), (C) and (D) given below : (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) Electrical impulses are an excellent means to respond to stimuli in animal bodies. Lis t any two limitations to the use of electrical impulses. 2 OR (b) Explain how the pea plant climbs up the support by means of tendrils. 2 [ ] 31(B) Page 10 of 27', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A tall pea plant (TT) is crossed with a dwarf pea plant (tt). Find out F1 and F2 progeny. Also mention the processes that lead to the formation of F1 and F2 progeny during the cross. 3', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '“Variation is useful for the survival of species over time.” Explain this statement with the help of an example. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Suggest two ways of dealing with waste generated at home. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The number of chromosomes in parents and offspring of a particular species undergoing sexual reproduction remains constant due to : 1 (A) doubling of chromosomes after zygote formation. (B) halving of chromosomes after zygote formation. (C) doubling of chromosomes before gamete formation. (D) halving of chromosomes at the time of gamete formation. For Questions number 8 and 9, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to these questions from the codes (A), (B), (C) and ( D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 1, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 8 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: The Human Eye and the Colorful World (Seq: 10)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 10 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The vision defect which arises due to gradual weakening of the ciliary muscles and diminishing flexibility of eye lens is : 1 (A) Myopia (B) Hypermetropia (C) Presbyopia (D) Myopia and hypermetropia both Direction : For question number 32, two statements are given – one labelled as Assertion (A) and other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) & (D) as given below : 1 (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A person allowed a narrow beam of white light from the sun to enter a dark room through a small aperture and placed a glass prism in its path in such a manner that the beam falls on the face AB of the prism as shown in the figure. A screen S is placed on the other side of the prism, facing AC. On turning the prism slowly, a beautiful band of colours is obtained on the screen. It is the spectrum of sunlight. (a) Name the phenomenon due to which a prism splits the incident white light into a band of colours. 1 (b) State the reason of getting a band of seven colours in the above case. 1 (c) (i) Explain with the help of a labelled ray diagram, an experimental arrangement to show the recombination of the spectrum of white light. 2 OR (c) (ii) Draw a labelled ray diagram to show the formation of a rainbow. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Select a pair of bisexual flowers from the following : (A) Papaya and mustard (B) Hibiscus and mustard (C) Hibiscus and papaya (D) Hibiscus and watermelon', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The pair of eye parts responsible for admitting different amount of light in to the eyes is 1 (A) Iris and pupil (B) Ciliary muscles and pupil (C) Retina and Iris (D) Ciliary muscles and cornea Direction : For question number 32, two statements are given – one labelled as Assertion (A) and other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) & (D) as given below : 1 (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of the Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What is scattering of light ? How is scattering of light different from reflection of light ? Explain. 3 [ ] 31/2/1 Page 28 of 31', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Observe the figure given below and identify the incorrect step for the activity set-up : 1 (I) (II) (A) Both plants are kept in the dark room for three days before placing them in separate glass jars. (B) Both plants are covered with separate wooden bell-jars. (C) Use vaseline to seal the bottom of the jars with the glass plates. (D) Both potted plants were kept in sunlight for a few hours before the iodine test for the presence of starch. Bell-jar Watch-glass containing potassium hydroxide [ ] 31/3/2 Page 4 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Angle of deviation in refraction of light through a glass prism is the : 1 (A) Angle between the normal at the face on the emerging side of the prism and the emergent ray. (B) Angle between the normal at the face on the emerging side of the prism and the incident ray. (C) Angle between the incident ray and the refracted ray. (D) Angle between the directions of incident ray and emergent ray. For Question number 32, two statements are given — one labelled as Assertion (A) and the other labelled as Reason (R). Select the correct answer to this question from the codes (A), (B), (C) and (D) as given below. (A) Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A). (B) Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A). (C) Assertion (A) is true, but Reason (R) is false. (D) Assertion (A) is false, but Reason (R) is true.', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A thin beam of white light falls on a face of a glass prism and a spectrum is obtained on a screen. Which of the following options is the correct sequence of colours from top to bottom on the screen ? 1 (A) Red, Green, Yellow, Violet, Blue (B) Red, Yellow, Green, Blue, Violet (C) Violet, Blue, Green, Yellow, Red (D) Violet, Red, Green, Yellow, Blue [ ] 31/2/3 Page 24 of 31', 'short_answer', 3, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the given diagram and answer the questions that follow : (a) Write the name of the eye defect shown in the diagram . Where is the image formed in this eye defect with respect to the retina of the eye ? [ ] 31/3/1 Page 26 of 31', 'short_answer', 5, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A 2000 W heater has a resistance of about 25 , whereas a 100 W bulb has a resistance of 500 . When 220 V is applied on these, then which of the two (a) can carry large currents ? (b) may be used with an electrical circuit having 1·0 A rating ? (c) will be fitted with a 15 A electric board and not with a 5 A electric board ? Justify your answer in each case. 3 33. (a) Study the diagram given below and answer the questions that follow : (i) Name the defect of vision depicted in this diagram stating the part of the eye responsible for this condition. (ii) List two causes of this defect. (iii) Name the type of lens used to correct this defect and state its role in this case. 3 OR (b) What is dispersion of white light ? State its cause. Draw a diagram to show dispersion of a beam of white light by a glass prism. 3 15-31/5/3 18 IÊS> K 34 36 34. (a) `h {ZX{e©V H$aZo Ho$ {bE {H$gr à`moJ H$s A{^H$ënZm H$s{OE {H$ àH$me-g§íbofU {b{IE & 5 AWdm (b) (i) (I) (II) D$na Xem©B© JB© àm`mo{JH$ ì`dñWm _| AmaoI (I) _| dm`w_§S>br` dm`w H$mo {nMH$mar go MyZo Ho$ nmZr _| àdm{hV {H$`m J`m h¡ O~{H$ AmaoI (II) _| {Z:ídmg H$s dm`w H$mo MyZo Ho$ nmZr go àdm{hV {H$`m J`m h¡ & XmoZm| naIZ{b`m| Ho$ MyZo Ho$ nmZr H$mo Xÿ{Y`m hmoZo _| {^Þ-{^Þ g_` bJoJm & H$maU Xr{OE & (ii) Iwbo a§Y« Ho$ {N>Ð H$m AmaoI It{ME Am¡a Cg na (I) Ûma H$mo{eH$mE±, Am¡a (II) H$mo Zm_m§{H$V H$s{OE & a§Y«m| Ûmam {Zînm{XV$ Xmo H$m`m] H$m CëboI H$s{OE & 5 15-31/5/3 19 P.T.O.', 'short_answer', 3, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The white light entering a glass prism, gets split into its constituent colours. It is observed that : (A) Red light deviates the most. (B) Violet light deviates the least. (C) Yellow light deviates more than the blue light. (D) Green light deviates more than the orange light.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In the human eye, most of the refraction for the light rays entering the eye occurs at the surface of : (A) Cornea (B) Crystalline lens (C) Pupil (D) Aqueous humor', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The part of the human eye which can modify the curvature of the eye lens to some extent is : (A) Pupil (B) Cornea (C) Ciliary muscles (D) Aqueous humour', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What is a rainbow ? Draw a labelled diagram to show its formation. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Explain the Tyndall effect with the help of one suitable example. (b) What happens when a white light gets scattered from (i) very fine particles (ii) larger size particles ? 3', 'short_answer', 3, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 10 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: Control and Coordination (Seq: 6)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 6 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The plant hormone whose concentration stimulates the cel ls to grow longer on the side of the shoot which is away from light is : (A) Cytokinins (B) Gibberellins (C) Adrenaline (D) Auxins', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The plant hormone present in greater concentration in the areas of rapidly dividing cells is : (A) Auxin (B) Cytokinins (C) Gibberellins (D) Abscisic acid', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A person while climbing up a rocky hill comes into a panic state and fear. His body starts reacting in a ‘‘flight -or-flight’’ condition to adjust to the dangerous and stressful situation. Based on the above facts, answer the questions that follow. (a) (i) Name the hormone secreted in the blood of the person in this situation. 2 OR (a) (ii) Name the source gland of the hormone secreted in this condition. 2 (b) State any two responses in the body of the person as a result of the secretion of this hormone. 1 (c) How does the action of the chemical signal in terms of hormones differ from the electrical impulses via nerve cells ? 1', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Plants exhibit movements in response to various environmental stimuli to adopt and survive in their surroundings. These movements, influenced by external factors such as light, gravity, water and chemicals are regulated by specific plant hormones. For example, the differential growth of plant parts allows them to bend, grow or orient themselves in particular directions. Roots and shoots often show contrasting response to the same stimulus, highlighting the complex mechanisms involved in plant growth and development. 4 (a) Why is hydrotropism essential for plants ? (b) What role does auxin play in the growth of plants ? (c) Differentiate between movement shown by the sensitive plant and tropic movement by plants (Two points). OR (c) How does movement of roots differ from that of shoots in response to gravity and light ?', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) “The timing and the amount of hormone secreted by a gland are regulated in the human body.” Justify this statement with the help of an example. 2 OR (b) Electrical impulse is an excellent means to transmit information in the animal body, but there are some limitations to the use of electrical impulses. State any two limitations. 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : A middle -aged person is facing some cognitive changes in himself. His early symptoms included mild forgetfulness. For example, forgetting where he left his mobile or failing to find words to complete his sentences. He was facing problems in driving a car, climbing up and down the stairs, inserting a plug into an outlet. He slowly developed a sad mood and anxiety. (a) What are voluntary actions ? 1 (b) Which part of the brain is responsible for precision of voluntary actions ? 1 (c) (i) Explain the role of the medulla. 2 OR (c) (ii) How do the animal muscles move ? 2', 'short_answer', 2, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Define hormone. (b) “Hormones should be secreted in precise quantities. We have a feedback mechanism through which this is done.” With the help of an example justify the statement. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Following are the statements about the different parts of the brain. Select the correct statements. 1 (i) The thinking part of the brain is the forebrain. (ii) Centres for smell, hearing, memory, sight are located in forebrain. (iii) Salivation, vomiting, blood pressure are controlled by medulla in the hind brain. (iv) Cerebellum does not control the posture and balance of the body. (A) (i), (ii) and (iii) (B) (ii), (iii) and (iv) (C) (i), (ii) and (iv) (D) (i), (iii) and (iv) { } 31/4/1 Page 8 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Give reasons for the following : 3 (a) Adrenal gland is known as the stress gland of the body. (b) Prenatal sex determination is banned in India. (c) Vegetative propagation is advantageous in some plants. { } 31/4/1 Page 12 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) Observe the given figure and identify the labelled parts P, Q, R and S : 2 OR (B) Which of the plant hormones are responsible for the following processes ? (i) Promote cell division (ii) Inhibition of growth (iii) Detection of light (iv) Wilting of leaves { } 31/5/2 Page 10 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In a synapse, the chemical signal is transmitted from : 1 (A) Dendritic end of one neuron to axonal end of another neuron. (B) Axon to cell body of the same neuron. (C) Cell body to axonal end of the same neuron. (D) Axonal end of one neuron to dendritic end of another neuron. Bell-jar Watch-glass containing potassium hydroxide [ ] 31/3/1 Page 6 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The incorrect statement about placenta is : (A) It is a disc embedded in the uterine wall. (B) the tissue. (C) It has a very small surface area for glucose and oxygen to pass from mother to the embryo. (D) 3. another reaction, the mixture appears pink again. The respective changes in the nature of the solution are from : (A) acidic basic basic (B) basic acidic acidic (C) acidic basic acidic (D) basic acidic basic 4. unconsciously : (A) Receptors in skin Motor neuron Relay neuron Sensory neuron Effector muscle in arm (B) Receptors in skin Relay neuron Sensory neuron Motor neuron Effector muscle in arm (C) Receptors in skin Sensory neuron Relay neuron Motor neuron Effector muscle in arm (D) Receptors in skin Sensory neuron Effector muscle in arm Motor neuron Relay neuron 15-31/5/3 6', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'During respiration, exchange of gases occurs in : (A) Alveoli (B) Bronchi (C) Larynx (D) Trachea 13. In a nerve cell (neuron), the conversion of electrical signal to chemical signal occurs in/at : (A) dendritic end (B) cell body (C) axon (D) axonal end 14. The part of a seed that stores food, the future root and the future shoot respectively are : (A) Plumule, radicle, cotyledon (B) Cotyledon, plumule, radicle (C) Cotyledon, radicle, plumule (D) Radicle, plumule, cotyledon 15. Two pea plants, one round green (RRyy) seeds and another with wrinkled yellow (rrYY) seeds produce F1 progeny that has round yellow (RrYy) seeds. If the F1 progeny plants are selfed, then the minimum number of plants of the F2 progeny will have the following observable characters : (A) Wrinkled green (B) Wrinkled yellow (C) Round green (D) Round yellow 11-31(B) 12', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Plants have neither a nervous system nor muscles, even then they respond to stimuli. For example, the leaves of chhui-mui (touch-me-not) plant when touched begin to fold up and droop. (a) How is the information communicated in ‘‘touch-me-not’’ plants ? (b) What enables the plant cells to bring out the observable response ? (c) Differentiate the movement mentioned above from the movement of tendrils in a pea plant. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Name the glands that secrete : (i) Adrenaline (ii) Thyroxin (b) Explain with example how the timing and amount of hormone released are regulated in the human body. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A hormone ‘X’ is secreted in blood when a person is under scary situation. (a) Identify the hormone ‘X’ and the gland that secretes it. (b) Explain its role in dealing with scary or emergency situations. 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Name the parts of hind -brain of the human brain. Which part of the hind-brain controls involuntary actions such as blood pressure and salivation ? 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the given diagram and write the type of movement exhibited by : 2 (a) Root, and (b) Shoot, mentioning the stimulus in each case.', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) What is meant by reflex arc ? Where are they formed in the human body ? (b) Why have reflex arcs evolved in animals ? 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A person is making a list to purchase few things from a nearby market. Explain how the fore -brain plays an important role in performing this activity. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The part of the brain which maintains the posture and balance of the body is : (A) Pons (B) Cerebrum (C) Cerebellum (D) Medulla', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The part of the hind -brain controlling involuntary actions such as salivation and vomiting in humans is : (A) Cerebellum (B) Cerebrum (C) Pons (D) Medulla', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A person has to keep reading material much beyond 25 cm (say at 50 cm) from the eye for comfortable reading. Name the defect of vision he is suffering from. List two causes responsible for arising of this defect. Draw a labelled diagram showing correction of this defect using eye-glasses. Are these glasses convergent or divergent of light ? 3', 'short_answer', 3, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Identify the endocrine gland that regulates the growth of human body. 1 (A) Pituitary gland (B) Thyroid gland (C) Pancreas (D) Adrenal gland', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Mention the gland and the hormone secreted by it in scary situation in human beings. 3 (b) Write two responses that enable the human body to be ready to deal with such situation. { } 31/5/2 Page 12 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Select the gland that secretes digestive enzymes as well as hormones. 1 (A) Thyroid (B) Pituitary (C) Pancreas (D) Adrenal [ ] 31(B) Page 4 of 27', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Read the following passage and answer the questions that follow : In many animals including humans, adrenaline hormone prepares for scary situation. The target organs on which it acts include the heart. The blood to the digestive system and skin is reduced, but the heart beats faster and breathing rate also increases. All these responses together enable the animal body to deal with such scary situation. (a) Attempt either subpart (i) or (ii) : (i) Name the gland that secretes adrenaline hormone. How does it enable the animal body to deal with a scary situation ? 2 OR (ii) Why is the blood to the digestive system and skin reduced ? 2 (b) Why is it important for us to have iodised salt in our diet ? 1 (c) Why does a doctor advise some persons to take less sugar in their diet ? 1 [ ] 31(B) Page 12 of 27', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Walking in a straight line and riding a bicycle are activities which are possible due to coordination of which part of the brain ? 1 (Part of the Brain) (Name of the area of the Brain) (A) Fore-Brain Cerebrum (B) Mid-Brain Cerebellum (C) Hind-Brain Cerebellum (D) Hind-Brain Medulla', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'What are hormones ? State any one function of the following hormones : 2 (i) Insulin (ii) Adrenaline', 'short_answer', 1, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 6 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: How do Organisms Reproduce? (Seq: 7)
-    SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 7 LIMIT 1;
-    IF v_chapter_id IS NOT NULL THEN
-        DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';
-        INSERT INTO quizzes (chapter_id, title, quiz_kind, total_marks)
-        VALUES (v_chapter_id, 'Previous Years Board Questions', 'pyq_practice', 0)
-        RETURNING id INTO v_quiz_id;
-
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The correct/true statement(s) for a bisexual flower is/are : (i) They possess both stamen and pistil. (ii) They possess either stamen or pistil. (iii) They exhibit either self-pollination or cross-pollination. (iv) They cannot produce fruits on their own. (A) (i) only (B) (iv) only (C) (i) and (iii) (D) (i) and (iv)', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Draw labelled diagrams to show different stages of budding in Hydra. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) Write the functions of the following parts of human female reproductive system : (I) Ovary (II) Fallopian tube (III) Uterus (ii) State briefly two contraceptive methods used by human males. 5 OR (b) (i) Differentiate between self-pollination and cross-pollination. (ii) Identify A, B and C in the diagram given below and write one function of each. 5 A B C', 'short_answer', 5, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The number of chromosomes in a cell division is halved. This kind of cell division is observed in : (A) Only testis (B) Only ovary (C) Ovary and testis both (D) All cells of the body', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : A mango seed will germinate to form a mango tree. Reason (R) : Heredity determines the process by which traits and characteristics are reliably inherited from parents to offspring.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) Write one function each of the following, in a seed : 2 (i) Seed coat (ii) Cotyledon (iii) Radicle (iv) Plumule OR (b) Write the main steps to culture yeast in the laboratory. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'When a girl is born, the ovaries already contain thousands of immature eggs. On reaching puberty, some of these start maturing. One matured egg is released every month by one of the ovaries. The two oviducts unite into an elastic bag-like structure known as uterus. (a) Write the site of fertilization in human female. 1 (b) How does the uterus prepare itself to receive and nurture the growing embryo ? Explain. 1 (c) (i) What happens when the egg is not fertilized ? 2 OR (c) (ii) How does the developing embryo get nutrition from the mother’s blood ? Explain. 2', 'short_answer', 2, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Match Column-I with Column -II and select the correct option from the choices provided. Column-I Column-II a. Site of fertilisation of egg with the sperm (i) Vagina b. Site of implantation of embryo (ii) Uterus c. Site of entry of sperm into the female reproductive tract (iii) Oviduct d. Site through which the waste materials generated by the developing embryo are removed (iv) Placenta (v) Cervix (A) a-(ii), b-(i), c-(v), d-(iv) (B) a-(iii), b-(i), c-(v), d-(iv) (C) a-(iv), b-(ii), c-(iii), d-(i) (D) a-(iii), b-(ii), c-(i), d-(iv)', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'If the part ‘P’ of the flower is removed, which of the following processes will not take place ? 1 (A) Formation of pollens (B) Formation of flower (C) Formation of fruit (D) Formation of seed { } 31/4/1 Page 6 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'In human beings, the implantation of fertilised egg takes place in which part of female reproductive system ? 1 (A) Oviduct (B) Cervix (C) Uterus (D) Vagina { } 31/5/1 Page 6 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(A) (i) In an angiospermic flower, fertilization is said to take place when male gametes carried in the pollen tube fuse with the female gamete, present in the embryo sac. This results in lot of changes in different parts of the flower. State the changes taking place in the following structures of flower post fertilization : 5 (a) Zygote (b) Ovule (c) Ovary (d) Sepals (ii) Define germination. OR (B) (i) Sugarcane does not produce seeds so name the process through which it will be able to reproduce. (ii) List any two advantages of this method. (iii) Besides sugarcane, give two more examples of plants that reproduce by this method. (iv) Why regeneration is not possible in all the types of animals ? { } 31/5/1 Page 14 of 32  –   ', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Spirogyra, despite being a multi -cellular organism, still shows a simple reproductive method. Select the correct option with regard to reproduction in Spirogyra : 1 (A) Asexual reproduction by division of cells into two cells (B) Sexual reproduction by division of cells into many cells (C) Asexual reproduction by breaking up of Spirogyra filaments into smaller parts (D) Sexual reproduction by the formation of gametes after meiosis of cells of filaments followed by fusion of male and female gametes [ ] 31/2/2 Page 4 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either (a) or (b) : (a) Observe the given diagram and answer the questions that follow : 5 (i) Give the name of the structure and type of reproduction shown in the above diagram. (ii) State one advantage and one disadvantage of the above mentioned method of reproduction. (iii) Give reason : Asexual reproduction lacks genetic variation. (iv) Why have higher organisms resorted to sexual reproduction in spite of its complexity ? OR (b) Observe the given diagram and answer the questions that follow : 5 (i) Give the name and type of reproduction shown in the above diagram. (ii) Comment on the processes taking place in stage P. (iii) Name an organism which reproduces by the above mentioned method. (iv) Name the method that can be used to raise plants that have lost their capacity to produce seeds. List any two advantages of growing plants by such a method. Nucleus Cytoplasm Cell Cyst (Protective wall) P [ ] 31/3/1 Page 14 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, '(a) (i) Identify the parts ‘X’ and ‘Y’ in the figure given below : (ii) Name the yellowish coloured structures produced by the part labelled as ‘Y’. (iii) Write the name of the process by which these are transferred to the part labelled as ‘X’. (iv) Explain the process of seed formation in a flowering plant. 5 OR (b) (i) Name the type of asexual mode of reproduction shown in the given figure. (a) (b) (c) (d) (e) (f) (ii) Identify the unicellular organism in the diagram. (iii) List any two advantages of asexual reproduction over sexual reproduction. (iv) Name and explain any one mode of asexual reproduction observed in Hydra. 5', 'short_answer', 5, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Study the given table and answer the following questions : 3 Parents F1 F 2 A pea plant with red flowers was crossed with a pea plant with white flowers. 30 seeds were sown and all bore plants with red flowers. 44 seeds were sown, 33 plants bore red flowers and 11 plants bore white flowers. (a) Depict the information given in the table in the form of a cross. (b) Deduce the F 2 phenotypic ratio/F2 ratio showing external look as well as genotypic /genetic makeup, ratio. { } 31/4/2 Page 12 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'The carbohydrates, which are not used immediately in plants, are stored in the form of ‘a’, which serves as an internal energy reserve. What does ‘a’ stand for ? 1 (A) Starch (B) Sugar (C) Fat (D) Protein [ ] 31/2/3 Page 4 of 31', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Sense organ in which olfactory receptors are present is : (A) Nose (B) Skin (C) Tongue (D) Inner ear 9. The incorrect statement about placenta is : (A) It is a disc embedded in the uterine wall. (B) (C) It has a very small surface area for glucose and oxygen to pass from mother to the embryo. (D) The embryo gets nutrition from the mothe 10. Select from the following the conditions responsible for the rapid spread of bread mould on a slice of bread : (i) Formation of large number of spores (ii) Presence of moisture and nutrients in bread (iii) Low temperature (iv) Presence of hyphae (A) (i) and (ii) (B) (ii) and (iv) (C) (ii) and (iii) (D) (iii) and (iv) 11. How will the image formed by a convex lens be affected, if the upper half of the lens is wrapped with a black paper ? (A) The size of the image formed will be one-half of the size of the image due to complete lens. (B) The image of upper half of the object will not be formed. (C) The brightness of the image will reduce. (D) The lower half of the inverted image will not be formed. 15-31/5/1 8', 'short_answer', 1, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Carbon is a versatile element that forms the basis of all living organisms and many of the things we use. A large variety of compounds is formed because of its tetravalency. Compounds of carbon are formed with oxygen, hydrogen, nitrogen, sulphur, chlorine and many other elements. Answer the following questions : (a) What are hydrocarbons ? 1 (b) List two properties by virtue of which carbon can form a large number of compounds. 1 (c) (i) Write the formula of the functional group present in (1) aldehydes, and (2) ketones. Write chemical equation for the reaction that occurs between ethanoic acid and ethanol in the presence of a catalyst. 2 OR (c) (ii) What are structural isomers ? Write the structures of two isomers of butane (C4H10). 2 39. Pollination is an important process in sexual reproduction of plants. It is an essential process that facilitates fertilisation in plants. Pollinating agents can be wind, water, insects and birds. Several changes take place in the flower after the fertilization has taken place. (a) Write the main difference between self-pollination and cross-pollination. 1 15-31/5/2 26 (b) nwîn Ho$ Cg ^mJ H$m Zm_ {b{IE Omo H$sQ>m| H$mo namJU Ho$ {bE AmH${f©V H$aVm h¡ & {ZfoMZ Ho$ níMmV² ? 1 (c) (i) {ZfoMZ H$s n[a^mfm {b{IE & {ZfoMZ Ho$ níMmV² {H$gr nwîn _| ~rOmÊS> Am¡a ? 2 AWdm (c) (ii) A§Hw$[aV hmoVo ~rO Ho$ H$m¡Z- ? ~rOnÌ Ho$ H$m`© H$m CëboI H$s{OE & 2 15-31/5/2 27 P.T.O. (b) Name the part of the flower which attracts insects for pollination. What happens to this part after fertilisation ? 1 (c) (i) Define fertilisation. What is the fate of ovules and the ovary in a flower after fertilisation ? 2 OR (c) (ii) In a germinating seed, which parts are known as future shoot and future root ? Mention the function of cotyledon. 2', 'short_answer', 2, '2024', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which one of the following statements is not correct for the plants raised by vegetative propagation ? (A) Can bear flowers and fruits earlier than those produced from seeds. (B) Those plants that have lost the capacity to produce seeds can be grown. (C) As compared to the parent plant, vegetatively propagated plants show more variations. (D) All the plants produced in this way are genetically similar to the parent plant.', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following is the correct sequence of parts of female reproductive system of flowering plants in terms of their placement ? (A) Stigma, ovule, ovary, style (B) Ovule, stigma, ovary, style (C) Style, stigma, ovule, ovary (D) Stigma, style, ovary, ovule', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Temporary finger -like extensions on the cell surface to t ake in food is formed in : (A) Paramoecium (B) Amoeba (C) Leishmania (D) Rhizopus', 'short_answer', 1, '2025', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Reproduction, like any other life process, is essential to maintain the life of an individual organism. 1 Reason (R) : Reproduction involves creation of a DNA copy and additional cellular apparatus by the cell involved in the process. { } 31/4/2 Page 10 of 32', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Yeast multiplies by which of the following methods ? 1 (A) Fragmentation (B) Binary Fission (C) Multiple Fission (D) Budding', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Assertion (A) : Bacteria produced as a result of asexual reproduction would be similar. 1 Reason (R) : There would be only minor differences between the bacteria generated due to small inaccuracies in DNA replication.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Select the option which illustrates the correct method of asexual reproduction in Spirogyra. 1 (A) Budding (B) Regeneration (C) Fragmentation (D) Spore formation [ ] 31(B) Page 8 of 27', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Attempt either subpart (a) or (b) : (a) (i) Sugarcane and roses are mostly grown by vegetative propagation. Define this mode of reproduction. (ii) List two advantages of vegetative propagation. (iii) Distinguish between unisexual and bisexual flowers. Give one example of each kind. 5 OR (b) (i) Differentiate between self -pollination and cross-pollination. (two points) (ii) Explain how does pollination lead to fertilisation in flowering plants. (iii) Name the end -products of sexual reproduction in plants. 5', 'short_answer', 5, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'A blue colour flower (BB) bearing plant is crossed with a plant with white coloured flowers (bb). 3 (a) State the colour of the flowers you would expect in their F 1 progeny. (b) What must be the percentage of white flower plants in the F 2 generation, if the F1 plants are self-pollinated ? (c) State the expected ratio of genotypes BB and bb in F2 progeny.', 'short_answer', 1, '2026', 'medium');
-        INSERT INTO quiz_questions (quiz_id, question_text, type, marks, source_year, difficulty)
-        VALUES (v_quiz_id, 'Which of the following represents the correct sequence of events of sexual reproduction in a flower ? 1 (A) Pollination, Fertilization, Seed, Embryo (B) Seed, Embryo, Fertilization, Pollination (C) Seed, Plant, Flower, Pollination, Fertilization (D) Pollination, Fertilization, Embryo, Seed', 'short_answer', 1, '2026', 'medium');
-    ELSE
-        RAISE NOTICE 'Chapter 7 not found. Skipping PYQ insertion.';
-    END IF;
-
-    -- Chapter: Metals and Non-metals (Seq: 3)
+-- Chapter: Metals and Non-metals (Seq: 3)
     SELECT id INTO v_chapter_id FROM chapters WHERE subject_id = v_subject_id AND sequence_number = 3 LIMIT 1;
     IF v_chapter_id IS NOT NULL THEN
         DELETE FROM quizzes WHERE chapter_id = v_chapter_id AND quiz_kind = 'pyq_practice';

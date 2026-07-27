@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/database_service.dart';
@@ -17,6 +18,7 @@ import '../widgets/jargon_modal.dart';
 import '../widgets/interactive_example.dart';
 import '../widgets/question_card.dart';
 import '../widgets/questions_section.dart';
+import '../widgets/cinemagraph_widget.dart';
 import '../widgets/animated_svg/animated_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -2935,8 +2937,10 @@ class _LessonsViewState extends State<LessonsView> {
   Widget _buildFigureBox(String figType, bool isDark) {
     CustomPainter? painterWidget;
     String? svgPath;
+    String? imagePath;
     String figNum;
     String figCaption;
+    List<String> figLegend = [];
     double figHeight = 180;
 
     final isRevisionNote = _selectedLesson?.type == LessonType.note;
@@ -3049,41 +3053,92 @@ class _LessonsViewState extends State<LessonsView> {
       figCaption = "Oxidation of copper to copper oxide on heating.";
       figHeight = 180;
     } else if (figType == 'zinc_acid') {
-      svgPath = "assets/zinc_acid_animated.svg";
-      figNum = "Figure 1.2 ";
-      figCaption = "Formation of hydrogen gas by the action of dilute sulphuric acid on zinc";
-      figHeight = 220;
-    } else if (figType == 'acid_metal_reaction') {
+      imagePath = "assets/acid_metal_reaction_real.jpg";
       figNum = "Figure 2.1 ";
-      figCaption = "Reaction of zinc granules with dilute sulphuric acid, and testing hydrogen gas by burning.";
+      figCaption = "Reaction of zinc granules with dilute sulphuric acid and testing hydrogen gas by burning.";
+      figLegend = [
+        "• Flask: Contains Dilute Sulphuric Acid & Zinc Granules",
+        "• Bubbles: Hydrogen Gas evolving",
+        "• Delivery Tube: Routes gas to soap solution",
+        "• Soap Trough: Forms hydrogen-filled soap bubbles",
+        "• Burning Candle: Ignites hydrogen with a 'pop' sound"
+      ];
       figHeight = 220;
     } else if (figType == 'co2_limewater_test') {
+      imagePath = "assets/co2_limewater_test_real.jpg";
       figNum = "Figure 2.2 ";
       figCaption = "Passing carbon dioxide gas through calcium hydroxide solution (lime water).";
+      figLegend = [
+        "• Left Test Tube: Sodium Carbonate + Dilute HCl",
+        "• Effervescence: Carbon Dioxide (CO₂) gas evolving",
+        "• Right Test Tube: Calcium Hydroxide (Limewater)",
+        "• Milky Solution: Formation of insoluble Calcium Carbonate (CaCO₃)"
+      ];
       figHeight = 220;
     } else if (figType == 'acid_base_conductivity') {
+      imagePath = "assets/acid_base_conductivity_real.jpg";
       figNum = "Figure 2.3 ";
       figCaption = "Acid solution in water conducts electricity.";
+      figLegend = [
+        "• Beaker: Contains Dilute HCl solution",
+        "• Cork Base: Holds two Iron Nails (Electrodes)",
+        "• Circuit: 6V Battery, Switch, and Light Bulb",
+        "• Glowing Bulb: Demonstrates flow of ions (H⁺ and Cl⁻) in solution"
+      ];
       figHeight = 220;
     } else if (figType == 'hcl_gas_preparation') {
+      imagePath = "assets/hcl_gas_preparation_real.jpg";
       figNum = "Figure 2.4 ";
       figCaption = "Preparation of HCl gas; testing dry and wet litmus paper.";
+      figLegend = [
+        "• Boiling Tube: Sodium Chloride (NaCl) + Conc. Sulphuric Acid",
+        "• Gas Evolved: Dry Hydrogen Chloride (HCl) gas",
+        "• Dry Litmus Paper: No colour change (no H⁺ ions without water)",
+        "• Moist Litmus Paper: Turns Red (HCl dissolves forming H⁺ ions)"
+      ];
       figHeight = 220;
     } else if (figType == 'ph_scale') {
+      imagePath = "assets/ph_scale_real.jpg";
       figNum = "Figure 2.6 ";
       figCaption = "Variation of pH with the change in concentration of H+(aq) and OH-(aq) ions.";
+      figLegend = [
+        "• Red/Orange: Strongly Acidic (High H⁺, pH 0-4)",
+        "• Yellow/Green: Weakly Acidic to Neutral (pH 5-7)",
+        "• Blue/Cyan: Weakly Basic (pH 8-10)",
+        "• Deep Purple: Strongly Basic (High OH⁻, pH 11-14)"
+      ];
       figHeight = 220;
     } else if (figType == 'ph_paper_substances') {
+      imagePath = "assets/ph_paper_substances_real.jpg";
       figNum = "Figure 2.7 ";
       figCaption = "pH of some common substances shown on a pH paper.";
+      figLegend = [
+        "• Lemon Juice Strip: Red (Highly Acidic, pH ~2.2)",
+        "• Pure Water Strip: Green (Neutral, pH 7)",
+        "• Milk of Magnesia Strip: Deep Blue (Basic, pH ~10)"
+      ];
       figHeight = 220;
     } else if (figType == 'chlor_alkali_process') {
+      imagePath = "assets/chlor_alkali_process_animated.mp4";
       figNum = "Figure 2.8 ";
       figCaption = "Important products from the chlor-alkali process.";
+      figLegend = [
+        "• Electrolytic Cell: Contains Brine (Aqueous NaCl)",
+        "• Anode (+): Chlorine (Cl₂) gas bubbles forming",
+        "• Cathode (-): Hydrogen (H₂) gas bubbles forming",
+        "• Solution Remaining: Sodium Hydroxide (NaOH)"
+      ];
       figHeight = 220;
     } else if (figType == 'copper_sulphate_crystals') {
+      imagePath = "assets/copper_sulphate_crystals_animated.mp4";
       figNum = "Figure 2.9 ";
       figCaption = "Removing water of crystallisation from copper sulphate crystals.";
+      figLegend = [
+        "• Boiling Tube: Contains Copper Sulphate crystals being heated",
+        "• Blue Crystals: Hydrated CuSO₄·5H₂O",
+        "• White Powder: Anhydrous CuSO₄ forming upon heating",
+        "• Water Droplets: Condensing water of crystallisation on cool upper glass"
+      ];
       figHeight = 220;
     } else {
       if (isChapter1) {
@@ -3115,8 +3170,15 @@ class _LessonsViewState extends State<LessonsView> {
               ),
               child: AspectRatio(
                 aspectRatio: 16 / 9,
-                child: svgPath != null
-                    ? LayoutBuilder(
+                child: imagePath != null
+                    ? (imagePath!.endsWith('.mp4')
+                        ? CinemagraphWidget(assetPath: imagePath!)
+                        : ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(imagePath!, fit: BoxFit.contain),
+                          ))
+                    : svgPath != null
+                        ? LayoutBuilder(
                         builder: (context, constraints) {
                           return buildAnimatedSvg(
                             svgPath: svgPath!,
@@ -3155,6 +3217,33 @@ class _LessonsViewState extends State<LessonsView> {
             ),
             textAlign: TextAlign.center,
           ),
+          if (figLegend.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: isDark ? Colors.white12 : Colors.black12,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: figLegend.map((label) => Padding(
+                  padding: const EdgeInsets.only(bottom: 4.0),
+                  child: Text(
+                    label,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white70 : Colors.black87,
+                    ),
+                  ),
+                )).toList(),
+              ),
+            ),
+          ],
         ],
       ),
     );

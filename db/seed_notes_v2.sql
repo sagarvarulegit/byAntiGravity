@@ -136,6 +136,26 @@ We can spot a reaction by:
 - Gas release (evolution of gas).
 - Temperature change.
 
+### 🛠️ Pre-requisite: Writing Chemical Formulas
+Before balancing equations, you must know how to write the correct chemical formulas! If you write $MgCl$ instead of $MgCl_2$, your equation will never balance.
+Use the **Criss-Cross Method** to build formulas using valencies:
+
+| Cations (Positive Ions) | Valency | | Anions (Negative Ions) | Valency |
+| :--- | :--- | :--- | :--- | :--- |
+| Sodium ($Na^+$) / Potassium ($K^+$) | +1 | | Chloride ($Cl^-$) / Hydroxide ($OH^-$) | -1 |
+| Magnesium ($Mg^{2+}$) / Calcium ($Ca^{2+}$) | +2 | | Oxide ($O^{2-}$) / Sulphate ($SO_4^{2-}$) | -2 |
+| Aluminium ($Al^{3+}$) | +3 | | Phosphate ($PO_4^{3-}$) | -3 |
+
+**Example 1: Calcium Hydroxide**
+1. Write symbols: $Ca$ and $OH$
+2. Write valencies below: $Ca$ (2) and $OH$ (1)
+3. Criss-cross: $Ca_1(OH)_2 \rightarrow Ca(OH)_2$
+
+**Example 2: Aluminium Sulphate**
+1. Write symbols: $Al$ and $SO_4$
+2. Write valencies below: $Al$ (3) and $SO_4$ (2)
+3. Criss-cross: $Al_2(SO_4)_3$
+
 ## 4. 📖 Concept 2: Balancing Chemical Equations
 A chemical equation shows the reactants and products. We must balance it. This satisfies the **[JARGON: Law of Conservation of Mass | Mass cannot be created or destroyed in a chemical reaction | Total mass of reactants must equal total mass of products]** (the rule that total mass does not change). The total atoms on both sides must match.
 
@@ -165,6 +185,27 @@ Reactions happen in different ways:
      - Silver bromide in sunlight: $2AgBr(s) \xrightarrow{\text{Sunlight}} 2Ag(s) + Br_2(g)$ (used in black-and-white photography).
   [FIGURE: decomposition_reaction]
 - **[JARGON: Displacement Reaction | A reaction where a more reactive element pushes out a less reactive element | Iron nail in copper sulfate solution]** (pushing out): A stronger element replaces a weaker one. $Fe + CuSO_4 \rightarrow FeSO_4 + Cu$. The blue copper solution turns green, and brown copper deposits on the iron nail!
+  > [!TIP]
+  > **The Reactivity Series Mnemonic**  
+  > To predict if a displacement reaction will happen, you MUST know the Reactivity Series! The top metals are the strongest.  
+  > **P**lease **S**top **C**alling **M**e **A** **C**areless **Z**ebra **I**nstead **T**ry **L**earning **H**ow **C**opper **S**aves **G**old
+  > 
+  > | Mnemonic | Metal | Symbol | Reactivity |
+  > | :--- | :--- | :--- | :--- |
+  > | **P**lease | Potassium | K | Most Reactive |
+  > | **S**top | Sodium | Na | |
+  > | **C**alling | Calcium | Ca | |
+  > | **M**e | Magnesium | Mg | |
+  > | **A** | Aluminium | Al | |
+  > | **C**areless | (Carbon) | C | *(Non-metal reference)* |
+  > | **Z**ebra | Zinc | Zn | |
+  > | **I**nstead | Iron | Fe | |
+  > | **T**ry | Tin | Sn | |
+  > | **L**earning | Lead | Pb | |
+  > | **H**ow | (Hydrogen) | H | *(Non-metal reference)* |
+  > | **C**opper | Copper | Cu | |
+  > | **S**aves | Silver | Ag | |
+  > | **G**old | Gold | Au | Least Reactive |
   > [!IMPORTANT]
   > **🔥 Board Exam Hot Topic — Repeated 4x (2026)**  
   > *Key Concept:* In a displacement reaction, a more reactive metal (e.g. Iron, Zinc) displaces a less reactive metal (e.g. Copper) from its salt solution.
@@ -179,12 +220,17 @@ Reactions happen in different ways:
 - **Oxidising agent**: The substance that causes oxidation and is itself reduced.
 - **Reducing agent**: The substance that causes reduction and is itself oxidised.
 - **Redox Reaction**: A reaction where oxidation and reduction occur simultaneously.
+  > [!CAUTION]
+  > **The "LHS Rule" (Left Hand Side Rule)**
+  > When the examiner asks you to identify what is oxidised, what is reduced, or the agents, **ALWAYS pick your answer from the Reactants (Left Hand Side)**. Never pick a Product (RHS)!
+
   - *Example 1:* Heating copper powder in air forms black copper oxide:
     $$2Cu + O_2 \xrightarrow{\text{Heat}} 2CuO$$ (Copper is oxidised).
   - *Example 2:* Passing hydrogen gas over hot copper oxide:
     $$CuO + H_2 \xrightarrow{\text{Heat}} Cu + H_2O$$
-    Here, copper oxide loses oxygen and is **reduced** to copper. Hydrogen gains oxygen and is **oxidised** to water.
-  - *Example 3:* $$ZnO + C \rightarrow Zn + CO$$ (Zinc oxide is reduced to Zn; carbon is oxidised to carbon monoxide).
+    Here, copper oxide ($CuO$) loses oxygen and is **reduced** to copper. Hydrogen ($H_2$) gains oxygen and is **oxidised** to water.
+    *Applying LHS Rule:* What is oxidised? $H_2$. What is reduced? $CuO$. Oxidising Agent? $CuO$. Reducing Agent? $H_2$. All answers come from the left side!
+  - *Example 3:* $$ZnO + C \rightarrow Zn + CO$$ (Zinc oxide is reduced to Zn; carbon is oxidised to carbon monoxide. Oxidising Agent = $ZnO$, Reducing Agent = $C$).
 
 ## 7. 📖 Concept 5: Everyday Effects of Oxidation
 - **[JARGON: Corrosion | The gradual destruction of metals when exposed to moisture, air, and chemicals | Rusting of iron is corrosion]**: A metal surface is eaten away by air, water, or acids.

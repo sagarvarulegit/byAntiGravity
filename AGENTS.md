@@ -16,8 +16,15 @@
   3. Every end-of-chapter exercise question and solution.
   4. The official end-of-chapter Group Activity.
   5. Chronologically numbered and captioned figure placeholders (e.g., `[FIGURE: ...]`) matching the exact textbook figures and their corresponding assets in the client code.
+  6. A "🧪 NCERT Activities Cheat Sheet" that summarizes the observations of every chronological activity must be appended to the end of the Revision Notes.
+- **CBSE Board Exam Readiness Standard:** To ensure 100% board exam readiness, covering the textbook is insufficient on its own. When adding or auditing content:
+  1. Systematically cross-reference official CBSE Board Exam Papers and Marking Schemes.
+  2. Explicitly include any non-NCERT examples, edge-case reasoning questions, and complex case-based cross-classification formats that have appeared in past exams.
+  3. Every Past Year Question (PYQ) added to the database (`seed_pyq_questions.sql`) MUST include the exact `model_answer` and `marking_scheme` value points to ensure students learn how the board evaluates their answers.
 - **Emoji & Character Encoding Validation:** When editing or refactoring database seed files, actively scan for and replace legacy encoding corruptions (e.g., double question marks `??` created from corrupted emojis like `🔥` or other symbols) to ensure that all data is correctly stored and parsed as UTF-8.
+- **Database Seed Registration:** Whenever a new SQL seed file is created in the `db/` directory, it MUST be explicitly added to the `seed_files` array inside `concat_seeds.py`. If this registration step is skipped, the new content will be silently excluded when running `./refresh_db.sh` or `python concat_seeds.py`.
 - **Avoid Hardcoded Text-Matching for UI Components:** Never use hardcoded English string matches (e.g., `line.contains('Gas bubbles')`) inside the Dart parser to inject widgets or figures. Always rely on explicit database token tags (e.g., `[FIGURE: zinc_acid]`) to trigger UI elements, and remove any legacy text-matching fallback logic when explicit tokens are introduced to prevent duplicate widget rendering.
+- **Figure Illustration Fallbacks:** When adding missing `[FIGURE: ...]` assets in `lessons_view.dart`, the client now supports both `.svg` (`svgPath`) and `.jpg`/`.png` (`imagePath`). You should preferentially generate highly realistic photorealistic `.jpg` images for real-world experiments. If AI image generation hits rate limits, fallback to either generating a `.svg` vector programmatic animation or a "nano banana" vibrant vector style image, and map the correct path format in the rendering logic.
 
 ## Supabase / Local Development Rules
 - **Windows NAT Port Conflicts:** If `supabase start` fails with `listen tcp 0.0.0.0:54322: bind` or Flutter cannot connect to Supabase locally (e.g. `statusCode: null`), it is often because Windows Hyper-V/NAT has reserved the Supabase ports (54321, 54322). Fix this by having the user run `net stop winnat; net start winnat` in an Administrator PowerShell to clear the dynamic port exclusions, then restart Supabase.
@@ -59,3 +66,6 @@ When you lack sufficient context to answer a prompt, use the following commands 
 
 ## 4. Strict Fact-Checking
 *   Base your understanding of the codebase strictly on the relationships mapped in the Graphify outputs. Prioritize connections tagged as `EXTRACTED` over `INFERRED`.
+
+- **Supabase CLI SQL Parser Bug:** The local Supabase CLI seed parser erroneously splits SQL commands on semicolons (;) that are embedded inside single-quoted strings (especially inside PL/pgSQL \DO \ blocks). Never use semicolons inside SQL string literals (e.g., \'100 W; 220 V'\) in seed files; always replace them with commas (e.g., \'100 W, 220 V'\) to prevent \supabase db reset\ from failing with cryptic syntax errors.
+- **Strict SQL Quote Escaping:** Always ensure that single quotes (\'\) inside string literals in seed files (such as \'pop'\ or \doesn't\) are properly escaped with two single quotes (\''pop''\, \doesn''t\). A single unescaped quote will cause the Supabase seed parser to prematurely terminate the string and throw a \SQLSTATE 42601 syntax error at or near\ exception during \supabase db reset\, halting the entire database provisioning process and wiping out test users.

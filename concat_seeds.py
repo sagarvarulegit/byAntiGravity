@@ -13,6 +13,7 @@ seed_files = [
     "db/seed_science_ch1_quizzes.sql",
     "db/seed_question_types_batch1.sql",
     "db/seed_study_guides.sql",
+    "db/seed_science_ch2_notes.sql",
     "db/seed_pyq_questions.sql",
 ]
 
