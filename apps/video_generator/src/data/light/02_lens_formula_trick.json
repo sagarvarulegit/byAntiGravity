@@ -1,0 +1,392 @@
+{
+  "id": "light-02",
+  "title": "Lens Formula Sign Convention Trick",
+  "fps": 30,
+  "durationInFrames": 931,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 146,
+      "content": {
+        "text": "The Lens Formula Trick",
+        "subtitle": "Never Miss a Sign in Numericals!"
+      },
+      "teacherScript": "The Lens Formula Sign Convention Trick. Never miss a sign in board exam numericals!",
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "Lens",
+          "start": 0.221,
+          "end": 0.441
+        },
+        {
+          "word": "Formula",
+          "start": 0.499,
+          "end": 0.813
+        },
+        {
+          "word": "Sign",
+          "start": 0.871,
+          "end": 1.068
+        },
+        {
+          "word": "Convention",
+          "start": 1.103,
+          "end": 1.498
+        },
+        {
+          "word": "Trick.",
+          "start": 1.544,
+          "end": 1.834
+        },
+        {
+          "word": "Never",
+          "start": 1.985,
+          "end": 2.194
+        },
+        {
+          "word": "miss",
+          "start": 2.241,
+          "end": 2.38
+        },
+        {
+          "word": "a",
+          "start": 2.415,
+          "end": 2.438
+        },
+        {
+          "word": "sign",
+          "start": 2.485,
+          "end": 2.694
+        },
+        {
+          "word": "in",
+          "start": 2.717,
+          "end": 2.763
+        },
+        {
+          "word": "board",
+          "start": 2.81,
+          "end": 2.984
+        },
+        {
+          "word": "exam",
+          "start": 3.019,
+          "end": 3.309
+        },
+        {
+          "word": "numericals!",
+          "start": 3.367,
+          "end": 4.365
+        }
+      ],
+      "audio": "/audio/light/light-02_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "kinetic_typography",
+      "durationInFrames": 124,
+      "content": {
+        "text": "90% of students make mistakes in the Lens Formula sign convention."
+      },
+      "teacherScript": "90% of students make mistakes in the Lens Formula sign convention.",
+      "alignments": [
+        {
+          "word": "90%",
+          "start": 0,
+          "end": 0.58
+        },
+        {
+          "word": "of",
+          "start": 0.65,
+          "end": 0.697
+        },
+        {
+          "word": "students",
+          "start": 0.731,
+          "end": 1.033
+        },
+        {
+          "word": "make",
+          "start": 1.068,
+          "end": 1.219
+        },
+        {
+          "word": "mistakes",
+          "start": 1.254,
+          "end": 1.614
+        },
+        {
+          "word": "in",
+          "start": 1.649,
+          "end": 1.707
+        },
+        {
+          "word": "the",
+          "start": 1.73,
+          "end": 1.8
+        },
+        {
+          "word": "Lens",
+          "start": 1.834,
+          "end": 2.032
+        },
+        {
+          "word": "Formula",
+          "start": 2.078,
+          "end": 2.438
+        },
+        {
+          "word": "sign",
+          "start": 2.496,
+          "end": 2.705
+        },
+        {
+          "word": "convention.",
+          "start": 2.752,
+          "end": 3.622
+        }
+      ],
+      "audio": "/audio/light/light-02_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "durationInFrames": 661,
+      "content": {
+        "heading": "The Golden Rules of Signs",
+        "bullets": [
+          "Formula: 1/f = 1/v - 1/u",
+          "Object Distance (u): ALWAYS Negative (-)",
+          "Convex Lens Focal Length (f): ALWAYS Positive (+)",
+          "Concave Lens Focal Length (f): ALWAYS Negative (-)"
+        ],
+        "imageUrl": "/images/convex_vs_concave_lens_signs.jpg"
+      },
+      "teacherScript": "The Lens formula is 1 over f equals 1 over v minus 1 over u. Remember these golden rules: Object distance u is ALWAYS negative. Convex lens focal length f is ALWAYS positive. Concave lens focal length f is ALWAYS negative.",
+      "boardExam": {
+        "repeated": 12,
+        "years": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "marks": 3
+      },
+      "alignments": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "Lens",
+          "start": 0.221,
+          "end": 0.43
+        },
+        {
+          "word": "formula",
+          "start": 0.476,
+          "end": 0.871
+        },
+        {
+          "word": "is",
+          "start": 0.94,
+          "end": 1.045
+        },
+        {
+          "word": "1",
+          "start": 1.161,
+          "end": 1.405
+        },
+        {
+          "word": "over",
+          "start": 1.614,
+          "end": 1.939
+        },
+        {
+          "word": "f",
+          "start": 2.009,
+          "end": 2.218
+        },
+        {
+          "word": "equals",
+          "start": 2.368,
+          "end": 2.717
+        },
+        {
+          "word": "1",
+          "start": 2.798,
+          "end": 3.077
+        },
+        {
+          "word": "over",
+          "start": 3.32,
+          "end": 3.599
+        },
+        {
+          "word": "v",
+          "start": 3.669,
+          "end": 4.052
+        },
+        {
+          "word": "minus",
+          "start": 4.435,
+          "end": 4.83
+        },
+        {
+          "word": "1",
+          "start": 4.911,
+          "end": 5.12
+        },
+        {
+          "word": "over",
+          "start": 5.329,
+          "end": 5.608
+        },
+        {
+          "word": "u.",
+          "start": 5.677,
+          "end": 6.072
+        },
+        {
+          "word": "Remember",
+          "start": 7.372,
+          "end": 7.732
+        },
+        {
+          "word": "these",
+          "start": 7.79,
+          "end": 7.953
+        },
+        {
+          "word": "golden",
+          "start": 7.988,
+          "end": 8.278
+        },
+        {
+          "word": "rules:",
+          "start": 8.324,
+          "end": 8.847
+        },
+        {
+          "word": "Object",
+          "start": 9.358,
+          "end": 9.764
+        },
+        {
+          "word": "distance",
+          "start": 9.822,
+          "end": 10.194
+        },
+        {
+          "word": "u",
+          "start": 10.252,
+          "end": 10.461
+        },
+        {
+          "word": "is",
+          "start": 10.577,
+          "end": 10.739
+        },
+        {
+          "word": "ALWAYS",
+          "start": 10.89,
+          "end": 11.424
+        },
+        {
+          "word": "negative.",
+          "start": 11.505,
+          "end": 12.063
+        },
+        {
+          "word": "Convex",
+          "start": 12.446,
+          "end": 12.922
+        },
+        {
+          "word": "lens",
+          "start": 13.003,
+          "end": 13.363
+        },
+        {
+          "word": "focal",
+          "start": 13.804,
+          "end": 14.176
+        },
+        {
+          "word": "length",
+          "start": 14.234,
+          "end": 14.478
+        },
+        {
+          "word": "f",
+          "start": 14.524,
+          "end": 14.733
+        },
+        {
+          "word": "is",
+          "start": 14.907,
+          "end": 15.116
+        },
+        {
+          "word": "ALWAYS",
+          "start": 15.232,
+          "end": 15.871
+        },
+        {
+          "word": "positive.",
+          "start": 15.964,
+          "end": 16.637
+        },
+        {
+          "word": "Concave",
+          "start": 17.241,
+          "end": 17.821
+        },
+        {
+          "word": "lens",
+          "start": 17.856,
+          "end": 18.204
+        },
+        {
+          "word": "focal",
+          "start": 18.588,
+          "end": 18.982
+        },
+        {
+          "word": "length",
+          "start": 19.04,
+          "end": 19.284
+        },
+        {
+          "word": "f",
+          "start": 19.342,
+          "end": 19.551
+        },
+        {
+          "word": "is",
+          "start": 19.725,
+          "end": 19.934
+        },
+        {
+          "word": "ALWAYS",
+          "start": 20.05,
+          "end": 20.631
+        },
+        {
+          "word": "negative.",
+          "start": 20.712,
+          "end": 21.502
+        }
+      ],
+      "audio": "/audio/light/light-02_scene-03.mp3"
+    }
+  ]
+}

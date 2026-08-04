@@ -139,33 +139,67 @@ async function generateSpeechWithTimestamps(text, outputPath) {
   return wordAlignments;
 }
 
+function cleanMathTextForSpeech(text) {
+  if (!text) return "";
+  let s = text;
+
+  // Specific formula & variable conversions for natural pronunciation
+  s = s.replace(/1\/Rp/gi, 'one over R P');
+  s = s.replace(/1\/R1/gi, 'one over R 1');
+  s = s.replace(/1\/R2/gi, 'one over R 2');
+  s = s.replace(/1\/2/g, 'one half');
+  s = s.replace(/2\/2/g, 'two over two');
+  s = s.replace(/2\/3/g, 'two thirds');
+  s = s.replace(/3\/2/g, 'three halves');
+  s = s.replace(/1\.5/g, 'one point five');
+  s = s.replace(/\bR1\b/g, 'R 1');
+  s = s.replace(/\bR2\b/g, 'R 2');
+  s = s.replace(/\bRp\b/g, 'R P');
+
+  // Generic fraction converter e.g. a/b -> a over b
+  s = s.replace(/(\w+)\/(\w+)/g, '$1 over $2');
+  s = s.replace(/\=/g, 'equals');
+
+  return s;
+}
+
 // Get script text based on scene type
 function getSpeechTextForScene(scene) {
+  let rawText = '';
   if (scene.teacherScript && scene.teacherScript.trim().length > 0) {
-    return scene.teacherScript;
+    rawText = scene.teacherScript;
+  } else {
+    const content = scene.content;
+    switch (scene.type) {
+      case 'title':
+        rawText = `${content.text}. ${content.subtitle || ''}`;
+        break;
+      case 'kinetic_typography':
+        rawText = content.text;
+        break;
+      case 'text':
+        rawText = `${content.heading}. ${content.bullets.join('. ')}`;
+        break;
+      case 'diagram':
+        rawText = `${content.title}. ${content.subtitle || ''}`;
+        break;
+      case 'activity':
+        rawText = content.description;
+        break;
+      case 'equation':
+        const reactantsText = content.reactants.map(r => r.formula).join(' plus ');
+        const productsText = content.products.map(p => p.formula).join(' plus ');
+        rawText = `${reactantsText} gives ${productsText}`;
+        break;
+      case 'conversation':
+        rawText = content.messages.map(m => m.text).join(' ');
+        break;
+      default:
+        rawText = '';
+    }
   }
-  const content = scene.content;
-  switch (scene.type) {
-    case 'title':
-      return `${content.text}. ${content.subtitle || ''}`;
-    case 'kinetic_typography':
-      return content.text;
-    case 'text':
-      return `${content.heading}. ${content.bullets.join('. ')}`;
-    case 'diagram':
-      return `${content.title}. ${content.subtitle || ''}`;
-    case 'activity':
-      return content.description;
-    case 'equation':
-      // Basic text for the equation. A robust implementation would read the formula out loud.
-      const reactantsText = content.reactants.map(r => r.formula).join(' plus ');
-      const productsText = content.products.map(p => p.formula).join(' plus ');
-      return `${reactantsText} gives ${productsText}`;
-    case 'conversation':
-      return content.messages.map(m => m.text).join(' ');
-    default:
-      return '';
-  }
+
+  return cleanMathTextForSpeech(rawText);
 }
 
 async function run() {

@@ -1,0 +1,59 @@
+# Keep the architecture graph focused on maintained source and canonical docs.
+
+# Agent, IDE, and local-learning internals
+.agents/
+.agent/
+.antigravity/
+.codex/
+.skillopt-sleep/
+
+# Generated and temporary code
+scratch/
+prototype/
+**/.dart_tool/
+**/build/
+**/ephemeral/
+**/GeneratedPluginRegistrant.*
+**/generated_plugin_registrant.*
+apps/mobile_web_client/analyze_output.txt
+apps/video_generator/src/data/
+
+# Flutter platform scaffolding is generated around the maintained Dart app.
+apps/mobile_web_client/android/
+apps/mobile_web_client/ios/
+apps/mobile_web_client/linux/
+apps/mobile_web_client/macos/
+apps/mobile_web_client/windows/
+apps/mobile_web_client/web/
+
+# Binary/media corpora belong in their own content graph
+syllabus/
+**/assets/
+**/public/audio/
+**/web/videos/
+Video-Out/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+*.mp3
+*.mp4
+
+# Curriculum and board-paper content belongs in the content graph.
+vedantu_notes.txt
+docs/CBSE_BOARD_EXAM_ANALYSIS.md
+docs/audit/
+docs/knowledge_graph.json
+db/seed*.sql
+db/*_extracted.txt
+db/generate_*.py
+db/fix_*.py
+supabase/seed.sql
+
+# Instructions for other assistants are not project architecture.
+GEMINI.md
+
+# Historical implementation plans are useful as an archive, not as
+# architecture-query context. Keep active decisions in canonical docs.
+docs/implementation-plans/

@@ -141,6 +141,69 @@ const ConversationSceneSchema = z.object({
   boardExam: BoardExamSchema.optional(),
 });
 
+const RayDiagramSceneSchema = z.object({
+  id: z.string(),
+  type: z.literal("ray_diagram"),
+  durationInFrames: z.number(),
+  content: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    objectPosition: z.enum(["beyond_2f", "at_2f", "between_f_2f", "at_f", "between_f_o"]).optional(),
+    // Animation program for the ray diagram. Each variant draws exactly the
+    // rays described by its teacherScript narration:
+    //  - full:              parallel->F2 + through-O rays, image forms (default)
+    //  - focus_convergence: multiple top/bottom parallel rays converging at F2
+    //                      + lens bulging thin->fat while its shape is narrated
+    //  - shortcut1:         only the parallel ray bending through F2
+    //  - shortcut2:         only the straight-through-O ray
+    //  - shortcut3:         only the ray through F1 exiting parallel
+    //  - inversion:         candle spanning axis, flame ray down + base ray up,
+    //                       crossing at F2, inverted image (flame at bottom)
+    //  - converging:        intro: scattered rays from left bend inward and
+    //                       meet at ONE glowing spot (F2)
+    //  - guides:            live-draw the two fundamental guides with the
+    //                       narration: Principal Axis draws first, then the
+    //                       lens, then the Optical Center O bullseye, then
+    //                       Focal Points F1/F2 pop in labelled
+    variant: z
+      .enum(["full", "focus_convergence", "shortcut1", "shortcut2", "shortcut3", "inversion", "converging", "guides"])
+      .optional(),
+  }),
+  teacherScript: z.string().optional(),
+  audio: z.string().optional(),
+  alignments: z.array(WordAlignmentSchema).optional(),
+  boardExam: BoardExamSchema.optional(),
+});
+
+const MagneticSceneSchema = z.object({
+  id: z.string(),
+  type: z.literal("magnetic"),
+  durationInFrames: z.number(),
+  content: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    // Animation program; each variant draws exactly what its teacherScript
+    // narration describes, phrase-timed like RayDiagramScene:
+    //  - intro:             roadmap board: 'IN THIS VIDEO' + numbered topic
+    //                       chips popping as each topic is narrated
+    //  - oersted:            wire + compass needle deflecting (hook)
+    //  - bar_magnet:         field lines around a bar magnet, closed loops
+    //  - straight_conductor: concentric circular field lines + right-hand rule
+    //  - solenoid:           coil, uniform inside field, bar-magnet pattern
+    //  - electromagnet:      solenoid + soft iron core, pins stick/drop
+    //  - fleming:            force on conductor + left-hand rule hand
+    //  - induction:          magnet moving in/out of coil + galvanometer
+    //  - motor_generator:    motor vs generator comparison
+    variant: z
+      .enum(["intro", "oersted", "bar_magnet", "straight_conductor", "solenoid", "electromagnet", "fleming", "induction", "motor_generator"])
+      .optional(),
+  }),
+  teacherScript: z.string().optional(),
+  audio: z.string().optional(),
+  alignments: z.array(WordAlignmentSchema).optional(),
+  boardExam: BoardExamSchema.optional(),
+});
+
 export const VideoSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -155,6 +218,8 @@ export const VideoSchema = z.object({
       EquationSceneSchema,
       ActivitySceneSchema,
       ConversationSceneSchema,
+      RayDiagramSceneSchema,
+      MagneticSceneSchema,
     ])
   ),
 });

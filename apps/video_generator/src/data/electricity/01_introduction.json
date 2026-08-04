@@ -1,16 +1,16 @@
 {
   "id": "electricity-01",
   "title": "Introduction to Electricity",
-  "durationInFrames": 1152,
+  "durationInFrames": 1147,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 204,
+      "durationInFrames": 202,
       "content": {
         "text": "Electricity",
-        "subtitle": "Chapter 12 - Class 10 Science"
+        "subtitle": "CBSE Class 10 Physics • Electricity"
       },
       "audio": "/audio/electricity/electricity-01_scene-01.mp3",
       "alignments": [
@@ -54,7 +54,7 @@
     {
       "id": "scene-02",
       "type": "kinetic_typography",
-      "durationInFrames": 139,
+      "durationInFrames": 138,
       "content": {
         "text": "What constitutes electricity? How does it flow in an electric circuit?"
       },
@@ -120,7 +120,7 @@
     {
       "id": "scene-03",
       "type": "text",
-      "durationInFrames": 462,
+      "durationInFrames": 461,
       "content": {
         "heading": "Electric Current",
         "bullets": [
@@ -292,7 +292,7 @@
     {
       "id": "scene-04",
       "type": "diagram",
-      "durationInFrames": 347,
+      "durationInFrames": 346,
       "content": {
         "title": "Simple Electric Circuit Diagram",
         "subtitle": "A continuous and closed path of an electric current forms an electric circuit. It consists of a cell, bulb, ammeter, and key.",

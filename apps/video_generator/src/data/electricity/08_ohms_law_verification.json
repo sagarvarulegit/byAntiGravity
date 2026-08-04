@@ -10,7 +10,7 @@
         "text": "Verifying Ohm's Law",
         "subtitle": "Activity 11.1 Walkthrough"
       },
-      "durationInFrames": 136,
+      "durationInFrames": 135,
       "alignments": [
         {
           "word": "Verifying",
@@ -51,7 +51,7 @@
       "content": {
         "text": "How do we prove that potential difference is directly proportional to current?"
       },
-      "durationInFrames": 131,
+      "durationInFrames": 130,
       "alignments": [
         {
           "word": "How",
@@ -127,7 +127,7 @@
           "Record the current (I) from the ammeter and potential difference (V) from the voltmeter."
         ]
       },
-      "durationInFrames": 668,
+      "durationInFrames": 666,
       "alignments": [
         {
           "word": "The",
@@ -334,7 +334,7 @@
           "You will notice that the ratio V/I remains approximately constant."
         ]
       },
-      "durationInFrames": 716,
+      "durationInFrames": 715,
       "alignments": [
         {
           "word": "The",
@@ -541,7 +541,7 @@
         "title": "V-I Graph",
         "subtitle": "Plotting V vs I gives a straight line passing through the origin. This constant ratio is the Resistance (R)."
       },
-      "durationInFrames": 274,
+      "durationInFrames": 273,
       "alignments": [
         {
           "word": "V-I",
@@ -652,5 +652,5 @@
       "audio": "/audio/electricity/electricity-08_scene-05.mp3"
     }
   ],
-  "durationInFrames": 1925
+  "durationInFrames": 1919
 }

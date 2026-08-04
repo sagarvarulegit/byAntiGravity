@@ -31,6 +31,23 @@ npm run dev
 npx remotion render
 ```
 
+**Generate Voiceovers (ElevenLabs)**
+
+```console
+node generate-voiceovers.js <subject_folder>
+```
+
+**Generate AI YouTube Thumbnails (Gemini image model)**
+
+```console
+node generate-thumbnails.js <topic_name>
+# Example: node generate-thumbnails.js light_ray_diagram_masterclass
+# Uses GOOGLE_API_KEY or GEMINI_API_KEY (set in the OS environment or .env)
+# Note: on Windows, user-scope env vars are not visible to shells started
+# before the variable was set; use PowerShell:
+#   $env:GEMINI_API_KEY = [Environment]::GetEnvironmentVariable('GEMINI_API_KEY','User')
+```
+
 **Upgrade Remotion**
 
 ```console

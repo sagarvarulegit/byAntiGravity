@@ -28,7 +28,9 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "generate-voiceovers": "node generate-voiceovers.js",
+    "generate-thumbnails": "node generate-thumbnails.js"
   },
   "sideEffects": [
     "*.css"

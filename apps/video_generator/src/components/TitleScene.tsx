@@ -2,11 +2,13 @@ import React from "react";
 import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile } from "remotion";
 import { PaperBackground } from "./PaperBackground";
 import { AppColors, outfitFont } from "../theme";
+import { WordAlignment } from "../data/schema";
 
 interface TitleSceneProps {
   title: string;
   subtitle?: string;
   audio?: string;
+  alignments?: WordAlignment[];
 }
 
 export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio }) => {

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile } from "remotion";
+import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, Img, staticFile } from "remotion";
 import { PaperBackground } from "./PaperBackground";
 import { AppColors, outfitFont, serifFont } from "../theme";
 import { WordAlignment } from "../data/schema";
@@ -167,7 +167,7 @@ export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, a
             opacity: imageOpacity,
             transform: `scale(${interpolate(imageOpacity, [0, 1], [0.9, 1])})`
           }}>
-            <img 
+            <Img 
               src={staticFile(imageUrl)} 
               alt="Illustration" 
               style={{ 

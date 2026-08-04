@@ -10,7 +10,7 @@
         "text": "Factors Affecting Resistance",
         "subtitle": "What makes it harder for current to flow?"
       },
-      "durationInFrames": 152,
+      "durationInFrames": 151,
       "alignments": [
         {
           "word": "Factors",
@@ -76,7 +76,7 @@
       "content": {
         "text": "Resistance depends on four main physical properties of a conductor."
       },
-      "durationInFrames": 128,
+      "durationInFrames": 127,
       "alignments": [
         {
           "word": "Resistance",
@@ -141,7 +141,7 @@
           "Longer wire = More resistance."
         ]
       },
-      "durationInFrames": 295,
+      "durationInFrames": 294,
       "alignments": [
         {
           "word": "1.",
@@ -236,7 +236,7 @@
           "Thicker wire = Less resistance (easier to flow)."
         ]
       },
-      "durationInFrames": 383,
+      "durationInFrames": 382,
       "alignments": [
         {
           "word": "2.",
@@ -347,7 +347,7 @@
           "Resistance generally increases with an increase in temperature."
         ]
       },
-      "durationInFrames": 570,
+      "durationInFrames": 569,
       "alignments": [
         {
           "word": "3.",
@@ -524,7 +524,7 @@
         "title": "The Resistance Formula",
         "subtitle": "R = (rho * L) / A"
       },
-      "durationInFrames": 365,
+      "durationInFrames": 364,
       "alignments": [
         {
           "word": "The",
@@ -580,5 +580,5 @@
       "audio": "/audio/electricity/electricity-06_scene-06.mp3"
     }
   ],
-  "durationInFrames": 1893
+  "durationInFrames": 1887
 }

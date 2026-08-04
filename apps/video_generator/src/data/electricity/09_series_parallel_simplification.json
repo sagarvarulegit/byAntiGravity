@@ -10,7 +10,7 @@
         "text": "Simplifying Mixed Circuits",
         "subtitle": "Solving Series and Parallel Combinations"
       },
-      "durationInFrames": 175,
+      "durationInFrames": 174,
       "alignments": [
         {
           "word": "Simplifying",
@@ -61,7 +61,7 @@
       "content": {
         "text": "Complex circuits often have resistors in both series and parallel. The trick is to simplify them step by step."
       },
-      "durationInFrames": 211,
+      "durationInFrames": 209,
       "alignments": [
         {
           "word": "Complex",
@@ -172,10 +172,13 @@
           "Redraw the circuit by replacing the parallel block with a single resistor Rp."
         ]
       },
-      "durationInFrames": 646,
+      "durationInFrames": 645,
       "boardExam": {
         "repeated": 6,
-        "years": ["2025", "2026"],
+        "years": [
+          "2025",
+          "2026"
+        ],
         "marks": 3
       },
       "alignments": [
@@ -368,7 +371,7 @@
           "Redraw the circuit again until only one equivalent resistance remains."
         ]
       },
-      "durationInFrames": 645,
+      "durationInFrames": 644,
       "alignments": [
         {
           "word": "Step",
@@ -565,7 +568,7 @@
         "title": "Golden Rule",
         "subtitle": "Always work from the innermost or most obvious block outwards towards the battery."
       },
-      "durationInFrames": 170,
+      "durationInFrames": 169,
       "alignments": [
         {
           "word": "Golden",
@@ -646,5 +649,5 @@
       "audio": "/audio/electricity/electricity-09_scene-05.mp3"
     }
   ],
-  "durationInFrames": 1847
+  "durationInFrames": 1841
 }

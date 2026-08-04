@@ -1,0 +1,29 @@
+default_model = "deepseek-flash/deepseek-v4-flash"
+language = "en"
+[permissions]
+allow = ["Bash(cd /c/Sagar/Projects/CBSE/byAntiGravity/apps/video_generator && PYTHONIOENCODING=utf-8 python -c \"\n# Check whether the refracted rays pass through F2 = (OX+F, OY) = (310, 170)\nOX, OY, F = 240, 170, 70\nobjTopY = 110  # object top for beyond_2f\nrayEndX = OX + 1.6*F\nredOutY = OY + (OY - objTopY) * ((rayEndX - OX) / F)   # current formula\nprint('current redOutY =', redOutY, '-> ray from (240,110) to (352,%d)' % redOutY)\nslope = (redOutY - objTopY) / (rayEndX - OX)\ny_at_F2 = objTopY + slope * F\nprint('  ray y at x=310 (F2):', round(y_at_F2,1), '-> F2 y is 170:', 'PASS' if abs(y_at_F2-170) < 1 else 'MISSES F2 by %d px' % round(y_at_F2-170))\n\")"]
+
+[ui]
+show_reasoning = true
+
+[network]
+
+[network.proxy]
+type = "socks5"
+
+[agent]
+cold_resume_prune = true
+
+[tools]
+bash_timeout_seconds = 120
+mcp_call_timeout_seconds = 300
+
+[tools.background_jobs]
+stalled_warning_seconds = 900
+
+[[plugins]]
+name    = "playwright-test"
+command = "npx"
+args    = ["playwright", "run-test-mcp-server"]
+
+

@@ -79,5 +79,28 @@ skillopt_framework/
 .playwright-cli/
 tests/test-results/
 
+# Graphify: keep durable graph/report/manifest files visible to Git, but ignore
+# machine-local caches and intermediate extraction artifacts.
+graphify-out/cache/
+graphify-out/cost.json
+graphify-out/graph.html
+graphify-out/.graphify_python
+graphify-out/.graphify_detect.json
+graphify-out/.graphify_ast.json
+graphify-out/.graphify_semantic.json
+graphify-out/.graphify_semantic_new.json
+graphify-out/.graphify_extract.json
+graphify-out/.graphify_analysis.json
+graphify-out/.graphify_cached.json
+graphify-out/.graphify_uncached.txt
+graphify-out/.graphify_chunk_*.json
+graphify-out/.graphify_ast_runner.py
+graphify-out/.graphify_diagnostic.json
+graphify-out/.graphify_root
+graphify-out/20??-??-??/
+
+# The curriculum graph is large and reproducible from syllabus/. Keep it local.
+graphify-content/
+syllabus/graphify-out/
 
 

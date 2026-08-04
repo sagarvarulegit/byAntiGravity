@@ -9,6 +9,8 @@ import { DiagramScene } from "./components/DiagramScene";
 import { EquationScene } from "./components/EquationScene";
 import { ActivityScene } from "./components/ActivityScene";
 import { ConversationScene } from "./components/ConversationScene";
+import { RayDiagramScene } from "./components/RayDiagramScene";
+import { MagneticScene } from "./components/MagneticScene";
 import { BoardExamHighlight } from "./components/BoardExamHighlight";
 import defaultData from "./data/electricity/01_introduction.json";
 
@@ -81,6 +83,27 @@ export const MyComposition: React.FC<VideoData> = (props) => {
                     imageUrl={"imageUrl" in scene.content ? scene.content.imageUrl : undefined}
                     audio={scene.audio}
                     alignments={scene.alignments}
+                  />
+                )}
+                {scene.type === "ray_diagram" && (
+                  <RayDiagramScene
+                    title={scene.content.title}
+                    subtitle={scene.content.subtitle}
+                    audio={scene.audio}
+                    objectPosition={scene.content.objectPosition}
+                    variant={scene.content.variant}
+                    alignments={scene.alignments}
+                    teacherScript={scene.teacherScript}
+                  />
+                )}
+                {scene.type === "magnetic" && (
+                  <MagneticScene
+                    title={scene.content.title}
+                    subtitle={scene.content.subtitle}
+                    audio={scene.audio}
+                    variant={scene.content.variant}
+                    alignments={scene.alignments}
+                    teacherScript={scene.teacherScript}
                   />
                 )}
                 {scene.boardExam && (

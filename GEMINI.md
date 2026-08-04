@@ -95,6 +95,12 @@ No CI workflows present yet.
   - Group multiple questions and answers under a single styled `QuestionsSection` widget using Outfit font for badges and Georgia font for answer text, rather than spawning individual cards.
   - Support markdown tables dynamically, rendering cells through `_buildMathText` to preserve inline math formatting (e.g. chemical formulas like $Cl_2$, $NaOH$).
   - **Avoid Hardcoded Text-Matching for UI Components**: Never use hardcoded English string matches (e.g., `line.contains('Gas bubbles')`) inside the Dart parser to inject widgets or figures. Always rely on explicit database token tags (e.g., `[FIGURE: zinc_acid]`) to trigger UI elements, and remove any legacy text-matching fallback logic when explicit tokens are introduced to prevent duplicate widget rendering.
+- **Remotion Video Generator Conventions**:
+  - **Storytelling Benchmarks (KodeKloud, Science Simplified 4 All & Dr. Ben Miles)**: Frame videos around narrative mystery hooks, "What If?" thought experiments, progressive SVG diagram builds, and age-appropriate everyday analogies.
+  - **Mandatory Script Approval**: Present script proposals to user first and await explicit "Go ahead" before generating TTS audio or rendering videos.
+  - **Math Speech Sanitization**: Pass all formulas through `cleanMathTextForSpeech()` in `generate-voiceovers.js` to ensure fractions like `1/Rp` are spoken as "one over R P" rather than literal slashes.
+  - **Timeless Title Subtitles**: Omit hardcoded NCERT chapter numbers (e.g. "Chapter 12") in title scenes to prevent stale branding across textbook revisions. Use domain titles like `"CBSE Class 10 Physics • Electricity"`.
+  - **Empty Diagram Guard**: Ensure `DiagramScene.tsx` hides empty SVG card backgrounds when diagram components/wires are omitted.
 
 ## Notes
 - `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2

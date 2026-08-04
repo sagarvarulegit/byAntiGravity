@@ -10,7 +10,7 @@
         "text": "Conventional vs. Electron Flow",
         "subtitle": "Understanding the Direction of Current"
       },
-      "durationInFrames": 142,
+      "durationInFrames": 141,
       "alignments": [
         {
           "word": "Conventional",
@@ -66,7 +66,7 @@
       "content": {
         "text": "Historically, Benjamin Franklin thought positive charges moved through wires. This became the standard."
       },
-      "durationInFrames": 189,
+      "durationInFrames": 188,
       "alignments": [
         {
           "word": "Historically,",
@@ -143,7 +143,7 @@
         "title": "Conventional Current",
         "subtitle": "Flows from Positive (+) to Negative (-) terminal."
       },
-      "durationInFrames": 184,
+      "durationInFrames": 183,
       "alignments": [
         {
           "word": "Conventional",
@@ -204,7 +204,7 @@
       "content": {
         "text": "However, with the discovery of the electron, we learned the truth about metals."
       },
-      "durationInFrames": 148,
+      "durationInFrames": 146,
       "alignments": [
         {
           "word": "However,",
@@ -281,7 +281,7 @@
         "title": "Electron Flow",
         "subtitle": "Negative electrons actually flow from Negative (-) to Positive (+)."
       },
-      "durationInFrames": 231,
+      "durationInFrames": 230,
       "alignments": [
         {
           "word": "Electron",
@@ -357,7 +357,7 @@
           "In circuit diagrams, we always draw the Conventional Current direction."
         ]
       },
-      "durationInFrames": 430,
+      "durationInFrames": 429,
       "alignments": [
         {
           "word": "Summary.",
@@ -473,5 +473,5 @@
       "audio": "/audio/electricity/electricity-04_scene-06.mp3"
     }
   ],
-  "durationInFrames": 1324
+  "durationInFrames": 1317
 }

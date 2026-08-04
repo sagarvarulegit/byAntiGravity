@@ -1,0 +1,45 @@
+# Project-scoped Codex configuration. Codex loads this only for trusted repos.
+
+[mcp_servers.graphify]
+command = "C:/Users/sunwa/AppData/Local/Programs/Python/Python311/python.exe"
+args = [
+  "-m",
+  "graphify.serve",
+  "C:/Sagar/Projects/CBSE/byAntiGravity/graphify-out/graph.json",
+]
+cwd = "C:/Sagar/Projects/CBSE/byAntiGravity"
+startup_timeout_sec = 10
+tool_timeout_sec = 30
+enabled = true
+enabled_tools = [
+  "query_graph",
+  "get_node",
+  "get_neighbors",
+  "get_community",
+  "god_nodes",
+  "graph_stats",
+  "shortest_path",
+]
+
+# Opt-in curriculum graph. Keeping this disabled prevents the large textbook
+# corpus from entering routine coding sessions. Build it with
+# scripts/graphify-content.ps1 before enabling it.
+[mcp_servers.graphify_content]
+command = "C:/Users/sunwa/AppData/Local/Programs/Python/Python311/python.exe"
+args = [
+  "-m",
+  "graphify.serve",
+  "C:/Sagar/Projects/CBSE/byAntiGravity/graphify-content/graphify-out/graph.json",
+]
+cwd = "C:/Sagar/Projects/CBSE/byAntiGravity"
+startup_timeout_sec = 10
+tool_timeout_sec = 30
+enabled = false
+enabled_tools = [
+  "query_graph",
+  "get_node",
+  "get_neighbors",
+  "get_community",
+  "graph_stats",
+  "shortest_path",
+]

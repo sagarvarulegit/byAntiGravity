@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, random, Audio, staticFile } from "remotion";
+import { AbsoluteFill, useCurrentFrame, interpolate, random, Audio, staticFile } from "remotion";
 import { WordAlignment } from "../data/schema";
 
 const MagnesiumBurn: React.FC = () => {
@@ -147,6 +147,63 @@ const Electrolysis: React.FC = () => {
   );
 };
 
+const ZincAcid: React.FC = () => {
+  const frame = useCurrentFrame();
+
+  // H2 bubbles rising from the zinc granules inside the liquid
+  const bubbles = new Array(24).fill(0).map((_, i) => {
+    const cycle = (frame + i * 6) % 100; // each bubble has its own phase
+    const y = 320 - cycle * 1.25; // rise from granules (y=320) to surface (y~195)
+    const x = 135 + random(`zb-${i}`) * 55;
+    const r = random(`zr-${i}`) * 2.5 + 1;
+    const fadeIn = Math.min(1, cycle / 8);
+    const fadeOut = cycle > 88 ? (100 - cycle) / 12 : 1;
+    return { x, y: Math.max(195, y), r, opacity: fadeIn * fadeOut };
+  });
+
+  // Matchstick slides in near the tube mouth, then the POP burst
+  const matchIn = interpolate(frame, [80, 100], [-70, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const popFrame = 125;
+  const popProgress = interpolate(frame, [popFrame, popFrame + 18], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const popRadius = interpolate(popProgress, [0, 1], [10, 90]);
+  const popOpacity = frame > popFrame ? interpolate(frame, [popFrame, popFrame + 25], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 0;
+  const showPop = frame > popFrame && frame < popFrame + 40;
+  const flameFlicker = Math.abs(Math.sin(frame * 0.8)) * 0.5 + 0.5;
+
+  return (
+    <svg width="400" height="400" viewBox="0 0 400 400">
+      {/* Test tube */}
+      <path d="M 120 80 L 120 300 Q 120 340 150 340 L 190 340 Q 220 340 220 300 L 220 80" fill="none" stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
+      {/* Dilute acid liquid */}
+      <rect x="123" y="200" width="94" height="138" fill="rgba(125, 190, 255, 0.35)" rx="4" />
+      {/* Zinc granules at the bottom */}
+      {[...Array(7)].map((_, i) => (
+        <ellipse key={i} cx={140 + i * 11} cy={323} rx={7} ry={4} fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" transform={`rotate(${i * 18} ${140 + i * 11} 323)`} />
+      ))}
+      {/* Hydrogen bubbles */}
+      {frame > 30 &&
+        bubbles.map((b, i) => <circle key={i} cx={b.x} cy={b.y} r={b.r} fill="rgba(255,255,255,0.85)" opacity={b.opacity} />)}
+      {/* Matchstick held at the mouth of the tube */}
+      <g transform={`translate(${matchIn}, 0)`}>
+        <line x1="300" y1="66" x2="238" y2="86" stroke="#a16207" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="234" cy="87" r="6" fill="#7f1d1d" />
+        <path d="M 234 78 Q 227 64 234 58 Q 241 64 234 78" fill="#f59e0b" opacity={flameFlicker} />
+        <path d="M 234 76 Q 230 68 234 62 Q 238 68 234 76" fill="#fde047" />
+      </g>
+      {/* POP burst at the tube mouth */}
+      {showPop && (
+        <g>
+          <circle cx="234" cy="82" r={popRadius} fill="none" stroke="#f59e0b" strokeWidth="4" opacity={popOpacity * 0.8} />
+          <circle cx="234" cy="82" r={popRadius * 0.6} fill="none" stroke="#fde047" strokeWidth="3" opacity={popOpacity} />
+          <text x="234" y="56" textAnchor="middle" fontSize="34" fontWeight="900" fill="#fde047" opacity={popOpacity} fontFamily="Outfit, sans-serif">
+            POP!
+          </text>
+        </g>
+      )}
+    </svg>
+  );
+};
+
 export const ActivityScene: React.FC<{
   activityName: string;
   description: string;
@@ -162,6 +219,7 @@ export const ActivityScene: React.FC<{
       
       <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
         {animationType === "magnesium_burn" && <MagnesiumBurn />}
+        {animationType === "zinc_acid" && <ZincAcid />}
         {animationType === "quicklime_water" && <QuicklimeWater />}
         {animationType === "iron_copper_sulphate" && <IronCopperSulphate />}
         {animationType === "electrolysis" && <Electrolysis />}

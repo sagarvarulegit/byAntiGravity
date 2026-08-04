@@ -1,0 +1,3824 @@
+{
+  "id": "magnetic-01",
+  "title": "Magnetic Effects of Electric Current",
+  "fps": 30,
+  "durationInFrames": 9436,
+  "scenes": [
+    {
+      "id": "scene-00",
+      "type": "magnetic",
+      "durationInFrames": 1112,
+      "content": {
+        "title": "Magnetic Effects of Electric Current",
+        "subtitle": "CBSE Class 10 Physics • Magnetic Effects",
+        "variant": "intro"
+      },
+      "teacherScript": "Welcome to the masterclass on Magnetic Effects of Electric Current. Here is what this video covers. First: how a current-carrying wire makes a compass needle move. Second: magnetic field lines around a magnet and a wire. Third: the solenoid and the electromagnet. Fourth: Fleming's left hand rule for force on a conductor. Fifth: electromagnetic induction with a magnet and a coil. And finally: the electric motor versus the generator. Let us get started!",
+      "alignments": [
+        {
+          "word": "Welcome",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "word": "to",
+          "start": 0.395,
+          "end": 0.441
+        },
+        {
+          "word": "the",
+          "start": 0.488,
+          "end": 0.557
+        },
+        {
+          "word": "masterclass",
+          "start": 0.604,
+          "end": 1.3
+        },
+        {
+          "word": "on",
+          "start": 1.37,
+          "end": 1.533
+        },
+        {
+          "word": "Magnetic",
+          "start": 1.591,
+          "end": 1.997
+        },
+        {
+          "word": "Effects",
+          "start": 2.043,
+          "end": 2.38
+        },
+        {
+          "word": "of",
+          "start": 2.415,
+          "end": 2.461
+        },
+        {
+          "word": "Electric",
+          "start": 2.519,
+          "end": 2.833
+        },
+        {
+          "word": "Current.",
+          "start": 2.868,
+          "end": 3.367
+        },
+        {
+          "word": "Here",
+          "start": 3.692,
+          "end": 3.878
+        },
+        {
+          "word": "is",
+          "start": 3.913,
+          "end": 3.971
+        },
+        {
+          "word": "what",
+          "start": 4.005,
+          "end": 4.122
+        },
+        {
+          "word": "this",
+          "start": 4.156,
+          "end": 4.261
+        },
+        {
+          "word": "video",
+          "start": 4.296,
+          "end": 4.563
+        },
+        {
+          "word": "covers.",
+          "start": 4.609,
+          "end": 5.178
+        },
+        {
+          "word": "First:",
+          "start": 5.782,
+          "end": 6.293
+        },
+        {
+          "word": "how",
+          "start": 6.444,
+          "end": 6.606
+        },
+        {
+          "word": "a",
+          "start": 6.664,
+          "end": 6.699
+        },
+        {
+          "word": "current-carrying",
+          "start": 6.757,
+          "end": 7.465
+        },
+        {
+          "word": "wire",
+          "start": 7.535,
+          "end": 7.848
+        },
+        {
+          "word": "makes",
+          "start": 7.895,
+          "end": 8.104
+        },
+        {
+          "word": "a",
+          "start": 8.139,
+          "end": 8.162
+        },
+        {
+          "word": "compass",
+          "start": 8.22,
+          "end": 8.591
+        },
+        {
+          "word": "needle",
+          "start": 8.661,
+          "end": 8.951
+        },
+        {
+          "word": "move.",
+          "start": 9.009,
+          "end": 9.474
+        },
+        {
+          "word": "Second:",
+          "start": 9.915,
+          "end": 10.414
+        },
+        {
+          "word": "magnetic",
+          "start": 10.797,
+          "end": 11.215
+        },
+        {
+          "word": "field",
+          "start": 11.273,
+          "end": 11.505
+        },
+        {
+          "word": "lines",
+          "start": 11.552,
+          "end": 11.807
+        },
+        {
+          "word": "around",
+          "start": 11.865,
+          "end": 12.167
+        },
+        {
+          "word": "a",
+          "start": 12.225,
+          "end": 12.249
+        },
+        {
+          "word": "magnet",
+          "start": 12.318,
+          "end": 12.701
+        },
+        {
+          "word": "and",
+          "start": 12.794,
+          "end": 12.968
+        },
+        {
+          "word": "a",
+          "start": 13.026,
+          "end": 13.05
+        },
+        {
+          "word": "wire.",
+          "start": 13.108,
+          "end": 13.618
+        },
+        {
+          "word": "Third:",
+          "start": 14.222,
+          "end": 14.71
+        },
+        {
+          "word": "the",
+          "start": 15.035,
+          "end": 15.128
+        },
+        {
+          "word": "solenoid",
+          "start": 15.186,
+          "end": 15.755
+        },
+        {
+          "word": "and",
+          "start": 16.196,
+          "end": 16.428
+        },
+        {
+          "word": "the",
+          "start": 16.475,
+          "end": 16.544
+        },
+        {
+          "word": "electromagnet.",
+          "start": 16.591,
+          "end": 17.508
+        },
+        {
+          "word": "Fourth:",
+          "start": 18.321,
+          "end": 18.89
+        },
+        {
+          "word": "Fleming's",
+          "start": 19.702,
+          "end": 20.097
+        },
+        {
+          "word": "left",
+          "start": 20.144,
+          "end": 20.341
+        },
+        {
+          "word": "hand",
+          "start": 20.387,
+          "end": 20.562
+        },
+        {
+          "word": "rule",
+          "start": 20.631,
+          "end": 20.898
+        },
+        {
+          "word": "for",
+          "start": 20.968,
+          "end": 21.119
+        },
+        {
+          "word": "force",
+          "start": 21.2,
+          "end": 21.49
+        },
+        {
+          "word": "on",
+          "start": 21.548,
+          "end": 21.664
+        },
+        {
+          "word": "a",
+          "start": 21.699,
+          "end": 21.734
+        },
+        {
+          "word": "conductor.",
+          "start": 21.781,
+          "end": 22.454
+        },
+        {
+          "word": "Fifth:",
+          "start": 23.406,
+          "end": 23.998
+        },
+        {
+          "word": "electromagnetic",
+          "start": 24.695,
+          "end": 25.565
+        },
+        {
+          "word": "induction",
+          "start": 25.612,
+          "end": 26.053
+        },
+        {
+          "word": "with",
+          "start": 26.111,
+          "end": 26.262
+        },
+        {
+          "word": "a",
+          "start": 26.297,
+          "end": 26.32
+        },
+        {
+          "word": "magnet",
+          "start": 26.378,
+          "end": 26.784
+        },
+        {
+          "word": "and",
+          "start": 27.388,
+          "end": 27.644
+        },
+        {
+          "word": "a",
+          "start": 27.69,
+          "end": 27.725
+        },
+        {
+          "word": "coil.",
+          "start": 27.783,
+          "end": 28.363
+        },
+        {
+          "word": "And",
+          "start": 29.664,
+          "end": 29.815
+        },
+        {
+          "word": "finally:",
+          "start": 29.884,
+          "end": 30.476
+        },
+        {
+          "word": "the",
+          "start": 31.289,
+          "end": 31.394
+        },
+        {
+          "word": "electric",
+          "start": 31.452,
+          "end": 31.812
+        },
+        {
+          "word": "motor",
+          "start": 31.87,
+          "end": 32.16
+        },
+        {
+          "word": "versus",
+          "start": 32.856,
+          "end": 33.216
+        },
+        {
+          "word": "the",
+          "start": 33.286,
+          "end": 33.356
+        },
+        {
+          "word": "generator.",
+          "start": 33.402,
+          "end": 34.087
+        },
+        {
+          "word": "Let",
+          "start": 35.387,
+          "end": 35.538
+        },
+        {
+          "word": "us",
+          "start": 35.585,
+          "end": 35.654
+        },
+        {
+          "word": "get",
+          "start": 35.701,
+          "end": 35.817
+        },
+        {
+          "word": "started!",
+          "start": 35.863,
+          "end": 36.548
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-00.mp3"
+    },
+    {
+      "id": "scene-01",
+      "type": "magnetic",
+      "durationInFrames": 492,
+      "content": {
+        "title": "Oersted's Discovery",
+        "subtitle": "Current flowing through a wire makes a compass needle move!",
+        "variant": "oersted"
+      },
+      "teacherScript": "In 1820, Hans Christian Oersted discovered something shocking. He placed a compass needle near a wire carrying current, and the needle MOVED! Electric current creates magnetism. This is the magnetic effect of electric current. Let us understand it, step by step.",
+      "alignments": [
+        {
+          "word": "In",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "1820,",
+          "start": 0.186,
+          "end": 0.906
+        },
+        {
+          "word": "Hans",
+          "start": 0.964,
+          "end": 1.219
+        },
+        {
+          "word": "Christian",
+          "start": 1.265,
+          "end": 1.602
+        },
+        {
+          "word": "Oersted",
+          "start": 1.672,
+          "end": 2.148
+        },
+        {
+          "word": "discovered",
+          "start": 2.218,
+          "end": 2.682
+        },
+        {
+          "word": "something",
+          "start": 2.717,
+          "end": 2.995
+        },
+        {
+          "word": "shocking.",
+          "start": 3.042,
+          "end": 3.611
+        },
+        {
+          "word": "He",
+          "start": 3.936,
+          "end": 4.052
+        },
+        {
+          "word": "placed",
+          "start": 4.11,
+          "end": 4.365
+        },
+        {
+          "word": "a",
+          "start": 4.4,
+          "end": 4.423
+        },
+        {
+          "word": "compass",
+          "start": 4.481,
+          "end": 4.795
+        },
+        {
+          "word": "needle",
+          "start": 4.841,
+          "end": 5.085
+        },
+        {
+          "word": "near",
+          "start": 5.132,
+          "end": 5.283
+        },
+        {
+          "word": "a",
+          "start": 5.341,
+          "end": 5.375
+        },
+        {
+          "word": "wire",
+          "start": 5.445,
+          "end": 5.77
+        },
+        {
+          "word": "carrying",
+          "start": 5.828,
+          "end": 6.235
+        },
+        {
+          "word": "current,",
+          "start": 6.293,
+          "end": 6.769
+        },
+        {
+          "word": "and",
+          "start": 6.943,
+          "end": 7.082
+        },
+        {
+          "word": "the",
+          "start": 7.129,
+          "end": 7.198
+        },
+        {
+          "word": "needle",
+          "start": 7.245,
+          "end": 7.744
+        },
+        {
+          "word": "MOVED!",
+          "start": 7.918,
+          "end": 8.545
+        },
+        {
+          "word": "Electric",
+          "start": 8.928,
+          "end": 9.369
+        },
+        {
+          "word": "current",
+          "start": 9.416,
+          "end": 9.683
+        },
+        {
+          "word": "creates",
+          "start": 9.729,
+          "end": 10.089
+        },
+        {
+          "word": "magnetism.",
+          "start": 10.17,
+          "end": 10.948
+        },
+        {
+          "word": "This",
+          "start": 11.157,
+          "end": 11.355
+        },
+        {
+          "word": "is",
+          "start": 11.413,
+          "end": 11.494
+        },
+        {
+          "word": "the",
+          "start": 11.54,
+          "end": 11.61
+        },
+        {
+          "word": "magnetic",
+          "start": 11.68,
+          "end": 12.144
+        },
+        {
+          "word": "effect",
+          "start": 12.19,
+          "end": 12.492
+        },
+        {
+          "word": "of",
+          "start": 12.539,
+          "end": 12.585
+        },
+        {
+          "word": "electric",
+          "start": 12.655,
+          "end": 13.015
+        },
+        {
+          "word": "current.",
+          "start": 13.061,
+          "end": 13.491
+        },
+        {
+          "word": "Let",
+          "start": 13.7,
+          "end": 13.851
+        },
+        {
+          "word": "us",
+          "start": 13.897,
+          "end": 13.967
+        },
+        {
+          "word": "understand",
+          "start": 14.013,
+          "end": 14.396
+        },
+        {
+          "word": "it,",
+          "start": 14.454,
+          "end": 14.605
+        },
+        {
+          "word": "step",
+          "start": 14.698,
+          "end": 14.965
+        },
+        {
+          "word": "by",
+          "start": 15.047,
+          "end": 15.151
+        },
+        {
+          "word": "step.",
+          "start": 15.209,
+          "end": 15.882
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "magnetic",
+      "durationInFrames": 900,
+      "content": {
+        "title": "Magnetic Field & Field Lines",
+        "subtitle": "Closed loops from North to South, never crossing.",
+        "variant": "bar_magnet"
+      },
+      "teacherScript": "A magnet creates a magnetic field around it, an invisible region where it attracts or repels. We draw this field using field lines. The lines start at the NORTH pole, curve around, and enter the SOUTH pole. Inside the magnet they go from south to north, so field lines form CLOSED LOOPS. Two field lines NEVER cross. Where the lines are close together, the field is strong. Where they spread out, the field is weak.",
+      "alignments": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "word": "magnet",
+          "start": 0.209,
+          "end": 0.569
+        },
+        {
+          "word": "creates",
+          "start": 0.615,
+          "end": 0.882
+        },
+        {
+          "word": "a",
+          "start": 0.917,
+          "end": 0.94
+        },
+        {
+          "word": "magnetic",
+          "start": 0.987,
+          "end": 1.393
+        },
+        {
+          "word": "field",
+          "start": 1.463,
+          "end": 1.718
+        },
+        {
+          "word": "around",
+          "start": 1.765,
+          "end": 2.055
+        },
+        {
+          "word": "it,",
+          "start": 2.113,
+          "end": 2.38
+        },
+        {
+          "word": "an",
+          "start": 2.763,
+          "end": 2.902
+        },
+        {
+          "word": "invisible",
+          "start": 2.949,
+          "end": 3.367
+        },
+        {
+          "word": "region",
+          "start": 3.413,
+          "end": 3.773
+        },
+        {
+          "word": "where",
+          "start": 4.098,
+          "end": 4.307
+        },
+        {
+          "word": "it",
+          "start": 4.342,
+          "end": 4.4
+        },
+        {
+          "word": "attracts",
+          "start": 4.435,
+          "end": 4.946
+        },
+        {
+          "word": "or",
+          "start": 5.271,
+          "end": 5.433
+        },
+        {
+          "word": "repels.",
+          "start": 5.492,
+          "end": 6.2
+        },
+        {
+          "word": "We",
+          "start": 7.5,
+          "end": 7.628
+        },
+        {
+          "word": "draw",
+          "start": 7.674,
+          "end": 7.837
+        },
+        {
+          "word": "this",
+          "start": 7.883,
+          "end": 7.999
+        },
+        {
+          "word": "field",
+          "start": 8.046,
+          "end": 8.278
+        },
+        {
+          "word": "using",
+          "start": 8.348,
+          "end": 8.557
+        },
+        {
+          "word": "field",
+          "start": 8.626,
+          "end": 8.87
+        },
+        {
+          "word": "lines.",
+          "start": 8.928,
+          "end": 9.509
+        },
+        {
+          "word": "The",
+          "start": 9.892,
+          "end": 10.008
+        },
+        {
+          "word": "lines",
+          "start": 10.077,
+          "end": 10.344
+        },
+        {
+          "word": "start",
+          "start": 10.379,
+          "end": 10.588
+        },
+        {
+          "word": "at",
+          "start": 10.623,
+          "end": 10.67
+        },
+        {
+          "word": "the",
+          "start": 10.704,
+          "end": 10.774
+        },
+        {
+          "word": "NORTH",
+          "start": 10.832,
+          "end": 11.053
+        },
+        {
+          "word": "pole,",
+          "start": 11.122,
+          "end": 11.68
+        },
+        {
+          "word": "curve",
+          "start": 11.958,
+          "end": 12.225
+        },
+        {
+          "word": "around,",
+          "start": 12.249,
+          "end": 12.875
+        },
+        {
+          "word": "and",
+          "start": 13.154,
+          "end": 13.305
+        },
+        {
+          "word": "enter",
+          "start": 13.363,
+          "end": 13.549
+        },
+        {
+          "word": "the",
+          "start": 13.595,
+          "end": 13.665
+        },
+        {
+          "word": "SOUTH",
+          "start": 13.711,
+          "end": 13.967
+        },
+        {
+          "word": "pole.",
+          "start": 14.036,
+          "end": 14.501
+        },
+        {
+          "word": "Inside",
+          "start": 15.801,
+          "end": 16.231
+        },
+        {
+          "word": "the",
+          "start": 16.254,
+          "end": 16.324
+        },
+        {
+          "word": "magnet",
+          "start": 16.37,
+          "end": 16.684
+        },
+        {
+          "word": "they",
+          "start": 16.719,
+          "end": 16.835
+        },
+        {
+          "word": "go",
+          "start": 16.893,
+          "end": 17.021
+        },
+        {
+          "word": "from",
+          "start": 17.079,
+          "end": 17.218
+        },
+        {
+          "word": "south",
+          "start": 17.299,
+          "end": 17.636
+        },
+        {
+          "word": "to",
+          "start": 17.717,
+          "end": 17.822
+        },
+        {
+          "word": "north,",
+          "start": 17.903,
+          "end": 18.39
+        },
+        {
+          "word": "so",
+          "start": 18.565,
+          "end": 18.727
+        },
+        {
+          "word": "field",
+          "start": 18.82,
+          "end": 19.064
+        },
+        {
+          "word": "lines",
+          "start": 19.122,
+          "end": 19.343
+        },
+        {
+          "word": "form",
+          "start": 19.401,
+          "end": 19.702
+        },
+        {
+          "word": "CLOSED",
+          "start": 19.83,
+          "end": 20.225
+        },
+        {
+          "word": "LOOPS.",
+          "start": 20.295,
+          "end": 20.852
+        },
+        {
+          "word": "Two",
+          "start": 21.456,
+          "end": 21.688
+        },
+        {
+          "word": "field",
+          "start": 21.769,
+          "end": 22.013
+        },
+        {
+          "word": "lines",
+          "start": 22.071,
+          "end": 22.384
+        },
+        {
+          "word": "NEVER",
+          "start": 22.558,
+          "end": 22.837
+        },
+        {
+          "word": "cross.",
+          "start": 22.907,
+          "end": 23.476
+        },
+        {
+          "word": "Where",
+          "start": 24.172,
+          "end": 24.346
+        },
+        {
+          "word": "the",
+          "start": 24.37,
+          "end": 24.439
+        },
+        {
+          "word": "lines",
+          "start": 24.474,
+          "end": 24.683
+        },
+        {
+          "word": "are",
+          "start": 24.706,
+          "end": 24.788
+        },
+        {
+          "word": "close",
+          "start": 24.811,
+          "end": 25.02
+        },
+        {
+          "word": "together,",
+          "start": 25.043,
+          "end": 25.461
+        },
+        {
+          "word": "the",
+          "start": 25.531,
+          "end": 25.647
+        },
+        {
+          "word": "field",
+          "start": 25.705,
+          "end": 25.949
+        },
+        {
+          "word": "is",
+          "start": 26.007,
+          "end": 26.076
+        },
+        {
+          "word": "strong.",
+          "start": 26.134,
+          "end": 26.68
+        },
+        {
+          "word": "Where",
+          "start": 27.005,
+          "end": 27.191
+        },
+        {
+          "word": "they",
+          "start": 27.214,
+          "end": 27.307
+        },
+        {
+          "word": "spread",
+          "start": 27.342,
+          "end": 27.562
+        },
+        {
+          "word": "out,",
+          "start": 27.597,
+          "end": 27.945
+        },
+        {
+          "word": "the",
+          "start": 28.224,
+          "end": 28.329
+        },
+        {
+          "word": "field",
+          "start": 28.398,
+          "end": 28.654
+        },
+        {
+          "word": "is",
+          "start": 28.712,
+          "end": 28.781
+        },
+        {
+          "word": "weak.",
+          "start": 28.839,
+          "end": 29.49
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "magnetic",
+      "durationInFrames": 1763,
+      "content": {
+        "title": "Current in a Straight Wire",
+        "subtitle": "Concentric circles around the wire, direction by the Right Hand Thumb Rule.",
+        "variant": "straight_conductor"
+      },
+      "teacherScript": "Now let's understand the direction of the magnetic field around the wire, step by step, with our right hand. Step one: the right hand thumb rule. First, always check the direction of the CURRENT. Here, the current is flowing UP the wire. So point your right thumb UP, just like the current. Now curl your fingers. Your curled fingers show the direction of the MAGNETIC FIELD. And see, they curl ANTI-clockwise. So: current UP, thumb UP, field ANTI-clockwise. Step two: now the current flows DOWN. First check the current, it is DOWN. So point your thumb DOWN, just like the current. Curl your fingers again. They show the field direction. And now they curl CLOCKWISE. So: current DOWN, thumb DOWN, field CLOCKWISE. Remember: first check the CURRENT, the THUMB follows the current, and the FINGERS show the FIELD.",
+      "alignments": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "let's",
+          "start": 0.209,
+          "end": 0.36
+        },
+        {
+          "word": "understand",
+          "start": 0.395,
+          "end": 0.731
+        },
+        {
+          "word": "the",
+          "start": 0.778,
+          "end": 0.848
+        },
+        {
+          "word": "direction",
+          "start": 0.882,
+          "end": 1.242
+        },
+        {
+          "word": "of",
+          "start": 1.277,
+          "end": 1.324
+        },
+        {
+          "word": "the",
+          "start": 1.358,
+          "end": 1.428
+        },
+        {
+          "word": "magnetic",
+          "start": 1.474,
+          "end": 1.858
+        },
+        {
+          "word": "field",
+          "start": 1.916,
+          "end": 2.148
+        },
+        {
+          "word": "around",
+          "start": 2.194,
+          "end": 2.415
+        },
+        {
+          "word": "the",
+          "start": 2.45,
+          "end": 2.519
+        },
+        {
+          "word": "wire,",
+          "start": 2.554,
+          "end": 3.123
+        },
+        {
+          "word": "step",
+          "start": 3.506,
+          "end": 3.773
+        },
+        {
+          "word": "by",
+          "start": 3.843,
+          "end": 3.947
+        },
+        {
+          "word": "step,",
+          "start": 4.017,
+          "end": 4.493
+        },
+        {
+          "word": "with",
+          "start": 4.667,
+          "end": 4.83
+        },
+        {
+          "word": "our",
+          "start": 4.876,
+          "end": 4.969
+        },
+        {
+          "word": "right",
+          "start": 5.016,
+          "end": 5.19
+        },
+        {
+          "word": "hand.",
+          "start": 5.236,
+          "end": 5.654
+        },
+        {
+          "word": "Step",
+          "start": 6.769,
+          "end": 7.024
+        },
+        {
+          "word": "one:",
+          "start": 7.105,
+          "end": 7.5
+        },
+        {
+          "word": "the",
+          "start": 8.313,
+          "end": 8.417
+        },
+        {
+          "word": "right",
+          "start": 8.475,
+          "end": 8.661
+        },
+        {
+          "word": "hand",
+          "start": 8.707,
+          "end": 8.882
+        },
+        {
+          "word": "thumb",
+          "start": 8.94,
+          "end": 9.137
+        },
+        {
+          "word": "rule.",
+          "start": 9.207,
+          "end": 9.625
+        },
+        {
+          "word": "First,",
+          "start": 10.925,
+          "end": 11.494
+        },
+        {
+          "word": "always",
+          "start": 11.703,
+          "end": 12.074
+        },
+        {
+          "word": "check",
+          "start": 12.121,
+          "end": 12.307
+        },
+        {
+          "word": "the",
+          "start": 12.353,
+          "end": 12.423
+        },
+        {
+          "word": "direction",
+          "start": 12.458,
+          "end": 12.817
+        },
+        {
+          "word": "of",
+          "start": 12.852,
+          "end": 12.899
+        },
+        {
+          "word": "the",
+          "start": 12.945,
+          "end": 13.015
+        },
+        {
+          "word": "CURRENT.",
+          "start": 13.05,
+          "end": 13.642
+        },
+        {
+          "word": "Here,",
+          "start": 13.967,
+          "end": 14.28
+        },
+        {
+          "word": "the",
+          "start": 14.315,
+          "end": 14.385
+        },
+        {
+          "word": "current",
+          "start": 14.431,
+          "end": 14.698
+        },
+        {
+          "word": "is",
+          "start": 14.745,
+          "end": 14.814
+        },
+        {
+          "word": "flowing",
+          "start": 14.861,
+          "end": 15.163
+        },
+        {
+          "word": "UP",
+          "start": 15.29,
+          "end": 15.476
+        },
+        {
+          "word": "the",
+          "start": 15.534,
+          "end": 15.603
+        },
+        {
+          "word": "wire.",
+          "start": 15.65,
+          "end": 16.149
+        },
+        {
+          "word": "So",
+          "start": 16.474,
+          "end": 16.683
+        },
+        {
+          "word": "point",
+          "start": 16.764,
+          "end": 16.962
+        },
+        {
+          "word": "your",
+          "start": 16.997,
+          "end": 17.113
+        },
+        {
+          "word": "right",
+          "start": 17.147,
+          "end": 17.322
+        },
+        {
+          "word": "thumb",
+          "start": 17.368,
+          "end": 17.6
+        },
+        {
+          "word": "UP,",
+          "start": 17.716,
+          "end": 18.158
+        },
+        {
+          "word": "just",
+          "start": 18.367,
+          "end": 18.552
+        },
+        {
+          "word": "like",
+          "start": 18.599,
+          "end": 18.738
+        },
+        {
+          "word": "the",
+          "start": 18.761,
+          "end": 18.831
+        },
+        {
+          "word": "current.",
+          "start": 18.866,
+          "end": 19.353
+        },
+        {
+          "word": "Now",
+          "start": 19.795,
+          "end": 19.98
+        },
+        {
+          "word": "curl",
+          "start": 20.096,
+          "end": 20.329
+        },
+        {
+          "word": "your",
+          "start": 20.387,
+          "end": 20.491
+        },
+        {
+          "word": "fingers.",
+          "start": 20.538,
+          "end": 21.106
+        },
+        {
+          "word": "Your",
+          "start": 21.385,
+          "end": 21.548
+        },
+        {
+          "word": "curled",
+          "start": 21.606,
+          "end": 21.896
+        },
+        {
+          "word": "fingers",
+          "start": 21.954,
+          "end": 22.256
+        },
+        {
+          "word": "show",
+          "start": 22.291,
+          "end": 22.418
+        },
+        {
+          "word": "the",
+          "start": 22.465,
+          "end": 22.535
+        },
+        {
+          "word": "direction",
+          "start": 22.569,
+          "end": 22.929
+        },
+        {
+          "word": "of",
+          "start": 22.952,
+          "end": 22.999
+        },
+        {
+          "word": "the",
+          "start": 23.045,
+          "end": 23.115
+        },
+        {
+          "word": "MAGNETIC",
+          "start": 23.161,
+          "end": 23.591
+        },
+        {
+          "word": "FIELD.",
+          "start": 23.649,
+          "end": 24.079
+        },
+        {
+          "word": "And",
+          "start": 24.288,
+          "end": 24.439
+        },
+        {
+          "word": "see,",
+          "start": 24.508,
+          "end": 24.903
+        },
+        {
+          "word": "they",
+          "start": 25.112,
+          "end": 25.274
+        },
+        {
+          "word": "curl",
+          "start": 25.344,
+          "end": 25.6
+        },
+        {
+          "word": "ANTI-clockwise.",
+          "start": 25.727,
+          "end": 27.062
+        },
+        {
+          "word": "So:",
+          "start": 27.573,
+          "end": 28.038
+        },
+        {
+          "word": "current",
+          "start": 28.281,
+          "end": 28.618
+        },
+        {
+          "word": "UP,",
+          "start": 28.688,
+          "end": 29.129
+        },
+        {
+          "word": "thumb",
+          "start": 29.408,
+          "end": 29.686
+        },
+        {
+          "word": "UP,",
+          "start": 29.802,
+          "end": 30.197
+        },
+        {
+          "word": "field",
+          "start": 30.476,
+          "end": 30.894
+        },
+        {
+          "word": "ANTI-clockwise.",
+          "start": 31.068,
+          "end": 32.334
+        },
+        {
+          "word": "Step",
+          "start": 32.775,
+          "end": 33.03
+        },
+        {
+          "word": "two:",
+          "start": 33.077,
+          "end": 33.506
+        },
+        {
+          "word": "now",
+          "start": 34.017,
+          "end": 34.168
+        },
+        {
+          "word": "the",
+          "start": 34.226,
+          "end": 34.296
+        },
+        {
+          "word": "current",
+          "start": 34.331,
+          "end": 34.598
+        },
+        {
+          "word": "flows",
+          "start": 34.644,
+          "end": 34.888
+        },
+        {
+          "word": "DOWN.",
+          "start": 34.934,
+          "end": 35.329
+        },
+        {
+          "word": "First",
+          "start": 35.77,
+          "end": 36.026
+        },
+        {
+          "word": "check",
+          "start": 36.061,
+          "end": 36.223
+        },
+        {
+          "word": "the",
+          "start": 36.281,
+          "end": 36.351
+        },
+        {
+          "word": "current,",
+          "start": 36.386,
+          "end": 36.85
+        },
+        {
+          "word": "it",
+          "start": 37.024,
+          "end": 37.14
+        },
+        {
+          "word": "is",
+          "start": 37.187,
+          "end": 37.268
+        },
+        {
+          "word": "DOWN.",
+          "start": 37.326,
+          "end": 37.744
+        },
+        {
+          "word": "So",
+          "start": 38.069,
+          "end": 38.208
+        },
+        {
+          "word": "point",
+          "start": 38.29,
+          "end": 38.475
+        },
+        {
+          "word": "your",
+          "start": 38.51,
+          "end": 38.626
+        },
+        {
+          "word": "thumb",
+          "start": 38.661,
+          "end": 38.859
+        },
+        {
+          "word": "DOWN,",
+          "start": 38.917,
+          "end": 39.335
+        },
+        {
+          "word": "just",
+          "start": 39.509,
+          "end": 39.706
+        },
+        {
+          "word": "like",
+          "start": 39.753,
+          "end": 39.892
+        },
+        {
+          "word": "the",
+          "start": 39.915,
+          "end": 39.985
+        },
+        {
+          "word": "current.",
+          "start": 40.02,
+          "end": 40.496
+        },
+        {
+          "word": "Curl",
+          "start": 41.006,
+          "end": 41.262
+        },
+        {
+          "word": "your",
+          "start": 41.308,
+          "end": 41.401
+        },
+        {
+          "word": "fingers",
+          "start": 41.436,
+          "end": 41.703
+        },
+        {
+          "word": "again.",
+          "start": 41.749,
+          "end": 42.144
+        },
+        {
+          "word": "They",
+          "start": 42.527,
+          "end": 42.701
+        },
+        {
+          "word": "show",
+          "start": 42.759,
+          "end": 42.899
+        },
+        {
+          "word": "the",
+          "start": 42.957,
+          "end": 43.027
+        },
+        {
+          "word": "field",
+          "start": 43.073,
+          "end": 43.282
+        },
+        {
+          "word": "direction.",
+          "start": 43.317,
+          "end": 43.862
+        },
+        {
+          "word": "And",
+          "start": 44.037,
+          "end": 44.188
+        },
+        {
+          "word": "now",
+          "start": 44.234,
+          "end": 44.338
+        },
+        {
+          "word": "they",
+          "start": 44.385,
+          "end": 44.489
+        },
+        {
+          "word": "curl",
+          "start": 44.547,
+          "end": 44.791
+        },
+        {
+          "word": "CLOCKWISE.",
+          "start": 44.884,
+          "end": 45.697
+        },
+        {
+          "word": "So:",
+          "start": 46.208,
+          "end": 46.614
+        },
+        {
+          "word": "current",
+          "start": 47.055,
+          "end": 47.369
+        },
+        {
+          "word": "DOWN,",
+          "start": 47.415,
+          "end": 47.845
+        },
+        {
+          "word": "thumb",
+          "start": 48.019,
+          "end": 48.309
+        },
+        {
+          "word": "DOWN,",
+          "start": 48.367,
+          "end": 48.808
+        },
+        {
+          "word": "field",
+          "start": 48.983,
+          "end": 49.4
+        },
+        {
+          "word": "CLOCKWISE.",
+          "start": 49.609,
+          "end": 50.515
+        },
+        {
+          "word": "Remember:",
+          "start": 51.328,
+          "end": 51.885
+        },
+        {
+          "word": "first",
+          "start": 52.326,
+          "end": 52.57
+        },
+        {
+          "word": "check",
+          "start": 52.605,
+          "end": 52.767
+        },
+        {
+          "word": "the",
+          "start": 52.825,
+          "end": 52.895
+        },
+        {
+          "word": "CURRENT,",
+          "start": 52.93,
+          "end": 53.441
+        },
+        {
+          "word": "the",
+          "start": 54.253,
+          "end": 54.37
+        },
+        {
+          "word": "THUMB",
+          "start": 54.451,
+          "end": 54.741
+        },
+        {
+          "word": "follows",
+          "start": 54.857,
+          "end": 55.205
+        },
+        {
+          "word": "the",
+          "start": 55.24,
+          "end": 55.31
+        },
+        {
+          "word": "current,",
+          "start": 55.345,
+          "end": 55.786
+        },
+        {
+          "word": "and",
+          "start": 56.599,
+          "end": 56.738
+        },
+        {
+          "word": "the",
+          "start": 56.784,
+          "end": 56.854
+        },
+        {
+          "word": "FINGERS",
+          "start": 56.901,
+          "end": 57.202
+        },
+        {
+          "word": "show",
+          "start": 57.237,
+          "end": 57.377
+        },
+        {
+          "word": "the",
+          "start": 57.435,
+          "end": 57.504
+        },
+        {
+          "word": "FIELD.",
+          "start": 57.551,
+          "end": 58.236
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "magnetic",
+      "durationInFrames": 842,
+      "content": {
+        "title": "The Solenoid",
+        "subtitle": "Uniform, strong field inside, behaves like a bar magnet.",
+        "variant": "solenoid"
+      },
+      "teacherScript": "A solenoid is a coil of many circular turns of insulated wire. When current flows, the fields of all the turns COMBINE into one much stronger field. Inside the solenoid, the field lines are straight, parallel, and close together, so the field inside is UNIFORM and STRONG. Outside, the pattern looks exactly like a bar magnet. One end behaves like a NORTH pole, and the other end behaves like a SOUTH pole.",
+      "alignments": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.081
+        },
+        {
+          "word": "solenoid",
+          "start": 0.197,
+          "end": 0.801
+        },
+        {
+          "word": "is",
+          "start": 0.859,
+          "end": 0.952
+        },
+        {
+          "word": "a",
+          "start": 0.998,
+          "end": 1.022
+        },
+        {
+          "word": "coil",
+          "start": 1.091,
+          "end": 1.428
+        },
+        {
+          "word": "of",
+          "start": 1.486,
+          "end": 1.544
+        },
+        {
+          "word": "many",
+          "start": 1.66,
+          "end": 1.916
+        },
+        {
+          "word": "circular",
+          "start": 2.032,
+          "end": 2.461
+        },
+        {
+          "word": "turns",
+          "start": 2.508,
+          "end": 2.833
+        },
+        {
+          "word": "of",
+          "start": 2.879,
+          "end": 2.949
+        },
+        {
+          "word": "insulated",
+          "start": 3.065,
+          "end": 3.587
+        },
+        {
+          "word": "wire.",
+          "start": 3.646,
+          "end": 4.226
+        },
+        {
+          "word": "When",
+          "start": 4.737,
+          "end": 4.923
+        },
+        {
+          "word": "current",
+          "start": 4.981,
+          "end": 5.283
+        },
+        {
+          "word": "flows,",
+          "start": 5.317,
+          "end": 5.735
+        },
+        {
+          "word": "the",
+          "start": 5.77,
+          "end": 5.886
+        },
+        {
+          "word": "fields",
+          "start": 5.968,
+          "end": 6.316
+        },
+        {
+          "word": "of",
+          "start": 6.362,
+          "end": 6.42
+        },
+        {
+          "word": "all",
+          "start": 6.502,
+          "end": 6.687
+        },
+        {
+          "word": "the",
+          "start": 6.745,
+          "end": 6.815
+        },
+        {
+          "word": "turns",
+          "start": 6.861,
+          "end": 7.221
+        },
+        {
+          "word": "COMBINE",
+          "start": 7.314,
+          "end": 8.022
+        },
+        {
+          "word": "into",
+          "start": 8.115,
+          "end": 8.359
+        },
+        {
+          "word": "one",
+          "start": 8.475,
+          "end": 8.731
+        },
+        {
+          "word": "much",
+          "start": 8.789,
+          "end": 9.009
+        },
+        {
+          "word": "stronger",
+          "start": 9.091,
+          "end": 9.509
+        },
+        {
+          "word": "field.",
+          "start": 9.578,
+          "end": 10.043
+        },
+        {
+          "word": "Inside",
+          "start": 10.646,
+          "end": 11.099
+        },
+        {
+          "word": "the",
+          "start": 11.122,
+          "end": 11.192
+        },
+        {
+          "word": "solenoid,",
+          "start": 11.25,
+          "end": 11.877
+        },
+        {
+          "word": "the",
+          "start": 11.912,
+          "end": 12.016
+        },
+        {
+          "word": "field",
+          "start": 12.086,
+          "end": 12.353
+        },
+        {
+          "word": "lines",
+          "start": 12.411,
+          "end": 12.678
+        },
+        {
+          "word": "are",
+          "start": 12.713,
+          "end": 12.829
+        },
+        {
+          "word": "straight,",
+          "start": 12.887,
+          "end": 13.514
+        },
+        {
+          "word": "parallel,",
+          "start": 13.839,
+          "end": 14.501
+        },
+        {
+          "word": "and",
+          "start": 14.594,
+          "end": 14.838
+        },
+        {
+          "word": "close",
+          "start": 14.93,
+          "end": 15.186
+        },
+        {
+          "word": "together,",
+          "start": 15.209,
+          "end": 15.778
+        },
+        {
+          "word": "so",
+          "start": 15.952,
+          "end": 16.103
+        },
+        {
+          "word": "the",
+          "start": 16.173,
+          "end": 16.243
+        },
+        {
+          "word": "field",
+          "start": 16.312,
+          "end": 16.579
+        },
+        {
+          "word": "inside",
+          "start": 16.672,
+          "end": 17.171
+        },
+        {
+          "word": "is",
+          "start": 17.218,
+          "end": 17.357
+        },
+        {
+          "word": "UNIFORM",
+          "start": 17.485,
+          "end": 18.042
+        },
+        {
+          "word": "and",
+          "start": 18.251,
+          "end": 18.46
+        },
+        {
+          "word": "STRONG.",
+          "start": 18.553,
+          "end": 19.157
+        },
+        {
+          "word": "Outside,",
+          "start": 20.109,
+          "end": 20.585
+        },
+        {
+          "word": "the",
+          "start": 20.608,
+          "end": 20.678
+        },
+        {
+          "word": "pattern",
+          "start": 20.724,
+          "end": 21.037
+        },
+        {
+          "word": "looks",
+          "start": 21.072,
+          "end": 21.27
+        },
+        {
+          "word": "exactly",
+          "start": 21.316,
+          "end": 21.746
+        },
+        {
+          "word": "like",
+          "start": 21.792,
+          "end": 21.943
+        },
+        {
+          "word": "a",
+          "start": 21.966,
+          "end": 22.001
+        },
+        {
+          "word": "bar",
+          "start": 22.059,
+          "end": 22.233
+        },
+        {
+          "word": "magnet.",
+          "start": 22.291,
+          "end": 22.825
+        },
+        {
+          "word": "One",
+          "start": 23.15,
+          "end": 23.383
+        },
+        {
+          "word": "end",
+          "start": 23.429,
+          "end": 23.603
+        },
+        {
+          "word": "behaves",
+          "start": 23.673,
+          "end": 24.021
+        },
+        {
+          "word": "like",
+          "start": 24.044,
+          "end": 24.172
+        },
+        {
+          "word": "a",
+          "start": 24.195,
+          "end": 24.219
+        },
+        {
+          "word": "NORTH",
+          "start": 24.265,
+          "end": 24.486
+        },
+        {
+          "word": "pole,",
+          "start": 24.544,
+          "end": 24.962
+        },
+        {
+          "word": "and",
+          "start": 25.136,
+          "end": 25.287
+        },
+        {
+          "word": "the",
+          "start": 25.333,
+          "end": 25.403
+        },
+        {
+          "word": "other",
+          "start": 25.461,
+          "end": 25.67
+        },
+        {
+          "word": "end",
+          "start": 25.728,
+          "end": 25.844
+        },
+        {
+          "word": "behaves",
+          "start": 25.914,
+          "end": 26.25
+        },
+        {
+          "word": "like",
+          "start": 26.285,
+          "end": 26.424
+        },
+        {
+          "word": "a",
+          "start": 26.448,
+          "end": 26.471
+        },
+        {
+          "word": "SOUTH",
+          "start": 26.541,
+          "end": 26.819
+        },
+        {
+          "word": "pole.",
+          "start": 26.889,
+          "end": 27.539
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "magnetic",
+      "durationInFrames": 768,
+      "content": {
+        "title": "The Electromagnet",
+        "subtitle": "Soft iron core + solenoid = magnetism you can switch ON and OFF.",
+        "variant": "electromagnet"
+      },
+      "teacherScript": "Wrap the solenoid around a SOFT IRON core and you get an ELECTROMAGNET. Current ON, it becomes a strong magnet and picks up iron pins. Current OFF, the magnetism DISAPPEARS and the pins drop. That is the special trick: electromagnets can be switched ON and OFF. That is why cranes use them to lift scrap iron, and doorbells use them too.",
+      "alignments": [
+        {
+          "word": "Wrap",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "the",
+          "start": 0.383,
+          "end": 0.453
+        },
+        {
+          "word": "solenoid",
+          "start": 0.511,
+          "end": 1.057
+        },
+        {
+          "word": "around",
+          "start": 1.115,
+          "end": 1.451
+        },
+        {
+          "word": "a",
+          "start": 1.509,
+          "end": 1.533
+        },
+        {
+          "word": "SOFT",
+          "start": 1.649,
+          "end": 2.032
+        },
+        {
+          "word": "IRON",
+          "start": 2.101,
+          "end": 2.426
+        },
+        {
+          "word": "core",
+          "start": 2.496,
+          "end": 2.972
+        },
+        {
+          "word": "and",
+          "start": 3.135,
+          "end": 3.367
+        },
+        {
+          "word": "you",
+          "start": 3.425,
+          "end": 3.495
+        },
+        {
+          "word": "get",
+          "start": 3.564,
+          "end": 3.715
+        },
+        {
+          "word": "an",
+          "start": 3.785,
+          "end": 3.866
+        },
+        {
+          "word": "ELECTROMAGNET.",
+          "start": 3.924,
+          "end": 4.981
+        },
+        {
+          "word": "Current",
+          "start": 5.48,
+          "end": 5.863
+        },
+        {
+          "word": "ON,",
+          "start": 6.664,
+          "end": 7.256
+        },
+        {
+          "word": "it",
+          "start": 7.628,
+          "end": 7.744
+        },
+        {
+          "word": "becomes",
+          "start": 7.79,
+          "end": 8.081
+        },
+        {
+          "word": "a",
+          "start": 8.115,
+          "end": 8.139
+        },
+        {
+          "word": "strong",
+          "start": 8.185,
+          "end": 8.464
+        },
+        {
+          "word": "magnet",
+          "start": 8.533,
+          "end": 8.905
+        },
+        {
+          "word": "and",
+          "start": 8.963,
+          "end": 9.067
+        },
+        {
+          "word": "picks",
+          "start": 9.114,
+          "end": 9.311
+        },
+        {
+          "word": "up",
+          "start": 9.346,
+          "end": 9.439
+        },
+        {
+          "word": "iron",
+          "start": 9.52,
+          "end": 9.764
+        },
+        {
+          "word": "pins.",
+          "start": 9.834,
+          "end": 10.391
+        },
+        {
+          "word": "Current",
+          "start": 10.82,
+          "end": 11.192
+        },
+        {
+          "word": "OFF,",
+          "start": 11.331,
+          "end": 11.97
+        },
+        {
+          "word": "the",
+          "start": 12.179,
+          "end": 12.295
+        },
+        {
+          "word": "magnetism",
+          "start": 12.376,
+          "end": 13.026
+        },
+        {
+          "word": "DISAPPEARS",
+          "start": 13.201,
+          "end": 14.036
+        },
+        {
+          "word": "and",
+          "start": 14.35,
+          "end": 14.582
+        },
+        {
+          "word": "the",
+          "start": 14.629,
+          "end": 14.698
+        },
+        {
+          "word": "pins",
+          "start": 14.756,
+          "end": 15.081
+        },
+        {
+          "word": "drop.",
+          "start": 15.128,
+          "end": 15.662
+        },
+        {
+          "word": "That",
+          "start": 16.254,
+          "end": 16.475
+        },
+        {
+          "word": "is",
+          "start": 16.556,
+          "end": 16.707
+        },
+        {
+          "word": "the",
+          "start": 16.776,
+          "end": 16.834
+        },
+        {
+          "word": "special",
+          "start": 16.881,
+          "end": 17.206
+        },
+        {
+          "word": "trick:",
+          "start": 17.252,
+          "end": 17.682
+        },
+        {
+          "word": "electromagnets",
+          "start": 18.112,
+          "end": 18.936
+        },
+        {
+          "word": "can",
+          "start": 18.971,
+          "end": 19.052
+        },
+        {
+          "word": "be",
+          "start": 19.087,
+          "end": 19.157
+        },
+        {
+          "word": "switched",
+          "start": 19.191,
+          "end": 19.551
+        },
+        {
+          "word": "ON",
+          "start": 19.714,
+          "end": 20.074
+        },
+        {
+          "word": "and",
+          "start": 20.318,
+          "end": 20.527
+        },
+        {
+          "word": "OFF.",
+          "start": 20.608,
+          "end": 21.049
+        },
+        {
+          "word": "That",
+          "start": 21.432,
+          "end": 21.595
+        },
+        {
+          "word": "is",
+          "start": 21.63,
+          "end": 21.688
+        },
+        {
+          "word": "why",
+          "start": 21.722,
+          "end": 21.839
+        },
+        {
+          "word": "cranes",
+          "start": 21.897,
+          "end": 22.164
+        },
+        {
+          "word": "use",
+          "start": 22.21,
+          "end": 22.326
+        },
+        {
+          "word": "them",
+          "start": 22.349,
+          "end": 22.442
+        },
+        {
+          "word": "to",
+          "start": 22.489,
+          "end": 22.535
+        },
+        {
+          "word": "lift",
+          "start": 22.593,
+          "end": 22.767
+        },
+        {
+          "word": "scrap",
+          "start": 22.802,
+          "end": 23.081
+        },
+        {
+          "word": "iron,",
+          "start": 23.162,
+          "end": 23.51
+        },
+        {
+          "word": "and",
+          "start": 23.592,
+          "end": 23.731
+        },
+        {
+          "word": "doorbells",
+          "start": 23.777,
+          "end": 24.184
+        },
+        {
+          "word": "use",
+          "start": 24.242,
+          "end": 24.358
+        },
+        {
+          "word": "them",
+          "start": 24.381,
+          "end": 24.486
+        },
+        {
+          "word": "too.",
+          "start": 24.532,
+          "end": 25.078
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-05.mp3"
+    },
+    {
+      "id": "scene-06",
+      "type": "magnetic",
+      "durationInFrames": 1756,
+      "content": {
+        "title": "Force on a Conductor",
+        "subtitle": "Fleming's Left Hand Rule: Field, Current, Force.",
+        "variant": "fleming"
+      },
+      "teacherScript": "Let's do the classic experiment. Take a conductor between the poles of a strong magnet. The magnetic field goes from the NORTH pole to the SOUTH pole, here, UPWARD. Now pass a current through the conductor, INTO the page. Watch, the conductor experiences a FORCE, and it MOVES. It moves to the LEFT. Reverse the current, OUT of the page, and the conductor moves to the RIGHT. The force is strongest when the current is at RIGHT ANGLES to the field. The direction of this force is given by FLEMING'S LEFT HAND RULE. Stretch the thumb, the first finger and the middle finger of your LEFT hand, all mutually perpendicular. The FIRST finger points in the direction of the FIELD. The MIDDLE finger points in the direction of the CURRENT. The THUMB points in the direction of the FORCE, the motion of the conductor. Field, Current, Force, three fingers, all at right angles to each other.",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "do",
+          "start": 0.279,
+          "end": 0.36
+        },
+        {
+          "word": "the",
+          "start": 0.418,
+          "end": 0.488
+        },
+        {
+          "word": "classic",
+          "start": 0.534,
+          "end": 0.929
+        },
+        {
+          "word": "experiment.",
+          "start": 0.987,
+          "end": 1.637
+        },
+        {
+          "word": "Take",
+          "start": 2.241,
+          "end": 2.461
+        },
+        {
+          "word": "a",
+          "start": 2.496,
+          "end": 2.519
+        },
+        {
+          "word": "conductor",
+          "start": 2.577,
+          "end": 2.984
+        },
+        {
+          "word": "between",
+          "start": 3.03,
+          "end": 3.332
+        },
+        {
+          "word": "the",
+          "start": 3.367,
+          "end": 3.437
+        },
+        {
+          "word": "poles",
+          "start": 3.471,
+          "end": 3.762
+        },
+        {
+          "word": "of",
+          "start": 3.808,
+          "end": 3.855
+        },
+        {
+          "word": "a",
+          "start": 3.901,
+          "end": 3.924
+        },
+        {
+          "word": "strong",
+          "start": 3.971,
+          "end": 4.272
+        },
+        {
+          "word": "magnet.",
+          "start": 4.342,
+          "end": 4.865
+        },
+        {
+          "word": "The",
+          "start": 5.19,
+          "end": 5.306
+        },
+        {
+          "word": "magnetic",
+          "start": 5.364,
+          "end": 5.759
+        },
+        {
+          "word": "field",
+          "start": 5.817,
+          "end": 6.037
+        },
+        {
+          "word": "goes",
+          "start": 6.095,
+          "end": 6.281
+        },
+        {
+          "word": "from",
+          "start": 6.316,
+          "end": 6.432
+        },
+        {
+          "word": "the",
+          "start": 6.467,
+          "end": 6.536
+        },
+        {
+          "word": "NORTH",
+          "start": 6.594,
+          "end": 6.815
+        },
+        {
+          "word": "pole",
+          "start": 6.885,
+          "end": 7.175
+        },
+        {
+          "word": "to",
+          "start": 7.221,
+          "end": 7.303
+        },
+        {
+          "word": "the",
+          "start": 7.372,
+          "end": 7.442
+        },
+        {
+          "word": "SOUTH",
+          "start": 7.488,
+          "end": 7.779
+        },
+        {
+          "word": "pole,",
+          "start": 7.848,
+          "end": 8.278
+        },
+        {
+          "word": "here,",
+          "start": 8.429,
+          "end": 8.847
+        },
+        {
+          "word": "UPWARD.",
+          "start": 9.056,
+          "end": 9.601
+        },
+        {
+          "word": "Now",
+          "start": 10.414,
+          "end": 10.6
+        },
+        {
+          "word": "pass",
+          "start": 10.681,
+          "end": 10.902
+        },
+        {
+          "word": "a",
+          "start": 10.937,
+          "end": 10.96
+        },
+        {
+          "word": "current",
+          "start": 11.006,
+          "end": 11.273
+        },
+        {
+          "word": "through",
+          "start": 11.297,
+          "end": 11.471
+        },
+        {
+          "word": "the",
+          "start": 11.494,
+          "end": 11.564
+        },
+        {
+          "word": "conductor,",
+          "start": 11.598,
+          "end": 12.19
+        },
+        {
+          "word": "INTO",
+          "start": 12.365,
+          "end": 12.608
+        },
+        {
+          "word": "the",
+          "start": 12.666,
+          "end": 12.736
+        },
+        {
+          "word": "page.",
+          "start": 12.783,
+          "end": 13.34
+        },
+        {
+          "word": "Watch,",
+          "start": 14.292,
+          "end": 14.779
+        },
+        {
+          "word": "the",
+          "start": 14.849,
+          "end": 14.953
+        },
+        {
+          "word": "conductor",
+          "start": 15,
+          "end": 15.383
+        },
+        {
+          "word": "experiences",
+          "start": 15.441,
+          "end": 15.998
+        },
+        {
+          "word": "a",
+          "start": 16.056,
+          "end": 16.091
+        },
+        {
+          "word": "FORCE,",
+          "start": 16.207,
+          "end": 16.753
+        },
+        {
+          "word": "and",
+          "start": 16.904,
+          "end": 17.055
+        },
+        {
+          "word": "it",
+          "start": 17.101,
+          "end": 17.171
+        },
+        {
+          "word": "MOVES.",
+          "start": 17.229,
+          "end": 17.763
+        },
+        {
+          "word": "It",
+          "start": 18.088,
+          "end": 18.216
+        },
+        {
+          "word": "moves",
+          "start": 18.274,
+          "end": 18.541
+        },
+        {
+          "word": "to",
+          "start": 18.587,
+          "end": 18.634
+        },
+        {
+          "word": "the",
+          "start": 18.692,
+          "end": 18.761
+        },
+        {
+          "word": "LEFT.",
+          "start": 18.808,
+          "end": 19.284
+        },
+        {
+          "word": "Reverse",
+          "start": 19.609,
+          "end": 19.957
+        },
+        {
+          "word": "the",
+          "start": 19.992,
+          "end": 20.062
+        },
+        {
+          "word": "current,",
+          "start": 20.108,
+          "end": 20.619
+        },
+        {
+          "word": "OUT",
+          "start": 20.77,
+          "end": 20.932
+        },
+        {
+          "word": "of",
+          "start": 20.967,
+          "end": 21.025
+        },
+        {
+          "word": "the",
+          "start": 21.06,
+          "end": 21.13
+        },
+        {
+          "word": "page,",
+          "start": 21.165,
+          "end": 21.71
+        },
+        {
+          "word": "and",
+          "start": 21.884,
+          "end": 22.024
+        },
+        {
+          "word": "the",
+          "start": 22.059,
+          "end": 22.128
+        },
+        {
+          "word": "conductor",
+          "start": 22.163,
+          "end": 22.558
+        },
+        {
+          "word": "moves",
+          "start": 22.616,
+          "end": 22.848
+        },
+        {
+          "word": "to",
+          "start": 22.883,
+          "end": 22.929
+        },
+        {
+          "word": "the",
+          "start": 22.987,
+          "end": 23.057
+        },
+        {
+          "word": "RIGHT.",
+          "start": 23.103,
+          "end": 23.533
+        },
+        {
+          "word": "The",
+          "start": 23.858,
+          "end": 23.986
+        },
+        {
+          "word": "force",
+          "start": 24.055,
+          "end": 24.299
+        },
+        {
+          "word": "is",
+          "start": 24.322,
+          "end": 24.392
+        },
+        {
+          "word": "strongest",
+          "start": 24.427,
+          "end": 24.822
+        },
+        {
+          "word": "when",
+          "start": 24.845,
+          "end": 24.949
+        },
+        {
+          "word": "the",
+          "start": 24.973,
+          "end": 25.042
+        },
+        {
+          "word": "current",
+          "start": 25.077,
+          "end": 25.356
+        },
+        {
+          "word": "is",
+          "start": 25.402,
+          "end": 25.472
+        },
+        {
+          "word": "at",
+          "start": 25.518,
+          "end": 25.588
+        },
+        {
+          "word": "RIGHT",
+          "start": 25.658,
+          "end": 25.89
+        },
+        {
+          "word": "ANGLES",
+          "start": 25.971,
+          "end": 26.343
+        },
+        {
+          "word": "to",
+          "start": 26.389,
+          "end": 26.436
+        },
+        {
+          "word": "the",
+          "start": 26.494,
+          "end": 26.563
+        },
+        {
+          "word": "field.",
+          "start": 26.61,
+          "end": 27.074
+        },
+        {
+          "word": "The",
+          "start": 27.457,
+          "end": 27.585
+        },
+        {
+          "word": "direction",
+          "start": 27.631,
+          "end": 28.003
+        },
+        {
+          "word": "of",
+          "start": 28.038,
+          "end": 28.084
+        },
+        {
+          "word": "this",
+          "start": 28.119,
+          "end": 28.235
+        },
+        {
+          "word": "force",
+          "start": 28.293,
+          "end": 28.572
+        },
+        {
+          "word": "is",
+          "start": 28.607,
+          "end": 28.688
+        },
+        {
+          "word": "given",
+          "start": 28.746,
+          "end": 28.99
+        },
+        {
+          "word": "by",
+          "start": 29.048,
+          "end": 29.164
+        },
+        {
+          "word": "FLEMING'S",
+          "start": 29.28,
+          "end": 29.744
+        },
+        {
+          "word": "LEFT",
+          "start": 29.895,
+          "end": 30.162
+        },
+        {
+          "word": "HAND",
+          "start": 30.209,
+          "end": 30.464
+        },
+        {
+          "word": "RULE.",
+          "start": 30.534,
+          "end": 30.998
+        },
+        {
+          "word": "Stretch",
+          "start": 31.695,
+          "end": 32.043
+        },
+        {
+          "word": "the",
+          "start": 32.101,
+          "end": 32.171
+        },
+        {
+          "word": "thumb,",
+          "start": 32.252,
+          "end": 32.74
+        },
+        {
+          "word": "the",
+          "start": 33.123,
+          "end": 33.239
+        },
+        {
+          "word": "first",
+          "start": 33.32,
+          "end": 33.576
+        },
+        {
+          "word": "finger",
+          "start": 33.645,
+          "end": 34.005
+        },
+        {
+          "word": "and",
+          "start": 34.818,
+          "end": 34.981
+        },
+        {
+          "word": "the",
+          "start": 35.027,
+          "end": 35.097
+        },
+        {
+          "word": "middle",
+          "start": 35.155,
+          "end": 35.41
+        },
+        {
+          "word": "finger",
+          "start": 35.457,
+          "end": 35.747
+        },
+        {
+          "word": "of",
+          "start": 35.816,
+          "end": 35.886
+        },
+        {
+          "word": "your",
+          "start": 35.944,
+          "end": 36.06
+        },
+        {
+          "word": "LEFT",
+          "start": 36.13,
+          "end": 36.385
+        },
+        {
+          "word": "hand,",
+          "start": 36.443,
+          "end": 37.001
+        },
+        {
+          "word": "all",
+          "start": 37.442,
+          "end": 37.732
+        },
+        {
+          "word": "mutually",
+          "start": 37.813,
+          "end": 38.231
+        },
+        {
+          "word": "perpendicular.",
+          "start": 38.289,
+          "end": 39.172
+        },
+        {
+          "word": "The",
+          "start": 39.775,
+          "end": 39.915
+        },
+        {
+          "word": "FIRST",
+          "start": 40.008,
+          "end": 40.286
+        },
+        {
+          "word": "finger",
+          "start": 40.356,
+          "end": 40.611
+        },
+        {
+          "word": "points",
+          "start": 40.681,
+          "end": 40.948
+        },
+        {
+          "word": "in",
+          "start": 40.983,
+          "end": 41.029
+        },
+        {
+          "word": "the",
+          "start": 41.064,
+          "end": 41.134
+        },
+        {
+          "word": "direction",
+          "start": 41.157,
+          "end": 41.563
+        },
+        {
+          "word": "of",
+          "start": 41.598,
+          "end": 41.645
+        },
+        {
+          "word": "the",
+          "start": 41.691,
+          "end": 41.761
+        },
+        {
+          "word": "FIELD.",
+          "start": 41.807,
+          "end": 42.318
+        },
+        {
+          "word": "The",
+          "start": 43.015,
+          "end": 43.154
+        },
+        {
+          "word": "MIDDLE",
+          "start": 43.212,
+          "end": 43.479
+        },
+        {
+          "word": "finger",
+          "start": 43.525,
+          "end": 43.804
+        },
+        {
+          "word": "points",
+          "start": 43.885,
+          "end": 44.187
+        },
+        {
+          "word": "in",
+          "start": 44.222,
+          "end": 44.268
+        },
+        {
+          "word": "the",
+          "start": 44.303,
+          "end": 44.373
+        },
+        {
+          "word": "direction",
+          "start": 44.408,
+          "end": 44.802
+        },
+        {
+          "word": "of",
+          "start": 44.837,
+          "end": 44.895
+        },
+        {
+          "word": "the",
+          "start": 44.93,
+          "end": 45
+        },
+        {
+          "word": "CURRENT.",
+          "start": 45.046,
+          "end": 45.65
+        },
+        {
+          "word": "The",
+          "start": 46.463,
+          "end": 46.602
+        },
+        {
+          "word": "THUMB",
+          "start": 46.718,
+          "end": 47.078
+        },
+        {
+          "word": "points",
+          "start": 47.229,
+          "end": 47.542
+        },
+        {
+          "word": "in",
+          "start": 47.577,
+          "end": 47.624
+        },
+        {
+          "word": "the",
+          "start": 47.659,
+          "end": 47.728
+        },
+        {
+          "word": "direction",
+          "start": 47.763,
+          "end": 48.146
+        },
+        {
+          "word": "of",
+          "start": 48.181,
+          "end": 48.227
+        },
+        {
+          "word": "the",
+          "start": 48.274,
+          "end": 48.343
+        },
+        {
+          "word": "FORCE,",
+          "start": 48.402,
+          "end": 49.017
+        },
+        {
+          "word": "the",
+          "start": 49.458,
+          "end": 49.563
+        },
+        {
+          "word": "motion",
+          "start": 49.632,
+          "end": 49.946
+        },
+        {
+          "word": "of",
+          "start": 49.992,
+          "end": 50.039
+        },
+        {
+          "word": "the",
+          "start": 50.073,
+          "end": 50.143
+        },
+        {
+          "word": "conductor.",
+          "start": 50.178,
+          "end": 50.874
+        },
+        {
+          "word": "Field,",
+          "start": 51.826,
+          "end": 52.442
+        },
+        {
+          "word": "Current,",
+          "start": 52.883,
+          "end": 53.51
+        },
+        {
+          "word": "Force,",
+          "start": 53.893,
+          "end": 54.555
+        },
+        {
+          "word": "three",
+          "start": 54.833,
+          "end": 55.135
+        },
+        {
+          "word": "fingers,",
+          "start": 55.193,
+          "end": 55.832
+        },
+        {
+          "word": "all",
+          "start": 56.215,
+          "end": 56.47
+        },
+        {
+          "word": "at",
+          "start": 56.517,
+          "end": 56.587
+        },
+        {
+          "word": "right",
+          "start": 56.645,
+          "end": 56.842
+        },
+        {
+          "word": "angles",
+          "start": 56.888,
+          "end": 57.167
+        },
+        {
+          "word": "to",
+          "start": 57.202,
+          "end": 57.248
+        },
+        {
+          "word": "each",
+          "start": 57.318,
+          "end": 57.446
+        },
+        {
+          "word": "other.",
+          "start": 57.492,
+          "end": 58.003
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-06.mp3"
+    },
+    {
+      "id": "scene-07",
+      "type": "magnetic",
+      "durationInFrames": 988,
+      "content": {
+        "title": "Electromagnetic Induction",
+        "subtitle": "A moving magnet in a coil induces current (Faraday).",
+        "variant": "induction"
+      },
+      "teacherScript": "Now the reverse: can magnetism create electricity? Yes, this is ELECTROMAGNETIC INDUCTION, discovered by Michael Faraday. Push the magnet INTO the coil, the galvanometer needle DEFLECTS. Hold the magnet still, the needle returns to zero. Pull the magnet OUT, the needle deflects the OTHER way. Electricity is induced only while the magnet is MOVING, while the field lines are CUTTING the coil. This is the principle of the electric generator.",
+      "alignments": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "the",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "word": "reverse:",
+          "start": 0.372,
+          "end": 0.987
+        },
+        {
+          "word": "can",
+          "start": 1.37,
+          "end": 1.544
+        },
+        {
+          "word": "magnetism",
+          "start": 1.625,
+          "end": 2.218
+        },
+        {
+          "word": "create",
+          "start": 2.287,
+          "end": 2.566
+        },
+        {
+          "word": "electricity?",
+          "start": 2.601,
+          "end": 3.402
+        },
+        {
+          "word": "Yes,",
+          "start": 4.702,
+          "end": 5.05
+        },
+        {
+          "word": "this",
+          "start": 5.108,
+          "end": 5.294
+        },
+        {
+          "word": "is",
+          "start": 5.352,
+          "end": 5.445
+        },
+        {
+          "word": "ELECTROMAGNETIC",
+          "start": 5.526,
+          "end": 6.455
+        },
+        {
+          "word": "INDUCTION,",
+          "start": 6.502,
+          "end": 7.129
+        },
+        {
+          "word": "discovered",
+          "start": 7.279,
+          "end": 7.755
+        },
+        {
+          "word": "by",
+          "start": 7.79,
+          "end": 7.895
+        },
+        {
+          "word": "Michael",
+          "start": 7.964,
+          "end": 8.243
+        },
+        {
+          "word": "Faraday.",
+          "start": 8.301,
+          "end": 8.986
+        },
+        {
+          "word": "Push",
+          "start": 9.427,
+          "end": 9.694
+        },
+        {
+          "word": "the",
+          "start": 9.741,
+          "end": 9.81
+        },
+        {
+          "word": "magnet",
+          "start": 9.88,
+          "end": 10.252
+        },
+        {
+          "word": "INTO",
+          "start": 10.333,
+          "end": 10.612
+        },
+        {
+          "word": "the",
+          "start": 10.681,
+          "end": 10.751
+        },
+        {
+          "word": "coil,",
+          "start": 10.82,
+          "end": 11.413
+        },
+        {
+          "word": "the",
+          "start": 11.691,
+          "end": 11.807
+        },
+        {
+          "word": "galvanometer",
+          "start": 11.877,
+          "end": 12.574
+        },
+        {
+          "word": "needle",
+          "start": 12.632,
+          "end": 13.003
+        },
+        {
+          "word": "DEFLECTS.",
+          "start": 13.073,
+          "end": 13.978
+        },
+        {
+          "word": "Hold",
+          "start": 14.42,
+          "end": 14.687
+        },
+        {
+          "word": "the",
+          "start": 14.721,
+          "end": 14.791
+        },
+        {
+          "word": "magnet",
+          "start": 14.849,
+          "end": 15.174
+        },
+        {
+          "word": "still,",
+          "start": 15.221,
+          "end": 15.743
+        },
+        {
+          "word": "the",
+          "start": 15.917,
+          "end": 16.022
+        },
+        {
+          "word": "needle",
+          "start": 16.091,
+          "end": 16.347
+        },
+        {
+          "word": "returns",
+          "start": 16.382,
+          "end": 16.741
+        },
+        {
+          "word": "to",
+          "start": 16.776,
+          "end": 16.834
+        },
+        {
+          "word": "zero.",
+          "start": 16.904,
+          "end": 17.461
+        },
+        {
+          "word": "Pull",
+          "start": 18.158,
+          "end": 18.39
+        },
+        {
+          "word": "the",
+          "start": 18.448,
+          "end": 18.518
+        },
+        {
+          "word": "magnet",
+          "start": 18.564,
+          "end": 18.889
+        },
+        {
+          "word": "OUT,",
+          "start": 18.947,
+          "end": 19.423
+        },
+        {
+          "word": "the",
+          "start": 19.748,
+          "end": 19.865
+        },
+        {
+          "word": "needle",
+          "start": 19.934,
+          "end": 20.213
+        },
+        {
+          "word": "deflects",
+          "start": 20.248,
+          "end": 20.654
+        },
+        {
+          "word": "the",
+          "start": 20.689,
+          "end": 20.758
+        },
+        {
+          "word": "OTHER",
+          "start": 20.828,
+          "end": 21.002
+        },
+        {
+          "word": "way.",
+          "start": 21.06,
+          "end": 21.467
+        },
+        {
+          "word": "Electricity",
+          "start": 22.767,
+          "end": 23.464
+        },
+        {
+          "word": "is",
+          "start": 23.522,
+          "end": 23.603
+        },
+        {
+          "word": "induced",
+          "start": 23.649,
+          "end": 23.986
+        },
+        {
+          "word": "only",
+          "start": 24.102,
+          "end": 24.427
+        },
+        {
+          "word": "while",
+          "start": 24.474,
+          "end": 24.648
+        },
+        {
+          "word": "the",
+          "start": 24.683,
+          "end": 24.752
+        },
+        {
+          "word": "magnet",
+          "start": 24.799,
+          "end": 25.159
+        },
+        {
+          "word": "is",
+          "start": 25.217,
+          "end": 25.31
+        },
+        {
+          "word": "MOVING,",
+          "start": 25.402,
+          "end": 26.029
+        },
+        {
+          "word": "while",
+          "start": 26.413,
+          "end": 26.645
+        },
+        {
+          "word": "the",
+          "start": 26.668,
+          "end": 26.738
+        },
+        {
+          "word": "field",
+          "start": 26.819,
+          "end": 27.121
+        },
+        {
+          "word": "lines",
+          "start": 27.19,
+          "end": 27.515
+        },
+        {
+          "word": "are",
+          "start": 27.574,
+          "end": 27.713
+        },
+        {
+          "word": "CUTTING",
+          "start": 27.783,
+          "end": 28.177
+        },
+        {
+          "word": "the",
+          "start": 28.247,
+          "end": 28.317
+        },
+        {
+          "word": "coil.",
+          "start": 28.386,
+          "end": 28.967
+        },
+        {
+          "word": "This",
+          "start": 30.081,
+          "end": 30.313
+        },
+        {
+          "word": "is",
+          "start": 30.372,
+          "end": 30.453
+        },
+        {
+          "word": "the",
+          "start": 30.499,
+          "end": 30.569
+        },
+        {
+          "word": "principle",
+          "start": 30.615,
+          "end": 31.022
+        },
+        {
+          "word": "of",
+          "start": 31.057,
+          "end": 31.103
+        },
+        {
+          "word": "the",
+          "start": 31.149,
+          "end": 31.219
+        },
+        {
+          "word": "electric",
+          "start": 31.266,
+          "end": 31.591
+        },
+        {
+          "word": "generator.",
+          "start": 31.637,
+          "end": 32.415
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-07.mp3"
+    },
+    {
+      "id": "scene-08",
+      "type": "magnetic",
+      "durationInFrames": 815,
+      "content": {
+        "title": "Board Exam: Motor vs Generator",
+        "subtitle": "Motor: current in, motion out. Generator: motion in, current out.",
+        "variant": "motor_generator"
+      },
+      "teacherScript": "Board question: the ELECTRIC MOTOR converts electrical energy into mechanical energy. It uses the force on a current-carrying conductor in a magnetic field. The GENERATOR converts mechanical energy into electrical energy. It uses electromagnetic induction. Motor: current IN, motion OUT. Generator: motion IN, current OUT. Remember, MOTOR gives you MOTION.",
+      "boardExam": {
+        "repeated": 8,
+        "years": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "marks": 3
+      },
+      "alignments": [
+        {
+          "word": "Board",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "word": "question:",
+          "start": 0.325,
+          "end": 0.871
+        },
+        {
+          "word": "the",
+          "start": 1.196,
+          "end": 1.312
+        },
+        {
+          "word": "ELECTRIC",
+          "start": 1.382,
+          "end": 1.881
+        },
+        {
+          "word": "MOTOR",
+          "start": 1.962,
+          "end": 2.218
+        },
+        {
+          "word": "converts",
+          "start": 2.276,
+          "end": 2.647
+        },
+        {
+          "word": "electrical",
+          "start": 2.694,
+          "end": 3.146
+        },
+        {
+          "word": "energy",
+          "start": 3.216,
+          "end": 3.553
+        },
+        {
+          "word": "into",
+          "start": 3.622,
+          "end": 3.796
+        },
+        {
+          "word": "mechanical",
+          "start": 3.878,
+          "end": 4.458
+        },
+        {
+          "word": "energy.",
+          "start": 4.528,
+          "end": 5.016
+        },
+        {
+          "word": "It",
+          "start": 5.341,
+          "end": 5.468
+        },
+        {
+          "word": "uses",
+          "start": 5.538,
+          "end": 5.782
+        },
+        {
+          "word": "the",
+          "start": 5.828,
+          "end": 5.898
+        },
+        {
+          "word": "force",
+          "start": 5.979,
+          "end": 6.281
+        },
+        {
+          "word": "on",
+          "start": 6.339,
+          "end": 6.478
+        },
+        {
+          "word": "a",
+          "start": 6.525,
+          "end": 6.56
+        },
+        {
+          "word": "current-carrying",
+          "start": 6.676,
+          "end": 7.581
+        },
+        {
+          "word": "conductor",
+          "start": 7.628,
+          "end": 8.104
+        },
+        {
+          "word": "in",
+          "start": 8.197,
+          "end": 8.278
+        },
+        {
+          "word": "a",
+          "start": 8.324,
+          "end": 8.348
+        },
+        {
+          "word": "magnetic",
+          "start": 8.406,
+          "end": 8.847
+        },
+        {
+          "word": "field.",
+          "start": 8.905,
+          "end": 9.311
+        },
+        {
+          "word": "The",
+          "start": 9.52,
+          "end": 9.659
+        },
+        {
+          "word": "GENERATOR",
+          "start": 9.729,
+          "end": 10.228
+        },
+        {
+          "word": "converts",
+          "start": 10.275,
+          "end": 10.635
+        },
+        {
+          "word": "mechanical",
+          "start": 10.693,
+          "end": 11.238
+        },
+        {
+          "word": "energy",
+          "start": 11.32,
+          "end": 11.68
+        },
+        {
+          "word": "into",
+          "start": 11.749,
+          "end": 11.947
+        },
+        {
+          "word": "electrical",
+          "start": 12.04,
+          "end": 12.55
+        },
+        {
+          "word": "energy.",
+          "start": 12.62,
+          "end": 13.096
+        },
+        {
+          "word": "It",
+          "start": 13.27,
+          "end": 13.398
+        },
+        {
+          "word": "uses",
+          "start": 13.468,
+          "end": 13.77
+        },
+        {
+          "word": "electromagnetic",
+          "start": 13.839,
+          "end": 14.803
+        },
+        {
+          "word": "induction.",
+          "start": 14.849,
+          "end": 15.546
+        },
+        {
+          "word": "Motor:",
+          "start": 15.987,
+          "end": 16.498
+        },
+        {
+          "word": "current",
+          "start": 16.939,
+          "end": 17.322
+        },
+        {
+          "word": "IN,",
+          "start": 17.357,
+          "end": 17.856
+        },
+        {
+          "word": "motion",
+          "start": 18.297,
+          "end": 18.669
+        },
+        {
+          "word": "OUT.",
+          "start": 18.739,
+          "end": 19.122
+        },
+        {
+          "word": "Generator:",
+          "start": 19.725,
+          "end": 20.422
+        },
+        {
+          "word": "motion",
+          "start": 20.933,
+          "end": 21.316
+        },
+        {
+          "word": "IN,",
+          "start": 21.386,
+          "end": 21.885
+        },
+        {
+          "word": "current",
+          "start": 22.268,
+          "end": 22.663
+        },
+        {
+          "word": "OUT.",
+          "start": 22.732,
+          "end": 23.139
+        },
+        {
+          "word": "Remember,",
+          "start": 23.743,
+          "end": 24.393
+        },
+        {
+          "word": "MOTOR",
+          "start": 24.776,
+          "end": 25.194
+        },
+        {
+          "word": "gives",
+          "start": 25.368,
+          "end": 25.623
+        },
+        {
+          "word": "you",
+          "start": 25.67,
+          "end": 25.751
+        },
+        {
+          "word": "MOTION.",
+          "start": 25.844,
+          "end": 26.657
+        }
+      ],
+      "audio": "/audio/magnetic/magnetic-01_scene-08.mp3"
+    }
+  ]
+}

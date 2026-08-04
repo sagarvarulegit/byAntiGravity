@@ -1,0 +1,8 @@
+# The repository-level architecture graph excludes syllabus/. When this folder
+# is scanned as its own Graphify root, these negations opt the textbook corpus
+# back in while still skipping redundant source archives.
+!**/
+!**/*.pdf
+!**/*.json
+*.zip
+graphify-out/

@@ -10,7 +10,7 @@
         "text": "Heating Effect of Electric Current",
         "subtitle": "Joule's Law of Heating & Safety Fuses"
       },
-      "durationInFrames": 161,
+      "durationInFrames": 160,
       "alignments": [
         {
           "word": "Heating",
@@ -81,7 +81,7 @@
       "content": {
         "text": "When electric current flows through a high-resistance wire, electrical energy is converted into heat energy."
       },
-      "durationInFrames": 186,
+      "durationInFrames": 185,
       "alignments": [
         {
           "word": "When",
@@ -168,7 +168,7 @@
         "title": "Joule's Law of Heating",
         "subtitle": "H = I^2 * R * t"
       },
-      "durationInFrames": 234,
+      "durationInFrames": 233,
       "alignments": [
         {
           "word": "Joule's",
@@ -238,7 +238,7 @@
           "Electric bulbs use a Tungsten filament that gets so hot it emits light."
         ]
       },
-      "durationInFrames": 345,
+      "durationInFrames": 344,
       "alignments": [
         {
           "word": "Applications",
@@ -379,7 +379,7 @@
       "content": {
         "text": "A crucial application of this heating effect is the Electric Fuse."
       },
-      "durationInFrames": 123,
+      "durationInFrames": 121,
       "alignments": [
         {
           "word": "A",
@@ -451,7 +451,7 @@
           "This protects appliances from damage due to short circuits or overloading."
         ]
       },
-      "durationInFrames": 595,
+      "durationInFrames": 594,
       "alignments": [
         {
           "word": "The",
@@ -697,5 +697,5 @@
       "audio": "/audio/electricity/electricity-07_scene-06.mp3"
     }
   ],
-  "durationInFrames": 1644
+  "durationInFrames": 1637
 }

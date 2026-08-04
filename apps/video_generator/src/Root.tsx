@@ -8,6 +8,14 @@ import scienceCh1Part2 from "./data/science/ch1_part2.json";
 import scienceCh1Part3 from "./data/science/ch1_part3.json";
 import { CombinationAnimation } from "./components/CombinationAnimation";
 
+import electricityOhmsLaw from "./data/electricity/03_ohms_law.json";
+import parallelTrap from "./data/electricity/10_parallel_resistance_trap.json";
+import lightRayDiagrams from "./data/light/01_ray_diagrams.json";
+import lightLensFormula from "./data/light/02_lens_formula_trick.json";
+import acidsZincTest from "./data/acids/01_zinc_pop_test.json";
+import magneticEffects from "./data/magnetic/01_magnetic_effects.json";
+import { ReelComposition } from "./components/ReelComposition";
+
 export const RemotionRoot: React.FC = () => {
   // Helper to calculate true duration by accounting for the 15-frame overlaps in TransitionSeries
   const getActualDuration = (data: VideoData) => {
@@ -18,9 +26,75 @@ export const RemotionRoot: React.FC = () => {
   const part2Duration = getActualDuration(scienceCh1Part2 as unknown as VideoData);
   const part3Duration = getActualDuration(scienceCh1Part3 as unknown as VideoData);
   const defaultDuration = getActualDuration(defaultData as unknown as VideoData);
+  const ohmsLawDuration = getActualDuration(electricityOhmsLaw as unknown as VideoData);
+  const parallelTrapDuration = getActualDuration(parallelTrap as unknown as VideoData);
+  const lightMasterclassDuration = getActualDuration(lightRayDiagrams as unknown as VideoData);
+  const lightReelDuration = getActualDuration(lightLensFormula as unknown as VideoData);
+  const acidsZincTestDuration = getActualDuration(acidsZincTest as unknown as VideoData);
+  const magneticEffectsDuration = getActualDuration(magneticEffects as unknown as VideoData);
 
   return (
     <>
+      <Composition
+        id="LightRayDiagramMasterclass"
+        component={MyComposition}
+        durationInFrames={lightMasterclassDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={VideoSchema}
+        defaultProps={lightRayDiagrams as unknown as VideoData}
+      />
+      <Composition
+        id="LightLensFormulaReel"
+        component={ReelComposition}
+        durationInFrames={lightReelDuration}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={VideoSchema}
+        defaultProps={lightLensFormula as unknown as VideoData}
+      />
+      <Composition
+        id="AcidsZincTestMasterclass"
+        component={MyComposition}
+        durationInFrames={acidsZincTestDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={VideoSchema}
+        defaultProps={acidsZincTest as unknown as VideoData}
+      />
+      <Composition
+        id="MagneticEffectsMasterclass"
+        component={MyComposition}
+        durationInFrames={magneticEffectsDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={VideoSchema}
+        defaultProps={magneticEffects as unknown as VideoData}
+      />
+      <Composition
+        id="ElectricityOhmsLawMasterclass"
+        component={MyComposition}
+        durationInFrames={ohmsLawDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={VideoSchema}
+        defaultProps={electricityOhmsLaw as unknown as VideoData}
+      />
+      <Composition
+        id="ElectricityParallelTrapReel"
+        component={ReelComposition}
+        durationInFrames={parallelTrapDuration}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={VideoSchema}
+        defaultProps={parallelTrap as unknown as VideoData}
+      />
       <Composition
         id="ScienceCh1Full"
         component={FullChapterComposition}

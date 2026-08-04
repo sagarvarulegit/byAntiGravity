@@ -10,7 +10,7 @@
         "text": "Calculating the Electricity Bill",
         "subtitle": "Power, Time, and Commercial Units"
       },
-      "durationInFrames": 160,
+      "durationInFrames": 159,
       "alignments": [
         {
           "word": "Calculating",
@@ -66,7 +66,7 @@
       "content": {
         "text": "The Joule is too small for commercial energy measurement. We use the kilowatt-hour (kWh)."
       },
-      "durationInFrames": 200,
+      "durationInFrames": 199,
       "alignments": [
         {
           "word": "The",
@@ -152,7 +152,7 @@
           "1 kWh = 3.6 million Joules."
         ]
       },
-      "durationInFrames": 607,
+      "durationInFrames": 606,
       "alignments": [
         {
           "word": "What",
@@ -343,7 +343,7 @@
           "Step 3: Multiply Power (kW) by Time (h) to get Energy in kWh (Units)."
         ]
       },
-      "durationInFrames": 727,
+      "durationInFrames": 726,
       "alignments": [
         {
           "word": "Step-by-Step",
@@ -605,7 +605,7 @@
           "Watch out for unit conversions in exam questions!"
         ]
       },
-      "durationInFrames": 508,
+      "durationInFrames": 507,
       "alignments": [
         {
           "word": "Final",
@@ -801,5 +801,5 @@
       "audio": "/audio/electricity/electricity-11_scene-05.mp3"
     }
   ],
-  "durationInFrames": 2202
+  "durationInFrames": 2197
 }

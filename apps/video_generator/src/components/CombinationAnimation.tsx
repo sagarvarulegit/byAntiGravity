@@ -1,6 +1,6 @@
 import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
-import { AppColors, outfitFont } from "../theme";
+import { outfitFont } from "../theme";
 
 export const CombinationAnimation: React.FC = () => {
   const frame = useCurrentFrame();

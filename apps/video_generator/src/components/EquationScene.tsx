@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, spring, Audio, staticFile } from "remotion";
+import { AbsoluteFill, Audio, staticFile } from "remotion";
 import { EquationCompound, WordAlignment } from "../data/schema";
 
 export const EquationScene: React.FC<{
@@ -10,9 +10,6 @@ export const EquationScene: React.FC<{
   audio?: string;
   alignments?: WordAlignment[];
 }> = ({ reactants, products, focusSide, audio }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
   const renderCompound = (compound: EquationCompound) => {
     return (
       <span style={{ margin: "0 10px" }}>
@@ -28,7 +25,7 @@ export const EquationScene: React.FC<{
     const isFocused = focusSide === side || focusSide === "both";
     const opacity = focusSide === "none" || isFocused ? 1 : 0.4;
     return (
-      <div style={{ display: "flex", alignItems: "center", opacity, transition: "opacity 0.3s" }}>
+      <div style={{ display: "flex", alignItems: "center", opacity }}>
         {compounds.map((c, i) => (
           <React.Fragment key={i}>
             {renderCompound(c)}

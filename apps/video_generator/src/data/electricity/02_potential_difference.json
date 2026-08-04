@@ -1,16 +1,16 @@
 {
   "id": "electricity-02",
   "title": "Electric Potential Difference",
-  "durationInFrames": 977,
+  "durationInFrames": 974,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 175,
+      "durationInFrames": 174,
       "content": {
         "text": "Potential Difference",
-        "subtitle": "Chapter 12 - Class 10 Science"
+        "subtitle": "CBSE Class 10 Physics • Electricity"
       },
       "audio": "/audio/electricity/electricity-02_scene-01.mp3",
       "alignments": [
@@ -59,7 +59,7 @@
     {
       "id": "scene-02",
       "type": "kinetic_typography",
-      "durationInFrames": 188,
+      "durationInFrames": 187,
       "content": {
         "text": "Charges do not flow on their own. They need electric pressure difference, called Potential Difference."
       },
@@ -145,7 +145,7 @@
     {
       "id": "scene-03",
       "type": "text",
-      "durationInFrames": 614,
+      "durationInFrames": 613,
       "content": {
         "heading": "Potential Difference (V)",
         "bullets": [

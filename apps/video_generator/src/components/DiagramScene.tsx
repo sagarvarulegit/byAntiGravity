@@ -74,6 +74,8 @@ export const DiagramScene: React.FC<DiagramSceneProps> = ({ title, subtitle, aud
   const diagramOpacity = interpolate(contentEntrance, [0, 1], [0, 1]);
   const currentOffset = -frame * 3;
 
+  const hasDiagram = (components && components.length > 0) || (wires && wires.length > 0);
+
   return (
     <div style={{ flex: 1, position: "relative", width: "100%", height: "100%" }}>
       <PaperBackground />
@@ -82,7 +84,7 @@ export const DiagramScene: React.FC<DiagramSceneProps> = ({ title, subtitle, aud
       <div
         style={{
           position: "absolute", top: "80px", left: "140px", right: "80px", bottom: "80px",
-          display: "grid", gridTemplateColumns: "1fr 1.2fr", alignItems: "center", gap: "40px",
+          display: "grid", gridTemplateColumns: hasDiagram ? "1fr 1.2fr" : "1fr", alignItems: "center", gap: "40px",
         }}
       >
         <div style={{ opacity: textOpacity, transform: `translateX(${textTranslateX}px)`, fontFamily: outfitFont }}>
@@ -90,32 +92,34 @@ export const DiagramScene: React.FC<DiagramSceneProps> = ({ title, subtitle, aud
           {subtitle && <p style={{ fontFamily: serifFont, fontSize: "24px", lineHeight: "36px", color: AppColors.textLightSecondary, margin: 0 }}>{subtitle}</p>}
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", opacity: diagramOpacity, transform: `scale(${diagramScale})`, height: "100%" }}>
-          <svg width="460" height="340" viewBox="0 0 460 340" style={{ backgroundColor: AppColors.cardLight, border: `2px solid ${AppColors.borderLight}`, borderRadius: "16px", boxShadow: "0 8px 24px rgba(15, 23, 42, 0.04)" }}>
-            
-            {/* Wires */}
-            {wires.map(wire => {
-              const d = `M ${wire.points.map(p => `${p[0]} ${p[1]}`).join(' L ')}`;
-              return (
-                <g key={wire.id}>
-                  <path d={d} fill="none" stroke="#CBD5E1" strokeWidth="6" strokeLinejoin="round" />
-                  <path d={d} fill="none" stroke={AppColors.purple} strokeWidth="6" strokeDasharray="15, 15" strokeDashoffset={currentOffset} strokeLinejoin="round" />
-                </g>
-              );
-            })}
+        {hasDiagram && (
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", opacity: diagramOpacity, transform: `scale(${diagramScale})`, height: "100%" }}>
+            <svg width="460" height="340" viewBox="0 0 460 340" style={{ backgroundColor: AppColors.cardLight, border: `2px solid ${AppColors.borderLight}`, borderRadius: "16px", boxShadow: "0 8px 24px rgba(15, 23, 42, 0.04)" }}>
+              
+              {/* Wires */}
+              {wires.map(wire => {
+                const d = `M ${wire.points.map(p => `${p[0]} ${p[1]}`).join(' L ')}`;
+                return (
+                  <g key={wire.id}>
+                    <path d={d} fill="none" stroke="#CBD5E1" strokeWidth="6" strokeLinejoin="round" />
+                    <path d={d} fill="none" stroke={AppColors.purple} strokeWidth="6" strokeDasharray="15, 15" strokeDashoffset={currentOffset} strokeLinejoin="round" />
+                  </g>
+                );
+              })}
 
-            {/* Components */}
-            {components.map(comp => {
-              if (comp.type === 'battery') return <Battery key={comp.id} x={comp.x} y={comp.y} />;
-              if (comp.type === 'switch') return <Switch key={comp.id} x={comp.x} y={comp.y} />;
-              if (comp.type === 'ammeter') return <Meter key={comp.id} x={comp.x} y={comp.y} label={comp.label || "Ammeter"} type="A" />;
-              if (comp.type === 'voltmeter') return <Meter key={comp.id} x={comp.x} y={comp.y} label={comp.label || "Voltmeter"} type="V" />;
-              if (comp.type === 'bulb') return <Bulb key={comp.id} x={comp.x} y={comp.y} frame={frame} />;
-              if (comp.type === 'resistor') return <Resistor key={comp.id} x={comp.x} y={comp.y} />;
-              return null;
-            })}
-          </svg>
-        </div>
+              {/* Components */}
+              {components.map(comp => {
+                if (comp.type === 'battery') return <Battery key={comp.id} x={comp.x} y={comp.y} />;
+                if (comp.type === 'switch') return <Switch key={comp.id} x={comp.x} y={comp.y} />;
+                if (comp.type === 'ammeter') return <Meter key={comp.id} x={comp.x} y={comp.y} label={comp.label || "Ammeter"} type="A" />;
+                if (comp.type === 'voltmeter') return <Meter key={comp.id} x={comp.x} y={comp.y} label={comp.label || "Voltmeter"} type="V" />;
+                if (comp.type === 'bulb') return <Bulb key={comp.id} x={comp.x} y={comp.y} frame={frame} />;
+                if (comp.type === 'resistor') return <Resistor key={comp.id} x={comp.x} y={comp.y} />;
+                return null;
+              })}
+            </svg>
+          </div>
+        )}
       </div>
     </div>
   );

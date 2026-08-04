@@ -10,7 +10,7 @@
         "text": "Ammeter vs. Voltmeter",
         "subtitle": "Measuring Current and Potential Difference"
       },
-      "durationInFrames": 143,
+      "durationInFrames": 142,
       "alignments": [
         {
           "word": "Ammeter",
@@ -61,7 +61,7 @@
       "content": {
         "text": "An Ammeter measures electric current in Amperes."
       },
-      "durationInFrames": 95,
+      "durationInFrames": 94,
       "alignments": [
         {
           "word": "An",
@@ -108,7 +108,7 @@
         "title": "Ammeter Connection",
         "subtitle": "Always connected in SERIES. Has very low resistance."
       },
-      "durationInFrames": 136,
+      "durationInFrames": 135,
       "alignments": [
         {
           "word": "Ammeter",
@@ -169,7 +169,7 @@
       "content": {
         "text": "A Voltmeter measures potential difference in Volts."
       },
-      "durationInFrames": 96,
+      "durationInFrames": 95,
       "alignments": [
         {
           "word": "A",
@@ -216,7 +216,7 @@
         "title": "Voltmeter Connection",
         "subtitle": "Always connected in PARALLEL. Has very high resistance."
       },
-      "durationInFrames": 164,
+      "durationInFrames": 163,
       "alignments": [
         {
           "word": "Voltmeter",
@@ -281,7 +281,7 @@
           "Voltmeter: Measures Potential Difference (V), Parallel connection, High Resistance."
         ]
       },
-      "durationInFrames": 450,
+      "durationInFrames": 449,
       "alignments": [
         {
           "word": "Key",
@@ -382,5 +382,5 @@
       "audio": "/audio/electricity/electricity-05_scene-06.mp3"
     }
   ],
-  "durationInFrames": 1084
+  "durationInFrames": 1078
 }
