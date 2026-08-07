@@ -1,7 +1,7 @@
 {
   "id": "acids-01",
   "title": "Metal + Acid = Hydrogen! The Pop Test, Decoded",
-  "durationInFrames": 5366,
+  "durationInFrames": 4921,
   "fps": 30,
   "scenes": [
     {
@@ -104,10 +104,16 @@
     },
     {
       "id": "scene-02",
-      "type": "kinetic_typography",
+      "type": "text",
       "durationInFrames": 428,
       "content": {
-        "text": "A matchstick POPS near acid + metal... WHY?"
+        "heading": "The Hydrogen Pop Test",
+        "bullets": [
+          "Burning matchstick near test tube",
+          "Loud POP sound produced",
+          "Indicates presence of Hydrogen gas"
+        ],
+        "imageUrl": "/images/zinc_pop_test.jpg"
       },
       "teacherScript": "In the lab, a burning matchstick held near a test tube of metal and acid makes a loud pop. Everyone hears it. But why does it pop? And what is hiding inside that test tube? Let's find out, the exam way.",
       "alignments": [
@@ -329,6 +335,10 @@
           "Acid holds hydrogen like a handle",
           "Zinc is the stronger kid — it pulls hydrogen away",
           "Zinc sits ABOVE hydrogen in the reactivity series"
+        ],
+        "imageUrls": [
+          "/images/zinc_displacing_hydrogen.jpg",
+          "/images/zinc_hydrogen_tug_of_war.jpg"
         ]
       },
       "teacherScript": "Picture the acid as a row of hydrogen atoms, each holding on to its acid molecule like a handle. Zinc is the bigger, stronger kid on the playground. In the tug of war between zinc and hydrogen, zinc always wins. It pushes hydrogen out of the acid, and hydrogen escapes as a free gas. That gas is hydrogen.",
@@ -636,7 +646,8 @@
           "Guide 1: an acid can give away hydrogen (H+)",
           "Guide 2: a metal above H in the reactivity series displaces it",
           "Zinc > H in the series → displacement guaranteed"
-        ]
+        ],
+        "imageUrl": "/images/reactivity_series_chart.jpg"
       },
       "teacherScript": "Lock in two guides before we touch the lab. Guide one: an acid contains hydrogen that it can give away. Guide two: any metal that sits above hydrogen in the reactivity series can push hydrogen out of the acid. Zinc sits above hydrogen, so the displacement is guaranteed.",
       "alignments": [
@@ -1522,219 +1533,6 @@
       "audio": "/audio/acids/acids-01_scene-07.mp3"
     },
     {
-      "id": "scene-08",
-      "type": "conversation",
-      "durationInFrames": 445,
-      "content": {
-        "messages": [
-          {
-            "speaker": "Ravi",
-            "role": "student",
-            "text": "So the POP is hydrogen burning in air?"
-          },
-          {
-            "speaker": "Simran",
-            "role": "student",
-            "text": "Yes! And zinc sulphate stays behind in the tube."
-          },
-          {
-            "speaker": "Ravi",
-            "role": "student",
-            "text": "Does this work with any metal?"
-          },
-          {
-            "speaker": "Simran",
-            "role": "student",
-            "text": "Only metals above hydrogen in the reactivity series — zinc, iron, magnesium."
-          }
-        ]
-      },
-      "teacherScript": "So the pop is hydrogen burning in air. Yes! And zinc sulphate stays behind in the tube. Does this work with any metal? Only metals above hydrogen in the reactivity series. Like zinc, iron and magnesium.",
-      "alignments": [
-        {
-          "word": "So",
-          "start": 0,
-          "end": 0.174
-        },
-        {
-          "word": "the",
-          "start": 0.209,
-          "end": 0.279
-        },
-        {
-          "word": "pop",
-          "start": 0.325,
-          "end": 0.557
-        },
-        {
-          "word": "is",
-          "start": 0.615,
-          "end": 0.697
-        },
-        {
-          "word": "hydrogen",
-          "start": 0.778,
-          "end": 1.219
-        },
-        {
-          "word": "burning",
-          "start": 1.265,
-          "end": 1.509
-        },
-        {
-          "word": "in",
-          "start": 1.556,
-          "end": 1.602
-        },
-        {
-          "word": "air.",
-          "start": 1.66,
-          "end": 2.043
-        },
-        {
-          "word": "Yes!",
-          "start": 2.647,
-          "end": 3.332
-        },
-        {
-          "word": "And",
-          "start": 4.145,
-          "end": 4.307
-        },
-        {
-          "word": "zinc",
-          "start": 4.365,
-          "end": 4.551
-        },
-        {
-          "word": "sulphate",
-          "start": 4.609,
-          "end": 4.992
-        },
-        {
-          "word": "stays",
-          "start": 5.016,
-          "end": 5.224
-        },
-        {
-          "word": "behind",
-          "start": 5.283,
-          "end": 5.538
-        },
-        {
-          "word": "in",
-          "start": 5.584,
-          "end": 5.631
-        },
-        {
-          "word": "the",
-          "start": 5.666,
-          "end": 5.735
-        },
-        {
-          "word": "tube.",
-          "start": 5.77,
-          "end": 6.2
-        },
-        {
-          "word": "Does",
-          "start": 6.641,
-          "end": 6.827
-        },
-        {
-          "word": "this",
-          "start": 6.85,
-          "end": 6.966
-        },
-        {
-          "word": "work",
-          "start": 7.012,
-          "end": 7.187
-        },
-        {
-          "word": "with",
-          "start": 7.221,
-          "end": 7.326
-        },
-        {
-          "word": "any",
-          "start": 7.372,
-          "end": 7.488
-        },
-        {
-          "word": "metal?",
-          "start": 7.546,
-          "end": 7.988
-        },
-        {
-          "word": "Only",
-          "start": 8.94,
-          "end": 9.195
-        },
-        {
-          "word": "metals",
-          "start": 9.253,
-          "end": 9.485
-        },
-        {
-          "word": "above",
-          "start": 9.532,
-          "end": 9.741
-        },
-        {
-          "word": "hydrogen",
-          "start": 9.776,
-          "end": 10.17
-        },
-        {
-          "word": "in",
-          "start": 10.217,
-          "end": 10.275
-        },
-        {
-          "word": "the",
-          "start": 10.31,
-          "end": 10.379
-        },
-        {
-          "word": "reactivity",
-          "start": 10.414,
-          "end": 10.937
-        },
-        {
-          "word": "series.",
-          "start": 10.995,
-          "end": 11.564
-        },
-        {
-          "word": "Like",
-          "start": 11.889,
-          "end": 12.121
-        },
-        {
-          "word": "zinc,",
-          "start": 12.167,
-          "end": 12.585
-        },
-        {
-          "word": "iron",
-          "start": 12.759,
-          "end": 13.084
-        },
-        {
-          "word": "and",
-          "start": 13.154,
-          "end": 13.27
-        },
-        {
-          "word": "magnesium.",
-          "start": 13.317,
-          "end": 14.303
-        }
-      ],
-      "audio": "/audio/acids/acids-01_scene-08.mp3"
-    },
-    {
       "id": "scene-09",
       "type": "text",
       "durationInFrames": 1335,
@@ -1745,7 +1543,8 @@
           "Step 1: Zn + H2SO4 → ZnSO4 + H2 ↑",
           "Step 2: Burning matchstick → 'pop' confirms H2",
           "Trap: 'burns with a blue flame' instead of 'pop' = mark lost"
-        ]
+        ],
+        "imageUrl": "/images/zinc_board_exam.jpg"
       },
       "teacherScript": "Time to earn five marks. This question has been repeated in multiple board exams. What happens when zinc granules are added to dilute sulphuric acid? Write the balanced equation, and describe how you would test the gas evolved. Step one: zinc displaces hydrogen, forming zinc sulphate and releasing hydrogen gas. Step two: bring a burning matchstick near the mouth of the test tube; the gas burns with a pop sound, confirming it is hydrogen. The trap: many students write, burns with a blue flame. Wrong. Hydrogen pops. And forget the balanced equation, and you lose a mark too. Write both, and the five marks are yours.",
       "boardExam": {

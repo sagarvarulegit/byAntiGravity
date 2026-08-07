@@ -2,12 +2,15 @@ import React from "react";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { slide } from "@remotion/transitions/slide";
 import { VideoData } from "./data/schema";
+import { AppColors } from "./theme";
 import { TitleScene } from "./components/TitleScene";
 import { TextScene } from "./components/TextScene";
 import { KineticTypographyScene } from "./components/KineticTypographyScene";
 import { DiagramScene } from "./components/DiagramScene";
 import { EquationScene } from "./components/EquationScene";
 import { ActivityScene } from "./components/ActivityScene";
+import { TrigonometryScene } from "./components/TrigonometryScene";
+import { BiologyScene } from "./components/BiologyScene";
 import { ConversationScene } from "./components/ConversationScene";
 import { RayDiagramScene } from "./components/RayDiagramScene";
 import { MagneticScene } from "./components/MagneticScene";
@@ -16,21 +19,40 @@ import defaultData from "./data/electricity/01_introduction.json";
 
 export const MyComposition: React.FC<VideoData> = (props) => {
   // Fall back to defaultData if props are not fully populated
-  const data = props && props.id ? props : (defaultData as unknown as VideoData);
+  const data =
+    props && props.id ? props : (defaultData as unknown as VideoData);
+
+  const firstRealScene = data.scenes.find(
+    (s) => s.type !== "title" && s.type !== "text",
+  );
+  const subjectType = firstRealScene?.type || "physics_lens";
+
+  let brandColor = AppColors.physicsChem;
+  if (subjectType.includes("biology") || subjectType.includes("heart"))
+    brandColor = AppColors.biology;
+  if (subjectType.includes("maths") || subjectType.includes("trigonometry"))
+    brandColor = AppColors.maths;
 
   return (
     <>
-      <TransitionSeries>
+      <TransitionSeries
+        style={{
+          translate: "-0.2px 5.5px",
+        }}
+      >
         {data.scenes.map((scene, idx) => {
           return (
             <React.Fragment key={scene.id}>
-              <TransitionSeries.Sequence durationInFrames={scene.durationInFrames}>
+              <TransitionSeries.Sequence
+                durationInFrames={scene.durationInFrames}
+              >
                 {scene.type === "title" && (
                   <TitleScene
                     title={scene.content.text}
                     subtitle={scene.content.subtitle}
                     audio={scene.audio}
                     alignments={scene.alignments}
+                    brandColor={brandColor}
                   />
                 )}
                 {scene.type === "kinetic_typography" && (
@@ -47,6 +69,11 @@ export const MyComposition: React.FC<VideoData> = (props) => {
                     audio={scene.audio}
                     alignments={scene.alignments}
                     imageUrl={scene.content.imageUrl}
+                    imageUrls={
+                      "imageUrls" in scene.content
+                        ? scene.content.imageUrls
+                        : undefined
+                    }
                   />
                 )}
                 {scene.type === "diagram" && (
@@ -77,10 +104,32 @@ export const MyComposition: React.FC<VideoData> = (props) => {
                     alignments={scene.alignments}
                   />
                 )}
+                {scene.type === "trigonometry" && (
+                  <TrigonometryScene
+                    title={scene.content.title}
+                    subtitle={scene.content.subtitle}
+                    variant={scene.content.variant}
+                    audio={scene.audio}
+                    alignments={scene.alignments}
+                  />
+                )}
+                {scene.type === "biology" && (
+                  <BiologyScene
+                    title={scene.content.title}
+                    subtitle={scene.content.subtitle}
+                    variant={scene.content.variant}
+                    audio={scene.audio}
+                    alignments={scene.alignments}
+                  />
+                )}
                 {scene.type === "conversation" && (
                   <ConversationScene
                     messages={scene.content.messages}
-                    imageUrl={"imageUrl" in scene.content ? scene.content.imageUrl : undefined}
+                    imageUrl={
+                      "imageUrl" in scene.content
+                        ? scene.content.imageUrl
+                        : undefined
+                    }
                     audio={scene.audio}
                     alignments={scene.alignments}
                   />
@@ -131,24 +180,27 @@ export const MyComposition: React.FC<VideoData> = (props) => {
 import { Series, AbsoluteFill } from "remotion";
 import { AppColors } from "./theme";
 
-export const FullChapterComposition: React.FC<{ parts: VideoData[] }> = ({ parts }) => {
+export const FullChapterComposition: React.FC<{ parts: VideoData[] }> = ({
+  parts,
+}) => {
   const PAUSE_FRAMES = 120; // 4 seconds pause
-  
+
   const sequences: React.ReactNode[] = [];
   parts.forEach((part, index) => {
     // TransitionSeries overlaps each scene by 15 frames
-    const actualDuration = part.durationInFrames - (part.scenes.length - 1) * 15;
+    const actualDuration =
+      part.durationInFrames - (part.scenes.length - 1) * 15;
 
     sequences.push(
       <Series.Sequence key={`part-${index}`} durationInFrames={actualDuration}>
         <MyComposition {...part} />
-      </Series.Sequence>
+      </Series.Sequence>,
     );
     if (index < parts.length - 1) {
       sequences.push(
         <Series.Sequence key={`pause-${index}`} durationInFrames={PAUSE_FRAMES}>
           <AbsoluteFill style={{ backgroundColor: AppColors.bgLight }} />
-        </Series.Sequence>
+        </Series.Sequence>,
       );
     }
   });

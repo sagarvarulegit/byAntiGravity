@@ -166,7 +166,7 @@
           "Convex Lens Focal Length (f): ALWAYS Positive (+)",
           "Concave Lens Focal Length (f): ALWAYS Negative (-)"
         ],
-        "imageUrl": "/images/convex_vs_concave_lens_signs.jpg"
+        "imageUrl": "/images/convex_vs_concave_lens_signs.svg"
       },
       "teacherScript": "The Lens formula is 1 over f equals 1 over v minus 1 over u. Remember these golden rules: Object distance u is ALWAYS negative. Convex lens focal length f is ALWAYS positive. Concave lens focal length f is ALWAYS negative.",
       "boardExam": {

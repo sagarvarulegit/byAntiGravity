@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, random, Audio, staticFile } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, random, Audio, staticFile } from "remotion";
 import { WordAlignment } from "../data/schema";
 
 const MagnesiumBurn: React.FC = () => {
@@ -147,23 +147,39 @@ const Electrolysis: React.FC = () => {
   );
 };
 
-const ZincAcid: React.FC = () => {
+const getStartFrame = (alignments: WordAlignment[] | undefined, targetWord: string, fallbackFrame: number, fps: number = 30) => {
+  if (!alignments) return fallbackFrame;
+  const match = alignments.find(a => a.word.toLowerCase().includes(targetWord.toLowerCase()));
+  if (match) return Math.round(match.start * fps);
+  return fallbackFrame;
+};
+
+const ZincAcid: React.FC<{ alignments?: WordAlignment[] }> = ({ alignments }) => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const dropFrame = getStartFrame(alignments, "drop", 30, fps);
+  const matchFrame = getStartFrame(alignments, "matchstick", 250, fps);
+  const popFrame = getStartFrame(alignments, "pop!", 350, fps);
+
+  const bubblesStart = dropFrame + 20;
 
   // H2 bubbles rising from the zinc granules inside the liquid
   const bubbles = new Array(24).fill(0).map((_, i) => {
-    const cycle = (frame + i * 6) % 100; // each bubble has its own phase
+    const activeFrame = frame - bubblesStart - i * 6;
+    if (activeFrame < 0) return { active: false, x: 0, y: 0, r: 0, opacity: 0 };
+    const cycle = activeFrame % 100;
     const y = 320 - cycle * 1.25; // rise from granules (y=320) to surface (y~195)
     const x = 135 + random(`zb-${i}`) * 55;
     const r = random(`zr-${i}`) * 2.5 + 1;
     const fadeIn = Math.min(1, cycle / 8);
     const fadeOut = cycle > 88 ? (100 - cycle) / 12 : 1;
-    return { x, y: Math.max(195, y), r, opacity: fadeIn * fadeOut };
+    return { active: true, x, y: Math.max(195, y), r, opacity: fadeIn * fadeOut };
   });
 
-  // Matchstick slides in near the tube mouth, then the POP burst
-  const matchIn = interpolate(frame, [80, 100], [-70, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const popFrame = 125;
+  // Matchstick slides in from the right to the tube mouth
+  const matchIn = interpolate(frame, [matchFrame, matchFrame + 15], [150, -70], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  
   const popProgress = interpolate(frame, [popFrame, popFrame + 18], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const popRadius = interpolate(popProgress, [0, 1], [10, 90]);
   const popOpacity = frame > popFrame ? interpolate(frame, [popFrame, popFrame + 25], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 0;
@@ -171,31 +187,45 @@ const ZincAcid: React.FC = () => {
   const flameFlicker = Math.abs(Math.sin(frame * 0.8)) * 0.5 + 0.5;
 
   return (
-    <svg width="400" height="400" viewBox="0 0 400 400">
+    <svg width="400" height="400" viewBox="0 0 400 400" style={{ overflow: "visible" }}>
       {/* Test tube */}
       <path d="M 120 80 L 120 300 Q 120 340 150 340 L 190 340 Q 220 340 220 300 L 220 80" fill="none" stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
       {/* Dilute acid liquid */}
       <rect x="123" y="200" width="94" height="138" fill="rgba(125, 190, 255, 0.35)" rx="4" />
-      {/* Zinc granules at the bottom */}
-      {[...Array(7)].map((_, i) => (
-        <ellipse key={i} cx={140 + i * 11} cy={323} rx={7} ry={4} fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" transform={`rotate(${i * 18} ${140 + i * 11} 323)`} />
-      ))}
+      
+      {/* Zinc granules dropping */}
+      {[...Array(7)].map((_, i) => {
+        const dropDelay = i * 3;
+        const startY = 0;
+        const targetY = 323;
+        const currentY = interpolate(frame, [dropFrame + dropDelay, dropFrame + dropDelay + 15], [startY, targetY], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+        if (frame < dropFrame + dropDelay) return null;
+        return (
+          <ellipse key={i} cx={140 + i * 11} cy={currentY} rx={7} ry={4} fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" transform={`rotate(${i * 18} ${140 + i * 11} ${currentY})`} />
+        );
+      })}
+
       {/* Hydrogen bubbles */}
-      {frame > 30 &&
-        bubbles.map((b, i) => <circle key={i} cx={b.x} cy={b.y} r={b.r} fill="rgba(255,255,255,0.85)" opacity={b.opacity} />)}
+      {bubbles.filter(b => b.active).map((b, i) => (
+        <circle key={i} cx={b.x} cy={b.y} r={b.r} fill="rgba(255,255,255,0.85)" opacity={b.opacity} />
+      ))}
+      
       {/* Matchstick held at the mouth of the tube */}
-      <g transform={`translate(${matchIn}, 0)`}>
-        <line x1="300" y1="66" x2="238" y2="86" stroke="#a16207" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="234" cy="87" r="6" fill="#7f1d1d" />
-        <path d="M 234 78 Q 227 64 234 58 Q 241 64 234 78" fill="#f59e0b" opacity={flameFlicker} />
-        <path d="M 234 76 Q 230 68 234 62 Q 238 68 234 76" fill="#fde047" />
-      </g>
-      {/* POP burst at the tube mouth */}
+      {frame >= matchFrame && (
+        <g transform={`translate(${matchIn}, 0)`}>
+          <line x1="300" y1="66" x2="238" y2="86" stroke="#a16207" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="234" cy="87" r="6" fill="#7f1d1d" />
+          <path d="M 234 78 Q 227 64 234 58 Q 241 64 234 78" fill="#f59e0b" opacity={flameFlicker} />
+          <path d="M 234 76 Q 230 68 234 62 Q 238 68 234 76" fill="#fde047" />
+        </g>
+      )}
+
+      {/* POP burst at the tube mouth (x=164) */}
       {showPop && (
         <g>
-          <circle cx="234" cy="82" r={popRadius} fill="none" stroke="#f59e0b" strokeWidth="4" opacity={popOpacity * 0.8} />
-          <circle cx="234" cy="82" r={popRadius * 0.6} fill="none" stroke="#fde047" strokeWidth="3" opacity={popOpacity} />
-          <text x="234" y="56" textAnchor="middle" fontSize="34" fontWeight="900" fill="#fde047" opacity={popOpacity} fontFamily="Outfit, sans-serif">
+          <circle cx="164" cy="82" r={popRadius} fill="none" stroke="#f59e0b" strokeWidth="4" opacity={popOpacity * 0.8} />
+          <circle cx="164" cy="82" r={popRadius * 0.6} fill="none" stroke="#fde047" strokeWidth="3" opacity={popOpacity} />
+          <text x="164" y="56" textAnchor="middle" fontSize="34" fontWeight="900" fill="#fde047" opacity={popOpacity} fontFamily="Outfit, sans-serif">
             POP!
           </text>
         </g>
@@ -210,7 +240,7 @@ export const ActivityScene: React.FC<{
   animationType: string;
   audio?: string;
   alignments?: WordAlignment[];
-}> = ({ activityName, description, animationType, audio }) => {
+}> = ({ activityName, description, animationType, audio, alignments }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#1A1A1A", color: "white", padding: 80 }}>
       {audio && <Audio src={staticFile(audio)} />}
@@ -219,7 +249,7 @@ export const ActivityScene: React.FC<{
       
       <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
         {animationType === "magnesium_burn" && <MagnesiumBurn />}
-        {animationType === "zinc_acid" && <ZincAcid />}
+        {animationType === "zinc_acid" && <ZincAcid alignments={alignments} />}
         {animationType === "quicklime_water" && <QuicklimeWater />}
         {animationType === "iron_copper_sulphate" && <IronCopperSulphate />}
         {animationType === "electrolysis" && <Electrolysis />}

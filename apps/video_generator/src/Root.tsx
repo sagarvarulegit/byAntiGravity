@@ -16,6 +16,9 @@ import acidsZincTest from "./data/acids/01_zinc_pop_test.json";
 import magneticEffects from "./data/magnetic/01_magnetic_effects.json";
 import { ReelComposition } from "./components/ReelComposition";
 
+import mathsLighthouseMasterclass from "./data/maths/01_trigonometry_lighthouse.json";
+import mathsLighthouseShort from "./data/maths/02_trigonometry_lighthouse_short.json";
+
 export const RemotionRoot: React.FC = () => {
   // Helper to calculate true duration by accounting for the 15-frame overlaps in TransitionSeries
   const getActualDuration = (data: VideoData) => {
@@ -32,6 +35,9 @@ export const RemotionRoot: React.FC = () => {
   const lightReelDuration = getActualDuration(lightLensFormula as unknown as VideoData);
   const acidsZincTestDuration = getActualDuration(acidsZincTest as unknown as VideoData);
   const magneticEffectsDuration = getActualDuration(magneticEffects as unknown as VideoData);
+
+  const mathsMasterclassDuration = getActualDuration(mathsLighthouseMasterclass as unknown as VideoData);
+  const mathsShortDuration = getActualDuration(mathsLighthouseShort as unknown as VideoData);
 
   return (
     <>
@@ -94,6 +100,27 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         schema={VideoSchema}
         defaultProps={parallelTrap as unknown as VideoData}
+      />
+
+      <Composition
+        id="MathsLighthouseMasterclass"
+        component={MyComposition}
+        durationInFrames={mathsMasterclassDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={VideoSchema}
+        defaultProps={mathsLighthouseMasterclass as unknown as VideoData}
+      />
+      <Composition
+        id="MathsLighthouseShort"
+        component={ReelComposition}
+        durationInFrames={mathsShortDuration}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={VideoSchema}
+        defaultProps={mathsLighthouseShort as unknown as VideoData}
       />
       <Composition
         id="ScienceCh1Full"

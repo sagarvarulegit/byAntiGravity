@@ -1,0 +1,709 @@
+{
+  "id": "FlemingElectronPYQ",
+  "title": "CBSE Class 10 Physics • Electricity",
+  "durationInFrames": 1786,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01-hook",
+      "type": "magnetic",
+      "durationInFrames": 339,
+      "content": {
+        "title": "THE CBSE TRICK QUESTION!",
+        "variant": "electron_trick"
+      },
+      "teacherScript": "CBSE loves to trick students with this exact 3-mark question. An electron enters a magnetic field... which way will the magnetic force push it?",
+      "alignments": [
+        {
+          "word": "CBSE",
+          "start": 0,
+          "end": 0.569
+        },
+        {
+          "word": "loves",
+          "start": 0.685,
+          "end": 0.94
+        },
+        {
+          "word": "to",
+          "start": 0.975,
+          "end": 1.033
+        },
+        {
+          "word": "trick",
+          "start": 1.103,
+          "end": 1.324
+        },
+        {
+          "word": "students",
+          "start": 1.382,
+          "end": 1.718
+        },
+        {
+          "word": "with",
+          "start": 1.741,
+          "end": 1.869
+        },
+        {
+          "word": "this",
+          "start": 1.904,
+          "end": 2.043
+        },
+        {
+          "word": "exact",
+          "start": 2.101,
+          "end": 2.577
+        },
+        {
+          "word": "3-mark",
+          "start": 2.728,
+          "end": 3.17
+        },
+        {
+          "word": "question.",
+          "start": 3.239,
+          "end": 3.796
+        },
+        {
+          "word": "An",
+          "start": 4.18,
+          "end": 4.296
+        },
+        {
+          "word": "electron",
+          "start": 4.342,
+          "end": 4.783
+        },
+        {
+          "word": "enters",
+          "start": 4.865,
+          "end": 5.143
+        },
+        {
+          "word": "a",
+          "start": 5.178,
+          "end": 5.213
+        },
+        {
+          "word": "magnetic",
+          "start": 5.259,
+          "end": 5.677
+        },
+        {
+          "word": "field...",
+          "start": 5.747,
+          "end": 6.235
+        },
+        {
+          "word": "which",
+          "start": 6.618,
+          "end": 6.827
+        },
+        {
+          "word": "way",
+          "start": 6.873,
+          "end": 6.989
+        },
+        {
+          "word": "will",
+          "start": 7.012,
+          "end": 7.129
+        },
+        {
+          "word": "the",
+          "start": 7.163,
+          "end": 7.233
+        },
+        {
+          "word": "magnetic",
+          "start": 7.268,
+          "end": 7.663
+        },
+        {
+          "word": "force",
+          "start": 7.732,
+          "end": 7.976
+        },
+        {
+          "word": "push",
+          "start": 8.022,
+          "end": 8.266
+        },
+        {
+          "word": "it?",
+          "start": 8.324,
+          "end": 8.777
+        }
+      ],
+      "audio": "/audio/magnetic/FlemingElectronPYQ_scene-01-hook.mp3"
+    },
+    {
+      "id": "scene-02-tool",
+      "type": "text",
+      "durationInFrames": 311,
+      "content": {
+        "heading": "Fleming's Left-Hand Rule",
+        "bullets": [
+          "Stretch thumb, index, and middle fingers",
+          "Mutually perpendicular"
+        ],
+        "imageUrl": "assets/img-fleming-lefthand-rule.png"
+      },
+      "teacherScript": "To solve this, we use Fleming's Left-Hand Rule. Stretch your left hand so the thumb, index, and middle fingers are mutually perpendicular.",
+      "alignments": [
+        {
+          "word": "To",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "solve",
+          "start": 0.197,
+          "end": 0.453
+        },
+        {
+          "word": "this,",
+          "start": 0.488,
+          "end": 0.673
+        },
+        {
+          "word": "we",
+          "start": 0.72,
+          "end": 0.836
+        },
+        {
+          "word": "use",
+          "start": 0.906,
+          "end": 1.057
+        },
+        {
+          "word": "Fleming's",
+          "start": 1.08,
+          "end": 1.474
+        },
+        {
+          "word": "Left-Hand",
+          "start": 1.544,
+          "end": 2.02
+        },
+        {
+          "word": "Rule.",
+          "start": 2.078,
+          "end": 2.473
+        },
+        {
+          "word": "Stretch",
+          "start": 2.798,
+          "end": 3.111
+        },
+        {
+          "word": "your",
+          "start": 3.146,
+          "end": 3.251
+        },
+        {
+          "word": "left",
+          "start": 3.297,
+          "end": 3.483
+        },
+        {
+          "word": "hand",
+          "start": 3.529,
+          "end": 3.727
+        },
+        {
+          "word": "so",
+          "start": 3.785,
+          "end": 3.878
+        },
+        {
+          "word": "the",
+          "start": 3.936,
+          "end": 4.005
+        },
+        {
+          "word": "thumb,",
+          "start": 4.052,
+          "end": 4.377
+        },
+        {
+          "word": "index,",
+          "start": 4.528,
+          "end": 5.004
+        },
+        {
+          "word": "and",
+          "start": 5.039,
+          "end": 5.178
+        },
+        {
+          "word": "middle",
+          "start": 5.259,
+          "end": 5.503
+        },
+        {
+          "word": "fingers",
+          "start": 5.538,
+          "end": 5.886
+        },
+        {
+          "word": "are",
+          "start": 5.944,
+          "end": 6.107
+        },
+        {
+          "word": "mutually",
+          "start": 6.177,
+          "end": 6.676
+        },
+        {
+          "word": "perpendicular.",
+          "start": 6.745,
+          "end": 7.848
+        }
+      ],
+      "audio": "/audio/magnetic/FlemingElectronPYQ_scene-02-tool.mp3"
+    },
+    {
+      "id": "scene-03-trap",
+      "type": "magnetic",
+      "durationInFrames": 456,
+      "content": {
+        "title": "THE TRAP: Electron vs Current",
+        "variant": "electron_trick"
+      },
+      "teacherScript": "Here is the trap! The problem states an ELECTRON is moving to the right. But conventional electric current flows in the OPPOSITE direction of electrons. So, the current actually flows to the LEFT!",
+      "alignments": [
+        {
+          "word": "Here",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "word": "is",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "word": "the",
+          "start": 0.36,
+          "end": 0.43
+        },
+        {
+          "word": "trap!",
+          "start": 0.464,
+          "end": 0.952
+        },
+        {
+          "word": "The",
+          "start": 1.904,
+          "end": 2.032
+        },
+        {
+          "word": "problem",
+          "start": 2.09,
+          "end": 2.45
+        },
+        {
+          "word": "states",
+          "start": 2.496,
+          "end": 2.798
+        },
+        {
+          "word": "an",
+          "start": 2.856,
+          "end": 2.949
+        },
+        {
+          "word": "ELECTRON",
+          "start": 3.007,
+          "end": 3.587
+        },
+        {
+          "word": "is",
+          "start": 3.669,
+          "end": 3.785
+        },
+        {
+          "word": "moving",
+          "start": 3.866,
+          "end": 4.133
+        },
+        {
+          "word": "to",
+          "start": 4.18,
+          "end": 4.238
+        },
+        {
+          "word": "the",
+          "start": 4.296,
+          "end": 4.365
+        },
+        {
+          "word": "right.",
+          "start": 4.412,
+          "end": 4.83
+        },
+        {
+          "word": "But",
+          "start": 5.155,
+          "end": 5.352
+        },
+        {
+          "word": "conventional",
+          "start": 5.422,
+          "end": 5.991
+        },
+        {
+          "word": "electric",
+          "start": 6.06,
+          "end": 6.444
+        },
+        {
+          "word": "current",
+          "start": 6.49,
+          "end": 6.78
+        },
+        {
+          "word": "flows",
+          "start": 6.838,
+          "end": 7.152
+        },
+        {
+          "word": "in",
+          "start": 7.198,
+          "end": 7.268
+        },
+        {
+          "word": "the",
+          "start": 7.303,
+          "end": 7.372
+        },
+        {
+          "word": "OPPOSITE",
+          "start": 7.488,
+          "end": 7.953
+        },
+        {
+          "word": "direction",
+          "start": 7.976,
+          "end": 8.348
+        },
+        {
+          "word": "of",
+          "start": 8.382,
+          "end": 8.429
+        },
+        {
+          "word": "electrons.",
+          "start": 8.475,
+          "end": 9.16
+        },
+        {
+          "word": "So,",
+          "start": 9.543,
+          "end": 9.915
+        },
+        {
+          "word": "the",
+          "start": 9.973,
+          "end": 10.089
+        },
+        {
+          "word": "current",
+          "start": 10.159,
+          "end": 10.542
+        },
+        {
+          "word": "actually",
+          "start": 10.658,
+          "end": 11.157
+        },
+        {
+          "word": "flows",
+          "start": 11.273,
+          "end": 11.645
+        },
+        {
+          "word": "to",
+          "start": 11.691,
+          "end": 11.749
+        },
+        {
+          "word": "the",
+          "start": 11.807,
+          "end": 11.877
+        },
+        {
+          "word": "LEFT!",
+          "start": 11.958,
+          "end": 12.678
+        }
+      ],
+      "audio": "/audio/magnetic/FlemingElectronPYQ_scene-03-trap.mp3"
+    },
+    {
+      "id": "scene-04-execution",
+      "type": "magnetic",
+      "durationInFrames": 680,
+      "content": {
+        "title": "Aligning the Arrows",
+        "variant": "arrows_rule"
+      },
+      "teacherScript": "Imagine these three perpendicular lines are Fleming's left hand. Now, let's rotate them to match our problem. Index finger points DOWN for the field. Middle finger points LEFT for the current. This forces the Thumb to point straight OUT of the page! That's your answer. Subscribe for more CBSE hacks!",
+      "alignments": [
+        {
+          "word": "Imagine",
+          "start": 0,
+          "end": 0.464
+        },
+        {
+          "word": "these",
+          "start": 0.499,
+          "end": 0.662
+        },
+        {
+          "word": "three",
+          "start": 0.697,
+          "end": 0.94
+        },
+        {
+          "word": "perpendicular",
+          "start": 1.01,
+          "end": 1.683
+        },
+        {
+          "word": "lines",
+          "start": 1.741,
+          "end": 2.055
+        },
+        {
+          "word": "are",
+          "start": 2.113,
+          "end": 2.252
+        },
+        {
+          "word": "Fleming's",
+          "start": 2.299,
+          "end": 2.682
+        },
+        {
+          "word": "left",
+          "start": 2.728,
+          "end": 2.937
+        },
+        {
+          "word": "hand.",
+          "start": 2.995,
+          "end": 3.46
+        },
+        {
+          "word": "Now,",
+          "start": 4.063,
+          "end": 4.342
+        },
+        {
+          "word": "let's",
+          "start": 4.458,
+          "end": 4.667
+        },
+        {
+          "word": "rotate",
+          "start": 4.714,
+          "end": 5.016
+        },
+        {
+          "word": "them",
+          "start": 5.039,
+          "end": 5.143
+        },
+        {
+          "word": "to",
+          "start": 5.19,
+          "end": 5.248
+        },
+        {
+          "word": "match",
+          "start": 5.306,
+          "end": 5.515
+        },
+        {
+          "word": "our",
+          "start": 5.55,
+          "end": 5.631
+        },
+        {
+          "word": "problem.",
+          "start": 5.677,
+          "end": 6.258
+        },
+        {
+          "word": "Index",
+          "start": 6.641,
+          "end": 6.989
+        },
+        {
+          "word": "finger",
+          "start": 7.047,
+          "end": 7.268
+        },
+        {
+          "word": "points",
+          "start": 7.326,
+          "end": 7.57
+        },
+        {
+          "word": "DOWN",
+          "start": 7.628,
+          "end": 7.872
+        },
+        {
+          "word": "for",
+          "start": 7.941,
+          "end": 8.046
+        },
+        {
+          "word": "the",
+          "start": 8.081,
+          "end": 8.15
+        },
+        {
+          "word": "field.",
+          "start": 8.197,
+          "end": 8.684
+        },
+        {
+          "word": "Middle",
+          "start": 9.125,
+          "end": 9.392
+        },
+        {
+          "word": "finger",
+          "start": 9.439,
+          "end": 9.671
+        },
+        {
+          "word": "points",
+          "start": 9.729,
+          "end": 10.043
+        },
+        {
+          "word": "LEFT",
+          "start": 10.484,
+          "end": 10.786
+        },
+        {
+          "word": "for",
+          "start": 10.855,
+          "end": 10.971
+        },
+        {
+          "word": "the",
+          "start": 11.006,
+          "end": 11.076
+        },
+        {
+          "word": "current.",
+          "start": 11.111,
+          "end": 11.656
+        },
+        {
+          "word": "This",
+          "start": 12.469,
+          "end": 12.725
+        },
+        {
+          "word": "forces",
+          "start": 12.806,
+          "end": 13.177
+        },
+        {
+          "word": "the",
+          "start": 13.224,
+          "end": 13.293
+        },
+        {
+          "word": "Thumb",
+          "start": 13.34,
+          "end": 13.56
+        },
+        {
+          "word": "to",
+          "start": 13.618,
+          "end": 13.677
+        },
+        {
+          "word": "point",
+          "start": 13.758,
+          "end": 13.978
+        },
+        {
+          "word": "straight",
+          "start": 14.036,
+          "end": 14.373
+        },
+        {
+          "word": "OUT",
+          "start": 14.489,
+          "end": 14.709
+        },
+        {
+          "word": "of",
+          "start": 14.744,
+          "end": 14.802
+        },
+        {
+          "word": "the",
+          "start": 14.849,
+          "end": 14.918
+        },
+        {
+          "word": "page!",
+          "start": 14.965,
+          "end": 15.557
+        },
+        {
+          "word": "That's",
+          "start": 16.068,
+          "end": 16.381
+        },
+        {
+          "word": "your",
+          "start": 16.439,
+          "end": 16.613
+        },
+        {
+          "word": "answer.",
+          "start": 16.683,
+          "end": 17.124
+        },
+        {
+          "word": "Subscribe",
+          "start": 17.507,
+          "end": 18.076
+        },
+        {
+          "word": "for",
+          "start": 18.111,
+          "end": 18.239
+        },
+        {
+          "word": "more",
+          "start": 18.297,
+          "end": 18.552
+        },
+        {
+          "word": "CBSE",
+          "start": 18.622,
+          "end": 19.272
+        },
+        {
+          "word": "hacks!",
+          "start": 19.388,
+          "end": 20.155
+        }
+      ],
+      "audio": "/audio/magnetic/FlemingElectronPYQ_scene-04-execution.mp3"
+    }
+  ]
+}

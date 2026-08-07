@@ -98,6 +98,7 @@ const TextSceneSchema = z.object({
     heading: z.string(),
     bullets: z.array(z.string()),
     imageUrl: z.string().optional(),
+    imageUrls: z.array(z.string()).optional(),
   }),
   teacherScript: z.string().optional(),
   audio: z.string().optional(),
@@ -195,8 +196,38 @@ const MagneticSceneSchema = z.object({
     //  - induction:          magnet moving in/out of coil + galvanometer
     //  - motor_generator:    motor vs generator comparison
     variant: z
-      .enum(["intro", "oersted", "bar_magnet", "straight_conductor", "solenoid", "electromagnet", "fleming", "induction", "motor_generator"])
+      .enum(["intro", "oersted", "bar_magnet", "straight_conductor", "solenoid", "electromagnet", "fleming", "induction", "motor_generator", "electron_trick", "arrows_rule"])
       .optional(),
+  }),
+  teacherScript: z.string().optional(),
+  audio: z.string().optional(),
+  alignments: z.array(WordAlignmentSchema).optional(),
+  boardExam: BoardExamSchema.optional(),
+});
+
+const TrigonometrySceneSchema = z.object({
+  id: z.string(),
+  type: z.literal("trigonometry"),
+  durationInFrames: z.number(),
+  content: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    variant: z.enum(["intro", "quest", "angle_definition", "lighthouse_real", "lighthouse_abstract", "lighthouse_proximity", "lighthouse_solve", "boss_end"]).optional(),
+  }),
+  teacherScript: z.string().optional(),
+  audio: z.string().optional(),
+  alignments: z.array(WordAlignmentSchema).optional(),
+  boardExam: BoardExamSchema.optional(),
+});
+
+const BiologySceneSchema = z.object({
+  id: z.string(),
+  type: z.literal("biology"),
+  durationInFrames: z.number(),
+  content: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    variant: z.enum(["heart_double_circulation"]).optional(),
   }),
   teacherScript: z.string().optional(),
   audio: z.string().optional(),
@@ -220,6 +251,8 @@ export const VideoSchema = z.object({
       ConversationSceneSchema,
       RayDiagramSceneSchema,
       MagneticSceneSchema,
+      TrigonometrySceneSchema,
+      BiologySceneSchema,
     ])
   ),
 });

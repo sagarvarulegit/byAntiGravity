@@ -1,7 +1,6 @@
 import React from "react";
 import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile } from "remotion";
-import { PaperBackground } from "./PaperBackground";
-import { AppColors, outfitFont } from "../theme";
+import { AppColors, outfitFont, animeFont } from "../theme";
 import { WordAlignment } from "../data/schema";
 
 interface TitleSceneProps {
@@ -9,9 +8,10 @@ interface TitleSceneProps {
   subtitle?: string;
   audio?: string;
   alignments?: WordAlignment[];
+  brandColor?: string; // We can pass this in
 }
 
-export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio }) => {
+export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio, brandColor = AppColors.physicsChem }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -29,8 +29,7 @@ export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio }
   });
 
   return (
-    <div style={{ flex: 1, position: "relative", width: "100%", height: "100%" }}>
-      <PaperBackground />
+    <div style={{ flex: 1, position: "relative", width: "100%", height: "100%", backgroundColor: AppColors.obsidian }}>
       {audio && <Audio src={staticFile(audio)} />}
       
       {/* Centered content container */}
@@ -50,24 +49,26 @@ export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio }
         <div
           style={{
             transform: `scale(${cardScale})`,
-            backgroundColor: AppColors.cardLight,
-            border: `3px solid ${AppColors.blue}`,
+            backgroundColor: "rgba(255, 255, 255, 0.05)",
+            border: `3px solid ${brandColor}`,
             borderRadius: "16px",
             padding: "48px 64px",
-            boxShadow: `0 10px 30px rgba(15, 23, 42, 0.08)`,
+            boxShadow: `0 0 30px ${brandColor}44`,
             textAlign: "center",
             maxWidth: "800px",
           }}
         >
           <h1
             style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: AppColors.blue,
+              fontSize: "80px", // Increased for anime font
+              fontWeight: 900,
+              color: brandColor,
               margin: 0,
               opacity: textOpacity,
-              letterSpacing: "-1px",
+              letterSpacing: "4px",
               lineHeight: 1.1,
+              fontFamily: animeFont,
+              textShadow: `0 0 20px ${brandColor}`
             }}
           >
             {title}
@@ -75,12 +76,12 @@ export const TitleScene: React.FC<TitleSceneProps> = ({ title, subtitle, audio }
           {subtitle && (
             <h2
               style={{
-                fontSize: "28px",
-                fontWeight: 500,
-                color: AppColors.purple,
-                marginTop: "20px",
+                fontSize: "36px",
+                fontWeight: 300,
+                color: AppColors.white,
+                marginTop: "16px",
                 marginBottom: 0,
-                opacity: textOpacity,
+                lineHeight: 1.4,
               }}
             >
               {subtitle}

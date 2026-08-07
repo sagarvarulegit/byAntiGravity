@@ -3,6 +3,7 @@ import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, Img, stati
 import { PaperBackground } from "./PaperBackground";
 import { AppColors, outfitFont, serifFont } from "../theme";
 import { WordAlignment } from "../data/schema";
+import { LensSignDiagram } from "./LensSignDiagram";
 
 interface TextSceneProps {
   heading: string;
@@ -10,9 +11,10 @@ interface TextSceneProps {
   audio?: string;
   alignments?: WordAlignment[];
   imageUrl?: string;
+  imageUrls?: string[];
 }
 
-export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, alignments, imageUrl }) => {
+export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, alignments, imageUrl, imageUrls }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -157,27 +159,47 @@ export const TextScene: React.FC<TextSceneProps> = ({ heading, bullets, audio, a
           </ul>
         </div>
 
-        {/* Right Column: Image */}
-        {imageUrl && (
+        {/* Right Column: Image or Vector SVG */}
+        {(imageUrl || (imageUrls && imageUrls.length > 0)) && (
           <div style={{ 
-            flex: 0.45, 
+            flex: 0.55, 
             display: "flex", 
+            flexDirection: "column",
             justifyContent: "center", 
             alignItems: "center",
+            gap: "24px",
             opacity: imageOpacity,
-            transform: `scale(${interpolate(imageOpacity, [0, 1], [0.9, 1])})`
+            transform: `scale(${interpolate(imageOpacity, [0, 1], [0.9, 1])})`,
+            height: "100%"
           }}>
-            <Img 
-              src={staticFile(imageUrl)} 
-              alt="Illustration" 
-              style={{ 
-                maxWidth: "100%", 
-                maxHeight: "100%", 
-                objectFit: "contain",
-                borderRadius: "16px",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
-              }} 
-            />
+            {imageUrls && imageUrls.length > 0 ? (
+              imageUrls.map((url, i) => (
+                <Img 
+                  key={i}
+                  src={staticFile(url)} 
+                  alt="Illustration" 
+                  style={{ 
+                    maxWidth: "100%", 
+                    maxHeight: `calc(${100 / imageUrls.length}% - ${24 * (imageUrls.length - 1) / imageUrls.length}px)`, 
+                    objectFit: "contain",
+                    borderRadius: "16px",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+                  }} 
+                />
+              ))
+            ) : (
+              <Img 
+                src={staticFile(imageUrl!)} 
+                alt="Illustration" 
+                style={{ 
+                  maxWidth: "100%", 
+                  maxHeight: "100%", 
+                  objectFit: "contain",
+                  borderRadius: "16px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+                }} 
+              />
+            )}
           </div>
         )}
       </div>

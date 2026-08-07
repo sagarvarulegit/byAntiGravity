@@ -1,0 +1,3093 @@
+{
+  "id": "maths_trigonometry_lighthouse_masterclass",
+  "title": "Angle of Depression: Lighthouse Trick",
+  "durationInFrames": 6943,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 219,
+      "content": {
+        "text": "Applications of Trigonometry",
+        "subtitle": "The Lighthouse Boss Fight"
+      },
+      "teacherScript": "If you can't draw the invisible line in the sky, you will lose 5 marks on your board exam. Let's hack the Trigonometry Boss Fight.",
+      "alignments": [
+        {
+          "word": "If",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "you",
+          "start": 0.186,
+          "end": 0.255
+        },
+        {
+          "word": "can't",
+          "start": 0.313,
+          "end": 0.522
+        },
+        {
+          "word": "draw",
+          "start": 0.546,
+          "end": 0.685
+        },
+        {
+          "word": "the",
+          "start": 0.731,
+          "end": 0.801
+        },
+        {
+          "word": "invisible",
+          "start": 0.848,
+          "end": 1.277
+        },
+        {
+          "word": "line",
+          "start": 1.312,
+          "end": 1.474
+        },
+        {
+          "word": "in",
+          "start": 1.498,
+          "end": 1.544
+        },
+        {
+          "word": "the",
+          "start": 1.579,
+          "end": 1.649
+        },
+        {
+          "word": "sky,",
+          "start": 1.672,
+          "end": 1.985
+        },
+        {
+          "word": "you",
+          "start": 2.055,
+          "end": 2.136
+        },
+        {
+          "word": "will",
+          "start": 2.171,
+          "end": 2.299
+        },
+        {
+          "word": "lose",
+          "start": 2.345,
+          "end": 2.531
+        },
+        {
+          "word": "5",
+          "start": 2.624,
+          "end": 2.868
+        },
+        {
+          "word": "marks",
+          "start": 2.949,
+          "end": 3.17
+        },
+        {
+          "word": "on",
+          "start": 3.193,
+          "end": 3.251
+        },
+        {
+          "word": "your",
+          "start": 3.286,
+          "end": 3.379
+        },
+        {
+          "word": "board",
+          "start": 3.413,
+          "end": 3.587
+        },
+        {
+          "word": "exam.",
+          "start": 3.622,
+          "end": 4.156
+        },
+        {
+          "word": "Let's",
+          "start": 4.598,
+          "end": 4.807
+        },
+        {
+          "word": "hack",
+          "start": 4.853,
+          "end": 5.016
+        },
+        {
+          "word": "the",
+          "start": 5.074,
+          "end": 5.143
+        },
+        {
+          "word": "Trigonometry",
+          "start": 5.178,
+          "end": 5.805
+        },
+        {
+          "word": "Boss",
+          "start": 5.863,
+          "end": 6.107
+        },
+        {
+          "word": "Fight.",
+          "start": 6.165,
+          "end": 6.78
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "trigonometry",
+      "durationInFrames": 545,
+      "content": {
+        "title": "Heights & Distances",
+        "subtitle": "The 5-Mark Boss Question",
+        "variant": "quest"
+      },
+      "teacherScript": "Here is the boss question. From the top of a 75 meter high lighthouse, the angles of depression of two ships are 60 degrees and 30 degrees. Both ships are on the same side of the lighthouse. Find the distance between the ships. Quest accepted! Let's build our weapons to defeat this boss.",
+      "alignments": [
+        {
+          "word": "Here",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "word": "is",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "word": "the",
+          "start": 0.36,
+          "end": 0.43
+        },
+        {
+          "word": "boss",
+          "start": 0.476,
+          "end": 0.743
+        },
+        {
+          "word": "question.",
+          "start": 0.801,
+          "end": 1.37
+        },
+        {
+          "word": "From",
+          "start": 1.695,
+          "end": 1.846
+        },
+        {
+          "word": "the",
+          "start": 1.892,
+          "end": 1.962
+        },
+        {
+          "word": "top",
+          "start": 2.009,
+          "end": 2.241
+        },
+        {
+          "word": "of",
+          "start": 2.287,
+          "end": 2.345
+        },
+        {
+          "word": "a",
+          "start": 2.403,
+          "end": 2.426
+        },
+        {
+          "word": "75",
+          "start": 2.543,
+          "end": 3.146
+        },
+        {
+          "word": "meter",
+          "start": 3.216,
+          "end": 3.425
+        },
+        {
+          "word": "high",
+          "start": 3.506,
+          "end": 3.669
+        },
+        {
+          "word": "lighthouse,",
+          "start": 3.727,
+          "end": 4.354
+        },
+        {
+          "word": "the",
+          "start": 4.563,
+          "end": 4.679
+        },
+        {
+          "word": "angles",
+          "start": 4.772,
+          "end": 5.108
+        },
+        {
+          "word": "of",
+          "start": 5.143,
+          "end": 5.201
+        },
+        {
+          "word": "depression",
+          "start": 5.248,
+          "end": 5.677
+        },
+        {
+          "word": "of",
+          "start": 5.712,
+          "end": 5.759
+        },
+        {
+          "word": "two",
+          "start": 5.817,
+          "end": 6.002
+        },
+        {
+          "word": "ships",
+          "start": 6.072,
+          "end": 6.362
+        },
+        {
+          "word": "are",
+          "start": 6.409,
+          "end": 6.56
+        },
+        {
+          "word": "60",
+          "start": 6.641,
+          "end": 6.966
+        },
+        {
+          "word": "degrees",
+          "start": 7.036,
+          "end": 7.454
+        },
+        {
+          "word": "and",
+          "start": 7.523,
+          "end": 7.651
+        },
+        {
+          "word": "30",
+          "start": 7.767,
+          "end": 8.057
+        },
+        {
+          "word": "degrees.",
+          "start": 8.115,
+          "end": 8.731
+        },
+        {
+          "word": "Both",
+          "start": 9.056,
+          "end": 9.311
+        },
+        {
+          "word": "ships",
+          "start": 9.369,
+          "end": 9.601
+        },
+        {
+          "word": "are",
+          "start": 9.636,
+          "end": 9.729
+        },
+        {
+          "word": "on",
+          "start": 9.776,
+          "end": 9.857
+        },
+        {
+          "word": "the",
+          "start": 9.892,
+          "end": 9.961
+        },
+        {
+          "word": "same",
+          "start": 10.008,
+          "end": 10.24
+        },
+        {
+          "word": "side",
+          "start": 10.286,
+          "end": 10.507
+        },
+        {
+          "word": "of",
+          "start": 10.542,
+          "end": 10.588
+        },
+        {
+          "word": "the",
+          "start": 10.635,
+          "end": 10.704
+        },
+        {
+          "word": "lighthouse.",
+          "start": 10.751,
+          "end": 11.389
+        },
+        {
+          "word": "Find",
+          "start": 11.773,
+          "end": 12.028
+        },
+        {
+          "word": "the",
+          "start": 12.074,
+          "end": 12.144
+        },
+        {
+          "word": "distance",
+          "start": 12.202,
+          "end": 12.562
+        },
+        {
+          "word": "between",
+          "start": 12.597,
+          "end": 12.91
+        },
+        {
+          "word": "the",
+          "start": 12.945,
+          "end": 13.015
+        },
+        {
+          "word": "ships.",
+          "start": 13.05,
+          "end": 13.526
+        },
+        {
+          "word": "Quest",
+          "start": 13.677,
+          "end": 14.013
+        },
+        {
+          "word": "accepted!",
+          "start": 14.083,
+          "end": 14.849
+        },
+        {
+          "word": "Let's",
+          "start": 15.058,
+          "end": 15.279
+        },
+        {
+          "word": "build",
+          "start": 15.337,
+          "end": 15.581
+        },
+        {
+          "word": "our",
+          "start": 15.627,
+          "end": 15.732
+        },
+        {
+          "word": "weapons",
+          "start": 15.79,
+          "end": 16.115
+        },
+        {
+          "word": "to",
+          "start": 16.161,
+          "end": 16.219
+        },
+        {
+          "word": "defeat",
+          "start": 16.289,
+          "end": 16.637
+        },
+        {
+          "word": "this",
+          "start": 16.695,
+          "end": 16.846
+        },
+        {
+          "word": "boss.",
+          "start": 16.916,
+          "end": 17.647
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "trigonometry",
+      "durationInFrames": 726,
+      "content": {
+        "title": "IN THIS VIDEO",
+        "subtitle": "The Lighthouse Boss Fight",
+        "variant": "intro"
+      },
+      "teacherScript": "In this video, here is your battle plan. One: the real world setup. Two: the invisible line of sight. Three: the Z trick. Four: the proximity rule. Five: the cheat codes. Six: the full five mark boss solve.",
+      "alignments": [
+        {
+          "word": "In",
+          "start": 0,
+          "end": 0.128
+        },
+        {
+          "word": "this",
+          "start": 0.151,
+          "end": 0.255
+        },
+        {
+          "word": "video,",
+          "start": 0.302,
+          "end": 0.824
+        },
+        {
+          "word": "here",
+          "start": 1.161,
+          "end": 1.382
+        },
+        {
+          "word": "is",
+          "start": 1.416,
+          "end": 1.486
+        },
+        {
+          "word": "your",
+          "start": 1.509,
+          "end": 1.602
+        },
+        {
+          "word": "battle",
+          "start": 1.649,
+          "end": 1.881
+        },
+        {
+          "word": "plan.",
+          "start": 1.892,
+          "end": 2.287
+        },
+        {
+          "word": "One:",
+          "start": 3.286,
+          "end": 3.657
+        },
+        {
+          "word": "the",
+          "start": 4.505,
+          "end": 4.609
+        },
+        {
+          "word": "real",
+          "start": 4.69,
+          "end": 4.911
+        },
+        {
+          "word": "world",
+          "start": 4.981,
+          "end": 5.224
+        },
+        {
+          "word": "setup.",
+          "start": 5.271,
+          "end": 5.735
+        },
+        {
+          "word": "Two:",
+          "start": 6.583,
+          "end": 7.059
+        },
+        {
+          "word": "the",
+          "start": 7.779,
+          "end": 7.895
+        },
+        {
+          "word": "invisible",
+          "start": 7.964,
+          "end": 8.406
+        },
+        {
+          "word": "line",
+          "start": 8.452,
+          "end": 8.649
+        },
+        {
+          "word": "of",
+          "start": 8.661,
+          "end": 8.719
+        },
+        {
+          "word": "sight.",
+          "start": 8.766,
+          "end": 9.23
+        },
+        {
+          "word": "Three:",
+          "start": 10.217,
+          "end": 10.786
+        },
+        {
+          "word": "the",
+          "start": 11.413,
+          "end": 11.517
+        },
+        {
+          "word": "Z",
+          "start": 11.575,
+          "end": 11.645
+        },
+        {
+          "word": "trick.",
+          "start": 11.807,
+          "end": 12.249
+        },
+        {
+          "word": "Four:",
+          "start": 13.41,
+          "end": 13.897
+        },
+        {
+          "word": "the",
+          "start": 14.629,
+          "end": 14.721
+        },
+        {
+          "word": "proximity",
+          "start": 14.756,
+          "end": 15.29
+        },
+        {
+          "word": "rule.",
+          "start": 15.348,
+          "end": 15.72
+        },
+        {
+          "word": "Five:",
+          "start": 16.881,
+          "end": 17.403
+        },
+        {
+          "word": "the",
+          "start": 18.123,
+          "end": 18.228
+        },
+        {
+          "word": "cheat",
+          "start": 18.286,
+          "end": 18.518
+        },
+        {
+          "word": "codes.",
+          "start": 18.576,
+          "end": 19.122
+        },
+        {
+          "word": "Six:",
+          "start": 20.283,
+          "end": 20.817
+        },
+        {
+          "word": "the",
+          "start": 21.537,
+          "end": 21.653
+        },
+        {
+          "word": "full",
+          "start": 21.757,
+          "end": 22.024
+        },
+        {
+          "word": "five",
+          "start": 22.129,
+          "end": 22.43
+        },
+        {
+          "word": "mark",
+          "start": 22.477,
+          "end": 22.674
+        },
+        {
+          "word": "boss",
+          "start": 22.732,
+          "end": 22.988
+        },
+        {
+          "word": "solve.",
+          "start": 23.034,
+          "end": 23.684
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "trigonometry",
+      "durationInFrames": 829,
+      "content": {
+        "title": "What is Angle of Depression?",
+        "subtitle": "The Invisible Line of Sight",
+        "variant": "angle_definition"
+      },
+      "teacherScript": "First things first - what is an angle of depression? Imagine you are standing at the top of a lighthouse. Look straight out at the horizon. That horizontal line is your line of sight. Now look DOWN at a boat in the water. The angle between your horizontal line of sight and your downward gaze is called the angle of depression. And here is the golden rule: always measure it from the horizontal line - never from the vertical wall!",
+      "alignments": [
+        {
+          "word": "First",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "word": "things",
+          "start": 0.348,
+          "end": 0.569
+        },
+        {
+          "word": "first",
+          "start": 0.627,
+          "end": 0.94
+        },
+        {
+          "word": "-",
+          "start": 1.115,
+          "end": 1.149
+        },
+        {
+          "word": "what",
+          "start": 1.753,
+          "end": 1.985
+        },
+        {
+          "word": "is",
+          "start": 2.101,
+          "end": 2.461
+        },
+        {
+          "word": "an",
+          "start": 2.531,
+          "end": 2.635
+        },
+        {
+          "word": "angle",
+          "start": 2.705,
+          "end": 3.007
+        },
+        {
+          "word": "of",
+          "start": 3.03,
+          "end": 3.077
+        },
+        {
+          "word": "depression?",
+          "start": 3.135,
+          "end": 3.855
+        },
+        {
+          "word": "Imagine",
+          "start": 4.807,
+          "end": 5.283
+        },
+        {
+          "word": "you",
+          "start": 5.317,
+          "end": 5.387
+        },
+        {
+          "word": "are",
+          "start": 5.433,
+          "end": 5.526
+        },
+        {
+          "word": "standing",
+          "start": 5.55,
+          "end": 5.875
+        },
+        {
+          "word": "at",
+          "start": 5.909,
+          "end": 5.968
+        },
+        {
+          "word": "the",
+          "start": 6.002,
+          "end": 6.072
+        },
+        {
+          "word": "top",
+          "start": 6.118,
+          "end": 6.374
+        },
+        {
+          "word": "of",
+          "start": 6.42,
+          "end": 6.478
+        },
+        {
+          "word": "a",
+          "start": 6.525,
+          "end": 6.548
+        },
+        {
+          "word": "lighthouse.",
+          "start": 6.606,
+          "end": 7.303
+        },
+        {
+          "word": "Look",
+          "start": 7.628,
+          "end": 7.86
+        },
+        {
+          "word": "straight",
+          "start": 7.941,
+          "end": 8.336
+        },
+        {
+          "word": "out",
+          "start": 8.382,
+          "end": 8.568
+        },
+        {
+          "word": "at",
+          "start": 8.615,
+          "end": 8.673
+        },
+        {
+          "word": "the",
+          "start": 8.707,
+          "end": 8.777
+        },
+        {
+          "word": "horizon.",
+          "start": 8.835,
+          "end": 9.555
+        },
+        {
+          "word": "That",
+          "start": 10.066,
+          "end": 10.321
+        },
+        {
+          "word": "horizontal",
+          "start": 10.414,
+          "end": 10.983
+        },
+        {
+          "word": "line",
+          "start": 11.029,
+          "end": 11.296
+        },
+        {
+          "word": "is",
+          "start": 11.331,
+          "end": 11.413
+        },
+        {
+          "word": "your",
+          "start": 11.447,
+          "end": 11.564
+        },
+        {
+          "word": "line",
+          "start": 11.61,
+          "end": 11.807
+        },
+        {
+          "word": "of",
+          "start": 11.842,
+          "end": 11.889
+        },
+        {
+          "word": "sight.",
+          "start": 11.947,
+          "end": 12.388
+        },
+        {
+          "word": "Now",
+          "start": 12.992,
+          "end": 13.177
+        },
+        {
+          "word": "look",
+          "start": 13.247,
+          "end": 13.433
+        },
+        {
+          "word": "DOWN",
+          "start": 13.584,
+          "end": 13.978
+        },
+        {
+          "word": "at",
+          "start": 14.048,
+          "end": 14.141
+        },
+        {
+          "word": "a",
+          "start": 14.187,
+          "end": 14.222
+        },
+        {
+          "word": "boat",
+          "start": 14.28,
+          "end": 14.489
+        },
+        {
+          "word": "in",
+          "start": 14.559,
+          "end": 14.629
+        },
+        {
+          "word": "the",
+          "start": 14.675,
+          "end": 14.745
+        },
+        {
+          "word": "water.",
+          "start": 14.791,
+          "end": 15.302
+        },
+        {
+          "word": "The",
+          "start": 15.627,
+          "end": 15.767
+        },
+        {
+          "word": "angle",
+          "start": 15.848,
+          "end": 16.115
+        },
+        {
+          "word": "between",
+          "start": 16.138,
+          "end": 16.452
+        },
+        {
+          "word": "your",
+          "start": 16.487,
+          "end": 16.603
+        },
+        {
+          "word": "horizontal",
+          "start": 16.672,
+          "end": 17.288
+        },
+        {
+          "word": "line",
+          "start": 17.334,
+          "end": 17.508
+        },
+        {
+          "word": "of",
+          "start": 17.532,
+          "end": 17.578
+        },
+        {
+          "word": "sight",
+          "start": 17.636,
+          "end": 17.868
+        },
+        {
+          "word": "and",
+          "start": 17.915,
+          "end": 18.008
+        },
+        {
+          "word": "your",
+          "start": 18.054,
+          "end": 18.17
+        },
+        {
+          "word": "downward",
+          "start": 18.228,
+          "end": 18.646
+        },
+        {
+          "word": "gaze",
+          "start": 18.704,
+          "end": 19.064
+        },
+        {
+          "word": "is",
+          "start": 19.111,
+          "end": 19.227
+        },
+        {
+          "word": "called",
+          "start": 19.296,
+          "end": 19.621
+        },
+        {
+          "word": "the",
+          "start": 19.679,
+          "end": 19.784
+        },
+        {
+          "word": "angle",
+          "start": 19.9,
+          "end": 20.272
+        },
+        {
+          "word": "of",
+          "start": 20.306,
+          "end": 20.353
+        },
+        {
+          "word": "depression.",
+          "start": 20.411,
+          "end": 21.061
+        },
+        {
+          "word": "And",
+          "start": 21.27,
+          "end": 21.409
+        },
+        {
+          "word": "here",
+          "start": 21.491,
+          "end": 21.723
+        },
+        {
+          "word": "is",
+          "start": 21.758,
+          "end": 21.839
+        },
+        {
+          "word": "the",
+          "start": 21.874,
+          "end": 21.943
+        },
+        {
+          "word": "golden",
+          "start": 21.99,
+          "end": 22.303
+        },
+        {
+          "word": "rule:",
+          "start": 22.361,
+          "end": 22.744
+        },
+        {
+          "word": "always",
+          "start": 22.953,
+          "end": 23.36
+        },
+        {
+          "word": "measure",
+          "start": 23.441,
+          "end": 23.766
+        },
+        {
+          "word": "it",
+          "start": 23.801,
+          "end": 23.859
+        },
+        {
+          "word": "from",
+          "start": 23.894,
+          "end": 24.01
+        },
+        {
+          "word": "the",
+          "start": 24.045,
+          "end": 24.114
+        },
+        {
+          "word": "horizontal",
+          "start": 24.184,
+          "end": 24.776
+        },
+        {
+          "word": "line",
+          "start": 24.823,
+          "end": 25.113
+        },
+        {
+          "word": "-",
+          "start": 25.159,
+          "end": 25.183
+        },
+        {
+          "word": "never",
+          "start": 25.391,
+          "end": 25.67
+        },
+        {
+          "word": "from",
+          "start": 25.728,
+          "end": 25.868
+        },
+        {
+          "word": "the",
+          "start": 25.914,
+          "end": 25.984
+        },
+        {
+          "word": "vertical",
+          "start": 26.03,
+          "end": 26.413
+        },
+        {
+          "word": "wall!",
+          "start": 26.471,
+          "end": 27.121
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "trigonometry",
+      "durationInFrames": 991,
+      "content": {
+        "title": "The Real World Setup",
+        "variant": "lighthouse_real"
+      },
+      "teacherScript": "You are standing on top of a 75 meter high lighthouse, looking at two ships. Ship one is close. Ship two is far. Before you look down, always draw your horizontal line of sight straight out. Now look down at ship one, a steep 60 degrees. That is your first angle of depression. Now look at ship two, it is further away, so you look down only 30 degrees. Smaller angle, same trick. Remember the distances: x to ship one, and x plus y to ship two.",
+      "alignments": [
+        {
+          "word": "You",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "are",
+          "start": 0.197,
+          "end": 0.29
+        },
+        {
+          "word": "standing",
+          "start": 0.313,
+          "end": 0.604
+        },
+        {
+          "word": "on",
+          "start": 0.65,
+          "end": 0.708
+        },
+        {
+          "word": "top",
+          "start": 0.766,
+          "end": 0.952
+        },
+        {
+          "word": "of",
+          "start": 0.998,
+          "end": 1.057
+        },
+        {
+          "word": "a",
+          "start": 1.115,
+          "end": 1.138
+        },
+        {
+          "word": "75",
+          "start": 1.231,
+          "end": 1.8
+        },
+        {
+          "word": "meter",
+          "start": 1.869,
+          "end": 2.078
+        },
+        {
+          "word": "high",
+          "start": 2.171,
+          "end": 2.357
+        },
+        {
+          "word": "lighthouse,",
+          "start": 2.415,
+          "end": 2.972
+        },
+        {
+          "word": "looking",
+          "start": 3.123,
+          "end": 3.402
+        },
+        {
+          "word": "at",
+          "start": 3.448,
+          "end": 3.518
+        },
+        {
+          "word": "two",
+          "start": 3.553,
+          "end": 3.715
+        },
+        {
+          "word": "ships.",
+          "start": 3.785,
+          "end": 4.307
+        },
+        {
+          "word": "Ship",
+          "start": 4.632,
+          "end": 4.876
+        },
+        {
+          "word": "one",
+          "start": 4.957,
+          "end": 5.108
+        },
+        {
+          "word": "is",
+          "start": 5.143,
+          "end": 5.213
+        },
+        {
+          "word": "close.",
+          "start": 5.271,
+          "end": 5.863
+        },
+        {
+          "word": "Ship",
+          "start": 6.304,
+          "end": 6.548
+        },
+        {
+          "word": "two",
+          "start": 6.606,
+          "end": 6.885
+        },
+        {
+          "word": "is",
+          "start": 7.268,
+          "end": 7.465
+        },
+        {
+          "word": "far.",
+          "start": 7.546,
+          "end": 8.046
+        },
+        {
+          "word": "Before",
+          "start": 8.858,
+          "end": 9.183
+        },
+        {
+          "word": "you",
+          "start": 9.218,
+          "end": 9.288
+        },
+        {
+          "word": "look",
+          "start": 9.346,
+          "end": 9.497
+        },
+        {
+          "word": "down,",
+          "start": 9.543,
+          "end": 9.95
+        },
+        {
+          "word": "always",
+          "start": 10.159,
+          "end": 10.542
+        },
+        {
+          "word": "draw",
+          "start": 10.588,
+          "end": 10.751
+        },
+        {
+          "word": "your",
+          "start": 10.797,
+          "end": 10.913
+        },
+        {
+          "word": "horizontal",
+          "start": 10.983,
+          "end": 11.505
+        },
+        {
+          "word": "line",
+          "start": 11.54,
+          "end": 11.714
+        },
+        {
+          "word": "of",
+          "start": 11.738,
+          "end": 11.784
+        },
+        {
+          "word": "sight",
+          "start": 11.842,
+          "end": 12.063
+        },
+        {
+          "word": "straight",
+          "start": 12.109,
+          "end": 12.434
+        },
+        {
+          "word": "out.",
+          "start": 12.504,
+          "end": 12.945
+        },
+        {
+          "word": "Now",
+          "start": 13.758,
+          "end": 13.955
+        },
+        {
+          "word": "look",
+          "start": 14.025,
+          "end": 14.176
+        },
+        {
+          "word": "down",
+          "start": 14.222,
+          "end": 14.362
+        },
+        {
+          "word": "at",
+          "start": 14.396,
+          "end": 14.454
+        },
+        {
+          "word": "ship",
+          "start": 14.501,
+          "end": 14.71
+        },
+        {
+          "word": "one,",
+          "start": 14.791,
+          "end": 15.058
+        },
+        {
+          "word": "a",
+          "start": 15.081,
+          "end": 15.139
+        },
+        {
+          "word": "steep",
+          "start": 15.221,
+          "end": 15.523
+        },
+        {
+          "word": "60",
+          "start": 15.639,
+          "end": 15.964
+        },
+        {
+          "word": "degrees.",
+          "start": 16.022,
+          "end": 16.649
+        },
+        {
+          "word": "That",
+          "start": 16.974,
+          "end": 17.23
+        },
+        {
+          "word": "is",
+          "start": 17.311,
+          "end": 17.415
+        },
+        {
+          "word": "your",
+          "start": 17.462,
+          "end": 17.578
+        },
+        {
+          "word": "first",
+          "start": 17.648,
+          "end": 17.915
+        },
+        {
+          "word": "angle",
+          "start": 17.973,
+          "end": 18.251
+        },
+        {
+          "word": "of",
+          "start": 18.274,
+          "end": 18.321
+        },
+        {
+          "word": "depression.",
+          "start": 18.367,
+          "end": 18.948
+        },
+        {
+          "word": "Now",
+          "start": 19.552,
+          "end": 19.691
+        },
+        {
+          "word": "look",
+          "start": 19.726,
+          "end": 19.865
+        },
+        {
+          "word": "at",
+          "start": 19.911,
+          "end": 19.958
+        },
+        {
+          "word": "ship",
+          "start": 19.993,
+          "end": 20.179
+        },
+        {
+          "word": "two,",
+          "start": 20.237,
+          "end": 20.678
+        },
+        {
+          "word": "it",
+          "start": 21.003,
+          "end": 21.119
+        },
+        {
+          "word": "is",
+          "start": 21.154,
+          "end": 21.223
+        },
+        {
+          "word": "further",
+          "start": 21.27,
+          "end": 21.525
+        },
+        {
+          "word": "away,",
+          "start": 21.583,
+          "end": 22.048
+        },
+        {
+          "word": "so",
+          "start": 22.373,
+          "end": 22.489
+        },
+        {
+          "word": "you",
+          "start": 22.547,
+          "end": 22.617
+        },
+        {
+          "word": "look",
+          "start": 22.663,
+          "end": 22.802
+        },
+        {
+          "word": "down",
+          "start": 22.86,
+          "end": 23.046
+        },
+        {
+          "word": "only",
+          "start": 23.116,
+          "end": 23.313
+        },
+        {
+          "word": "30",
+          "start": 23.383,
+          "end": 23.615
+        },
+        {
+          "word": "degrees.",
+          "start": 23.673,
+          "end": 24.312
+        },
+        {
+          "word": "Smaller",
+          "start": 24.753,
+          "end": 25.171
+        },
+        {
+          "word": "angle,",
+          "start": 25.24,
+          "end": 25.728
+        },
+        {
+          "word": "same",
+          "start": 26.053,
+          "end": 26.332
+        },
+        {
+          "word": "trick.",
+          "start": 26.367,
+          "end": 26.796
+        },
+        {
+          "word": "Remember",
+          "start": 27.237,
+          "end": 27.586
+        },
+        {
+          "word": "the",
+          "start": 27.632,
+          "end": 27.702
+        },
+        {
+          "word": "distances:",
+          "start": 27.737,
+          "end": 28.422
+        },
+        {
+          "word": "x",
+          "start": 28.932,
+          "end": 29.049
+        },
+        {
+          "word": "to",
+          "start": 29.118,
+          "end": 29.199
+        },
+        {
+          "word": "ship",
+          "start": 29.258,
+          "end": 29.455
+        },
+        {
+          "word": "one,",
+          "start": 29.548,
+          "end": 29.989
+        },
+        {
+          "word": "and",
+          "start": 30.43,
+          "end": 30.604
+        },
+        {
+          "word": "x",
+          "start": 30.813,
+          "end": 30.929
+        },
+        {
+          "word": "plus",
+          "start": 30.999,
+          "end": 31.231
+        },
+        {
+          "word": "y",
+          "start": 31.312,
+          "end": 31.44
+        },
+        {
+          "word": "to",
+          "start": 31.521,
+          "end": 31.568
+        },
+        {
+          "word": "ship",
+          "start": 31.614,
+          "end": 31.823
+        },
+        {
+          "word": "two.",
+          "start": 31.881,
+          "end": 32.508
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-05.mp3"
+    },
+    {
+      "id": "scene-06",
+      "type": "trigonometry",
+      "durationInFrames": 1005,
+      "content": {
+        "title": "The Z-Trick (Alternate Interior)",
+        "variant": "lighthouse_abstract"
+      },
+      "teacherScript": "An angle of depression is drawn outside the triangle, which makes it impossible to solve. We need to bring it inside using the Z-trick! Your horizontal line of sight is perfectly parallel to the sea. If we trace the laser path down to the ship, it forms a giant Z shape. Because of the Alternate Interior Angles rule, the inner corners of a Z are always mathematically identical. So, that top angle looking down simply slides to the bottom, transforming into the angle of elevation. Cheat code activated!",
+      "alignments": [
+        {
+          "word": "An",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "angle",
+          "start": 0.209,
+          "end": 0.511
+        },
+        {
+          "word": "of",
+          "start": 0.546,
+          "end": 0.592
+        },
+        {
+          "word": "depression",
+          "start": 0.65,
+          "end": 1.184
+        },
+        {
+          "word": "is",
+          "start": 1.265,
+          "end": 1.37
+        },
+        {
+          "word": "drawn",
+          "start": 1.428,
+          "end": 1.765
+        },
+        {
+          "word": "outside",
+          "start": 1.846,
+          "end": 2.345
+        },
+        {
+          "word": "the",
+          "start": 2.38,
+          "end": 2.45
+        },
+        {
+          "word": "triangle,",
+          "start": 2.485,
+          "end": 3.193
+        },
+        {
+          "word": "which",
+          "start": 3.437,
+          "end": 3.634
+        },
+        {
+          "word": "makes",
+          "start": 3.68,
+          "end": 3.878
+        },
+        {
+          "word": "it",
+          "start": 3.913,
+          "end": 3.982
+        },
+        {
+          "word": "impossible",
+          "start": 4.017,
+          "end": 4.598
+        },
+        {
+          "word": "to",
+          "start": 4.621,
+          "end": 4.667
+        },
+        {
+          "word": "solve.",
+          "start": 4.714,
+          "end": 5.259
+        },
+        {
+          "word": "We",
+          "start": 6.072,
+          "end": 6.211
+        },
+        {
+          "word": "need",
+          "start": 6.258,
+          "end": 6.409
+        },
+        {
+          "word": "to",
+          "start": 6.444,
+          "end": 6.49
+        },
+        {
+          "word": "bring",
+          "start": 6.548,
+          "end": 6.722
+        },
+        {
+          "word": "it",
+          "start": 6.769,
+          "end": 6.838
+        },
+        {
+          "word": "inside",
+          "start": 6.908,
+          "end": 7.384
+        },
+        {
+          "word": "using",
+          "start": 7.454,
+          "end": 7.663
+        },
+        {
+          "word": "the",
+          "start": 7.709,
+          "end": 7.779
+        },
+        {
+          "word": "Z-trick!",
+          "start": 7.837,
+          "end": 8.661
+        },
+        {
+          "word": "Your",
+          "start": 9.265,
+          "end": 9.451
+        },
+        {
+          "word": "horizontal",
+          "start": 9.509,
+          "end": 10.054
+        },
+        {
+          "word": "line",
+          "start": 10.089,
+          "end": 10.252
+        },
+        {
+          "word": "of",
+          "start": 10.275,
+          "end": 10.321
+        },
+        {
+          "word": "sight",
+          "start": 10.379,
+          "end": 10.6
+        },
+        {
+          "word": "is",
+          "start": 10.646,
+          "end": 10.728
+        },
+        {
+          "word": "perfectly",
+          "start": 10.809,
+          "end": 11.262
+        },
+        {
+          "word": "parallel",
+          "start": 11.32,
+          "end": 11.784
+        },
+        {
+          "word": "to",
+          "start": 11.842,
+          "end": 11.889
+        },
+        {
+          "word": "the",
+          "start": 11.958,
+          "end": 12.028
+        },
+        {
+          "word": "sea.",
+          "start": 12.074,
+          "end": 12.539
+        },
+        {
+          "word": "If",
+          "start": 13.05,
+          "end": 13.177
+        },
+        {
+          "word": "we",
+          "start": 13.212,
+          "end": 13.293
+        },
+        {
+          "word": "trace",
+          "start": 13.351,
+          "end": 13.677
+        },
+        {
+          "word": "the",
+          "start": 13.711,
+          "end": 13.781
+        },
+        {
+          "word": "laser",
+          "start": 13.862,
+          "end": 14.153
+        },
+        {
+          "word": "path",
+          "start": 14.211,
+          "end": 14.489
+        },
+        {
+          "word": "down",
+          "start": 14.547,
+          "end": 14.768
+        },
+        {
+          "word": "to",
+          "start": 14.814,
+          "end": 14.872
+        },
+        {
+          "word": "the",
+          "start": 14.93,
+          "end": 15
+        },
+        {
+          "word": "ship,",
+          "start": 15.035,
+          "end": 15.487
+        },
+        {
+          "word": "it",
+          "start": 15.813,
+          "end": 15.94
+        },
+        {
+          "word": "forms",
+          "start": 16.022,
+          "end": 16.381
+        },
+        {
+          "word": "a",
+          "start": 16.439,
+          "end": 16.486
+        },
+        {
+          "word": "giant",
+          "start": 16.602,
+          "end": 16.939
+        },
+        {
+          "word": "Z",
+          "start": 17.008,
+          "end": 17.09
+        },
+        {
+          "word": "shape.",
+          "start": 17.299,
+          "end": 17.775
+        },
+        {
+          "word": "Because",
+          "start": 18.378,
+          "end": 18.727
+        },
+        {
+          "word": "of",
+          "start": 18.75,
+          "end": 18.796
+        },
+        {
+          "word": "the",
+          "start": 18.831,
+          "end": 18.901
+        },
+        {
+          "word": "Alternate",
+          "start": 18.959,
+          "end": 19.33
+        },
+        {
+          "word": "Interior",
+          "start": 19.365,
+          "end": 19.795
+        },
+        {
+          "word": "Angles",
+          "start": 19.864,
+          "end": 20.155
+        },
+        {
+          "word": "rule,",
+          "start": 20.201,
+          "end": 20.596
+        },
+        {
+          "word": "the",
+          "start": 20.747,
+          "end": 20.863
+        },
+        {
+          "word": "inner",
+          "start": 20.944,
+          "end": 21.142
+        },
+        {
+          "word": "corners",
+          "start": 21.223,
+          "end": 21.559
+        },
+        {
+          "word": "of",
+          "start": 21.606,
+          "end": 21.652
+        },
+        {
+          "word": "a",
+          "start": 21.699,
+          "end": 21.722
+        },
+        {
+          "word": "Z",
+          "start": 21.768,
+          "end": 21.838
+        },
+        {
+          "word": "are",
+          "start": 22.047,
+          "end": 22.244
+        },
+        {
+          "word": "always",
+          "start": 22.291,
+          "end": 22.651
+        },
+        {
+          "word": "mathematically",
+          "start": 22.744,
+          "end": 23.545
+        },
+        {
+          "word": "identical.",
+          "start": 23.591,
+          "end": 24.299
+        },
+        {
+          "word": "So,",
+          "start": 24.45,
+          "end": 24.845
+        },
+        {
+          "word": "that",
+          "start": 25.054,
+          "end": 25.286
+        },
+        {
+          "word": "top",
+          "start": 25.368,
+          "end": 25.693
+        },
+        {
+          "word": "angle",
+          "start": 25.774,
+          "end": 26.041
+        },
+        {
+          "word": "looking",
+          "start": 26.064,
+          "end": 26.32
+        },
+        {
+          "word": "down",
+          "start": 26.366,
+          "end": 26.656
+        },
+        {
+          "word": "simply",
+          "start": 26.749,
+          "end": 27.086
+        },
+        {
+          "word": "slides",
+          "start": 27.144,
+          "end": 27.504
+        },
+        {
+          "word": "to",
+          "start": 27.55,
+          "end": 27.608
+        },
+        {
+          "word": "the",
+          "start": 27.666,
+          "end": 27.736
+        },
+        {
+          "word": "bottom,",
+          "start": 27.782,
+          "end": 28.293
+        },
+        {
+          "word": "transforming",
+          "start": 28.444,
+          "end": 29.141
+        },
+        {
+          "word": "into",
+          "start": 29.199,
+          "end": 29.338
+        },
+        {
+          "word": "the",
+          "start": 29.396,
+          "end": 29.466
+        },
+        {
+          "word": "angle",
+          "start": 29.536,
+          "end": 29.803
+        },
+        {
+          "word": "of",
+          "start": 29.826,
+          "end": 29.872
+        },
+        {
+          "word": "elevation.",
+          "start": 29.93,
+          "end": 30.697
+        },
+        {
+          "word": "Cheat",
+          "start": 31.207,
+          "end": 31.509
+        },
+        {
+          "word": "code",
+          "start": 31.59,
+          "end": 31.881
+        },
+        {
+          "word": "activated!",
+          "start": 31.939,
+          "end": 32.972
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-06.mp3"
+    },
+    {
+      "id": "scene-07",
+      "type": "trigonometry",
+      "durationInFrames": 603,
+      "content": {
+        "title": "Proximity Rule & Cheat Code",
+        "variant": "lighthouse_proximity"
+      },
+      "teacherScript": "Students always swap the 30 degree and 60 degree ships. To level up your math, remember the Proximity Rule: the closer you walk towards the lighthouse, the more you have to crane your neck up. Closer means bigger angle! And here's the final cheat code: root 3 is for 60 degrees, and 1 over root 3 is for 30 degrees.",
+      "alignments": [
+        {
+          "word": "Students",
+          "start": 0,
+          "end": 0.441
+        },
+        {
+          "word": "always",
+          "start": 0.488,
+          "end": 0.755
+        },
+        {
+          "word": "swap",
+          "start": 0.778,
+          "end": 1.033
+        },
+        {
+          "word": "the",
+          "start": 1.103,
+          "end": 1.173
+        },
+        {
+          "word": "30",
+          "start": 1.242,
+          "end": 1.498
+        },
+        {
+          "word": "degree",
+          "start": 1.556,
+          "end": 1.858
+        },
+        {
+          "word": "and",
+          "start": 1.916,
+          "end": 2.02
+        },
+        {
+          "word": "60",
+          "start": 2.101,
+          "end": 2.426
+        },
+        {
+          "word": "degree",
+          "start": 2.485,
+          "end": 2.74
+        },
+        {
+          "word": "ships.",
+          "start": 2.786,
+          "end": 3.332
+        },
+        {
+          "word": "To",
+          "start": 3.657,
+          "end": 3.773
+        },
+        {
+          "word": "level",
+          "start": 3.831,
+          "end": 4.04
+        },
+        {
+          "word": "up",
+          "start": 4.087,
+          "end": 4.145
+        },
+        {
+          "word": "your",
+          "start": 4.191,
+          "end": 4.296
+        },
+        {
+          "word": "math,",
+          "start": 4.331,
+          "end": 4.772
+        },
+        {
+          "word": "remember",
+          "start": 4.946,
+          "end": 5.317
+        },
+        {
+          "word": "the",
+          "start": 5.364,
+          "end": 5.433
+        },
+        {
+          "word": "Proximity",
+          "start": 5.48,
+          "end": 6.084
+        },
+        {
+          "word": "Rule:",
+          "start": 6.142,
+          "end": 6.536
+        },
+        {
+          "word": "the",
+          "start": 6.745,
+          "end": 6.838
+        },
+        {
+          "word": "closer",
+          "start": 6.896,
+          "end": 7.221
+        },
+        {
+          "word": "you",
+          "start": 7.279,
+          "end": 7.349
+        },
+        {
+          "word": "walk",
+          "start": 7.407,
+          "end": 7.581
+        },
+        {
+          "word": "towards",
+          "start": 7.651,
+          "end": 7.883
+        },
+        {
+          "word": "the",
+          "start": 7.918,
+          "end": 7.988
+        },
+        {
+          "word": "lighthouse,",
+          "start": 8.034,
+          "end": 8.638
+        },
+        {
+          "word": "the",
+          "start": 8.812,
+          "end": 8.916
+        },
+        {
+          "word": "more",
+          "start": 8.975,
+          "end": 9.137
+        },
+        {
+          "word": "you",
+          "start": 9.172,
+          "end": 9.242
+        },
+        {
+          "word": "have",
+          "start": 9.311,
+          "end": 9.427
+        },
+        {
+          "word": "to",
+          "start": 9.451,
+          "end": 9.497
+        },
+        {
+          "word": "crane",
+          "start": 9.555,
+          "end": 9.776
+        },
+        {
+          "word": "your",
+          "start": 9.81,
+          "end": 9.903
+        },
+        {
+          "word": "neck",
+          "start": 9.95,
+          "end": 10.124
+        },
+        {
+          "word": "up.",
+          "start": 10.205,
+          "end": 10.519
+        },
+        {
+          "word": "Closer",
+          "start": 10.902,
+          "end": 11.285
+        },
+        {
+          "word": "means",
+          "start": 11.355,
+          "end": 11.668
+        },
+        {
+          "word": "bigger",
+          "start": 12.109,
+          "end": 12.457
+        },
+        {
+          "word": "angle!",
+          "start": 12.574,
+          "end": 13.166
+        },
+        {
+          "word": "And",
+          "start": 13.34,
+          "end": 13.479
+        },
+        {
+          "word": "here's",
+          "start": 13.537,
+          "end": 13.746
+        },
+        {
+          "word": "the",
+          "start": 13.781,
+          "end": 13.85
+        },
+        {
+          "word": "final",
+          "start": 13.897,
+          "end": 14.152
+        },
+        {
+          "word": "cheat",
+          "start": 14.199,
+          "end": 14.396
+        },
+        {
+          "word": "code:",
+          "start": 14.454,
+          "end": 14.814
+        },
+        {
+          "word": "root",
+          "start": 15.255,
+          "end": 15.487
+        },
+        {
+          "word": "3",
+          "start": 15.603,
+          "end": 15.812
+        },
+        {
+          "word": "is",
+          "start": 15.87,
+          "end": 15.94
+        },
+        {
+          "word": "for",
+          "start": 15.987,
+          "end": 16.091
+        },
+        {
+          "word": "60",
+          "start": 16.149,
+          "end": 16.416
+        },
+        {
+          "word": "degrees,",
+          "start": 16.474,
+          "end": 16.927
+        },
+        {
+          "word": "and",
+          "start": 16.973,
+          "end": 17.136
+        },
+        {
+          "word": "1",
+          "start": 17.206,
+          "end": 17.38
+        },
+        {
+          "word": "over",
+          "start": 17.449,
+          "end": 17.612
+        },
+        {
+          "word": "root",
+          "start": 17.658,
+          "end": 17.833
+        },
+        {
+          "word": "3",
+          "start": 17.914,
+          "end": 18.123
+        },
+        {
+          "word": "is",
+          "start": 18.181,
+          "end": 18.251
+        },
+        {
+          "word": "for",
+          "start": 18.309,
+          "end": 18.413
+        },
+        {
+          "word": "30",
+          "start": 18.483,
+          "end": 18.738
+        },
+        {
+          "word": "degrees.",
+          "start": 18.796,
+          "end": 19.597
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-07.mp3"
+    },
+    {
+      "id": "scene-08",
+      "type": "trigonometry",
+      "durationInFrames": 1240,
+      "content": {
+        "title": "The 5-Mark Boss Solve",
+        "variant": "lighthouse_solve"
+      },
+      "teacherScript": "Back to the boss question. Step one: in the first triangle, tan 60 equals 75 over x. So x equals 75 divided by root 3, which is 25 root 3, about 43.3 meters. Step two: in the second triangle, tan 30 equals 75 over x plus y. So x plus y equals 75 root 3, about 129.9 meters. Step three: the distance between the ships is x plus y minus x, which is 129.9 minus 43.3, giving 50 root 3, about 86.6 meters. That is your final answer. 86.6 meters between the two ships, five marks secured!",
+      "alignments": [
+        {
+          "word": "Back",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "to",
+          "start": 0.255,
+          "end": 0.29
+        },
+        {
+          "word": "the",
+          "start": 0.337,
+          "end": 0.395
+        },
+        {
+          "word": "boss",
+          "start": 0.43,
+          "end": 0.615
+        },
+        {
+          "word": "question.",
+          "start": 0.662,
+          "end": 1.126
+        },
+        {
+          "word": "Step",
+          "start": 1.44,
+          "end": 1.672
+        },
+        {
+          "word": "one:",
+          "start": 1.741,
+          "end": 1.985
+        },
+        {
+          "word": "in",
+          "start": 2.31,
+          "end": 2.415
+        },
+        {
+          "word": "the",
+          "start": 2.438,
+          "end": 2.496
+        },
+        {
+          "word": "first",
+          "start": 2.531,
+          "end": 2.717
+        },
+        {
+          "word": "triangle,",
+          "start": 2.752,
+          "end": 3.262
+        },
+        {
+          "word": "tan",
+          "start": 3.471,
+          "end": 3.738
+        },
+        {
+          "word": "60",
+          "start": 3.831,
+          "end": 4.11
+        },
+        {
+          "word": "equals",
+          "start": 4.203,
+          "end": 4.435
+        },
+        {
+          "word": "75",
+          "start": 4.481,
+          "end": 5.016
+        },
+        {
+          "word": "over",
+          "start": 5.085,
+          "end": 5.248
+        },
+        {
+          "word": "x.",
+          "start": 5.399,
+          "end": 5.712
+        },
+        {
+          "word": "So",
+          "start": 6.084,
+          "end": 6.235
+        },
+        {
+          "word": "x",
+          "start": 6.374,
+          "end": 6.478
+        },
+        {
+          "word": "equals",
+          "start": 6.536,
+          "end": 6.757
+        },
+        {
+          "word": "75",
+          "start": 6.803,
+          "end": 7.303
+        },
+        {
+          "word": "divided",
+          "start": 7.361,
+          "end": 7.663
+        },
+        {
+          "word": "by",
+          "start": 7.697,
+          "end": 7.779
+        },
+        {
+          "word": "root",
+          "start": 7.837,
+          "end": 7.988
+        },
+        {
+          "word": "3,",
+          "start": 8.115,
+          "end": 8.371
+        },
+        {
+          "word": "which",
+          "start": 8.394,
+          "end": 8.557
+        },
+        {
+          "word": "is",
+          "start": 8.591,
+          "end": 8.649
+        },
+        {
+          "word": "25",
+          "start": 8.719,
+          "end": 9.172
+        },
+        {
+          "word": "root",
+          "start": 9.218,
+          "end": 9.358
+        },
+        {
+          "word": "3,",
+          "start": 9.427,
+          "end": 9.648
+        },
+        {
+          "word": "about",
+          "start": 9.671,
+          "end": 9.903
+        },
+        {
+          "word": "43.3",
+          "start": 9.961,
+          "end": 10.774
+        },
+        {
+          "word": "meters.",
+          "start": 10.844,
+          "end": 11.273
+        },
+        {
+          "word": "Step",
+          "start": 11.645,
+          "end": 11.877
+        },
+        {
+          "word": "two:",
+          "start": 11.935,
+          "end": 12.295
+        },
+        {
+          "word": "in",
+          "start": 12.562,
+          "end": 12.655
+        },
+        {
+          "word": "the",
+          "start": 12.69,
+          "end": 12.748
+        },
+        {
+          "word": "second",
+          "start": 12.783,
+          "end": 13.003
+        },
+        {
+          "word": "triangle,",
+          "start": 13.038,
+          "end": 13.421
+        },
+        {
+          "word": "tan",
+          "start": 13.456,
+          "end": 13.7
+        },
+        {
+          "word": "30",
+          "start": 13.804,
+          "end": 14.071
+        },
+        {
+          "word": "equals",
+          "start": 14.187,
+          "end": 14.443
+        },
+        {
+          "word": "75",
+          "start": 14.512,
+          "end": 15.116
+        },
+        {
+          "word": "over",
+          "start": 15.267,
+          "end": 15.476
+        },
+        {
+          "word": "x",
+          "start": 15.685,
+          "end": 15.836
+        },
+        {
+          "word": "plus",
+          "start": 16.01,
+          "end": 16.254
+        },
+        {
+          "word": "y.",
+          "start": 16.324,
+          "end": 16.684
+        },
+        {
+          "word": "So",
+          "start": 17.113,
+          "end": 17.276
+        },
+        {
+          "word": "x",
+          "start": 17.427,
+          "end": 17.52
+        },
+        {
+          "word": "plus",
+          "start": 17.566,
+          "end": 17.752
+        },
+        {
+          "word": "y",
+          "start": 17.822,
+          "end": 17.915
+        },
+        {
+          "word": "equals",
+          "start": 17.996,
+          "end": 18.216
+        },
+        {
+          "word": "75",
+          "start": 18.275,
+          "end": 18.751
+        },
+        {
+          "word": "root",
+          "start": 18.797,
+          "end": 18.936
+        },
+        {
+          "word": "3,",
+          "start": 19.006,
+          "end": 19.227
+        },
+        {
+          "word": "about",
+          "start": 19.261,
+          "end": 19.494
+        },
+        {
+          "word": "129.9",
+          "start": 19.563,
+          "end": 20.991
+        },
+        {
+          "word": "meters.",
+          "start": 21.049,
+          "end": 21.583
+        },
+        {
+          "word": "Step",
+          "start": 21.967,
+          "end": 22.222
+        },
+        {
+          "word": "three:",
+          "start": 22.28,
+          "end": 22.698
+        },
+        {
+          "word": "the",
+          "start": 22.907,
+          "end": 23
+        },
+        {
+          "word": "distance",
+          "start": 23.046,
+          "end": 23.348
+        },
+        {
+          "word": "between",
+          "start": 23.371,
+          "end": 23.638
+        },
+        {
+          "word": "the",
+          "start": 23.662,
+          "end": 23.731
+        },
+        {
+          "word": "ships",
+          "start": 23.754,
+          "end": 24.021
+        },
+        {
+          "word": "is",
+          "start": 24.068,
+          "end": 24.172
+        },
+        {
+          "word": "x",
+          "start": 24.381,
+          "end": 24.497
+        },
+        {
+          "word": "plus",
+          "start": 24.556,
+          "end": 24.799
+        },
+        {
+          "word": "y",
+          "start": 24.869,
+          "end": 25.02
+        },
+        {
+          "word": "minus",
+          "start": 25.09,
+          "end": 25.391
+        },
+        {
+          "word": "x,",
+          "start": 25.566,
+          "end": 25.949
+        },
+        {
+          "word": "which",
+          "start": 26.1,
+          "end": 26.285
+        },
+        {
+          "word": "is",
+          "start": 26.332,
+          "end": 26.413
+        },
+        {
+          "word": "129.9",
+          "start": 26.506,
+          "end": 28.398
+        },
+        {
+          "word": "minus",
+          "start": 28.724,
+          "end": 29.072
+        },
+        {
+          "word": "43.3,",
+          "start": 29.141,
+          "end": 30.535
+        },
+        {
+          "word": "giving",
+          "start": 30.86,
+          "end": 31.115
+        },
+        {
+          "word": "50",
+          "start": 31.208,
+          "end": 31.533
+        },
+        {
+          "word": "root",
+          "start": 31.614,
+          "end": 31.777
+        },
+        {
+          "word": "3,",
+          "start": 31.893,
+          "end": 32.346
+        },
+        {
+          "word": "about",
+          "start": 32.497,
+          "end": 32.833
+        },
+        {
+          "word": "86.6",
+          "start": 32.984,
+          "end": 34.029
+        },
+        {
+          "word": "meters.",
+          "start": 34.122,
+          "end": 34.656
+        },
+        {
+          "word": "That",
+          "start": 34.981,
+          "end": 35.144
+        },
+        {
+          "word": "is",
+          "start": 35.19,
+          "end": 35.248
+        },
+        {
+          "word": "your",
+          "start": 35.283,
+          "end": 35.388
+        },
+        {
+          "word": "final",
+          "start": 35.434,
+          "end": 35.689
+        },
+        {
+          "word": "answer.",
+          "start": 35.748,
+          "end": 36.247
+        },
+        {
+          "word": "86.6",
+          "start": 36.85,
+          "end": 37.756
+        },
+        {
+          "word": "meters",
+          "start": 37.849,
+          "end": 38.116
+        },
+        {
+          "word": "between",
+          "start": 38.151,
+          "end": 38.441
+        },
+        {
+          "word": "the",
+          "start": 38.464,
+          "end": 38.534
+        },
+        {
+          "word": "two",
+          "start": 38.557,
+          "end": 38.72
+        },
+        {
+          "word": "ships,",
+          "start": 38.778,
+          "end": 39.289
+        },
+        {
+          "word": "five",
+          "start": 39.463,
+          "end": 39.765
+        },
+        {
+          "word": "marks",
+          "start": 39.811,
+          "end": 40.043
+        },
+        {
+          "word": "secured!",
+          "start": 40.078,
+          "end": 40.821
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-08.mp3"
+    },
+    {
+      "id": "scene-09",
+      "type": "trigonometry",
+      "durationInFrames": 785,
+      "content": {
+        "title": "Boss Defeated",
+        "variant": "boss_end"
+      },
+      "teacherScript": "Boss defeated! You have just secured 5 marks on your board exam. Remember the four cheat codes. One: always draw the invisible horizontal line. Two: use the Z trick to slide the angle inside. Three: root 3 is for 60 degrees, and 1 over root 3 is for 30 degrees. Four: the closer ship, the bigger the angle. See you in the next boss fight!",
+      "alignments": [
+        {
+          "word": "Boss",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "word": "defeated!",
+          "start": 0.383,
+          "end": 1.01
+        },
+        {
+          "word": "You",
+          "start": 1.335,
+          "end": 1.474
+        },
+        {
+          "word": "have",
+          "start": 1.533,
+          "end": 1.637
+        },
+        {
+          "word": "just",
+          "start": 1.672,
+          "end": 1.834
+        },
+        {
+          "word": "secured",
+          "start": 1.869,
+          "end": 2.229
+        },
+        {
+          "word": "5",
+          "start": 2.403,
+          "end": 2.647
+        },
+        {
+          "word": "marks",
+          "start": 2.728,
+          "end": 2.961
+        },
+        {
+          "word": "on",
+          "start": 2.995,
+          "end": 3.053
+        },
+        {
+          "word": "your",
+          "start": 3.1,
+          "end": 3.193
+        },
+        {
+          "word": "board",
+          "start": 3.239,
+          "end": 3.413
+        },
+        {
+          "word": "exam.",
+          "start": 3.448,
+          "end": 3.994
+        },
+        {
+          "word": "Remember",
+          "start": 4.238,
+          "end": 4.586
+        },
+        {
+          "word": "the",
+          "start": 4.632,
+          "end": 4.702
+        },
+        {
+          "word": "four",
+          "start": 4.748,
+          "end": 4.923
+        },
+        {
+          "word": "cheat",
+          "start": 4.981,
+          "end": 5.201
+        },
+        {
+          "word": "codes.",
+          "start": 5.259,
+          "end": 5.782
+        },
+        {
+          "word": "One:",
+          "start": 6.165,
+          "end": 6.571
+        },
+        {
+          "word": "always",
+          "start": 7.082,
+          "end": 7.454
+        },
+        {
+          "word": "draw",
+          "start": 7.488,
+          "end": 7.709
+        },
+        {
+          "word": "the",
+          "start": 7.767,
+          "end": 7.837
+        },
+        {
+          "word": "invisible",
+          "start": 7.895,
+          "end": 8.394
+        },
+        {
+          "word": "horizontal",
+          "start": 8.475,
+          "end": 9.067
+        },
+        {
+          "word": "line.",
+          "start": 9.114,
+          "end": 9.52
+        },
+        {
+          "word": "Two:",
+          "start": 9.903,
+          "end": 10.403
+        },
+        {
+          "word": "use",
+          "start": 10.844,
+          "end": 11.053
+        },
+        {
+          "word": "the",
+          "start": 11.088,
+          "end": 11.157
+        },
+        {
+          "word": "Z",
+          "start": 11.204,
+          "end": 11.273
+        },
+        {
+          "word": "trick",
+          "start": 11.447,
+          "end": 11.714
+        },
+        {
+          "word": "to",
+          "start": 11.773,
+          "end": 11.831
+        },
+        {
+          "word": "slide",
+          "start": 11.877,
+          "end": 12.156
+        },
+        {
+          "word": "the",
+          "start": 12.19,
+          "end": 12.26
+        },
+        {
+          "word": "angle",
+          "start": 12.33,
+          "end": 12.632
+        },
+        {
+          "word": "inside.",
+          "start": 12.666,
+          "end": 13.27
+        },
+        {
+          "word": "Three:",
+          "start": 13.653,
+          "end": 14.187
+        },
+        {
+          "word": "root",
+          "start": 14.571,
+          "end": 14.803
+        },
+        {
+          "word": "3",
+          "start": 14.954,
+          "end": 15.232
+        },
+        {
+          "word": "is",
+          "start": 15.325,
+          "end": 15.43
+        },
+        {
+          "word": "for",
+          "start": 15.488,
+          "end": 15.604
+        },
+        {
+          "word": "60",
+          "start": 15.685,
+          "end": 16.01
+        },
+        {
+          "word": "degrees,",
+          "start": 16.068,
+          "end": 16.707
+        },
+        {
+          "word": "and",
+          "start": 16.916,
+          "end": 17.066
+        },
+        {
+          "word": "1",
+          "start": 17.148,
+          "end": 17.357
+        },
+        {
+          "word": "over",
+          "start": 17.473,
+          "end": 17.67
+        },
+        {
+          "word": "root",
+          "start": 17.728,
+          "end": 17.902
+        },
+        {
+          "word": "3",
+          "start": 18.018,
+          "end": 18.262
+        },
+        {
+          "word": "is",
+          "start": 18.344,
+          "end": 18.436
+        },
+        {
+          "word": "for",
+          "start": 18.494,
+          "end": 18.611
+        },
+        {
+          "word": "30",
+          "start": 18.68,
+          "end": 18.97
+        },
+        {
+          "word": "degrees.",
+          "start": 19.029,
+          "end": 19.69
+        },
+        {
+          "word": "Four:",
+          "start": 20.201,
+          "end": 20.677
+        },
+        {
+          "word": "the",
+          "start": 21.002,
+          "end": 21.107
+        },
+        {
+          "word": "closer",
+          "start": 21.176,
+          "end": 21.536
+        },
+        {
+          "word": "ship,",
+          "start": 21.594,
+          "end": 21.943
+        },
+        {
+          "word": "the",
+          "start": 22.117,
+          "end": 22.233
+        },
+        {
+          "word": "bigger",
+          "start": 22.349,
+          "end": 22.639
+        },
+        {
+          "word": "the",
+          "start": 22.686,
+          "end": 22.767
+        },
+        {
+          "word": "angle.",
+          "start": 22.837,
+          "end": 23.278
+        },
+        {
+          "word": "See",
+          "start": 23.789,
+          "end": 24.009
+        },
+        {
+          "word": "you",
+          "start": 24.044,
+          "end": 24.114
+        },
+        {
+          "word": "in",
+          "start": 24.16,
+          "end": 24.207
+        },
+        {
+          "word": "the",
+          "start": 24.241,
+          "end": 24.311
+        },
+        {
+          "word": "next",
+          "start": 24.346,
+          "end": 24.543
+        },
+        {
+          "word": "boss",
+          "start": 24.613,
+          "end": 24.903
+        },
+        {
+          "word": "fight!",
+          "start": 24.961,
+          "end": 25.635
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-09.mp3"
+    }
+  ]
+}

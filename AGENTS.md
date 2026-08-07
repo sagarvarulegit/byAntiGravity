@@ -1,12 +1,61 @@
 # CBSE Class 10 Learning Portal — Custom Rules
 
-## General
+CBSE Class 10 online learning portal: Flutter client + Supabase backend,
+Remotion-generated explainer videos, PostgreSQL curriculum content.
+
+## Project
+
+- **Client:** Flutter app in `apps/mobile_web_client/` (entry: `lib/main.dart`;
+  Supabase via `supabase_flutter`, Supabase URL/anon key in `lib/config.dart`).
+- **Video:** Remotion (React/TS) generator in `apps/video_generator/`
+  (16:9 `Composition.tsx` + 9:16 `ReelComposition.tsx`, scene JSON under
+  `src/data/`, rendered output in `out/`).
+- **Backend:** local Supabase (`supabase/`) — Postgres schema + RLS in
+  `supabase/migrations/`, one big seed `supabase/seed.sql`.
+- **Content:** NCERT chapter notes, quizzes, PYQs, study guides as SQL seeds in
+  `db/` (concat order defined in `concat_seeds.py`).
+- `prototype/` is a legacy HTML dashboard; `README.md` is stale (claims
+  NestJS/AWS — the real backend is Supabase).
+
+## Commands
+
+- Flutter: `flutter pub get`, `flutter analyze`, `flutter test`,
+  `flutter run -d chrome` (run from `apps/mobile_web_client/`).
+- Video: `npm run dev` (Remotion studio), `npm run lint` (= `eslint src && tsc`),
+  `npm run build`, `npm run generate-voiceovers`, `npm run generate-thumbnails`;
+  render with `npx remotion render <composition-id> out/<file>.mp4`
+  (add `--concurrency=<n>` for >~1000 frames).
+- Database: `bash refresh_db.sh` (concatenates `db/seed*.sql` via
+  `concat_seeds.py` into `supabase/seed.sql`, then `npx supabase db reset`);
+  manage local stack with `npx supabase start|stop|status|db reset`.
+- Graphify: see contract below.
+
+## Architecture
+
+- `apps/mobile_web_client/lib/views/` — screens: `auth_view`, `dashboard_view`,
+  `lessons_view` (large; markdown/notes rendering), `quiz_view`, `progress_view`,
+  `billing_view`. `lib/services/` — `auth_service.dart`, `database_service.dart`;
+  `lib/models.dart` — data models.
+- `apps/video_generator/src/` — Remotion compositions and scene components;
+  `src/data/schema.ts` is the source of truth for scene JSON shape.
+- `db/` — `schema.sql` + `seed_*.sql` files (auth, chapters, notes, quizzes,
+  study guides, PYQs). Every new seed file must be registered in
+  `concat_seeds.py`.
+- `supabase/` — `config.toml`, `migrations/` (schema + RLS + grants),
+  `seed.sql` (generated, do not hand-edit).
+- `scripts/` — graphify-content.ps1 and content-harvest helpers; root-level
+  `patch_*.py` scripts are one-off seed/content fixers.
+
+## Conventions
 
 - Whenever you fix code, append the reusable learning to the nearest applicable
   `AGENTS.md`. Use this root file only for repository-wide learnings.
 - **Windows UTF-8 Coding Standard:** Always open text files with
   `encoding="utf-8"` in Python scripts to avoid Windows CP1252 parsing crashes
   on symbols such as `Ω`.
+- **Content Cohesion:** Always ensure that Visualization and Narration tightly
+  match across all mediums (Video, Notes, and the Platform). Placeholders or
+  unrelated assets should never be used if they contradict the script.
 
 ## Scoped Instructions
 
@@ -51,3 +100,7 @@
   isolated; build their opt-in graph with
   `powershell -File scripts/graphify-content.ps1` and enable the
   `graphify_content` MCP server only for content-research sessions.
+
+## Notes
+
+- (Quick additions land here.)

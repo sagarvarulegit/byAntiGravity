@@ -29,6 +29,8 @@
   the component parameter list.
 - Trace every new prop through all parent and wrapper components to the source
   data.
+- **Parity across Formats**: When introducing a new scene type (like `activity` or `conversation`), you must implement its rendering logic and `<Audio />` tags in *both* `Composition.tsx` (16:9) and `ReelComposition.tsx` (9:16). Never leave a scene type unsupported in the Reel variant.
+- **Schema Strictness**: `activity` scenes strictly expect the `"animationType"` property (e.g. `"animationType": "zinc_acid"`), not an `"activityId"`. Verify property names against `src/data/schema.ts` when crafting new JSON scripts.
 
 ## Educational and Visual Standards
 
@@ -37,6 +39,8 @@
   2. **Everyday Relatable Analogies & Energy Landscapes**: Use age-appropriate physical analogies (e.g. bicycle on grass for refraction, ball rolling over a hill for potential difference).
   3. **Progressive Synchronized Visual Building**: Build SVG diagrams piece-by-piece in exact multi-phase sync with spoken narration (e.g. as teacher says "passes through Focus F2", the ray refracts through F2 while F2 pulses with a glowing highlight halo). Use glowing vector elements on dark backgrounds.
   4. **Thought Experiment Scenarios**: Ask "What happens if...?" to build student intuition before giving the answer.
+  5. **The "Inventor's Journey" (Progressive Problem-Solving)**: When explaining a device or invention, do not just present the final working version. Walk the viewer through the *failed iterations* (e.g., "Why not use a motor? Too noisy.") so the final design choices feel intuitive rather than arbitrary.
+  6. **Intuition First, Jargon Last**: Establish a rock-solid mental model using simple phrasing (e.g., "a magnet that moves without going anywhere") before introducing formal textbook jargon, laws, or formulas (e.g., Faraday's Law).
 - Mandatory Script Approval Workflow: ALWAYS present the full scene-by-scene script to the user and receive explicit "Go ahead" approval BEFORE generating audio, images, or video.
 - Always explain the physical intuition behind formal mathematical laws (e.g. "push vs flow" for Ohm's Law $V = IR$) before introducing formulas.
 - When narration describes a process, reaction, or experiment, generate and
@@ -48,11 +52,78 @@
 - Avoid CSS transition styles (e.g. `transition: "opacity 0.3s"`); drive all property transitions deterministically using `useCurrentFrame()`, `interpolate()`, or `spring()`.
 - In diagram scenes, conditionally check `(components.length > 0 || wires.length > 0)` before rendering the SVG card container; if empty, collapse the grid layout to full-width text to prevent rendering blank white boxes.
 - Avoid hardcoding chapter numbers (e.g. "Chapter 12") in title scenes or script subtitles, as NCERT chapter numbers vary across editions. Use domain titles like `"CBSE Class 10 Physics • Electricity"`.
+- **Thumbnail Promise Fulfillment**: If a thumbnail promises a specific outcome or hook (e.g., "SCORE 5 MARKS"), the video script JSON *must* explicitly contain a scene delivering that exact strategy or outcome. Do not generate a hook without fulfilling it in the content.
+- **AI Image Realism vs Global UI Theme**: If a global UI color theme (e.g., `#EC8366`) is requested for the video composition, do *not* apply this as a filter or tint in AI image generation prompts for educational assets. AI-generated diagrams, anatomy, and industrial photos must use photorealistic, natural, and true-to-life colors (no artificial tints) to preserve educational accuracy. **Exception:** When illustrating a metaphorical example, analogy, or thought experiment (e.g., a "tug-of-war" between elements), generate fun, highly memorable 2D cartoon/character illustrations instead of photorealism to aid student memory.
+- When rendering images in Vertical/Reel layouts (9:16), always use `objectFit: "contain"` instead of `cover`. Using `cover` indiscriminately crops educational illustrations (like characters or diagrams), destroying visual context.
+
+## Trigonometry chapter (TrigonometryScene)
+
+- Scene type `trigonometry` + `TrigonometryScene` with variant-per-concept:
+  `intro` (roadmap), `quest` (problem statement), `angle_definition` (what is
+  angle of depression: horizon line → boat → named arc → golden rule with
+  crossed-out vertical-wall arc), `lighthouse_real` (setup),
+  `lighthouse_abstract` (Z-trick — MUST be grounded in the real diagram:
+  lighthouse, ships, line of sight ∥ sea floor as the Z parallels, laser =
+  beacon→ship-2 diagonal; never a bare abstract triangle, or narration
+  mentioning ships has nothing to show),
+  `lighthouse_proximity` (closer = bigger), `lighthouse_solve` (worked answer),
+  `boss_end` (recap). Data lives in `src/data/maths/01_trigonometry_lighthouse.json`,
+  composition `MathsLighthouseMasterclass` →
+  `out/cbse-class-10-applications-of-trigonometry-angle-of-depression-lighthouse-masterclass.mp4`.
+- **Two-panel canvas layout**: text/explanation/formulas live in a LEFT panel
+  (560px, phrase-locked `PanelLine`/`GameStamp`/`ChipCard` rows), the
+  animation/diagram lives in a RIGHT panel (SVG 800x600 viewBox,
+  `preserveAspectRatio="xMidYMid meet"`). Portrait reels stack the panels
+  vertically (`portrait = vh > vw`). Only geometric annotations (degree
+  labels, θ, measurement lines) stay INSIDE the SVG; everything else moves to
+  the text panel so nothing overlaps the figure. Helpers (`PanelLine`,
+  `GameStamp`, `ChipCard`) must be defined at top level, NOT inside the
+  component (inline component definitions remount every frame).
+- **State the actual exam question up front**: a masterclass must open
+  hook → `quest` scene (the real board question, phrased exactly like the exam:
+  "From the top of a 75 m high lighthouse... find the distance between the
+  ships", with a mini diagram and a `QUEST ACCEPTED!` stamp) → roadmap → setup
+  → tools → solve → recap. Never let the solve scene answer a question the
+  video never posed (Zeigarnik: pose it early, answer it late).
+- **Physics correctness**: the FARTHER ship has the SMALLER angle of depression
+  (30° far vs 60° near). "Look further down" is wrong — the far ship is looked
+  at LESS down. The diagram must also LABEL the angles (60° near, 30° far) or
+  the swap-error the script warns about stays unfixable visually.
+- **Honest geometry**: ships and arcs must actually sit at the narrated angles.
+  For the 800x600 canvas the working layout is: lighthouse image (20,140,200,200)
+  → lantern/beacon at (77,153); sea at y=470; near ship (60°) at x=260, far ship
+  (30°) at x=625, laser endpoints at the waterline y=470 (drop 317px:
+  317/tan60 = 183, 317/tan30 = 549). Arc helper: `arc(cx,cy,r,a0,a1,sweep)`
+  emits an SVG A path (sweep 1 = clockwise in y-down); the bottom elevation arc
+  at the ship corner sweeps 180°→149° with sweep 0.
+- **Origin-anchored pops**: `transform="scale(s)"` alone scales about the SVG
+  origin and slides elements toward the top-left. Always use
+  `translate(cx cy) scale(s) translate(-cx -cy)` (and
+  `translate(cx cy) rotate(deg) scale(s) translate(-cx -cy)` for rotated
+  stamps) so pops stay centered.
+- **Ships referenced by narration early must be visible early**: in
+  `lighthouse_real` the ships render from frame 0; only the lasers, arcs,
+  labels, and measurement lines are phrase-locked to the narration.
+- **The 5-mark promise needs the actual answer**: scene `lighthouse_solve`
+  walks tan60 → x = 25√3 ≈ 43.3 m, tan30 → x+y = 75√3 ≈ 129.9 m, then
+  y = 50√3 ≈ 86.6 m with segment highlights on the diagram and a final answer
+  banner — never stop at "use tan theta".
+- `ReelComposition.tsx` MUST have a `scene.type === "trigonometry"` branch
+  (scale(1.2) + `TrigonometryScene` with NO audio prop — the reel's generic
+  `<Audio>` at the Sequence level already plays it; passing audio twice
+  double-plays). It was missing, so the short rendered blank.
+- Phrase anchors verified for all 7 scenes against regenerated alignments via
+  a node script (44/44 found, chronological); anchor words chosen to be
+  unique per scene (e.g. "25"/"129"/"50" match numeric tokens, "129" matches
+  the "129.9" token via `includes`).
+- Note: `npm run lint` and `npx tsc --noEmit` currently fail on PRE-EXISTING
+  errors in other components (Duplicate `AppColors` in Composition.tsx, missing
+  theme color keys). Check that your own files are clean and don't chase the
+  baseline.
 
 ## Voiceover & Thumbnail Generation
 
-- After adding scenes or changing `teacherScript` or other narrated text, run
-  `node generate-voiceovers.js <subject_folder>` from this directory.
+- **MANDATORY**: Whenever you create or modify video JSON data files (especially adding scenes or changing `teacherScript`), you MUST immediately run `node generate-voiceovers.js <subject_folder>` to generate MP3s, alignments, and accurately compute `durationInFrames`. Never leave scenes silent or with guessed placeholder durations.
 - To generate high-impact AI YouTube thumbnails, run
   `node generate-thumbnails.js <topic_name>` (e.g. `node generate-thumbnails.js
   light_ray_diagram_masterclass`). The script calls the `gemini-2.5-flash-image`
@@ -233,4 +304,42 @@
   left / one on the right", labels at "called F 1 and F 2", axis pulse at
   "sit right on the Principal Axis").
 
+## Visual & Branding Guidelines
 
+- **Primary Color Schemes by Subject**:
+  - **Physics & Chemistry**: Use **#EC8366** (Terracotta/Coral) as the primary base color for highlights, accents, and glowing effects.
+  - **Biology**: Use **#F26A6C** (Soft Crimson/Pink) as the primary base color.
+  - **Mathematics**: Use **#06B6D4** (Electric Cyan) to give math formulas and logic a high-tech, coding/gaming aesthetic.
+  *(Always use these brand colors across all components unless an explicit alternative is required for semantic reasons, like drawing blue deoxygenated blood).*
+
+### Gen-Z Aesthetic Rulebook
+
+To maximize engagement for the teenage demographic, all visual components MUST adhere to these modern design trends:
+
+1. **Dark Mode Gradients (NO AI Blue)**: Video backgrounds must use rich, deep dark gradients (e.g., deep charcoal `#121212`, dark aubergine `#1A0B2E`, or deep obsidian). **Strictly AVOID standard Navy Blue or AI-default Blue backgrounds.** Ensure the gradients are subtle radial or linear fades to give depth.
+2. **Bento Box Grids**: When displaying bullet points, formulas, or steps, do not use basic text lists. Organize information into distinct, rounded, floating "Bento Boxes" (translucent cards with rounded corners and subtle glowing borders) to make complex info feel bite-sized and premium.
+3. **Kinetic Typography**: Important keywords should not just statically fade in. They should aggressively scale up, highlight in the subject's brand color exactly when spoken, and utilize movement (like a slight shake for warnings or errors) to match modern short-form editing styles.
+4. **Modern Typography (Ban Serifs)**: Never use serif fonts (like Georgia) in video components. Standardize entirely on the **Outfit** sans-serif font family. Use extreme contrasts in weight: use `fontWeight: 900` (Black) for high-impact titles and keywords, and `fontWeight: 300` (Light) for secondary descriptions.
+5. **Anime/RPG Gamification Theme**: Frame the hardest 5-mark board exam questions as "Anime Boss Battles". Use gamified visual motifs (e.g., "Level Up!" badges, HP/Health bars for the problem, animated speed lines for high-intensity calculations). Script the narration to treat learning like unlocking a video game "Cheat Code" or "Hacking the Matrix".
+6. **SVG Assets Repo**: Always check `C:\Sagar\Projects\CBSE\sagarv-svg-repo` for available pre-downloaded SVGs (like ships, lighthouses, boats) before attempting to draw shapes manually with HTML/SVG primitives.
+7. **Simple & Clear English**: Avoid obscure or confusing slang (e.g., avoid terms like "glitch it"). Always use simple, clear, and direct English so students of all language backgrounds understand mathematical and scientific concepts effortlessly.
+
+## YouTube Growth & SEO Workflow
+
+- **Optimized MP4 Naming (Search Intent)**: Never render videos to generic filenames like `out/video.mp4` or `out/acids_01.mp4`. YouTube reads the raw filename for initial search ranking. Always use long-tail, SEO-optimized, hyphen-separated filenames that students search for (e.g., `out/cbse-class-10-hydrogen-pop-test-acids-bases-salts.mp4`).
+- **No Long Intros (AVD)**: Never generate a script with a long channel intro or slow logo animation. The first 10-30 seconds must instantly hook the viewer with the core question or visual experiment.
+- **Mandatory Companion Shorts (Traffic Funnel)**: Whenever you create a 16:9 Masterclass video, always propose and generate a condensed 20-30 second 9:16 companion Short (using `ReelComposition.tsx`) featuring the most highly visual or explosive moment. This acts as a funnel for the main video.
+- **Engagement Priming**: When delivering the final Title and Description for a video, always include an engaging "Pinned Comment Challenge" (a question designed to spark comments) and a "Community Tab Poll" suggestion.
+
+## Psychological Scriptwriting Frameworks
+
+When generating JSON `teacherScript` narration or `content` text, you MUST utilize the following psychological hooks:
+
+1. **Loss Aversion (Fear of Losing Marks)**: Students are motivated by fear of loss. Instead of framing lessons as "How to gain 5 marks", frame them as "The #1 mistake that will cost you 5 marks." 
+2. **The Zeigarnik Effect (Curiosity Gaps)**: The brain hates unfinished loops. Open the video with a bizarre or high-stakes question/visual (e.g., "Why did this test tube explode?") and withhold the answer until the middle of the video to force retention.
+3. **The Insider Secret Bias**: Rebrand standard, boring textbook theorems as exclusive "cheat codes", "hacks", or "tricks" (e.g., *The Z-Trick*, *The Root-3 Cheat Code*). It makes students feel like they are learning a forbidden shortcut.
+4. **Pattern Interrupts**: Never let the script or animation dwell on one static visual for more than 4-5 seconds. Write scripts that trigger visual changes frequently (zooms, pop-up text, color changes) to repeatedly reset the viewer's attention span.
+
+
+
+- **Start Scenes Clean (Progressive Disclosure)**: Never carry over clutter from previous scenes if it is not actively being discussed. In animation, start the scene empty with just the essential base background (e.g., sea, lighthouse, ships). Gradually introduce and fill up the lines, angles, and measurements exactly when the narration starts talking about them.

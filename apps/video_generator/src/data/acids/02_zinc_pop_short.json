@@ -1,0 +1,356 @@
+{
+  "id": "acids-02-short",
+  "title": "Zinc vs Hydrogen: The Pop Test Short",
+  "durationInFrames": 776,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "text",
+      "durationInFrames": 234,
+      "content": {
+        "heading": "Tug-of-War: Zinc vs Hydrogen",
+        "bullets": [
+          "Zinc is the stronger kid",
+          "It pushes hydrogen out of the acid!"
+        ],
+        "imageUrls": [
+          "/images/zinc_hydrogen_tug_of_war.jpg"
+        ]
+      },
+      "teacherScript": "In the tug of war between zinc and hydrogen, zinc is the bigger, stronger kid. It easily pushes hydrogen out of the acid!",
+      "alignments": [
+        {
+          "word": "In",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "the",
+          "start": 0.186,
+          "end": 0.255
+        },
+        {
+          "word": "tug",
+          "start": 0.29,
+          "end": 0.464
+        },
+        {
+          "word": "of",
+          "start": 0.511,
+          "end": 0.557
+        },
+        {
+          "word": "war",
+          "start": 0.604,
+          "end": 0.731
+        },
+        {
+          "word": "between",
+          "start": 0.778,
+          "end": 1.103
+        },
+        {
+          "word": "zinc",
+          "start": 1.173,
+          "end": 1.405
+        },
+        {
+          "word": "and",
+          "start": 1.451,
+          "end": 1.521
+        },
+        {
+          "word": "hydrogen,",
+          "start": 1.591,
+          "end": 2.148
+        },
+        {
+          "word": "zinc",
+          "start": 2.299,
+          "end": 2.566
+        },
+        {
+          "word": "is",
+          "start": 2.612,
+          "end": 2.682
+        },
+        {
+          "word": "the",
+          "start": 2.74,
+          "end": 2.81
+        },
+        {
+          "word": "bigger,",
+          "start": 2.902,
+          "end": 3.332
+        },
+        {
+          "word": "stronger",
+          "start": 3.413,
+          "end": 3.901
+        },
+        {
+          "word": "kid.",
+          "start": 3.971,
+          "end": 4.331
+        },
+        {
+          "word": "It",
+          "start": 4.54,
+          "end": 4.69
+        },
+        {
+          "word": "easily",
+          "start": 4.841,
+          "end": 5.271
+        },
+        {
+          "word": "pushes",
+          "start": 5.329,
+          "end": 5.619
+        },
+        {
+          "word": "hydrogen",
+          "start": 5.666,
+          "end": 6.072
+        },
+        {
+          "word": "out",
+          "start": 6.13,
+          "end": 6.269
+        },
+        {
+          "word": "of",
+          "start": 6.304,
+          "end": 6.351
+        },
+        {
+          "word": "the",
+          "start": 6.397,
+          "end": 6.467
+        },
+        {
+          "word": "acid!",
+          "start": 6.536,
+          "end": 7.291
+        }
+      ],
+      "audio": "/audio/acids/acids-02-short_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "activity",
+      "durationInFrames": 542,
+      "content": {
+        "activityName": "",
+        "description": "",
+        "animationType": "zinc_acid"
+      },
+      "teacherScript": "Let's see this in the lab! Drop a few zinc granules in dilute sulphuric acid. Zinc displaces hydrogen, releasing bubbles. Now bring a burning matchstick near the mouth of the test tube. Pop! That's the official test for hydrogen gas!",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "see",
+          "start": 0.279,
+          "end": 0.395
+        },
+        {
+          "word": "this",
+          "start": 0.43,
+          "end": 0.546
+        },
+        {
+          "word": "in",
+          "start": 0.604,
+          "end": 0.662
+        },
+        {
+          "word": "the",
+          "start": 0.697,
+          "end": 0.766
+        },
+        {
+          "word": "lab!",
+          "start": 0.813,
+          "end": 1.324
+        },
+        {
+          "word": "Drop",
+          "start": 2.02,
+          "end": 2.287
+        },
+        {
+          "word": "a",
+          "start": 2.345,
+          "end": 2.368
+        },
+        {
+          "word": "few",
+          "start": 2.438,
+          "end": 2.612
+        },
+        {
+          "word": "zinc",
+          "start": 2.682,
+          "end": 2.902
+        },
+        {
+          "word": "granules",
+          "start": 2.984,
+          "end": 3.413
+        },
+        {
+          "word": "in",
+          "start": 3.471,
+          "end": 3.553
+        },
+        {
+          "word": "dilute",
+          "start": 3.611,
+          "end": 4.052
+        },
+        {
+          "word": "sulphuric",
+          "start": 4.098,
+          "end": 4.609
+        },
+        {
+          "word": "acid.",
+          "start": 4.679,
+          "end": 5.236
+        },
+        {
+          "word": "Zinc",
+          "start": 6.049,
+          "end": 6.316
+        },
+        {
+          "word": "displaces",
+          "start": 6.385,
+          "end": 6.92
+        },
+        {
+          "word": "hydrogen,",
+          "start": 6.989,
+          "end": 7.755
+        },
+        {
+          "word": "releasing",
+          "start": 7.93,
+          "end": 8.324
+        },
+        {
+          "word": "bubbles.",
+          "start": 8.382,
+          "end": 8.986
+        },
+        {
+          "word": "Now",
+          "start": 9.683,
+          "end": 9.961
+        },
+        {
+          "word": "bring",
+          "start": 10.136,
+          "end": 10.379
+        },
+        {
+          "word": "a",
+          "start": 10.426,
+          "end": 10.449
+        },
+        {
+          "word": "burning",
+          "start": 10.495,
+          "end": 10.762
+        },
+        {
+          "word": "matchstick",
+          "start": 10.832,
+          "end": 11.32
+        },
+        {
+          "word": "near",
+          "start": 11.436,
+          "end": 11.656
+        },
+        {
+          "word": "the",
+          "start": 11.703,
+          "end": 11.773
+        },
+        {
+          "word": "mouth",
+          "start": 11.842,
+          "end": 12.086
+        },
+        {
+          "word": "of",
+          "start": 12.132,
+          "end": 12.19
+        },
+        {
+          "word": "the",
+          "start": 12.237,
+          "end": 12.307
+        },
+        {
+          "word": "test",
+          "start": 12.341,
+          "end": 12.574
+        },
+        {
+          "word": "tube.",
+          "start": 12.608,
+          "end": 13.073
+        },
+        {
+          "word": "Pop!",
+          "start": 13.456,
+          "end": 14.048
+        },
+        {
+          "word": "That's",
+          "start": 14.652,
+          "end": 15.023
+        },
+        {
+          "word": "the",
+          "start": 15.07,
+          "end": 15.174
+        },
+        {
+          "word": "official",
+          "start": 15.232,
+          "end": 15.639
+        },
+        {
+          "word": "test",
+          "start": 15.708,
+          "end": 15.987
+        },
+        {
+          "word": "for",
+          "start": 16.057,
+          "end": 16.196
+        },
+        {
+          "word": "hydrogen",
+          "start": 16.266,
+          "end": 16.718
+        },
+        {
+          "word": "gas!",
+          "start": 16.776,
+          "end": 17.554
+        }
+      ],
+      "audio": "/audio/acids/acids-02-short_scene-02.mp3"
+    }
+  ]
+}

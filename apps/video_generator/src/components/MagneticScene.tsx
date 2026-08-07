@@ -13,7 +13,9 @@ type Variant =
   | "electromagnet"
   | "fleming"
   | "induction"
-  | "motor_generator";
+  | "motor_generator"
+  | "electron_trick"
+  | "arrows_rule";
 
 interface MagneticSceneProps {
   title: string;
@@ -382,6 +384,17 @@ export const MagneticScene: React.FC<MagneticSceneProps> = ({
   const mgRecOutP = p(frame, fRecapOut, fRecapOut + 30);
   const mgMotionP = p(frame, fMotion, fMotion + 45);
 
+  // electron_trick (scene-01 & scene-03)
+  const etElectronP = p(frame, 30, 90);
+  const etFieldP = p(frame, 90, 150);
+  const etDeflectP = p(frame, 150, 210);
+  
+  const etOppositeP = p(frame, 250, 300); // For scene-03 trap
+
+  // arrows_rule (scene-04)
+  const arLinesP = p(frame, 30, 90);
+  const arRotateP = p(frame, 150, 300);
+
   const needleAngle = inDefP * 35 - inOutP * 35;
 
   // Induction magnet position: moves INTO the coil during fIn, back OUT during fOut
@@ -391,7 +404,7 @@ export const MagneticScene: React.FC<MagneticSceneProps> = ({
   const coilXs = [115, 157, 198, 240, 282, 323, 365];
 
   return (
-    <div style={{ flex: 1, position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ width: 1920, height: 1080, display: "flex", flexDirection: "column", backgroundColor: C.dark }}>
       <PaperBackground />
       {audio && <Audio src={staticFile(audio)} />}
 
@@ -437,7 +450,7 @@ export const MagneticScene: React.FC<MagneticSceneProps> = ({
             viewBox="0 0 480 340"
             preserveAspectRatio="xMidYMid meet"
             style={{
-              backgroundColor: C.dark,
+              backgroundColor: "#151813", // Updated to ChapterReady Dark
               border: "2px solid #334155",
               borderRadius: "16px",
               boxShadow: "0 12px 32px rgba(0, 0, 0, 0.25)",
@@ -1108,6 +1121,147 @@ export const MagneticScene: React.FC<MagneticSceneProps> = ({
                 )}
               </>
             )}
+
+            {/* ============ NEW VARIANT: electron_trick ============ */}
+            {variant === "electron_trick" && (
+              <>
+                {/* Electron moving right */}
+                {etElectronP > 0 && (
+                  <g transform={`translate(${lerp(100, 350, etElectronP)}, 170)`}>
+                    <circle cx={0} cy={0} r={15} fill="#f3883b" />
+                    <text x={0} y={5} fontFamily={outfitFont} fontSize="14" fontWeight="900" fill="#151813" textAnchor="middle">e⁻</text>
+                  </g>
+                )}
+                {etElectronP > 0.5 && (
+                  <g opacity={1}>
+                    <line x1={80} y1={200} x2={350} y2={200} stroke="#f3883b" strokeWidth="2" strokeDasharray="5,5" />
+                    <text x={215} y={220} fontFamily={outfitFont} fontSize="14" fontWeight="800" fill="#f3883b" textAnchor="middle">Electron Flow ➔</text>
+                  </g>
+                )}
+                {/* Magnetic field poles (Scene 1 hook) */}
+                {etFieldP > 0 && subtitle === "THE CBSE TRICK QUESTION!" && (
+                  <g opacity={etFieldP}>
+                    <rect x={180} y={40} width="120" height="40" fill={C.red} opacity="0.8" />
+                    <text x={240} y={65} fontFamily={outfitFont} fontSize="20" fontWeight="900" fill={C.white} textAnchor="middle">N</text>
+                    <rect x={180} y={260} width="120" height="40" fill={C.blue} opacity="0.8" />
+                    <text x={240} y={285} fontFamily={outfitFont} fontSize="20" fontWeight="900" fill={C.white} textAnchor="middle">S</text>
+                  </g>
+                )}
+                {/* Opposite Current flow (Scene 3 trap) */}
+                {etOppositeP > 0 && (
+                  <g opacity={etOppositeP}>
+                    <rect x={40} y={40} width="400" height="260" fill="none" stroke={C.red} strokeWidth="6" opacity="0.5" />
+                    <line x1={400} y1={250} x2={100} y2={250} stroke="#f3883b" strokeWidth="8" />
+                    <polygon points={`100,250 120,240 120,260`} fill="#f3883b" />
+                    <text x={250} y={280} fontFamily={outfitFont} fontSize="20" fontWeight="900" fill="#f3883b" textAnchor="middle">Current (I) ⬅</text>
+                  </g>
+                )}
+              </>
+            )}
+
+            {/* ============ NEW VARIANT: arrows_rule ============ */}
+            {variant === "arrows_rule" && (() => {
+              // Timing synced to voiceover:
+              // "rotate them" (4.7s) -> frame 140 to 220
+              const rotP = p(frame, 140, 220); 
+              const A = lerp(0, Math.PI, rotP);
+              
+              // 3D vectors
+              const mid3D = { x: Math.cos(A), y: 0, z: -Math.sin(A) }; // Middle (Current)
+              const thm3D = { x: Math.sin(A), y: 0, z: -Math.cos(A) }; // Thumb (Force)
+              
+              // Projection to 2D (isometric-ish):
+              // Index finger is fixed DOWN (Y axis)
+              const proj = (v: {x: number, y: number, z: number}, length: number) => ({
+                x: v.x * length + v.z * (-length * 0.6),
+                y: v.y * length + v.z * (length * 0.6)
+              });
+              
+              // Base pulses
+              const indexPulse = p(frame, 200, 220) - p(frame, 250, 270);
+              const middlePulse = p(frame, 273, 293) - p(frame, 330, 350);
+              const thumbPulse = p(frame, 372, 392) - p(frame, 460, 480);
+              
+              const indLen = 120 * (1 + indexPulse * 0.15);
+              const midLen = 120 * (1 + middlePulse * 0.15);
+              const thmLen = 120 * (1 + thumbPulse * 0.15);
+
+              const mid2D = proj(mid3D, midLen);
+              const thm2D = proj(thm3D, thmLen);
+              const ind2D = { x: 0, y: indLen }; // Fixed DOWN
+              
+              // Colors matching cbse-bycodex-web brand (#f3883b, #bd4f10)
+              const indColor = indexPulse > 0.1 ? "#FFFFFF" : "#bd4f10";
+              const midColor = middlePulse > 0.1 ? "#FFFFFF" : "#f3883b";
+              const thmColor = thumbPulse > 0.1 ? "#FFFFFF" : "#FCD34D";
+
+              const Arrow = ({ end, label, color, delayP }: { end: {x: number, y: number}, label: string, color: string, delayP: number }) => {
+                const angle = Math.atan2(end.y, end.x) * (180 / Math.PI);
+                // Auto-place text based on quadrant to avoid overlap
+                const textX = end.x > 10 ? 15 : end.x < -10 ? -15 : 0;
+                const textY = end.y > 10 ? 25 : end.y < -10 ? -15 : 0;
+                const anchor = end.x > 10 ? "start" : end.x < -10 ? "end" : "middle";
+                
+                return (
+                  <g opacity={delayP}>
+                    <line x1={0} y1={0} x2={end.x} y2={end.y} stroke={color} strokeWidth="8" strokeLinecap="round" />
+                    <g transform={`translate(${end.x}, ${end.y}) rotate(${angle})`}>
+                      <polygon points={`12,0 -10,-10 -10,10`} fill={color} />
+                    </g>
+                    <text x={end.x + textX} y={end.y + textY} fontFamily={outfitFont} fontSize="22" fontWeight="900" fill={color} textAnchor={anchor}>
+                      {label}
+                    </text>
+                  </g>
+                );
+              };
+
+              // Final answer pop
+              const answerP = p(frame, 480, 500);
+
+              return (
+                <g opacity={arLinesP} transform={`translate(240, 110)`}>
+                  {/* Draw order for 3D illusion: Back to Front */}
+                  {thm3D.z < 0 && <Arrow end={thm2D} label="Thumb (Force)" color={thmColor} delayP={1} />}
+                  {mid3D.z < 0 && <Arrow end={mid2D} label="Middle (Current)" color={midColor} delayP={1} />}
+                  
+                  <Arrow end={ind2D} label="Index (Field)" color={indColor} delayP={1} />
+                  
+                  {mid3D.z >= 0 && <Arrow end={mid2D} label="Middle (Current)" color={midColor} delayP={1} />}
+                  {thm3D.z >= 0 && <Arrow end={thm2D} label="Thumb (Force)" color={thmColor} delayP={1} />}
+                  
+                  {/* Origin connector */}
+                  <circle cx={0} cy={0} r={8} fill={C.white} />
+                  
+                  {/* Explicit Exam Answer Stamp with Reasoning */}
+                  {answerP > 0 && (
+                    <g transform={`translate(0, 165) scale(${lerp(0.5, 1, answerP)})`} opacity={answerP}>
+                      {/* Card Background */}
+                      <rect x={-210} y={-40} width={420} height={100} rx={12} fill="#111827" stroke="#FCD34D" strokeWidth={3} />
+                      
+                      {/* Answer Title */}
+                      <text x={0} y={-10} fontFamily={outfitFont} fontSize="20" fontWeight="900" fill="#FCD34D" textAnchor="middle">
+                        ✍️ EXAM ANSWER: Out of the page
+                      </text>
+                      
+                      {/* Reasoning Line 1 */}
+                      <text x={0} y={15} fontFamily={outfitFont} fontSize="14" fontWeight="700" fill="#cbd5e1" textAnchor="middle">
+                        Reason: Electrons are (-), so current flows OPPOSITE (Left).
+                      </text>
+                      {/* Reasoning Line 2 */}
+                      <text x={0} y={35} fontFamily={outfitFont} fontSize="14" fontWeight="700" fill="#cbd5e1" textAnchor="middle">
+                        By Fleming's Left-Hand Rule, the force is directed outwards.
+                      </text>
+                      
+                      {/* Marks Badge */}
+                      <rect x={-45} y={45} width={90} height={16} rx={8} fill="#bd4f10" />
+                      <text x={0} y={57} fontFamily={outfitFont} fontSize="11" fontWeight="900" fill="#FFFFFF" textAnchor="middle">
+                        FULL 3 MARKS
+                      </text>
+                    </g>
+                  )}
+                </g>
+              );
+            })()}
           </svg>
         </div>
       </div>

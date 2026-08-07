@@ -1,0 +1,440 @@
+{
+  "id": "biology_heart_short",
+  "title": "The V-A Trick for the Human Heart",
+  "durationInFrames": 976,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 183,
+      "content": {
+        "text": "Never Lose 5 Marks!",
+        "subtitle": "Human Heart Blood Flow"
+      },
+      "teacherScript": "Students always draw the arrows on the human heart backwards and lose 5 marks. Here is the cheat code.",
+      "alignments": [
+        {
+          "word": "Students",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "word": "always",
+          "start": 0.476,
+          "end": 0.72
+        },
+        {
+          "word": "draw",
+          "start": 0.743,
+          "end": 0.882
+        },
+        {
+          "word": "the",
+          "start": 0.929,
+          "end": 0.998
+        },
+        {
+          "word": "arrows",
+          "start": 1.057,
+          "end": 1.289
+        },
+        {
+          "word": "on",
+          "start": 1.324,
+          "end": 1.382
+        },
+        {
+          "word": "the",
+          "start": 1.416,
+          "end": 1.486
+        },
+        {
+          "word": "human",
+          "start": 1.521,
+          "end": 1.765
+        },
+        {
+          "word": "heart",
+          "start": 1.823,
+          "end": 2.009
+        },
+        {
+          "word": "backwards",
+          "start": 2.067,
+          "end": 2.566
+        },
+        {
+          "word": "and",
+          "start": 2.682,
+          "end": 2.833
+        },
+        {
+          "word": "lose",
+          "start": 2.902,
+          "end": 3.123
+        },
+        {
+          "word": "5",
+          "start": 3.204,
+          "end": 3.448
+        },
+        {
+          "word": "marks.",
+          "start": 3.518,
+          "end": 4.005
+        },
+        {
+          "word": "Here",
+          "start": 4.284,
+          "end": 4.47
+        },
+        {
+          "word": "is",
+          "start": 4.516,
+          "end": 4.586
+        },
+        {
+          "word": "the",
+          "start": 4.621,
+          "end": 4.69
+        },
+        {
+          "word": "cheat",
+          "start": 4.725,
+          "end": 4.923
+        },
+        {
+          "word": "code.",
+          "start": 4.981,
+          "end": 5.573
+        }
+      ],
+      "audio": "/audio/biology/biology_heart_short_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "biology",
+      "durationInFrames": 482,
+      "content": {
+        "title": "The V-A Trick",
+        "variant": "heart_double_circulation"
+      },
+      "teacherScript": "It is called the V-A trick! Veins Visit the heart. Arteries go Away from the heart. The Pulmonary Artery goes away to the lungs. The Aorta goes away to the body. Vena Cava visits the heart!",
+      "alignments": [
+        {
+          "word": "It",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "is",
+          "start": 0.186,
+          "end": 0.244
+        },
+        {
+          "word": "called",
+          "start": 0.302,
+          "end": 0.662
+        },
+        {
+          "word": "the",
+          "start": 0.778,
+          "end": 0.917
+        },
+        {
+          "word": "V-A",
+          "start": 0.998,
+          "end": 1.649
+        },
+        {
+          "word": "trick!",
+          "start": 1.741,
+          "end": 2.264
+        },
+        {
+          "word": "Veins",
+          "start": 3.216,
+          "end": 3.692
+        },
+        {
+          "word": "Visit",
+          "start": 3.866,
+          "end": 4.18
+        },
+        {
+          "word": "the",
+          "start": 4.214,
+          "end": 4.284
+        },
+        {
+          "word": "heart.",
+          "start": 4.342,
+          "end": 4.818
+        },
+        {
+          "word": "Arteries",
+          "start": 5.933,
+          "end": 6.397
+        },
+        {
+          "word": "go",
+          "start": 6.444,
+          "end": 6.606
+        },
+        {
+          "word": "Away",
+          "start": 6.699,
+          "end": 6.954
+        },
+        {
+          "word": "from",
+          "start": 7.001,
+          "end": 7.129
+        },
+        {
+          "word": "the",
+          "start": 7.175,
+          "end": 7.245
+        },
+        {
+          "word": "heart.",
+          "start": 7.303,
+          "end": 7.709
+        },
+        {
+          "word": "The",
+          "start": 8.092,
+          "end": 8.208
+        },
+        {
+          "word": "Pulmonary",
+          "start": 8.255,
+          "end": 8.766
+        },
+        {
+          "word": "Artery",
+          "start": 8.835,
+          "end": 9.16
+        },
+        {
+          "word": "goes",
+          "start": 9.218,
+          "end": 9.392
+        },
+        {
+          "word": "away",
+          "start": 9.427,
+          "end": 9.613
+        },
+        {
+          "word": "to",
+          "start": 9.648,
+          "end": 9.694
+        },
+        {
+          "word": "the",
+          "start": 9.752,
+          "end": 9.822
+        },
+        {
+          "word": "lungs.",
+          "start": 9.868,
+          "end": 10.426
+        },
+        {
+          "word": "The",
+          "start": 10.751,
+          "end": 10.879
+        },
+        {
+          "word": "Aorta",
+          "start": 10.96,
+          "end": 11.366
+        },
+        {
+          "word": "goes",
+          "start": 11.436,
+          "end": 11.633
+        },
+        {
+          "word": "away",
+          "start": 11.668,
+          "end": 11.842
+        },
+        {
+          "word": "to",
+          "start": 11.877,
+          "end": 11.923
+        },
+        {
+          "word": "the",
+          "start": 11.97,
+          "end": 12.04
+        },
+        {
+          "word": "body.",
+          "start": 12.074,
+          "end": 12.608
+        },
+        {
+          "word": "Vena",
+          "start": 13.421,
+          "end": 13.711
+        },
+        {
+          "word": "Cava",
+          "start": 13.781,
+          "end": 14.234
+        },
+        {
+          "word": "visits",
+          "start": 14.408,
+          "end": 14.768
+        },
+        {
+          "word": "the",
+          "start": 14.803,
+          "end": 14.872
+        },
+        {
+          "word": "heart!",
+          "start": 14.93,
+          "end": 15.557
+        }
+      ],
+      "audio": "/audio/biology/biology_heart_short_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "durationInFrames": 311,
+      "content": {
+        "heading": "Exception!",
+        "bullets": [
+          "Pulmonary Artery = Deoxygenated",
+          "Pulmonary Vein = Oxygenated"
+        ]
+      },
+      "teacherScript": "And remember the one exception! The Pulmonary Artery is the only artery carrying blue, deoxygenated blood. Save this video for your biology exam!",
+      "alignments": [
+        {
+          "word": "And",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "remember",
+          "start": 0.209,
+          "end": 0.464
+        },
+        {
+          "word": "the",
+          "start": 0.511,
+          "end": 0.58
+        },
+        {
+          "word": "one",
+          "start": 0.65,
+          "end": 0.801
+        },
+        {
+          "word": "exception!",
+          "start": 0.824,
+          "end": 1.521
+        },
+        {
+          "word": "The",
+          "start": 1.846,
+          "end": 1.962
+        },
+        {
+          "word": "Pulmonary",
+          "start": 2.009,
+          "end": 2.519
+        },
+        {
+          "word": "Artery",
+          "start": 2.589,
+          "end": 2.926
+        },
+        {
+          "word": "is",
+          "start": 2.995,
+          "end": 3.077
+        },
+        {
+          "word": "the",
+          "start": 3.123,
+          "end": 3.193
+        },
+        {
+          "word": "only",
+          "start": 3.309,
+          "end": 3.646
+        },
+        {
+          "word": "artery",
+          "start": 3.715,
+          "end": 4.063
+        },
+        {
+          "word": "carrying",
+          "start": 4.133,
+          "end": 4.551
+        },
+        {
+          "word": "blue,",
+          "start": 4.644,
+          "end": 5.19
+        },
+        {
+          "word": "deoxygenated",
+          "start": 5.433,
+          "end": 6.339
+        },
+        {
+          "word": "blood.",
+          "start": 6.385,
+          "end": 6.827
+        },
+        {
+          "word": "Save",
+          "start": 7.338,
+          "end": 7.651
+        },
+        {
+          "word": "this",
+          "start": 7.674,
+          "end": 7.79
+        },
+        {
+          "word": "video",
+          "start": 7.848,
+          "end": 8.139
+        },
+        {
+          "word": "for",
+          "start": 8.197,
+          "end": 8.29
+        },
+        {
+          "word": "your",
+          "start": 8.324,
+          "end": 8.429
+        },
+        {
+          "word": "biology",
+          "start": 8.475,
+          "end": 8.998
+        },
+        {
+          "word": "exam!",
+          "start": 9.056,
+          "end": 9.845
+        }
+      ],
+      "audio": "/audio/biology/biology_heart_short_scene-03.mp3"
+    }
+  ]
+}
