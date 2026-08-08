@@ -223,7 +223,6 @@ export const ReelComposition: React.FC<VideoData> = (props) => {
                         <MagneticScene
                           title=""
                           subtitle={scene.content.subtitle}
-                          audio={scene.audio}
                           variant={scene.content.variant}
                           alignments={scene.alignments}
                           teacherScript={scene.teacherScript}
@@ -241,7 +240,7 @@ export const ReelComposition: React.FC<VideoData> = (props) => {
                   {/* Trigonometry Scene in Vertical format */}
                   {scene.type === "trigonometry" && (
                     <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "30px" }}>
-                      <h2 style={{ fontFamily: outfitFont, fontSize: "48px", fontWeight: 800, color: "#06B6D4", textAlign: "center", margin: 0 }}>
+                      <h2 style={{ fontFamily: outfitFont, fontSize: "48px", fontWeight: 800, color: "#FBBF24", textAlign: "center", margin: 0 }}>
                         {scene.content.title}
                       </h2>
 

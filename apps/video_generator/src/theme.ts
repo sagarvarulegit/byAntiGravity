@@ -11,7 +11,7 @@ export const AppColors = {
   // Gen-Z Brand Colors by Subject
   physicsChem: "#EC8366", // Terracotta
   biology: "#F26A6C", // Crimson/Pink
-  maths: "#06B6D4", // Electric Cyan
+  maths: "#FBBF24", // Neon Amber
   
   // Backgrounds
   obsidian: "#0F172A",

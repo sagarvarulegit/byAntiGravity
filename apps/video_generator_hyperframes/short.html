@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigonometry Life Hacks - Short</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+    body { margin: 0; background: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Outfit', sans-serif; }
+    #hyperframes-root { width: 1080px; height: 1920px; background: #0a0a0a; position: relative; overflow: hidden; color: white; }
+    .scene { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .title { font-size: 80px; font-weight: 900; color: #FBBF24; text-align: center; text-transform: uppercase; margin-bottom: 20px; }
+    
+    /* Scene 1: SOH CAH TOA */
+    .soh-box { font-size: 70px; margin: 30px 0; padding: 40px; background: rgba(255,255,255,0.05); border: 4px solid #4B5563; border-radius: 20px; text-align: center; width: 80%; }
+    .soh-title { font-weight: 900; color: #FBBF24; font-size: 100px; }
+    .formula-span { display: block; margin-top: 20px; color: #D1D5DB; }
+    
+    /* Scene 2: Table */
+    table { border-collapse: collapse; width: 90%; font-size: 55px; margin-top: 50px; text-align: center; }
+    th, td { border: 4px solid #4B5563; padding: 40px 20px; }
+    th { color: #FBBF24; font-weight: 900; }
+    td { font-weight: bold; }
+
+    /* Scene 3: Diagram */
+    .svg-container { position: absolute; top: 25%; left: 10%; width: 80%; height: 50%; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <div id="hyperframes-root">
+    
+    <!-- Audio Tracks -->
+    <audio id="audio-bg" src="public/audio/maths/educational_upbeat.mp3" loop></audio>
+    <audio id="audio-1" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-01.mp3" data-start="0" data-duration="21.3" data-track-index="1"></audio>
+    <audio id="audio-2" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-02.mp3" data-start="21.3" data-duration="15.5" data-track-index="2"></audio>
+    <audio id="audio-3" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-03.mp3" data-start="36.8" data-duration="21.8" data-track-index="3"></audio>
+    <audio id="audio-4" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-04.mp3" data-start="58.6" data-duration="7.1" data-track-index="4"></audio>
+
+    <!-- Scene 1: SOH CAH TOA -->
+    <div class="scene" id="scene-1">
+      <div class="title s1-title">Trigonometry<br>Life Hacks!</div>
+      <div class="soh-box s1-soh" style="opacity:0; transform: translateY(50px);">
+        <div class="soh-title">SO</div>
+        <div class="formula-span">Sin = <span style="color:#10B981">Opposite</span> / <span style="color:#EF4444">Hypotenuse</span></div>
+      </div>
+      <div class="soh-box s1-cah" style="opacity:0; transform: translateY(50px);">
+        <div class="soh-title">CA</div>
+        <div class="formula-span">Cos = <span style="color:#FBBF24">Adjacent</span> / <span style="color:#EF4444">Hypotenuse</span></div>
+      </div>
+      <div class="soh-box s1-toa" style="opacity:0; transform: translateY(50px);">
+        <div class="soh-title">TOA</div>
+        <div class="formula-span">Tan = <span style="color:#10B981">Opposite</span> / <span style="color:#FBBF24">Adjacent</span></div>
+      </div>
+    </div>
+
+    <!-- Scene 2: Table Hack -->
+    <div class="scene" id="scene-2">
+      <div class="title s2-title">The Table Hack</div>
+      <table class="s2-table">
+        <tr>
+          <th>θ</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th>
+        </tr>
+        <tr class="row-sin">
+          <th>sin θ</th><td>0</td><td class="cell-s30">½</td><td>1/√2</td><td class="cell-s60">√3/2</td><td>1</td>
+        </tr>
+        <tr class="row-cos">
+          <th>cos θ</th><td>1</td><td class="cell-c30">√3/2</td><td>1/√2</td><td class="cell-c60">½</td><td>0</td>
+        </tr>
+        <tr class="row-tan" style="opacity:0;">
+          <th>tan θ</th><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>N.D.</td>
+        </tr>
+      </table>
+      <div class="s2-tan-hack" style="opacity:0; margin-top:60px; font-size:80px; color:#10B981; font-weight:900;">
+        Tan = Sin ÷ Cos
+      </div>
+    </div>
+
+    <!-- Scene 3: Elevation vs Depression -->
+    <div class="scene" id="scene-3">
+      <div class="title s3-title" style="position: absolute; top: 80px; width: 100%;">Elevation vs Depression</div>
+      
+      <div class="svg-container">
+        <svg width="100%" height="100%" viewBox="0 0 800 1000">
+          <!-- Observer eye -->
+          <circle class="obs-eye" cx="150" cy="500" r="25" fill="#FBBF24" opacity="0"/>
+          <text class="obs-text" x="190" y="510" fill="#FBBF24" font-size="36" font-family="Outfit" font-weight="bold" opacity="0">Observer</text>
+          
+          <!-- Horizontal line 1 -->
+          <line class="horiz-1" x1="150" y1="500" x2="750" y2="500" stroke="#9CA3AF" stroke-width="6" stroke-dasharray="15,15" opacity="0"/>
+          
+          <!-- Looking UP -->
+          <circle class="obj-up" cx="650" cy="150" r="25" fill="#10B981" opacity="0"/>
+          <line class="line-up" x1="150" y1="500" x2="650" y2="150" stroke="#10B981" stroke-width="8" opacity="0"/>
+          <path class="arc-up" d="M 350 500 A 200 200 0 0 0 320 380" fill="none" stroke="#10B981" stroke-width="6" opacity="0"/>
+          <text class="txt-up" x="180" y="320" fill="#10B981" font-size="44" font-family="Outfit" font-weight="bold" opacity="0">Angle of Elevation 👆</text>
+          
+          <!-- Looking DOWN -->
+          <circle class="obj-down" cx="650" cy="850" r="25" fill="#EF4444" opacity="0"/>
+          <line class="line-down" x1="150" y1="500" x2="650" y2="850" stroke="#EF4444" stroke-width="8" opacity="0"/>
+          <path class="arc-down" d="M 350 500 A 200 200 0 0 1 320 620" fill="none" stroke="#EF4444" stroke-width="6" opacity="0"/>
+          <text class="txt-down" x="180" y="700" fill="#EF4444" font-size="44" font-family="Outfit" font-weight="bold" opacity="0">Angle of Depression 👇</text>
+          
+          <!-- Parallel Ground -->
+          <line class="horiz-2" x1="150" y1="850" x2="750" y2="850" stroke="#9CA3AF" stroke-width="6" stroke-dasharray="15,15" opacity="0"/>
+          <path class="arc-alt" d="M 450 850 A 200 200 0 0 1 480 730" fill="none" stroke="#FBBF24" stroke-width="6" opacity="0"/>
+          <text class="txt-alt" x="500" y="780" fill="#FBBF24" font-size="40" font-family="Outfit" font-weight="bold" opacity="0">Alternate Interior</text>
+        </svg>
+      </div>
+      
+      <div class="s3-conclusion" style="opacity:0; position:absolute; bottom:150px; width:80%; padding:40px; background:rgba(255,255,255,0.05); border:6px solid #FBBF24; border-radius:30px; font-size:65px; text-align:center; font-weight:900;">
+        Elevation = Depression!
+      </div>
+    </div>
+
+    <!-- Scene 4: Outro -->
+    <div class="scene" id="scene-4" style="background: #111;">
+      <div class="title s4-title" style="font-size:120px; line-height:1.1;">WANT MORE<br>CHEAT CODES?</div>
+      <div class="s4-cta" style="opacity:0; transform:scale(0.8); margin-top:80px; padding:50px 80px; background:#FBBF24; color:#000; font-size:75px; font-weight:900; border-radius:40px;">
+        Watch the Full Boss Fight ➔
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines.main = gsap.timeline({ paused: true });
+    const tl = window.__timelines.main;
+
+    // SCENE 1: SOH CAH TOA
+    tl.fromTo("#scene-1", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
+    tl.fromTo(".s1-title", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }, 0.2);
+    
+    // SO, KA, TOA drops
+    tl.fromTo(".s1-soh", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, 6.5);
+    tl.fromTo(".s1-cah", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, 7.2);
+    tl.fromTo(".s1-toa", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, 7.9);
+    
+    // SOH definition
+    tl.to(".s1-soh", { scale: 1.05, border: "6px solid #10B981", duration: 0.3 }, 9.0);
+    
+    // CAH definition
+    tl.to(".s1-soh", { scale: 1.0, border: "4px solid #4B5563", duration: 0.3 }, 13.5);
+    tl.to(".s1-cah", { scale: 1.05, border: "6px solid #EF4444", duration: 0.3 }, 14.0);
+    
+    // TOA definition
+    tl.to(".s1-cah", { scale: 1.0, border: "4px solid #4B5563", duration: 0.3 }, 17.5);
+    tl.to(".s1-toa", { scale: 1.05, border: "6px solid #FBBF24", duration: 0.3 }, 18.0);
+    
+    // SCENE 2: Table
+    const s2 = 21.3;
+    tl.to("#scene-1", { opacity: 0, duration: 0.5 }, s2);
+    tl.to("#scene-2", { opacity: 1, duration: 0.5 }, s2 + 0.5);
+    tl.fromTo(".s2-title", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5 }, s2 + 1.0);
+    tl.fromTo(".s2-table", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5 }, s2 + 1.5);
+    
+    // "Notice how Sin 30 is one half..."
+    tl.to(".cell-s30", { color: "#000", backgroundColor: "#10B981", duration: 0.3 }, s2 + 3.5);
+    
+    // "but Cos 60 is also one half?"
+    tl.to(".cell-c60", { color: "#000", backgroundColor: "#10B981", duration: 0.3 }, s2 + 5.5);
+    
+    // "The sine and cosine values perfectly flip across the table!"
+    tl.to(".cell-s60", { color: "#000", backgroundColor: "#FBBF24", duration: 0.3 }, s2 + 8.5);
+    tl.to(".cell-c30", { color: "#000", backgroundColor: "#FBBF24", duration: 0.3 }, s2 + 8.5);
+    
+    // "And for Tan, just divide Sine by Cosine."
+    tl.to(".row-tan", { opacity: 1, duration: 0.5 }, s2 + 12.0);
+    tl.to(".s2-tan-hack", { opacity: 1, scale: 1.1, duration: 0.5, ease: "back.out" }, s2 + 13.5);
+
+    // SCENE 3: Diagrams
+    const s3 = 36.8;
+    tl.to("#scene-2", { opacity: 0, duration: 0.5 }, s3);
+    tl.to("#scene-3", { opacity: 1, duration: 0.5 }, s3 + 0.5);
+    tl.fromTo(".s3-title", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5 }, s3 + 1.0);
+    
+    // "Looking UP from the observer..."
+    tl.to([".obs-eye", ".obs-text"], { opacity: 1, duration: 0.3 }, s3 + 2.0);
+    tl.to(".horiz-1", { opacity: 1, duration: 0.3 }, s3 + 2.5);
+    tl.to(".obj-up", { opacity: 1, duration: 0.3 }, s3 + 3.0);
+    tl.to(".line-up", { opacity: 1, duration: 0.5 }, s3 + 3.5);
+    tl.to([".arc-up", ".txt-up"], { opacity: 1, duration: 0.5 }, s3 + 4.5);
+    
+    // "Looking DOWN from the observer..."
+    tl.to(".obj-down", { opacity: 1, duration: 0.3 }, s3 + 7.5);
+    tl.to(".line-down", { opacity: 1, duration: 0.5 }, s3 + 8.5);
+    tl.to([".arc-down", ".txt-down"], { opacity: 1, duration: 0.5 }, s3 + 9.5);
+    
+    // "But here is the beautiful part... parallel lines"
+    tl.to(".horiz-2", { opacity: 1, duration: 0.5 }, s3 + 13.0);
+    
+    // "angle of depression exactly equals angle of elevation!"
+    tl.to([".arc-alt", ".txt-alt"], { opacity: 1, duration: 0.5 }, s3 + 15.0);
+    tl.to(".s3-conclusion", { opacity: 1, y: -20, duration: 0.8, ease: "back.out" }, s3 + 18.0);
+
+    // SCENE 4: Outro
+    const s4 = 58.6;
+    tl.to("#scene-3", { opacity: 0, duration: 0.5 }, s4);
+    tl.to("#scene-4", { opacity: 1, duration: 0.5 }, s4 + 0.5);
+    tl.fromTo(".s4-title", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(2)" }, s4 + 1.0);
+    tl.to(".s4-cta", { opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.5)" }, s4 + 3.0);
+
+    // Keep it alive till end
+    tl.set({}, {}, 66.0);
+
+    // Auto-play for direct browser preview (Requires interaction to unlock audio)
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.8);color:#FBBF24;display:flex;align-items:center;justify-content:center;font-size:80px;font-weight:bold;z-index:9999;cursor:pointer;';
+    overlay.innerText = 'Click to Play ▶';
+    document.getElementById('hyperframes-root').appendChild(overlay);
+
+    overlay.addEventListener('click', () => {
+      overlay.remove();
+      document.querySelectorAll('audio').forEach(a => {
+        if (a.id === 'audio-bg') {
+          a.volume = 0.15; // Ducked volume for background music
+          a.play().catch(e => console.log('Audio error:', e));
+        } else {
+          setTimeout(() => a.play().catch(e => console.log('Audio error:', e)), parseFloat(a.dataset.start) * 1000);
+        }
+      });
+      tl.play();
+    });
+  </script>
+</body>
+</html>

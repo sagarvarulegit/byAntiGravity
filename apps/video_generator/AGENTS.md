@@ -18,6 +18,10 @@
   {audio && <Audio src={staticFile(audio)} />}
   ```
 
+- **Audio Tag Single-Source Architecture (Preventing Duplicate Audio)**:
+  - In `Composition.tsx` (16:9), audio is passed to individual scene components (`audio={scene.audio}`), which render `{audio && <Audio src={staticFile(audio)} />}` internally.
+  - In `ReelComposition.tsx` (9:16), audio is rendered ONCE at the top-level Sequence wrapper (`line 101`). NEVER pass `audio={scene.audio}` to any child scene component inside `ReelComposition.tsx` (e.g. `MagneticScene`, `TrigonometryScene`), or the browser will double-play the audio stream and cause word repetition.
+
 - For `TransitionSeries`, subtract overlaps from the composition duration:
   `actualDuration = sumOfSceneDurations - ((numberOfScenes - 1) * overlapFrames)`.
 - Keep sequential on-screen elements in the same chronological order as the
@@ -343,3 +347,5 @@ When generating JSON `teacherScript` narration or `content` text, you MUST utili
 
 
 - **Start Scenes Clean (Progressive Disclosure)**: Never carry over clutter from previous scenes if it is not actively being discussed. In animation, start the scene empty with just the essential base background (e.g., sea, lighthouse, ships). Gradually introduce and fill up the lines, angles, and measurements exactly when the narration starts talking about them.
+- **Studio Interactivity Support**: Always wrap visual scene elements (SVG shapes, images, groups, cards, badges, text lines) in `Interactive.G` or `Interactive.Div` with clear human-readable `name` attributes (e.g. `name="Lighthouse Structure"`, `name="Near Ship"`, `name="GOLDEN RULE Card"`). This allows creators to click, drag, re-align, and scale any visual element directly in Remotion Studio without asking for manual coordinate code edits.
+

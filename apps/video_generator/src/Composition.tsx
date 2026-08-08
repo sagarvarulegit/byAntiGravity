@@ -37,7 +37,7 @@ export const MyComposition: React.FC<VideoData> = (props) => {
     <>
       <TransitionSeries
         style={{
-          translate: "-0.2px 5.5px",
+          translate: "1.6px 3.7px",
         }}
       >
         {data.scenes.map((scene, idx) => {

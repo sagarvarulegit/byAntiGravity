@@ -1,13 +1,13 @@
 {
   "id": "maths_trigonometry_lighthouse_masterclass",
   "title": "Angle of Depression: Lighthouse Trick",
-  "durationInFrames": 6943,
+  "durationInFrames": 7706,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 219,
+      "durationInFrames": 220,
       "content": {
         "text": "Applications of Trigonometry",
         "subtitle": "The Lighthouse Boss Fight"
@@ -145,278 +145,283 @@
     {
       "id": "scene-02",
       "type": "trigonometry",
-      "durationInFrames": 545,
+      "durationInFrames": 165,
       "content": {
         "title": "Heights & Distances",
         "subtitle": "The 5-Mark Boss Question",
         "variant": "quest"
       },
-      "teacherScript": "Here is the boss question. From the top of a 75 meter high lighthouse, the angles of depression of two ships are 60 degrees and 30 degrees. Both ships are on the same side of the lighthouse. Find the distance between the ships. Quest accepted! Let's build our weapons to defeat this boss.",
+      "teacherScript": "Here is the ultimate boss challenge. From the top of a 75 meter high lighthouse, the angles of depression of two ships are 60 degrees and 30 degrees. Both ships are on the same side of the lighthouse. Find the distance between the ships. Quest accepted! Let's build our weapons to defeat this boss.",
       "alignments": [
         {
           "word": "Here",
           "start": 0,
-          "end": 0.221
+          "end": 0.08163265306122448
         },
         {
           "word": "is",
-          "start": 0.255,
-          "end": 0.325
+          "start": 0.09183673469387754,
+          "end": 0.13265306122448978
         },
         {
           "word": "the",
-          "start": 0.36,
-          "end": 0.43
+          "start": 0.14285714285714285,
+          "end": 0.20408163265306123
+        },
+        {
+          "word": "ultimate",
+          "start": 0.21428571428571427,
+          "end": 0.37755102040816324
         },
         {
           "word": "boss",
-          "start": 0.476,
-          "end": 0.743
+          "start": 0.3877551020408163,
+          "end": 0.4693877551020408
         },
         {
-          "word": "question.",
-          "start": 0.801,
-          "end": 1.37
+          "word": "challenge.",
+          "start": 0.47959183673469385,
+          "end": 0.6836734693877551
         },
         {
           "word": "From",
-          "start": 1.695,
-          "end": 1.846
+          "start": 0.6938775510204082,
+          "end": 0.7755102040816326
         },
         {
           "word": "the",
-          "start": 1.892,
-          "end": 1.962
+          "start": 0.7857142857142857,
+          "end": 0.846938775510204
         },
         {
           "word": "top",
-          "start": 2.009,
-          "end": 2.241
+          "start": 0.8571428571428571,
+          "end": 0.9183673469387754
         },
         {
           "word": "of",
-          "start": 2.287,
-          "end": 2.345
+          "start": 0.9285714285714285,
+          "end": 0.9693877551020408
         },
         {
           "word": "a",
-          "start": 2.403,
-          "end": 2.426
+          "start": 0.9795918367346937,
+          "end": 0.9999999999999999
         },
         {
           "word": "75",
-          "start": 2.543,
-          "end": 3.146
+          "start": 1.010204081632653,
+          "end": 1.0510204081632653
         },
         {
           "word": "meter",
-          "start": 3.216,
-          "end": 3.425
+          "start": 1.0612244897959182,
+          "end": 1.1632653061224487
         },
         {
           "word": "high",
-          "start": 3.506,
-          "end": 3.669
+          "start": 1.173469387755102,
+          "end": 1.2551020408163265
         },
         {
           "word": "lighthouse,",
-          "start": 3.727,
-          "end": 4.354
+          "start": 1.2653061224489794,
+          "end": 1.4897959183673468
         },
         {
           "word": "the",
-          "start": 4.563,
-          "end": 4.679
+          "start": 1.4999999999999998,
+          "end": 1.5612244897959182
         },
         {
           "word": "angles",
-          "start": 4.772,
-          "end": 5.108
+          "start": 1.5714285714285712,
+          "end": 1.6938775510204078
         },
         {
           "word": "of",
-          "start": 5.143,
-          "end": 5.201
+          "start": 1.704081632653061,
+          "end": 1.7448979591836733
         },
         {
           "word": "depression",
-          "start": 5.248,
-          "end": 5.677
+          "start": 1.7551020408163263,
+          "end": 1.9591836734693875
         },
         {
           "word": "of",
-          "start": 5.712,
-          "end": 5.759
+          "start": 1.9693877551020404,
+          "end": 2.0102040816326525
         },
         {
           "word": "two",
-          "start": 5.817,
-          "end": 6.002
+          "start": 2.020408163265306,
+          "end": 2.081632653061224
         },
         {
           "word": "ships",
-          "start": 6.072,
-          "end": 6.362
+          "start": 2.0918367346938775,
+          "end": 2.193877551020408
         },
         {
           "word": "are",
-          "start": 6.409,
-          "end": 6.56
+          "start": 2.204081632653061,
+          "end": 2.265306122448979
         },
         {
           "word": "60",
-          "start": 6.641,
-          "end": 6.966
+          "start": 2.2755102040816326,
+          "end": 2.316326530612245
         },
         {
           "word": "degrees",
-          "start": 7.036,
-          "end": 7.454
+          "start": 2.326530612244898,
+          "end": 2.4693877551020407
         },
         {
           "word": "and",
-          "start": 7.523,
-          "end": 7.651
+          "start": 2.4795918367346936,
+          "end": 2.540816326530612
         },
         {
           "word": "30",
-          "start": 7.767,
-          "end": 8.057
+          "start": 2.5510204081632653,
+          "end": 2.5918367346938775
         },
         {
           "word": "degrees.",
-          "start": 8.115,
-          "end": 8.731
+          "start": 2.6020408163265305,
+          "end": 2.7653061224489797
         },
         {
           "word": "Both",
-          "start": 9.056,
-          "end": 9.311
+          "start": 2.7755102040816326,
+          "end": 2.857142857142857
         },
         {
           "word": "ships",
-          "start": 9.369,
-          "end": 9.601
+          "start": 2.86734693877551,
+          "end": 2.9693877551020407
         },
         {
           "word": "are",
-          "start": 9.636,
-          "end": 9.729
+          "start": 2.9795918367346936,
+          "end": 3.040816326530612
         },
         {
           "word": "on",
-          "start": 9.776,
-          "end": 9.857
+          "start": 3.0510204081632653,
+          "end": 3.0918367346938775
         },
         {
           "word": "the",
-          "start": 9.892,
-          "end": 9.961
+          "start": 3.1020408163265305,
+          "end": 3.1632653061224487
         },
         {
           "word": "same",
-          "start": 10.008,
-          "end": 10.24
+          "start": 3.173469387755102,
+          "end": 3.2551020408163267
         },
         {
           "word": "side",
-          "start": 10.286,
-          "end": 10.507
+          "start": 3.2653061224489797,
+          "end": 3.3469387755102042
         },
         {
           "word": "of",
-          "start": 10.542,
-          "end": 10.588
+          "start": 3.357142857142857,
+          "end": 3.3979591836734695
         },
         {
           "word": "the",
-          "start": 10.635,
-          "end": 10.704
+          "start": 3.4081632653061225,
+          "end": 3.4693877551020407
         },
         {
           "word": "lighthouse.",
-          "start": 10.751,
-          "end": 11.389
+          "start": 3.479591836734694,
+          "end": 3.7040816326530615
         },
         {
           "word": "Find",
-          "start": 11.773,
-          "end": 12.028
+          "start": 3.7142857142857144,
+          "end": 3.795918367346939
         },
         {
           "word": "the",
-          "start": 12.074,
-          "end": 12.144
+          "start": 3.806122448979592,
+          "end": 3.86734693877551
         },
         {
           "word": "distance",
-          "start": 12.202,
-          "end": 12.562
+          "start": 3.8775510204081636,
+          "end": 4.040816326530613
         },
         {
           "word": "between",
-          "start": 12.597,
-          "end": 12.91
+          "start": 4.051020408163265,
+          "end": 4.1938775510204085
         },
         {
           "word": "the",
-          "start": 12.945,
-          "end": 13.015
+          "start": 4.204081632653061,
+          "end": 4.26530612244898
         },
         {
           "word": "ships.",
-          "start": 13.05,
-          "end": 13.526
+          "start": 4.275510204081632,
+          "end": 4.397959183673469
         },
         {
           "word": "Quest",
-          "start": 13.677,
-          "end": 14.013
+          "start": 4.408163265306122,
+          "end": 4.5102040816326525
         },
         {
           "word": "accepted!",
-          "start": 14.083,
-          "end": 14.849
+          "start": 4.520408163265306,
+          "end": 4.704081632653061
         },
         {
           "word": "Let's",
-          "start": 15.058,
-          "end": 15.279
+          "start": 4.714285714285714,
+          "end": 4.816326530612245
         },
         {
           "word": "build",
-          "start": 15.337,
-          "end": 15.581
+          "start": 4.826530612244898,
+          "end": 4.928571428571429
         },
         {
           "word": "our",
-          "start": 15.627,
-          "end": 15.732
+          "start": 4.938775510204082,
+          "end": 5.000000000000001
         },
         {
           "word": "weapons",
-          "start": 15.79,
-          "end": 16.115
+          "start": 5.010204081632653,
+          "end": 5.153061224489797
         },
         {
           "word": "to",
-          "start": 16.161,
-          "end": 16.219
+          "start": 5.163265306122449,
+          "end": 5.204081632653061
         },
         {
           "word": "defeat",
-          "start": 16.289,
-          "end": 16.637
+          "start": 5.214285714285714,
+          "end": 5.336734693877551
         },
         {
           "word": "this",
-          "start": 16.695,
-          "end": 16.846
+          "start": 5.346938775510204,
+          "end": 5.428571428571429
         },
         {
           "word": "boss.",
-          "start": 16.916,
-          "end": 17.647
+          "start": 5.438775510204081,
+          "end": 5.540816326530612
         }
       ],
       "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-02.mp3"
@@ -424,7 +429,7 @@
     {
       "id": "scene-03",
       "type": "trigonometry",
-      "durationInFrames": 726,
+      "durationInFrames": 727,
       "content": {
         "title": "IN THIS VIDEO",
         "subtitle": "The Lighthouse Boss Fight",
@@ -628,7 +633,7 @@
     {
       "id": "scene-04",
       "type": "trigonometry",
-      "durationInFrames": 829,
+      "durationInFrames": 831,
       "content": {
         "title": "What is Angle of Depression?",
         "subtitle": "The Invisible Line of Sight",
@@ -1042,7 +1047,7 @@
     {
       "id": "scene-05",
       "type": "trigonometry",
-      "durationInFrames": 991,
+      "durationInFrames": 992,
       "content": {
         "title": "The Real World Setup",
         "variant": "lighthouse_real"
@@ -1490,7 +1495,7 @@
     {
       "id": "scene-06",
       "type": "trigonometry",
-      "durationInFrames": 1005,
+      "durationInFrames": 1006,
       "content": {
         "title": "The Z-Trick (Alternate Interior)",
         "variant": "lighthouse_abstract"
@@ -1943,7 +1948,7 @@
     {
       "id": "scene-07",
       "type": "trigonometry",
-      "durationInFrames": 603,
+      "durationInFrames": 605,
       "content": {
         "title": "Proximity Rule & Cheat Code",
         "variant": "lighthouse_proximity"
@@ -2256,497 +2261,992 @@
     {
       "id": "scene-08",
       "type": "trigonometry",
-      "durationInFrames": 1240,
+      "durationInFrames": 2374,
       "content": {
         "title": "The 5-Mark Boss Solve",
         "variant": "lighthouse_solve"
       },
-      "teacherScript": "Back to the boss question. Step one: in the first triangle, tan 60 equals 75 over x. So x equals 75 divided by root 3, which is 25 root 3, about 43.3 meters. Step two: in the second triangle, tan 30 equals 75 over x plus y. So x plus y equals 75 root 3, about 129.9 meters. Step three: the distance between the ships is x plus y minus x, which is 129.9 minus 43.3, giving 50 root 3, about 86.6 meters. That is your final answer. 86.6 meters between the two ships, five marks secured!",
+      "teacherScript": "Back to the boss question. Step 1. We know the angle 60 in this case. So its our Theta equals 60. Now remember this Cheat Code Line. Sing it out loud: SOH CAH TOA! SOH: Sin Theta equals Opposite over Hypotenuse. CAH: Cos Theta equals Adjacent over Hypotenuse. TOA: Tan Theta equals Opposite over Adjacent. We know Opposite, and Opposite comes in SOH and TOA. So its either Sine or Tan, we have narrowed it down. Problem never talks about hypotenuse. Problem wants to find distance, this distance is adjacent. So it is Adjacent. As the problem statement is talking about Opposite and Adjacent, and both appear in TOA, we know that its Tan that we need to apply to Theta! Step 2. Tan 60 equals 75 over x. Step 3. Substitute Tan 60. We know that Tan 60 equals root 3. Therefore, x equals 75 over root 3, which is 25 root 3. Now for the second triangle, Tan 30 equals 75 over x plus y. So x plus y equals 75 root 3. Distance is 75 root 3 minus 25 root 3, which is 50 root 3. Final answer, 86.6 meters. Five marks secured!",
       "alignments": [
         {
           "word": "Back",
           "start": 0,
-          "end": 0.209
+          "end": 0.197
         },
         {
           "word": "to",
-          "start": 0.255,
-          "end": 0.29
+          "start": 0.244,
+          "end": 0.279
         },
         {
           "word": "the",
-          "start": 0.337,
-          "end": 0.395
+          "start": 0.313,
+          "end": 0.383
         },
         {
           "word": "boss",
-          "start": 0.43,
-          "end": 0.615
+          "start": 0.406,
+          "end": 0.592
         },
         {
           "word": "question.",
-          "start": 0.662,
+          "start": 0.65,
           "end": 1.126
         },
         {
           "word": "Step",
-          "start": 1.44,
-          "end": 1.672
+          "start": 1.823,
+          "end": 2.043
         },
         {
-          "word": "one:",
-          "start": 1.741,
-          "end": 1.985
+          "word": "1.",
+          "start": 2.113,
+          "end": 2.403
         },
         {
-          "word": "in",
-          "start": 2.31,
-          "end": 2.415
+          "word": "We",
+          "start": 2.833,
+          "end": 2.961
+        },
+        {
+          "word": "know",
+          "start": 2.995,
+          "end": 3.111
         },
         {
           "word": "the",
-          "start": 2.438,
-          "end": 2.496
+          "start": 3.146,
+          "end": 3.204
         },
         {
-          "word": "first",
-          "start": 2.531,
-          "end": 2.717
-        },
-        {
-          "word": "triangle,",
-          "start": 2.752,
-          "end": 3.262
-        },
-        {
-          "word": "tan",
-          "start": 3.471,
-          "end": 3.738
+          "word": "angle",
+          "start": 3.251,
+          "end": 3.471
         },
         {
           "word": "60",
-          "start": 3.831,
-          "end": 4.11
-        },
-        {
-          "word": "equals",
-          "start": 4.203,
-          "end": 4.435
-        },
-        {
-          "word": "75",
-          "start": 4.481,
-          "end": 5.016
-        },
-        {
-          "word": "over",
-          "start": 5.085,
-          "end": 5.248
-        },
-        {
-          "word": "x.",
-          "start": 5.399,
-          "end": 5.712
-        },
-        {
-          "word": "So",
-          "start": 6.084,
-          "end": 6.235
-        },
-        {
-          "word": "x",
-          "start": 6.374,
-          "end": 6.478
-        },
-        {
-          "word": "equals",
-          "start": 6.536,
-          "end": 6.757
-        },
-        {
-          "word": "75",
-          "start": 6.803,
-          "end": 7.303
-        },
-        {
-          "word": "divided",
-          "start": 7.361,
-          "end": 7.663
-        },
-        {
-          "word": "by",
-          "start": 7.697,
-          "end": 7.779
-        },
-        {
-          "word": "root",
-          "start": 7.837,
-          "end": 7.988
-        },
-        {
-          "word": "3,",
-          "start": 8.115,
-          "end": 8.371
-        },
-        {
-          "word": "which",
-          "start": 8.394,
-          "end": 8.557
-        },
-        {
-          "word": "is",
-          "start": 8.591,
-          "end": 8.649
-        },
-        {
-          "word": "25",
-          "start": 8.719,
-          "end": 9.172
-        },
-        {
-          "word": "root",
-          "start": 9.218,
-          "end": 9.358
-        },
-        {
-          "word": "3,",
-          "start": 9.427,
-          "end": 9.648
-        },
-        {
-          "word": "about",
-          "start": 9.671,
-          "end": 9.903
-        },
-        {
-          "word": "43.3",
-          "start": 9.961,
-          "end": 10.774
-        },
-        {
-          "word": "meters.",
-          "start": 10.844,
-          "end": 11.273
-        },
-        {
-          "word": "Step",
-          "start": 11.645,
-          "end": 11.877
-        },
-        {
-          "word": "two:",
-          "start": 11.935,
-          "end": 12.295
+          "start": 3.518,
+          "end": 3.762
         },
         {
           "word": "in",
-          "start": 12.562,
-          "end": 12.655
+          "start": 3.808,
+          "end": 3.855
         },
         {
-          "word": "the",
-          "start": 12.69,
-          "end": 12.748
+          "word": "this",
+          "start": 3.878,
+          "end": 3.971
         },
         {
-          "word": "second",
-          "start": 12.783,
-          "end": 13.003
-        },
-        {
-          "word": "triangle,",
-          "start": 13.038,
-          "end": 13.421
-        },
-        {
-          "word": "tan",
-          "start": 13.456,
-          "end": 13.7
-        },
-        {
-          "word": "30",
-          "start": 13.804,
-          "end": 14.071
-        },
-        {
-          "word": "equals",
-          "start": 14.187,
-          "end": 14.443
-        },
-        {
-          "word": "75",
-          "start": 14.512,
-          "end": 15.116
-        },
-        {
-          "word": "over",
-          "start": 15.267,
-          "end": 15.476
-        },
-        {
-          "word": "x",
-          "start": 15.685,
-          "end": 15.836
-        },
-        {
-          "word": "plus",
-          "start": 16.01,
-          "end": 16.254
-        },
-        {
-          "word": "y.",
-          "start": 16.324,
-          "end": 16.684
+          "word": "case.",
+          "start": 4.017,
+          "end": 4.435
         },
         {
           "word": "So",
-          "start": 17.113,
-          "end": 17.276
+          "start": 4.876,
+          "end": 4.992
         },
         {
-          "word": "x",
-          "start": 17.427,
-          "end": 17.52
+          "word": "its",
+          "start": 5.05,
+          "end": 5.132
         },
         {
-          "word": "plus",
-          "start": 17.566,
-          "end": 17.752
+          "word": "our",
+          "start": 5.155,
+          "end": 5.213
         },
         {
-          "word": "y",
-          "start": 17.822,
-          "end": 17.915
+          "word": "Theta",
+          "start": 5.271,
+          "end": 5.515
         },
         {
           "word": "equals",
-          "start": 17.996,
-          "end": 18.216
+          "start": 5.584,
+          "end": 5.828
         },
         {
-          "word": "75",
-          "start": 18.275,
-          "end": 18.751
+          "word": "60.",
+          "start": 5.886,
+          "end": 6.374
         },
         {
-          "word": "root",
-          "start": 18.797,
-          "end": 18.936
+          "word": "Now",
+          "start": 6.966,
+          "end": 7.094
         },
         {
-          "word": "3,",
-          "start": 19.006,
-          "end": 19.227
+          "word": "remember",
+          "start": 7.152,
+          "end": 7.384
+        },
+        {
+          "word": "this",
+          "start": 7.43,
+          "end": 7.523
+        },
+        {
+          "word": "Cheat",
+          "start": 7.57,
+          "end": 7.744
+        },
+        {
+          "word": "Code",
+          "start": 7.79,
+          "end": 7.976
+        },
+        {
+          "word": "Line.",
+          "start": 7.999,
+          "end": 8.348
+        },
+        {
+          "word": "Sing",
+          "start": 8.731,
+          "end": 8.893
+        },
+        {
+          "word": "it",
+          "start": 8.928,
+          "end": 8.975
+        },
+        {
+          "word": "out",
+          "start": 8.986,
+          "end": 9.079
+        },
+        {
+          "word": "loud:",
+          "start": 9.114,
+          "end": 9.532
+        },
+        {
+          "word": "SOH",
+          "start": 10.136,
+          "end": 10.495
+        },
+        {
+          "word": "CAH",
+          "start": 10.67,
+          "end": 11.041
+        },
+        {
+          "word": "TOA!",
+          "start": 11.192,
+          "end": 11.773
+        },
+        {
+          "word": "SOH:",
+          "start": 12.725,
+          "end": 13.235
+        },
+        {
+          "word": "Sin",
+          "start": 13.375,
+          "end": 13.549
+        },
+        {
+          "word": "Theta",
+          "start": 13.618,
+          "end": 13.851
+        },
+        {
+          "word": "equals",
+          "start": 13.909,
+          "end": 14.164
+        },
+        {
+          "word": "Opposite",
+          "start": 14.222,
+          "end": 14.582
+        },
+        {
+          "word": "over",
+          "start": 14.64,
+          "end": 14.849
+        },
+        {
+          "word": "Hypotenuse.",
+          "start": 14.919,
+          "end": 15.79
+        },
+        {
+          "word": "CAH:",
+          "start": 16.742,
+          "end": 17.264
+        },
+        {
+          "word": "Cos",
+          "start": 17.543,
+          "end": 17.786
+        },
+        {
+          "word": "Theta",
+          "start": 17.856,
+          "end": 18.077
+        },
+        {
+          "word": "equals",
+          "start": 18.147,
+          "end": 18.425
+        },
+        {
+          "word": "Adjacent",
+          "start": 18.483,
+          "end": 18.913
+        },
+        {
+          "word": "over",
+          "start": 18.971,
+          "end": 19.122
+        },
+        {
+          "word": "Hypotenuse.",
+          "start": 19.18,
+          "end": 19.981
+        },
+        {
+          "word": "TOA:",
+          "start": 21.096,
+          "end": 21.699
+        },
+        {
+          "word": "Tan",
+          "start": 21.874,
+          "end": 22.175
+        },
+        {
+          "word": "Theta",
+          "start": 22.268,
+          "end": 22.582
+        },
+        {
+          "word": "equals",
+          "start": 22.733,
+          "end": 23.127
+        },
+        {
+          "word": "Opposite",
+          "start": 23.278,
+          "end": 23.778
+        },
+        {
+          "word": "over",
+          "start": 23.847,
+          "end": 24.103
+        },
+        {
+          "word": "Adjacent.",
+          "start": 24.161,
+          "end": 24.764
+        },
+        {
+          "word": "We",
+          "start": 25.089,
+          "end": 25.206
+        },
+        {
+          "word": "know",
+          "start": 25.24,
+          "end": 25.357
+        },
+        {
+          "word": "Opposite,",
+          "start": 25.415,
+          "end": 25.937
+        },
+        {
+          "word": "and",
+          "start": 26.262,
+          "end": 26.401
+        },
+        {
+          "word": "Opposite",
+          "start": 26.459,
+          "end": 26.785
+        },
+        {
+          "word": "comes",
+          "start": 26.808,
+          "end": 27.005
+        },
+        {
+          "word": "in",
+          "start": 27.052,
+          "end": 27.144
+        },
+        {
+          "word": "SOH",
+          "start": 27.295,
+          "end": 27.806
+        },
+        {
+          "word": "and",
+          "start": 27.98,
+          "end": 28.294
+        },
+        {
+          "word": "TOA.",
+          "start": 28.468,
+          "end": 29.211
+        },
+        {
+          "word": "So",
+          "start": 29.652,
+          "end": 29.884
+        },
+        {
+          "word": "its",
+          "start": 30,
+          "end": 30.14
+        },
+        {
+          "word": "either",
+          "start": 30.186,
+          "end": 30.407
+        },
+        {
+          "word": "Sine",
+          "start": 30.465,
+          "end": 30.802
+        },
+        {
+          "word": "or",
+          "start": 30.836,
+          "end": 30.929
+        },
+        {
+          "word": "Tan,",
+          "start": 30.999,
+          "end": 31.405
+        },
+        {
+          "word": "we",
+          "start": 31.487,
+          "end": 31.626
+        },
+        {
+          "word": "have",
+          "start": 31.684,
+          "end": 31.823
+        },
+        {
+          "word": "narrowed",
+          "start": 31.858,
+          "end": 32.125
+        },
+        {
+          "word": "it",
+          "start": 32.16,
+          "end": 32.218
+        },
+        {
+          "word": "down.",
+          "start": 32.253,
+          "end": 32.671
+        },
+        {
+          "word": "Problem",
+          "start": 32.996,
+          "end": 33.414
+        },
+        {
+          "word": "never",
+          "start": 33.588,
+          "end": 33.913
+        },
+        {
+          "word": "talks",
+          "start": 33.971,
+          "end": 34.285
         },
         {
           "word": "about",
-          "start": 19.261,
-          "end": 19.494
+          "start": 34.319,
+          "end": 34.517
         },
         {
-          "word": "129.9",
-          "start": 19.563,
-          "end": 20.991
+          "word": "hypotenuse.",
+          "start": 34.563,
+          "end": 35.457
         },
         {
-          "word": "meters.",
-          "start": 21.049,
-          "end": 21.583
+          "word": "Problem",
+          "start": 35.841,
+          "end": 36.2
         },
         {
-          "word": "Step",
-          "start": 21.967,
-          "end": 22.222
+          "word": "wants",
+          "start": 36.247,
+          "end": 36.409
         },
         {
-          "word": "three:",
-          "start": 22.28,
-          "end": 22.698
+          "word": "to",
+          "start": 36.444,
+          "end": 36.491
         },
         {
-          "word": "the",
-          "start": 22.907,
-          "end": 23
+          "word": "find",
+          "start": 36.549,
+          "end": 36.735
+        },
+        {
+          "word": "distance,",
+          "start": 36.781,
+          "end": 37.42
+        },
+        {
+          "word": "this",
+          "start": 37.629,
+          "end": 37.837
         },
         {
           "word": "distance",
-          "start": 23.046,
-          "end": 23.348
+          "start": 37.896,
+          "end": 38.279
         },
         {
-          "word": "between",
-          "start": 23.371,
-          "end": 23.638
+          "word": "is",
+          "start": 38.302,
+          "end": 38.383
+        },
+        {
+          "word": "adjacent.",
+          "start": 38.441,
+          "end": 39.045
+        },
+        {
+          "word": "So",
+          "start": 39.358,
+          "end": 39.509
+        },
+        {
+          "word": "it",
+          "start": 39.591,
+          "end": 39.649
+        },
+        {
+          "word": "is",
+          "start": 39.707,
+          "end": 39.811
+        },
+        {
+          "word": "Adjacent.",
+          "start": 39.869,
+          "end": 40.473
+        },
+        {
+          "word": "As",
+          "start": 41.065,
+          "end": 41.216
         },
         {
           "word": "the",
-          "start": 23.662,
-          "end": 23.731
+          "start": 41.262,
+          "end": 41.332
         },
         {
-          "word": "ships",
-          "start": 23.754,
-          "end": 24.021
+          "word": "problem",
+          "start": 41.379,
+          "end": 41.68
         },
         {
-          "word": "is",
-          "start": 24.068,
-          "end": 24.172
-        },
-        {
-          "word": "x",
-          "start": 24.381,
-          "end": 24.497
-        },
-        {
-          "word": "plus",
-          "start": 24.556,
-          "end": 24.799
-        },
-        {
-          "word": "y",
-          "start": 24.869,
-          "end": 25.02
-        },
-        {
-          "word": "minus",
-          "start": 25.09,
-          "end": 25.391
-        },
-        {
-          "word": "x,",
-          "start": 25.566,
-          "end": 25.949
-        },
-        {
-          "word": "which",
-          "start": 26.1,
-          "end": 26.285
+          "word": "statement",
+          "start": 41.715,
+          "end": 42.04
         },
         {
           "word": "is",
-          "start": 26.332,
-          "end": 26.413
+          "start": 42.087,
+          "end": 42.156
         },
         {
-          "word": "129.9",
-          "start": 26.506,
-          "end": 28.398
-        },
-        {
-          "word": "minus",
-          "start": 28.724,
-          "end": 29.072
-        },
-        {
-          "word": "43.3,",
-          "start": 29.141,
-          "end": 30.535
-        },
-        {
-          "word": "giving",
-          "start": 30.86,
-          "end": 31.115
-        },
-        {
-          "word": "50",
-          "start": 31.208,
-          "end": 31.533
-        },
-        {
-          "word": "root",
-          "start": 31.614,
-          "end": 31.777
-        },
-        {
-          "word": "3,",
-          "start": 31.893,
-          "end": 32.346
+          "word": "talking",
+          "start": 42.203,
+          "end": 42.505
         },
         {
           "word": "about",
-          "start": 32.497,
-          "end": 32.833
+          "start": 42.551,
+          "end": 42.749
         },
         {
-          "word": "86.6",
-          "start": 32.984,
-          "end": 34.029
+          "word": "Opposite",
+          "start": 42.841,
+          "end": 43.329
         },
         {
-          "word": "meters.",
-          "start": 34.122,
-          "end": 34.656
+          "word": "and",
+          "start": 43.375,
+          "end": 43.468
         },
         {
-          "word": "That",
-          "start": 34.981,
-          "end": 35.144
+          "word": "Adjacent,",
+          "start": 43.515,
+          "end": 44.177
+        },
+        {
+          "word": "and",
+          "start": 44.293,
+          "end": 44.42
+        },
+        {
+          "word": "both",
+          "start": 44.49,
+          "end": 44.699
+        },
+        {
+          "word": "appear",
+          "start": 44.734,
+          "end": 44.978
+        },
+        {
+          "word": "in",
+          "start": 45.036,
+          "end": 45.094
+        },
+        {
+          "word": "TOA,",
+          "start": 45.14,
+          "end": 45.837
+        },
+        {
+          "word": "we",
+          "start": 46.15,
+          "end": 46.278
+        },
+        {
+          "word": "know",
+          "start": 46.336,
+          "end": 46.475
+        },
+        {
+          "word": "that",
+          "start": 46.533,
+          "end": 46.649
+        },
+        {
+          "word": "its",
+          "start": 46.696,
+          "end": 46.824
+        },
+        {
+          "word": "Tan",
+          "start": 46.882,
+          "end": 47.253
+        },
+        {
+          "word": "that",
+          "start": 47.3,
+          "end": 47.416
+        },
+        {
+          "word": "we",
+          "start": 47.462,
+          "end": 47.555
+        },
+        {
+          "word": "need",
+          "start": 47.613,
+          "end": 47.787
+        },
+        {
+          "word": "to",
+          "start": 47.822,
+          "end": 47.88
+        },
+        {
+          "word": "apply",
+          "start": 47.95,
+          "end": 48.24
+        },
+        {
+          "word": "to",
+          "start": 48.321,
+          "end": 48.391
+        },
+        {
+          "word": "Theta!",
+          "start": 48.461,
+          "end": 48.971
+        },
+        {
+          "word": "Step",
+          "start": 49.761,
+          "end": 50.016
+        },
+        {
+          "word": "2.",
+          "start": 50.098,
+          "end": 50.469
+        },
+        {
+          "word": "Tan",
+          "start": 50.841,
+          "end": 51.143
+        },
+        {
+          "word": "60",
+          "start": 51.259,
+          "end": 51.607
+        },
+        {
+          "word": "equals",
+          "start": 51.769,
+          "end": 52.199
+        },
+        {
+          "word": "75",
+          "start": 52.327,
+          "end": 52.93
+        },
+        {
+          "word": "over",
+          "start": 53.105,
+          "end": 53.36
+        },
+        {
+          "word": "x.",
+          "start": 53.523,
+          "end": 53.929
+        },
+        {
+          "word": "Step",
+          "start": 54.428,
+          "end": 54.684
+        },
+        {
+          "word": "3.",
+          "start": 54.765,
+          "end": 55.171
+        },
+        {
+          "word": "Substitute",
+          "start": 55.659,
+          "end": 56.181
+        },
+        {
+          "word": "Tan",
+          "start": 56.216,
+          "end": 56.495
+        },
+        {
+          "word": "60.",
+          "start": 56.634,
+          "end": 57.122
+        },
+        {
+          "word": "We",
+          "start": 57.621,
+          "end": 57.714
+        },
+        {
+          "word": "know",
+          "start": 57.749,
+          "end": 57.83
+        },
+        {
+          "word": "that",
+          "start": 57.853,
+          "end": 57.946
+        },
+        {
+          "word": "Tan",
+          "start": 57.969,
+          "end": 58.167
+        },
+        {
+          "word": "60",
+          "start": 58.225,
+          "end": 58.468
+        },
+        {
+          "word": "equals",
+          "start": 58.538,
+          "end": 58.759
+        },
+        {
+          "word": "root",
+          "start": 58.794,
+          "end": 58.921
+        },
+        {
+          "word": "3.",
+          "start": 58.991,
+          "end": 59.362
+        },
+        {
+          "word": "Therefore,",
+          "start": 59.676,
+          "end": 60.152
+        },
+        {
+          "word": "x",
+          "start": 60.326,
+          "end": 60.419
+        },
+        {
+          "word": "equals",
+          "start": 60.477,
+          "end": 60.698
+        },
+        {
+          "word": "75",
+          "start": 60.744,
+          "end": 61.174
+        },
+        {
+          "word": "over",
+          "start": 61.22,
+          "end": 61.324
+        },
+        {
+          "word": "root",
+          "start": 61.359,
+          "end": 61.487
+        },
+        {
+          "word": "3,",
+          "start": 61.545,
+          "end": 61.754
+        },
+        {
+          "word": "which",
+          "start": 61.789,
+          "end": 61.905
         },
         {
           "word": "is",
-          "start": 35.19,
-          "end": 35.248
+          "start": 61.94,
+          "end": 61.998
         },
         {
-          "word": "your",
-          "start": 35.283,
-          "end": 35.388
+          "word": "25",
+          "start": 62.044,
+          "end": 62.451
         },
         {
-          "word": "final",
-          "start": 35.434,
-          "end": 35.689
+          "word": "root",
+          "start": 62.509,
+          "end": 62.636
         },
         {
-          "word": "answer.",
-          "start": 35.748,
-          "end": 36.247
+          "word": "3.",
+          "start": 62.694,
+          "end": 63.043
         },
         {
-          "word": "86.6",
-          "start": 36.85,
-          "end": 37.756
+          "word": "Now",
+          "start": 63.53,
+          "end": 63.67
         },
         {
-          "word": "meters",
-          "start": 37.849,
-          "end": 38.116
-        },
-        {
-          "word": "between",
-          "start": 38.151,
-          "end": 38.441
+          "word": "for",
+          "start": 63.716,
+          "end": 63.786
         },
         {
           "word": "the",
-          "start": 38.464,
-          "end": 38.534
+          "start": 63.821,
+          "end": 63.867
         },
         {
-          "word": "two",
-          "start": 38.557,
-          "end": 38.72
+          "word": "second",
+          "start": 63.913,
+          "end": 64.099
         },
         {
-          "word": "ships,",
-          "start": 38.778,
-          "end": 39.289
+          "word": "triangle,",
+          "start": 64.134,
+          "end": 64.494
         },
         {
-          "word": "five",
-          "start": 39.463,
-          "end": 39.765
+          "word": "Tan",
+          "start": 64.517,
+          "end": 64.703
+        },
+        {
+          "word": "30",
+          "start": 64.773,
+          "end": 65.016
+        },
+        {
+          "word": "equals",
+          "start": 65.086,
+          "end": 65.318
+        },
+        {
+          "word": "75",
+          "start": 65.365,
+          "end": 65.829
+        },
+        {
+          "word": "over",
+          "start": 65.887,
+          "end": 66.027
+        },
+        {
+          "word": "x",
+          "start": 66.201,
+          "end": 66.294
+        },
+        {
+          "word": "plus",
+          "start": 66.34,
+          "end": 66.537
+        },
+        {
+          "word": "y.",
+          "start": 66.584,
+          "end": 66.955
+        },
+        {
+          "word": "So",
+          "start": 67.129,
+          "end": 67.257
+        },
+        {
+          "word": "x",
+          "start": 67.362,
+          "end": 67.455
+        },
+        {
+          "word": "plus",
+          "start": 67.501,
+          "end": 67.675
+        },
+        {
+          "word": "y",
+          "start": 67.733,
+          "end": 67.826
+        },
+        {
+          "word": "equals",
+          "start": 67.919,
+          "end": 68.163
+        },
+        {
+          "word": "75",
+          "start": 68.232,
+          "end": 68.697
+        },
+        {
+          "word": "root",
+          "start": 68.743,
+          "end": 68.871
+        },
+        {
+          "word": "3.",
+          "start": 68.929,
+          "end": 69.266
+        },
+        {
+          "word": "Distance",
+          "start": 69.765,
+          "end": 70.148
+        },
+        {
+          "word": "is",
+          "start": 70.171,
+          "end": 70.253
+        },
+        {
+          "word": "75",
+          "start": 70.311,
+          "end": 70.775
+        },
+        {
+          "word": "root",
+          "start": 70.822,
+          "end": 70.961
+        },
+        {
+          "word": "3",
+          "start": 71.031,
+          "end": 71.193
+        },
+        {
+          "word": "minus",
+          "start": 71.24,
+          "end": 71.483
+        },
+        {
+          "word": "25",
+          "start": 71.541,
+          "end": 71.994
+        },
+        {
+          "word": "root",
+          "start": 72.064,
+          "end": 72.215
+        },
+        {
+          "word": "3,",
+          "start": 72.308,
+          "end": 72.726
+        },
+        {
+          "word": "which",
+          "start": 72.9,
+          "end": 73.097
+        },
+        {
+          "word": "is",
+          "start": 73.132,
+          "end": 73.202
+        },
+        {
+          "word": "50",
+          "start": 73.283,
+          "end": 73.538
+        },
+        {
+          "word": "root",
+          "start": 73.608,
+          "end": 73.759
+        },
+        {
+          "word": "3.",
+          "start": 73.829,
+          "end": 74.247
+        },
+        {
+          "word": "Final",
+          "start": 74.85,
+          "end": 75.141
+        },
+        {
+          "word": "answer,",
+          "start": 75.187,
+          "end": 75.442
+        },
+        {
+          "word": "86.6",
+          "start": 75.489,
+          "end": 76.232
+        },
+        {
+          "word": "meters.",
+          "start": 76.325,
+          "end": 76.836
+        },
+        {
+          "word": "Five",
+          "start": 77.277,
+          "end": 77.567
         },
         {
           "word": "marks",
-          "start": 39.811,
-          "end": 40.043
+          "start": 77.602,
+          "end": 77.811
         },
         {
           "word": "secured!",
-          "start": 40.078,
-          "end": 40.821
+          "start": 77.846,
+          "end": 78.577
         }
       ],
       "audio": "/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-08.mp3"
@@ -2754,7 +3254,7 @@
     {
       "id": "scene-09",
       "type": "trigonometry",
-      "durationInFrames": 785,
+      "durationInFrames": 786,
       "content": {
         "title": "Boss Defeated",
         "variant": "boss_end"

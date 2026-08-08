@@ -1,13 +1,13 @@
 {
   "id": "maths_trigonometry_lighthouse_short",
   "title": "Angle of Depression Board Exam Trick",
-  "durationInFrames": 1105,
+  "durationInFrames": 1126,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 167,
+      "durationInFrames": 168,
       "content": {
         "text": "Board Exam Trick!",
         "subtitle": "Angle of Depression (The Z-Rule)"
@@ -95,7 +95,7 @@
     {
       "id": "scene-02",
       "type": "trigonometry",
-      "durationInFrames": 595,
+      "durationInFrames": 614,
       "content": {
         "title": "The Z-Trick",
         "variant": "lighthouse_abstract"
@@ -114,293 +114,293 @@
         },
         {
           "word": "have",
-          "start": 0.348,
-          "end": 0.476
+          "start": 0.36,
+          "end": 0.488
         },
         {
           "word": "an",
-          "start": 0.511,
-          "end": 0.569
+          "start": 0.522,
+          "end": 0.58
         },
         {
           "word": "angle",
           "start": 0.65,
-          "end": 0.987
+          "end": 0.929
         },
         {
           "word": "of",
-          "start": 1.022,
-          "end": 1.068
+          "start": 0.952,
+          "end": 0.998
         },
         {
           "word": "depression",
-          "start": 1.115,
-          "end": 1.591
+          "start": 1.057,
+          "end": 1.474
         },
         {
           "word": "looking",
-          "start": 1.649,
-          "end": 1.892
+          "start": 1.521,
+          "end": 1.765
         },
         {
           "word": "down",
-          "start": 1.939,
-          "end": 2.101
+          "start": 1.811,
+          "end": 1.985
         },
         {
           "word": "from",
-          "start": 2.148,
-          "end": 2.264
+          "start": 2.02,
+          "end": 2.136
         },
         {
           "word": "a",
-          "start": 2.31,
-          "end": 2.334
+          "start": 2.171,
+          "end": 2.194
         },
         {
           "word": "lighthouse,",
-          "start": 2.392,
-          "end": 2.984
+          "start": 2.241,
+          "end": 2.833
         },
         {
           "word": "don't",
-          "start": 3.193,
-          "end": 3.448
+          "start": 3.042,
+          "end": 3.286
         },
         {
           "word": "draw",
-          "start": 3.518,
-          "end": 3.796
+          "start": 3.344,
+          "end": 3.587
         },
         {
           "word": "it",
-          "start": 3.843,
-          "end": 3.901
+          "start": 3.622,
+          "end": 3.68
         },
         {
           "word": "against",
-          "start": 3.924,
-          "end": 4.214
+          "start": 3.715,
+          "end": 3.982
         },
         {
           "word": "the",
-          "start": 4.249,
-          "end": 4.319
+          "start": 4.017,
+          "end": 4.087
         },
         {
           "word": "vertical",
-          "start": 4.365,
-          "end": 4.702
+          "start": 4.122,
+          "end": 4.423
         },
         {
           "word": "wall!",
-          "start": 4.76,
-          "end": 5.213
+          "start": 4.481,
+          "end": 4.946
         },
         {
           "word": "To",
-          "start": 5.422,
-          "end": 5.526
+          "start": 5.457,
+          "end": 5.561
         },
         {
           "word": "hack",
-          "start": 5.584,
-          "end": 5.759
+          "start": 5.642,
+          "end": 5.851
         },
         {
           "word": "this",
-          "start": 5.817,
-          "end": 5.933
+          "start": 5.909,
+          "end": 6.037
         },
         {
           "word": "problem,",
-          "start": 5.979,
-          "end": 6.536
+          "start": 6.084,
+          "end": 6.548
         },
         {
           "word": "always",
-          "start": 6.711,
-          "end": 7.07
+          "start": 6.594,
+          "end": 6.978
         },
         {
           "word": "draw",
-          "start": 7.105,
-          "end": 7.268
+          "start": 7.012,
+          "end": 7.198
         },
         {
           "word": "the",
-          "start": 7.326,
-          "end": 7.396
+          "start": 7.245,
+          "end": 7.314
         },
         {
           "word": "horizontal",
-          "start": 7.477,
-          "end": 8.046
+          "start": 7.384,
+          "end": 7.93
         },
         {
           "word": "line",
-          "start": 8.081,
-          "end": 8.231
+          "start": 7.976,
+          "end": 8.139
         },
         {
           "word": "of",
-          "start": 8.266,
-          "end": 8.313
+          "start": 8.162,
+          "end": 8.208
         },
         {
           "word": "sight",
-          "start": 8.359,
-          "end": 8.545
+          "start": 8.255,
+          "end": 8.452
         },
         {
           "word": "first.",
-          "start": 8.603,
-          "end": 9.033
+          "start": 8.51,
+          "end": 8.951
         },
         {
           "word": "Because",
-          "start": 9.242,
-          "end": 9.555
+          "start": 9.276,
+          "end": 9.648
         },
         {
           "word": "it's",
-          "start": 9.59,
-          "end": 9.706
+          "start": 9.683,
+          "end": 9.799
         },
         {
           "word": "parallel",
-          "start": 9.764,
-          "end": 10.228
+          "start": 9.845,
+          "end": 10.263
         },
         {
           "word": "to",
-          "start": 10.275,
-          "end": 10.321
+          "start": 10.31,
+          "end": 10.356
         },
         {
           "word": "the",
-          "start": 10.368,
-          "end": 10.437
+          "start": 10.403,
+          "end": 10.472
         },
         {
           "word": "ground,",
-          "start": 10.472,
-          "end": 10.925
+          "start": 10.507,
+          "end": 10.948
         },
         {
           "word": "it",
-          "start": 11.099,
-          "end": 11.215
+          "start": 11.157,
+          "end": 11.273
         },
         {
           "word": "forms",
-          "start": 11.285,
-          "end": 11.598
+          "start": 11.343,
+          "end": 11.645
         },
         {
           "word": "a",
-          "start": 11.656,
-          "end": 11.714
+          "start": 11.703,
+          "end": 11.749
         },
         {
           "word": "Z",
-          "start": 11.807,
-          "end": 11.9
+          "start": 11.842,
+          "end": 11.958
         },
         {
           "word": "shape.",
-          "start": 12.109,
-          "end": 12.562
+          "start": 12.167,
+          "end": 12.62
         },
         {
           "word": "By",
-          "start": 12.771,
-          "end": 12.921
+          "start": 12.945,
+          "end": 13.107
         },
         {
           "word": "alternate",
-          "start": 12.98,
-          "end": 13.397
+          "start": 13.189,
+          "end": 13.653
         },
         {
           "word": "interior",
-          "start": 13.444,
-          "end": 13.966
+          "start": 13.699,
+          "end": 14.187
         },
         {
           "word": "angles,",
-          "start": 14.036,
-          "end": 14.512
+          "start": 14.257,
+          "end": 14.733
         },
         {
           "word": "your",
-          "start": 14.663,
-          "end": 14.837
+          "start": 14.907,
+          "end": 15.069
         },
         {
           "word": "angle",
-          "start": 14.907,
-          "end": 15.174
+          "start": 15.139,
+          "end": 15.418
         },
         {
           "word": "of",
-          "start": 15.197,
-          "end": 15.243
+          "start": 15.441,
+          "end": 15.487
         },
         {
           "word": "depression",
-          "start": 15.302,
-          "end": 15.719
+          "start": 15.534,
+          "end": 15.952
         },
         {
           "word": "perfectly",
-          "start": 15.801,
-          "end": 16.242
+          "start": 16.068,
+          "end": 16.614
         },
         {
           "word": "swings",
-          "start": 16.277,
-          "end": 16.567
+          "start": 16.648,
+          "end": 16.939
         },
         {
           "word": "inside",
-          "start": 16.613,
-          "end": 16.892
+          "start": 17.02,
+          "end": 17.426
         },
         {
           "word": "the",
-          "start": 16.927,
-          "end": 16.997
-        },
-        {
-          "word": "triangle",
-          "start": 17.031,
+          "start": 17.461,
           "end": 17.531
         },
         {
+          "word": "triangle",
+          "start": 17.566,
+          "end": 18.042
+        },
+        {
           "word": "as",
-          "start": 17.577,
-          "end": 17.728
+          "start": 18.1,
+          "end": 18.274
         },
         {
           "word": "the",
-          "start": 17.798,
-          "end": 17.879
+          "start": 18.343,
+          "end": 18.425
         },
         {
           "word": "angle",
-          "start": 17.96,
-          "end": 18.262
+          "start": 18.541,
+          "end": 18.866
         },
         {
           "word": "of",
-          "start": 18.297,
-          "end": 18.343
+          "start": 18.889,
+          "end": 18.936
         },
         {
           "word": "elevation!",
-          "start": 18.401,
-          "end": 19.319
+          "start": 18.994,
+          "end": 19.922
         }
       ],
       "audio": "/audio/maths/maths_trigonometry_lighthouse_short_scene-02.mp3"
@@ -408,7 +408,7 @@
     {
       "id": "scene-03",
       "type": "trigonometry",
-      "durationInFrames": 343,
+      "durationInFrames": 344,
       "content": {
         "title": "Proximity Rule",
         "variant": "lighthouse_abstract"

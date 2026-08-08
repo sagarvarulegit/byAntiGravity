@@ -1,0 +1,812 @@
+{
+  "id": "maths_trigonometry_lifehacks_short",
+  "title": "Trigonometry Life Hacks",
+  "durationInFrames": 2032,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "content": {
+        "text": "Trigonometry Life Hacks",
+        "subtitle": "Cheat Codes Unlocked"
+      },
+      "teacherScript": "Trigonometry Life Hacks! First, the ultimate cheat code for formulas. Sing it with me: SO, KA, TOA! SOH: Sin equals Opposite over Hypotenuse. CAH: Cos equals Adjacent over Hypotenuse. TOA: Tan equals Opposite over Adjacent.",
+      "alignments": [
+        {
+          "word": "Trigonometry",
+          "start": 0,
+          "end": 0.731
+        },
+        {
+          "word": "Life",
+          "start": 0.789,
+          "end": 0.998
+        },
+        {
+          "word": "Hacks!",
+          "start": 1.033,
+          "end": 1.579
+        },
+        {
+          "word": "First,",
+          "start": 2.276,
+          "end": 2.74
+        },
+        {
+          "word": "the",
+          "start": 2.891,
+          "end": 3.007
+        },
+        {
+          "word": "ultimate",
+          "start": 3.077,
+          "end": 3.448
+        },
+        {
+          "word": "cheat",
+          "start": 3.471,
+          "end": 3.669
+        },
+        {
+          "word": "code",
+          "start": 3.727,
+          "end": 3.924
+        },
+        {
+          "word": "for",
+          "start": 3.947,
+          "end": 4.052
+        },
+        {
+          "word": "formulas.",
+          "start": 4.11,
+          "end": 4.83
+        },
+        {
+          "word": "Sing",
+          "start": 5.341,
+          "end": 5.526
+        },
+        {
+          "word": "it",
+          "start": 5.561,
+          "end": 5.619
+        },
+        {
+          "word": "with",
+          "start": 5.642,
+          "end": 5.77
+        },
+        {
+          "word": "me:",
+          "start": 5.817,
+          "end": 6.13
+        },
+        {
+          "word": "SO,",
+          "start": 6.513,
+          "end": 6.989
+        },
+        {
+          "word": "KA,",
+          "start": 7.163,
+          "end": 7.755
+        },
+        {
+          "word": "TOA!",
+          "start": 7.999,
+          "end": 8.649
+        },
+        {
+          "word": "SOH:",
+          "start": 9.601,
+          "end": 10.263
+        },
+        {
+          "word": "Sin",
+          "start": 10.507,
+          "end": 10.786
+        },
+        {
+          "word": "equals",
+          "start": 10.879,
+          "end": 11.238
+        },
+        {
+          "word": "Opposite",
+          "start": 11.308,
+          "end": 11.761
+        },
+        {
+          "word": "over",
+          "start": 11.819,
+          "end": 12.051
+        },
+        {
+          "word": "Hypotenuse.",
+          "start": 12.109,
+          "end": 13.038
+        },
+        {
+          "word": "CAH:",
+          "start": 13.99,
+          "end": 14.605
+        },
+        {
+          "word": "Cos",
+          "start": 14.814,
+          "end": 15.139
+        },
+        {
+          "word": "equals",
+          "start": 15.221,
+          "end": 15.523
+        },
+        {
+          "word": "Adjacent",
+          "start": 15.569,
+          "end": 15.999
+        },
+        {
+          "word": "over",
+          "start": 16.045,
+          "end": 16.208
+        },
+        {
+          "word": "Hypotenuse.",
+          "start": 16.266,
+          "end": 17.229
+        },
+        {
+          "word": "TOA:",
+          "start": 18.042,
+          "end": 18.68
+        },
+        {
+          "word": "Tan",
+          "start": 18.831,
+          "end": 19.238
+        },
+        {
+          "word": "equals",
+          "start": 19.331,
+          "end": 19.656
+        },
+        {
+          "word": "Opposite",
+          "start": 19.714,
+          "end": 20.108
+        },
+        {
+          "word": "over",
+          "start": 20.143,
+          "end": 20.329
+        },
+        {
+          "word": "Adjacent.",
+          "start": 20.387,
+          "end": 21.223
+        }
+      ],
+      "durationInFrames": 653,
+      "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "table",
+      "content": {
+        "title": "The Table Hack"
+      },
+      "teacherScript": "Second, the values table hack! Notice how Sin 30 is one half, but Cos 60 is also one half? The sine and cosine values perfectly flip across the table! And for Tan, just divide Sine by Cosine.",
+      "alignments": [
+        {
+          "word": "Second,",
+          "start": 0,
+          "end": 0.604
+        },
+        {
+          "word": "the",
+          "start": 0.929,
+          "end": 1.045
+        },
+        {
+          "word": "values",
+          "start": 1.138,
+          "end": 1.567
+        },
+        {
+          "word": "table",
+          "start": 1.602,
+          "end": 1.892
+        },
+        {
+          "word": "hack!",
+          "start": 1.927,
+          "end": 2.357
+        },
+        {
+          "word": "Notice",
+          "start": 3.053,
+          "end": 3.344
+        },
+        {
+          "word": "how",
+          "start": 3.379,
+          "end": 3.471
+        },
+        {
+          "word": "Sin",
+          "start": 3.553,
+          "end": 3.738
+        },
+        {
+          "word": "30",
+          "start": 3.808,
+          "end": 4.04
+        },
+        {
+          "word": "is",
+          "start": 4.098,
+          "end": 4.168
+        },
+        {
+          "word": "one",
+          "start": 4.249,
+          "end": 4.423
+        },
+        {
+          "word": "half,",
+          "start": 4.481,
+          "end": 4.934
+        },
+        {
+          "word": "but",
+          "start": 5.108,
+          "end": 5.271
+        },
+        {
+          "word": "Cos",
+          "start": 5.317,
+          "end": 5.55
+        },
+        {
+          "word": "60",
+          "start": 5.631,
+          "end": 5.956
+        },
+        {
+          "word": "is",
+          "start": 6.014,
+          "end": 6.095
+        },
+        {
+          "word": "also",
+          "start": 6.153,
+          "end": 6.397
+        },
+        {
+          "word": "one",
+          "start": 6.49,
+          "end": 6.664
+        },
+        {
+          "word": "half?",
+          "start": 6.722,
+          "end": 7.245
+        },
+        {
+          "word": "The",
+          "start": 7.755,
+          "end": 7.883
+        },
+        {
+          "word": "sine",
+          "start": 7.964,
+          "end": 8.313
+        },
+        {
+          "word": "and",
+          "start": 8.348,
+          "end": 8.44
+        },
+        {
+          "word": "cosine",
+          "start": 8.51,
+          "end": 9.033
+        },
+        {
+          "word": "values",
+          "start": 9.091,
+          "end": 9.474
+        },
+        {
+          "word": "perfectly",
+          "start": 9.625,
+          "end": 10.112
+        },
+        {
+          "word": "flip",
+          "start": 10.159,
+          "end": 10.344
+        },
+        {
+          "word": "across",
+          "start": 10.403,
+          "end": 10.681
+        },
+        {
+          "word": "the",
+          "start": 10.716,
+          "end": 10.786
+        },
+        {
+          "word": "table!",
+          "start": 10.82,
+          "end": 11.343
+        },
+        {
+          "word": "And",
+          "start": 11.854,
+          "end": 11.993
+        },
+        {
+          "word": "for",
+          "start": 12.051,
+          "end": 12.144
+        },
+        {
+          "word": "Tan,",
+          "start": 12.202,
+          "end": 12.69
+        },
+        {
+          "word": "just",
+          "start": 13.015,
+          "end": 13.235
+        },
+        {
+          "word": "divide",
+          "start": 13.293,
+          "end": 13.688
+        },
+        {
+          "word": "Sine",
+          "start": 13.746,
+          "end": 14.141
+        },
+        {
+          "word": "by",
+          "start": 14.211,
+          "end": 14.385
+        },
+        {
+          "word": "Cosine.",
+          "start": 14.466,
+          "end": 15.464
+        }
+      ],
+      "durationInFrames": 480,
+      "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "diagram",
+      "content": {
+        "title": "Elevation vs Depression"
+      },
+      "teacherScript": "Third. Looking UP from the observer to the object is the Angle of Elevation. Looking DOWN from the observer to the object below is the Angle of Depression. But here is the beautiful part. If the horizontal lines are parallel, the angle of depression exactly equals the angle of elevation! This saves a LOT of confusion.",
+      "alignments": [
+        {
+          "word": "Third.",
+          "start": 0,
+          "end": 0.546
+        },
+        {
+          "word": "Looking",
+          "start": 1.66,
+          "end": 1.974
+        },
+        {
+          "word": "UP",
+          "start": 2.09,
+          "end": 2.31
+        },
+        {
+          "word": "from",
+          "start": 2.519,
+          "end": 2.694
+        },
+        {
+          "word": "the",
+          "start": 2.728,
+          "end": 2.798
+        },
+        {
+          "word": "observer",
+          "start": 2.844,
+          "end": 3.216
+        },
+        {
+          "word": "to",
+          "start": 3.286,
+          "end": 3.344
+        },
+        {
+          "word": "the",
+          "start": 3.413,
+          "end": 3.483
+        },
+        {
+          "word": "object",
+          "start": 3.553,
+          "end": 4.017
+        },
+        {
+          "word": "is",
+          "start": 4.458,
+          "end": 4.621
+        },
+        {
+          "word": "the",
+          "start": 4.667,
+          "end": 4.737
+        },
+        {
+          "word": "Angle",
+          "start": 4.853,
+          "end": 5.166
+        },
+        {
+          "word": "of",
+          "start": 5.201,
+          "end": 5.248
+        },
+        {
+          "word": "Elevation.",
+          "start": 5.306,
+          "end": 6.026
+        },
+        {
+          "word": "Looking",
+          "start": 6.722,
+          "end": 7.012
+        },
+        {
+          "word": "DOWN",
+          "start": 7.07,
+          "end": 7.303
+        },
+        {
+          "word": "from",
+          "start": 7.361,
+          "end": 7.488
+        },
+        {
+          "word": "the",
+          "start": 7.535,
+          "end": 7.605
+        },
+        {
+          "word": "observer",
+          "start": 7.663,
+          "end": 8.057
+        },
+        {
+          "word": "to",
+          "start": 8.127,
+          "end": 8.197
+        },
+        {
+          "word": "the",
+          "start": 8.266,
+          "end": 8.336
+        },
+        {
+          "word": "object",
+          "start": 8.406,
+          "end": 8.731
+        },
+        {
+          "word": "below",
+          "start": 8.777,
+          "end": 9.207
+        },
+        {
+          "word": "is",
+          "start": 9.718,
+          "end": 9.88
+        },
+        {
+          "word": "the",
+          "start": 9.927,
+          "end": 9.996
+        },
+        {
+          "word": "Angle",
+          "start": 10.089,
+          "end": 10.379
+        },
+        {
+          "word": "of",
+          "start": 10.414,
+          "end": 10.461
+        },
+        {
+          "word": "Depression.",
+          "start": 10.507,
+          "end": 11.134
+        },
+        {
+          "word": "But",
+          "start": 11.738,
+          "end": 11.912
+        },
+        {
+          "word": "here",
+          "start": 11.981,
+          "end": 12.19
+        },
+        {
+          "word": "is",
+          "start": 12.237,
+          "end": 12.307
+        },
+        {
+          "word": "the",
+          "start": 12.353,
+          "end": 12.423
+        },
+        {
+          "word": "beautiful",
+          "start": 12.481,
+          "end": 12.91
+        },
+        {
+          "word": "part.",
+          "start": 12.968,
+          "end": 13.34
+        },
+        {
+          "word": "If",
+          "start": 13.549,
+          "end": 13.688
+        },
+        {
+          "word": "the",
+          "start": 13.735,
+          "end": 13.804
+        },
+        {
+          "word": "horizontal",
+          "start": 13.886,
+          "end": 14.443
+        },
+        {
+          "word": "lines",
+          "start": 14.489,
+          "end": 14.71
+        },
+        {
+          "word": "are",
+          "start": 14.745,
+          "end": 14.826
+        },
+        {
+          "word": "parallel,",
+          "start": 14.884,
+          "end": 15.511
+        },
+        {
+          "word": "the",
+          "start": 15.569,
+          "end": 15.685
+        },
+        {
+          "word": "angle",
+          "start": 15.766,
+          "end": 16.068
+        },
+        {
+          "word": "of",
+          "start": 16.091,
+          "end": 16.138
+        },
+        {
+          "word": "depression",
+          "start": 16.196,
+          "end": 16.637
+        },
+        {
+          "word": "exactly",
+          "start": 16.718,
+          "end": 17.473
+        },
+        {
+          "word": "equals",
+          "start": 17.566,
+          "end": 17.961
+        },
+        {
+          "word": "the",
+          "start": 18.019,
+          "end": 18.112
+        },
+        {
+          "word": "angle",
+          "start": 18.205,
+          "end": 18.53
+        },
+        {
+          "word": "of",
+          "start": 18.553,
+          "end": 18.599
+        },
+        {
+          "word": "elevation!",
+          "start": 18.657,
+          "end": 19.389
+        },
+        {
+          "word": "This",
+          "start": 19.772,
+          "end": 19.981
+        },
+        {
+          "word": "saves",
+          "start": 20.039,
+          "end": 20.318
+        },
+        {
+          "word": "a",
+          "start": 20.352,
+          "end": 20.376
+        },
+        {
+          "word": "LOT",
+          "start": 20.492,
+          "end": 20.759
+        },
+        {
+          "word": "of",
+          "start": 20.794,
+          "end": 20.852
+        },
+        {
+          "word": "confusion.",
+          "start": 20.898,
+          "end": 21.78
+        }
+      ],
+      "durationInFrames": 670,
+      "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "outro",
+      "content": {
+        "text": "Watch the Full Masterclass"
+      },
+      "teacherScript": "Want to see how these hacks destroy a 5-mark board exam question? Click the link to watch our full Trigonometry Boss Fight masterclass!",
+      "alignments": [
+        {
+          "word": "Want",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "to",
+          "start": 0.221,
+          "end": 0.267
+        },
+        {
+          "word": "see",
+          "start": 0.313,
+          "end": 0.43
+        },
+        {
+          "word": "how",
+          "start": 0.453,
+          "end": 0.522
+        },
+        {
+          "word": "these",
+          "start": 0.569,
+          "end": 0.708
+        },
+        {
+          "word": "hacks",
+          "start": 0.743,
+          "end": 0.964
+        },
+        {
+          "word": "destroy",
+          "start": 0.998,
+          "end": 1.3
+        },
+        {
+          "word": "a",
+          "start": 1.358,
+          "end": 1.382
+        },
+        {
+          "word": "5-mark",
+          "start": 1.474,
+          "end": 1.881
+        },
+        {
+          "word": "board",
+          "start": 1.939,
+          "end": 2.113
+        },
+        {
+          "word": "exam",
+          "start": 2.148,
+          "end": 2.438
+        },
+        {
+          "word": "question?",
+          "start": 2.496,
+          "end": 2.972
+        },
+        {
+          "word": "Click",
+          "start": 3.297,
+          "end": 3.518
+        },
+        {
+          "word": "the",
+          "start": 3.576,
+          "end": 3.646
+        },
+        {
+          "word": "link",
+          "start": 3.692,
+          "end": 3.866
+        },
+        {
+          "word": "to",
+          "start": 3.913,
+          "end": 3.971
+        },
+        {
+          "word": "watch",
+          "start": 4.04,
+          "end": 4.249
+        },
+        {
+          "word": "our",
+          "start": 4.284,
+          "end": 4.377
+        },
+        {
+          "word": "full",
+          "start": 4.447,
+          "end": 4.644
+        },
+        {
+          "word": "Trigonometry",
+          "start": 4.69,
+          "end": 5.317
+        },
+        {
+          "word": "Boss",
+          "start": 5.364,
+          "end": 5.608
+        },
+        {
+          "word": "Fight",
+          "start": 5.666,
+          "end": 5.886
+        },
+        {
+          "word": "masterclass!",
+          "start": 5.956,
+          "end": 7.105
+        }
+      ],
+      "durationInFrames": 229,
+      "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-04.mp3"
+    }
+  ]
+}

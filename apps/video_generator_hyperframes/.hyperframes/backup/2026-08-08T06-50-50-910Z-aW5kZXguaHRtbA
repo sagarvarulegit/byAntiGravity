@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --bg-dark: #0a0a0a;
+        --brand: #FBBF24; /* Neon Amber */
+        --text-primary: #ffffff;
+        --text-secondary: #9CA3AF;
+      }
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--bg-dark);
+        font-family: "Outfit", system-ui, sans-serif;
+        color: var(--text-primary);
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+      .bg-gradient {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(251, 191, 36, 0.15) 0%, transparent 60%);
+        z-index: 0;
+      }
+      
+      /* SCENE 1: TITLE */
+      #scene-1 .title {
+        font-size: 140px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 20px;
+        z-index: 1;
+        opacity: 0;
+      }
+      #scene-1 .subtitle {
+        font-size: 80px;
+        color: var(--brand);
+        font-weight: 700;
+        z-index: 1;
+        opacity: 0;
+      }
+
+      /* SCENE 2: QUESTION */
+      #scene-2 .title {
+        font-size: 100px;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 40px;
+        z-index: 1;
+      }
+      #scene-2 .badge {
+        background: var(--brand);
+        color: #000;
+        padding: 20px 40px;
+        border-radius: 20px;
+        font-size: 60px;
+        font-weight: 900;
+        z-index: 1;
+        box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+      }
+      /* SCENE 3: AGENDA */
+      #scene-3 .title {
+        font-size: 60px;
+        color: var(--text-secondary);
+        letter-spacing: 10px;
+        margin-bottom: 40px;
+      }
+      .agenda-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 60px;
+        width: 1200px;
+      }
+      .agenda-item {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px 30px;
+        border-radius: 15px;
+        border-left: 6px solid var(--brand);
+        opacity: 0;
+      }
+      .agenda-number {
+        font-size: 40px;
+        font-weight: 900;
+        color: var(--brand);
+        margin-right: 20px;
+        min-width: 40px;
+      }
+      .agenda-text {
+        font-size: 32px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-wi3n" id="root" data-composition-id="trigonometry_scene" data-width="1920" data-height="1080" data-start="0" data-duration="600">
+      <div data-hf-id="hf-zb1e" class="bg-gradient"></div>
+
+      <!-- Scene 1: Title Card -->
+      <div data-hf-id="hf-lio4" id="scene-1" class="scene">
+        <div data-hf-id="hf-a88x" class="title">Applications of<br data-hf-id="hf-x5px">Trigonometry</div>
+        <div data-hf-id="hf-nt3k" class="subtitle">The Lighthouse Boss Fight</div>
+      </div>
+
+      <!-- Scene 2: 5-Mark Boss -->
+      <div data-hf-id="hf-we5r" id="scene-2" class="scene">
+        <div data-hf-id="hf-a890" class="title">Heights &amp; Distances</div>
+        <div data-hf-id="hf-753c" class="badge">The 5-Mark Boss Question</div>
+      </div>
+
+      <!-- Scene 3: Agenda -->
+      <div data-hf-id="hf-q8fy" id="scene-3" class="scene">
+        <div data-hf-id="hf-427w" class="title">IN THIS VIDEO</div>
+        <div data-hf-id="hf-qze9" class="agenda-grid">
+          <div data-hf-id="hf-d1k8" class="agenda-item"><div data-hf-id="hf-en3l" class="agenda-number">1</div><div data-hf-id="hf-8p0c" class="agenda-text">The real world setup</div></div>
+          <div data-hf-id="hf-hpnk" class="agenda-item"><div data-hf-id="hf-fu0o" class="agenda-number">2</div><div data-hf-id="hf-2w4a" class="agenda-text">The invisible line of sight</div></div>
+          <div data-hf-id="hf-giqh" class="agenda-item"><div data-hf-id="hf-ffpn" class="agenda-number">3</div><div data-hf-id="hf-19xu" class="agenda-text">The Z trick</div></div>
+          <div data-hf-id="hf-gx1i" class="agenda-item"><div data-hf-id="hf-dg6i" class="agenda-number">4</div><div data-hf-id="hf-nnf8" class="agenda-text">The proximity rule</div></div>
+          <div data-hf-id="hf-fq4f" class="agenda-item"><div data-hf-id="hf-d1vh" class="agenda-number">5</div><div data-hf-id="hf-4zwa" class="agenda-text">The cheat codes</div></div>
+          <div data-hf-id="hf-g4fg" class="agenda-item"><div data-hf-id="hf-e8sk" class="agenda-number">6</div><div data-hf-id="hf-fhr0" class="agenda-text">The 5-mark boss solve</div></div>
+        </div>
+      </div>
+
+      <!-- Diagram Scene (covers Scene 4, 5, 6) -->
+      <div data-hf-id="hf-ymx2" id="diagram-scene" class="scene">
+        <div data-hf-id="hf-jclu" class="title" style="font-size: 60px; margin-bottom: 20px;">What is Angle of Depression?</div>
+        <div data-hf-id="hf-yij5" class="subtitle" style="font-size: 40px; color: var(--text-secondary); margin-bottom: 60px;">The Invisible Line of Sight</div>
+        
+        <div data-hf-id="hf-kk4f" class="svg-container" style="position: relative; width: 800px; height: 600px;">
+          
+          <!-- Scene 8 Equation Board -->
+          <div data-hf-id="hf-fib1" class="equation-board" style="position: absolute; left: 850px; top: 0px; width: 500px; padding: 30px; background: rgba(10, 10, 10, 0.9); border: 3px solid #FBBF24; border-radius: 16px; opacity: 0;">
+            <div data-hf-id="hf-why6" class="eq-step step-1" style="margin-bottom: 20px; opacity: 0;">
+              <span data-hf-id="hf-gi91" style="color: #9CA3AF; font-size: 24px;">Step 1: Triangle 1 (60°)</span><br data-hf-id="hf-rsrt">
+              <span data-hf-id="hf-c6ig" style="color: #fff; font-size: 32px;">tan(60°) = 75 / x</span><br data-hf-id="hf-szow">
+              <span data-hf-id="hf-tbub" style="color: #3B82F6; font-size: 32px;">x = 75 / √3 ≈ 43.3m</span>
+            </div>
+            <div data-hf-id="hf-xyxr" class="eq-step step-2" style="margin-bottom: 20px; opacity: 0;">
+              <span data-hf-id="hf-gimc" style="color: #9CA3AF; font-size: 24px;">Step 2: Triangle 2 (30°)</span><br data-hf-id="hf-sldv">
+              <span data-hf-id="hf-w04o" style="color: #fff; font-size: 32px;">tan(30°) = 75 / (x+y)</span><br data-hf-id="hf-qluq">
+              <span data-hf-id="hf-kn0t" style="color: #3B82F6; font-size: 32px;">x+y = 75√3 ≈ 129.9m</span>
+            </div>
+            <div data-hf-id="hf-6eco" class="eq-step step-3" style="margin-bottom: 20px; opacity: 0;">
+              <span data-hf-id="hf-nxn9" style="color: #9CA3AF; font-size: 24px;">Step 3: Distance between ships</span><br data-hf-id="hf-q7jp">
+              <span data-hf-id="hf-vtfc" style="color: #fff; font-size: 32px;">y = (x+y) - x</span><br data-hf-id="hf-regs">
+              <span data-hf-id="hf-xxji" style="color: #fff; font-size: 32px;">y = 129.9 - 43.3</span>
+            </div>
+            <div data-hf-id="hf-bi2h" class="eq-step final-ans" style="margin-top: 30px; text-align: center; opacity: 0;">
+              <span data-hf-id="hf-wt0l" style="color: #10B981; font-size: 48px; font-weight: 900;">86.6 m</span>
+            </div>
+          </div>
+          <!-- Water -->
+          <div data-hf-id="hf-8978" class="water" style="position: absolute; left: 0; top: 500px; width: 800px; height: 100px; background: #1E3A8A; opacity: 0;"></div>
+          
+          <!-- Lighthouse -->
+          <img data-hf-id="hf-ogxw" class="lighthouse" src="public/images/lighthouse-svgrepo-com.svg" style="position: absolute; left: 100px; top: 40px; width: 200px; height: 460px; opacity: 0;">
+          <div data-hf-id="hf-s71n" class="lighthouse-height" style="position: absolute; left: 50px; top: 250px; color: #FBBF24; font-size: 28px; font-weight: bold; opacity: 0;">75m</div>
+          
+          <!-- Boat 1 (Near) -->
+          <img data-hf-id="hf-18r4" class="boat" src="public/images/ship-svgrepo-com.svg" style="position: absolute; left: 350px; top: 400px; width: 150px; height: 100px; opacity: 0;">
+          
+          <!-- Boat 2 (Far) -->
+          <img data-hf-id="hf-zjux" class="boat-far" src="public/images/ship-svgrepo-com.svg" style="position: absolute; left: 650px; top: 400px; width: 150px; height: 100px; opacity: 0;">
+          
+          <!-- Text Labels -->
+          <div data-hf-id="hf-gm7l" class="angle-text" style="position: absolute; left: 420px; top: 150px; color: rgb(255, 255, 255); font-size: 32px; font-weight: bold; opacity: 0">Angle of Depression</div>
+          <div data-hf-id="hf-v9iu" class="angle-60" style="position: absolute; left: 240px; top: 160px; color: #EF4444; font-size: 24px; font-weight: bold; opacity: 0; clip-path: inset(0px)">60°</div>
+          <div data-hf-id="hf-5jwg" class="angle-30" style="position: absolute; left: 320px; top: 110px; color: #EF4444; font-size: 4px; font-weight: bold; opacity: 0">30°</div>
+          
+          <!-- Horizontal Line of Sight -->
+          <div data-hf-id="hf-qc5v" class="horizontal-line" style="position: absolute; left: 200px; top: 122px; width: 0px; height: 0px; border-top: 6px dashed #FBBF24;"></div>
+          
+          <!-- Gaze Line 1 (Near, 60 deg) -->
+          <svg data-hf-id="hf-s35h" class="gaze-line-wrapper" style="position: absolute; left: 200px; top: 125px; width: 225px; height: 350px; overflow: visible;">
+            <line data-hf-id="hf-ptqd" class="gaze-line" x1="0" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="4" />
+          </svg>
+          
+          <!-- Gaze Line 2 (Far, 30 deg) -->
+          <svg data-hf-id="hf-0wt8" class="gaze-line-far-wrapper" style="position: absolute; left: 200px; top: 125px; width: 525px; height: 350px; overflow: visible;">
+            <line data-hf-id="hf-mcpt" class="gaze-line-far" x1="0" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="4" />
+          </svg>
+          
+          <!-- Angle Arc 1 (60 deg) -->
+          <svg data-hf-id="hf-1she" class="angle-arc-wrapper" style="position: absolute; left: 200px; top: 125px; width: 100px; height: 100px; overflow: visible; opacity: 0;">
+            <path data-hf-id="hf-s6ia" class="angle-arc" d="M 100 0 A 100 100 0 0 1 50 65" fill="none" stroke="#EF4444" stroke-width="4" />
+          </svg>
+          
+          <!-- Angle Arc 2 (30 deg) -->
+          <svg data-hf-id="hf-m7pv" class="angle-arc-far-wrapper" style="position: absolute; left: 200px; top: 125px; width: 200px; height: 100px; overflow: visible; opacity: 0;">
+            <path data-hf-id="hf-tlb1" class="angle-arc-far" d="M 200 0 A 200 200 0 0 1 180 45" fill="none" stroke="#EF4444" stroke-width="4" />
+          </svg>
+
+          <!-- Scene 6 Z-Trick Overlay -->
+          <svg data-hf-id="hf-ofuo" class="z-shape-wrapper" style="position: absolute; left: 200px; top: 125px; width: 550px; height: 385px; overflow: visible; opacity: 0;">
+            <!-- Start top right, go left to lighthouse, down diagonally to boat, then left -->
+            <path data-hf-id="hf-p0ke" class="z-shape-path" d="M 250 0 L 0 0 L 225 350 L -25 350" fill="none" stroke="#22D3EE" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" />
+          </svg>
+
+          <!-- Scene 6 Bottom Elevation Arc -->
+          <svg data-hf-id="hf-cd9l" class="angle-arc-bottom-wrapper" style="position: absolute; left: 425px; top: 475px; width: 100px; height: 100px; overflow: visible; opacity: 0;">
+            <path data-hf-id="hf-smt3" class="angle-arc-bottom" d="M -100 0 A 100 100 0 0 1 -50 -65" fill="none" stroke="#10B981" stroke-width="4" />
+          </svg>
+
+          <!-- Scene 6 Bottom Elevation Text -->
+          <div data-hf-id="hf-hozy" class="angle-60-bottom" style="position: absolute; left: 340px; top: 430px; color: #10B981; font-size: 24px; font-weight: bold; opacity: 0;">60° Elevation</div>
+
+          <!-- Scene 6 Cheat Code Badge -->
+          <div data-hf-id="hf-gvjl" class="cheat-code-badge" style="position: absolute; left: 200px; top: 250px; background: #EF4444; color: #fff; padding: 10px 20px; font-size: 32px; font-weight: 900; border-radius: 8px; transform: scale(0); opacity: 0; box-shadow: 0 10px 25px rgba(239, 68, 68, 0.5);">CHEAT CODE ACTIVATED</div>
+
+          <!-- Scene 7 Proximity Rule -->
+          <div data-hf-id="hf-hwyi" class="proximity-rule-title" style="position: absolute; left: 400px; top: 60px; color: #FBBF24; font-size: 40px; font-weight: 900; opacity: 0;">PROXIMITY RULE</div>
+          <div data-hf-id="hf-bnmr" class="root-3-badge" style="position: absolute; left: 350px; top: 400px; background: #10B981; color: #fff; padding: 5px 10px; font-size: 24px; font-weight: bold; border-radius: 5px; opacity: 0;">√3</div>
+          <div data-hf-id="hf-0kj7" class="one-root-3-badge" style="position: absolute; left: 650px; top: 400px; background: #3B82F6; color: #fff; padding: 5px 10px; font-size: 24px; font-weight: bold; border-radius: 5px; opacity: 0;">1/√3</div>
+          
+          <!-- Distance Measurement Line (x) -->
+          <div data-hf-id="hf-f7ao" class="dist-line-x" style="position: absolute; left: 200px; top: 510px; width: 0px; height: 2px; background: #fff;"></div>
+          
+          <!-- Distance Measurement Line (x + y) -->
+          <div data-hf-id="hf-2qsp" class="dist-line-xy" style="position: absolute; left: 200px; top: 550px; width: 0px; height: 2px; background: #fff;"></div>
+        </div>
+      </div>
+
+      <!-- Scene 9: Boss Defeated -->
+      <div data-hf-id="hf-cy9o" id="scene-9" class="scene">
+        <div data-hf-id="hf-dkzd" class="title" style="font-size: 140px; font-weight: 900; color: #10B981; opacity: 0;">BOSS DEFEATED!</div>
+        <div data-hf-id="hf-bbip" class="subtitle" style="font-size: 60px; color: #fff; margin-top: 20px; opacity: 0;">+5 Marks Secured</div>
+        
+        <div data-hf-id="hf-vdjb" class="summary-list" style="margin-top: 80px; font-size: 40px; color: #9CA3AF; text-align: left; opacity: 0;">
+          <div data-hf-id="hf-7si1" class="sum-item sum-1" style="margin-bottom: 20px; opacity: 0;">1. Always draw horizontal line of sight</div>
+          <div data-hf-id="hf-zmrw" class="sum-item sum-2" style="margin-bottom: 20px; opacity: 0;">2. Use Z-trick to slide angle inside</div>
+          <div data-hf-id="hf-va4n" class="sum-item sum-3" style="margin-bottom: 20px; opacity: 0;">3. √3 is for 60°, 1/√3 is for 30°</div>
+          <div data-hf-id="hf-v21s" class="sum-item sum-4" style="margin-bottom: 20px; opacity: 0;">4. Closer ship = bigger angle</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO TRACKS -->
+    <audio data-hf-id="hf-1qfh" id="audio-1" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-01.wav" data-start="0" data-duration="4.4" data-track-index="10"></audio>
+    <audio data-hf-id="hf-y8vi" id="audio-2" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-02-v2.wav" data-start="4.4" data-duration="3.2" data-track-index="11"></audio>
+    <audio data-hf-id="hf-ujks" id="audio-3" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-03.wav" data-start="7.6" data-duration="24.0" data-track-index="12"></audio>
+    <audio data-hf-id="hf-5fx4" id="audio-4" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-04.wav" data-start="31.6" data-duration="10.3" data-track-index="13"></audio>
+    <audio data-hf-id="hf-056h" id="audio-5" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-05.wav" data-start="41.9" data-duration="33.0" data-track-index="14"></audio>
+    <audio data-hf-id="hf-pbv6" id="audio-6" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-06.wav" data-start="74.9" data-duration="33.0" data-track-index="15"></audio>
+    <audio data-hf-id="hf-mtz0" id="audio-7" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-07.wav" data-start="107.9" data-duration="20.2" data-track-index="16"></audio>
+    <audio data-hf-id="hf-28ut" id="audio-8" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-08.wav" data-start="128.1" data-duration="41.8" data-track-index="17"></audio>
+    <audio data-hf-id="hf-ja9s" id="audio-9" src="public/audio/maths/maths_trigonometry_lighthouse_masterclass_scene-09.wav" data-start="169.9" data-duration="26.2" data-track-index="18"></audio>
+    
+    <script>
+      window.__timelines = window.__timelines || {};
+      gsap.set("[data-hf-id=\"hf-kk4f\"]", { x: 78, y: 16 });
+      gsap.set("[data-hf-id=\"hf-kk4f\"]", { x: 54, y: 45 });
+      gsap.set("[data-hf-id=\"hf-8978\"]", { x: 375, y: 0 });
+      gsap.set("[data-hf-id=\"hf-ogxw\"]", { x: -4, y: -147 });
+      gsap.set("[data-hf-id=\"hf-5jwg\"]", {
+        y: 85,
+        x: 109
+      });
+      gsap.set("[data-hf-id=\"hf-5jwg\"]", { rotationX: 1, rotationY: 4 });
+      gsap.set("[data-hf-id=\"hf-v9iu\"]", { x: 55, y: 65 });
+      var tl = gsap.timeline({ paused: true });
+
+      tl.set(".boat-far", { x: 0, y: 0, data: "hf-hold" }, 0);
+
+      tl.set(".boat", { y: 0, x: 0, data: "hf-hold" }, 0);
+
+      // Scene 1 Animation
+      tl.to("#scene-1", { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 0);
+      tl.fromTo("#scene-1 .title", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "back.out(1.7)" }, 0.2);
+      tl.fromTo("#scene-1 .subtitle", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, 0.4);
+
+      // Transition to Scene 2
+      tl.to("#scene-1", { opacity: 0, scale: 1.1, duration: 0.8, ease: "power2.inOut" }, 4.0);
+
+      // Scene 2 Animation
+      tl.fromTo("#scene-2", 
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 
+        4.4
+      );
+      tl.fromTo("#scene-2 .title", 
+        { opacity: 0, y: -40 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 
+        4.6
+      );
+      tl.fromTo("#scene-2 .badge", 
+        { opacity: 0, scale: 0 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.5)" }, 
+        4.8
+      );
+
+      // Transition to Scene 3
+      tl.to("#scene-2", { opacity: 0, scale: 1.1, duration: 0.8, ease: "power2.inOut" }, 7.0);
+
+      // Scene 3 Animation
+      tl.to("#scene-3", { opacity: 1, duration: 0.5, ease: "power2.out" }, 7.4);
+      tl.fromTo("#scene-3 .title", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.6 }, 7.6);
+
+      // Stagger agenda items based on audio alignment timing
+      // 1: 3.2s, 2: 6.5s, 3: 10.2s, 4: 13.4s, 5: 16.8s, 6: 20.2s (approximate mappings from JSON)
+      const baseTime = 7.6;
+      tl.fromTo(".agenda-item:nth-child(1)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 3.2);
+      tl.fromTo(".agenda-item:nth-child(2)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 6.5);
+      tl.fromTo(".agenda-item:nth-child(3)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 10.2);
+      tl.fromTo(".agenda-item:nth-child(4)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 13.4);
+      tl.fromTo(".agenda-item:nth-child(5)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 16.8);
+      tl.fromTo(".agenda-item:nth-child(6)", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, baseTime + 20.2);
+
+      // Transition to Scene 4 (approx 31.6s in absolute time)
+      const scene4Start = 31.6;
+      tl.to("#scene-3", { opacity: 0, y: -50, duration: 0.8, ease: "power2.inOut" }, scene4Start);
+      tl.fromTo("#diagram-scene", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene4Start + 0.5);
+
+      // Scene 4 Animations
+      tl.fromTo(".water", { opacity: 0 }, { opacity: 1, duration: 1 }, scene4Start + 4.0);
+      tl.fromTo(".lighthouse", { opacity: 0 }, { opacity: 1, duration: 1 }, scene4Start + 4.0);
+      tl.to(".horizontal-line", { width: 550, duration: 1.5, ease: "power2.out" }, scene4Start + 7.6);
+
+      tl.fromTo(".boat", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene4Start + 13.0);
+      tl.to(".gaze-line", { attr: { x2: 225, y2: 350 }, duration: 1.5, ease: "power2.out" }, scene4Start + 13.5);
+
+      tl.fromTo(".angle-arc-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene4Start + 16.0);
+      tl.fromTo(".angle-text", { opacity: 0, x: 0 }, { opacity: 1, x: 10, duration: 0.5 }, scene4Start + 19.5);
+
+      // Scene 5: The Z Trick (Starts at 41.9s)
+      const scene5Start = 41.9;
+
+      // "75 meter high lighthouse" (1.2s - 1.8s)
+      tl.fromTo(".lighthouse-height", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(1.5)" }, scene5Start + 1.2);
+
+      // "Ship one is close" (4.9s - 5.8s) -> Boat 1 bounce
+      tl.to(".boat", { y: -20, duration: 0.3, yoyo: true, repeat: 1 }, scene5Start + 4.9);
+
+      // "Ship two is far" (6.3s - 8.0s) -> Boat 2 pops in
+      tl.fromTo(".boat-far", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.2)" }, scene5Start + 6.3);
+
+      // "always draw your horizontal line of sight straight out" (10.1s - 12.9s)
+      tl.to(".horizontal-line", { borderColor: "#fff", borderTopWidth: 8, duration: 0.3, yoyo: true, repeat: 3 }, scene5Start + 10.1);
+
+      // "look down at ship one, a steep 60 degrees" (13.7s - 16.6s)
+      tl.fromTo(".angle-60", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene5Start + 15.6);
+
+      // "Now look at ship two... down only 30 degrees" (19.5s - 24.3s)
+      tl.to(".gaze-line-far", { attr: { x2: 525, y2: 350 }, duration: 1.5, ease: "power2.out" }, scene5Start + 20.0);
+      tl.fromTo(".angle-arc-far-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene5Start + 23.3);
+      tl.fromTo(".angle-30", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene5Start + 23.6);
+
+      // "Remember the distances: x to ship one, and x plus y to ship two" (27.2s - 32.5s)
+      // Draw distance line x
+      tl.to(".dist-line-x", { width: 225, duration: 1 }, scene5Start + 28.9);
+      tl.fromTo(".distance-x", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene5Start + 29.5);
+
+      // Draw distance line x+y
+      tl.to(".dist-line-xy", { width: 525, duration: 1.5 }, scene5Start + 30.8);
+      tl.fromTo(".distance-xy", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene5Start + 31.5);
+
+      // Scene 6: The Z-Trick (Starts at 74.9s)
+      const scene6Start = 74.9;
+
+      // "An angle of depression is drawn outside the triangle..." (0-3s)
+      tl.to(".angle-60", { scale: 1.5, duration: 0.3, yoyo: true, repeat: 3 }, scene6Start + 0.5);
+
+      // "horizontal line of sight is perfectly parallel to the sea" (9.5s)
+      tl.to(".horizontal-line", { borderColor: "#22D3EE", duration: 0.5 }, scene6Start + 9.5);
+      tl.to(".water", { backgroundColor: "#22D3EE", duration: 0.5 }, scene6Start + 9.5);
+      tl.to(".horizontal-line", { borderColor: "#fff", duration: 0.5 }, scene6Start + 12.0);
+      tl.to(".water", { backgroundColor: "#1E3A8A", duration: 0.5 }, scene6Start + 12.0);
+
+      // "trace the laser path down to the ship, it forms a giant Z shape" (13.5s)
+      tl.fromTo(".z-shape-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.1 }, scene6Start + 13.5);
+      tl.to(".z-shape-path", { strokeDashoffset: 0, duration: 2.0, ease: "power2.inOut" }, scene6Start + 13.6);
+
+      // "inner corners of a Z are always mathematically identical" (21.0s)
+      tl.to(".angle-60", { scale: 1.5, duration: 0.3, yoyo: true, repeat: 1 }, scene6Start + 21.0);
+      tl.to(".z-shape-path", { strokeWidth: 12, duration: 0.3, yoyo: true, repeat: 1 }, scene6Start + 21.0);
+
+      // "So, that top angle looking down simply slides to the bottom" (25.0s)
+      tl.fromTo(".angle-arc-bottom-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene6Start + 27.0);
+      tl.fromTo(".angle-60-bottom", { opacity: 0, y: -250, x: -100 }, { opacity: 1, y: 0, x: 0, duration: 1.5, ease: "power2.out" }, scene6Start + 25.5);
+
+      // "transforming into the angle of elevation" (28.5s)
+      tl.to(".angle-60-bottom", { scale: 1.2, duration: 0.3, yoyo: true, repeat: 1 }, scene6Start + 28.5);
+
+      // "Cheat code activated!" (31.5s)
+      tl.fromTo(".cheat-code-badge", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, scene6Start + 31.5);
+
+      // Scene 7: Proximity Rule (Starts at 107.9s)
+      const scene7Start = 107.9;
+
+      // "Students always swap the 30 degree and 60 degree ships." (0-3s)
+      tl.to(".angle-60", { rotation: 10, duration: 0.1, yoyo: true, repeat: 5 }, scene7Start + 1.0);
+      tl.to(".angle-30", { rotation: -10, duration: 0.1, yoyo: true, repeat: 5 }, scene7Start + 1.0);
+
+      // "remember the Proximity Rule" (3.6s)
+      tl.fromTo(".proximity-rule-title", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, scene7Start + 4.5);
+
+      // "the closer you walk towards the lighthouse, the more you have to crane your neck up." (6.7s)
+      tl.to(".boat-far", { x: -100, duration: 2.0, ease: "power1.inOut" }, scene7Start + 6.7);
+      tl.to(".gaze-line-far", { attr: { x2: 425 }, duration: 2.0, ease: "power1.inOut" }, scene7Start + 6.7);
+      tl.to(".angle-arc-far", { attr: { d: "M 100 0 A 100 100 0 0 1 70 70" }, duration: 2.0, ease: "power1.inOut" }, scene7Start + 6.7);
+      tl.to(".boat-far", { x: 0, duration: 1.5, ease: "power1.inOut" }, scene7Start + 9.5);
+      tl.to(".gaze-line-far", { attr: { x2: 525 }, duration: 1.5, ease: "power1.inOut" }, scene7Start + 9.5);
+      tl.to(".angle-arc-far", { attr: { d: "M 200 0 A 200 200 0 0 1 180 45" }, duration: 1.5, ease: "power1.inOut" }, scene7Start + 9.5);
+
+      // "Closer means bigger angle!" (10.9s)
+      tl.to(".angle-60-bottom", { scale: 1.5, color: "#FBBF24", duration: 0.3, yoyo: true, repeat: 3 }, scene7Start + 11.0);
+
+      // "root 3 is for 60 degrees" (13.3s)
+      tl.fromTo(".root-3-badge", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, scene7Start + 14.5);
+
+      // "1 over root 3 is for 30 degrees" (16.0s)
+      tl.fromTo(".one-root-3-badge", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, scene7Start + 16.5);
+
+      // Scene 8: The 5-Mark Boss Solve (Starts at 128.1s)
+      const scene8Start = 128.1;
+
+      // Shift diagram left and show equation board
+      tl.to(".svg-container", { x: -250, duration: 1.0, ease: "power2.inOut" }, scene8Start + 0.5);
+      tl.fromTo(".equation-board", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1.0, ease: "power2.out" }, scene8Start + 0.5);
+
+      // Step one (1.4s)
+      tl.fromTo(".step-1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, scene8Start + 1.4);
+
+      // Step two (11.6s)
+      tl.fromTo(".step-2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, scene8Start + 11.6);
+
+      // Step three (21.9s)
+      tl.fromTo(".step-3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, scene8Start + 21.9);
+
+      // Final answer (36.8s)
+      tl.fromTo(".final-ans", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.5)" }, scene8Start + 36.8);
+
+      // Scene 9: Boss Defeated (Starts at 169.9s)
+      const scene9Start = 169.9;
+
+      // Transition from diagram scene to boss defeated scene
+      tl.to("#diagram-scene", { opacity: 0, duration: 0.8 }, scene9Start);
+      tl.fromTo("#scene-9", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene9Start + 0.5);
+
+      // Title and subtitle
+      tl.fromTo("#scene-9 .title", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.5)" }, scene9Start + 0.8);
+      tl.fromTo("#scene-9 .subtitle", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, scene9Start + 1.2);
+
+      // Summary list pops
+      tl.fromTo(".summary-list", { opacity: 0 }, { opacity: 1, duration: 0.5 }, scene9Start + 3.0);
+      tl.fromTo(".sum-1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, scene9Start + 4.5);
+      tl.fromTo(".sum-2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, scene9Start + 7.5);
+      tl.fromTo(".sum-3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, scene9Start + 10.5);
+      tl.fromTo(".sum-4", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, scene9Start + 13.5);
+
+      tl.to(".boat", { keyframes: { "0%": { y: 0, x: 0 }, "8.8%": { y: -20 }, "100%": { x: 0, y: 10 } }, duration: 3.422 }, 46.8);
+
+      tl.fromTo(".boat-far", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "back.out(1.2)" }, 48.199999999999996);
+
+      tl.to(".boat-far", { keyframes: { "0%": { x: 0, y: 0 }, "40%": { x: 0, y: 0 }, "100%": { x: 0, y: 0 } }, duration: 2 }, 48.2);
+
+      tl.to("[data-hf-id=\"hf-5jwg\"]", { keyframes: { "0%": { width: 120, height: 92 }, "100%": { width: 120, height: 92 } }, duration: 0.5 }, 65.5);
+
+      tl.to("[data-hf-id=\"hf-v9iu\"]", { keyframes: { "0%": { width: 110, height: 84 }, "100%": { width: 110, height: 84 } }, duration: 0.5 }, 57.5);
+
+      tl.to("[data-hf-id=\"hf-ogxw\"]", { keyframes: { "0%": { width: 200, height: 460 }, "100%": { width: 354, height: 815 } }, duration: 1 }, 35.6);
+
+      window.__timelines["trigonometry_scene"] = tl;
+
+      // Auto-play for direct browser preview
+      setTimeout(() => tl.play(), 500);
+    </script>
+  </body>
+</html>
