@@ -101,8 +101,28 @@ No CI workflows present yet.
   - **Math Speech Sanitization**: Pass all formulas through `cleanMathTextForSpeech()` in `generate-voiceovers.js` to ensure fractions like `1/Rp` are spoken as "one over R P" rather than literal slashes.
   - **Timeless Title Subtitles**: Omit hardcoded NCERT chapter numbers (e.g. "Chapter 12") in title scenes to prevent stale branding across textbook revisions. Use domain titles like `"CBSE Class 10 Physics • Electricity"`.
   - **Empty Diagram Guard**: Ensure `DiagramScene.tsx` hides empty SVG card backgrounds when diagram components/wires are omitted.
+- **HyperFrames Video & Content Production Conventions**:
+  - **HyperFrames Default for Video Requests**: Author standalone HyperFrames HTML/GSAP compositions in the ChapterReady warm paper theme (`#f4ede2` background + `#f3883b` orange accents) unless Remotion is explicitly requested.
+  - **Graphic Assets over AI Body Parts**: Avoid using AI-generated human hands or complex anatomical body graphics due to AI left/right inversion errors. Prefer clean typography, bento box cards, vector diagrams, and icon graphics.
+  - **YouTube Comment Formatting**: Never use LaTeX math delimiters (`$...$`) in YouTube comment copy. Always format pinned comments and YouTube metadata in plain text using UTF-8 math symbols (`√3/2`, `cos(30°)`) and YouTube markdown (`*bold*`).
+  - **SEO File Naming Standard**: Always export and name final `.mp4` video files using long-tail, hyphenated SEO search terms (e.g. `cbse-class-10-maths-butterfly-method-fraction-trick-shorts.mp4`).
+  - **First 1.5-Second Hook Rule**: Never open Shorts with slow intros. Open immediately with an urgent visual pattern interrupt or high-stakes mystery hook to push "Stayed to Watch" metrics above 65%.
+  - **24-Hour Upload Spacing**: Space Shorts uploads by at least 24 hours (target peak student hours: 5:00 PM – 7:30 PM IST) to prevent YouTube's seed testing algorithm from splitting impressions.
 
 ## Notes
+- **ChapterReady Platform Design System (Warm Paper & Ink)**:
+  - Page Background (`--background`): `#f4ede2` (warm cream)
+  - Text/Ink (`--foreground`): `#181612` (near-black charcoal)
+  - Muted Text (`--muted`): `#6f665c` (warm taupe)
+  - Card Surface (`--card` / `--surface`): `#fffdf8` (warm white)
+  - Soft Card Fill (`--card-soft`): `#fff3df` (cream-orange tint)
+  - Borders/Lines (`--border`): `#d9c7b4` (light tan)
+  - Primary/Brand (`--primary`): `#f3883b` (Approved ChapterReady Orange)
+  - Primary Strong (`--primary-strong`): `#bd4f10` (burnt orange)
+  - Primary Light (`--remix-orange-light`): `#ffb06c`
+  - Warm Accents: `--cyan` `#ffad68`, `--pink` `#c9512c`, `--yellow` `#f6a24f`
+  - Shape & Shadows: `--remix-radius: 24px`, warm brown-tinted shadows (`rgba(67, 45, 24, 0.08)` / `0.12`).
+  - **Rule**: Light-mode warm paper & ink theme only. Strictly avoid generic blue/green study app looks and navy blue backgrounds.
 - `db/seed_science_ch2_notes.sql` — full NCERT notes & study guide for Science Ch2
   (Acids, Bases & Salts). Two lessons: Revision Notes (UUID b0eebc99…0233,
   seq 3) + NCERT Study Guide (UUID e0eebc99…0223, seq 10). Figure tokens for all

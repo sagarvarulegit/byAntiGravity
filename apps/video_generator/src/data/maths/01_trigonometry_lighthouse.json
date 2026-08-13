@@ -1,13 +1,13 @@
 {
   "id": "maths_trigonometry_lighthouse_masterclass",
   "title": "Angle of Depression: Lighthouse Trick",
-  "durationInFrames": 7706,
+  "durationInFrames": 8146,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 220,
+      "durationInFrames": 219,
       "content": {
         "text": "Applications of Trigonometry",
         "subtitle": "The Lighthouse Boss Fight"
@@ -145,7 +145,7 @@
     {
       "id": "scene-02",
       "type": "trigonometry",
-      "durationInFrames": 165,
+      "durationInFrames": 615,
       "content": {
         "title": "Heights & Distances",
         "subtitle": "The 5-Mark Boss Question",
@@ -429,7 +429,7 @@
     {
       "id": "scene-03",
       "type": "trigonometry",
-      "durationInFrames": 727,
+      "durationInFrames": 726,
       "content": {
         "title": "IN THIS VIDEO",
         "subtitle": "The Lighthouse Boss Fight",
@@ -633,7 +633,7 @@
     {
       "id": "scene-04",
       "type": "trigonometry",
-      "durationInFrames": 831,
+      "durationInFrames": 829,
       "content": {
         "title": "What is Angle of Depression?",
         "subtitle": "The Invisible Line of Sight",
@@ -1047,7 +1047,7 @@
     {
       "id": "scene-05",
       "type": "trigonometry",
-      "durationInFrames": 992,
+      "durationInFrames": 991,
       "content": {
         "title": "The Real World Setup",
         "variant": "lighthouse_real"
@@ -1495,7 +1495,7 @@
     {
       "id": "scene-06",
       "type": "trigonometry",
-      "durationInFrames": 1006,
+      "durationInFrames": 1005,
       "content": {
         "title": "The Z-Trick (Alternate Interior)",
         "variant": "lighthouse_abstract"
@@ -1948,7 +1948,7 @@
     {
       "id": "scene-07",
       "type": "trigonometry",
-      "durationInFrames": 605,
+      "durationInFrames": 603,
       "content": {
         "title": "Proximity Rule & Cheat Code",
         "variant": "lighthouse_proximity"
@@ -2261,7 +2261,7 @@
     {
       "id": "scene-08",
       "type": "trigonometry",
-      "durationInFrames": 2374,
+      "durationInFrames": 2373,
       "content": {
         "title": "The 5-Mark Boss Solve",
         "variant": "lighthouse_solve"
@@ -3254,7 +3254,7 @@
     {
       "id": "scene-09",
       "type": "trigonometry",
-      "durationInFrames": 786,
+      "durationInFrames": 785,
       "content": {
         "title": "Boss Defeated",
         "variant": "boss_end"

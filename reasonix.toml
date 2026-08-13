@@ -12,7 +12,6 @@ show_reasoning = true
 type = "socks5"
 
 [agent]
-cold_resume_prune = true
 
 [tools]
 bash_timeout_seconds = 120

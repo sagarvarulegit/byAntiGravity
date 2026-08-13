@@ -331,6 +331,8 @@ To maximize engagement for the teenage demographic, all visual components MUST a
 ## YouTube Growth & SEO Workflow
 
 - **Optimized MP4 Naming (Search Intent)**: Never render videos to generic filenames like `out/video.mp4` or `out/acids_01.mp4`. YouTube reads the raw filename for initial search ranking. Always use long-tail, SEO-optimized, hyphen-separated filenames that students search for (e.g., `out/cbse-class-10-hydrogen-pop-test-acids-bases-salts.mp4`).
+- **First 1.5-Second Hook Rule (Shorts Retention)**: Never open a Short with slow greetings or channel intros. The first 1.5 seconds must feature an urgent visual pattern interrupt or high-stakes mystery hook to push "Stayed to Watch" metrics above 65%.
+- **24-Hour Upload Spacing**: Never upload 2 Shorts on the same day within hours of each other. Space uploads by at least 24 hours (target peak student hours: 5:00 PM – 7:30 PM IST) to prevent YouTube's seed testing algorithm from splitting impressions.
 - **No Long Intros (AVD)**: Never generate a script with a long channel intro or slow logo animation. The first 10-30 seconds must instantly hook the viewer with the core question or visual experiment.
 - **Mandatory Companion Shorts (Traffic Funnel)**: Whenever you create a 16:9 Masterclass video, always propose and generate a condensed 20-30 second 9:16 companion Short (using `ReelComposition.tsx`) featuring the most highly visual or explosive moment. This acts as a funnel for the main video.
 - **Engagement Priming**: When delivering the final Title and Description for a video, always include an engaging "Pinned Comment Challenge" (a question designed to spark comments) and a "Community Tab Poll" suggestion.
@@ -348,4 +350,5 @@ When generating JSON `teacherScript` narration or `content` text, you MUST utili
 
 - **Start Scenes Clean (Progressive Disclosure)**: Never carry over clutter from previous scenes if it is not actively being discussed. In animation, start the scene empty with just the essential base background (e.g., sea, lighthouse, ships). Gradually introduce and fill up the lines, angles, and measurements exactly when the narration starts talking about them.
 - **Studio Interactivity Support**: Always wrap visual scene elements (SVG shapes, images, groups, cards, badges, text lines) in `Interactive.G` or `Interactive.Div` with clear human-readable `name` attributes (e.g. `name="Lighthouse Structure"`, `name="Near Ship"`, `name="GOLDEN RULE Card"`). This allows creators to click, drag, re-align, and scale any visual element directly in Remotion Studio without asking for manual coordinate code edits.
+- **Strict Background Color Enforcement**: AI image prompts must explicitly include `"dark charcoal #121212 or deep obsidian background with vibrant high-contrast accents, NO monochromatic blue tint"` to prevent AI image generators from bleeding a blue cast over the entire scene.
 

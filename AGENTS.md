@@ -56,6 +56,12 @@ Remotion-generated explainer videos, PostgreSQL curriculum content.
 - **Content Cohesion:** Always ensure that Visualization and Narration tightly
   match across all mediums (Video, Notes, and the Platform). Placeholders or
   unrelated assets should never be used if they contradict the script.
+- **HyperFrames Default for Video Creation:** When video creation is requested, default to authoring native HyperFrames HTML/GSAP compositions in the ChapterReady warm paper theme (`#f4ede2` background + `#f3883b` orange accents) unless Remotion is explicitly requested.
+- **Graphic Assets over AI Body Parts:** Avoid using AI-generated human hands or complex anatomical body graphics in video assets due to AI left/right inversion errors. Prefer clean typography, bento box cards, vector diagrams, and icon graphics.
+- **YouTube Comment Formatting:** Never use LaTeX math delimiters (`$...$`) in YouTube comment copy. Always format pinned comments and YouTube metadata in plain text using UTF-8 math symbols (`√3/2`, `cos(30°)`) and YouTube markdown (`*bold*`).
+- **SEO File Naming Standard:** Always export and name final `.mp4` video files using long-tail, hyphenated SEO search terms (e.g. `cbse-class-10-maths-butterfly-method-fraction-trick-shorts.mp4`).
+- **First 1.5-Second Hook Rule:** Open Shorts within the first 1.5 seconds using high-stakes visual pattern interrupts or loss-aversion questions ("Stop memorizing...", "Don't lose 5 marks...") to boost "Stayed to Watch" rates above 65%.
+- **24-Hour Upload Spacing:** Space Shorts uploads by at least 24 hours (target peak student hours: 5:00 PM – 7:30 PM IST) to prevent YouTube's seed testing algorithm from splitting impressions across competing videos.
 
 ## Scoped Instructions
 
@@ -103,4 +109,16 @@ Remotion-generated explainer videos, PostgreSQL curriculum content.
 
 ## Notes
 
-- (Quick additions land here.)
+- **ChapterReady Platform — Warm Paper & Ink Color Scheme:**
+  - Page Background (`--background`): `#f4ede2` (warm cream)
+  - Text/Ink (`--foreground`): `#181612` (near-black charcoal)
+  - Muted Text (`--muted`): `#6f665c` (warm taupe)
+  - Card Surface (`--card` / `--surface`): `#fffdf8` (warm white)
+  - Soft Card Fill (`--card-soft`): `#fff3df` (cream-orange tint)
+  - Borders/Lines (`--border`): `#d9c7b4` (light tan)
+  - Primary/Brand (`--primary`): `#f3883b` (ChapterReady Orange)
+  - Primary Strong/Hover (`--primary-strong`): `#bd4f10` (burnt orange)
+  - Primary Light (`--remix-orange-light`): `#ffb06c`
+  - Supporting Warm Accents: `--cyan` `#ffad68`, `--pink` `#c9512c`, `--yellow` `#f6a24f`
+  - Shape & Elevation: `--remix-radius: 24px`, warm brown-tinted shadows (`rgba(67, 45, 24, 0.08)` / `0.12`).
+  - **Constraint:** Deliberately avoids generic blue/green "study app" looks. Always use light warm paper & ink palette (`#f4ede2` + `#f3883b`).

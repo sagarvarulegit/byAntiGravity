@@ -1,0 +1,1310 @@
+{
+  "id": "maths_trigonometry_hand_trick_short",
+  "title": "Trigonometry Left Hand Trick",
+  "durationInFrames": 2736,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "title",
+      "durationInFrames": 233,
+      "content": {
+        "text": "Trigonometry Left Hand Trick",
+        "subtitle": "Stop Memorizing the Table!"
+      },
+      "teacherScript": "Stop memorizing the 30-value Trigonometry table! All you ever need to find Sin, Cos, and Tan is your left hand!",
+      "alignments": [
+        {
+          "word": "Stop",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "memorizing",
+          "start": 0.534,
+          "end": 1.057
+        },
+        {
+          "word": "the",
+          "start": 1.103,
+          "end": 1.173
+        },
+        {
+          "word": "30-value",
+          "start": 1.242,
+          "end": 1.892
+        },
+        {
+          "word": "Trigonometry",
+          "start": 1.916,
+          "end": 2.554
+        },
+        {
+          "word": "table!",
+          "start": 2.601,
+          "end": 3.019
+        },
+        {
+          "word": "All",
+          "start": 3.402,
+          "end": 3.622
+        },
+        {
+          "word": "you",
+          "start": 3.669,
+          "end": 3.75
+        },
+        {
+          "word": "ever",
+          "start": 3.831,
+          "end": 3.994
+        },
+        {
+          "word": "need",
+          "start": 4.04,
+          "end": 4.191
+        },
+        {
+          "word": "to",
+          "start": 4.226,
+          "end": 4.272
+        },
+        {
+          "word": "find",
+          "start": 4.331,
+          "end": 4.551
+        },
+        {
+          "word": "Sin,",
+          "start": 4.632,
+          "end": 4.911
+        },
+        {
+          "word": "Cos,",
+          "start": 4.969,
+          "end": 5.294
+        },
+        {
+          "word": "and",
+          "start": 5.317,
+          "end": 5.433
+        },
+        {
+          "word": "Tan",
+          "start": 5.515,
+          "end": 5.84
+        },
+        {
+          "word": "is",
+          "start": 5.933,
+          "end": 6.049
+        },
+        {
+          "word": "your",
+          "start": 6.095,
+          "end": 6.211
+        },
+        {
+          "word": "left",
+          "start": 6.269,
+          "end": 6.49
+        },
+        {
+          "word": "hand!",
+          "start": 6.536,
+          "end": 7.245
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "type": "text",
+      "durationInFrames": 379,
+      "content": {
+        "heading": "Assign Hand Angles",
+        "bullets": [
+          "Pinky = 90 degrees (Top)",
+          "Ring = 60 degrees",
+          "Middle = 45 degrees",
+          "Index = 30 degrees",
+          "Thumb = 0 degrees (Bottom)"
+        ],
+        "imageUrl": "images/trig_hand_base.jpg"
+      },
+      "teacherScript": "Hold up your left hand with palm facing you. Assign standard angles: Thumb at 0 degrees, Index at 30, Middle at 45, Ring at 60, and Pinky at 90 degrees!",
+      "alignments": [
+        {
+          "word": "Hold",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "up",
+          "start": 0.279,
+          "end": 0.337
+        },
+        {
+          "word": "your",
+          "start": 0.383,
+          "end": 0.488
+        },
+        {
+          "word": "left",
+          "start": 0.534,
+          "end": 0.708
+        },
+        {
+          "word": "hand",
+          "start": 0.755,
+          "end": 0.882
+        },
+        {
+          "word": "with",
+          "start": 0.929,
+          "end": 1.045
+        },
+        {
+          "word": "palm",
+          "start": 1.08,
+          "end": 1.3
+        },
+        {
+          "word": "facing",
+          "start": 1.358,
+          "end": 1.672
+        },
+        {
+          "word": "you.",
+          "start": 1.73,
+          "end": 1.985
+        },
+        {
+          "word": "Assign",
+          "start": 2.368,
+          "end": 2.775
+        },
+        {
+          "word": "standard",
+          "start": 2.821,
+          "end": 3.17
+        },
+        {
+          "word": "angles:",
+          "start": 3.216,
+          "end": 3.785
+        },
+        {
+          "word": "Thumb",
+          "start": 4.168,
+          "end": 4.47
+        },
+        {
+          "word": "at",
+          "start": 4.528,
+          "end": 4.621
+        },
+        {
+          "word": "0",
+          "start": 4.644,
+          "end": 4.667
+        },
+        {
+          "word": "degrees,",
+          "start": 4.714,
+          "end": 5.399
+        },
+        {
+          "word": "Index",
+          "start": 5.724,
+          "end": 6.142
+        },
+        {
+          "word": "at",
+          "start": 6.2,
+          "end": 6.269
+        },
+        {
+          "word": "30,",
+          "start": 6.327,
+          "end": 6.827
+        },
+        {
+          "word": "Middle",
+          "start": 7.152,
+          "end": 7.454
+        },
+        {
+          "word": "at",
+          "start": 7.488,
+          "end": 7.558
+        },
+        {
+          "word": "45,",
+          "start": 7.616,
+          "end": 8.475
+        },
+        {
+          "word": "Ring",
+          "start": 8.858,
+          "end": 9.033
+        },
+        {
+          "word": "at",
+          "start": 9.079,
+          "end": 9.149
+        },
+        {
+          "word": "60,",
+          "start": 9.23,
+          "end": 9.799
+        },
+        {
+          "word": "and",
+          "start": 10.124,
+          "end": 10.286
+        },
+        {
+          "word": "Pinky",
+          "start": 10.368,
+          "end": 10.704
+        },
+        {
+          "word": "at",
+          "start": 10.762,
+          "end": 10.832
+        },
+        {
+          "word": "90",
+          "start": 10.948,
+          "end": 11.215
+        },
+        {
+          "word": "degrees!",
+          "start": 11.273,
+          "end": 12.121
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "type": "text",
+      "durationInFrames": 495,
+      "content": {
+        "heading": "The 3 Golden Formulas",
+        "bullets": [
+          "Sin theta = sqrt(Fingers on Thumb Side) / 2",
+          "Cos theta = sqrt(Fingers on Pinky Side) / 2",
+          "Tan theta = sqrt(Thumb Side / Pinky Side)"
+        ],
+        "imageUrl": "images/trig_hand_base.jpg"
+      },
+      "teacherScript": "Here are the 3 bulletproof rules: Sin theta is square root of fingers on the Thumb side, divided by 2. Cos theta is square root of fingers on the Pinky side, divided by 2. And Tan theta is Thumb side over Pinky side!",
+      "alignments": [
+        {
+          "word": "Here",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "word": "are",
+          "start": 0.255,
+          "end": 0.372
+        },
+        {
+          "word": "the",
+          "start": 0.406,
+          "end": 0.476
+        },
+        {
+          "word": "3",
+          "start": 0.592,
+          "end": 0.801
+        },
+        {
+          "word": "bulletproof",
+          "start": 0.871,
+          "end": 1.347
+        },
+        {
+          "word": "rules:",
+          "start": 1.405,
+          "end": 1.927
+        },
+        {
+          "word": "Sin",
+          "start": 2.438,
+          "end": 2.682
+        },
+        {
+          "word": "theta",
+          "start": 2.752,
+          "end": 3.053
+        },
+        {
+          "word": "is",
+          "start": 3.135,
+          "end": 3.251
+        },
+        {
+          "word": "square",
+          "start": 3.309,
+          "end": 3.622
+        },
+        {
+          "word": "root",
+          "start": 3.657,
+          "end": 3.82
+        },
+        {
+          "word": "of",
+          "start": 3.866,
+          "end": 3.924
+        },
+        {
+          "word": "fingers",
+          "start": 3.971,
+          "end": 4.272
+        },
+        {
+          "word": "on",
+          "start": 4.331,
+          "end": 4.423
+        },
+        {
+          "word": "the",
+          "start": 4.458,
+          "end": 4.528
+        },
+        {
+          "word": "Thumb",
+          "start": 4.574,
+          "end": 4.795
+        },
+        {
+          "word": "side,",
+          "start": 4.853,
+          "end": 5.375
+        },
+        {
+          "word": "divided",
+          "start": 5.7,
+          "end": 6.107
+        },
+        {
+          "word": "by",
+          "start": 6.153,
+          "end": 6.281
+        },
+        {
+          "word": "2.",
+          "start": 6.351,
+          "end": 6.769
+        },
+        {
+          "word": "Cos",
+          "start": 7.581,
+          "end": 7.86
+        },
+        {
+          "word": "theta",
+          "start": 7.941,
+          "end": 8.231
+        },
+        {
+          "word": "is",
+          "start": 8.313,
+          "end": 8.417
+        },
+        {
+          "word": "square",
+          "start": 8.464,
+          "end": 8.766
+        },
+        {
+          "word": "root",
+          "start": 8.789,
+          "end": 8.951
+        },
+        {
+          "word": "of",
+          "start": 8.986,
+          "end": 9.044
+        },
+        {
+          "word": "fingers",
+          "start": 9.102,
+          "end": 9.439
+        },
+        {
+          "word": "on",
+          "start": 9.497,
+          "end": 9.601
+        },
+        {
+          "word": "the",
+          "start": 9.648,
+          "end": 9.718
+        },
+        {
+          "word": "Pinky",
+          "start": 9.776,
+          "end": 10.112
+        },
+        {
+          "word": "side,",
+          "start": 10.182,
+          "end": 10.635
+        },
+        {
+          "word": "divided",
+          "start": 10.786,
+          "end": 11.238
+        },
+        {
+          "word": "by",
+          "start": 11.296,
+          "end": 11.413
+        },
+        {
+          "word": "2.",
+          "start": 11.494,
+          "end": 11.947
+        },
+        {
+          "word": "And",
+          "start": 12.457,
+          "end": 12.632
+        },
+        {
+          "word": "Tan",
+          "start": 12.713,
+          "end": 13.003
+        },
+        {
+          "word": "theta",
+          "start": 13.084,
+          "end": 13.386
+        },
+        {
+          "word": "is",
+          "start": 13.468,
+          "end": 13.607
+        },
+        {
+          "word": "Thumb",
+          "start": 13.7,
+          "end": 14.002
+        },
+        {
+          "word": "side",
+          "start": 14.083,
+          "end": 14.431
+        },
+        {
+          "word": "over",
+          "start": 14.512,
+          "end": 14.849
+        },
+        {
+          "word": "Pinky",
+          "start": 14.919,
+          "end": 15.255
+        },
+        {
+          "word": "side!",
+          "start": 15.325,
+          "end": 15.975
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "type": "text",
+      "durationInFrames": 492,
+      "content": {
+        "heading": "Example 1: Sin(30°)",
+        "bullets": [
+          "Fold 30 degree Index finger",
+          "Count towards 0° Thumb side -> 1 finger",
+          "Sin(30°) = sqrt(1)/2 = 1/2"
+        ],
+        "imageUrl": "images/trig_hand_index_folded.jpg"
+      },
+      "teacherScript": "Let's test it! Find Sin 30 degrees. Fold down your 30 degree Index finger. Look towards the 0-degree Thumb side... there's just 1 finger! So Sin 30 degrees is square root of 1 over 2, which equals one-half! Boom!",
+      "alignments": [
+        {
+          "word": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "test",
+          "start": 0.279,
+          "end": 0.522
+        },
+        {
+          "word": "it!",
+          "start": 0.58,
+          "end": 0.859
+        },
+        {
+          "word": "Find",
+          "start": 1.463,
+          "end": 1.776
+        },
+        {
+          "word": "Sin",
+          "start": 1.858,
+          "end": 2.101
+        },
+        {
+          "word": "30",
+          "start": 2.218,
+          "end": 2.461
+        },
+        {
+          "word": "degrees.",
+          "start": 2.519,
+          "end": 3.135
+        },
+        {
+          "word": "Fold",
+          "start": 3.576,
+          "end": 3.843
+        },
+        {
+          "word": "down",
+          "start": 3.889,
+          "end": 4.075
+        },
+        {
+          "word": "your",
+          "start": 4.122,
+          "end": 4.238
+        },
+        {
+          "word": "30",
+          "start": 4.296,
+          "end": 4.528
+        },
+        {
+          "word": "degree",
+          "start": 4.586,
+          "end": 4.865
+        },
+        {
+          "word": "Index",
+          "start": 4.923,
+          "end": 5.224
+        },
+        {
+          "word": "finger.",
+          "start": 5.283,
+          "end": 5.7
+        },
+        {
+          "word": "Look",
+          "start": 6.026,
+          "end": 6.211
+        },
+        {
+          "word": "towards",
+          "start": 6.269,
+          "end": 6.525
+        },
+        {
+          "word": "the",
+          "start": 6.56,
+          "end": 6.629
+        },
+        {
+          "word": "0-degree",
+          "start": 6.722,
+          "end": 7.326
+        },
+        {
+          "word": "Thumb",
+          "start": 7.396,
+          "end": 7.651
+        },
+        {
+          "word": "side...",
+          "start": 7.709,
+          "end": 8.266
+        },
+        {
+          "word": "there's",
+          "start": 8.649,
+          "end": 8.858
+        },
+        {
+          "word": "just",
+          "start": 8.893,
+          "end": 9.056
+        },
+        {
+          "word": "1",
+          "start": 9.172,
+          "end": 9.381
+        },
+        {
+          "word": "finger!",
+          "start": 9.532,
+          "end": 10.066
+        },
+        {
+          "word": "So",
+          "start": 10.24,
+          "end": 10.403
+        },
+        {
+          "word": "Sin",
+          "start": 10.495,
+          "end": 10.716
+        },
+        {
+          "word": "30",
+          "start": 10.786,
+          "end": 11.029
+        },
+        {
+          "word": "degrees",
+          "start": 11.088,
+          "end": 11.413
+        },
+        {
+          "word": "is",
+          "start": 11.459,
+          "end": 11.529
+        },
+        {
+          "word": "square",
+          "start": 11.587,
+          "end": 11.877
+        },
+        {
+          "word": "root",
+          "start": 11.912,
+          "end": 12.086
+        },
+        {
+          "word": "of",
+          "start": 12.144,
+          "end": 12.214
+        },
+        {
+          "word": "1",
+          "start": 12.295,
+          "end": 12.469
+        },
+        {
+          "word": "over",
+          "start": 12.527,
+          "end": 12.69
+        },
+        {
+          "word": "2,",
+          "start": 12.748,
+          "end": 13.131
+        },
+        {
+          "word": "which",
+          "start": 13.282,
+          "end": 13.468
+        },
+        {
+          "word": "equals",
+          "start": 13.514,
+          "end": 13.781
+        },
+        {
+          "word": "one-half!",
+          "start": 13.851,
+          "end": 14.617
+        },
+        {
+          "word": "Boom!",
+          "start": 15.128,
+          "end": 15.882
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "type": "text",
+      "durationInFrames": 417,
+      "content": {
+        "heading": "Example 2: Cos(60°)",
+        "bullets": [
+          "Fold 60 degree Ring finger",
+          "Count towards 90° Pinky side -> 1 finger",
+          "Cos(60°) = sqrt(1)/2 = 1/2"
+        ],
+        "imageUrl": "images/trig_hand_ring_folded.jpg"
+      },
+      "teacherScript": "What about Cos 60 degrees? Fold your 60 degree Ring finger. Look towards the 90-degree Pinky side... there's just 1 finger, the Pinky! So Cos 60 degrees is square root of 1 over 2, which equals one-half!",
+      "alignments": [
+        {
+          "word": "What",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "about",
+          "start": 0.197,
+          "end": 0.372
+        },
+        {
+          "word": "Cos",
+          "start": 0.418,
+          "end": 0.662
+        },
+        {
+          "word": "60",
+          "start": 0.743,
+          "end": 1.01
+        },
+        {
+          "word": "degrees?",
+          "start": 1.068,
+          "end": 1.637
+        },
+        {
+          "word": "Fold",
+          "start": 1.962,
+          "end": 2.229
+        },
+        {
+          "word": "your",
+          "start": 2.276,
+          "end": 2.392
+        },
+        {
+          "word": "60",
+          "start": 2.461,
+          "end": 2.786
+        },
+        {
+          "word": "degree",
+          "start": 2.844,
+          "end": 3.111
+        },
+        {
+          "word": "Ring",
+          "start": 3.17,
+          "end": 3.332
+        },
+        {
+          "word": "finger.",
+          "start": 3.413,
+          "end": 3.831
+        },
+        {
+          "word": "Look",
+          "start": 4.005,
+          "end": 4.191
+        },
+        {
+          "word": "towards",
+          "start": 4.249,
+          "end": 4.493
+        },
+        {
+          "word": "the",
+          "start": 4.528,
+          "end": 4.598
+        },
+        {
+          "word": "90-degree",
+          "start": 4.679,
+          "end": 5.224
+        },
+        {
+          "word": "Pinky",
+          "start": 5.271,
+          "end": 5.561
+        },
+        {
+          "word": "side...",
+          "start": 5.608,
+          "end": 6.026
+        },
+        {
+          "word": "there's",
+          "start": 6.269,
+          "end": 6.467
+        },
+        {
+          "word": "just",
+          "start": 6.49,
+          "end": 6.641
+        },
+        {
+          "word": "1",
+          "start": 6.722,
+          "end": 6.931
+        },
+        {
+          "word": "finger,",
+          "start": 7.047,
+          "end": 7.349
+        },
+        {
+          "word": "the",
+          "start": 7.372,
+          "end": 7.442
+        },
+        {
+          "word": "Pinky!",
+          "start": 7.523,
+          "end": 8.115
+        },
+        {
+          "word": "So",
+          "start": 8.324,
+          "end": 8.487
+        },
+        {
+          "word": "Cos",
+          "start": 8.557,
+          "end": 8.8
+        },
+        {
+          "word": "60",
+          "start": 8.87,
+          "end": 9.195
+        },
+        {
+          "word": "degrees",
+          "start": 9.253,
+          "end": 9.567
+        },
+        {
+          "word": "is",
+          "start": 9.613,
+          "end": 9.683
+        },
+        {
+          "word": "square",
+          "start": 9.752,
+          "end": 10.077
+        },
+        {
+          "word": "root",
+          "start": 10.112,
+          "end": 10.298
+        },
+        {
+          "word": "of",
+          "start": 10.356,
+          "end": 10.426
+        },
+        {
+          "word": "1",
+          "start": 10.542,
+          "end": 10.716
+        },
+        {
+          "word": "over",
+          "start": 10.797,
+          "end": 10.96
+        },
+        {
+          "word": "2,",
+          "start": 11.029,
+          "end": 11.413
+        },
+        {
+          "word": "which",
+          "start": 11.587,
+          "end": 11.773
+        },
+        {
+          "word": "equals",
+          "start": 11.819,
+          "end": 12.109
+        },
+        {
+          "word": "one-half!",
+          "start": 12.225,
+          "end": 13.375
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-05.mp3"
+    },
+    {
+      "id": "scene-06",
+      "type": "text",
+      "durationInFrames": 404,
+      "content": {
+        "heading": "Example 3: Tan(45°)",
+        "bullets": [
+          "Fold 45 degree Middle finger",
+          "2 fingers on Thumb side, 2 on Pinky side",
+          "Tan(45°) = sqrt(2/2) = 1"
+        ],
+        "imageUrl": "images/trig_hand_middle_folded.jpg"
+      },
+      "teacherScript": "Now the magic trick: Tan 45 degrees! Fold your Middle finger. You have 2 fingers on the Thumb side, and 2 fingers on the Pinky side. Square root of 2 over 2 is square root of 1, which equals 1!",
+      "alignments": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "the",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "word": "magic",
+          "start": 0.36,
+          "end": 0.639
+        },
+        {
+          "word": "trick:",
+          "start": 0.685,
+          "end": 1.138
+        },
+        {
+          "word": "Tan",
+          "start": 1.579,
+          "end": 1.916
+        },
+        {
+          "word": "45",
+          "start": 2.009,
+          "end": 2.508
+        },
+        {
+          "word": "degrees!",
+          "start": 2.566,
+          "end": 3.193
+        },
+        {
+          "word": "Fold",
+          "start": 3.704,
+          "end": 3.959
+        },
+        {
+          "word": "your",
+          "start": 4.005,
+          "end": 4.098
+        },
+        {
+          "word": "Middle",
+          "start": 4.133,
+          "end": 4.354
+        },
+        {
+          "word": "finger.",
+          "start": 4.4,
+          "end": 4.795
+        },
+        {
+          "word": "You",
+          "start": 5.004,
+          "end": 5.12
+        },
+        {
+          "word": "have",
+          "start": 5.178,
+          "end": 5.306
+        },
+        {
+          "word": "2",
+          "start": 5.364,
+          "end": 5.538
+        },
+        {
+          "word": "fingers",
+          "start": 5.619,
+          "end": 5.909
+        },
+        {
+          "word": "on",
+          "start": 5.944,
+          "end": 6.002
+        },
+        {
+          "word": "the",
+          "start": 6.026,
+          "end": 6.095
+        },
+        {
+          "word": "Thumb",
+          "start": 6.13,
+          "end": 6.327
+        },
+        {
+          "word": "side,",
+          "start": 6.385,
+          "end": 6.827
+        },
+        {
+          "word": "and",
+          "start": 7.07,
+          "end": 7.221
+        },
+        {
+          "word": "2",
+          "start": 7.314,
+          "end": 7.488
+        },
+        {
+          "word": "fingers",
+          "start": 7.57,
+          "end": 7.872
+        },
+        {
+          "word": "on",
+          "start": 7.918,
+          "end": 7.976
+        },
+        {
+          "word": "the",
+          "start": 8.011,
+          "end": 8.081
+        },
+        {
+          "word": "Pinky",
+          "start": 8.115,
+          "end": 8.394
+        },
+        {
+          "word": "side.",
+          "start": 8.452,
+          "end": 8.893
+        },
+        {
+          "word": "Square",
+          "start": 9.218,
+          "end": 9.555
+        },
+        {
+          "word": "root",
+          "start": 9.59,
+          "end": 9.764
+        },
+        {
+          "word": "of",
+          "start": 9.81,
+          "end": 9.868
+        },
+        {
+          "word": "2",
+          "start": 9.961,
+          "end": 10.136
+        },
+        {
+          "word": "over",
+          "start": 10.217,
+          "end": 10.379
+        },
+        {
+          "word": "2",
+          "start": 10.449,
+          "end": 10.623
+        },
+        {
+          "word": "is",
+          "start": 10.693,
+          "end": 10.774
+        },
+        {
+          "word": "square",
+          "start": 10.832,
+          "end": 11.111
+        },
+        {
+          "word": "root",
+          "start": 11.146,
+          "end": 11.296
+        },
+        {
+          "word": "of",
+          "start": 11.331,
+          "end": 11.389
+        },
+        {
+          "word": "1,",
+          "start": 11.471,
+          "end": 11.703
+        },
+        {
+          "word": "which",
+          "start": 11.738,
+          "end": 11.9
+        },
+        {
+          "word": "equals",
+          "start": 11.947,
+          "end": 12.237
+        },
+        {
+          "word": "1!",
+          "start": 12.307,
+          "end": 12.957
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-06.mp3"
+    },
+    {
+      "id": "scene-07",
+      "type": "kinetic_typography",
+      "durationInFrames": 316,
+      "content": {
+        "text": "What is Sin 60°? Drop your answer in comments below!"
+      },
+      "teacherScript": "That's it! You've hacked the entire trig table in under a minute! Now test your brain: What is Sin 60 degrees? Drop your answer in the comments below!",
+      "alignments": [
+        {
+          "word": "That's",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "word": "it!",
+          "start": 0.36,
+          "end": 0.708
+        },
+        {
+          "word": "You've",
+          "start": 1.312,
+          "end": 1.556
+        },
+        {
+          "word": "hacked",
+          "start": 1.579,
+          "end": 1.811
+        },
+        {
+          "word": "the",
+          "start": 1.846,
+          "end": 1.916
+        },
+        {
+          "word": "entire",
+          "start": 1.962,
+          "end": 2.357
+        },
+        {
+          "word": "trig",
+          "start": 2.403,
+          "end": 2.635
+        },
+        {
+          "word": "table",
+          "start": 2.694,
+          "end": 2.984
+        },
+        {
+          "word": "in",
+          "start": 3.03,
+          "end": 3.111
+        },
+        {
+          "word": "under",
+          "start": 3.193,
+          "end": 3.379
+        },
+        {
+          "word": "a",
+          "start": 3.425,
+          "end": 3.448
+        },
+        {
+          "word": "minute!",
+          "start": 3.495,
+          "end": 3.913
+        },
+        {
+          "word": "Now",
+          "start": 4.354,
+          "end": 4.505
+        },
+        {
+          "word": "test",
+          "start": 4.563,
+          "end": 4.76
+        },
+        {
+          "word": "your",
+          "start": 4.807,
+          "end": 4.899
+        },
+        {
+          "word": "brain:",
+          "start": 4.934,
+          "end": 5.352
+        },
+        {
+          "word": "What",
+          "start": 5.677,
+          "end": 5.898
+        },
+        {
+          "word": "is",
+          "start": 5.979,
+          "end": 6.142
+        },
+        {
+          "word": "Sin",
+          "start": 6.211,
+          "end": 6.467
+        },
+        {
+          "word": "60",
+          "start": 6.641,
+          "end": 6.966
+        },
+        {
+          "word": "degrees?",
+          "start": 7.024,
+          "end": 7.639
+        },
+        {
+          "word": "Drop",
+          "start": 8.022,
+          "end": 8.278
+        },
+        {
+          "word": "your",
+          "start": 8.324,
+          "end": 8.44
+        },
+        {
+          "word": "answer",
+          "start": 8.499,
+          "end": 8.742
+        },
+        {
+          "word": "in",
+          "start": 8.789,
+          "end": 8.847
+        },
+        {
+          "word": "the",
+          "start": 8.87,
+          "end": 8.94
+        },
+        {
+          "word": "comments",
+          "start": 8.975,
+          "end": 9.288
+        },
+        {
+          "word": "below!",
+          "start": 9.323,
+          "end": 10.031
+        }
+      ],
+      "audio": "/audio/maths/maths_trigonometry_hand_trick_short_scene-07.mp3"
+    }
+  ]
+}

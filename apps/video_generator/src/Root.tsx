@@ -18,6 +18,7 @@ import { ReelComposition } from "./components/ReelComposition";
 
 import mathsLighthouseMasterclass from "./data/maths/01_trigonometry_lighthouse.json";
 import mathsLighthouseShort from "./data/maths/02_trigonometry_lighthouse_short.json";
+import mathsTrigHandTrickShort from "./data/maths/04_trigonometry_hand_trick_short.json";
 
 export const RemotionRoot: React.FC = () => {
   // Helper to calculate true duration by accounting for the 15-frame overlaps in TransitionSeries
@@ -38,6 +39,7 @@ export const RemotionRoot: React.FC = () => {
 
   const mathsMasterclassDuration = getActualDuration(mathsLighthouseMasterclass as unknown as VideoData);
   const mathsShortDuration = getActualDuration(mathsLighthouseShort as unknown as VideoData);
+  const mathsHandTrickDuration = getActualDuration(mathsTrigHandTrickShort as unknown as VideoData);
 
   return (
     <>
@@ -121,6 +123,16 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         schema={VideoSchema}
         defaultProps={mathsLighthouseShort as unknown as VideoData}
+      />
+      <Composition
+        id="MathsTrigHandTrickShort"
+        component={ReelComposition}
+        durationInFrames={mathsHandTrickDuration}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={VideoSchema}
+        defaultProps={mathsTrigHandTrickShort as unknown as VideoData}
       />
       <Composition
         id="ScienceCh1Full"

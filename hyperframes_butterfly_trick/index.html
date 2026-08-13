@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Method for Fractions - HyperFrames</title>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <style>
+    /* ChapterReady Platform Theme Tokens */
+    :root {
+      --background: #f4ede2;
+      --foreground: #181612;
+      --muted: #6f665c;
+      --card: #fffdf8;
+      --card-soft: #fff3df;
+      --border: #d9c7b4;
+      --primary: #f3883b;
+      --primary-strong: #bd4f10;
+      --primary-dark: #a5450e;
+      --primary-light: #ffb06c;
+      --accent-orange: #ffad68;
+      --accent-pink: #c9512c;
+      --radius: 24px;
+      --shadow-mid: 0 15px 34px rgba(67, 45, 24, 0.12), 0 2px 0 rgba(24, 22, 18, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--background);
+      font-family: 'Outfit', sans-serif;
+      color: var(--foreground);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Composition Root */
+    .composition-root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      background-color: var(--background);
+      overflow: hidden;
+    }
+
+    /* Full bleed child background */
+    .bg-canvas {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, #fff7ec 0%, #f4ede2 100%);
+    }
+
+    /* Decorative background circles */
+    .bg-decor {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: rgba(243, 136, 59, 0.04);
+      top: -200px;
+      right: -200px;
+    }
+
+    /* Scene Clips Container */
+    .clip {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+
+    /* Typography */
+    .header-badge {
+      background: var(--card-soft);
+      border: 2px solid var(--primary-light);
+      color: var(--primary-strong);
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 32px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(243, 136, 59, 0.15);
+    }
+
+    .main-title {
+      font-size: 72px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--foreground);
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    .title-highlight {
+      color: var(--primary-strong);
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Bento Cards */
+    .bento-card {
+      background: var(--card);
+      border: 3px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-mid);
+      padding: 50px;
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Fraction Styles */
+    .fraction-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 110px;
+      font-weight: bold;
+      color: var(--foreground);
+      position: relative;
+      padding: 40px;
+    }
+
+    .fraction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .fraction-num {
+      padding: 10px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fraction-line {
+      width: 120px;
+      height: 8px;
+      background-color: var(--foreground);
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .fraction-den {
+      padding: 10px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .operator {
+      font-size: 90px;
+      color: var(--primary-dark);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+    }
+
+    /* SVG Overlay Layer for Butterfly Wings & Antenna */
+    .svg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+
+    /* Antenna Badges */
+    .antenna-badge {
+      position: absolute;
+      background: var(--primary-strong);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 10px 24px rgba(189, 79, 16, 0.3);
+      border: 4px solid #ffffff;
+      z-index: 10;
+    }
+
+    /* Bottom Body Badge */
+    .body-badge {
+      position: absolute;
+      background: var(--primary-strong);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      padding: 16px 40px;
+      border-radius: 60px;
+      box-shadow: 0 12px 28px rgba(189, 79, 16, 0.35);
+      border: 4px solid #ffffff;
+      z-index: 10;
+    }
+
+    /* Final Result Highlight Card */
+    .result-card {
+      background: var(--card-soft);
+      border: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 40px 60px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      box-shadow: var(--shadow-mid);
+    }
+
+    .result-text {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--primary-strong);
+    }
+
+    .result-fraction {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 130px;
+      font-weight: bold;
+      color: var(--foreground);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .result-line {
+      width: 160px;
+      height: 10px;
+      background-color: var(--primary-strong);
+      border-radius: 5px;
+      margin: 8px 0;
+    }
+
+    /* Victory Stamp */
+    .stamp-badge {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      background: var(--primary-strong);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 36px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      transform: rotate(12deg);
+      box-shadow: 0 12px 30px rgba(189, 79, 16, 0.4);
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Standalone Composition Root -->
+  <div data-composition-id="butterfly_trick" data-width="1080" data-height="1920" data-fps="30" data-duration="42" data-start="0" class="composition-root">
+    
+    <!-- Audio track for narration -->
+    <audio id="butterfly-narration" src="audio/butterfly_narration.mp3" data-src="audio/butterfly_narration.mp3" data-start="0" data-volume="1.0"></audio>
+
+    <!-- Background Music Audio -->
+    <audio id="bgm-music" src="audio/bgm.mp3" data-src="audio/bgm.mp3" data-start="0" data-volume="0.18" data-loop="true"></audio>
+
+    <!-- Full-bleed Background Child -->
+    <div class="bg-canvas">
+      <div id="bg-decor" class="bg-decor"></div>
+    </div>
+
+    <!-- TRACK 0: MAIN STORY SCENE -->
+    <div id="scene-clip-0" data-track-index="0" class="clip">
+
+      <!-- HEADER BADGE -->
+      <div id="header-badge" class="header-badge">5-Second Math Cheat Code 🦋</div>
+      <h1 id="main-title" class="main-title">The <span class="title-highlight">Butterfly Method</span><br>For Fractions</h1>
+
+      <!-- MAIN WORKSPACE BENTO CARD -->
+      <div id="bento-card" class="bento-card">
+        
+        <!-- VICTORY STAMP -->
+        <div id="stamp-badge" data-layout-allow-overlap="true" class="stamp-badge" style="opacity: 0; transform: scale(0) rotate(12deg);">5 SECONDS! 💥</div>
+
+        <!-- FRACTION EQUATION -->
+        <div data-layout-allow-occlusion="true" class="fraction-container">
+          <!-- Fraction 1: 3/4 -->
+          <div class="fraction">
+            <div id="num1" class="fraction-num">3</div>
+            <div class="fraction-line"></div>
+            <div id="den1" class="fraction-den">4</div>
+          </div>
+
+          <div class="operator" style="color: #a5450e;">+</div>
+
+          <!-- Fraction 2: 2/5 -->
+          <div class="fraction">
+            <div id="num2" class="fraction-num">2</div>
+            <div class="fraction-line"></div>
+            <div id="den2" class="fraction-den">5</div>
+          </div>
+        </div>
+
+        <!-- SVG WINGS AND ANTENNA LAYER -->
+        <svg id="svg-layer" class="svg-layer" viewBox="0 0 860 500">
+          <defs>
+            <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f3883b" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#ffb06c" stop-opacity="0.85" />
+            </linearGradient>
+          </defs>
+
+          <!-- Wing 1 (Diagonal Left: 3 to 5) -->
+          <ellipse id="wing1" cx="300" cy="250" rx="140" ry="210" transform="rotate(-38 300 250)" fill="url(#wingGrad)" stroke="#bd4f10" stroke-width="6" style="opacity: 0; transform-origin: 300px 250px;" />
+
+          <!-- Wing 2 (Diagonal Right: 2 to 4) -->
+          <ellipse id="wing2" cx="560" cy="250" rx="140" ry="210" transform="rotate(38 560 250)" fill="url(#wingGrad)" stroke="#bd4f10" stroke-width="6" style="opacity: 0; transform-origin: 560px 250px;" />
+
+          <!-- Left Antenna Line -->
+          <path id="antenna-left" d="M 230 110 Q 180 50 150 20" fill="none" stroke="#bd4f10" stroke-width="6" stroke-linecap="round" style="opacity: 0;" />
+          
+          <!-- Right Antenna Line -->
+          <path id="antenna-right" d="M 630 110 Q 680 50 710 20" fill="none" stroke="#bd4f10" stroke-width="6" stroke-linecap="round" style="opacity: 0;" />
+
+          <!-- Bottom Body Loop -->
+          <path id="body-loop" d="M 250 370 Q 430 450 610 370" fill="none" stroke="#bd4f10" stroke-width="8" stroke-dasharray="12 8" style="opacity: 0;" />
+        </svg>
+
+        <!-- ANTENNA PRODUCT BADGES -->
+        <div id="badge-left" data-layout-allow-occlusion="true" class="antenna-badge" style="top: -20px; left: 60px; opacity: 0; transform: scale(0);">15</div>
+        <div id="badge-right" data-layout-allow-occlusion="true" class="antenna-badge" style="top: -20px; right: 60px; opacity: 0; transform: scale(0);">8</div>
+
+        <!-- BOTTOM BODY PRODUCT BADGE -->
+        <div id="badge-bottom" class="body-badge" style="bottom: -40px; opacity: 0; transform: scale(0);">20</div>
+
+      </div>
+
+      <!-- FINAL RESULT CARD -->
+      <div id="result-card" class="result-card" style="opacity: 0; transform: translateY(40px);">
+        <div class="result-text">Answer =</div>
+        <div class="result-fraction">
+          <div>23</div>
+          <div class="result-line"></div>
+          <div>20</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TIMELINE & ANIMATION SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Register exactly ONE paused timeline
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["butterfly_trick"] = tl;
+
+      // SCENE ANIMATION CHOREOGRAPHY
+      
+      // Phase 1: Intro pop-in (0s - 3s)
+      tl.fromTo("#header-badge", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)" }, 0.2)
+        .fromTo("#main-title", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, 0.5)
+        .fromTo("#bento-card", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.0, ease: "back.out(1.4)" }, 0.8);
+
+      // Phase 2: Wing 1 — Left Diagonal (3 x 5 = 15) (4s - 8s)
+      tl.to("#wing1", { opacity: 0.85, scale: 1, duration: 1.0, ease: "power2.out" }, 4.0)
+        .to("#antenna-left", { opacity: 1, duration: 0.6 }, 4.8)
+        .fromTo("#badge-left", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(2)" }, 5.2);
+
+      // Phase 3: Wing 2 — Right Diagonal (2 x 4 = 8) (9s - 13s)
+      tl.to("#wing2", { opacity: 0.85, scale: 1, duration: 1.0, ease: "power2.out" }, 9.0)
+        .to("#antenna-right", { opacity: 1, duration: 0.6 }, 9.8)
+        .fromTo("#badge-right", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(2)" }, 10.2);
+
+      // Phase 4: Bottom Body (4 x 5 = 20) (14s - 18s)
+      tl.to("#body-loop", { opacity: 1, duration: 1.0, ease: "power2.out" }, 14.0)
+        .fromTo("#badge-bottom", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(2)" }, 14.8);
+
+      // Phase 5: Solve & Merge (15 + 8 = 23 over 20) (19s - 25s)
+      tl.fromTo("#result-card", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "back.out(1.7)" }, 19.0)
+        .fromTo("#stamp-badge", { scale: 0, opacity: 0, rotation: 30 }, { scale: 1, opacity: 1, rotation: 12, duration: 0.8, ease: "back.out(2.5)" }, 20.5);
+
+      // Final hold (25s - 40s)
+    });
+  </script>
+</body>
+</html>

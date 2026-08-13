@@ -1,13 +1,13 @@
 {
   "id": "maths_trigonometry_lighthouse_short",
   "title": "Angle of Depression Board Exam Trick",
-  "durationInFrames": 1126,
+  "durationInFrames": 1123,
   "fps": 30,
   "scenes": [
     {
       "id": "scene-01",
       "type": "title",
-      "durationInFrames": 168,
+      "durationInFrames": 167,
       "content": {
         "text": "Board Exam Trick!",
         "subtitle": "Angle of Depression (The Z-Rule)"
@@ -95,7 +95,7 @@
     {
       "id": "scene-02",
       "type": "trigonometry",
-      "durationInFrames": 614,
+      "durationInFrames": 613,
       "content": {
         "title": "The Z-Trick",
         "variant": "lighthouse_abstract"
@@ -408,7 +408,7 @@
     {
       "id": "scene-03",
       "type": "trigonometry",
-      "durationInFrames": 344,
+      "durationInFrames": 343,
       "content": {
         "title": "Proximity Rule",
         "variant": "lighthouse_abstract"

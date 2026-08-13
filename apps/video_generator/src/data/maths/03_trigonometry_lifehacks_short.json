@@ -1,7 +1,7 @@
 {
   "id": "maths_trigonometry_lifehacks_short",
   "title": "Trigonometry Life Hacks",
-  "durationInFrames": 2032,
+  "durationInFrames": 2029,
   "fps": 30,
   "scenes": [
     {
@@ -189,7 +189,7 @@
           "end": 21.223
         }
       ],
-      "durationInFrames": 653,
+      "durationInFrames": 652,
       "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-01.mp3"
     },
     {
@@ -386,7 +386,7 @@
           "end": 15.464
         }
       ],
-      "durationInFrames": 480,
+      "durationInFrames": 479,
       "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-02.mp3"
     },
     {
@@ -678,7 +678,7 @@
           "end": 21.78
         }
       ],
-      "durationInFrames": 670,
+      "durationInFrames": 669,
       "audio": "/audio/maths/maths_trigonometry_lifehacks_short_scene-03.mp3"
     },
     {
