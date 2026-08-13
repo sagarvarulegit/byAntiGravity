@@ -1,0 +1,4 @@
+# HyperFrames video generation local output & temp files
+out/*.mp4
+out/work-*
+out/.*.hf-transaction-*

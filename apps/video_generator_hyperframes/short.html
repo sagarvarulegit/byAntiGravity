@@ -5,9 +5,10 @@
   <title>Trigonometry Life Hacks - Short</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
-    body { margin: 0; background: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Outfit', sans-serif; }
-    #hyperframes-root { width: 1080px; height: 1920px; background: #0a0a0a; position: relative; overflow: hidden; color: white; }
-    .scene { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    body { margin: 0; background: #0a0a0a; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Outfit', sans-serif; }
+    #root { width: 1080px; height: 1920px; background: #0a0a0a; position: absolute; inset: 0; overflow: hidden; color: white; }
+    .scene { position: absolute; width: 1080px; height: 1920px; top: 0; left: 0; opacity: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+    .clip { visibility: hidden; }
     .title { font-size: 80px; font-weight: 900; color: #FBBF24; text-align: center; text-transform: uppercase; margin-bottom: 20px; }
     
     /* Scene 1: SOH CAH TOA */
@@ -24,21 +25,20 @@
     /* Scene 3: Diagram */
     .svg-container { position: absolute; top: 25%; left: 10%; width: 80%; height: 50%; }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 </head>
 <body>
 
-  <div id="hyperframes-root">
+  <div id="root" data-composition-id="trigonometry_short" data-width="1080" data-height="1920" data-start="0" data-duration="66">
     
-    <!-- Audio Tracks -->
-    <audio id="audio-bg" src="public/audio/maths/educational_upbeat.mp3" loop></audio>
-    <audio id="audio-1" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-01.mp3" data-start="0" data-duration="21.3" data-track-index="1"></audio>
-    <audio id="audio-2" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-02.mp3" data-start="21.3" data-duration="15.5" data-track-index="2"></audio>
-    <audio id="audio-3" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-03.mp3" data-start="36.8" data-duration="21.8" data-track-index="3"></audio>
-    <audio id="audio-4" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-04.mp3" data-start="58.6" data-duration="7.1" data-track-index="4"></audio>
+    <!-- Audio Tracks (No Background Music) -->
+    <audio data-hf-id="hf-a1" id="audio-1" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-01.mp3" data-start="0" data-duration="21.3" data-track-index="10"></audio>
+    <audio data-hf-id="hf-a2" id="audio-2" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-02.mp3" data-start="21.3" data-duration="15.5" data-track-index="11"></audio>
+    <audio data-hf-id="hf-a3" id="audio-3" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-03.mp3" data-start="36.8" data-duration="21.8" data-track-index="12"></audio>
+    <audio data-hf-id="hf-a4" id="audio-4" src="public/audio/maths/maths_trigonometry_lifehacks_short_scene-04.mp3" data-start="58.6" data-duration="7.1" data-track-index="13"></audio>
 
     <!-- Scene 1: SOH CAH TOA -->
-    <div class="scene" id="scene-1">
+    <div class="scene clip" id="scene-1" data-start="0" data-duration="21.3" data-track-index="1">
       <div class="title s1-title">Trigonometry<br>Life Hacks!</div>
       <div class="soh-box s1-soh" style="opacity:0; transform: translateY(50px);">
         <div class="soh-title">SO</div>
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Scene 2: Table Hack -->
-    <div class="scene" id="scene-2">
+    <div class="scene clip" id="scene-2" data-start="21.3" data-duration="15.5" data-track-index="1">
       <div class="title s2-title">The Table Hack</div>
       <table class="s2-table">
         <tr>
@@ -77,7 +77,7 @@
     </div>
 
     <!-- Scene 3: Elevation vs Depression -->
-    <div class="scene" id="scene-3">
+    <div class="scene clip" id="scene-3" data-start="36.8" data-duration="21.8" data-track-index="1">
       <div class="title s3-title" style="position: absolute; top: 80px; width: 100%;">Elevation vs Depression</div>
       
       <div class="svg-container">
@@ -114,10 +114,10 @@
     </div>
 
     <!-- Scene 4: Outro -->
-    <div class="scene" id="scene-4" style="background: #111;">
+    <div class="scene clip" id="scene-4" data-start="58.6" data-duration="7.4" data-track-index="1" style="background: #111;">
       <div class="title s4-title" style="font-size:120px; line-height:1.1;">WANT MORE<br>CHEAT CODES?</div>
       <div class="s4-cta" style="opacity:0; transform:scale(0.8); margin-top:80px; padding:50px 80px; background:#FBBF24; color:#000; font-size:75px; font-weight:900; border-radius:40px;">
-        Watch the Full Boss Fight ➔
+        Watch Full Video in Description 👇
       </div>
     </div>
 
@@ -125,8 +125,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    window.__timelines.main = gsap.timeline({ paused: true });
-    const tl = window.__timelines.main;
+    var tl = gsap.timeline({ paused: true });
 
     // SCENE 1: SOH CAH TOA
     tl.fromTo("#scene-1", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
@@ -204,24 +203,17 @@
     // Keep it alive till end
     tl.set({}, {}, 66.0);
 
-    // Auto-play for direct browser preview (Requires interaction to unlock audio)
-    const overlay = document.createElement('div');
-    overlay.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.8);color:#FBBF24;display:flex;align-items:center;justify-content:center;font-size:80px;font-weight:bold;z-index:9999;cursor:pointer;';
-    overlay.innerText = 'Click to Play ▶';
-    document.getElementById('hyperframes-root').appendChild(overlay);
+    // Register timelines for HyperFrames player
+    window.__timelines.trigonometry_short = tl;
+    window.__timelines.main = tl;
 
-    overlay.addEventListener('click', () => {
-      overlay.remove();
+    // Auto-play for direct browser preview
+    if (!window.__hyperframes && !navigator.userAgent.includes("Headless")) {
       document.querySelectorAll('audio').forEach(a => {
-        if (a.id === 'audio-bg') {
-          a.volume = 0.15; // Ducked volume for background music
-          a.play().catch(e => console.log('Audio error:', e));
-        } else {
-          setTimeout(() => a.play().catch(e => console.log('Audio error:', e)), parseFloat(a.dataset.start) * 1000);
-        }
+        setTimeout(() => a.play().catch(e => console.log('Audio error:', e)), parseFloat(a.dataset.start) * 1000);
       });
       tl.play();
-    });
+    }
   </script>
 </body>
 </html>
