@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Physics Light Sign Convention Trick - ChapterReady</title>
+  
+  <!-- Google Fonts: Outfit & EB Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,500&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- GSAP Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #f4ede2;
+      font-family: 'Outfit', sans-serif;
+      color: #181612;
+      overflow: hidden;
+      width: 1080px;
+      height: 1920px;
+    }
+
+    /* Standard HyperFrames Root Layer */
+    .composition-root {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      background-color: #f4ede2;
+      overflow: hidden;
+    }
+
+    /* Full-bleed background element */
+    .bg-canvas {
+      position: absolute;
+      inset: 0;
+      background: #f4ede2;
+      z-index: 1;
+    }
+
+    .bg-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(#d9c7b4 2px, transparent 2px);
+      background-size: 36px 36px;
+      opacity: 0.65;
+    }
+
+    /* Main Container (Bento Layout) */
+    .content-container {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 45px;
+      gap: 22px;
+    }
+
+    /* Header Banner */
+    .header-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 28px;
+      padding: 28px 32px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(67, 45, 24, 0.08);
+      position: relative;
+    }
+
+    .brand-pill {
+      display: inline-block;
+      background: #fff3df;
+      border: 2px solid #f3883b;
+      color: #bd4f10;
+      font-size: 22px;
+      font-weight: 800;
+      padding: 6px 20px;
+      border-radius: 50px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-size: 46px;
+      font-weight: 900;
+      color: #181612;
+      line-height: 1.15;
+    }
+
+    .highlight-text {
+      color: #bd4f10;
+      background: linear-gradient(180deg, transparent 65%, #ffb06c 65%);
+      padding: 0 6px;
+    }
+
+    /* Hook Warning Banner */
+    .warning-banner {
+      width: 100%;
+      background: #fff0ed;
+      border: 3px solid #c9512c;
+      border-radius: 20px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #c9512c;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    /* Formula Banner */
+    .formula-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 24px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(67, 45, 24, 0.06);
+    }
+
+    .formula-math {
+      font-family: 'EB Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: #181612;
+    }
+
+    .formula-badge {
+      background: #fff3df;
+      border: 2px solid #f3883b;
+      color: #bd4f10;
+      font-size: 22px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 12px;
+    }
+
+    /* 3 Bento Rule Cards */
+    .rules-grid {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rule-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 24px;
+      padding: 22px 28px;
+      box-shadow: 0 10px 28px rgba(67, 45, 24, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .rule-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .rule-icon {
+      font-size: 40px;
+      background: #fff3df;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      border: 2px solid #d9c7b4;
+    }
+
+    .rule-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rule-tag {
+      font-size: 20px;
+      font-weight: 800;
+      color: #6f665c;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .rule-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #181612;
+    }
+
+    .rule-sub {
+      font-size: 22px;
+      color: #6f665c;
+      font-weight: 600;
+    }
+
+    .sign-badge {
+      font-size: 28px;
+      font-weight: 900;
+      padding: 12px 22px;
+      border-radius: 16px;
+      text-align: center;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .sign-negative {
+      background: #fff0ed;
+      border: 3px solid #c9512c;
+      color: #c9512c;
+      box-shadow: 0 6px 16px rgba(201, 81, 44, 0.15);
+    }
+
+    .sign-positive {
+      background: #eef8f2;
+      border: 3px solid #1a8754;
+      color: #12633d;
+      box-shadow: 0 6px 16px rgba(26, 135, 84, 0.15);
+    }
+
+    /* Challenge Footer Card */
+    .challenge-card {
+      width: 100%;
+      background: #181612;
+      color: #fffdf8;
+      border-radius: 28px;
+      padding: 26px 32px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(24, 22, 18, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .challenge-badge {
+      background: #f3883b;
+      color: #181612;
+      font-size: 22px;
+      font-weight: 900;
+      padding: 6px 20px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .challenge-question {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .comment-prompt {
+      color: #ffb06c;
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Standalone Composition Root -->
+  <div data-composition-id="light_sign_trick" data-width="1080" data-height="1920" data-fps="30" data-duration="50" data-start="0" class="composition-root">
+
+    <!-- Audio tracks -->
+    <audio id="light-narration" src="audio/light_sign_narration.mp3" data-src="audio/light_sign_narration.mp3" data-start="0" data-volume="1.0"></audio>
+    <audio id="bgm-music" src="audio/bgm.mp3" data-src="audio/bgm.mp3" data-start="0" data-volume="0.18" data-loop="true"></audio>
+
+    <!-- Full-bleed Background -->
+    <div class="bg-canvas">
+      <div class="bg-dots"></div>
+    </div>
+
+    <!-- Main Bento Grid Layout -->
+    <div class="content-container">
+
+      <!-- HEADER BENTO CARD -->
+      <div id="header-card" class="header-card" style="opacity: 0;">
+        <div class="brand-pill">CBSE Class 10 Physics • Light</div>
+        <h1 class="main-title">The <span class="highlight-text">+/- Sign Convention</span> Cheat Code</h1>
+      </div>
+
+      <!-- WARNING HOOK BANNER -->
+      <div id="warning-banner" class="warning-banner" style="opacity: 0;">
+        <span>🛑</span>
+        <span>STOP Losing 5 Marks on +/- Signs!</span>
+      </div>
+
+      <!-- FORMULA REFERENCE BANNER -->
+      <div id="formula-card" class="formula-card" style="opacity: 0;">
+        <div class="formula-math">1/f = 1/v + 1/u</div>
+        <div class="formula-badge">⚡ 3 Golden Rules</div>
+      </div>
+
+      <!-- 3 BENTO RULE CARDS -->
+      <div class="rules-grid">
+
+        <!-- RULE 1: CONCAVE -->
+        <div id="rule-1" class="rule-card" style="opacity: 0;">
+          <div class="rule-left">
+            <div class="rule-icon">🕳️</div>
+            <div class="rule-info">
+              <div class="rule-tag">Rule #1 • Focal Length (f)</div>
+              <div class="rule-title">ConCAVE (Mirror / Lens)</div>
+              <div class="rule-sub">Think: Dark Cave = Minus</div>
+            </div>
+          </div>
+          <div class="sign-badge sign-negative">f is ALWAYS (-)</div>
+        </div>
+
+        <!-- RULE 2: CONVEX -->
+        <div id="rule-2" class="rule-card" style="opacity: 0;">
+          <div class="rule-left">
+            <div class="rule-icon">☀️</div>
+            <div class="rule-info">
+              <div class="rule-tag">Rule #2 • Focal Length (f)</div>
+              <div class="rule-title">ConVEX (Mirror / Lens)</div>
+              <div class="rule-sub">Bulging outward = Plus</div>
+            </div>
+          </div>
+          <div class="sign-badge sign-positive">f is ALWAYS (+)</div>
+        </div>
+
+        <!-- RULE 3: OBJECT DISTANCE U -->
+        <div id="rule-3" class="rule-card" style="opacity: 0;">
+          <div class="rule-left">
+            <div class="rule-icon">📍</div>
+            <div class="rule-info">
+              <div class="rule-tag">Rule #3 • Object Distance (u)</div>
+              <div class="rule-title">Object Distance (u)</div>
+              <div class="rule-sub">Light always comes from Left</div>
+            </div>
+          </div>
+          <div class="sign-badge sign-negative">u is ALWAYS (-)</div>
+        </div>
+
+      </div>
+
+      <!-- CHALLENGE FOOTER BENTO CARD -->
+      <div id="challenge-card" class="challenge-card" style="opacity: 0;">
+        <div class="challenge-badge">⚡ Quick Exam Quiz</div>
+        <div class="challenge-question">Concave mirror with focal length 15 cm. What is f?</div>
+        <div class="comment-prompt">💬 Drop your answer below! (+15 or -15?) 👇</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GSAP Animation Timeline Registration -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tl = gsap.timeline({ paused: true });
+
+      // Phase 1: High-Stakes Hook Intro (0.0s - 4.5s)
+      tl.fromTo("#header-card", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 0)
+        .fromTo("#warning-banner", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, 0.4)
+        .fromTo("#formula-card", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.0);
+
+      // Phase 2: Rule 1 - Concave (Cave = Minus) (9.0s - 22.0s)
+      tl.fromTo("#rule-1", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.6, ease: "back.out(1.5)" }, 9.0)
+        .fromTo("#rule-1 .sign-badge", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.6)" }, 14.0);
+
+      // Phase 3: Rule 2 - Convex (Plus) (22.5s - 32.0s)
+      tl.fromTo("#rule-2", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.6, ease: "back.out(1.5)" }, 22.5)
+        .fromTo("#rule-2 .sign-badge", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.6)" }, 26.5);
+
+      // Phase 4: Rule 3 - Object Distance u (Always Minus) (32.5s - 41.5s)
+      tl.fromTo("#rule-3", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" }, 32.5)
+        .fromTo("#rule-3 .sign-badge", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.6)" }, 36.0);
+
+      // Phase 5: Challenge Footer (42.0s - 50.0s)
+      tl.fromTo("#challenge-card", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 42.0);
+
+      // Store in window.__timelines map for HyperFrames engine
+      window.__timelines = window.__timelines || {};
+      window.__timelines["light_sign_trick"] = tl;
+    });
+  </script>
+</body>
+</html>
