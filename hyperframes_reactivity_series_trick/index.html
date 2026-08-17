@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactivity Series & Displacement Reaction Trick - ChapterReady</title>
+  
+  <!-- GSAP Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #f4ede2;
+      font-family: 'Outfit', sans-serif;
+      color: #181612;
+      overflow: hidden;
+      width: 1080px;
+      height: 1920px;
+    }
+
+    /* Standard HyperFrames Root Layer */
+    .composition-root {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      background-color: #f4ede2;
+      overflow: hidden;
+    }
+
+    /* Full-bleed background element */
+    .bg-canvas {
+      position: absolute;
+      inset: 0;
+      background: #f4ede2;
+      z-index: 1;
+    }
+
+    .bg-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(#d9c7b4 2px, transparent 2px);
+      background-size: 36px 36px;
+      opacity: 0.65;
+    }
+
+    /* Main Container (Bento Layout) */
+    .content-container {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 40px;
+      gap: 16px;
+    }
+
+    /* Header Banner */
+    .header-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 26px;
+      padding: 22px 28px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(67, 45, 24, 0.08);
+      position: relative;
+    }
+
+    .brand-pill {
+      display: inline-block;
+      background: #fff3df;
+      border: 2px solid #f3883b;
+      color: #bd4f10;
+      font-size: 20px;
+      font-weight: 800;
+      padding: 4px 18px;
+      border-radius: 50px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .main-title {
+      font-size: 42px;
+      font-weight: 900;
+      color: #181612;
+      line-height: 1.15;
+    }
+
+    .highlight-text {
+      color: #bd4f10;
+      background: linear-gradient(180deg, transparent 65%, #ffb06c 65%);
+      padding: 0 6px;
+    }
+
+    /* Board Exam Question Stamp Card */
+    .exam-question-card {
+      width: 100%;
+      background: #fff0ed;
+      border: 3px solid #c9512c;
+      border-radius: 20px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 6px 18px rgba(201, 81, 44, 0.12);
+    }
+
+    .exam-badge {
+      background: #c9512c;
+      color: #fffdf8;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 6px 14px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .exam-text {
+      font-size: 26px;
+      font-weight: 800;
+      color: #181612;
+      font-family: 'EB Garamond', serif;
+    }
+
+    /* Reactivity Ladder Bento Card */
+    .ladder-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 26px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 28px rgba(67, 45, 24, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ladder-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ladder-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #181612;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .rule-pill {
+      background: #fff3df;
+      border: 2px solid #f3883b;
+      color: #8c3505;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 50px;
+    }
+
+    /* Reactivity Elements Grid */
+    .elements-row {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 8px;
+      text-align: center;
+    }
+
+    .element-box {
+      background: #fffdf8;
+      border: 3px solid #d9c7b4;
+      border-radius: 12px;
+      padding: 10px 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .elem-symbol {
+      font-size: 28px;
+      font-weight: 900;
+      color: #181612;
+      font-family: 'EB Garamond', serif;
+    }
+
+    .elem-rank {
+      font-size: 14px;
+      font-weight: 800;
+      color: #6f665c;
+    }
+
+    .elem-high {
+      background: #fff3df !important;
+      border-color: #f3883b !important;
+      color: #bd4f10 !important;
+    }
+
+    .elem-low {
+      background: #fff0ed !important;
+      border-color: #c9512c !important;
+    }
+
+    /* Board Examples Bento Section */
+    .examples-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .example-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #d9c7b4;
+      border-radius: 22px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 22px rgba(67, 45, 24, 0.06);
+    }
+
+    .example-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .example-tag {
+      font-size: 18px;
+      font-weight: 800;
+      color: #6f665c;
+      text-transform: uppercase;
+    }
+
+    .example-equation {
+      font-size: 30px;
+      font-weight: 800;
+      color: #181612;
+      font-family: 'EB Garamond', serif;
+    }
+
+    .result-badge {
+      font-size: 22px;
+      font-weight: 900;
+      padding: 10px 18px;
+      border-radius: 14px;
+      text-align: center;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+    }
+
+    .badge-success {
+      background: #eef8f2;
+      border: 3px solid #1a8754;
+      color: #12633d;
+    }
+
+    .badge-no-reaction {
+      background: #fff0ed;
+      border: 3px solid #c9512c;
+      color: #c9512c;
+    }
+
+    /* ChapterReady Platform Promo Card */
+    .promo-card {
+      width: 100%;
+      background: #fffdf8;
+      border: 4px solid #f3883b;
+      border-radius: 24px;
+      padding: 18px 22px;
+      box-shadow: 0 12px 30px rgba(243, 136, 59, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .promo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .promo-logo {
+      font-size: 26px;
+      font-weight: 900;
+      color: #181612;
+    }
+
+    .promo-badge {
+      background: #f3883b;
+      color: #181612;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feature-item {
+      background: #fff3df;
+      border: 2px solid #d9c7b4;
+      border-radius: 14px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+    }
+
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #181612;
+    }
+
+    .feature-sub {
+      font-size: 14px;
+      color: #6f665c;
+      font-weight: 700;
+    }
+
+    /* Challenge Footer Card */
+    .challenge-card {
+      width: 100%;
+      background: #181612;
+      color: #fffdf8;
+      border-radius: 24px;
+      padding: 20px 28px;
+      text-align: center;
+      box-shadow: 0 14px 36px rgba(24, 22, 18, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .challenge-badge {
+      background: #f3883b;
+      color: #181612;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 4px 16px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .challenge-question {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .comment-prompt {
+      color: #ffb06c;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Standalone Composition Root -->
+  <div data-composition-id="reactivity_trick" data-width="1080" data-height="1920" data-fps="30" data-duration="60" data-start="0" class="composition-root">
+
+    <!-- Audio tracks -->
+    <audio id="reactivity-narration" src="audio/reactivity_narration.mp3" data-src="audio/reactivity_narration.mp3" data-start="0" data-volume="1.0"></audio>
+    <audio id="bgm-music" src="audio/bgm.mp3" data-src="audio/bgm.mp3" data-start="0" data-volume="0.18" data-loop="true"></audio>
+
+    <!-- Full-bleed Background -->
+    <div class="bg-canvas">
+      <div class="bg-dots"></div>
+    </div>
+
+    <!-- Main Bento Grid Layout -->
+    <div class="content-container">
+
+      <!-- HEADER BENTO CARD -->
+      <div id="header-card" class="header-card" style="opacity: 0;">
+        <div class="brand-pill">CBSE Class 10 Chemistry • Reactions</div>
+        <h1 class="main-title">The <span class="highlight-text">Reactivity Series</span> Cheat Code</h1>
+      </div>
+
+      <!-- BOARD EXAM QUESTION BANNER -->
+      <div id="exam-card" class="exam-question-card" style="opacity: 0;">
+        <div class="exam-badge">CBSE Board Exam • 3 Marks</div>
+        <div class="exam-text">Will Zn + CuSO₄ react? Predict products.</div>
+      </div>
+
+      <!-- REACTIVITY LADDER BENTO CARD -->
+      <div id="ladder-card" class="ladder-card" style="opacity: 0;">
+        <div class="ladder-header">
+          <div class="ladder-title">Reactivity Ladder</div>
+          <div class="rule-pill">👑 Top Kicks Out Bottom 🔻</div>
+        </div>
+
+        <!-- 9 Essential Metals Row -->
+        <div class="elements-row">
+          <div id="el-k" class="element-box elem-high"><span class="elem-symbol">K</span><span class="elem-rank">#1</span></div>
+          <div id="el-na" class="element-box elem-high"><span class="elem-symbol">Na</span><span class="elem-rank">#2</span></div>
+          <div id="el-ca" class="element-box elem-high"><span class="elem-symbol">Ca</span><span class="elem-rank">#3</span></div>
+          <div id="el-mg" class="element-box elem-high"><span class="elem-symbol">Mg</span><span class="elem-rank">#4</span></div>
+          <div id="el-al" class="element-box elem-high"><span class="elem-symbol">Al</span><span class="elem-rank">#5</span></div>
+          <div id="el-zn" class="element-box elem-high"><span class="elem-symbol">Zn</span><span class="elem-rank">#6</span></div>
+          <div id="el-fe" class="element-box"><span class="elem-symbol">Fe</span><span class="elem-rank">#7</span></div>
+          <div id="el-pb" class="element-box"><span class="elem-symbol">Pb</span><span class="elem-rank">#8</span></div>
+          <div id="el-cu" class="element-box elem-low"><span class="elem-symbol">Cu</span><span class="elem-rank">#9</span></div>
+        </div>
+      </div>
+
+      <!-- 2 BOARD EXAMPLES -->
+      <div class="examples-container">
+
+        <!-- EXAMPLE 1: ZN + CUSO4 -->
+        <div id="ex-1" class="example-card" style="opacity: 0;">
+          <div class="example-left">
+            <div class="example-tag">Board Example #1 (Zn is ABOVE Cu)</div>
+            <div class="example-equation">Zn + CuSO₄ ➔ ZnSO₄ + Cu</div>
+          </div>
+          <div class="result-badge badge-success">✅ Reaction Happens!</div>
+        </div>
+
+        <!-- EXAMPLE 2: CU + FESO4 -->
+        <div id="ex-2" class="example-card" style="opacity: 0;">
+          <div class="example-left">
+            <div class="example-tag">Board Example #2 (Cu is BELOW Fe)</div>
+            <div class="example-equation">Cu + FeSO₄ ➔ NO REACTION</div>
+          </div>
+          <div class="result-badge badge-no-reaction">❌ No Reaction!</div>
+        </div>
+
+      </div>
+
+      <!-- CHAPTERREADY.IN PLATFORM PROMO -->
+      <div id="promo-card" class="promo-card" style="opacity: 0;">
+        <div class="promo-header">
+          <div class="promo-logo">ChapterReady<span style="color: #bd4f10;">.in</span></div>
+          <div class="promo-badge">Score 100% in Boards 🎯</div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📝</div>
+            <div class="feature-text">
+              <span class="feature-title">5 Mock Test Series</span>
+              <span class="feature-sub">Weak-Area Diagnostic Reports</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🧚‍♀️</div>
+            <div class="feature-text">
+              <span class="feature-title">Tara AI Tutor</span>
+              <span class="feature-sub">24/7 Instant Chemistry Solver</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHALLENGE FOOTER CARD -->
+      <div id="challenge-card" class="challenge-card" style="opacity: 0;">
+        <div class="challenge-badge">⚡ Live Board Challenge</div>
+        <div class="challenge-question">Will Fe displace Cu in Fe + CuSO₄?</div>
+        <div class="comment-prompt">💬 Drop YES or NO in comments! 👇</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GSAP Animation Timeline Registration -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tl = gsap.timeline({ paused: true });
+
+      // Phase 1: Hook & Board Question Stamp (0.0s - 5.5s)
+      tl.fromTo("#header-card", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 0)
+        .fromTo("#exam-card", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, 0.5);
+
+      // Phase 2: Reactivity Ladder Reveal (6.0s - 18.0s)
+      tl.fromTo("#ladder-card", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 6.0)
+        .from(["#el-k", "#el-na", "#el-ca", "#el-mg", "#el-al", "#el-zn", "#el-fe", "#el-pb", "#el-cu"], {
+          scale: 0.4,
+          opacity: 0,
+          stagger: 0.18,
+          duration: 0.35,
+          ease: "back.out(1.8)"
+        }, 7.5);
+
+      // Phase 3: Example 1 (Zn + CuSO4 -> Reaction) (18.5s - 29.5s)
+      tl.fromTo("#ex-1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(1.4)" }, 18.5)
+        .fromTo("#ex-1 .result-badge", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 23.5);
+
+      // Phase 4: Example 2 (Cu + FeSO4 -> No Reaction) (30.0s - 40.5s)
+      tl.fromTo("#ex-2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(1.4)" }, 30.0)
+        .fromTo("#ex-2 .result-badge", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 34.5);
+
+      // Phase 5: ChapterReady Platform Promo (41.0s - 52.0s)
+      tl.fromTo("#promo-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" }, 41.0)
+        .from("#promo-card .feature-item", {
+          y: 15,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.4,
+          ease: "power2.out"
+        }, 44.0);
+
+      // Phase 6: Challenge Footer (52.5s - 60.0s)
+      tl.fromTo("#challenge-card", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.4)" }, 52.5);
+
+      // Store in window.__timelines map for HyperFrames engine
+      window.__timelines = window.__timelines || {};
+      window.__timelines["reactivity_trick"] = tl;
+    });
+  </script>
+</body>
+</html>
