@@ -25,10 +25,11 @@ if (!fs.existsSync(audioDir)) {
   fs.mkdirSync(audioDir, { recursive: true });
 }
 
-const scriptText = "CBSE always tests this exact 3-mark displacement reaction! Stop guessing, and use this 5-second Reactivity Ladder! The order: Potassium, Sodium, Calcium, Magnesium, Aluminium, Zinc, Iron, Lead, and Copper at the bottom! The Golden Rule: Elements at the TOP kick out elements BELOW them! Example 1: Zinc plus Copper Sulphate. Zinc is above Copper, so Zinc kicks Copper out to form Zinc Sulphate plus Copper! Full marks! Example 2: Copper plus Iron Sulphate. Copper is below Iron, so it cannot displace it! Result: No Reaction! Score 100% in your Board Exam with our 5 Verified Mock Tests and Tara AI Tutor on ChapterReady.in! Challenge: Will Iron displace Copper in Iron plus Copper Sulphate? Drop Yes or No in the comments below!";
+// 52-second tight script explicitly teaching the mnemonic sentence
+const scriptText = "CBSE always tests this 3-mark displacement reaction! Remember the order with this 5-second sentence: Please Stop Calling Me A Careless Zebra, Instead Try Learning How Copper Saves Gold! K, Na, Ca, Mg, Al, C, Zn, Fe, Pb, H, Cu, Ag, Au! Elements at the top kick out elements below them! Example 1: Zinc plus Copper Sulphate. Zinc is above Copper, so it kicks Copper out to form Zinc Sulphate plus Copper! Example 2: Copper plus Iron Sulphate. Copper is below Iron, so it cannot displace it! Result: No Reaction! Score 100% in your Board Exam with 5 Verified Mock Tests and Tara AI Tutor on ChapterReady.in! Will Iron displace Copper in Fe plus CuSO4? Drop Yes or No below!";
 
 async function run() {
-  console.log("Generating 52s audio for Reactivity Series Short...");
+  console.log("Generating fast-paced 52s audio with mnemonic sentence...");
   const response = await fetch(TTS_URL, {
     method: 'POST',
     headers: {
@@ -56,7 +57,7 @@ async function run() {
   const buffer = Buffer.from(resJson.audio_base64, 'base64');
   const outputPath = path.join(audioDir, 'reactivity_narration.mp3');
   fs.writeFileSync(outputPath, buffer);
-  console.log(`✅ Saved tight narration audio to ${outputPath}`);
+  console.log(`✅ Saved fast-paced narration audio to ${outputPath}`);
 }
 
 run().catch(console.error);
