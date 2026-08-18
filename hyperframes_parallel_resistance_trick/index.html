@@ -44,32 +44,32 @@
     .bg-dots {
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(#d9c7b4 2px, transparent 2px);
-      background-size: 36px 36px;
+      background-image: radial-gradient(#d9c7b4 2.5px, transparent 2.5px);
+      background-size: 40px 40px;
       opacity: 0.65;
     }
 
-    /* Main Container (Bento Layout) */
+    /* Main Container (Full 1920px Height Balanced Bento Layout) */
     .content-container {
       position: absolute;
       inset: 0;
       z-index: 2;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 44px 36px;
-      gap: 14px;
+      justify-content: space-between;
+      padding: 64px 48px 56px 48px;
+      height: 1920px;
     }
 
-    /* Header Banner */
+    /* 1. Header Banner */
     .header-card {
       width: 100%;
       background: #fffdf8;
       border: 4px solid #d9c7b4;
-      border-radius: 26px;
-      padding: 20px 24px;
+      border-radius: 30px;
+      padding: 26px 32px;
       text-align: center;
-      box-shadow: 0 10px 26px rgba(67, 45, 24, 0.08);
+      box-shadow: 0 12px 30px rgba(67, 45, 24, 0.08);
       position: relative;
     }
 
@@ -78,71 +78,71 @@
       background: #fff3df;
       border: 2px solid #f3883b;
       color: #8c3505;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 800;
-      padding: 4px 18px;
+      padding: 6px 22px;
       border-radius: 50px;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .main-title {
-      font-size: 38px;
+      font-size: 48px;
       font-weight: 900;
       color: #181612;
-      line-height: 1.15;
+      line-height: 1.18;
     }
 
     .highlight-text {
       color: #bd4f10;
       background: linear-gradient(180deg, transparent 65%, #ffb06c 65%);
-      padding: 0 6px;
+      padding: 0 8px;
     }
 
-    /* Board Exam Question Stamp Card */
+    /* 2. Board Exam Question Stamp Card */
     .exam-question-card {
       width: 100%;
       background: #fff0ed;
-      border: 3px solid #c9512c;
-      border-radius: 18px;
-      padding: 14px 20px;
+      border: 4px solid #c9512c;
+      border-radius: 24px;
+      padding: 20px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 6px 18px rgba(201, 81, 44, 0.12);
+      box-shadow: 0 8px 24px rgba(201, 81, 44, 0.14);
     }
 
     .exam-badge {
       background: #bd4f10;
       color: #ffffff;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 900;
-      padding: 6px 12px;
-      border-radius: 10px;
+      padding: 8px 16px;
+      border-radius: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
     }
 
     .exam-text {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: 800;
       color: #181612;
       font-family: 'EB Garamond', serif;
     }
 
-    /* The Cheat Code Formula Bento Card */
+    /* 3. The Cheat Code Formula Bento Card */
     .formula-card {
       width: 100%;
       background: #fffdf8;
       border: 4px solid #f3883b;
-      border-radius: 22px;
-      padding: 18px 24px;
-      box-shadow: 0 10px 28px rgba(243, 136, 59, 0.15);
+      border-radius: 28px;
+      padding: 26px 32px;
+      box-shadow: 0 14px 34px rgba(243, 136, 59, 0.16);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 16px;
     }
 
     .formula-header {
@@ -153,31 +153,31 @@
     }
 
     .formula-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 900;
       color: #8c3505;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
     }
 
     .speed-pill {
       background: #fff3df;
       border: 2px solid #f3883b;
       color: #8c3505;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 800;
-      padding: 3px 14px;
+      padding: 4px 18px;
       border-radius: 50px;
     }
 
     .formula-main {
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       color: #181612;
       font-family: 'EB Garamond', serif;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
     .fraction-block {
@@ -188,29 +188,29 @@
     }
 
     .frac-top {
-      border-bottom: 3px solid #181612;
-      padding-bottom: 2px;
+      border-bottom: 3.5px solid #181612;
+      padding-bottom: 4px;
       color: #bd4f10;
       font-weight: 900;
     }
 
     .frac-bot {
-      padding-top: 2px;
+      padding-top: 4px;
       color: #181612;
       font-weight: 900;
     }
 
-    /* Live Numerical Calculation Bento Card */
+    /* 4. Live Numerical Calculation Bento Card */
     .calculation-card {
       width: 100%;
       background: #fffdf8;
       border: 4px solid #d9c7b4;
-      border-radius: 22px;
-      padding: 16px 22px;
-      box-shadow: 0 8px 22px rgba(67, 45, 24, 0.06);
+      border-radius: 26px;
+      padding: 24px 30px;
+      box-shadow: 0 10px 28px rgba(67, 45, 24, 0.08);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .calc-row {
@@ -220,80 +220,80 @@
     }
 
     .calc-steps {
-      font-size: 30px;
+      font-size: 40px;
       font-weight: 800;
       color: #181612;
       font-family: 'EB Garamond', serif;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .result-badge {
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 900;
-      padding: 8px 16px;
-      border-radius: 12px;
+      padding: 10px 20px;
+      border-radius: 16px;
       letter-spacing: 0.8px;
       background: #eef8f2;
-      border: 3px solid #1a8754;
+      border: 3.5px solid #1a8754;
       color: #12633d;
     }
 
-    /* Bonus Identical Resistors Card */
+    /* 5. Bonus Identical Resistors Card */
     .identical-card {
       width: 100%;
       background: #fffdf8;
       border: 4px solid #d9c7b4;
-      border-radius: 20px;
-      padding: 14px 20px;
+      border-radius: 24px;
+      padding: 20px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 6px 20px rgba(67, 45, 24, 0.05);
+      box-shadow: 0 8px 24px rgba(67, 45, 24, 0.06);
     }
 
     .identical-left {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
     }
 
     .identical-tag {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 800;
       color: #6f665c;
       text-transform: uppercase;
     }
 
     .identical-math {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 800;
       color: #181612;
       font-family: 'EB Garamond', serif;
     }
 
     .identical-badge {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 900;
-      padding: 6px 14px;
-      border-radius: 12px;
+      padding: 8px 18px;
+      border-radius: 14px;
       background: #fff3df;
-      border: 2px solid #f3883b;
+      border: 2.5px solid #f3883b;
       color: #8c3505;
     }
 
-    /* ChapterReady Platform Promo Card */
+    /* 6. ChapterReady Platform Promo Card */
     .promo-card {
       width: 100%;
       background: #fffdf8;
       border: 4px solid #f3883b;
-      border-radius: 22px;
-      padding: 16px 20px;
-      box-shadow: 0 12px 30px rgba(243, 136, 59, 0.15);
+      border-radius: 26px;
+      padding: 22px 28px;
+      box-shadow: 0 14px 36px rgba(243, 136, 59, 0.16);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
     }
 
     .promo-header {
@@ -303,7 +303,7 @@
     }
 
     .promo-logo {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: 900;
       color: #181612;
     }
@@ -311,9 +311,9 @@
     .promo-badge {
       background: #f3883b;
       color: #181612;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 900;
-      padding: 4px 12px;
+      padding: 5px 16px;
       border-radius: 50px;
       text-transform: uppercase;
     }
@@ -321,21 +321,21 @@
     .features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 12px;
     }
 
     .feature-item {
       background: #fff3df;
-      border: 2px solid #d9c7b4;
-      border-radius: 12px;
-      padding: 8px 10px;
+      border: 2.5px solid #d9c7b4;
+      border-radius: 16px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
     .feature-icon {
-      font-size: 24px;
+      font-size: 32px;
     }
 
     .feature-text {
@@ -344,56 +344,55 @@
     }
 
     .feature-title {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 900;
       color: #181612;
     }
 
     .feature-sub {
-      font-size: 13px;
+      font-size: 15px;
       color: #6f665c;
       font-weight: 700;
     }
 
-    /* Challenge Footer Card */
+    /* 7. Challenge Footer Card */
     .challenge-card {
       width: 100%;
       background: #181612;
       color: #fffdf8;
-      border-radius: 22px;
-      padding: 16px 24px;
+      border-radius: 26px;
+      padding: 22px 30px;
       text-align: center;
-      box-shadow: 0 14px 36px rgba(24, 22, 18, 0.25);
+      box-shadow: 0 16px 40px rgba(24, 22, 18, 0.28);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      margin-top: auto;
+      gap: 8px;
     }
 
     .challenge-badge {
       background: #f3883b;
       color: #181612;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 900;
-      padding: 3px 14px;
+      padding: 4px 18px;
       border-radius: 50px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
     }
 
     .challenge-question {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: 800;
     }
 
     .comment-prompt {
       color: #ffb06c;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
   </style>
 </head>
@@ -411,7 +410,7 @@
       <div class="bg-dots"></div>
     </div>
 
-    <!-- Main Bento Grid Layout -->
+    <!-- Main Full-Height Bento Grid Layout -->
     <div class="content-container">
 
       <!-- HEADER BENTO CARD -->
@@ -457,7 +456,7 @@
               <span class="frac-bot">9</span>
             </div>
             <span> = </span>
-            <strong style="color: #12633d; font-size: 34px;">2 Ω</strong>
+            <strong style="color: #12633d; font-size: 44px;">2 Ω</strong>
           </div>
           <div class="result-badge">✅ 3 Seconds!</div>
         </div>
