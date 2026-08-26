@@ -207,7 +207,7 @@
 
     .step-pills-row {
       display: grid;
-      grid-template-columns: 1fr 1.2fr 1.2fr;
+      grid-template-columns: 1fr 1fr 1.4fr;
       gap: 8px;
     }
 
@@ -368,7 +368,7 @@
 <body>
 
   <!-- Standalone Composition Root -->
-  <div data-composition-id="combustion_balancing_trick" data-width="1080" data-height="1920" data-fps="30" data-duration="56" data-start="0" class="composition-root">
+  <div data-composition-id="combustion_balancing_trick" data-width="1080" data-height="1920" data-fps="30" data-duration="59" data-start="0" class="composition-root">
 
     <!-- Audio tracks -->
     <audio id="combustion-narration" src="audio/combustion_narration.mp3" data-src="audio/combustion_narration.mp3" data-start="0" data-volume="1.0"></audio>
@@ -406,7 +406,7 @@
           </div>
           <div id="rule-o" class="step-box">
             <span class="step-num">Step 3: O</span>
-            <span class="step-desc">Total O ÷ 2 ➔ O₂</span>
+            <span class="step-desc">Count (6+4=10) ÷ 2 ➔ O₂</span>
           </div>
         </div>
       </div>
@@ -423,7 +423,7 @@
           <div class="step-pills-row">
             <div id="ex1-c" class="mini-step" style="opacity: 0;">3C ➔ 3CO₂</div>
             <div id="ex1-h" class="mini-step" style="opacity: 0;">8H ÷ 2 ➔ 4H₂O</div>
-            <div id="ex1-o" class="mini-step" style="opacity: 0;">10 O ÷ 2 ➔ 5O₂</div>
+            <div id="ex1-o" class="mini-step" style="opacity: 0;">(6+4)=10 O ➔ 5O₂</div>
           </div>
           <div class="result-row">
             <div id="ex1-badge" class="result-badge badge-success" style="opacity: 0;">✅ C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O</div>
@@ -439,7 +439,7 @@
           <div class="step-pills-row">
             <div id="ex2-c" class="mini-step" style="opacity: 0;">4C ➔ 4CO₂</div>
             <div id="ex2-h" class="mini-step" style="opacity: 0;">10H ÷ 2 ➔ 5H₂O</div>
-            <div id="ex2-o" class="mini-step" style="opacity: 0;">13 O ÷ 2 ➔ ¹³⁄₂ O₂</div>
+            <div id="ex2-o" class="mini-step" style="opacity: 0;">(8+5)=13 O ➔ ¹³⁄₂ O₂</div>
           </div>
           <div class="result-row">
             <div id="ex2-badge" class="result-badge badge-coeff" style="opacity: 0;">⚡ 2C₄H₁₀ + 13O₂ ➔ 8CO₂ + 10H₂O</div>
@@ -492,40 +492,37 @@
       // Phase 1: Hook & Header (0.0s - 4.5s)
       tl.fromTo("#header-card", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.4)" }, 0);
 
-      // Phase 2: 3-Step C-H-O Rule Reveal (4.5s - 13.0s)
-      tl.fromTo("#formula-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 4.5)
-        .fromTo("#rule-c", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 5.5)
-        .fromTo("#rule-h", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 7.5)
-        .fromTo("#rule-o", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 10.0);
+      // Phase 2: 3-Step C-H-O Rule Reveal (4.5s - 7.5s)
+      tl.fromTo("#formula-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.5)" }, 4.5);
 
-      // Phase 3: Example 1 - Propane (13.0s - 25.5s)
-      // Narration: "Example 1: C3H8 plus O2 gives CO2 plus H2O..."
-      tl.fromTo("#ex-1", { opacity: 0, x: -35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 13.0)
-        .fromTo("#ex1-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 16.5)
-        .fromTo("#ex1-h", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 18.5)
-        .fromTo("#ex1-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 20.5)
-        .fromTo("#ex1-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 22.5);
+      // Phase 3: Example 1 - Propane (7.5s - 23.5s)
+      // "Look at Example 1: C3H8 plus O2 gives CO2 plus H2O..."
+      tl.fromTo("#ex-1", { opacity: 0, x: -35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 7.5)
+        .fromTo("#ex1-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 11.5)
+        .fromTo("#ex1-h", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 14.5)
+        .fromTo("#ex1-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 17.5)
+        .fromTo("#ex1-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 22.0);
 
-      // Phase 4: Example 2 - Butane (25.5s - 40.0s)
-      // Narration: "Example 2: C4H10 plus O2..."
-      tl.fromTo("#ex-2", { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 25.5)
-        .fromTo("#ex2-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.5)
+      // Phase 4: Example 2 - Butane (24.0s - 42.0s)
+      // "Now Example 2: C4H10 plus O2..."
+      tl.fromTo("#ex-2", { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 24.0)
+        .fromTo("#ex2-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 27.5)
         .fromTo("#ex2-h", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 30.5)
-        .fromTo("#ex2-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 32.5)
-        .fromTo("#ex2-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 35.5);
+        .fromTo("#ex2-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 33.5)
+        .fromTo("#ex2-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 37.5);
 
-      // Phase 5: ChapterReady Platform Promo (40.5s - 49.0s)
-      tl.fromTo("#promo-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 40.5)
+      // Phase 5: ChapterReady Platform Promo (42.5s - 51.0s)
+      tl.fromTo("#promo-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 42.5)
         .from("#promo-card .feature-item", {
           y: 12,
           opacity: 0,
           stagger: 0.18,
           duration: 0.35,
           ease: "power2.out"
-        }, 42.5);
+        }, 44.5);
 
-      // Phase 6: Challenge Footer (49.0s - 56.0s)
-      tl.fromTo("#challenge-card", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 49.0);
+      // Phase 6: Challenge Footer (51.5s - 59.0s)
+      tl.fromTo("#challenge-card", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 51.5);
 
       // Store in window.__timelines map for HyperFrames engine
       window.__timelines = window.__timelines || {};

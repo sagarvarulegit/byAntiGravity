@@ -25,11 +25,11 @@ if (!fs.existsSync(audioDir)) {
   fs.mkdirSync(audioDir, { recursive: true });
 }
 
-// 54-second tight script for Combustion Balancing Short
-const scriptText = "Stop guessing when balancing combustion equations! Follow this 3-step C-H-O cheat code: Step 1: Balance Carbon into CO2. Step 2: Balance Hydrogen divided by 2 into H2O. Step 3: Balance total Oxygen divided by 2 into O2! Example 1: C3H8 plus O2 gives CO2 plus H2O. 3 Carbons gives 3 CO2. 8 Hydrogens gives 4 H2O. Right-side Oxygen is 10, so put 5 O2! Balanced! Example 2: C4H10 plus O2. 4 Carbons gives 4 CO2. 10 Hydrogens gives 5 H2O. Oxygen is 13, giving 13 over 2 O2. Double all numbers: 2 C4H10 plus 13 O2 gives 8 CO2 plus 10 H2O! Level up on ChapterReady.in with Fun and Games and our Store for Cheat Sheets! Challenge: Balance Ethane: C2H6 plus O2! Drop coefficients below, because...";
+// 54-second script with explicit Oxygen count explanation (6 + 4 = 10 O)
+const scriptText = "Stop guessing when balancing combustion equations! Always follow the 3-step C-H-O rule: Look at Example 1: C3H8 plus O2 gives CO2 plus H2O. Step 1: 3 Carbons gives 3 CO2. Step 2: 8 Hydrogens gives 4 H2O. Step 3: Count total Oxygen from your new products! 3 times 2 is 6, plus 4 from water gives 10 Oxygens! Divide by 2 to get 5 O2! Balanced! Now Example 2: C4H10 plus O2. 4 Carbons gives 4 CO2. 10 Hydrogens gives 5 H2O. Product oxygen is 8 plus 5, which is 13! Divide by 2: 13 over 2 O2. Double all numbers: 2 C4H10 plus 13 O2 gives 8 CO2 plus 10 H2O! Level up on ChapterReady.in with Fun and Games and our Store for Cheat Sheets! Challenge: Balance Ethane: C2H6 plus O2! Drop coefficients below, because...";
 
 async function run() {
-  console.log("Generating 54s audio for Combustion Balancing Short...");
+  console.log("Generating clear 54s audio with explicit oxygen counting...");
   const response = await fetch(TTS_URL, {
     method: 'POST',
     headers: {
@@ -57,7 +57,7 @@ async function run() {
   const buffer = Buffer.from(resJson.audio_base64, 'base64');
   const outputPath = path.join(audioDir, 'combustion_narration.mp3');
   fs.writeFileSync(outputPath, buffer);
-  console.log(`✅ Saved 54s narration audio to ${outputPath}`);
+  console.log(`✅ Saved updated narration audio to ${outputPath}`);
 }
 
 run().catch(console.error);
