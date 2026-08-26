@@ -179,40 +179,64 @@
       border-radius: 26px;
       padding: 18px 24px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 10px;
       box-shadow: 0 8px 24px rgba(67, 45, 24, 0.06);
     }
 
-    .example-left {
+    .example-top-row {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .example-tag {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 900;
       color: #6f665c;
       text-transform: uppercase;
       letter-spacing: 0.6px;
     }
 
-    .example-math {
-      font-size: 29px;
+    .equation-raw {
+      font-size: 32px;
+      font-weight: 900;
+      color: #181612;
+      font-family: 'EB Garamond', serif;
+    }
+
+    .step-pills-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1.2fr;
+      gap: 8px;
+    }
+
+    .mini-step {
+      background: #fff3df;
+      border: 2px solid #d9c7b4;
+      border-radius: 12px;
+      padding: 6px 8px;
+      text-align: center;
+      font-size: 17px;
       font-weight: 800;
       color: #181612;
       font-family: 'EB Garamond', serif;
     }
 
+    .result-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
     .result-badge {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
-      padding: 10px 18px;
-      border-radius: 16px;
+      padding: 8px 20px;
+      border-radius: 14px;
       text-align: center;
       letter-spacing: 0.6px;
-      white-space: nowrap;
+      font-family: 'EB Garamond', serif;
     }
 
     .badge-success {
@@ -328,6 +352,7 @@
     .challenge-question {
       font-size: 28px;
       font-weight: 800;
+      font-family: 'EB Garamond', serif;
     }
 
     .comment-prompt {
@@ -371,15 +396,15 @@
         </div>
 
         <div class="steps-grid">
-          <div class="step-box">
+          <div id="rule-c" class="step-box">
             <span class="step-num">Step 1: C</span>
             <span class="step-desc">Carbon ➔ CO₂</span>
           </div>
-          <div class="step-box">
+          <div id="rule-h" class="step-box">
             <span class="step-num">Step 2: H</span>
             <span class="step-desc">Hydrogen ÷ 2 ➔ H₂O</span>
           </div>
-          <div class="step-box">
+          <div id="rule-o" class="step-box">
             <span class="step-num">Step 3: O</span>
             <span class="step-desc">Total O ÷ 2 ➔ O₂</span>
           </div>
@@ -391,20 +416,34 @@
 
         <!-- EXAMPLE 1: PROPANE (C3H8) -->
         <div id="ex-1" class="example-card" style="opacity: 0;">
-          <div class="example-left">
-            <div class="example-tag">Example 1 : Propane (C₃H₈)</div>
-            <div class="example-math">3C ➔ 3CO₂ | 8H ➔ 4H₂O | <strong>5O₂</strong></div>
+          <div class="example-top-row">
+            <div class="example-tag">Example 1 : Propane</div>
+            <div class="equation-raw">C₃H₈ + O₂ ➔ CO₂ + H₂O</div>
           </div>
-          <div class="result-badge badge-success">✅ C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O</div>
+          <div class="step-pills-row">
+            <div id="ex1-c" class="mini-step" style="opacity: 0;">3C ➔ 3CO₂</div>
+            <div id="ex1-h" class="mini-step" style="opacity: 0;">8H ÷ 2 ➔ 4H₂O</div>
+            <div id="ex1-o" class="mini-step" style="opacity: 0;">10 O ÷ 2 ➔ 5O₂</div>
+          </div>
+          <div class="result-row">
+            <div id="ex1-badge" class="result-badge badge-success" style="opacity: 0;">✅ C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O</div>
+          </div>
         </div>
 
         <!-- EXAMPLE 2: BUTANE (C4H10) -->
         <div id="ex-2" class="example-card" style="opacity: 0;">
-          <div class="example-left">
-            <div class="example-tag">Example 2 : Butane (C₄H₁₀) — Odd Fraction</div>
-            <div class="example-math">4C ➔ 4CO₂ | 10H ➔ 5H₂O | ¹³⁄₂ O₂ (×2)</div>
+          <div class="example-top-row">
+            <div class="example-tag">Example 2 : Butane (Odd O₂)</div>
+            <div class="equation-raw">C₄H₁₀ + O₂ ➔ CO₂ + H₂O</div>
           </div>
-          <div class="result-badge badge-coeff">⚡ 2C₄H₁₀ + 13O₂ ➔ 8CO₂ + 10H₂O</div>
+          <div class="step-pills-row">
+            <div id="ex2-c" class="mini-step" style="opacity: 0;">4C ➔ 4CO₂</div>
+            <div id="ex2-h" class="mini-step" style="opacity: 0;">10H ÷ 2 ➔ 5H₂O</div>
+            <div id="ex2-o" class="mini-step" style="opacity: 0;">13 O ÷ 2 ➔ ¹³⁄₂ O₂</div>
+          </div>
+          <div class="result-row">
+            <div id="ex2-badge" class="result-badge badge-coeff" style="opacity: 0;">⚡ 2C₄H₁₀ + 13O₂ ➔ 8CO₂ + 10H₂O</div>
+          </div>
         </div>
 
       </div>
@@ -453,33 +492,37 @@
       // Phase 1: Hook & Header (0.0s - 4.5s)
       tl.fromTo("#header-card", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.4)" }, 0);
 
-      // Phase 2: 3-Step C-H-O Rule Reveal (4.5s - 14.5s)
-      tl.fromTo("#formula-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.5)" }, 4.5)
-        .from("#formula-card .step-box", {
-          y: 12,
-          opacity: 0,
-          stagger: 0.18,
-          duration: 0.35,
-          ease: "power2.out"
-        }, 7.5);
+      // Phase 2: 3-Step C-H-O Rule Reveal (4.5s - 13.0s)
+      tl.fromTo("#formula-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 4.5)
+        .fromTo("#rule-c", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 5.5)
+        .fromTo("#rule-h", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 7.5)
+        .fromTo("#rule-o", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 10.0);
 
-      // Phase 3: Example 1 - Propane (15.0s - 25.5s)
-      tl.fromTo("#ex-1", { opacity: 0, x: -35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 15.0)
-        .fromTo("#ex-1 .result-badge", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "elastic.out(1, 0.6)" }, 20.5);
+      // Phase 3: Example 1 - Propane (13.0s - 25.5s)
+      // Narration: "Example 1: C3H8 plus O2 gives CO2 plus H2O..."
+      tl.fromTo("#ex-1", { opacity: 0, x: -35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 13.0)
+        .fromTo("#ex1-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 16.5)
+        .fromTo("#ex1-h", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 18.5)
+        .fromTo("#ex1-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 20.5)
+        .fromTo("#ex1-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 22.5);
 
-      // Phase 4: Example 2 - Butane (26.0s - 39.5s)
-      tl.fromTo("#ex-2", { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 26.0)
-        .fromTo("#ex-2 .result-badge", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "elastic.out(1, 0.6)" }, 34.0);
+      // Phase 4: Example 2 - Butane (25.5s - 40.0s)
+      // Narration: "Example 2: C4H10 plus O2..."
+      tl.fromTo("#ex-2", { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: 0.45, ease: "back.out(1.4)" }, 25.5)
+        .fromTo("#ex2-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.5)
+        .fromTo("#ex2-h", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 30.5)
+        .fromTo("#ex2-o", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 32.5)
+        .fromTo("#ex2-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 35.5);
 
-      // Phase 5: ChapterReady Platform Promo (40.0s - 48.5s)
-      tl.fromTo("#promo-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 40.0)
+      // Phase 5: ChapterReady Platform Promo (40.5s - 49.0s)
+      tl.fromTo("#promo-card", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 40.5)
         .from("#promo-card .feature-item", {
           y: 12,
           opacity: 0,
           stagger: 0.18,
           duration: 0.35,
           ease: "power2.out"
-        }, 42.0);
+        }, 42.5);
 
       // Phase 6: Challenge Footer (49.0s - 56.0s)
       tl.fromTo("#challenge-card", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 49.0);
