@@ -25,11 +25,11 @@ if (!fs.existsSync(audioDir)) {
   fs.mkdirSync(audioDir, { recursive: true });
 }
 
-// 54-second clear, calm script for Section Formula Criss-Cross Trick
-const scriptText = "Stop memorizing confusing subscripts in the Section Formula! Use this 5-second Criss-Cross Trick: Find point P dividing A(1, 2) and B(4, 8) in ratio 2 is to 1. Write the ratio 2 and 1 right above the points! For X: cross-multiply into X-values! 2 times 4 is 8, plus 1 times 1 is 9. Divide by 2 plus 1, which is 3. 9 divided by 3 gives 3! For Y: cross-multiply into Y-values! 2 times 8 is 16, plus 1 times 2 is 18. Divide by 3 gives 6! Your point is (3, 6)! Practice on ChapterReady.in with Fun and Games, interactive Tools, and Mock Tests! Challenge: Find point P for A(2, 3) and B(6, 7) in ratio 1 is to 1! Drop your answer below, because...";
+// Unhurried pedagogical script following the 4-phase framework
+const scriptText = "In Coordinate Geometry, using the textbook formula for the dividing point is messy, and students constantly swap subscripts. Here is the 2-step Criss-Cross Trick! Find point P dividing A(1, 2) and B(4, 8) in ratio 2 is to 1. Setup: write ratio 2 and 1 right above the points! For X: cross-multiply into X-values! 2 times 4 is 8, plus 1 times 1 is 9. Divide by the ratio sum, 2 plus 1, which is 3. 9 divided by 3 gives X equals 3! For Y: 2 times 8 is 16, plus 1 times 2 is 18. Divide 18 by 3, and Y equals 6! Your point is (3, 6)! Practice on ChapterReady.in with Fun and Games, smart Tools, and Mock Tests! Challenge: Find point P for A(2, 3) and B(6, 7) in ratio 1 is to 1! Drop your answer below, because...";
 
 async function run() {
-  console.log("Generating 54s audio for Section Formula Short...");
+  console.log("Generating unhurried pedagogical audio for Section Formula Short...");
   const response = await fetch(TTS_URL, {
     method: 'POST',
     headers: {
@@ -57,7 +57,7 @@ async function run() {
   const buffer = Buffer.from(resJson.audio_base64, 'base64');
   const outputPath = path.join(audioDir, 'section_formula_narration.mp3');
   fs.writeFileSync(outputPath, buffer);
-  console.log(`✅ Saved 54s narration audio to ${outputPath}`);
+  console.log(`✅ Saved narration audio to ${outputPath}`);
 }
 
 run().catch(console.error);

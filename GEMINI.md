@@ -105,6 +105,14 @@ No CI workflows present yet.
   - **HyperFrames Default for Video Requests**: Author standalone HyperFrames HTML/GSAP compositions in the ChapterReady warm paper theme (`#f4ede2` background + `#f3883b` orange accents) unless Remotion is explicitly requested.
   - **Graphic Assets over AI Body Parts**: Avoid using AI-generated human hands or complex anatomical body graphics due to AI left/right inversion errors. Prefer clean typography, bento box cards, vector diagrams, and icon graphics.
   - **YouTube Comment Formatting**: Never use LaTeX math delimiters (`$...$`) in YouTube comment copy. Always format pinned comments and YouTube metadata in plain text using UTF-8 math symbols (`√3/2`, `cos(30°)`) and YouTube markdown (`*bold*`).
+  - **Explainer Video Pedagogical Framework (Problem ➔ Trick ➔ Small Chunks ➔ Visible Intermediate Math)**:
+  Every educational short/reel must strictly follow this 4-phase pedagogical sequence:
+  1. **Phase 1: Problem Statement & Pain Point (0:00 – 0:10)**: State the actual Board Exam question clearly first, and show why the standard textbook formula causes confusion or lost marks (e.g. confusing subscripts, easy sign errors).
+  2. **Phase 2: Visual Setup / Trick Introduction (0:10 – 0:20)**: Show how our visual trick replaces formula memorization before any math begins (e.g. line with ratio written on top).
+  3. **Phase 3: Step-by-Step Chunks with Visible Intermediate Math (0:20 – 0:45)**: Explain in small, isolated chunks. Solve one variable or step completely before moving to the next (e.g. solve X completely, then solve Y). Never skip intermediate operations—always show the sub-calculations on screen (e.g. `(2 × 4) + (1 × 1) = 8 + 1 = 9 ÷ 3 = 3`, or `(6 + 4) = 10 O ➔ 5 O₂`).
+  4. **Phase 4: ChapterReady.in Platform Promo & Challenge (0:45 – 0:56)**: Bento card highlighting ChapterReady.in features (🎮 Fun & Games, 🛠️ Tools, 📝 Mock Tests / 🛍️ Store) + live interactive comment challenge.
+  - **Unhurried Pacing Standard**: Keep scripts concise (~100–115 words) to ensure the ElevenLabs voiceover delivers at a calm, relaxed, unhurried pace (~54–57s) with natural pauses. Never cram multiple steps into a single breath.
+  - **Strict 1-to-1 Content Cohesion**: The exact equation, numbers, or step being spoken by narration must be visible on screen at that precise second.
   - **SEO File Naming Standard**: Always export and name final `.mp4` video files using long-tail, hyphenated SEO search terms (e.g. `cbse-class-10-maths-butterfly-method-fraction-trick-shorts.mp4`).
   - **First 1.5-Second Hook Rule**: Never open Shorts with slow intros. Open immediately with an urgent visual pattern interrupt or high-stakes mystery hook to push "Stayed to Watch" metrics above 65%.
   - **24-Hour Upload Spacing**: Space Shorts uploads by at least 24 hours (target peak student hours: 5:00 PM – 7:30 PM IST) to prevent YouTube's seed testing algorithm from splitting impressions.
