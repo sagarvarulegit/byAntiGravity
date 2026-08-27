@@ -38,6 +38,14 @@
 
 ## Educational and Visual Standards
 
+- **Explainer Video Pedagogical Framework (Problem ➔ Trick ➔ Small Chunks ➔ Visible Intermediate Math)**:
+  Every educational short/reel must strictly follow this 4-phase pedagogical sequence:
+  1. **Phase 1: Problem Statement & Pain Point (0:00 – 0:10)**: State the actual Board Exam question clearly first, and show why the standard textbook formula causes confusion or lost marks (e.g. confusing subscripts, easy sign errors).
+  2. **Phase 2: Visual Setup / Trick Introduction (0:10 – 0:20)**: Show how our visual trick replaces formula memorization before any math begins (e.g. line with ratio written on top).
+  3. **Phase 3: Step-by-Step Chunks with Visible Intermediate Math (0:20 – 0:45)**: Explain in small, isolated chunks. Solve one variable or step completely before moving to the next (e.g. solve X completely, then solve Y). Never skip intermediate operations—always show the sub-calculations on screen (e.g. `(2 × 4) + (1 × 1) = 8 + 1 = 9 ÷ 3 = 3`, or `(6 + 4) = 10 O ➔ 5 O₂`).
+  4. **Phase 4: ChapterReady.in Platform Promo & Challenge (0:45 – 0:56)**: Bento card highlighting ChapterReady.in features (🎮 Fun & Games, 🛠️ Tools, 📝 Mock Tests / 🛍️ Store) + live interactive comment challenge.
+- **Unhurried Pacing Standard**: Keep scripts concise (~100–115 words) to ensure the ElevenLabs voiceover delivers at a calm, relaxed, unhurried pace (~54–57s) with natural pauses. Never cram multiple steps into a single breath.
+- **Strict 1-to-1 Content Cohesion**: The exact equation, numbers, or step being spoken by narration must be visible on screen at that precise second.
 - **Storytelling Blueprint (KodeKloud, Science Simplified 4 All & Dr. Ben Miles Benchmark)**:
   1. **Narrative / Mystery Hook**: Start with a discovery story, a "What If?" thought experiment, or contrasting Classical Expectation vs Real-World Twist.
   2. **Everyday Relatable Analogies & Energy Landscapes**: Use age-appropriate physical analogies (e.g. bicycle on grass for refraction, ball rolling over a hill for potential difference).
